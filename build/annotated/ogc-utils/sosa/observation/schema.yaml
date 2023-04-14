@@ -1,0 +1,44 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: SOSA Observation
+type: object
+properties:
+  hasResult:
+    type: object
+    '@id': http://www.w3.org/ns/sosa/hasResult
+  hasSimpleResult:
+    '@id': http://www.w3.org/ns/sosa/hasSimpleResult
+  resultTime:
+    type: string
+    format: date-time
+    '@id': http://www.w3.org/ns/sosa/resultTime
+  phenomenonTime:
+    type:
+    - object
+    - string
+    '@id': http://www.w3.org/ns/sosa/phenomenonTime
+  hasFeatureOfInterest:
+    type:
+    - object
+    - string
+    '@id': http://www.w3.org/ns/sosa/hasFeatureOfInterest
+  observedProperty:
+    type:
+    - object
+    - string
+    '@id': http://www.w3.org/ns/sosa/observedProperty
+  usedProcedure:
+    type:
+    - object
+    - string
+    '@id': http://www.w3.org/ns/sosa/usedProcedure
+  madeBySensor:
+    type:
+    - object
+    - string
+    '@id': http://www.w3.org/ns/sosa/madeBySensor
+required:
+- resultTime
+- hasFeatureOfInterest
+oneOf:
+- hasResult
+- hasSimpleResult
