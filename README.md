@@ -15,16 +15,26 @@ This building block is __under construction__ and is undertaken in the context o
 
 It is assumed that this will be backwards compatible with the last published SOSA version https://www.w3.org/TR/2017/REC-vocab-ssn-20171019/. Any changes to this status will be noted in this section.
 
-## General Building block structure
+## General Building block repository structure
+
+
+- `features/`: schemas for the feature types defined by this bb (which is a "super-bb" containing at least oneOf these defined features)
+- `datatypes/`: reusable schemas for (potentially complex) datatypes defined by this bb
+- `aspects/`: groups of properties that may be included in feature types (equivalent to attribute groups in XML schema)
+- `assets/`: Documentation assets (e.g. images) directory. See [Assets](#assets) below.
+- `build/`: the derived "ready-for-use" versions of the building block,
+
+### Individual building block structure
+
+each of the building blocks (incluiding any top-level composite building block) contains the following files:
 
 - `bblock.json`: Contains the metadata for the building block. 
 - `description.md`: Human-readable, Markdown document with the description of this building block.
 - `examples.yaml`: A list of examples for this building block. See [Examples](#examples) below.
 - `schema.yaml`: JSON schema using YAML syntax for this building block, if any. See [JSON schema](#json-schema) below.
 - `schema.json`: equivalent JSON schema using JSON syntax. 
-- `assets/`: Documentation assets (e.g. images) directory. See [Assets](#assets) below.
-- `build/`: the derived "ready-for-use" versions of the building block,
-- `observation/`:  
+
+Note: the top level building block schemas may be generated from the components automatically.
 
 Note: Building Block identifiers are automatically generated in the form:
 
