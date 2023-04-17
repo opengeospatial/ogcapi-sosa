@@ -1,20 +1,32 @@
-# OGC Building Block template
+# OGC Building Blocks for SOSA 
 
-This repository can be used as a template to create new collections of
-[OGC Building Blocks](https://opengeospatial.github.io/bblocks). 
+The SOSA ([Sensor, Observation, Sample, and Actuator](https://www.w3.org/TR/vocab-ssn/)) ontology  is a realisation of the 
+ Observations, Measurements and Sampling (OMS) Conceptual model. This repository defines:
+ *  JSON schema encoding for each feature type (class) defined by SOSA, compatible with the OGC API Features using the FG-JSON extension to GeoJSON
+ * JSON-LD contexts for each class to link schema elements to relevant class and properties defined by SOSA
+ * examples that can be used in documentation
+ * validation resources  for this schema and the JSON-LD RDF binding
 
-## Building block structure
+ This encoding is defined using the [OGC Building Blocks](https://opengeospatial.github.io/bblocks) template, and hence can be combined with other Building Blocks to implement more complete domain models with interoperable encodings and extensible APIs.
 
-- `bblock.json`: Contains the metadata for the building block. Please refer to this
-  [JSON schema](https://github.com/avillar/bblocks/blob/master/metadata-schema.yaml) for more information.
+## Status and Compatibility
+
+This building block is __under construction__ and is undertaken in the context of the update of SOSA to align with OMS V3.
+
+It is assumed that this will be backwards compatible with the last published SOSA version https://www.w3.org/TR/2017/REC-vocab-ssn-20171019/. Any changes to this status will be noted in this section.
+
+## General Building block structure
+
+- `bblock.json`: Contains the metadata for the building block. 
 - `description.md`: Human-readable, Markdown document with the description of this building block.
 - `examples.yaml`: A list of examples for this building block. See [Examples](#examples) below.
-- `schema.yaml`: JSON schema for this building block, if any. See [JSON schema](#json-schema) below.
+- `schema.yaml`: JSON schema using YAML syntax for this building block, if any. See [JSON schema](#json-schema) below.
+- `schema.json`: equivalent JSON schema using JSON syntax. 
 - `assets/`: Documentation assets (e.g. images) directory. See [Assets](#assets) below.
+- `build/`: the derived "ready-for-use" versions of the building block,
+- `observation/`:  
 
-This repository includes a sample building block in the `my-building-block` directory.
-
-Building Block identifiers are automatically generated in the form:
+Note: Building Block identifiers are automatically generated in the form:
 
 ```
 <identifier-prefix><bb-path>
@@ -26,67 +38,18 @@ where:
   but should have an official value eventually (see [How-to](#how-to)).
 - `bb-path` is the dot-separated path to the building block inside the repository.
  
-For example, given a `r1.branch1.` identifier prefix and a `cat1/cat2/my-bb/bblock.json` metadata file,
-the generated identifier would be `r1.branch1.cat1.cat2.my-bb`. This applies to the documentation
-subdirectories as well, after removing the first element (e.g., Markdown documentation will be written to 
-`generateddocs/markdown/branch1/cat1/cat2/my-bb/index.md`).
-
 ### Examples
 
 Each example consists of Markdown `content` and/or a list of `snippets`. `snippets`, in turn,
 have a `language` (for highlighting, language tabs in Slate, etc.) and the `code` itself. 
 
-The `examples.yaml` file in `my-building-block` can be used as a template.
+Each class supported by this building block has an
+`examples.yaml` file.  (`examples.json` may be used as an alternative.)
 
-### JSON schema
-
-The JSON schema for a building block can be linked to a conceptual model by using a root-level `@modelReference`
-property pointing to a JSON-LD context document (relative paths are ok). The Building Blocks Register can 
-then annotate every property inside the JSON schemas with their corresponding RDF predicate automatically.
-
-If a `schema.yaml` file is found, it is not necessary to add the `schema` property to `bblock.json`; it will
-be done automatically on the OGC Building Blocks Register. `ldContext` however, is not auto-generated. 
-
-### Assets
-
-Assets (e.g., images) can be placed in the `assets/` directory for later use in documentation pages,
-by using references to `@@assets@@/filename.ext`.
-
-For example, a `sample.png` image in that directory can be included in the description
-Markdown code of a building block like this:
-
-```markdown
-![This is a sample image](@@assets@@/sample.png)
-```
-
-## How-to
-
-1. Fork (or click on "Use this template" on GitHub) this repository.
-2. For each new building block, replace or create a copy of the `my-building-block`.
-   Note: **the name of the new directory will be part of the building block identifier**.
-3. Update the building [block's files](#building-block-structure).
-4. Replace this README.md file with documentation about the new building block(s).
-5. Contact OGC and request that your new building block(s) be added to the official Register.
-6. Set the `identifier-prefix` provided by OGC in `bblocks-config.yaml`.
-
-Note: building blocks subdirectories can be grouped inside other directories, like so:
-
-```
-type1/
-  bb1-1/
-    bblock.json
-  bb1-2/
-    bblock.json
-type2/
-  subtype2-1/
-    bb2-1-1/
-        bblock.json
-[...]
-```
-
-In that case, `type1`, `type2` and `subtype2-1` will also be part of the building block identifiers.
 
 ## Postprocessing overview
+
+*TBD: this section to be automatically inserted from the template.*
 
 This repository comes with a GitHub workflow that detects, validates and processes its building blocks,
 so that their outputs can be tested before inclusion in the main OGC Register:
