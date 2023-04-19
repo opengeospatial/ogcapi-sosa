@@ -5,7 +5,7 @@
 @prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-bblocks:r1.unstable.sosa._superbblock a bblocks:Api ;
+<http://example.com/ogc/def/bblocks/r1.unstable.sosa.> a bblocks:Api ;
     rdfs:label "Sensor, Observation, Sample, and Actuator (SOSA)" ;
     bblocks:hasSchema <https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/unstable/sosa/_superbblock/schema.yaml> ;
     bblocks:inRegister bblocks:ogc-building-block-register ;
@@ -18,7 +18,7 @@ bblocks:r1.unstable.sosa._superbblock a bblocks:Api ;
     dct:modified "2023-04-13"^^xsd:date ;
     dct:source [ rdfs:label "Semantic Sensor Network Ontology" ;
             rdfs:seeAlso <https://www.w3.org/TR/vocab-ssn/> ] ;
-    rdfs:seeAlso <https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/unstable/sosa/generateddocs/markdown/unstable/sosa/_superbblock/index.md> .
+    rdfs:seeAlso <https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/unstable/sosa/generateddocs/markdown/unstable/sosa/index.md> .
 
 bblocks:r1.unstable.sosa.features.observation a bblocks:Schema ;
     rdfs:label "SOSA Observation" ;
@@ -36,14 +36,14 @@ bblocks:r1.unstable.sosa.features.observation a bblocks:Schema ;
     rdfs:seeAlso <https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/unstable/sosa/generateddocs/markdown/unstable/sosa/features/observation/index.md> .
 
 [] a prov:Activity ;
-    prov:endedAtTime "2023-04-19T10:50:50.458557"^^xsd:dateTime ;
-    prov:startedAtTime "2023-04-19T10:50:50.333969"^^xsd:dateTime ;
+    prov:endedAtTime "2023-04-19T11:45:57.411562"^^xsd:dateTime ;
+    prov:startedAtTime "2023-04-19T11:45:57.286550"^^xsd:dateTime ;
     prov:used [ a prov:Entity ;
-            dct:format "application/yaml" ;
-            rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ],
-        [ a prov:Entity ;
             dct:format "application/json" ;
-            rdfs:seeAlso <file:///github/workspace/build/register.json> ] ;
+            rdfs:seeAlso <file:///github/workspace/build/register.json> ],
+        [ a prov:Entity ;
+            dct:format "application/yaml" ;
+            rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ] ;
     prov:wasAssociatedWith [ a prov:Agent,
                 schema:SoftwareApplication ;
             rdfs:label "OGC-NA tools" ;
