@@ -72,7 +72,7 @@ The outputs can be generated locally by running the following (*Note: Docker mus
 
 ```shell
 # Process building blocks
-docker run --rm --workdir /workspace -v $(pwd):/workspace
+docker run --rm --workdir /workspace -v $(pwd):/workspace ghcr.io/avillar/bblocks-postprocess
 # Optional - build Slate docs
 docker run --rm -v "$(pwd)/generateddocs/slate:/srv/slate/source" \
   -v "$(pwd)/generateddocs/slate-build:/srv/slate/build" slatedocs/slate build

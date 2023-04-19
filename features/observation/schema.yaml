@@ -1,11 +1,10 @@
 "$schema": https://json-schema.org/draft/2020-12/schema
 description: 'SOSA Observation'
-'@modelReference': ../sosa-ssn.jsonld
+x-jsonld-context: ../../sosa-ssn.jsonld
 type: object
 properties:
-  hasResult:
-    type: object
-  hasSimpleResult:
+  hasResult: {}
+  hasSimpleResult: {}
   resultTime:
     type: string
     format: date-time
@@ -33,5 +32,7 @@ required:
   - resultTime
   - hasFeatureOfInterest
 oneOf:
-  - hasResult
-  - hasSimpleResult
+  - required:
+      - hasResult
+  - required:
+      - hasSimpleResult
