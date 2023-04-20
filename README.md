@@ -18,15 +18,31 @@ It is assumed that this will be backwards compatible with the last published SOS
 ## General Building block repository structure
 
 
+The `build/` directory contains the **_reusable assets_** for implementing this building block, in full or part, and the rest of the repository contain *sources* to build these assets.  *Sources* minimise redundant information and preserve original forms of inputs, such as externally published schemas etc.  This allow these to be updated safely, and also allows for alternative forms of original source material to be used whilst preserving uniformity of the reusable assets.
+
+![Usage](usage.png)
+
+
+*  The `build/` directory should never be edited
+*  Only resources in the `build/` directory should be used by applications
+
+### Ready to use components
+
+- `build/`: the available versions of the building block ready for reuse
+
+Note that the these components will be consistently structured for a given type of building block, and the editable components may vary according to the source material used to derive the building block, and therefore cannot be directly referenced.
+
+### Editable components
+
 - `features/`: schemas for the feature types defined by this bb (which is a "super-bb" containing at least oneOf these defined features)
 - `datatypes/`: reusable schemas for (potentially complex) datatypes defined by this bb
 - `aspects/`: groups of properties that may be included in feature types (equivalent to attribute groups in XML schema)
 - `assets/`: Documentation assets (e.g. images) directory. See [Assets](#assets) below.
-- `build/`: the derived "ready-for-use" versions of the building block,
+
 
 ### Individual building block structure
 
-each of the building blocks (incluiding any top-level composite building block) contains the following files:
+After building each of the building blocks (including any top-level composite building block) contains the following files:
 
 - `bblock.json`: Contains the metadata for the building block. 
 - `description.md`: Human-readable, Markdown document with the description of this building block.
@@ -34,9 +50,14 @@ each of the building blocks (incluiding any top-level composite building block) 
 - `schema.yaml`: JSON schema using YAML syntax for this building block, if any. See [JSON schema](#json-schema) below.
 - `schema.json`: equivalent JSON schema using JSON syntax. 
 
+Note: some these files may not be present in the **source* - for example a description could be extracted from the model referenced in the schema or bblock.json metadata.
+
 Note: the top level building block schemas may be generated from the components automatically.
 
-Note: Building Block identifiers are automatically generated in the form:
+
+## Building Block identifiers
+
+These are automatically generated in the form:
 
 ```
 <identifier-prefix><bb-path>
@@ -48,7 +69,7 @@ where:
   but should have an official value eventually (see [How-to](#how-to)).
 - `bb-path` is the dot-separated path to the building block inside the repository.
  
-### Examples
+## Examples
 
 Each example consists of Markdown `content` and/or a list of `snippets`. `snippets`, in turn,
 have a `language` (for highlighting, language tabs in Slate, etc.) and the `code` itself. 
