@@ -85,7 +85,7 @@ Each class supported by this building block has an
 This repository comes with a GitHub workflow that detects, validates and processes its building blocks,
 so that their outputs can be tested before inclusion in the main OGC Register:
 
-![OGC Building Blocks processing](https://raw.githubusercontent.com/avillar/bblocks-postprocess/master/process.png)
+![OGC Building Blocks processing](https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/process.png)
 
 ### Output testing
 
@@ -93,7 +93,7 @@ The outputs can be generated locally by running the following (*Note: Docker mus
 
 ```shell
 # Process building blocks
-docker run --rm --workdir /workspace -v $(pwd):/workspace ghcr.io/avillar/bblocks-postprocess
+docker run --rm --workdir /workspace -v $(pwd):/workspace ghcr.io/opengeospatial/bblocks-postprocess
 # Optional - build Slate docs
 docker run --rm -v "$(pwd)/generateddocs/slate:/srv/slate/source" \
   -v "$(pwd)/generateddocs/slate-build:/srv/slate/build" slatedocs/slate build
