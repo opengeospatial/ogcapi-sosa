@@ -5,9 +5,9 @@
 @prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://example.com/ogc/def/bblocks/r1.unstable.sosa.> a bblocks:Api ;
+bblocks:r1 a bblocks:Api ;
     rdfs:label "Sensor, Observation, Sample, and Actuator (SOSA)" ;
-    bblocks:hasSchema <https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/unstable/sosa/build/annotated/unstable/sosa/unstable/sosa/schema.yaml> ;
+    bblocks:hasSchema <https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/schema.yaml> ;
     bblocks:inRegister bblocks:ogc-building-block-register ;
     bblocks:maturity <http://example.com/ogc/def/bblocks/maturity/mature> ;
     bblocks:scope <http://example.com/ogc/def/bblocks/scope/unstable> ;
@@ -18,11 +18,11 @@
     dct:modified "2023-04-13"^^xsd:date ;
     dct:source [ rdfs:label "Semantic Sensor Network Ontology" ;
             rdfs:seeAlso <https://www.w3.org/TR/vocab-ssn/> ] ;
-    rdfs:seeAlso <https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/unstable/sosa/generateddocs/markdown/unstable/sosa/index.md> .
+    rdfs:seeAlso <https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/generateddocs/markdown/./index.md> .
 
-bblocks:r1.unstable.sosa.features.observation a bblocks:Schema ;
+bblocks:r1.features.observation a bblocks:Schema ;
     rdfs:label "SOSA Observation" ;
-    bblocks:hasSchema <https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/unstable/sosa/_sources/features/observation/schema.yaml> ;
+    bblocks:hasSchema <https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/features/observation/schema.yaml> ;
     bblocks:inRegister bblocks:ogc-building-block-register ;
     bblocks:maturity <http://example.com/ogc/def/bblocks/maturity/mature> ;
     bblocks:scope <http://example.com/ogc/def/bblocks/scope/unstable> ;
@@ -33,17 +33,17 @@ bblocks:r1.unstable.sosa.features.observation a bblocks:Schema ;
     dct:modified "2023-04-13"^^xsd:date ;
     dct:source [ rdfs:label "Semantic Sensor Network Ontology" ;
             rdfs:seeAlso <https://www.w3.org/TR/vocab-ssn/> ] ;
-    rdfs:seeAlso <https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/unstable/sosa/generateddocs/markdown/unstable/sosa/features/observation/index.md> .
+    rdfs:seeAlso <https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/generateddocs/markdown/features/observation/index.md> .
 
 [] a prov:Activity ;
-    prov:endedAtTime "2023-04-26T06:41:14.469283"^^xsd:dateTime ;
-    prov:startedAtTime "2023-04-26T06:41:14.347363"^^xsd:dateTime ;
+    prov:endedAtTime "2023-04-26T07:49:28.306483"^^xsd:dateTime ;
+    prov:startedAtTime "2023-04-26T07:49:28.182937"^^xsd:dateTime ;
     prov:used [ a prov:Entity ;
-            dct:format "application/json" ;
-            rdfs:seeAlso <file:///github/workspace/build/register.json> ],
-        [ a prov:Entity ;
             dct:format "application/yaml" ;
-            rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ] ;
+            rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ],
+        [ a prov:Entity ;
+            dct:format "application/json" ;
+            rdfs:seeAlso <file:///github/workspace/build/register.json> ] ;
     prov:wasAssociatedWith [ a prov:Agent,
                 schema:SoftwareApplication ;
             rdfs:label "OGC-NA tools" ;
