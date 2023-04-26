@@ -55,7 +55,7 @@ _:a1 sosa:hasFeatureOfInterest <http://example.com/fois/1> ;
 
 # Schema
 
-[schema.yaml](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/unstable/sosa/features/observation/schema.yaml)
+[schema.yaml](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/unstable/sosa/_sources/features/observation/schema.yaml)
 # Sources
 
 * [Semantic Sensor Network Ontology](https://www.w3.org/TR/vocab-ssn/)
