@@ -33,28 +33,3 @@ On instance:
                          'quisc': 'nulla Duis do ullamco'},
      'madeBySensor': 'ea est culpa esse',
      'resultTime': '2016-05-04T02:27:02.0Z'}
-=== SHACL ===
-Validation Report
-Conforms: False
-Results (1):
-Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
-	Severity: sh:Violation
-	Source Shape: [ rdf:type sh:NodeShape ; sh:sparql [ sh:message Literal("Missing required hasFeatureOfInterest") ; sh:select Literal("
-        SELECT $this (sosa:hasFeatureOfInterest AS ?path) ?value
-        WHERE {
-            $this sosa:hasSimpleResult|sosa:hasResult ?result .
-            FILTER NOT EXISTS { $this sosa:hasFeatureOfInterest ?foi }
-        }
-    ") ] ; sh:targetSubjectsOf sosa:hasResult, sosa:hasSimpleResult ]
-	Focus Node: [ rdf:type rdfs:Resource ; sosa:hasSimpleResult [ rdf:type rdfs:Resource ] ; sosa:madeBySensor Literal("ea est culpa esse") ; sosa:resultTime Literal("2016-05-04T02:27:02.0Z") ]
-	Value Node: [ rdf:type rdfs:Resource ; sosa:hasSimpleResult [ rdf:type rdfs:Resource ] ; sosa:madeBySensor Literal("ea est culpa esse") ; sosa:resultTime Literal("2016-05-04T02:27:02.0Z") ]
-	Result Path: sosa:hasFeatureOfInterest
-	Source Constraint: [ sh:message Literal("Missing required hasFeatureOfInterest") ; sh:select Literal("
-        SELECT $this (sosa:hasFeatureOfInterest AS ?path) ?value
-        WHERE {
-            $this sosa:hasSimpleResult|sosa:hasResult ?result .
-            FILTER NOT EXISTS { $this sosa:hasFeatureOfInterest ?foi }
-        }
-    ") ]
-	Message: Missing required hasFeatureOfInterest
-
