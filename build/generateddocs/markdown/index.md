@@ -181,7 +181,7 @@ oneOf:
       - description: Sensor, Observation, Sample, and Actuator (SOSA)
         oneOf:
         - description: SOSA Observation
-          x-jsonld-context: ../../sosa-ssn.jsonld
+          x-jsonld-context: ../../../sosa-ssn.jsonld
           type: object
           properties:
             hasResult: {}
@@ -217,6 +217,45 @@ oneOf:
             - hasResult
           - required:
             - hasSimpleResult
+        - description: Sensor, Observation, Sample, and Actuator (SOSA)
+          oneOf:
+          - description: SOSA Observation
+            x-jsonld-context: ../../sosa-ssn.jsonld
+            type: object
+            properties:
+              hasResult: {}
+              hasSimpleResult: {}
+              resultTime:
+                type: string
+                format: date-time
+              phenomenonTime:
+                type:
+                - object
+                - string
+              hasFeatureOfInterest:
+                type:
+                - object
+                - string
+              observedProperty:
+                type:
+                - object
+                - string
+              usedProcedure:
+                type:
+                - object
+                - string
+              madeBySensor:
+                type:
+                - object
+                - string
+            required:
+            - resultTime
+            - hasFeatureOfInterest
+            oneOf:
+            - required:
+              - hasResult
+            - required:
+              - hasSimpleResult
 
 ```
 ## Sources
