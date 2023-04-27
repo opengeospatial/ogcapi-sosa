@@ -1,0 +1,60 @@
+=== JSON Schema ===
+'hasFeatureOfInterest' is a required property
+
+Failed validating 'required' in schema:
+    {'$schema': 'https://json-schema.org/draft/2020-12/schema',
+     'description': 'SOSA Observation',
+     'oneOf': [{'required': ['hasResult']},
+               {'required': ['hasSimpleResult']}],
+     'properties': {'hasFeatureOfInterest': {'type': ['object', 'string']},
+                    'hasResult': {},
+                    'hasSimpleResult': {},
+                    'madeBySensor': {'type': ['object', 'string']},
+                    'observedProperty': {'type': ['object', 'string']},
+                    'phenomenonTime': {'type': ['object', 'string']},
+                    'resultTime': {'format': 'date-time', 'type': 'string'},
+                    'usedProcedure': {'type': ['object', 'string']}},
+     'required': ['resultTime', 'hasFeatureOfInterest'],
+     'type': 'object',
+     'x-jsonld-context': '../../../sosa-ssn.jsonld'}
+
+On instance:
+    {'@context': {'hasFeatureOfInterest': 'http://www.w3.org/ns/sosa/hasFeatureOfInterest',
+                  'hasResult': 'http://www.w3.org/ns/sosa/hasResult',
+                  'hasSimpleResult': 'http://www.w3.org/ns/sosa/hasSimpleResult',
+                  'madeBySensor': 'http://www.w3.org/ns/sosa/madeBySensor',
+                  'observedProperty': 'http://www.w3.org/ns/sosa/observedProperty',
+                  'phenomenonTime': 'http://www.w3.org/ns/sosa/phenomenonTime',
+                  'resultTime': 'http://www.w3.org/ns/sosa/resultTime',
+                  'usedProcedure': 'http://www.w3.org/ns/sosa/usedProcedure'},
+     'hasFeatureOfInterests': {'aliqua_a': False},
+     'hasSimpleResult': {'irure31': -8150858,
+                         'quis70f': False,
+                         'quisc': 'nulla Duis do ullamco'},
+     'madeBySensor': 'ea est culpa esse',
+     'resultTime': '2016-05-04T02:27:02.0Z'}
+=== SHACL ===
+Validation Report
+Conforms: False
+Results (1):
+Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ rdf:type sh:NodeShape ; sh:sparql [ sh:message Literal("Missing required hasFeatureOfInterest") ; sh:select Literal("
+        SELECT $this (sosa:hasFeatureOfInterest AS ?path) ?value
+        WHERE {
+            $this sosa:hasSimpleResult|sosa:hasResult ?result .
+            FILTER NOT EXISTS { $this sosa:hasFeatureOfInterest ?foi }
+        }
+    ") ] ; sh:targetSubjectsOf sosa:hasResult, sosa:hasSimpleResult ]
+	Focus Node: [ rdf:type rdfs:Resource ; sosa:hasSimpleResult [ rdf:type rdfs:Resource ] ; sosa:madeBySensor Literal("ea est culpa esse") ; sosa:resultTime Literal("2016-05-04T02:27:02.0Z") ]
+	Value Node: [ rdf:type rdfs:Resource ; sosa:hasSimpleResult [ rdf:type rdfs:Resource ] ; sosa:madeBySensor Literal("ea est culpa esse") ; sosa:resultTime Literal("2016-05-04T02:27:02.0Z") ]
+	Result Path: sosa:hasFeatureOfInterest
+	Source Constraint: [ sh:message Literal("Missing required hasFeatureOfInterest") ; sh:select Literal("
+        SELECT $this (sosa:hasFeatureOfInterest AS ?path) ?value
+        WHERE {
+            $this sosa:hasSimpleResult|sosa:hasResult ?result .
+            FILTER NOT EXISTS { $this sosa:hasFeatureOfInterest ?foi }
+        }
+    ") ]
+	Message: Missing required hasFeatureOfInterest
+
