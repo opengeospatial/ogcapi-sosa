@@ -1,0 +1,15 @@
+"$schema": https://json-schema.org/draft/2020-12/schema
+description: 'SOSA ObservationCollection'
+x-jsonld-context: ../../sosa-ssn.jsonld
+type: object
+properties:
+  - $ref ../observation/schema
+oneOf:
+  - resultTime
+  - phenomenonTime
+  - hasFeatureOfInterest
+  - observedProperty
+  - usedProcedure
+not:
+  - hasResult
+  - hasSimpleResult
