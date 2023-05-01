@@ -1,15 +1,24 @@
 "$schema": https://json-schema.org/draft/2020-12/schema
 description: 'SOSA ObservationCollection'
-x-jsonld-context: ../../sosa-ssn.jsonld
+x-jsonld-context: ../../../sosa-ssn.jsonld
 type: object
 properties:
-  - $ref ../observation/schema
-oneOf:
-  - resultTime
-  - phenomenonTime
-  - hasFeatureOfInterest
-  - observedProperty
-  - usedProcedure
+  observations:
+    $ref: ../observation/schema.yaml
+anyOf:
+  - required:
+    - resultTime
+  - required:
+    - phenomenonTime
+  - required:
+    - hasFeatureOfInterest
+  - required:
+    - observedProperty
+  - required:
+    - usedProcedure
 not:
-  - hasResult
-  - hasSimpleResult
+  anyOf:
+    - required:
+        - hasResult
+    - required:
+        - hasSimpleResult
