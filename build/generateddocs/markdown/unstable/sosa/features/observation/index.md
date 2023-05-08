@@ -42,7 +42,7 @@ _:a1 a sosa:Observation ;
 
 ## Schema
 
-[schema.yaml](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/unstable/sosa/_sources/features/observation/schema.yaml)
+[schema.yaml](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/_sources/features/observation/schema.yaml)
 
 ```yaml
 "$schema": https://json-schema.org/draft/2020-12/schema

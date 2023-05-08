@@ -18,7 +18,7 @@ TBD: Convenience API paths may be defined to support traversal of relationships 
 
 ## Schema
 
-[schema.yaml](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/unstable/sosa/_sources/schema.yaml)
+[schema.yaml](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/_sources/schema.yaml)
 
 ```yaml
 $schema: https://json-schema.org/draft/2020-12/schema

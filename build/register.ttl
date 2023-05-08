@@ -7,8 +7,9 @@
 
 bblocks:r1.unstable.sosa a bblocks:Api ;
     rdfs:label "Sensor, Observation, Sample, and Actuator (SOSA)" ;
-    bblocks:hasSchema <https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/unstable/sosa/build/annotated/unstable/sosa/schema.json>,
-        <https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/unstable/sosa/build/annotated/unstable/sosa/schema.yaml> ;
+    bblocks:hasJsonLdContext <https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/context.jsonld> ;
+    bblocks:hasSchema <https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/schema.json>,
+        <https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/schema.yaml> ;
     bblocks:inRegister bblocks:ogc-building-block-register ;
     bblocks:maturity <http://example.com/ogc/def/bblocks/maturity/mature> ;
     bblocks:scope <http://example.com/ogc/def/bblocks/scope/unstable> ;
@@ -19,12 +20,13 @@ bblocks:r1.unstable.sosa a bblocks:Api ;
     dct:modified "2023-04-13"^^xsd:date ;
     dct:source [ rdfs:label "Semantic Sensor Network Ontology" ;
             rdfs:seeAlso <https://www.w3.org/TR/vocab-ssn/> ] ;
-    rdfs:seeAlso <https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/unstable/sosa/generateddocs/markdown/unstable/sosa/index.md> .
+    rdfs:seeAlso <https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/generateddocs/markdown/unstable/sosa/index.md> .
 
 bblocks:r1.unstable.sosa.features.observation a bblocks:Schema ;
     rdfs:label "SOSA Observation" ;
-    bblocks:hasSchema <https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/unstable/sosa/build/annotated/unstable/sosa/features/observation/schema.json>,
-        <https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/unstable/sosa/build/annotated/unstable/sosa/features/observation/schema.yaml> ;
+    bblocks:hasJsonLdContext <https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observation/context.jsonld> ;
+    bblocks:hasSchema <https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observation/schema.json>,
+        <https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observation/schema.yaml> ;
     bblocks:inRegister bblocks:ogc-building-block-register ;
     bblocks:maturity <http://example.com/ogc/def/bblocks/maturity/mature> ;
     bblocks:scope <http://example.com/ogc/def/bblocks/scope/unstable> ;
@@ -35,12 +37,13 @@ bblocks:r1.unstable.sosa.features.observation a bblocks:Schema ;
     dct:modified "2023-04-13"^^xsd:date ;
     dct:source [ rdfs:label "Semantic Sensor Network Ontology" ;
             rdfs:seeAlso <https://www.w3.org/TR/vocab-ssn/> ] ;
-    rdfs:seeAlso <https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/unstable/sosa/generateddocs/markdown/unstable/sosa/features/observation/index.md> .
+    rdfs:seeAlso <https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/generateddocs/markdown/unstable/sosa/features/observation/index.md> .
 
 bblocks:r1.unstable.sosa.features.observationCollection a bblocks:Schema ;
     rdfs:label "SOSA ObservationCollection" ;
-    bblocks:hasSchema <https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/unstable/sosa/build/annotated/unstable/sosa/features/observationCollection/schema.json>,
-        <https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/unstable/sosa/build/annotated/unstable/sosa/features/observationCollection/schema.yaml> ;
+    bblocks:hasJsonLdContext <https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observationCollection/context.jsonld> ;
+    bblocks:hasSchema <https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observationCollection/schema.json>,
+        <https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observationCollection/schema.yaml> ;
     bblocks:inRegister bblocks:ogc-building-block-register ;
     bblocks:maturity <http://example.com/ogc/def/bblocks/maturity/development> ;
     bblocks:scope <http://example.com/ogc/def/bblocks/scope/unstable> ;
@@ -49,21 +52,21 @@ bblocks:r1.unstable.sosa.features.observationCollection a bblocks:Schema ;
     dct:description "This building blocks defines an ObservationCollection according to the SOSA/SSN v1.1 specification." ;
     dct:hasVersion "1.0" ;
     dct:modified "2023-04-28"^^xsd:date ;
-    dct:source [ rdfs:label "Semantic Sensor Network Ontology" ;
-            rdfs:seeAlso <https://www.w3.org/TR/vocab-ssn/> ],
-        [ rdfs:label "Extensions to the Semantic Sensor Network Ontology" ;
-            rdfs:seeAlso <https://www.w3.org/TR/vocab-ssn-ext/> ] ;
-    rdfs:seeAlso <https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/unstable/sosa/generateddocs/markdown/unstable/sosa/features/observationCollection/index.md> .
+    dct:source [ rdfs:label "Extensions to the Semantic Sensor Network Ontology" ;
+            rdfs:seeAlso <https://www.w3.org/TR/vocab-ssn-ext/> ],
+        [ rdfs:label "Semantic Sensor Network Ontology" ;
+            rdfs:seeAlso <https://www.w3.org/TR/vocab-ssn/> ] ;
+    rdfs:seeAlso <https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/generateddocs/markdown/unstable/sosa/features/observationCollection/index.md> .
 
 [] a prov:Activity ;
-    prov:endedAtTime "2023-05-04T13:20:12.368922"^^xsd:dateTime ;
-    prov:startedAtTime "2023-05-04T13:20:12.198391"^^xsd:dateTime ;
+    prov:endedAtTime "2023-05-08T09:40:58.551362"^^xsd:dateTime ;
+    prov:startedAtTime "2023-05-08T09:40:58.391356"^^xsd:dateTime ;
     prov:used [ a prov:Entity ;
-            dct:format "application/yaml" ;
-            rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ],
-        [ a prov:Entity ;
             dct:format "application/json" ;
-            rdfs:seeAlso <file:///github/workspace/build/register.json> ] ;
+            rdfs:seeAlso <file:///github/workspace/build/register.json> ],
+        [ a prov:Entity ;
+            dct:format "application/yaml" ;
+            rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ] ;
     prov:wasAssociatedWith [ a prov:Agent,
                 schema:SoftwareApplication ;
             rdfs:label "OGC-NA tools" ;
