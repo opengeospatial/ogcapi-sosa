@@ -17,7 +17,7 @@ Collection of one or more observations, whose members share a common value for o
 #### json
 ```json
 { 
-  "@id": "_:c1",
+  "@id": "c1",
   "type": "Feature",
   "featureType": "sosa:ObservationCollection",
   "properties": {
@@ -31,15 +31,15 @@ Collection of one or more observations, whose members share a common value for o
 #### json
 ```json
 { 
-  "@id": "_:c1",
+  "@id": "c1",
   "type": "Feature",
   "featureType": "sosa:ObservationCollection",
   "properties": {
-    "observedProperty": "_:p1",
+    "observedProperty": "p1",
     "resultTime": "2022-05-01T22:33:44Z",
     "hasMember": [
       { 
-        "@id": "_:a1",
+        "@id": "a1",
         "comment": "Example of an inline membership - would entail hasMember relations",
         "hasFeatureOfInterest": "http://example.com/fois/1",
       }
@@ -52,18 +52,20 @@ Collection of one or more observations, whose members share a common value for o
 ```ttl
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-_:c1 a sosa:ObservationCollection ;
-  sosa:hasMember _:a1 ;
-  sosa:observedProperty _:p1 ;
+@prefix eg: <http://example.org/my-feature/> .
+
+eg:c1 a sosa:ObservationCollection ;
+  sosa:hasMember eg:a1 ;
+  sosa:observedProperty eg:p1 ;
   sosa:resultTime "2022-05-01T22:33:44Z"^^xsd:dateTime ;
 .
 
-_:a1 a sosa:Observation ;
+eg:a1 a sosa:Observation ;
   sosa:hasFeatureOfInterest <http://example.com/fois/1> ;
   sosa:hasSimpleResult 33 ;
 .
-_:p1 a skos:Concept;
-  skos:prefLabel "Some Property";
+eg:p1 a skos:Concept;
+  skos:prefLabel "Some Observable Property";
 .
 ```
 
