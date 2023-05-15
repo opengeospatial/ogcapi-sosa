@@ -19,13 +19,15 @@ to detail what that property was associated with."
 ### Example of SOSA observation
 #### json
 ```json
-{
+{ 
+  "@id": "_:a1",
   "type": "Feature",
   "featureType": "sosa:Observation",
   "properties": {
     "hasFeatureOfInterest": "http://example.com/fois/1",
     "hasSimpleResult": 33,
     "resultTime": "2022-05-01T22:33:44Z"
+    }
 }
 ```
 

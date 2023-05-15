@@ -1,375 +1,190 @@
-[
-  {
-    "@type": [
-      "http://example.com/ogc/def/bblocks/Api"
-    ],
-    "http://purl.org/dc/terms/description": [
-      {
-        "@value": "The SOSA (Sensor, Observation, Sample, and Actuator) ontology  is a realisation of the Observations, Measurements and Sampling (OMS) Conceptual model"
+{
+  "@context": {
+    "bblocks": "http://example.com/ogc/def/bblocks/",
+    "@base": "http://example.com/ogc/def/bblocks/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "dct": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "itemIdentifier": "@id",
+    "name": "rdfs:label",
+    "abstract": "dct:description",
+    "register": {
+      "@id": "bblocks:inRegister",
+      "@type": "@id",
+      "@context": {
+        "@base": "http://example.com/ogc/def/bblocks/"
       }
-    ],
-    "http://purl.org/dc/terms/modified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2023-04-13"
+    },
+    "status": {
+      "@id": "bblocks:status",
+      "@type": "@id",
+      "@context": {
+        "@base": "http://www.opengis.net/def/status/"
       }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2023-04-13T00:00:00Z"
+    },
+    "dateTimeAddition": {
+      "@id": "dct:created",
+      "@type": "xsd:dateTime"
+    },
+    "version": "dct:hasVersion",
+    "dateOfLastChange": {
+      "@id": "dct:modified",
+      "@type": "xsd:date"
+    },
+    "maturity": {
+      "@id": "bblocks:maturity",
+      "@type": "@id",
+      "@context": {
+        "@base": "http://example.com/ogc/def/bblocks/maturity/"
       }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
-      {
-        "@id": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/markdown/unstable/sosa/index.md"
+    },
+    "scope": {
+      "@id": "bblocks:scope",
+      "@type": "@id",
+      "@context": {
+        "@base": "http://example.com/ogc/def/bblocks/scope/"
       }
-    ],
-    "@id": "http://example.com/ogc/def/bblocks/r1.unstable.sosa",
-    "http://example.com/ogc/def/bblocks/hasJsonLdContext": [
-      {
-        "@id": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/context.jsonld"
+    },
+    "sources": {
+      "@id": "dct:source",
+      "@context": {
+        "title": "rdfs:label",
+        "link": {
+          "@id": "rdfs:seeAlso",
+          "@type": "@id"
+        }
       }
-    ],
-    "http://example.com/ogc/def/bblocks/maturity": [
-      {
-        "@id": "http://example.com/ogc/def/bblocks/maturity/mature"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "Sensor, Observation, Sample, and Actuator (SOSA)"
-      }
-    ],
-    "http://example.com/ogc/def/bblocks/inRegister": [
-      {
-        "@id": "http://example.com/ogc/def/bblocks/ogc-building-block-register"
-      }
-    ],
-    "http://example.com/ogc/def/bblocks/hasSchema": [
-      {
-        "@id": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/schema.yaml"
-      },
-      {
-        "@id": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/schema.json"
-      }
-    ],
-    "http://example.com/ogc/def/bblocks/scope": [
-      {
-        "@id": "http://example.com/ogc/def/bblocks/scope/unstable"
-      }
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
-          {
-            "@id": "https://www.w3.org/TR/vocab-ssn/"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "Semantic Sensor Network Ontology"
-          }
-        ]
-      }
-    ],
-    "http://example.com/ogc/def/bblocks/status": [
-      {
-        "@id": "http://www.opengis.net/def/status/valid"
-      }
-    ],
-    "http://purl.org/dc/terms/hasVersion": [
-      {
-        "@value": "1.0"
-      }
-    ]
+    },
+    "link": {
+      "@id": "rdfs:seeAlso",
+      "@type": "@id"
+    },
+    "schema": {
+      "@id": "bblocks:hasSchema",
+      "@type": "@id"
+    },
+    "ldContext": {
+      "@id": "bblocks:hasJsonLdContext",
+      "@type": "@id"
+    },
+    "documentation": {
+      "@id": "rdfs:seeAlso",
+      "@type": "@id"
+    }
   },
-  {
-    "@type": [
-      "http://example.com/ogc/def/bblocks/Schema"
-    ],
-    "http://purl.org/dc/terms/description": [
-      {
-        "@value": "This building blocks defines an observation according to the SOSA/SSN specification."
-      }
-    ],
-    "http://purl.org/dc/terms/modified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2023-04-13"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2023-04-13T00:00:00Z"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
-      {
-        "@id": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/markdown/unstable/sosa/features/observation/index.md"
-      }
-    ],
-    "@id": "http://example.com/ogc/def/bblocks/r1.unstable.sosa.features.observation",
-    "http://example.com/ogc/def/bblocks/hasJsonLdContext": [
-      {
-        "@id": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observation/context.jsonld"
-      }
-    ],
-    "http://example.com/ogc/def/bblocks/maturity": [
-      {
-        "@id": "http://example.com/ogc/def/bblocks/maturity/mature"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "SOSA Observation"
-      }
-    ],
-    "http://example.com/ogc/def/bblocks/inRegister": [
-      {
-        "@id": "http://example.com/ogc/def/bblocks/ogc-building-block-register"
-      }
-    ],
-    "http://example.com/ogc/def/bblocks/hasSchema": [
-      {
-        "@id": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observation/schema.yaml"
-      },
-      {
-        "@id": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observation/schema.json"
-      }
-    ],
-    "http://example.com/ogc/def/bblocks/scope": [
-      {
-        "@id": "http://example.com/ogc/def/bblocks/scope/unstable"
-      }
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
-          {
-            "@id": "https://www.w3.org/TR/vocab-ssn/"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "Semantic Sensor Network Ontology"
-          }
-        ]
-      }
-    ],
-    "http://example.com/ogc/def/bblocks/status": [
-      {
-        "@id": "http://www.opengis.net/def/status/valid"
-      }
-    ],
-    "http://purl.org/dc/terms/hasVersion": [
-      {
-        "@value": "1.0"
-      }
-    ]
-  },
-  {
-    "@type": [
-      "http://example.com/ogc/def/bblocks/Schema"
-    ],
-    "http://purl.org/dc/terms/description": [
-      {
-        "@value": "This building blocks defines an ObservationCollection according to the SOSA/SSN v1.1 specification."
-      }
-    ],
-    "http://purl.org/dc/terms/modified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2023-04-28"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2023-04-13T00:00:00Z"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
-      {
-        "@id": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/markdown/unstable/sosa/features/observationCollection/index.md"
-      }
-    ],
-    "@id": "http://example.com/ogc/def/bblocks/r1.unstable.sosa.features.observationCollection",
-    "http://example.com/ogc/def/bblocks/hasJsonLdContext": [
-      {
-        "@id": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observationCollection/context.jsonld"
-      }
-    ],
-    "http://example.com/ogc/def/bblocks/maturity": [
-      {
-        "@id": "http://example.com/ogc/def/bblocks/maturity/development"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "SOSA ObservationCollection"
-      }
-    ],
-    "http://example.com/ogc/def/bblocks/inRegister": [
-      {
-        "@id": "http://example.com/ogc/def/bblocks/ogc-building-block-register"
-      }
-    ],
-    "http://example.com/ogc/def/bblocks/hasSchema": [
-      {
-        "@id": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observationCollection/schema.yaml"
-      },
-      {
-        "@id": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observationCollection/schema.json"
-      }
-    ],
-    "http://example.com/ogc/def/bblocks/scope": [
-      {
-        "@id": "http://example.com/ogc/def/bblocks/scope/unstable"
-      }
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
-          {
-            "@id": "https://www.w3.org/TR/vocab-ssn/"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "Semantic Sensor Network Ontology"
-          }
-        ]
-      },
-      {
-        "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
-          {
-            "@id": "https://www.w3.org/TR/vocab-ssn-ext/"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "Extensions to the Semantic Sensor Network Ontology"
-          }
-        ]
-      }
-    ],
-    "http://example.com/ogc/def/bblocks/status": [
-      {
-        "@id": "http://www.opengis.net/def/status/experimental"
-      }
-    ],
-    "http://purl.org/dc/terms/hasVersion": [
-      {
-        "@value": "1.0"
-      }
-    ]
-  },
-  {
-    "@id": "file:///github/workspace/build/register.jsonld",
-    "@type": [
-      "http://www.w3.org/ns/prov#Entity"
-    ],
-    "http://purl.org/dc/terms/format": [
-      {
-        "@value": "application/ld+json"
-      }
-    ],
-    "http://www.w3.org/ns/prov#wasAttributedTo": [
-      {
-        "@id": "_:N22e952e78e3d457a9f40cc848e5024f4"
-      }
-    ],
-    "http://www.w3.org/ns/prov#wasGeneratedBy": [
-      {
-        "@id": "_:Nacc08b48fa094d84aef99b8e49a02ebb"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nacc08b48fa094d84aef99b8e49a02ebb",
-    "@type": [
-      "http://www.w3.org/ns/prov#Activity"
-    ],
-    "http://www.w3.org/ns/prov#endedAtTime": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2023-05-08T09:49:45.272385"
-      }
-    ],
-    "http://www.w3.org/ns/prov#startedAtTime": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2023-05-08T09:49:45.103487"
-      }
-    ],
-    "http://www.w3.org/ns/prov#used": [
-      {
-        "@id": "_:N2559b4097c6946db8c83bfbad562efd8"
-      },
-      {
-        "@id": "_:N7e650057d7834db6b68db61735f2574f"
-      }
-    ],
-    "http://www.w3.org/ns/prov#wasAssociatedWith": [
-      {
-        "@id": "_:N22e952e78e3d457a9f40cc848e5024f4"
-      }
-    ]
-  },
-  {
-    "@id": "_:N2559b4097c6946db8c83bfbad562efd8",
-    "@type": [
-      "http://www.w3.org/ns/prov#Entity"
-    ],
-    "http://purl.org/dc/terms/format": [
-      {
-        "@value": "application/json"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
-      {
-        "@id": "file:///github/workspace/build/register.json"
-      }
-    ]
-  },
-  {
-    "@id": "_:N7e650057d7834db6b68db61735f2574f",
-    "@type": [
-      "http://www.w3.org/ns/prov#Entity"
-    ],
-    "http://purl.org/dc/terms/format": [
-      {
-        "@value": "application/yaml"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
-      {
-        "@id": "file:///src/ogc/bblocks/register-context.yaml"
-      }
-    ]
-  },
-  {
-    "@id": "_:N22e952e78e3d457a9f40cc848e5024f4",
-    "@type": [
-      "http://www.w3.org/ns/prov#Agent",
-      "https://schema.org/SoftwareApplication"
-    ],
-    "http://purl.org/dc/terms/hasVersion": [
-      {
-        "@value": "0.0.0"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "OGC-NA tools"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
-      {
-        "@id": "https://github.com/opengeospatial/ogc-na-tools"
-      }
-    ]
-  }
-]
+  "@graph": [
+    {
+      "name": "Sensor, Observation, Sample, and Actuator (SOSA)",
+      "abstract": "The SOSA (Sensor, Observation, Sample, and Actuator) ontology  is a realisation of the Observations, Measurements and Sampling (OMS) Conceptual model",
+      "status": "valid",
+      "dateTimeAddition": "2023-04-13T00:00:00Z",
+      "itemClass": "api",
+      "register": "ogc-building-block-register",
+      "version": "1.0",
+      "dateOfLastChange": "2023-04-13",
+      "sources": [
+        {
+          "title": "Semantic Sensor Network Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn/"
+        }
+      ],
+      "maturity": "mature",
+      "scope": "unstable",
+      "tags": [
+        "sosa",
+        "ssn",
+        "o&m",
+        "o&m&s"
+      ],
+      "superBBlock": true,
+      "itemIdentifier": "r1.unstable.sosa",
+      "schema": [
+        "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/schema.yaml",
+        "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/schema.json"
+      ],
+      "ldContext": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/context.jsonld",
+      "sourceFiles": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/_sources/",
+      "documentation": [
+        "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/markdown/unstable/sosa/index.md"
+      ],
+      "@type": "bblocks:Api"
+    },
+    {
+      "name": "SOSA Observation",
+      "abstract": "This building blocks defines an observation according to the SOSA/SSN specification.",
+      "status": "valid",
+      "dateTimeAddition": "2023-04-13T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-building-block-register",
+      "version": "1.0",
+      "dateOfLastChange": "2023-04-13",
+      "sources": [
+        {
+          "title": "Semantic Sensor Network Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn/"
+        }
+      ],
+      "maturity": "mature",
+      "scope": "unstable",
+      "tags": [
+        "sosa",
+        "ssn",
+        "observations",
+        "o&m",
+        "o&m&s"
+      ],
+      "itemIdentifier": "r1.unstable.sosa.features.observation",
+      "schema": [
+        "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observation/schema.yaml",
+        "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observation/schema.json"
+      ],
+      "ldContext": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observation/context.jsonld",
+      "sourceFiles": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/_sources/features/observation/",
+      "documentation": [
+        "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/markdown/unstable/sosa/features/observation/index.md"
+      ],
+      "@type": "bblocks:Schema"
+    },
+    {
+      "name": "SOSA ObservationCollection",
+      "abstract": "This building blocks defines an ObservationCollection according to the SOSA/SSN v1.1 specification.",
+      "status": "experimental",
+      "dateTimeAddition": "2023-04-13T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-building-block-register",
+      "version": "1.0",
+      "dateOfLastChange": "2023-04-28",
+      "sources": [
+        {
+          "title": "Semantic Sensor Network Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn/"
+        },
+        {
+          "title": "Extensions to the Semantic Sensor Network Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn-ext/"
+        }
+      ],
+      "maturity": "development",
+      "scope": "unstable",
+      "tags": [
+        "sosa",
+        "ssn",
+        "observations",
+        "o&m",
+        "o&m&s"
+      ],
+      "itemIdentifier": "r1.unstable.sosa.features.observationCollection",
+      "schema": [
+        "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observationCollection/schema.yaml",
+        "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observationCollection/schema.json"
+      ],
+      "ldContext": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observationCollection/context.jsonld",
+      "sourceFiles": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/_sources/features/observationCollection/",
+      "documentation": [
+        "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/markdown/unstable/sosa/features/observationCollection/index.md"
+      ],
+      "@type": "bblocks:Schema"
+    }
+  ]
+}
