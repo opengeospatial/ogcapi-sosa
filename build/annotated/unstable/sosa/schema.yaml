@@ -22,6 +22,7 @@ oneOf:
       - object
       - string
       x-jsonld-id: http://www.w3.org/ns/sosa/hasFeatureOfInterest
+      x-jsonld-type: '@id'
     observedProperty:
       type:
       - object
@@ -32,11 +33,13 @@ oneOf:
       - object
       - string
       x-jsonld-id: http://www.w3.org/ns/sosa/usedProcedure
+      x-jsonld-type: '@id'
     madeBySensor:
       type:
       - object
       - string
       x-jsonld-id: http://www.w3.org/ns/sosa/madeBySensor
+      x-jsonld-type: '@id'
   required:
   - resultTime
   - hasFeatureOfInterest
@@ -45,3 +48,33 @@ oneOf:
     - hasResult
   - required:
     - hasSimpleResult
+  x-jsonld-prefixes:
+    sosa: http://www.w3.org/ns/sosa/
+    ssn: http://www.w3.org/ns/ssn/
+    ssn-system: http://www.w3.org/ns/ssn/systems/
+- description: SOSA ObservationCollection
+  type: object
+  properties:
+    observations:
+      $ref: ../observation/schema.yaml
+  anyOf:
+  - required:
+    - resultTime
+  - required:
+    - phenomenonTime
+  - required:
+    - hasFeatureOfInterest
+  - required:
+    - observedProperty
+  - required:
+    - usedProcedure
+  not:
+    anyOf:
+    - required:
+      - hasResult
+    - required:
+      - hasSimpleResult
+  x-jsonld-prefixes:
+    sosa: http://www.w3.org/ns/sosa/
+    ssn: http://www.w3.org/ns/ssn/
+    ssn-system: http://www.w3.org/ns/ssn/systems/

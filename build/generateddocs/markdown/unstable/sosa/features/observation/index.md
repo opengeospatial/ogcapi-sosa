@@ -20,9 +20,12 @@ to detail what that property was associated with."
 #### json
 ```json
 {
-  "hasFeatureOfInterest": "http://example.com/fois/1",
-  "hasSimpleResult": 33,
-  "resultTime": "2022-05-01T22:33:44Z"
+  "type": "Feature",
+  "featureType": "sosa:Observation",
+  "properties": {
+    "hasFeatureOfInterest": "http://example.com/fois/1",
+    "hasSimpleResult": 33,
+    "resultTime": "2022-05-01T22:33:44Z"
 }
 ```
 
@@ -30,7 +33,8 @@ to detail what that property was associated with."
 ```ttl
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-_:a1 sosa:hasFeatureOfInterest <http://example.com/fois/1> ;
+_:a1 a sosa:Observation ;
+  sosa:hasFeatureOfInterest <http://example.com/fois/1> ;
   sosa:hasSimpleResult 33 ;
   sosa:resultTime "2022-05-01T22:33:44Z"^^xsd:dateTime ;
 .

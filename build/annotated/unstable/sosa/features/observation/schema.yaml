@@ -20,6 +20,7 @@ properties:
     - object
     - string
     x-jsonld-id: http://www.w3.org/ns/sosa/hasFeatureOfInterest
+    x-jsonld-type: '@id'
   observedProperty:
     type:
     - object
@@ -30,11 +31,13 @@ properties:
     - object
     - string
     x-jsonld-id: http://www.w3.org/ns/sosa/usedProcedure
+    x-jsonld-type: '@id'
   madeBySensor:
     type:
     - object
     - string
     x-jsonld-id: http://www.w3.org/ns/sosa/madeBySensor
+    x-jsonld-type: '@id'
 required:
 - resultTime
 - hasFeatureOfInterest
@@ -43,3 +46,7 @@ oneOf:
   - hasResult
 - required:
   - hasSimpleResult
+x-jsonld-prefixes:
+  sosa: http://www.w3.org/ns/sosa/
+  ssn: http://www.w3.org/ns/ssn/
+  ssn-system: http://www.w3.org/ns/ssn/systems/
