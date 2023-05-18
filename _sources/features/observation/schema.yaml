@@ -1,38 +1,7 @@
 "$schema": https://json-schema.org/draft/2020-12/schema
-description: 'SOSA Observation'
+description: 'SOSA Observation Feature'
 x-jsonld-context: ../../../sosa-ssn.jsonld
 type: object
-properties:
-  hasResult: {}
-  hasSimpleResult: {}
-  resultTime:
-    type: string
-    format: date-time
-  phenomenonTime:
-    type:
-      - object
-      - string
-  hasFeatureOfInterest:
-    type:
-      - object
-      - string
-  observedProperty:
-    type:
-      - object
-      - string
-  usedProcedure:
-    type:
-      - object
-      - string
-  madeBySensor:
-    type:
-      - object
-      - string
-required:
-  - resultTime
-  - hasFeatureOfInterest
-oneOf:
-  - required:
-      - hasResult
-  - required:
-      - hasSimpleResult
+allOf:
+  - $ref: bblocks://r1.geo.features.feature
+  - $ref: ../../properties/observation/schema.yaml
