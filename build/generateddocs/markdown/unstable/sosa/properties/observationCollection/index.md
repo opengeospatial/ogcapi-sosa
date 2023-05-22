@@ -71,33 +71,36 @@ eg:p1 a skos:Concept;
 
 ## Schema
 
-[schema.yaml](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/_sources/properties/observationCollection/schema.yaml)
+[schema.yaml](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/properties/observationCollection/schema.yaml)
 
 ```yaml
-"$schema": https://json-schema.org/draft/2020-12/schema
-description: 'SOSA ObservationCollection'
-x-jsonld-context: ../../../sosa-ssn.jsonld
+$schema: https://json-schema.org/draft/2020-12/schema
+description: SOSA ObservationCollection
 type: object
 properties:
   observations:
     $ref: ../observation/schema.yaml
 anyOf:
-  - required:
-    - resultTime
-  - required:
-    - phenomenonTime
-  - required:
-    - hasFeatureOfInterest
-  - required:
-    - observedProperty
-  - required:
-    - usedProcedure
+- required:
+  - resultTime
+- required:
+  - phenomenonTime
+- required:
+  - hasFeatureOfInterest
+- required:
+  - observedProperty
+- required:
+  - usedProcedure
 not:
   anyOf:
-    - required:
-        - hasResult
-    - required:
-        - hasSimpleResult
+  - required:
+    - hasResult
+  - required:
+    - hasSimpleResult
+x-jsonld-prefixes:
+  sosa: http://www.w3.org/ns/sosa/
+  ssn: http://www.w3.org/ns/ssn/
+  ssn-system: http://www.w3.org/ns/ssn/systems/
 
 ```
 ## Sources

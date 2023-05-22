@@ -39,47 +39,61 @@ _:a1 a sosa:Observation ;
 
 ## Schema
 
-[schema.yaml](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/_sources/properties/observation/schema.yaml)
+[schema.yaml](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/properties/observation/schema.yaml)
 
 ```yaml
-"$schema": https://json-schema.org/draft/2020-12/schema
-description: 'SOSA Observation'
-x-jsonld-context: ../../../sosa-ssn.jsonld
+$schema: https://json-schema.org/draft/2020-12/schema
+description: SOSA Observation
 type: object
 properties:
-  hasResult: {}
-  hasSimpleResult: {}
+  hasResult:
+    x-jsonld-id: http://www.w3.org/ns/sosa/hasResult
+  hasSimpleResult:
+    x-jsonld-id: http://www.w3.org/ns/sosa/hasSimpleResult
   resultTime:
     type: string
     format: date-time
+    x-jsonld-id: http://www.w3.org/ns/sosa/resultTime
   phenomenonTime:
     type:
-      - object
-      - string
+    - object
+    - string
+    x-jsonld-id: http://www.w3.org/ns/sosa/phenomenonTime
   hasFeatureOfInterest:
     type:
-      - object
-      - string
+    - object
+    - string
+    x-jsonld-id: http://www.w3.org/ns/sosa/hasFeatureOfInterest
+    x-jsonld-type: '@id'
   observedProperty:
     type:
-      - object
-      - string
+    - object
+    - string
+    x-jsonld-id: http://www.w3.org/ns/sosa/observedProperty
   usedProcedure:
     type:
-      - object
-      - string
+    - object
+    - string
+    x-jsonld-id: http://www.w3.org/ns/sosa/usedProcedure
+    x-jsonld-type: '@id'
   madeBySensor:
     type:
-      - object
-      - string
+    - object
+    - string
+    x-jsonld-id: http://www.w3.org/ns/sosa/madeBySensor
+    x-jsonld-type: '@id'
 required:
-  - resultTime
-  - hasFeatureOfInterest
+- resultTime
+- hasFeatureOfInterest
 oneOf:
-  - required:
-      - hasResult
-  - required:
-      - hasSimpleResult
+- required:
+  - hasResult
+- required:
+  - hasSimpleResult
+x-jsonld-prefixes:
+  sosa: http://www.w3.org/ns/sosa/
+  ssn: http://www.w3.org/ns/ssn/
+  ssn-system: http://www.w3.org/ns/ssn/systems/
 
 ```
 ## Sources

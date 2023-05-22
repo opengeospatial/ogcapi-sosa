@@ -4,6 +4,57 @@
   "anyOf": [
     {
       "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "description": "Example SOSA Vector Observation",
+      "allOf": [
+        {
+          "$ref": "properties/observation/schema.yaml"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "hasResult": {
+              "properties": {
+                "pose": {
+                  "$ref": "https://opengeospatial.github.io/bblocks/annotated-schemas/geo/geopose/basic-ypr/schema.yaml"
+                },
+                "distance": {
+                  "type": "number",
+                  "x-jsonld-id": "http://example.com/properties/distance",
+                  "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#float"
+                }
+              }
+            }
+          },
+          "required": [
+            "hasResult"
+          ],
+          "not": {
+            "required": [
+              "hasSimpleResult"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "description": "Example SOSA Vector Observation",
+      "allOf": [
+        {
+          "$ref": "features/observation/schema.yaml"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "properties": {
+              "$ref": "examples/vectorObservation/schema.yaml"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "description": "SOSA Observation Feature",
       "type": "object",
       "allOf": [
@@ -11,7 +62,12 @@
           "$ref": "https://opengeospatial.github.io/bblocks/annotated-schemas/geo/features/feature/schema.yaml"
         },
         {
-          "$ref": "properties/observation/schema.yaml"
+          "type": "object",
+          "properties": {
+            "properties": {
+              "$ref": "properties/observation/schema.yaml"
+            }
+          }
         }
       ],
       "x-jsonld-prefixes": {

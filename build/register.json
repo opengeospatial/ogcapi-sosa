@@ -1,5 +1,85 @@
 [
   {
+    "name": "Example SOSA Vector Observation",
+    "abstract": "This building block defines an example SOSA Vector Observation",
+    "status": "notAccepted",
+    "dateTimeAddition": "2023-05-19T00:00:00Z",
+    "itemClass": "schema",
+    "register": "ogc-building-block-register",
+    "version": "1.0",
+    "dateOfLastChange": "2023-05-19",
+    "sources": [
+      {
+        "title": "Semantic Sensor Network Ontology",
+        "link": "https://www.w3.org/TR/vocab-ssn/"
+      }
+    ],
+    "maturity": "mature",
+    "scope": "unstable",
+    "dependsOn": [
+      "ogc.unstable.sosa.properties.observation"
+    ],
+    "tags": [
+      "sosa",
+      "ssn",
+      "observations",
+      "o&m",
+      "o&m&s",
+      "examples"
+    ],
+    "itemIdentifier": "ogc.unstable.sosa.examples.vectorObservation",
+    "schema": [
+      "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservation/schema.yaml",
+      "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservation/schema.json"
+    ],
+    "ldContext": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservation/context.jsonld",
+    "sourceFiles": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/_sources/examples/vectorObservation/",
+    "documentation": [
+      "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/markdown/unstable/sosa/examples/vectorObservation/index.md"
+    ],
+    "validationPassed": true
+  },
+  {
+    "name": "Example SOSA Vector Observation Feature",
+    "abstract": "This building block defines an example SOSA Observation Feature for a Vector Observation",
+    "status": "notAccepted",
+    "dateTimeAddition": "2023-05-19T00:00:00Z",
+    "itemClass": "schema",
+    "register": "ogc-building-block-register",
+    "version": "1.0",
+    "dateOfLastChange": "2023-05-19",
+    "sources": [
+      {
+        "title": "Semantic Sensor Network Ontology",
+        "link": "https://www.w3.org/TR/vocab-ssn/"
+      }
+    ],
+    "maturity": "mature",
+    "scope": "unstable",
+    "dependsOn": [
+      "ogc.unstable.sosa.properties.observation"
+    ],
+    "tags": [
+      "sosa",
+      "ssn",
+      "observations",
+      "o&m",
+      "o&m&s",
+      "examples"
+    ],
+    "itemIdentifier": "ogc.unstable.sosa.examples.vectorObservationFeature",
+    "schema": [
+      "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema.yaml",
+      "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema.json"
+    ],
+    "ldContext": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservationFeature/context.jsonld",
+    "sourceFiles": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/_sources/examples/vectorObservationFeature/",
+    "documentation": [
+      "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/markdown/unstable/sosa/examples/vectorObservationFeature/index.md"
+    ],
+    "validationPassed": true
+  },
+  {
     "name": "SOSA Observation Feature",
     "abstract": "This building blocks defines a GeoJSON feature containing a SOSA Observation",
     "status": "valid",
@@ -17,7 +97,7 @@
     "maturity": "mature",
     "scope": "unstable",
     "dependsOn": [
-      "r1.unstable.sosa.properties.observation"
+      "ogc.unstable.sosa.properties.observation"
     ],
     "tags": [
       "sosa",
@@ -26,7 +106,7 @@
       "o&m",
       "o&m&s"
     ],
-    "itemIdentifier": "r1.unstable.sosa.features.observation",
+    "itemIdentifier": "ogc.unstable.sosa.features.observation",
     "schema": [
       "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observation/schema.yaml",
       "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observation/schema.json"
@@ -36,7 +116,7 @@
     "documentation": [
       "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/markdown/unstable/sosa/features/observation/index.md"
     ],
-    "validationPassed": false
+    "validationPassed": true
   },
   {
     "name": "SOSA Observation",
@@ -62,7 +142,7 @@
       "o&m",
       "o&m&s"
     ],
-    "itemIdentifier": "r1.unstable.sosa.properties.observation",
+    "itemIdentifier": "ogc.unstable.sosa.properties.observation",
     "schema": [
       "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/properties/observation/schema.yaml",
       "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/properties/observation/schema.json"
@@ -102,7 +182,7 @@
       "o&m",
       "o&m&s"
     ],
-    "itemIdentifier": "r1.unstable.sosa.properties.observationCollection",
+    "itemIdentifier": "ogc.unstable.sosa.properties.observationCollection",
     "schema": [
       "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/properties/observationCollection/schema.yaml",
       "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/properties/observationCollection/schema.json"
@@ -138,7 +218,7 @@
       "o&m&s"
     ],
     "superBBlock": true,
-    "itemIdentifier": "r1.unstable.sosa",
+    "itemIdentifier": "ogc.unstable.sosa",
     "schema": [
       "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/schema.yaml",
       "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/schema.json"

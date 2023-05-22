@@ -1,32 +1,48 @@
 {
   "@context": {
+    "sosa": "http://www.w3.org/ns/sosa/",
+    "ssn": "http://www.w3.org/ns/ssn/",
+    "ssn-system": "http://www.w3.org/ns/ssn/systems/",
+    "hasResult": "sosa:hasResult",
+    "hasSimpleResult": "sosa:hasSimpleResult",
+    "resultTime": "sosa:resultTime",
+    "phenomenonTime": "sosa:phenomenonTime",
+    "hasFeatureOfInterest": {
+      "@id": "sosa:hasFeatureOfInterest",
+      "@type": "@id"
+    },
+    "observedProperty": "sosa:observedProperty",
+    "usedProcedure": {
+      "@id": "sosa:usedProcedure",
+      "@type": "@id"
+    },
+    "madeBySensor": {
+      "@id": "sosa:madeBySensor",
+      "@type": "@id"
+    },
+    "geopose": "http://example.com/geopose/",
+    "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+    "position": "geopose:position",
+    "angles": "geopose:angles",
+    "yaw": "geopose:yaw",
+    "pitch": "geopose:pitch",
+    "roll": "geopose:roll",
+    "lat": "geopose:lat",
+    "lon": "geopose:lon",
+    "h": "geopose:h",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "geojson": "https://purl.org/geojson/vocab#",
     "type": "@type",
     "id": "@id",
     "properties": "geojson:properties",
-    "geometry": "geojson:geometry",
+    "geometry": {
+      "@context": {
+        "type": "@type",
+        "coordinates": "geojson:coordinates"
+      },
+      "@id": "geojson:geometry"
+    },
     "bbox": "geojson:bbox",
-    "links": "rdfs:seeAlso",
-    "sosa": "http://www.w3.org/ns/sosa/",
-    "ssn": "http://www.w3.org/ns/ssn/",
-    "ssn-system": "http://www.w3.org/ns/ssn/systems/",
-    "hasResult": "http://www.w3.org/ns/sosa/hasResult",
-    "hasSimpleResult": "http://www.w3.org/ns/sosa/hasSimpleResult",
-    "resultTime": "http://www.w3.org/ns/sosa/resultTime",
-    "phenomenonTime": "http://www.w3.org/ns/sosa/phenomenonTime",
-    "hasFeatureOfInterest": {
-      "@id": "http://www.w3.org/ns/sosa/hasFeatureOfInterest",
-      "@type": "@id"
-    },
-    "observedProperty": "http://www.w3.org/ns/sosa/observedProperty",
-    "usedProcedure": {
-      "@id": "http://www.w3.org/ns/sosa/usedProcedure",
-      "@type": "@id"
-    },
-    "madeBySensor": {
-      "@id": "http://www.w3.org/ns/sosa/madeBySensor",
-      "@type": "@id"
-    }
+    "links": "rdfs:seeAlso"
   }
 }

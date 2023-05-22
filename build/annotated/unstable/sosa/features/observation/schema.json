@@ -4,10 +4,15 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://opengeospatial.github.io/bblocks/annotated-schemas/geo/features/feature/schema.yaml"
+      "$ref": "https://opengeospatial.github.io/bblocks/annotated-schemas/geo/features/feature/schema.json"
     },
     {
-      "$ref": "../../properties/observation/schema.yaml"
+      "type": "object",
+      "properties": {
+        "properties": {
+          "$ref": "../../properties/observation/schema.json"
+        }
+      }
     }
   ],
   "x-jsonld-prefixes": {

@@ -8,7 +8,13 @@
     "type": "@type",
     "id": "@id",
     "properties": "geojson:properties",
-    "geometry": "geojson:geometry",
+    "geometry": {
+      "@context": {
+        "type": "@type",
+        "coordinates": "geojson:coordinates"
+      },
+      "@id": "geojson:geometry"
+    },
     "bbox": "geojson:bbox",
     "links": "rdfs:seeAlso",
     "hasResult": "sosa:hasResult",

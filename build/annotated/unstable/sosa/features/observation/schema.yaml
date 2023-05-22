@@ -3,7 +3,10 @@ description: SOSA Observation Feature
 type: object
 allOf:
 - $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/features/feature/schema.yaml
-- $ref: ../../properties/observation/schema.yaml
+- type: object
+  properties:
+    properties:
+      $ref: ../../properties/observation/schema.yaml
 x-jsonld-prefixes:
   sosa: http://www.w3.org/ns/sosa/
   ssn: http://www.w3.org/ns/ssn/

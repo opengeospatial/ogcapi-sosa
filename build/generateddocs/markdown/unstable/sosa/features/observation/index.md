@@ -15,6 +15,10 @@ This building blocks defines a GeoJSON feature containing a SOSA Observation
   "@id": "_:a1",
   "type": "Feature",
   "featureType": "sosa:Observation",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [43.457475012484124, -3.7684047847661435]
+  },
   "properties": {
     "hasFeatureOfInterest": "http://example.com/fois/1",
     "hasSimpleResult": 33,
@@ -39,16 +43,23 @@ _:a1 a geojson:Feature;
 
 ## Schema
 
-[schema.yaml](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/_sources/features/observation/schema.yaml)
+[schema.yaml](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observation/schema.yaml)
 
 ```yaml
-"$schema": https://json-schema.org/draft/2020-12/schema
-description: 'SOSA Observation Feature'
-x-jsonld-context: ../../../sosa-ssn.jsonld
+$schema: https://json-schema.org/draft/2020-12/schema
+description: SOSA Observation Feature
 type: object
 allOf:
-  - $ref: bblocks://r1.geo.features.feature
-  - $ref: ../../properties/observation/schema.yaml
+- $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/features/feature/schema.yaml
+- type: object
+  properties:
+    properties:
+      $ref: ../../properties/observation/schema.yaml
+x-jsonld-prefixes:
+  sosa: http://www.w3.org/ns/sosa/
+  ssn: http://www.w3.org/ns/ssn/
+  ssn-system: http://www.w3.org/ns/ssn/systems/
+
 ```
 ## Sources
 
