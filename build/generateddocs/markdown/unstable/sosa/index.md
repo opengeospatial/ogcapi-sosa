@@ -65,13 +65,19 @@ anyOf:
     ssn: http://www.w3.org/ns/ssn/
     ssn-system: http://www.w3.org/ns/ssn/systems/
 - $schema: https://json-schema.org/draft/2020-12/schema
+  description: SOSA Observation Feature
+  type: object
+  properties:
+    properties:
+      $ref: properties/observationCollection/schema.yaml
+  x-jsonld-prefixes:
+    sosa: http://www.w3.org/ns/sosa/
+    ssn: http://www.w3.org/ns/ssn/
+    ssn-system: http://www.w3.org/ns/ssn/systems/
+- $schema: https://json-schema.org/draft/2020-12/schema
   description: SOSA Observation
   type: object
   properties:
-    hasResult:
-      x-jsonld-id: http://www.w3.org/ns/sosa/hasResult
-    hasSimpleResult:
-      x-jsonld-id: http://www.w3.org/ns/sosa/hasSimpleResult
     resultTime:
       type: string
       format: date-time
@@ -104,9 +110,10 @@ anyOf:
       - string
       x-jsonld-id: http://www.w3.org/ns/sosa/madeBySensor
       x-jsonld-type: '@id'
-  required:
-  - resultTime
-  - hasFeatureOfInterest
+    hasResult:
+      x-jsonld-id: http://www.w3.org/ns/sosa/hasResult
+    hasSimpleResult:
+      x-jsonld-id: http://www.w3.org/ns/sosa/hasSimpleResult
   oneOf:
   - required:
     - hasResult
@@ -120,19 +127,48 @@ anyOf:
   description: SOSA ObservationCollection
   type: object
   properties:
-    observations:
-      $ref: properties/observation/schema.yaml
-  anyOf:
-  - required:
-    - resultTime
-  - required:
-    - phenomenonTime
-  - required:
-    - hasFeatureOfInterest
-  - required:
-    - observedProperty
-  - required:
-    - usedProcedure
+    resultTime:
+      type: string
+      format: date-time
+      x-jsonld-id: http://www.w3.org/ns/sosa/resultTime
+    phenomenonTime:
+      type:
+      - object
+      - string
+      x-jsonld-id: http://www.w3.org/ns/sosa/phenomenonTime
+    hasFeatureOfInterest:
+      type:
+      - object
+      - string
+      x-jsonld-id: http://www.w3.org/ns/sosa/hasFeatureOfInterest
+      x-jsonld-type: '@id'
+    observedProperty:
+      type:
+      - object
+      - string
+      x-jsonld-id: http://www.w3.org/ns/sosa/observedProperty
+    usedProcedure:
+      type:
+      - object
+      - string
+      x-jsonld-id: http://www.w3.org/ns/sosa/usedProcedure
+      x-jsonld-type: '@id'
+    madeBySensor:
+      type:
+      - object
+      - string
+      x-jsonld-id: http://www.w3.org/ns/sosa/madeBySensor
+      x-jsonld-type: '@id'
+    hasMember:
+      type: array
+      items:
+        oneOf:
+        - $ref: properties/observation/schema.yaml
+        - type: string
+      minItems: 1
+      x-jsonld-id: http://www.w3.org/ns/sosa/hasMember
+  required:
+  - hasMember
   not:
     anyOf:
     - required:

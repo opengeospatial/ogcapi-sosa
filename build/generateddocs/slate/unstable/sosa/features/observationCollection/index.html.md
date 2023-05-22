@@ -1,5 +1,5 @@
 ---
-title: SOSA ObservationCollection (Schema)
+title: SOSA ObservationCollection Feature (Schema)
 
 language_tabs:
   - json
@@ -7,7 +7,7 @@ language_tabs:
 
 toc_footers:
   - Version 1.0
-  - <a href='#'>SOSA ObservationCollection</a>
+  - <a href='#'>SOSA ObservationCollection Feature</a>
   - <a href='https://blocks.ogc.org/register.html'>Building Blocks register</a>
 
 search: true
@@ -15,46 +15,51 @@ search: true
 code_clipboard: true
 
 meta:
-  - name: SOSA ObservationCollection (Schema)
+  - name: SOSA ObservationCollection Feature (Schema)
 ---
 
 # Overview
 
-This building blocks defines an ObservationCollection according to the SOSA/SSN v1.1 specification.
+This building blocks defines an ObservationCollection Feature according to the SOSA/SSN v1.1 specification.
 
 [Maturity](https://github.com/cportele/ogcapi-building-blocks#building-block-maturity): Development
 
-# Description
-
-## SOSA ObservationCollection
-
-Collection of one or more observations, whose members share a common value for one or more properties.
 # Examples
 
 ## Example of SOSA ObservationCollection
 
 ```json
 { 
-  "hasMember": [
-    "_:a1"
-  ],
-  "observedProperty": "_:p1",
-  "resultTime": "2022-05-01T22:33:44Z"
+  "@id": "c1",
+  "type": "Feature",
+  "featureType": "sosa:ObservationCollection",
+  "properties": {
+    "hasMember": [
+      "_:a1"
+    ],
+    "observedProperty": "_:p1",
+    "resultTime": "2022-05-01T22:33:44Z"
+  },
 }
 ```
 
 ```json
 { 
-  "observedProperty": "p1",
-  "resultTime": "2022-05-01T22:33:44Z",
-  "hasMember": [
-    { 
-      "@id": "a1",
-      "comment": "Example of an inline membership - would entail hasMember relations",
-      "hasFeatureOfInterest": "http://example.com/fois/1",
-      "hasSimpleResult": 1995.2,
-    }
-  ]
+  "@id": "c1",
+  "type": "Feature",
+  "featureType": "sosa:ObservationCollection",
+  "properties": {
+    "observedProperty": "p1",
+    "resultTime": "2022-05-01T22:33:44Z",
+    "hasMember": [
+      { 
+        "@id": "a1",
+        "comment": "Example of an inline membership - would entail hasMember relations",
+        "hasFeatureOfInterest": "http://example.com/fois/1",
+        "hasSimpleResult": 12
+      }
+    ]
+  },
 }
 ```
 
@@ -81,7 +86,7 @@ eg:p1 a skos:Concept;
 
 # Schema
 
-[schema.yaml](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/_sources/properties/observationCollection/schema.yaml)
+[schema.yaml](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/_sources/features/observationCollection/schema.yaml)
 # Sources
 
 * [Semantic Sensor Network Ontology](https://www.w3.org/TR/vocab-ssn/)

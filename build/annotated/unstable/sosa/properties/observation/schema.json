@@ -3,12 +3,6 @@
   "description": "SOSA Observation",
   "type": "object",
   "properties": {
-    "hasResult": {
-      "x-jsonld-id": "http://www.w3.org/ns/sosa/hasResult"
-    },
-    "hasSimpleResult": {
-      "x-jsonld-id": "http://www.w3.org/ns/sosa/hasSimpleResult"
-    },
     "resultTime": {
       "type": "string",
       "format": "date-time",
@@ -51,12 +45,14 @@
       ],
       "x-jsonld-id": "http://www.w3.org/ns/sosa/madeBySensor",
       "x-jsonld-type": "@id"
+    },
+    "hasResult": {
+      "x-jsonld-id": "http://www.w3.org/ns/sosa/hasResult"
+    },
+    "hasSimpleResult": {
+      "x-jsonld-id": "http://www.w3.org/ns/sosa/hasSimpleResult"
     }
   },
-  "required": [
-    "resultTime",
-    "hasFeatureOfInterest"
-  ],
   "oneOf": [
     {
       "required": [

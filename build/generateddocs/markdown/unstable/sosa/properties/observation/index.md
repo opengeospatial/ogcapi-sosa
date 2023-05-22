@@ -46,10 +46,6 @@ $schema: https://json-schema.org/draft/2020-12/schema
 description: SOSA Observation
 type: object
 properties:
-  hasResult:
-    x-jsonld-id: http://www.w3.org/ns/sosa/hasResult
-  hasSimpleResult:
-    x-jsonld-id: http://www.w3.org/ns/sosa/hasSimpleResult
   resultTime:
     type: string
     format: date-time
@@ -82,9 +78,10 @@ properties:
     - string
     x-jsonld-id: http://www.w3.org/ns/sosa/madeBySensor
     x-jsonld-type: '@id'
-required:
-- resultTime
-- hasFeatureOfInterest
+  hasResult:
+    x-jsonld-id: http://www.w3.org/ns/sosa/hasResult
+  hasSimpleResult:
+    x-jsonld-id: http://www.w3.org/ns/sosa/hasSimpleResult
 oneOf:
 - required:
   - hasResult
