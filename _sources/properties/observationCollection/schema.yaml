@@ -3,19 +3,40 @@ description: 'SOSA ObservationCollection'
 x-jsonld-context: ../../../sosa-ssn.jsonld
 type: object
 properties:
-  observations:
-    $ref: ../observation/schema.yaml
-anyOf:
-  - required:
-    - resultTime
-  - required:
-    - phenomenonTime
-  - required:
-    - hasFeatureOfInterest
-  - required:
-    - observedProperty
-  - required:
-    - usedProcedure
+  resultTime:
+    type: string
+    format: date-time
+  phenomenonTime:
+    type:
+      - object
+      - string
+  hasFeatureOfInterest:
+    type:
+      - object
+      - string
+  observedProperty:
+    type:
+      - object
+      - string
+  usedProcedure:
+    type:
+      - object
+      - string
+  madeBySensor:
+    type:
+      - object
+      - string
+  hasMember:
+    type: array
+    items:
+      oneOf:
+        # Embedded observations
+        - $ref: ../observation/schema.yaml
+        # Ids/URIs
+        - type: string
+    minItems: 1
+required:
+  - hasMember
 not:
   anyOf:
     - required:

@@ -6,26 +6,36 @@
     - language: json
       code: |-
         { 
-          "hasMember": [
-            "_:a1"
-          ],
-          "observedProperty": "_:p1",
-          "resultTime": "2022-05-01T22:33:44Z"
+          "@id": "c1",
+          "type": "Feature",
+          "featureType": "sosa:ObservationCollection",
+          "properties": {
+            "hasMember": [
+              "_:a1"
+            ],
+            "observedProperty": "_:p1",
+            "resultTime": "2022-05-01T22:33:44Z"
+          },
         }
 
     - language: json
       code: |-
         { 
-          "observedProperty": "p1",
-          "resultTime": "2022-05-01T22:33:44Z",
-          "hasMember": [
-            { 
-              "@id": "a1",
-              "comment": "Example of an inline membership - would entail hasMember relations",
-              "hasFeatureOfInterest": "http://example.com/fois/1",
-              "hasSimpleResult": 1995.2,
-            }
-          ]
+          "@id": "c1",
+          "type": "Feature",
+          "featureType": "sosa:ObservationCollection",
+          "properties": {
+            "observedProperty": "p1",
+            "resultTime": "2022-05-01T22:33:44Z",
+            "hasMember": [
+              { 
+                "@id": "a1",
+                "comment": "Example of an inline membership - would entail hasMember relations",
+                "hasFeatureOfInterest": "http://example.com/fois/1",
+                "hasSimpleResult": 12
+              }
+            ]
+          },
         }
 
     - language: ttl
