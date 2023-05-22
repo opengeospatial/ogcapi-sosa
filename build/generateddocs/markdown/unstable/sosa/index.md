@@ -23,8 +23,16 @@ TBD: Convenience API paths may be defined to support traversal of relationships 
 ```yaml
 $schema: https://json-schema.org/draft/2020-12/schema
 description: Sensor, Observation, Sample, and Actuator (SOSA)
-oneOf:
-- description: SOSA Observation
+anyOf:
+- $schema: https://json-schema.org/draft/2020-12/schema
+  description: SOSA Observation Feature
+  x-jsonld-context: ../../../sosa-ssn.jsonld
+  type: object
+  allOf:
+  - $ref: bblocks://r1.geo.features.feature
+  - $ref: properties/observation/schema.yaml
+- $schema: https://json-schema.org/draft/2020-12/schema
+  description: SOSA Observation
   x-jsonld-context: ../../../sosa-ssn.jsonld
   type: object
   properties:
@@ -61,12 +69,13 @@ oneOf:
     - hasResult
   - required:
     - hasSimpleResult
-- description: SOSA ObservationCollection
+- $schema: https://json-schema.org/draft/2020-12/schema
+  description: SOSA ObservationCollection
   x-jsonld-context: ../../../sosa-ssn.jsonld
   type: object
   properties:
     observations:
-      $ref: ../observation/schema.yaml
+      $ref: properties/observation/schema.yaml
   anyOf:
   - required:
     - resultTime

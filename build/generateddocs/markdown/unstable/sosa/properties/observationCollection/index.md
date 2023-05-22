@@ -1,38 +1,20 @@
----
-title: SOSA ObservationCollection (Schema)
+# SOSA ObservationCollection (Schema)
 
-language_tabs:
-  - json
-  - ttl
-
-toc_footers:
-  - Version 1.0
-  - <a href='#'>SOSA ObservationCollection</a>
-  - <a href='https://blocks.ogc.org/register.html'>Building Blocks register</a>
-
-search: true
-
-code_clipboard: true
-
-meta:
-  - name: SOSA ObservationCollection (Schema)
----
-
-# Overview
+*Version 1.0*
 
 This building blocks defines an ObservationCollection according to the SOSA/SSN v1.1 specification.
 
-[Maturity](https://github.com/cportele/ogcapi-building-blocks#building-block-maturity): Development
+[*Maturity*](https://github.com/cportele/ogcapi-building-blocks#building-block-maturity): Development
 
-# Description
+## Description
 
 ## SOSA ObservationCollection
 
 Collection of one or more observations, whose members share a common value for one or more properties.
-# Examples
+## Examples
 
-## Example of SOSA ObservationCollection
-
+### Example of SOSA ObservationCollection
+#### json
 ```json
 { 
   "@id": "c1",
@@ -46,6 +28,7 @@ Collection of one or more observations, whose members share a common value for o
 }
 ```
 
+#### json
 ```json
 { 
   "@id": "c1",
@@ -65,6 +48,7 @@ Collection of one or more observations, whose members share a common value for o
 }
 ```
 
+#### ttl
 ```ttl
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -85,10 +69,38 @@ eg:p1 a skos:Concept;
 .
 ```
 
-# Schema
+## Schema
 
-[schema.yaml](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/_sources/features/observationCollection/schema.yaml)
-# Sources
+[schema.yaml](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/_sources/properties/observationCollection/schema.yaml)
+
+```yaml
+"$schema": https://json-schema.org/draft/2020-12/schema
+description: 'SOSA ObservationCollection'
+x-jsonld-context: ../../../sosa-ssn.jsonld
+type: object
+properties:
+  observations:
+    $ref: ../observation/schema.yaml
+anyOf:
+  - required:
+    - resultTime
+  - required:
+    - phenomenonTime
+  - required:
+    - hasFeatureOfInterest
+  - required:
+    - observedProperty
+  - required:
+    - usedProcedure
+not:
+  anyOf:
+    - required:
+        - hasResult
+    - required:
+        - hasSimpleResult
+
+```
+## Sources
 
 * [Semantic Sensor Network Ontology](https://www.w3.org/TR/vocab-ssn/)
 * [Extensions to the Semantic Sensor Network Ontology](https://www.w3.org/TR/vocab-ssn-ext/)
