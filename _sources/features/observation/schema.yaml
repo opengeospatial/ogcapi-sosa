@@ -4,4 +4,7 @@ x-jsonld-context: ../../../sosa-ssn.jsonld
 type: object
 allOf:
   - $ref: bblocks://ogc.geo.features.feature
-  - $ref: ../../properties/observation/schema.yaml
+  - type: object
+    properties:
+      properties:
+        $ref: ../../properties/observation/schema.yaml
