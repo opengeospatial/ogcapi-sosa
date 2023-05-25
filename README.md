@@ -94,7 +94,7 @@ The outputs can be generated locally by running the following:
 ```shell
 # Process building blocks
 docker run --rm --workdir /workspace -v $(pwd):/workspace ghcr.io/opengeospatial/bblocks-postprocess \
-  --clean --base-url https://example.com/base-url/
+  --clean true --base-url https://example.com/base-url/
 # Optional - build Slate docs
 docker run --rm -v "$(pwd)/generateddocs/slate:/srv/slate/source" \
   -v "$(pwd)/generateddocs/slate-build:/srv/slate/build" slatedocs/slate build
