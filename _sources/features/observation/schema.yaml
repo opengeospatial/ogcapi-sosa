@@ -3,7 +3,8 @@ description: 'SOSA Observation Feature'
 x-jsonld-context: ../../../sosa-ssn.jsonld
 type: object
 allOf:
-  - $ref: bblocks://ogc.geo.json-fg.feature
+  - $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/json-fg/feature/schema.yaml
+    x-bblocks-ref: bblocks://ogc.geo.json-fg.feature
   - type: object
     properties:
       properties:
