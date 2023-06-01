@@ -161,7 +161,8 @@ under the License.
 
   // if we click on a language tab, activate that language
   $(function() {
-    $(".lang-selector a").on("click", function() {
+    $(".lang-selector a").on("click", function(ev) {
+      ev.preventDefault();
       var language = $(this).data("language-name");
       pushURL(language);
       activateLanguage(language);

@@ -2,7 +2,7 @@
 title: SOSA ObservationCollection Feature (Schema)
 
 language_tabs:
-  - json
+  - json: JSON
   - ttl
 
 toc_footers:
@@ -18,7 +18,8 @@ meta:
   - name: SOSA ObservationCollection Feature (Schema)
 ---
 
-# Overview
+
+# SOSA ObservationCollection Feature
 
 This building blocks defines an ObservationCollection Feature according to the SOSA/SSN v1.1 specification.
 
@@ -84,10 +85,63 @@ eg:p1 a skos:Concept;
 .
 ```
 
-# Schema
 
-[schema.yaml](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/_sources/features/observationCollection/schema.yaml)
-# Sources
+# JSON Schema
+
+```yaml--schema
+$schema: https://json-schema.org/draft/2020-12/schema
+description: SOSA Observation Feature
+allOf:
+- $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/json-fg/featureCollection/schema.yaml
+- type: object
+  properties:
+    properties:
+      $ref: ../../properties/observationCollection/schema.yaml
+x-jsonld-prefixes:
+  sosa: http://www.w3.org/ns/sosa/
+  ssn: http://www.w3.org/ns/ssn/
+  ssn-system: http://www.w3.org/ns/ssn/systems/
+
+```
+
+Links to the schema:
+
+* YAML version: <a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observationCollection/schema.yaml" target="_blank">schema.yaml</a>
+* JSON version: <a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observationCollection/schema.json" target="_blank">schema.json</a>
+
+
+# JSON-LD Context
+
+```json--ldContext
+{
+  "@context": {
+    "sosa": "http://www.w3.org/ns/sosa/",
+    "ssn": "http://www.w3.org/ns/ssn/",
+    "ssn-system": "http://www.w3.org/ns/ssn/systems/",
+    "resultTime": "sosa:resultTime",
+    "phenomenonTime": "sosa:phenomenonTime",
+    "hasFeatureOfInterest": {
+      "@id": "sosa:hasFeatureOfInterest",
+      "@type": "@id"
+    },
+    "observedProperty": "sosa:observedProperty",
+    "usedProcedure": {
+      "@id": "sosa:usedProcedure",
+      "@type": "@id"
+    },
+    "madeBySensor": {
+      "@id": "sosa:madeBySensor",
+      "@type": "@id"
+    },
+    "hasMember": "sosa:hasMember"
+  }
+}
+```
+
+You can find the full JSON-LD context here:
+<a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observationCollection/context.jsonld" target="_blank">context.jsonld</a>
+
+# References
 
 * [Semantic Sensor Network Ontology](https://www.w3.org/TR/vocab-ssn/)
 * [Extensions to the Semantic Sensor Network Ontology](https://www.w3.org/TR/vocab-ssn-ext/)

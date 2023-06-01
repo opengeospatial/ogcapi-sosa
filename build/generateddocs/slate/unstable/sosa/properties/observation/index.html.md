@@ -2,7 +2,7 @@
 title: SOSA Observation (Schema)
 
 language_tabs:
-  - json
+  - json: JSON
   - ttl
 
 toc_footers:
@@ -18,7 +18,8 @@ meta:
   - name: SOSA Observation (Schema)
 ---
 
-# Overview
+
+# SOSA Observation
 
 This building block defines the set of properties for an observation according to the SOSA/SSN specification. These properties may be directly included into a root element of a JSON object or used in the properties container of a GeoJSON feature.
 
@@ -54,9 +55,100 @@ _:a1 a sosa:Observation ;
 .
 ```
 
-# Schema
 
-[schema.yaml](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/_sources/properties/observation/schema.yaml)
-# Sources
+# JSON Schema
+
+```yaml--schema
+$schema: https://json-schema.org/draft/2020-12/schema
+description: SOSA Observation
+type: object
+properties:
+  resultTime:
+    type: string
+    format: date-time
+    x-jsonld-id: http://www.w3.org/ns/sosa/resultTime
+  phenomenonTime:
+    type:
+    - object
+    - string
+    x-jsonld-id: http://www.w3.org/ns/sosa/phenomenonTime
+  hasFeatureOfInterest:
+    type:
+    - object
+    - string
+    x-jsonld-id: http://www.w3.org/ns/sosa/hasFeatureOfInterest
+    x-jsonld-type: '@id'
+  observedProperty:
+    type:
+    - object
+    - string
+    x-jsonld-id: http://www.w3.org/ns/sosa/observedProperty
+  usedProcedure:
+    type:
+    - object
+    - string
+    x-jsonld-id: http://www.w3.org/ns/sosa/usedProcedure
+    x-jsonld-type: '@id'
+  madeBySensor:
+    type:
+    - object
+    - string
+    x-jsonld-id: http://www.w3.org/ns/sosa/madeBySensor
+    x-jsonld-type: '@id'
+  hasResult:
+    x-jsonld-id: http://www.w3.org/ns/sosa/hasResult
+  hasSimpleResult:
+    x-jsonld-id: http://www.w3.org/ns/sosa/hasSimpleResult
+oneOf:
+- required:
+  - hasResult
+- required:
+  - hasSimpleResult
+x-jsonld-prefixes:
+  sosa: http://www.w3.org/ns/sosa/
+  ssn: http://www.w3.org/ns/ssn/
+  ssn-system: http://www.w3.org/ns/ssn/systems/
+
+```
+
+Links to the schema:
+
+* YAML version: <a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/properties/observation/schema.yaml" target="_blank">schema.yaml</a>
+* JSON version: <a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/properties/observation/schema.json" target="_blank">schema.json</a>
+
+
+# JSON-LD Context
+
+```json--ldContext
+{
+  "@context": {
+    "sosa": "http://www.w3.org/ns/sosa/",
+    "ssn": "http://www.w3.org/ns/ssn/",
+    "ssn-system": "http://www.w3.org/ns/ssn/systems/",
+    "resultTime": "sosa:resultTime",
+    "phenomenonTime": "sosa:phenomenonTime",
+    "hasFeatureOfInterest": {
+      "@id": "sosa:hasFeatureOfInterest",
+      "@type": "@id"
+    },
+    "observedProperty": "sosa:observedProperty",
+    "usedProcedure": {
+      "@id": "sosa:usedProcedure",
+      "@type": "@id"
+    },
+    "madeBySensor": {
+      "@id": "sosa:madeBySensor",
+      "@type": "@id"
+    },
+    "hasResult": "sosa:hasResult",
+    "hasSimpleResult": "sosa:hasSimpleResult"
+  }
+}
+```
+
+You can find the full JSON-LD context here:
+<a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/properties/observation/context.jsonld" target="_blank">context.jsonld</a>
+
+# References
 
 * [Semantic Sensor Network Ontology](https://www.w3.org/TR/vocab-ssn/)

@@ -15,7 +15,8 @@ meta:
   - name: Example SOSA Vector Observation Feature (Schema)
 ---
 
-# Overview
+
+# Example SOSA Vector Observation Feature
 
 This building block defines an example SOSA Observation Feature for a Vector Observation
 
@@ -53,9 +54,91 @@ This building block defines an example SOSA Observation Feature for a Vector Obs
 }
 ```
 
-# Schema
 
-[schema.yaml](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/_sources/examples/vectorObservationFeature/schema.yaml)
-# Sources
+# JSON Schema
+
+```yaml--schema
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Example SOSA Vector Observation
+allOf:
+- $ref: ../../features/observation/schema.yaml
+- type: object
+  properties:
+    properties:
+      $ref: ../vectorObservation/schema.yaml
+
+```
+
+Links to the schema:
+
+* YAML version: <a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema.yaml" target="_blank">schema.yaml</a>
+* JSON version: <a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema.json" target="_blank">schema.json</a>
+
+
+# JSON-LD Context
+
+```json--ldContext
+{
+  "@context": {
+    "sosa": "http://www.w3.org/ns/sosa/",
+    "ssn": "http://www.w3.org/ns/ssn/",
+    "ssn-system": "http://www.w3.org/ns/ssn/systems/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "geojson": "https://purl.org/geojson/vocab#",
+    "type": "@type",
+    "id": "@id",
+    "properties": "geojson:properties",
+    "geometry": {
+      "@context": {
+        "type": "@type",
+        "coordinates": "geojson:coordinates"
+      },
+      "@id": "geojson:geometry"
+    },
+    "bbox": "geojson:bbox",
+    "links": "rdfs:seeAlso",
+    "resultTime": "sosa:resultTime",
+    "phenomenonTime": "sosa:phenomenonTime",
+    "hasFeatureOfInterest": {
+      "@id": "sosa:hasFeatureOfInterest",
+      "@type": "@id"
+    },
+    "observedProperty": "sosa:observedProperty",
+    "usedProcedure": {
+      "@id": "sosa:usedProcedure",
+      "@type": "@id"
+    },
+    "madeBySensor": {
+      "@id": "sosa:madeBySensor",
+      "@type": "@id"
+    },
+    "hasResult": {
+      "@id": "sosa:hasResult",
+      "@context": {
+        "distance": {
+          "@id": "http://example.com/properties/distance",
+          "@type": "http://www.w3.org/2001/XMLSchema#float"
+        }
+      }
+    },
+    "hasSimpleResult": "sosa:hasSimpleResult",
+    "geopose": "http://example.com/geopose/",
+    "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+    "position": "geopose:position",
+    "angles": "geopose:angles",
+    "yaw": "geopose:yaw",
+    "pitch": "geopose:pitch",
+    "roll": "geopose:roll",
+    "lat": "geopose:lat",
+    "lon": "geopose:lon",
+    "h": "geopose:h"
+  }
+}
+```
+
+You can find the full JSON-LD context here:
+<a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservationFeature/context.jsonld" target="_blank">context.jsonld</a>
+
+# References
 
 * [Semantic Sensor Network Ontology](https://www.w3.org/TR/vocab-ssn/)

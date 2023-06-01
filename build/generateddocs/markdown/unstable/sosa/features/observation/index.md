@@ -43,14 +43,12 @@ _:a1 a geojson:Feature;
 
 ## Schema
 
-[schema.yaml](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observation/schema.yaml)
-
 ```yaml
 $schema: https://json-schema.org/draft/2020-12/schema
 description: SOSA Observation Feature
 type: object
 allOf:
-- $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/features/feature/schema.yaml
+- $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/json-fg/feature/schema.yaml
 - type: object
   properties:
     properties:
@@ -61,6 +59,12 @@ x-jsonld-prefixes:
   ssn-system: http://www.w3.org/ns/ssn/systems/
 
 ```
+
+Links to the schema:
+
+* YAML version: [schema.yaml](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observation/schema.json)
+* JSON version: [schema.json](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observation/schema.yaml)
+
 ## Sources
 
 * [Semantic Sensor Network Ontology](https://www.w3.org/TR/vocab-ssn/)

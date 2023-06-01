@@ -2,7 +2,7 @@
 title: SOSA Observation Feature (Schema)
 
 language_tabs:
-  - json
+  - json: JSON
   - ttl
 
 toc_footers:
@@ -18,7 +18,8 @@ meta:
   - name: SOSA Observation Feature (Schema)
 ---
 
-# Overview
+
+# SOSA Observation Feature
 
 This building blocks defines a GeoJSON feature containing a SOSA Observation
 
@@ -58,9 +59,78 @@ _:a1 a geojson:Feature;
 .
 ```
 
-# Schema
 
-[schema.yaml](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/_sources/features/observation/schema.yaml)
-# Sources
+# JSON Schema
+
+```yaml--schema
+$schema: https://json-schema.org/draft/2020-12/schema
+description: SOSA Observation Feature
+type: object
+allOf:
+- $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/json-fg/feature/schema.yaml
+- type: object
+  properties:
+    properties:
+      $ref: ../../properties/observation/schema.yaml
+x-jsonld-prefixes:
+  sosa: http://www.w3.org/ns/sosa/
+  ssn: http://www.w3.org/ns/ssn/
+  ssn-system: http://www.w3.org/ns/ssn/systems/
+
+```
+
+Links to the schema:
+
+* YAML version: <a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observation/schema.yaml" target="_blank">schema.yaml</a>
+* JSON version: <a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observation/schema.json" target="_blank">schema.json</a>
+
+
+# JSON-LD Context
+
+```json--ldContext
+{
+  "@context": {
+    "sosa": "http://www.w3.org/ns/sosa/",
+    "ssn": "http://www.w3.org/ns/ssn/",
+    "ssn-system": "http://www.w3.org/ns/ssn/systems/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "geojson": "https://purl.org/geojson/vocab#",
+    "type": "@type",
+    "id": "@id",
+    "properties": "geojson:properties",
+    "geometry": {
+      "@context": {
+        "type": "@type",
+        "coordinates": "geojson:coordinates"
+      },
+      "@id": "geojson:geometry"
+    },
+    "bbox": "geojson:bbox",
+    "links": "rdfs:seeAlso",
+    "resultTime": "sosa:resultTime",
+    "phenomenonTime": "sosa:phenomenonTime",
+    "hasFeatureOfInterest": {
+      "@id": "sosa:hasFeatureOfInterest",
+      "@type": "@id"
+    },
+    "observedProperty": "sosa:observedProperty",
+    "usedProcedure": {
+      "@id": "sosa:usedProcedure",
+      "@type": "@id"
+    },
+    "madeBySensor": {
+      "@id": "sosa:madeBySensor",
+      "@type": "@id"
+    },
+    "hasResult": "sosa:hasResult",
+    "hasSimpleResult": "sosa:hasSimpleResult"
+  }
+}
+```
+
+You can find the full JSON-LD context here:
+<a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observation/context.jsonld" target="_blank">context.jsonld</a>
+
+# References
 
 * [Semantic Sensor Network Ontology](https://www.w3.org/TR/vocab-ssn/)

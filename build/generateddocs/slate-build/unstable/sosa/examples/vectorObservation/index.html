@@ -287,7 +287,7 @@
     </style>
     <link href="../../../../stylesheets/screen-9c19b03a.css" rel="stylesheet" media="screen" />
     <link href="../../../../stylesheets/print-966d6edc.css" rel="stylesheet" media="print" />
-      <script src="../../../../javascripts/all-b12a2749.js"></script>
+      <script src="../../../../javascripts/all-fea9e21b.js"></script>
 
     <script>
       $(function() { setupCodeCopy(); });
@@ -309,7 +309,7 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#overview" class="toc-h1 toc-link" data-title="Overview">Overview</a>
+            <a href="#example-sosa-vector-observation" class="toc-h1 toc-link" data-title="Example SOSA Vector Observation">Example SOSA Vector Observation</a>
           </li>
           <li>
             <a href="#examples" class="toc-h1 toc-link" data-title="Examples">Examples</a>
@@ -320,10 +320,13 @@
               </ul>
           </li>
           <li>
-            <a href="#schema" class="toc-h1 toc-link" data-title="Schema">Schema</a>
+            <a href="#json-schema" class="toc-h1 toc-link" data-title="JSON Schema">JSON Schema</a>
           </li>
           <li>
-            <a href="#sources" class="toc-h1 toc-link" data-title="Sources">Sources</a>
+            <a href="#json-ld-context" class="toc-h1 toc-link" data-title="JSON-LD Context">JSON-LD Context</a>
+          </li>
+          <li>
+            <a href="#references" class="toc-h1 toc-link" data-title="References">References</a>
           </li>
       </ul>
         <ul class="toc-footer">
@@ -335,7 +338,7 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='overview'>Overview</h1>
+        <h1 id='example-sosa-vector-observation'>Example SOSA Vector Observation</h1>
 <p>This building block defines an example SOSA Vector Observation</p>
 
 <p><a href="https://github.com/cportele/ogcapi-building-blocks#building-block-maturity">Maturity</a>: Mature</p>
@@ -358,9 +361,78 @@
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h1 id='schema'>Schema</h1>
-<p><a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/_sources/examples/vectorObservation/schema.yaml">schema.yaml</a></p>
-<h1 id='sources'>Sources</h1>
+</span></code></pre></div><h1 id='json-schema'>JSON Schema</h1><div class="highlight"><pre class="highlight yaml tab-yaml--schema"><code><span class="na">$schema</span><span class="pi">:</span> <span class="s">https://json-schema.org/draft/2020-12/schema</span>
+<span class="na">description</span><span class="pi">:</span> <span class="s">Example SOSA Vector Observation</span>
+<span class="na">allOf</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="na">$ref</span><span class="pi">:</span> <span class="s">../../properties/observation/schema.yaml</span>
+<span class="pi">-</span> <span class="na">type</span><span class="pi">:</span> <span class="s">object</span>
+  <span class="na">properties</span><span class="pi">:</span>
+    <span class="na">hasResult</span><span class="pi">:</span>
+      <span class="na">properties</span><span class="pi">:</span>
+        <span class="na">pose</span><span class="pi">:</span>
+          <span class="na">$ref</span><span class="pi">:</span> <span class="s">https://opengeospatial.github.io/bblocks/annotated-schemas/geo/geopose/basic-ypr/schema.yaml</span>
+        <span class="na">distance</span><span class="pi">:</span>
+          <span class="na">type</span><span class="pi">:</span> <span class="s">number</span>
+          <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://example.com/properties/distance</span>
+          <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s">http://www.w3.org/2001/XMLSchema#float</span>
+  <span class="na">required</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">hasResult</span>
+  <span class="na">not</span><span class="pi">:</span>
+    <span class="na">required</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">hasSimpleResult</span>
+
+</code></pre></div>
+<p>Links to the schema:</p>
+
+<ul>
+<li>YAML version: <a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservation/schema.yaml" target="_blank">schema.yaml</a></li>
+<li>JSON version: <a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservation/schema.json" target="_blank">schema.json</a></li>
+</ul>
+<h1 id='json-ld-context'>JSON-LD Context</h1><div class="highlight"><pre class="highlight json tab-json--ldContext"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"sosa"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/ns/sosa/"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ssn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/ns/ssn/"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ssn-system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/ns/ssn/systems/"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"resultTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:resultTime"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"phenomenonTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:phenomenonTime"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hasFeatureOfInterest"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasFeatureOfInterest"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"observedProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:observedProperty"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"usedProcedure"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:usedProcedure"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"madeBySensor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:madeBySensor"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"hasResult"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"distance"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/properties/distance"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#float"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"hasSimpleResult"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasSimpleResult"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"geopose"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/geopose/"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"geo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2003/01/geo/wgs84_pos#"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geopose:position"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"angles"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geopose:angles"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"yaw"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geopose:yaw"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"pitch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geopose:pitch"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"roll"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geopose:roll"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geopose:lat"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geopose:lon"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"h"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geopose:h"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>You can find the full JSON-LD context here:
+<a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservation/context.jsonld" target="_blank">context.jsonld</a></p>
+<h1 id='references'>References</h1>
 <ul>
 <li><a href="https://www.w3.org/TR/vocab-ssn/">Semantic Sensor Network Ontology</a></li>
 </ul>

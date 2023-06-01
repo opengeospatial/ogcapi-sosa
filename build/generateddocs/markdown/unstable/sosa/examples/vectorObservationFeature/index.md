@@ -40,8 +40,6 @@ This building block defines an example SOSA Observation Feature for a Vector Obs
 
 ## Schema
 
-[schema.yaml](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema.yaml)
-
 ```yaml
 $schema: https://json-schema.org/draft/2020-12/schema
 description: Example SOSA Vector Observation
@@ -53,6 +51,12 @@ allOf:
       $ref: ../vectorObservation/schema.yaml
 
 ```
+
+Links to the schema:
+
+* YAML version: [schema.yaml](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema.json)
+* JSON version: [schema.json](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema.yaml)
+
 ## Sources
 
 * [Semantic Sensor Network Ontology](https://www.w3.org/TR/vocab-ssn/)

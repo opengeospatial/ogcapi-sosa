@@ -1,12 +1,19 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "SOSA Observation Feature",
-  "type": "object",
-  "properties": {
-    "properties": {
-      "$ref": "../../properties/observationCollection/schema.json"
+  "allOf": [
+    {
+      "$ref": "https://opengeospatial.github.io/bblocks/annotated-schemas/geo/json-fg/featureCollection/schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "properties": {
+          "$ref": "../../properties/observationCollection/schema.json"
+        }
+      }
     }
-  },
+  ],
   "x-jsonld-prefixes": {
     "sosa": "http://www.w3.org/ns/sosa/",
     "ssn": "http://www.w3.org/ns/ssn/",

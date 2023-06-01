@@ -65,8 +65,6 @@ eg:p1 a skos:Concept;
 
 ## Schema
 
-[schema.yaml](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/properties/observationCollection/schema.yaml)
-
 ```yaml
 $schema: https://json-schema.org/draft/2020-12/schema
 description: SOSA ObservationCollection
@@ -126,6 +124,12 @@ x-jsonld-prefixes:
   ssn-system: http://www.w3.org/ns/ssn/systems/
 
 ```
+
+Links to the schema:
+
+* YAML version: [schema.yaml](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/properties/observationCollection/schema.json)
+* JSON version: [schema.json](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/properties/observationCollection/schema.yaml)
+
 ## Sources
 
 * [Semantic Sensor Network Ontology](https://www.w3.org/TR/vocab-ssn/)

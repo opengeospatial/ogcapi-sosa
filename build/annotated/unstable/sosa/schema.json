@@ -59,7 +59,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "https://opengeospatial.github.io/bblocks/annotated-schemas/geo/features/feature/schema.yaml"
+          "$ref": "https://opengeospatial.github.io/bblocks/annotated-schemas/geo/json-fg/feature/schema.yaml"
         },
         {
           "type": "object",
@@ -79,12 +79,19 @@
     {
       "$schema": "https://json-schema.org/draft/2020-12/schema",
       "description": "SOSA Observation Feature",
-      "type": "object",
-      "properties": {
-        "properties": {
-          "$ref": "properties/observationCollection/schema.yaml"
+      "allOf": [
+        {
+          "$ref": "https://opengeospatial.github.io/bblocks/annotated-schemas/geo/json-fg/featureCollection/schema.yaml"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "properties": {
+              "$ref": "properties/observationCollection/schema.yaml"
+            }
+          }
         }
-      },
+      ],
       "x-jsonld-prefixes": {
         "sosa": "http://www.w3.org/ns/sosa/",
         "ssn": "http://www.w3.org/ns/ssn/",

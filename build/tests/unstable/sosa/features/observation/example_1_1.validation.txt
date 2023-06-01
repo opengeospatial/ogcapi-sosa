@@ -1,0 +1,32 @@
+=== JSON Schema errors ===
+ValidationError: 'time' is a required property
+
+Failed validating 'required' in schema['allOf'][0]['allOf'][1]:
+    {'$id': 'https://beta.schemas.opengis.net/json-fg/feature.json',
+     '$schema': 'https://json-schema.org/draft/2019-09/schema',
+     'description': 'This JSON Schema is part of JSON-FG version 0.1.1',
+     'properties': {'coordRefSys': {'$ref': 'coordrefsys.json'},
+                    'featureType': {'$ref': 'featuretype.json'},
+                    'geometry': {'$ref': 'geometry.json'},
+                    'id': {'oneOf': [{'type': 'number'},
+                                     {'type': 'string'}]},
+                    'links': {'items': {'$ref': 'link.json'},
+                              'type': 'array'},
+                    'place': {'$ref': 'place.json'},
+                    'properties': {'oneOf': [{'type': 'null'},
+                                             {'type': 'object'}]},
+                    'time': {'$ref': 'time.json'},
+                    'type': {'enum': ['Feature'], 'type': 'string'}},
+     'required': ['type', 'time', 'place', 'geometry', 'properties'],
+     'title': 'a JSON-FG Feature',
+     'type': 'object'}
+
+On instance:
+    {'@id': '_:a1',
+     'featureType': 'sosa:Observation',
+     'geometry': {'coordinates': [43.457475012484124, -3.7684047847661435],
+                  'type': 'Point'},
+     'properties': {'hasFeatureOfInterest': 'http://example.com/fois/1',
+                    'hasSimpleResult': 33,
+                    'resultTime': '2022-05-01T22:33:44Z'},
+     'type': 'Feature'}

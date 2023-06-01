@@ -287,7 +287,7 @@
     </style>
     <link href="../../../../stylesheets/screen-9c19b03a.css" rel="stylesheet" media="screen" />
     <link href="../../../../stylesheets/print-966d6edc.css" rel="stylesheet" media="print" />
-      <script src="../../../../javascripts/all-b12a2749.js"></script>
+      <script src="../../../../javascripts/all-fea9e21b.js"></script>
 
     <script>
       $(function() { setupCodeCopy(); });
@@ -304,7 +304,7 @@
     <div class="toc-wrapper">
       <img src="../../../../images/logo-4d9dfd05.svg" class="logo" alt="" />
         <div class="lang-selector">
-              <a href="#" data-language-name="json">json</a>
+              <a href="#" data-language-name="json">JSON</a>
               <a href="#" data-language-name="ttl">ttl</a>
         </div>
         <div class="search">
@@ -313,13 +313,13 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#overview" class="toc-h1 toc-link" data-title="Overview">Overview</a>
+            <a href="#sosa-observationcollection" class="toc-h1 toc-link" data-title="SOSA ObservationCollection">SOSA ObservationCollection</a>
           </li>
           <li>
             <a href="#description" class="toc-h1 toc-link" data-title="Description">Description</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#sosa-observationcollection" class="toc-h2 toc-link" data-title="SOSA ObservationCollection">SOSA ObservationCollection</a>
+                    <a href="#sosa-observationcollection-2" class="toc-h2 toc-link" data-title="SOSA ObservationCollection">SOSA ObservationCollection</a>
                   </li>
               </ul>
           </li>
@@ -332,10 +332,13 @@
               </ul>
           </li>
           <li>
-            <a href="#schema" class="toc-h1 toc-link" data-title="Schema">Schema</a>
+            <a href="#json-schema" class="toc-h1 toc-link" data-title="JSON Schema">JSON Schema</a>
           </li>
           <li>
-            <a href="#sources" class="toc-h1 toc-link" data-title="Sources">Sources</a>
+            <a href="#json-ld-context" class="toc-h1 toc-link" data-title="JSON-LD Context">JSON-LD Context</a>
+          </li>
+          <li>
+            <a href="#references" class="toc-h1 toc-link" data-title="References">References</a>
           </li>
       </ul>
         <ul class="toc-footer">
@@ -347,11 +350,11 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='overview'>Overview</h1>
+        <h1 id='sosa-observationcollection'>SOSA ObservationCollection</h1>
 <p>This building blocks defines an ObservationCollection according to the SOSA/SSN v1.1 specification.</p>
 
 <p><a href="https://github.com/cportele/ogcapi-building-blocks#building-block-maturity">Maturity</a>: Development</p>
-<h1 id='description'>Description</h1><h2 id='sosa-observationcollection'>SOSA ObservationCollection</h2>
+<h1 id='description'>Description</h1><h2 id='sosa-observationcollection-2'>SOSA ObservationCollection</h2>
 <p>Collection of one or more observations, whose members share a common value for one or more properties.</p>
 <h1 id='examples'>Examples</h1><h2 id='example-of-sosa-observationcollection'>Example of SOSA ObservationCollection</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
   </span><span class="nl">"hasMember"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -390,9 +393,97 @@ eg:a1 a sosa:Observation ;
 eg:p1 a skos:Concept;
   skos:prefLabel "Some Observable Property";
 .
-</code></pre></div><h1 id='schema'>Schema</h1>
-<p><a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/_sources/properties/observationCollection/schema.yaml">schema.yaml</a></p>
-<h1 id='sources'>Sources</h1>
+</code></pre></div><h1 id='json-schema'>JSON Schema</h1><div class="highlight"><pre class="highlight yaml tab-yaml--schema"><code><span class="na">$schema</span><span class="pi">:</span> <span class="s">https://json-schema.org/draft/2020-12/schema</span>
+<span class="na">description</span><span class="pi">:</span> <span class="s">SOSA ObservationCollection</span>
+<span class="na">type</span><span class="pi">:</span> <span class="s">object</span>
+<span class="na">properties</span><span class="pi">:</span>
+  <span class="na">resultTime</span><span class="pi">:</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">string</span>
+    <span class="na">format</span><span class="pi">:</span> <span class="s">date-time</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/resultTime</span>
+  <span class="na">phenomenonTime</span><span class="pi">:</span>
+    <span class="na">type</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">object</span>
+    <span class="pi">-</span> <span class="s">string</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/phenomenonTime</span>
+  <span class="na">hasFeatureOfInterest</span><span class="pi">:</span>
+    <span class="na">type</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">object</span>
+    <span class="pi">-</span> <span class="s">string</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasFeatureOfInterest</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">observedProperty</span><span class="pi">:</span>
+    <span class="na">type</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">object</span>
+    <span class="pi">-</span> <span class="s">string</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/observedProperty</span>
+  <span class="na">usedProcedure</span><span class="pi">:</span>
+    <span class="na">type</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">object</span>
+    <span class="pi">-</span> <span class="s">string</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/usedProcedure</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">madeBySensor</span><span class="pi">:</span>
+    <span class="na">type</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">object</span>
+    <span class="pi">-</span> <span class="s">string</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/madeBySensor</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">hasMember</span><span class="pi">:</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">array</span>
+    <span class="na">items</span><span class="pi">:</span>
+      <span class="na">oneOf</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">$ref</span><span class="pi">:</span> <span class="s">../observation/schema.yaml</span>
+      <span class="pi">-</span> <span class="na">type</span><span class="pi">:</span> <span class="s">string</span>
+    <span class="na">minItems</span><span class="pi">:</span> <span class="m">1</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasMember</span>
+<span class="na">required</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="s">hasMember</span>
+<span class="na">not</span><span class="pi">:</span>
+  <span class="na">anyOf</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">required</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">hasResult</span>
+  <span class="pi">-</span> <span class="na">required</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">hasSimpleResult</span>
+<span class="na">x-jsonld-prefixes</span><span class="pi">:</span>
+  <span class="na">sosa</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/</span>
+  <span class="na">ssn</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/</span>
+  <span class="na">ssn-system</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/</span>
+
+</code></pre></div>
+<p>Links to the schema:</p>
+
+<ul>
+<li>YAML version: <a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/properties/observationCollection/schema.yaml" target="_blank">schema.yaml</a></li>
+<li>JSON version: <a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/properties/observationCollection/schema.json" target="_blank">schema.json</a></li>
+</ul>
+<h1 id='json-ld-context'>JSON-LD Context</h1><div class="highlight"><pre class="highlight json tab-json--ldContext"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"sosa"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/ns/sosa/"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ssn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/ns/ssn/"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ssn-system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/ns/ssn/systems/"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"resultTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:resultTime"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"phenomenonTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:phenomenonTime"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hasFeatureOfInterest"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasFeatureOfInterest"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"observedProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:observedProperty"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"usedProcedure"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:usedProcedure"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"madeBySensor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:madeBySensor"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"hasMember"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasMember"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>You can find the full JSON-LD context here:
+<a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/properties/observationCollection/context.jsonld" target="_blank">context.jsonld</a></p>
+<h1 id='references'>References</h1>
 <ul>
 <li><a href="https://www.w3.org/TR/vocab-ssn/">Semantic Sensor Network Ontology</a></li>
 <li><a href="https://www.w3.org/TR/vocab-ssn-ext/">Extensions to the Semantic Sensor Network Ontology</a></li>
@@ -401,7 +492,7 @@ eg:p1 a skos:Concept;
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="json">json</a>
+                <a href="#" data-language-name="json">JSON</a>
                 <a href="#" data-language-name="ttl">ttl</a>
           </div>
       </div>
