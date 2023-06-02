@@ -5,7 +5,7 @@
 
 This building block defines an example SOSA Vector Observation
 
-[*Maturity*](https://github.com/cportele/ogcapi-building-blocks#building-block-maturity): Mature
+[*Maturity*](https://github.com/cportele/ogcapi-building-blocks#building-block-maturity): Development
 
 ## Examples
 

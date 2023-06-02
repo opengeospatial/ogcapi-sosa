@@ -3,7 +3,7 @@ title: SOSA Observation (Schema)
 
 language_tabs:
   - json: JSON
-  - ttl
+  - ttl: RDF/Turtle
 
 toc_footers:
   - Version 1.0
@@ -23,7 +23,7 @@ meta:
 
 This building block defines the set of properties for an observation according to the SOSA/SSN specification. These properties may be directly included into a root element of a JSON object or used in the properties container of a GeoJSON feature.
 
-[Maturity](https://github.com/cportele/ogcapi-building-blocks#building-block-maturity): Mature
+[Maturity](https://github.com/cportele/ogcapi-building-blocks#building-block-maturity): Development
 
 <aside class="success">
 This building block is <strong><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/unstable/sosa/properties/observation/" target="_blank">valid</a></strong>

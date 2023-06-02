@@ -3,7 +3,7 @@ title: SOSA ObservationCollection Feature (Schema)
 
 language_tabs:
   - json: JSON
-  - ttl
+  - ttl: RDF/Turtle
 
 toc_footers:
   - Version 1.0

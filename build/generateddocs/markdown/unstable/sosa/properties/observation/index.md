@@ -5,7 +5,7 @@
 
 This building block defines the set of properties for an observation according to the SOSA/SSN specification. These properties may be directly included into a root element of a JSON object or used in the properties container of a GeoJSON feature.
 
-[*Maturity*](https://github.com/cportele/ogcapi-building-blocks#building-block-maturity): Mature
+[*Maturity*](https://github.com/cportele/ogcapi-building-blocks#building-block-maturity): Development
 
 ## Description
 

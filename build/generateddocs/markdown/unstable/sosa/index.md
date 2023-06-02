@@ -5,7 +5,7 @@
 
 The SOSA (Sensor, Observation, Sample, and Actuator) ontology  is a realisation of the Observations, Measurements and Sampling (OMS) Conceptual model
 
-[*Maturity*](https://github.com/cportele/ogcapi-building-blocks#building-block-maturity): Mature
+[*Maturity*](https://github.com/cportele/ogcapi-building-blocks#building-block-maturity): Development
 
 ## Description
 

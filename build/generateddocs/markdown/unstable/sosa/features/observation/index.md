@@ -5,7 +5,7 @@
 
 This building blocks defines a GeoJSON feature containing a SOSA Observation
 
-[*Maturity*](https://github.com/cportele/ogcapi-building-blocks#building-block-maturity): Mature
+[*Maturity*](https://github.com/cportele/ogcapi-building-blocks#building-block-maturity): Development
 
 ## Examples
 
