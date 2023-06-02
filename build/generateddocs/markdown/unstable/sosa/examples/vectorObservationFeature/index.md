@@ -17,9 +17,9 @@ This building block defines an example SOSA Observation Feature for a Vector Obs
    "geometry": {
     "type": "LineString",
     "coordinates": [
-    [ [43.46498208387333, -3.803638278687769],
-      [43.457475012484124, -3.7684047847661435]
-          ]
+     [43.46498208387333, -3.803638278687769],
+     [43.457475012484124, -3.7684047847661435]
+          
     ]
   },
   "time": {},
