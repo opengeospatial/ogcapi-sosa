@@ -36,9 +36,9 @@ Validation for this building block has <strong><a href="https://github.com/openg
    "geometry": {
     "type": "LineString",
     "coordinates": [
-    [ [43.46498208387333, -3.803638278687769],
-      [43.457475012484124, -3.7684047847661435]
-          ]
+     [43.46498208387333, -3.803638278687769],
+     [43.457475012484124, -3.7684047847661435]
+          
     ]
   },
   "time": {},
