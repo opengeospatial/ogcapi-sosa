@@ -22,8 +22,8 @@ This building block defines an example SOSA Observation Feature for a Vector Obs
           
     ]
   },
-  "time": {},
-  "place": {},
+  "time": null,
+  "place": null,
   "properties": {
     "hasFeatureOfInterest": "eg:Traverse-P1-P2",
     "resultTime": "2023-05-22T16:41:00+2",
