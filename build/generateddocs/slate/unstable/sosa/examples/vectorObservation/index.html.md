@@ -16,11 +16,15 @@ meta:
 ---
 
 
-# Example SOSA Vector Observation
+# Example SOSA Vector Observation `ogc.unstable.sosa.examples.vectorObservation`
 
 This building block defines an example SOSA Vector Observation
 
 [Maturity](https://github.com/cportele/ogcapi-building-blocks#building-block-maturity): Mature
+
+<aside class="success">
+This building block is <strong><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/unstable/sosa/examples/vectorObservation/" target="_blank">valid</a></strong>
+</aside>
 
 # Examples
 
@@ -76,8 +80,8 @@ allOf:
 
 Links to the schema:
 
-* YAML version: <a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservation/schema.yaml" target="_blank">schema.yaml</a>
-* JSON version: <a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservation/schema.json" target="_blank">schema.json</a>
+* YAML version: <a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservation/schema.yaml" target="_blank">https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservation/schema.yaml</a>
+* JSON version: <a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservation/schema.json" target="_blank">https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservation/schema.json</a>
 
 
 # JSON-LD Context
@@ -127,7 +131,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-<a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservation/context.jsonld" target="_blank">context.jsonld</a>
+<a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservation/context.jsonld" target="_blank">https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservation/context.jsonld</a>
 
 # References
 

@@ -1,6 +1,7 @@
+
 # Example SOSA Vector Observation (Schema)
 
-*Version 1.0*
+`ogc.unstable.sosa.examples.vectorObservation` *v1.0*
 
 This building block defines an example SOSA Vector Observation
 
@@ -61,6 +62,56 @@ Links to the schema:
 
 * YAML version: [schema.yaml](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservation/schema.json)
 * JSON version: [schema.json](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservation/schema.yaml)
+
+
+# JSON-LD Context
+
+```jsonld
+{
+  "@context": {
+    "sosa": "http://www.w3.org/ns/sosa/",
+    "ssn": "http://www.w3.org/ns/ssn/",
+    "ssn-system": "http://www.w3.org/ns/ssn/systems/",
+    "resultTime": "sosa:resultTime",
+    "phenomenonTime": "sosa:phenomenonTime",
+    "hasFeatureOfInterest": {
+      "@id": "sosa:hasFeatureOfInterest",
+      "@type": "@id"
+    },
+    "observedProperty": "sosa:observedProperty",
+    "usedProcedure": {
+      "@id": "sosa:usedProcedure",
+      "@type": "@id"
+    },
+    "madeBySensor": {
+      "@id": "sosa:madeBySensor",
+      "@type": "@id"
+    },
+    "hasResult": {
+      "@context": {
+        "distance": {
+          "@id": "http://example.com/properties/distance",
+          "@type": "http://www.w3.org/2001/XMLSchema#float"
+        }
+      }
+    },
+    "hasSimpleResult": "sosa:hasSimpleResult",
+    "geopose": "http://example.com/geopose/",
+    "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+    "position": "geopose:position",
+    "angles": "geopose:angles",
+    "yaw": "geopose:yaw",
+    "pitch": "geopose:pitch",
+    "roll": "geopose:roll",
+    "lat": "geopose:lat",
+    "lon": "geopose:lon",
+    "h": "geopose:h"
+  }
+}
+```
+
+You can find the full JSON-LD context here:
+[context.jsonld](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservation/context.jsonld)
 
 ## Sources
 

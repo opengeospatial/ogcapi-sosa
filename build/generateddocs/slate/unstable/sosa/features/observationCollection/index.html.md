@@ -19,11 +19,15 @@ meta:
 ---
 
 
-# SOSA ObservationCollection Feature
+# SOSA ObservationCollection Feature `ogc.unstable.sosa.features.observationCollection`
 
 This building blocks defines an ObservationCollection Feature according to the SOSA/SSN v1.1 specification.
 
 [Maturity](https://github.com/cportele/ogcapi-building-blocks#building-block-maturity): Development
+
+<aside class="warning">
+Validation for this building block has <strong><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/unstable/sosa/features/observationCollection/" target="_blank">failed</a></strong>
+</aside>
 
 # Examples
 
@@ -106,8 +110,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: <a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observationCollection/schema.yaml" target="_blank">schema.yaml</a>
-* JSON version: <a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observationCollection/schema.json" target="_blank">schema.json</a>
+* YAML version: <a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observationCollection/schema.yaml" target="_blank">https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observationCollection/schema.yaml</a>
+* JSON version: <a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observationCollection/schema.json" target="_blank">https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observationCollection/schema.json</a>
 
 
 # JSON-LD Context
@@ -139,7 +143,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-<a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observationCollection/context.jsonld" target="_blank">context.jsonld</a>
+<a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observationCollection/context.jsonld" target="_blank">https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observationCollection/context.jsonld</a>
 
 # References
 

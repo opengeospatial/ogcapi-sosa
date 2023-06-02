@@ -16,11 +16,15 @@ meta:
 ---
 
 
-# Example SOSA Vector Observation Feature
+# Example SOSA Vector Observation Feature `ogc.unstable.sosa.examples.vectorObservationFeature`
 
 This building block defines an example SOSA Observation Feature for a Vector Observation
 
 [Maturity](https://github.com/cportele/ogcapi-building-blocks#building-block-maturity): Mature
+
+<aside class="warning">
+Validation for this building block has <strong><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/unstable/sosa/examples/vectorObservationFeature/" target="_blank">failed</a></strong>
+</aside>
 
 # Examples
 
@@ -29,12 +33,18 @@ This building block defines an example SOSA Observation Feature for a Vector Obs
 ```json
 {
   "type": "Feature",
-  "geometry": {
-    "type": "Point",
-    "coordinates": [43.457475012484124, -3.7684047847661435]
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+    [ [43.46498208387333, -3.803638278687769,],
+      [43.457475012484124, -3.7684047847661435]
+          ]
+    ]
   },
+  "time": {},
+  "place": {},
   "properties": {
-    "hasFeatureOfInterest": "http://example.com/features/33",
+    "hasFeatureOfInterest": "eg:Traverse-P1-P2",
     "resultTime": "2023-05-22T16:41:00+2",
     "hasResult": {
       "pose": {
@@ -48,7 +58,8 @@ This building block defines an example SOSA Observation Feature for a Vector Obs
           "pitch": -0.92,
           "roll": 0.33
         }
-      }
+      },
+      "distance": 9703.3
     }
   }
 }
@@ -71,8 +82,8 @@ allOf:
 
 Links to the schema:
 
-* YAML version: <a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema.yaml" target="_blank">schema.yaml</a>
-* JSON version: <a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema.json" target="_blank">schema.json</a>
+* YAML version: <a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema.yaml" target="_blank">https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema.yaml</a>
+* JSON version: <a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema.json" target="_blank">https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema.json</a>
 
 
 # JSON-LD Context
@@ -137,7 +148,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-<a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservationFeature/context.jsonld" target="_blank">context.jsonld</a>
+<a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservationFeature/context.jsonld" target="_blank">https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservationFeature/context.jsonld</a>
 
 # References
 
