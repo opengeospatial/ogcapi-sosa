@@ -3,14 +3,19 @@
   "type": "Feature",
   "featureType": "sosa:ObservationCollection",
   "properties": {
-    "observedProperty": "p1",
-    "resultTime": "2022-05-01T22:33:44Z",
+    "observedProperty": "http://dbpedia.org/ontology/population",
+    "resultTime": "1999",
     "hasMember": [
       {
-        "@id": "a1",
+        "@id": "pop1999",
         "comment": "Example of an inline membership - would entail hasMember relations",
-        "hasFeatureOfInterest": "http://example.com/fois/1",
-        "hasSimpleResult": 12
+        "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork",
+        "hasSimpleResult": 15555.0
+      },
+      {
+        "@id": "pop1999",
+        "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
+        "hasSimpleResult": 3275.0
       }
     ]
   }

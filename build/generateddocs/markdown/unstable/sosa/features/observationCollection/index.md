@@ -33,14 +33,19 @@ This building blocks defines an ObservationCollection Feature according to the S
   "type": "Feature",
   "featureType": "sosa:ObservationCollection",
   "properties": {
-    "observedProperty": "p1",
-    "resultTime": "2022-05-01T22:33:44Z",
+    "observedProperty": "http://dbpedia.org/ontology/population",
+    "resultTime": "1999",
     "hasMember": [
       { 
-        "@id": "a1",
+        "@id": "pop1999",
         "comment": "Example of an inline membership - would entail hasMember relations",
-        "hasFeatureOfInterest": "http://example.com/fois/1",
-        "hasSimpleResult": 12
+        "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork",
+        "hasSimpleResult": 15555.0
+      },
+       { 
+        "@id": "pop1999",
+        "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
+        "hasSimpleResult": 3275.0
       }
     ]
   },
@@ -55,17 +60,25 @@ This building blocks defines an ObservationCollection Feature according to the S
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 eg:c1 a sosa:ObservationCollection ;
-  sosa:hasMember eg:a1 ;
-  sosa:observedProperty eg:p1 ;
+  sosa:hasMember eg:pop1999, eg:pop2000 ;
+  sosa:observedProperty <http://dbpedia.org/ontology/population> ;
   sosa:resultTime "2022-05-01T22:33:44Z"^^xsd:dateTime ;
 .
 
-eg:a1 a sosa:Observation ;
-  sosa:hasFeatureOfInterest <http://example.com/fois/1> ;
-  sosa:hasSimpleResult 33 ;
+eg:pop1999 a sosa:Observation ;
+  sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
+  sosa:hasSimpleResult 3275.0 ;
+  sosa:resultTime "1999-01-01"^^xsd:dateTime
 .
-eg:p1 a skos:Concept;
-  skos:prefLabel "Some Observable Property";
+
+ eg:pop2000 a sosa:Observation ;
+  sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
+  sosa:hasSimpleResult 4372.0 ;
+  sosa:resultTime "2000"^^xsd:dateTime
+.
+
+<http://dbpedia.org/ontology/population> a skos:Concept;
+  skos:prefLabel "Population";
 .
 ```
 

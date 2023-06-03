@@ -21,7 +21,7 @@ This building blocks defines a GeoJSON feature containing a SOSA Observation
     "coordinates": [43.457475012484124, -3.7684047847661435]
   },
   "properties": {
-    "hasFeatureOfInterest": "http://example.com/fois/1",
+    "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
     "hasSimpleResult": 33,
     "resultTime": "2022-05-01T22:33:44Z"
     }
@@ -35,7 +35,7 @@ This building blocks defines a GeoJSON feature containing a SOSA Observation
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 _:a1 a geojson:Feature;
   geojson:properties [
-    sosa:hasFeatureOfInterest <http://example.com/fois/1> ;
+    sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
     sosa:hasSimpleResult 33 ;
     sosa:resultTime "2022-05-01T22:33:44Z"^^xsd:dateTime
   ]

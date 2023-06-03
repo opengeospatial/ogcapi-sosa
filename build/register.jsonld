@@ -1,21 +1,14 @@
 {
   "@context": {
-    "bblocks": "http://example.com/ogc/def/bblocks/",
-    "@base": "http://example.com/ogc/def/bblocks/",
+    "bblocks": "https://opengis.net/def/bblocks/",
+    "@base": "https://opengis.net/def/bblocks/",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "dct": "http://purl.org/dc/terms/",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "itemIdentifier": "@id",
     "name": "rdfs:label",
-    "abstract": "dct:description",
-    "register": {
-      "@id": "bblocks:inRegister",
-      "@type": "@id",
-      "@context": {
-        "@base": "http://example.com/ogc/def/bblocks/"
-      }
-    },
+    "abstract": "dct:abstract",
     "status": {
       "@id": "bblocks:status",
       "@type": "@id",
@@ -36,44 +29,51 @@
       "@id": "bblocks:maturity",
       "@type": "@id",
       "@context": {
-        "@base": "http://example.com/ogc/def/bblocks/maturity/"
+        "@base": "http://opengis.net/def/bblocks/maturity/"
       }
     },
     "scope": {
       "@id": "bblocks:scope",
       "@type": "@id",
       "@context": {
-        "@base": "http://example.com/ogc/def/bblocks/scope/"
+        "@base": "http://opengis.net/def/bblocks/scope/"
       }
     },
     "sources": {
       "@id": "dct:source",
       "@context": {
         "title": "rdfs:label",
-        "link": {
-          "@id": "rdfs:seeAlso",
-          "@type": "@id"
-        }
+        "link": "@id"
       }
-    },
-    "link": {
-      "@id": "rdfs:seeAlso",
-      "@type": "@id"
     },
     "schema": {
       "@id": "bblocks:hasSchema",
-      "@type": "@id"
+      "@type": "@id",
+      "@container": "@index",
+      "@index": "dct:format"
     },
     "ldContext": {
       "@id": "bblocks:hasJsonLdContext",
       "@type": "@id"
     },
     "documentation": {
-      "@id": "rdfs:seeAlso",
-      "@type": "@id"
+      "@id": "dct:description",
+      "@type": "@id",
+      "@container": "@index",
+      "@index": "dct:identifier",
+      "@context": {
+        "mediatype": "dct:format",
+        "url": "rdfs:isDefinedBy"
+      }
+    },
+    "hasConcepts": {
+      "@reverse": "skos:inScheme"
     }
   },
-  "@graph": [
+  "@id": "https://opengis.net/def/bblocks",
+  "@type": "skos:ConceptScheme",
+  "skos:prefLabel": "OGC Building Blocks Register",
+  "hasConcepts": [
     {
       "name": "Example SOSA Vector Observation",
       "abstract": "This building block defines an example SOSA Vector Observation",
@@ -126,7 +126,10 @@
           "url": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/slate-build/unstable/sosa/examples/vectorObservation/"
         }
       },
-      "@type": "bblocks:Schema"
+      "@type": [
+        "bblocks:Schema",
+        "skos:Concept"
+      ]
     },
     {
       "name": "Example SOSA Vector Observation Feature",
@@ -180,7 +183,10 @@
           "url": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/slate-build/unstable/sosa/examples/vectorObservationFeature/"
         }
       },
-      "@type": "bblocks:Schema"
+      "@type": [
+        "bblocks:Schema",
+        "skos:Concept"
+      ]
     },
     {
       "name": "SOSA Observation Feature",
@@ -233,7 +239,10 @@
           "url": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/slate-build/unstable/sosa/features/observation/"
         }
       },
-      "@type": "bblocks:Schema"
+      "@type": [
+        "bblocks:Schema",
+        "skos:Concept"
+      ]
     },
     {
       "name": "SOSA ObservationCollection Feature",
@@ -287,7 +296,10 @@
           "url": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/slate-build/unstable/sosa/features/observationCollection/"
         }
       },
-      "@type": "bblocks:Schema"
+      "@type": [
+        "bblocks:Schema",
+        "skos:Concept"
+      ]
     },
     {
       "name": "SOSA Observation",
@@ -337,7 +349,10 @@
           "url": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/slate-build/unstable/sosa/properties/observation/"
         }
       },
-      "@type": "bblocks:Schema"
+      "@type": [
+        "bblocks:Schema",
+        "skos:Concept"
+      ]
     },
     {
       "name": "SOSA ObservationCollection",
@@ -391,7 +406,10 @@
           "url": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/slate-build/unstable/sosa/properties/observationCollection/"
         }
       },
-      "@type": "bblocks:Schema"
+      "@type": [
+        "bblocks:Schema",
+        "skos:Concept"
+      ]
     },
     {
       "name": "Sensor, Observation, Sample, and Actuator (SOSA)",
@@ -440,7 +458,10 @@
           "url": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/slate-build/unstable/sosa/"
         }
       },
-      "@type": "bblocks:Api"
+      "@type": [
+        "bblocks:Api",
+        "skos:Concept"
+      ]
     }
   ]
 }

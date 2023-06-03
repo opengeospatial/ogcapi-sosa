@@ -56,7 +56,7 @@ Collection of one or more observations, whose members share a common value for o
     { 
       "@id": "a1",
       "comment": "Example of an inline membership - would entail hasMember relations",
-      "hasFeatureOfInterest": "http://example.com/fois/1",
+      "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
       "hasSimpleResult": 1995.2,
     }
   ]
@@ -76,7 +76,7 @@ eg:c1 a sosa:ObservationCollection ;
 .
 
 eg:a1 a sosa:Observation ;
-  sosa:hasFeatureOfInterest <http://example.com/fois/1> ;
+  sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
   sosa:hasSimpleResult 33 ;
 .
 eg:p1 a skos:Concept;

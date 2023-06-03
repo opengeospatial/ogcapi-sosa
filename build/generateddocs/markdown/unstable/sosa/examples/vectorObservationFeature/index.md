@@ -17,9 +17,14 @@ This building block defines an example SOSA Observation Feature for a Vector Obs
    "geometry": {
     "type": "LineString",
     "coordinates": [
-     [43.46498208387333, -3.803638278687769],
-     [43.457475012484124, -3.7684047847661435]
-          
+      [
+      -111.67183507997295,
+      40.056709946862874
+      ],
+      [ 
+      -111.67183507997295,
+      40.056709946862874
+      ]
     ]
   },
   "time": null,
@@ -30,20 +35,21 @@ This building block defines an example SOSA Observation Feature for a Vector Obs
     "hasResult": {
       "pose": {
         "position": {
-          "lat": 43.46498208387333,
-          "lon": -3.803638278687769,
+          "lat": -111.67183507997295,
+          "lon": 40.056709946862874,
           "h": 0.5
         },
         "angles": {
-          "yaw": 5.553,
-          "pitch": -0.92,
-          "roll": 0.33
+          "yaw": 15.35,
+          "pitch": -0.01,
+          "roll": 0
         }
       },
-      "distance": 9703.3
+      "distance": 6889234.2
     }
   }
 }
+
 ```
 
 ## Schema

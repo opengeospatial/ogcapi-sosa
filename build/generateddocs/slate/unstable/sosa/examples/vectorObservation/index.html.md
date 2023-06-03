@@ -32,7 +32,7 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
 
 ```json
 {
-  "hasFeatureOfInterest": "http://example.com/features/33",
+  "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
   "resultTime": "2023-05-22T16:41:00+2",
   "hasResult": {
     "pose": {
