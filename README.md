@@ -1,5 +1,6 @@
 # OGC Building Blocks for SOSA 
 
+
 The SOSA ([Sensor, Observation, Sample, and Actuator](https://www.w3.org/TR/vocab-ssn/)) ontology  is a realisation of the 
  Observations, Measurements and Sampling (OMS) Conceptual model. This repository defines:
  *  JSON schema encoding for each feature type (class) defined by SOSA, compatible with the OGC API Features using the FG-JSON extension to GeoJSON
@@ -14,6 +15,15 @@ The SOSA ([Sensor, Observation, Sample, and Actuator](https://www.w3.org/TR/voca
 This building block is __under construction__ and is undertaken in the context of the update of SOSA to align with OMS V3.
 
 It is assumed that this will be backwards compatible with the last published SOSA version https://www.w3.org/TR/2017/REC-vocab-ssn-20171019/. Any changes to this status will be noted in this section.
+
+## Documentation
+
+This building block self-documents using the build process described below.  For each component building block in this repository the
+deployed documentation is built on commit and can be found here: 
+
+https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/slate-build/unstable/sosa/features/observation
+
+(TODO - create index in Slate)
 
 ## General Building block repository structure
 
