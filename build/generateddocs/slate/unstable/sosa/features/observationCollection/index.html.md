@@ -56,7 +56,7 @@ Validation for this building block has <strong><a href="https://github.com/openg
   "properties": {
     "observedProperty": "http://dbpedia.org/ontology/population",
     "resultTime": "1999",
-    "hasMember": [
+    "features": [
       { 
         "@id": "pop1999",
         "comment": "Example of an inline membership - would entail hasMember relations",

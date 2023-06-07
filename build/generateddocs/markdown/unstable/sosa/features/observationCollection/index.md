@@ -35,7 +35,7 @@ This building blocks defines an ObservationCollection Feature according to the S
   "properties": {
     "observedProperty": "http://dbpedia.org/ontology/population",
     "resultTime": "1999",
-    "hasMember": [
+    "features": [
       { 
         "@id": "pop1999",
         "comment": "Example of an inline membership - would entail hasMember relations",

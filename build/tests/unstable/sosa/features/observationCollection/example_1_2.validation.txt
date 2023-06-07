@@ -23,15 +23,15 @@ Failed validating 'required' in schema['allOf'][0]:
 On instance:
     {'@id': 'c1',
      'featureType': 'sosa:ObservationCollection',
-     'properties': {'hasMember': [{'@id': 'pop1999',
-                                   'comment': 'Example of an inline '
-                                              'membership - would entail '
-                                              'hasMember relations',
-                                   'hasFeatureOfInterest': 'https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork',
-                                   'hasSimpleResult': 15555.0},
-                                  {'@id': 'pop1999',
-                                   'hasFeatureOfInterest': 'https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem',
-                                   'hasSimpleResult': 3275.0}],
+     'properties': {'features': [{'@id': 'pop1999',
+                                  'comment': 'Example of an inline '
+                                             'membership - would entail '
+                                             'hasMember relations',
+                                  'hasFeatureOfInterest': 'https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork',
+                                  'hasSimpleResult': 15555.0},
+                                 {'@id': 'pop1999',
+                                  'hasFeatureOfInterest': 'https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem',
+                                  'hasSimpleResult': 3275.0}],
                     'observedProperty': 'http://dbpedia.org/ontology/population',
                     'resultTime': '1999'},
      'type': 'Feature'}
