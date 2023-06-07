@@ -136,3 +136,11 @@ You can find the full JSON-LD context here:
 # References
 
 * [Semantic Sensor Network Ontology](https://www.w3.org/TR/vocab-ssn/)
+
+# For developers
+
+The source code for this Building Block can be found in the following repository:
+
+* URL: <a href="https://github.com/opengeospatial/ogcapi-sosa" target="_blank">https://github.com/opengeospatial/ogcapi-sosa</a>
+* Path: `_sources/examples/vectorObservation`
+
