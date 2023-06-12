@@ -20,6 +20,7 @@ anyOf:
     not:
       required:
       - hasSimpleResult
+  x-jsonld-extra-terms: {}
 - $schema: https://json-schema.org/draft/2020-12/schema
   description: Example SOSA Vector Observation
   allOf:
@@ -28,6 +29,7 @@ anyOf:
     properties:
       properties:
         $ref: examples/vectorObservation/schema.yaml
+  x-jsonld-extra-terms: {}
 - $schema: https://json-schema.org/draft/2020-12/schema
   description: SOSA Observation Feature
   type: object
@@ -41,6 +43,56 @@ anyOf:
     sosa: http://www.w3.org/ns/sosa/
     ssn: http://www.w3.org/ns/ssn/
     ssn-system: http://www.w3.org/ns/ssn/systems/
+  x-jsonld-extra-terms:
+    hasSystemProperty: http://www.w3.org/ns/ssn/systems/hasSystemProperty
+    hasOperatingRange: http://www.w3.org/ns/ssn/systems/hasOperatingRange
+    isObservedBy: http://www.w3.org/ns/sosa/isObservedBy
+    hasProperty: http://www.w3.org/ns/ssn/hasProperty
+    isSampleOf: http://www.w3.org/ns/sosa/isSampleOf
+    isResultOf: http://www.w3.org/ns/sosa/isResultOf
+    inDeployment: http://www.w3.org/ns/ssn/inDeployment
+    isActedOnBy: http://www.w3.org/ns/sosa/isActedOnBy
+    hasResult: http://www.w3.org/ns/sosa/hasResult
+    qualityOfObservation: http://www.w3.org/ns/ssn/systems/qualityOfObservation
+    madeActuation: http://www.w3.org/ns/sosa/madeActuation
+    hasDeployment: http://www.w3.org/ns/ssn/hasDeployment
+    hasSubSystem: http://www.w3.org/ns/ssn/hasSubSystem
+    Sample: http://www.w3.org/ns/sosa/Sample
+    hasSystemCapability: http://www.w3.org/ns/ssn/systems/hasSystemCapability
+    hasSimpleResult: http://www.w3.org/ns/sosa/hasSimpleResult
+    actsOnProperty: http://www.w3.org/ns/sosa/actsOnProperty
+    hosts: http://www.w3.org/ns/sosa/hosts
+    madeSampling: http://www.w3.org/ns/sosa/madeSampling
+    isPropertyOf: http://www.w3.org/ns/ssn/isPropertyOf
+    hasOutput: http://www.w3.org/ns/ssn/hasOutput
+    madeBySensor: http://www.w3.org/ns/sosa/madeBySensor
+    deployedSystem: http://www.w3.org/ns/ssn/deployedSystem
+    isHostedBy: http://www.w3.org/ns/sosa/isHostedBy
+    madeBySampler: http://www.w3.org/ns/sosa/madeBySampler
+    madeByActuator: http://www.w3.org/ns/sosa/madeByActuator
+    observedProperty: http://www.w3.org/ns/sosa/observedProperty
+    forProperty: http://www.w3.org/ns/ssn/forProperty
+    hasSample: http://www.w3.org/ns/sosa/hasSample
+    isFeatureOfInterestOf: http://www.w3.org/ns/sosa/isFeatureOfInterestOf
+    hasSurvivalRange: http://www.w3.org/ns/ssn/systems/hasSurvivalRange
+    hasInput: http://www.w3.org/ns/ssn/hasInput
+    inCondition: http://www.w3.org/ns/ssn/systems/inCondition
+    hasOperatingProperty: http://www.w3.org/ns/ssn/systems/hasOperatingProperty
+    hasSurvivalProperty: http://www.w3.org/ns/ssn/systems/hasSurvivalProperty
+    isProxyFor: http://www.w3.org/ns/ssn/isProxyFor
+    hasFeatureOfInterest: http://www.w3.org/ns/sosa/hasFeatureOfInterest
+    resultTime: http://www.w3.org/ns/sosa/resultTime
+    detects: http://www.w3.org/ns/ssn/detects
+    hasMember: http://www.w3.org/ns/sosa/hasMember
+    Observation: http://www.w3.org/ns/sosa/Observation
+    madeObservation: http://www.w3.org/ns/sosa/madeObservation
+    wasOriginatedBy: http://www.w3.org/ns/ssn/wasOriginatedBy
+    implements: http://www.w3.org/ns/ssn/implements
+    implementedBy: http://www.w3.org/ns/ssn/implementedBy
+    deployedOnPlatform: http://www.w3.org/ns/ssn/deployedOnPlatform
+    observes: http://www.w3.org/ns/sosa/observes
+    usedProcedure: http://www.w3.org/ns/sosa/usedProcedure
+    phenomenonTime: http://www.w3.org/ns/sosa/phenomenonTime
 - $schema: https://json-schema.org/draft/2020-12/schema
   description: SOSA Observation Feature
   allOf:
@@ -53,6 +105,56 @@ anyOf:
     sosa: http://www.w3.org/ns/sosa/
     ssn: http://www.w3.org/ns/ssn/
     ssn-system: http://www.w3.org/ns/ssn/systems/
+  x-jsonld-extra-terms:
+    hasSystemProperty: http://www.w3.org/ns/ssn/systems/hasSystemProperty
+    hasOperatingRange: http://www.w3.org/ns/ssn/systems/hasOperatingRange
+    isObservedBy: http://www.w3.org/ns/sosa/isObservedBy
+    hasProperty: http://www.w3.org/ns/ssn/hasProperty
+    isSampleOf: http://www.w3.org/ns/sosa/isSampleOf
+    isResultOf: http://www.w3.org/ns/sosa/isResultOf
+    inDeployment: http://www.w3.org/ns/ssn/inDeployment
+    isActedOnBy: http://www.w3.org/ns/sosa/isActedOnBy
+    hasResult: http://www.w3.org/ns/sosa/hasResult
+    qualityOfObservation: http://www.w3.org/ns/ssn/systems/qualityOfObservation
+    madeActuation: http://www.w3.org/ns/sosa/madeActuation
+    hasDeployment: http://www.w3.org/ns/ssn/hasDeployment
+    hasSubSystem: http://www.w3.org/ns/ssn/hasSubSystem
+    Sample: http://www.w3.org/ns/sosa/Sample
+    hasSystemCapability: http://www.w3.org/ns/ssn/systems/hasSystemCapability
+    hasSimpleResult: http://www.w3.org/ns/sosa/hasSimpleResult
+    actsOnProperty: http://www.w3.org/ns/sosa/actsOnProperty
+    hosts: http://www.w3.org/ns/sosa/hosts
+    madeSampling: http://www.w3.org/ns/sosa/madeSampling
+    isPropertyOf: http://www.w3.org/ns/ssn/isPropertyOf
+    hasOutput: http://www.w3.org/ns/ssn/hasOutput
+    madeBySensor: http://www.w3.org/ns/sosa/madeBySensor
+    deployedSystem: http://www.w3.org/ns/ssn/deployedSystem
+    isHostedBy: http://www.w3.org/ns/sosa/isHostedBy
+    madeBySampler: http://www.w3.org/ns/sosa/madeBySampler
+    madeByActuator: http://www.w3.org/ns/sosa/madeByActuator
+    observedProperty: http://www.w3.org/ns/sosa/observedProperty
+    forProperty: http://www.w3.org/ns/ssn/forProperty
+    hasSample: http://www.w3.org/ns/sosa/hasSample
+    isFeatureOfInterestOf: http://www.w3.org/ns/sosa/isFeatureOfInterestOf
+    hasSurvivalRange: http://www.w3.org/ns/ssn/systems/hasSurvivalRange
+    hasInput: http://www.w3.org/ns/ssn/hasInput
+    inCondition: http://www.w3.org/ns/ssn/systems/inCondition
+    hasOperatingProperty: http://www.w3.org/ns/ssn/systems/hasOperatingProperty
+    hasSurvivalProperty: http://www.w3.org/ns/ssn/systems/hasSurvivalProperty
+    isProxyFor: http://www.w3.org/ns/ssn/isProxyFor
+    hasFeatureOfInterest: http://www.w3.org/ns/sosa/hasFeatureOfInterest
+    resultTime: http://www.w3.org/ns/sosa/resultTime
+    detects: http://www.w3.org/ns/ssn/detects
+    hasMember: http://www.w3.org/ns/sosa/hasMember
+    Observation: http://www.w3.org/ns/sosa/Observation
+    madeObservation: http://www.w3.org/ns/sosa/madeObservation
+    wasOriginatedBy: http://www.w3.org/ns/ssn/wasOriginatedBy
+    implements: http://www.w3.org/ns/ssn/implements
+    implementedBy: http://www.w3.org/ns/ssn/implementedBy
+    deployedOnPlatform: http://www.w3.org/ns/ssn/deployedOnPlatform
+    observes: http://www.w3.org/ns/sosa/observes
+    usedProcedure: http://www.w3.org/ns/sosa/usedProcedure
+    phenomenonTime: http://www.w3.org/ns/sosa/phenomenonTime
 - $schema: https://json-schema.org/draft/2020-12/schema
   description: SOSA Observation
   type: object
@@ -102,6 +204,50 @@ anyOf:
     sosa: http://www.w3.org/ns/sosa/
     ssn: http://www.w3.org/ns/ssn/
     ssn-system: http://www.w3.org/ns/ssn/systems/
+  x-jsonld-extra-terms:
+    hasSystemProperty: http://www.w3.org/ns/ssn/systems/hasSystemProperty
+    hasOperatingRange: http://www.w3.org/ns/ssn/systems/hasOperatingRange
+    isObservedBy: http://www.w3.org/ns/sosa/isObservedBy
+    hasProperty: http://www.w3.org/ns/ssn/hasProperty
+    isSampleOf: http://www.w3.org/ns/sosa/isSampleOf
+    isResultOf: http://www.w3.org/ns/sosa/isResultOf
+    inDeployment: http://www.w3.org/ns/ssn/inDeployment
+    isActedOnBy: http://www.w3.org/ns/sosa/isActedOnBy
+    hasResult: http://www.w3.org/ns/sosa/hasResult
+    qualityOfObservation: http://www.w3.org/ns/ssn/systems/qualityOfObservation
+    madeActuation: http://www.w3.org/ns/sosa/madeActuation
+    hasDeployment: http://www.w3.org/ns/ssn/hasDeployment
+    hasSubSystem: http://www.w3.org/ns/ssn/hasSubSystem
+    Sample: http://www.w3.org/ns/sosa/Sample
+    hasSystemCapability: http://www.w3.org/ns/ssn/systems/hasSystemCapability
+    hasSimpleResult: http://www.w3.org/ns/sosa/hasSimpleResult
+    actsOnProperty: http://www.w3.org/ns/sosa/actsOnProperty
+    hosts: http://www.w3.org/ns/sosa/hosts
+    madeSampling: http://www.w3.org/ns/sosa/madeSampling
+    isPropertyOf: http://www.w3.org/ns/ssn/isPropertyOf
+    hasOutput: http://www.w3.org/ns/ssn/hasOutput
+    deployedSystem: http://www.w3.org/ns/ssn/deployedSystem
+    isHostedBy: http://www.w3.org/ns/sosa/isHostedBy
+    madeBySampler: http://www.w3.org/ns/sosa/madeBySampler
+    madeByActuator: http://www.w3.org/ns/sosa/madeByActuator
+    forProperty: http://www.w3.org/ns/ssn/forProperty
+    hasSample: http://www.w3.org/ns/sosa/hasSample
+    isFeatureOfInterestOf: http://www.w3.org/ns/sosa/isFeatureOfInterestOf
+    hasSurvivalRange: http://www.w3.org/ns/ssn/systems/hasSurvivalRange
+    hasInput: http://www.w3.org/ns/ssn/hasInput
+    inCondition: http://www.w3.org/ns/ssn/systems/inCondition
+    hasOperatingProperty: http://www.w3.org/ns/ssn/systems/hasOperatingProperty
+    hasSurvivalProperty: http://www.w3.org/ns/ssn/systems/hasSurvivalProperty
+    isProxyFor: http://www.w3.org/ns/ssn/isProxyFor
+    detects: http://www.w3.org/ns/ssn/detects
+    hasMember: http://www.w3.org/ns/sosa/hasMember
+    Observation: http://www.w3.org/ns/sosa/Observation
+    madeObservation: http://www.w3.org/ns/sosa/madeObservation
+    wasOriginatedBy: http://www.w3.org/ns/ssn/wasOriginatedBy
+    implements: http://www.w3.org/ns/ssn/implements
+    implementedBy: http://www.w3.org/ns/ssn/implementedBy
+    deployedOnPlatform: http://www.w3.org/ns/ssn/deployedOnPlatform
+    observes: http://www.w3.org/ns/sosa/observes
 - $schema: https://json-schema.org/draft/2020-12/schema
   description: SOSA ObservationCollection
   type: object
@@ -158,3 +304,46 @@ anyOf:
     sosa: http://www.w3.org/ns/sosa/
     ssn: http://www.w3.org/ns/ssn/
     ssn-system: http://www.w3.org/ns/ssn/systems/
+  x-jsonld-extra-terms:
+    hasSystemProperty: http://www.w3.org/ns/ssn/systems/hasSystemProperty
+    hasOperatingRange: http://www.w3.org/ns/ssn/systems/hasOperatingRange
+    isObservedBy: http://www.w3.org/ns/sosa/isObservedBy
+    hasProperty: http://www.w3.org/ns/ssn/hasProperty
+    isSampleOf: http://www.w3.org/ns/sosa/isSampleOf
+    isResultOf: http://www.w3.org/ns/sosa/isResultOf
+    inDeployment: http://www.w3.org/ns/ssn/inDeployment
+    isActedOnBy: http://www.w3.org/ns/sosa/isActedOnBy
+    hasResult: http://www.w3.org/ns/sosa/hasResult
+    qualityOfObservation: http://www.w3.org/ns/ssn/systems/qualityOfObservation
+    madeActuation: http://www.w3.org/ns/sosa/madeActuation
+    hasDeployment: http://www.w3.org/ns/ssn/hasDeployment
+    hasSubSystem: http://www.w3.org/ns/ssn/hasSubSystem
+    Sample: http://www.w3.org/ns/sosa/Sample
+    hasSystemCapability: http://www.w3.org/ns/ssn/systems/hasSystemCapability
+    hasSimpleResult: http://www.w3.org/ns/sosa/hasSimpleResult
+    actsOnProperty: http://www.w3.org/ns/sosa/actsOnProperty
+    hosts: http://www.w3.org/ns/sosa/hosts
+    madeSampling: http://www.w3.org/ns/sosa/madeSampling
+    isPropertyOf: http://www.w3.org/ns/ssn/isPropertyOf
+    hasOutput: http://www.w3.org/ns/ssn/hasOutput
+    deployedSystem: http://www.w3.org/ns/ssn/deployedSystem
+    isHostedBy: http://www.w3.org/ns/sosa/isHostedBy
+    madeBySampler: http://www.w3.org/ns/sosa/madeBySampler
+    madeByActuator: http://www.w3.org/ns/sosa/madeByActuator
+    forProperty: http://www.w3.org/ns/ssn/forProperty
+    hasSample: http://www.w3.org/ns/sosa/hasSample
+    isFeatureOfInterestOf: http://www.w3.org/ns/sosa/isFeatureOfInterestOf
+    hasSurvivalRange: http://www.w3.org/ns/ssn/systems/hasSurvivalRange
+    hasInput: http://www.w3.org/ns/ssn/hasInput
+    inCondition: http://www.w3.org/ns/ssn/systems/inCondition
+    hasOperatingProperty: http://www.w3.org/ns/ssn/systems/hasOperatingProperty
+    hasSurvivalProperty: http://www.w3.org/ns/ssn/systems/hasSurvivalProperty
+    isProxyFor: http://www.w3.org/ns/ssn/isProxyFor
+    detects: http://www.w3.org/ns/ssn/detects
+    Observation: http://www.w3.org/ns/sosa/Observation
+    madeObservation: http://www.w3.org/ns/sosa/madeObservation
+    wasOriginatedBy: http://www.w3.org/ns/ssn/wasOriginatedBy
+    implements: http://www.w3.org/ns/ssn/implements
+    implementedBy: http://www.w3.org/ns/ssn/implementedBy
+    deployedOnPlatform: http://www.w3.org/ns/ssn/deployedOnPlatform
+    observes: http://www.w3.org/ns/sosa/observes
