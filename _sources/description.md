@@ -1,4 +1,4 @@
-Building Blocks for implementing the core classes of the []Observations and Measurements model]
+Building Blocks for implementing the core classes of the [Observations and Measurements model]
 
 Each class is implemented using a schema is tied to the equivalent semantic description using the SOSA (Sensor, Observation, Sample, and Actuator) ontology.
 
