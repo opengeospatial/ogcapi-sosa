@@ -44,6 +44,7 @@
     };
 
     var refreshToc = function() {
+      return;
       var currentTop = $(document).scrollTop() + scrollOffset;
 
       if (currentTop + windowHeight >= pageHeight) {

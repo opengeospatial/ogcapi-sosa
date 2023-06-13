@@ -1,0 +1,29 @@
+=== JSON Schema errors ===
+ValidationError: 'features' is a required property
+
+Failed validating 'required' in schema['allOf'][0]:
+    {'$id': 'https://beta.schemas.opengis.net/json-fg/featurecollection.json',
+     '$schema': 'https://json-schema.org/draft/2019-09/schema',
+     'description': 'This JSON Schema is part of JSON-FG version 0.1.1',
+     'properties': {'coordRefSys': {'$ref': 'coordrefsys.json'},
+                    'featureType': {'$ref': 'featuretype.json'},
+                    'features': {'items': {'$ref': 'feature.json'},
+                                 'type': 'array'},
+                    'geometryDimension': {'maximum': 3,
+                                          'minimum': 0,
+                                          'type': 'integer'},
+                    'links': {'items': {'$ref': 'link.json'},
+                              'type': 'array'},
+                    'type': {'enum': ['FeatureCollection'],
+                             'type': 'string'}},
+     'required': ['type', 'features'],
+     'title': 'a JSON-FG Feature Collection',
+     'type': 'object'}
+
+On instance:
+    {'@id': 'c1',
+     'featureType': 'sosa:ObservationCollection',
+     'properties': {'hasMember': ['_:a1'],
+                    'observedProperty': '_:p1',
+                    'resultTime': '2022-05-01T22:33:44Z'},
+     'type': 'Feature'}

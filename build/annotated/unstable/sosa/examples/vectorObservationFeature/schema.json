@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Example SOSA Vector Observation",
+  "allOf": [
+    {
+      "$ref": "../../features/observation/schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "properties": {
+          "$ref": "../vectorObservation/schema.json"
+        }
+      }
+    }
+  ],
+  "x-jsonld-extra-terms": {}
+}

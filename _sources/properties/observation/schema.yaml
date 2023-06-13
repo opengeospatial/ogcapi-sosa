@@ -1,0 +1,35 @@
+"$schema": https://json-schema.org/draft/2020-12/schema
+description: 'SOSA Observation'
+x-jsonld-context: ../../../sosa-ssn.jsonld
+type: object
+properties:
+  resultTime:
+    type: string
+    format: date-time
+  phenomenonTime:
+    type:
+      - object
+      - string
+  hasFeatureOfInterest:
+    type:
+      - object
+      - string
+  observedProperty:
+    type:
+      - object
+      - string
+  usedProcedure:
+    type:
+      - object
+      - string
+  madeBySensor:
+    type:
+      - object
+      - string
+  hasResult: true
+  hasSimpleResult: true
+oneOf:
+  - required:
+    - hasResult
+  - required:
+    - hasSimpleResult

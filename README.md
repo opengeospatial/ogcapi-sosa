@@ -1,5 +1,6 @@
 # OGC Building Blocks for SOSA 
 
+
 The SOSA ([Sensor, Observation, Sample, and Actuator](https://www.w3.org/TR/vocab-ssn/)) ontology  is a realisation of the 
  Observations, Measurements and Sampling (OMS) Conceptual model. This repository defines:
  *  JSON schema encoding for each feature type (class) defined by SOSA, compatible with the OGC API Features using the FG-JSON extension to GeoJSON
@@ -14,6 +15,15 @@ The SOSA ([Sensor, Observation, Sample, and Actuator](https://www.w3.org/TR/voca
 This building block is __under construction__ and is undertaken in the context of the update of SOSA to align with OMS V3.
 
 It is assumed that this will be backwards compatible with the last published SOSA version https://www.w3.org/TR/2017/REC-vocab-ssn-20171019/. Any changes to this status will be noted in this section.
+
+## Documentation
+
+This building block self-documents using the build process described below.  For each component building block in this repository the
+deployed documentation is built on commit and can be found here: 
+
+https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/slate-build/unstable/sosa/features/observation
+
+(TODO - create index in Slate)
 
 ## General Building block repository structure
 
@@ -89,12 +99,19 @@ so that their outputs can be tested before inclusion in the main OGC Register:
 
 ### Output testing
 
-The outputs can be generated locally by running the following (*Note: Docker must be installed locally*):
+The outputs can be generated locally by running the following:
 
 ```shell
 # Process building blocks
-docker run --rm --workdir /workspace -v $(pwd):/workspace ghcr.io/opengeospatial/bblocks-postprocess
+docker run --rm --workdir /workspace -v $(pwd):/workspace ghcr.io/opengeospatial/bblocks-postprocess \
+  --clean true --base-url https://example.com/base-url/
 # Optional - build Slate docs
-docker run --rm -v "$(pwd)/generateddocs/slate:/srv/slate/source" \
-  -v "$(pwd)/generateddocs/slate-build:/srv/slate/build" slatedocs/slate build
+docker run --rm -v "$(pwd)/build/docs/slate:/srv/slate/source" \
+  -v "$(pwd)/build/docs/slate-build:/srv/slate/build" dockerogc/slate build
 ```
+
+**Notes**:
+  * Docker must be installed locally for the above commands to run
+  * The value for `--base-url` will be used to generate the public URLs (schemas, documentation, etc.)
+  * If you want to clean your build (go back to the original repository status), you can do so by running
+    `git checkout build; git clean -xf build` 
