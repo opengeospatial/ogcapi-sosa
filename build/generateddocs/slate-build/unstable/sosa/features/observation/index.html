@@ -294,7 +294,7 @@
     </script>
   </head>
 
-  <body class="unstable unstable_sosa unstable_sosa_features unstable_sosa_features_observation unstable_sosa_features_observation_index" data-languages="[&quot;json&quot;,&quot;ttl&quot;]">
+  <body class="unstable unstable_sosa unstable_sosa_features unstable_sosa_features_observation unstable_sosa_features_observation_index" data-languages="[&quot;json&quot;,&quot;turtle&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -305,7 +305,7 @@
       <img src="../../../../images/logo-4d9dfd05.svg" class="logo" alt="" />
         <div class="lang-selector">
               <a href="#" data-language-name="json">JSON</a>
-              <a href="#" data-language-name="ttl">RDF/Turtle</a>
+              <a href="#" data-language-name="turtle">RDF/Turtle</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -367,17 +367,17 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
     </span><span class="nl">"resultTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-05-01T22:33:44Z"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><div class="highlight"><pre class="highlight ttl tab-ttl"><code>@prefix sosa: &lt;http://www.w3.org/ns/sosa/&gt; .
-@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
-@prefix geojson: &lt;https://purl.org/geojson/vocab#&gt; .
-_:a1 a geojson:Feature;
-  geojson:properties [
-    sosa:hasFeatureOfInterest &lt;https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem&gt; ;
-    sosa:hasSimpleResult 33 ;
-    sosa:resultTime "2022-05-01T22:33:44Z"^^xsd:dateTime
-  ]
-.
-</code></pre></div><h1 id='json-schema'>JSON Schema</h1><div class="highlight"><pre class="highlight yaml tab-yaml--schema"><code><span class="na">$schema</span><span class="pi">:</span> <span class="s">https://json-schema.org/draft/2020-12/schema</span>
+</span></code></pre></div><div class="highlight"><pre class="highlight turtle tab-turtle"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">sosa:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/sosa/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">geojson:</span><span class="w"> </span><span class="nl">&lt;https://purl.org/geojson/vocab#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="nn">_:</span><span class="n">a1</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">geojson:</span><span class="n">Feature</span><span class="p">;</span><span class="w">
+  </span><span class="nn">geojson:</span><span class="n">properties</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">hasFeatureOfInterest</span><span class="w"> </span><span class="nl">&lt;https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">hasSimpleResult</span><span class="w"> </span><span class="mi">33</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">resultTime</span><span class="w"> </span><span class="s">"2022-05-01T22:33:44Z"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">dateTime
+</span><span class="w">  </span><span class="p">]</span><span class="w">
+</span><span class="p">.</span><span class="w">
+</span></code></pre></div><h1 id='json-schema'>JSON Schema</h1><div class="highlight"><pre class="highlight yaml tab-yaml--schema"><code><span class="na">$schema</span><span class="pi">:</span> <span class="s">https://json-schema.org/draft/2020-12/schema</span>
 <span class="na">description</span><span class="pi">:</span> <span class="s">SOSA Observation Feature</span>
 <span class="na">type</span><span class="pi">:</span> <span class="s">object</span>
 <span class="na">allOf</span><span class="pi">:</span>
@@ -391,55 +391,55 @@ _:a1 a geojson:Feature;
   <span class="na">ssn</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/</span>
   <span class="na">ssn-system</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/</span>
 <span class="na">x-jsonld-extra-terms</span><span class="pi">:</span>
-  <span class="na">hosts</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hosts</span>
-  <span class="na">Observation</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/Observation</span>
-  <span class="na">wasOriginatedBy</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/wasOriginatedBy</span>
-  <span class="na">usedProcedure</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/usedProcedure</span>
-  <span class="na">madeObservation</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/madeObservation</span>
-  <span class="na">hasOutput</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/hasOutput</span>
-  <span class="na">isSampleOf</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/isSampleOf</span>
-  <span class="na">madeByActuator</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/madeByActuator</span>
-  <span class="na">hasSubSystem</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/hasSubSystem</span>
-  <span class="na">observes</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/observes</span>
-  <span class="na">madeSampling</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/madeSampling</span>
-  <span class="na">isFeatureOfInterestOf</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/isFeatureOfInterestOf</span>
-  <span class="na">implementedBy</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/implementedBy</span>
-  <span class="na">madeActuation</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/madeActuation</span>
-  <span class="na">inCondition</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/inCondition</span>
-  <span class="na">isActedOnBy</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/isActedOnBy</span>
-  <span class="na">madeBySampler</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/madeBySampler</span>
-  <span class="na">qualityOfObservation</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/qualityOfObservation</span>
-  <span class="na">hasMember</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasMember</span>
-  <span class="na">hasSystemProperty</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/hasSystemProperty</span>
-  <span class="na">hasResult</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasResult</span>
-  <span class="na">implements</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/implements</span>
-  <span class="na">hasFeatureOfInterest</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasFeatureOfInterest</span>
-  <span class="na">hasOperatingRange</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/hasOperatingRange</span>
-  <span class="na">detects</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/detects</span>
-  <span class="na">isObservedBy</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/isObservedBy</span>
-  <span class="na">hasProperty</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/hasProperty</span>
   <span class="na">hasDeployment</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/hasDeployment</span>
-  <span class="na">deployedOnPlatform</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/deployedOnPlatform</span>
-  <span class="na">hasSimpleResult</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasSimpleResult</span>
-  <span class="na">hasSurvivalRange</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/hasSurvivalRange</span>
-  <span class="na">deployedSystem</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/deployedSystem</span>
-  <span class="na">resultTime</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/resultTime</span>
-  <span class="na">isPropertyOf</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/isPropertyOf</span>
-  <span class="na">madeBySensor</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/madeBySensor</span>
-  <span class="na">hasSample</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasSample</span>
-  <span class="na">isResultOf</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/isResultOf</span>
-  <span class="na">hasOperatingProperty</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/hasOperatingProperty</span>
+  <span class="na">isObservedBy</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/isObservedBy</span>
+  <span class="na">hasInput</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/hasInput</span>
+  <span class="na">hasResult</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasResult</span>
+  <span class="na">hasMember</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasMember</span>
+  <span class="na">isActedOnBy</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/isActedOnBy</span>
+  <span class="na">madeActuation</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/madeActuation</span>
+  <span class="na">hasSubSystem</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/hasSubSystem</span>
   <span class="na">observedProperty</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/observedProperty</span>
-  <span class="na">hasSystemCapability</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/hasSystemCapability</span>
-  <span class="na">actsOnProperty</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/actsOnProperty</span>
-  <span class="na">Sample</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/Sample</span>
-  <span class="na">inDeployment</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/inDeployment</span>
+  <span class="na">isPropertyOf</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/isPropertyOf</span>
+  <span class="na">madeByActuator</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/madeByActuator</span>
+  <span class="na">isResultOf</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/isResultOf</span>
+  <span class="na">madeSampling</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/madeSampling</span>
+  <span class="na">madeObservation</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/madeObservation</span>
+  <span class="na">madeBySampler</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/madeBySampler</span>
   <span class="na">phenomenonTime</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/phenomenonTime</span>
   <span class="na">forProperty</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/forProperty</span>
-  <span class="na">isHostedBy</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/isHostedBy</span>
-  <span class="na">isProxyFor</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/isProxyFor</span>
+  <span class="na">inDeployment</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/inDeployment</span>
+  <span class="na">hasOperatingProperty</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/hasOperatingProperty</span>
+  <span class="na">Observation</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/Observation</span>
+  <span class="na">implementedBy</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/implementedBy</span>
+  <span class="na">hasSimpleResult</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasSimpleResult</span>
+  <span class="na">actsOnProperty</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/actsOnProperty</span>
+  <span class="na">hasOperatingRange</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/hasOperatingRange</span>
+  <span class="na">observes</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/observes</span>
+  <span class="na">wasOriginatedBy</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/wasOriginatedBy</span>
+  <span class="na">implements</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/implements</span>
+  <span class="na">detects</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/detects</span>
   <span class="na">hasSurvivalProperty</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/hasSurvivalProperty</span>
-  <span class="na">hasInput</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/hasInput</span>
+  <span class="na">hasProperty</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/hasProperty</span>
+  <span class="na">resultTime</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/resultTime</span>
+  <span class="na">hasSystemProperty</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/hasSystemProperty</span>
+  <span class="na">usedProcedure</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/usedProcedure</span>
+  <span class="na">hasSample</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasSample</span>
+  <span class="na">isSampleOf</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/isSampleOf</span>
+  <span class="na">isProxyFor</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/isProxyFor</span>
+  <span class="na">hasFeatureOfInterest</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasFeatureOfInterest</span>
+  <span class="na">isFeatureOfInterestOf</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/isFeatureOfInterestOf</span>
+  <span class="na">hosts</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hosts</span>
+  <span class="na">isHostedBy</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/isHostedBy</span>
+  <span class="na">hasOutput</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/hasOutput</span>
+  <span class="na">deployedSystem</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/deployedSystem</span>
+  <span class="na">Sample</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/Sample</span>
+  <span class="na">deployedOnPlatform</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/deployedOnPlatform</span>
+  <span class="na">hasSystemCapability</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/hasSystemCapability</span>
+  <span class="na">qualityOfObservation</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/qualityOfObservation</span>
+  <span class="na">inCondition</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/inCondition</span>
+  <span class="na">hasSurvivalRange</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/hasSurvivalRange</span>
+  <span class="na">madeBySensor</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/madeBySensor</span>
 
 </code></pre></div>
 <p>Links to the schema:</p>
@@ -466,16 +466,16 @@ _:a1 a geojson:Feature;
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:geometry"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"bbox"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:bbox"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Feature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:Feature"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"MultiPoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:MultiPoint"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"GeometryCollection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:GeometryCollection"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"MultiPolygon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:MultiPolygon"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"features"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:features"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"FeatureCollection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:FeatureCollection"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Polygon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:Polygon"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"Point"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:Point"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"MultiLineString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:MultiLineString"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Feature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:Feature"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"features"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:features"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"FeatureCollection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:FeatureCollection"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"GeometryCollection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:GeometryCollection"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"MultiPoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:MultiPoint"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Polygon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:Polygon"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"LineString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:LineString"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"MultiPolygon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:MultiPolygon"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rdfs:seeAlso"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"resultTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:resultTime"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"phenomenonTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:phenomenonTime"</span><span class="p">,</span><span class="w">
@@ -494,47 +494,47 @@ _:a1 a geojson:Feature;
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"hasResult"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasResult"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"hasSimpleResult"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasSimpleResult"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hosts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hosts"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Observation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:Observation"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"wasOriginatedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:wasOriginatedBy"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"madeObservation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:madeObservation"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasOutput"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:hasOutput"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"isSampleOf"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isSampleOf"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"madeByActuator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:madeByActuator"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasSubSystem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:hasSubSystem"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"observes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:observes"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"madeSampling"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:madeSampling"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"isFeatureOfInterestOf"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isFeatureOfInterestOf"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"implementedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:implementedBy"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"madeActuation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:madeActuation"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"inCondition"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:inCondition"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"isActedOnBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isActedOnBy"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"madeBySampler"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:madeBySampler"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"qualityOfObservation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:qualityOfObservation"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasMember"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasMember"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasSystemProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:hasSystemProperty"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"implements"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:implements"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasOperatingRange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:hasOperatingRange"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"detects"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:detects"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"isObservedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isObservedBy"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:hasProperty"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"hasDeployment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:hasDeployment"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"deployedOnPlatform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:deployedOnPlatform"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasSurvivalRange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:hasSurvivalRange"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"deployedSystem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:deployedSystem"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isObservedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isObservedBy"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hasInput"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:hasInput"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hasMember"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasMember"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isActedOnBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isActedOnBy"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"madeActuation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:madeActuation"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hasSubSystem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:hasSubSystem"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"isPropertyOf"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:isPropertyOf"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasSample"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasSample"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"madeByActuator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:madeByActuator"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"isResultOf"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isResultOf"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasOperatingProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:hasOperatingProperty"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasSystemCapability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:hasSystemCapability"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"actsOnProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:actsOnProperty"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Sample"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:Sample"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"inDeployment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:inDeployment"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"madeSampling"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:madeSampling"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"madeObservation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:madeObservation"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"madeBySampler"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:madeBySampler"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"forProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:forProperty"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"isHostedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isHostedBy"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"isProxyFor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:isProxyFor"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"inDeployment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:inDeployment"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hasOperatingProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:hasOperatingProperty"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Observation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:Observation"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"implementedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:implementedBy"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"actsOnProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:actsOnProperty"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hasOperatingRange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:hasOperatingRange"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"observes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:observes"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"wasOriginatedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:wasOriginatedBy"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"implements"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:implements"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"detects"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:detects"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"hasSurvivalProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:hasSurvivalProperty"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasInput"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:hasInput"</span><span class="w">
+    </span><span class="nl">"hasProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:hasProperty"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hasSystemProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:hasSystemProperty"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hasSample"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasSample"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isSampleOf"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isSampleOf"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isProxyFor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:isProxyFor"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isFeatureOfInterestOf"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isFeatureOfInterestOf"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hosts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hosts"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isHostedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isHostedBy"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hasOutput"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:hasOutput"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"deployedSystem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:deployedSystem"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Sample"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:Sample"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"deployedOnPlatform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:deployedOnPlatform"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hasSystemCapability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:hasSystemCapability"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"qualityOfObservation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:qualityOfObservation"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"inCondition"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:inCondition"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hasSurvivalRange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:hasSurvivalRange"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -556,7 +556,7 @@ _:a1 a geojson:Feature;
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="json">JSON</a>
-                <a href="#" data-language-name="ttl">RDF/Turtle</a>
+                <a href="#" data-language-name="turtle">RDF/Turtle</a>
           </div>
       </div>
     </div>
