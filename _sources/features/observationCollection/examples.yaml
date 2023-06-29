@@ -3,45 +3,10 @@
     This class is a target for the SOSA v 1.1 update. 
 
   snippets:
-    - language: json
-      code: |-
-        { 
-          "@id": "c1",
-          "type": "Feature",
-          "featureType": "sosa:ObservationCollection",
-          "properties": {
-            "hasMember": [
-              "_:a1"
-            ],
-            "observedProperty": "_:p1",
-            "resultTime": "2022-05-01T22:33:44Z"
-          },
-        }
+
 
     - language: json
-      code: |-
-        { 
-          "@id": "c1",
-          "type": "Feature",
-          "featureType": "sosa:ObservationCollection",
-          "properties": {
-            "observedProperty": "http://dbpedia.org/ontology/population",
-            "resultTime": "1999",
-            "features": [
-              { 
-                "@id": "pop1999",
-                "comment": "Example of an inline membership - would entail hasMember relations",
-                "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork",
-                "hasSimpleResult": 15555.0
-              },
-               { 
-                "@id": "pop1999",
-                "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
-                "hasSimpleResult": 3275.0
-              }
-            ]
-          },
-        }
+      ref: examples/observationCollection.json
 
     - language: turtle
       code: |-

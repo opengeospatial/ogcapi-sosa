@@ -8,3 +8,12 @@ allOf:
     properties:
       properties:
         $ref: ../../properties/observationCollection/schema.yaml
+      features:
+        # this is a hasMember - but specified as features to fit the GeoJSON schema
+        type: array
+        items:
+          oneOf:
+            # Embedded observations
+            - $ref: ../observation/schema.yaml
+            # Ids/URIs
+            - type: string

@@ -26,17 +26,8 @@ properties:
     type:
       - object
       - string
-  hasMember:
-    type: array
-    items:
-      oneOf:
-        # Embedded observations
-        - $ref: ../observation/schema.yaml
-        # Ids/URIs
-        - type: string
-    minItems: 1
-required:
-  - hasMember
+
+
 not:
   anyOf:
     - required:
