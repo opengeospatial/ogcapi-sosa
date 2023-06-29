@@ -1,25 +1,19 @@
 === JSON Schema errors ===
 ValidationError: 'features' is a required property
 
-Failed validating 'required' in schema['allOf'][0]:
-    {'$id': 'https://beta.schemas.opengis.net/json-fg/featurecollection.json',
-     '$schema': 'https://json-schema.org/draft/2019-09/schema',
+Failed validating 'required' in schema['allOf'][0]['allOf'][0]:
+    {'$schema': 'https://json-schema.org/draft/2019-09/schema',
      'description': 'This JSON Schema is part of JSON-FG version 0.1.1',
-     'properties': {'coordRefSys': {'$ref': 'coordrefsys.json'},
-                    'featureType': {'$ref': 'featuretype.json'},
-                    'features': {'items': {'$ref': 'feature.json'},
-                                 'type': 'array'},
+     'properties': {'coordRefSys': {'$ref': 'https://beta.schemas.opengis.net/json-fg/coordrefsys.json'},
+                    'featureType': {'$ref': 'https://beta.schemas.opengis.net/json-fg/featuretype.json'},
                     'geometryDimension': {'maximum': 3,
                                           'minimum': 0,
                                           'type': 'integer'},
-                    'links': {'items': {'$ref': 'link.json'},
-                              'type': 'array'},
                     'type': {'enum': ['FeatureCollection'],
                              'type': 'string'}},
      'required': ['type', 'features'],
      'title': 'a JSON-FG Feature Collection',
-     'type': 'object',
-     'x-jsonld-extra-terms': {}}
+     'type': 'object'}
 
 On instance:
     {'@id': 'c1',

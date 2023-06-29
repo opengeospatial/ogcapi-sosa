@@ -14,12 +14,12 @@
     dct:description [ dct:format "application/json" ;
             dct:identifier "json-full" ;
             rdfs:isDefinedBy "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/json-full/unstable/sosa/index.json" ],
-        [ dct:format "text/html" ;
-            dct:identifier "slate" ;
-            rdfs:isDefinedBy "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/slate-build/unstable/sosa/" ],
         [ dct:format "text/markdown" ;
             dct:identifier "markdown" ;
-            rdfs:isDefinedBy "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/markdown/unstable/sosa/index.md" ] ;
+            rdfs:isDefinedBy "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/markdown/unstable/sosa/index.md" ],
+        [ dct:format "text/html" ;
+            dct:identifier "slate" ;
+            rdfs:isDefinedBy "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/slate-build/unstable/sosa/" ] ;
     dct:hasVersion "1.0" ;
     dct:modified "2023-04-13"^^xsd:date ;
     dct:source <https://www.w3.org/TR/vocab-ssn/> ;
@@ -111,15 +111,15 @@
     rdfs:label "SOSA ObservationCollection Feature" ;
     dct:abstract "This building blocks defines an ObservationCollection Feature according to the SOSA/SSN v1.1 specification." ;
     dct:created "2023-04-13T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
-            dct:identifier "markdown" ;
-            rdfs:isDefinedBy "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/markdown/unstable/sosa/features/observationCollection/index.md" ],
-        [ dct:format "application/json" ;
+    dct:description [ dct:format "application/json" ;
             dct:identifier "json-full" ;
             rdfs:isDefinedBy "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/json-full/unstable/sosa/features/observationCollection/index.json" ],
         [ dct:format "text/html" ;
             dct:identifier "slate" ;
-            rdfs:isDefinedBy "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/slate-build/unstable/sosa/features/observationCollection/" ] ;
+            rdfs:isDefinedBy "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/slate-build/unstable/sosa/features/observationCollection/" ],
+        [ dct:format "text/markdown" ;
+            dct:identifier "markdown" ;
+            rdfs:isDefinedBy "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/markdown/unstable/sosa/features/observationCollection/index.md" ] ;
     dct:hasVersion "1.0" ;
     dct:modified "2023-04-28"^^xsd:date ;
     dct:source <https://www.w3.org/TR/vocab-ssn-ext/>,
@@ -219,14 +219,14 @@
 <https://www.w3.org/TR/vocab-ssn/> rdfs:label "Semantic Sensor Network Ontology" .
 
 [] a prov:Activity ;
-    prov:endedAtTime "2023-06-20T13:42:53.887431"^^xsd:dateTime ;
-    prov:startedAtTime "2023-06-20T13:42:53.626978"^^xsd:dateTime ;
+    prov:endedAtTime "2023-06-29T09:08:06.087116"^^xsd:dateTime ;
+    prov:startedAtTime "2023-06-29T09:08:05.832732"^^xsd:dateTime ;
     prov:used [ a prov:Entity ;
-            dct:format "application/json" ;
-            rdfs:seeAlso <file:///github/workspace/build/register.json> ],
-        [ a prov:Entity ;
             dct:format "application/yaml" ;
-            rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ] ;
+            rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ],
+        [ a prov:Entity ;
+            dct:format "application/json" ;
+            rdfs:seeAlso <file:///github/workspace/build/register.json> ] ;
     prov:wasAssociatedWith [ a prov:Agent,
                 schema:SoftwareApplication ;
             rdfs:label "OGC-NA tools" ;
