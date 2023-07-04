@@ -17,8 +17,8 @@
     "maturity": "development",
     "scope": "unstable",
     "dependsOn": [
-      "ogc.unstable.sosa.properties.observation",
-      "ogc.geo.geopose.basic-ypr"
+      "ogc.geo.geopose.basic-ypr",
+      "ogc.unstable.sosa.properties.observation"
     ],
     "tags": [
       "sosa",
@@ -56,7 +56,7 @@
   {
     "name": "Example SOSA Vector Observation Feature",
     "abstract": "This building block defines an example SOSA Observation Feature for a Vector Observation",
-    "status": "under-development",
+    "status": "invalid",
     "dateTimeAddition": "2023-05-19T00:00:00Z",
     "itemClass": "schema",
     "register": "ogc-building-block-register",
@@ -71,9 +71,9 @@
     "maturity": "development",
     "scope": "unstable",
     "dependsOn": [
-      "ogc.unstable.sosa.features.observation",
       "ogc.unstable.sosa.properties.observation",
-      "ogc.unstable.sosa.examples.vectorObservation"
+      "ogc.unstable.sosa.examples.vectorObservation",
+      "ogc.unstable.sosa.features.observation"
     ],
     "tags": [
       "sosa",
@@ -91,7 +91,7 @@
     },
     "ldContext": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservationFeature/context.jsonld",
     "sourceFiles": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/_sources/examples/vectorObservationFeature/",
-    "validationPassed": true,
+    "validationPassed": false,
     "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/unstable/sosa/examples/vectorObservationFeature/",
     "documentation": {
       "markdown": {
@@ -126,8 +126,8 @@
     "maturity": "development",
     "scope": "unstable",
     "dependsOn": [
-      "ogc.geo.json-fg.feature",
-      "ogc.unstable.sosa.properties.observation"
+      "ogc.unstable.sosa.properties.observation",
+      "ogc.geo.json-fg.feature"
     ],
     "tags": [
       "sosa",
@@ -192,9 +192,9 @@
     "group": "SOSA",
     "itemIdentifier": "ogc.unstable.sosa.features.observationCollection",
     "dependsOn": [
-      "ogc.unstable.sosa.features.observation",
+      "ogc.geo.json-fg.featureCollection",
       "ogc.unstable.sosa.properties.observationCollection",
-      "ogc.geo.json-fg.featureCollection"
+      "ogc.unstable.sosa.features.observation"
     ],
     "schema": {
       "application/yaml": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observationCollection/schema.yaml",
