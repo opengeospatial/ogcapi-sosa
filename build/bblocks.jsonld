@@ -77,7 +77,7 @@
     {
       "name": "Example SOSA Vector Observation",
       "abstract": "This building block defines an example SOSA Vector Observation",
-      "status": "under-development",
+      "status": "invalid",
       "dateTimeAddition": "2023-05-19T00:00:00Z",
       "itemClass": "schema",
       "register": "ogc-building-block-register",
@@ -111,7 +111,7 @@
       },
       "ldContext": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservation/context.jsonld",
       "sourceFiles": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/_sources/examples/vectorObservation/",
-      "validationPassed": true,
+      "validationPassed": false,
       "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/unstable/sosa/examples/vectorObservation/",
       "documentation": {
         "markdown": {
@@ -280,8 +280,8 @@
       "itemIdentifier": "ogc.unstable.sosa.features.observationCollection",
       "dependsOn": [
         "ogc.unstable.sosa.features.observation",
-        "ogc.geo.json-fg.featureCollection",
-        "ogc.unstable.sosa.properties.observationCollection"
+        "ogc.unstable.sosa.properties.observationCollection",
+        "ogc.geo.json-fg.featureCollection"
       ],
       "schema": {
         "application/yaml": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observationCollection/schema.yaml",
