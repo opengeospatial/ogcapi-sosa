@@ -150,9 +150,9 @@
       "maturity": "development",
       "scope": "unstable",
       "dependsOn": [
-        "ogc.unstable.sosa.examples.vectorObservation",
         "ogc.unstable.sosa.features.observation",
-        "ogc.unstable.sosa.properties.observation"
+        "ogc.unstable.sosa.properties.observation",
+        "ogc.unstable.sosa.examples.vectorObservation"
       ],
       "tags": [
         "sosa",
@@ -194,7 +194,7 @@
     {
       "name": "SOSA Observation Feature",
       "abstract": "This building blocks defines a GeoJSON feature containing a SOSA Observation",
-      "status": "under-development",
+      "status": "invalid",
       "dateTimeAddition": "2023-05-18T00:00:00Z",
       "itemClass": "schema",
       "register": "ogc-building-block-register",
@@ -227,7 +227,7 @@
       },
       "ldContext": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observation/context.jsonld",
       "sourceFiles": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/_sources/features/observation/",
-      "validationPassed": true,
+      "validationPassed": false,
       "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/unstable/sosa/features/observation/",
       "documentation": {
         "markdown": {
@@ -279,6 +279,7 @@
       "group": "SOSA",
       "itemIdentifier": "ogc.unstable.sosa.features.observationCollection",
       "dependsOn": [
+        "ogc.unstable.sosa.features.observation",
         "ogc.geo.json-fg.featureCollection",
         "ogc.unstable.sosa.properties.observationCollection"
       ],
@@ -392,9 +393,6 @@
       ],
       "group": "SOSA",
       "itemIdentifier": "ogc.unstable.sosa.properties.observationCollection",
-      "dependsOn": [
-        "ogc.unstable.sosa.properties.observation"
-      ],
       "schema": {
         "application/yaml": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/properties/observationCollection/schema.yaml",
         "application/json": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/properties/observationCollection/schema.json"

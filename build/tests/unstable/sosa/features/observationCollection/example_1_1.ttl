@@ -1,8 +1,10 @@
-@prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<file:///github/workspace/c1> a geojson:Feature ;
-    geojson:properties [ sosa:hasMember "_:a1" ;
-            sosa:observedProperty "_:p1" ;
-            sosa:resultTime "2022-05-01T22:33:44Z" ] .
+<file:///github/workspace/c1> sosa:hasMember <file:///github/workspace/pop1999> .
+
+<file:///github/workspace/pop1999> sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem>,
+        <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork> ;
+    sosa:hasSimpleResult 3.275e+03,
+        1.5555e+04 .
 
