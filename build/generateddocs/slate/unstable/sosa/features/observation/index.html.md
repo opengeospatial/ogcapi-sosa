@@ -38,6 +38,7 @@ Validation for this building block has <strong><a href="https://github.com/openg
   "@id": "pop1999",
   "type": "Feature",
   "featureType": "sosa:Observation",
+  "geometry": null,
   "properties": {
     "observedProperty": "https://dbpedia.org/ontology/population",
     "resultTime": "1999",

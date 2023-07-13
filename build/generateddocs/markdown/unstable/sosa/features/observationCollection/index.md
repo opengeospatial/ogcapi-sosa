@@ -25,18 +25,20 @@ This building blocks defines an ObservationCollection Feature according to the S
       "@id": "pop1999",
       "type": "Feature",
       "geometry": null,
-      "properties": null,
-      "comment": "Example of an inline membership - would entail hasMember relations",
-      "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork",
-      "hasSimpleResult": 15555.0
+      "properties": {
+        "comment": "Example of an inline membership - would entail hasMember relations",
+        "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork",
+        "hasSimpleResult": 15555.0
+      }
     },
     {
       "@id": "pop1999",
       "type": "Feature",
       "geometry": null,
-      "properties": null,
-      "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
-      "hasSimpleResult": 3275.0
+      "properties": {
+        "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
+        "hasSimpleResult": 3275.0
+      }
     }
   ]
 }

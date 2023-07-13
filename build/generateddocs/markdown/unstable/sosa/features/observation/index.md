@@ -16,6 +16,7 @@ This building blocks defines a GeoJSON feature containing a SOSA Observation
   "@id": "pop1999",
   "type": "Feature",
   "featureType": "sosa:Observation",
+  "geometry": null,
   "properties": {
     "observedProperty": "https://dbpedia.org/ontology/population",
     "resultTime": "1999",
