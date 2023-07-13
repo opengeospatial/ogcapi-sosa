@@ -77,7 +77,7 @@
     {
       "name": "Example SOSA Vector Observation",
       "abstract": "This building block defines an example SOSA Vector Observation",
-      "status": "invalid",
+      "status": "under-development",
       "dateTimeAddition": "2023-05-19T00:00:00Z",
       "itemClass": "schema",
       "register": "ogc-building-block-register",
@@ -92,8 +92,8 @@
       "maturity": "development",
       "scope": "unstable",
       "dependsOn": [
-        "ogc.unstable.sosa.properties.observation",
-        "ogc.geo.geopose.basic-ypr"
+        "ogc.geo.geopose.basic.ypr",
+        "ogc.unstable.sosa.properties.observation"
       ],
       "tags": [
         "sosa",
@@ -111,16 +111,16 @@
       },
       "ldContext": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservation/context.jsonld",
       "sourceFiles": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/_sources/examples/vectorObservation/",
-      "validationPassed": false,
+      "validationPassed": true,
       "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/unstable/sosa/examples/vectorObservation/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/markdown/unstable/sosa/examples/vectorObservation/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/json-full/unstable/sosa/examples/vectorObservation/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/markdown/unstable/sosa/examples/vectorObservation/index.md"
         },
         "slate": {
           "mediatype": "text/html",
@@ -135,7 +135,7 @@
     {
       "name": "Example SOSA Vector Observation Feature",
       "abstract": "This building block defines an example SOSA Observation Feature for a Vector Observation",
-      "status": "under-development",
+      "status": "invalid",
       "dateTimeAddition": "2023-05-19T00:00:00Z",
       "itemClass": "schema",
       "register": "ogc-building-block-register",
@@ -150,9 +150,9 @@
       "maturity": "development",
       "scope": "unstable",
       "dependsOn": [
-        "ogc.unstable.sosa.properties.observation",
+        "ogc.unstable.sosa.examples.vectorObservation",
         "ogc.unstable.sosa.features.observation",
-        "ogc.unstable.sosa.examples.vectorObservation"
+        "ogc.unstable.sosa.properties.observation"
       ],
       "tags": [
         "sosa",
@@ -170,16 +170,16 @@
       },
       "ldContext": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservationFeature/context.jsonld",
       "sourceFiles": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/_sources/examples/vectorObservationFeature/",
-      "validationPassed": true,
+      "validationPassed": false,
       "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/unstable/sosa/examples/vectorObservationFeature/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/markdown/unstable/sosa/examples/vectorObservationFeature/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/json-full/unstable/sosa/examples/vectorObservationFeature/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/markdown/unstable/sosa/examples/vectorObservationFeature/index.md"
         },
         "slate": {
           "mediatype": "text/html",
@@ -230,13 +230,13 @@
       "validationPassed": false,
       "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/unstable/sosa/features/observation/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/markdown/unstable/sosa/features/observation/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/json-full/unstable/sosa/features/observation/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/markdown/unstable/sosa/features/observation/index.md"
         },
         "slate": {
           "mediatype": "text/html",
@@ -292,13 +292,13 @@
       "validationPassed": false,
       "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/unstable/sosa/features/observationCollection/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/markdown/unstable/sosa/features/observationCollection/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/json-full/unstable/sosa/features/observationCollection/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/markdown/unstable/sosa/features/observationCollection/index.md"
         },
         "slate": {
           "mediatype": "text/html",
@@ -345,13 +345,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/unstable/sosa/properties/observation/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/markdown/unstable/sosa/properties/observation/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/json-full/unstable/sosa/properties/observation/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/markdown/unstable/sosa/properties/observation/index.md"
         },
         "slate": {
           "mediatype": "text/html",
@@ -402,13 +402,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/unstable/sosa/properties/observationCollection/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/markdown/unstable/sosa/properties/observationCollection/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/json-full/unstable/sosa/properties/observationCollection/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/markdown/unstable/sosa/properties/observationCollection/index.md"
         },
         "slate": {
           "mediatype": "text/html",
@@ -454,13 +454,13 @@
       "sourceFiles": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/_sources/",
       "validationPassed": true,
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/markdown/unstable/sosa/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/json-full/unstable/sosa/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/generateddocs/markdown/unstable/sosa/index.md"
         },
         "slate": {
           "mediatype": "text/html",

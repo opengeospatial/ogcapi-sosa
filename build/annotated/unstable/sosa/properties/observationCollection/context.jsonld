@@ -1,66 +1,105 @@
 {
   "@context": {
-    "sosa": "http://www.w3.org/ns/sosa/",
-    "ssn": "http://www.w3.org/ns/ssn/",
-    "ssn-system": "http://www.w3.org/ns/ssn/systems/",
-    "resultTime": "http://www.w3.org/ns/sosa/resultTime",
-    "phenomenonTime": "http://www.w3.org/ns/sosa/phenomenonTime",
+    "resultTime": "sosa:resultTime",
+    "phenomenonTime": "sosa:phenomenonTime",
     "hasFeatureOfInterest": {
-      "@id": "http://www.w3.org/ns/sosa/hasFeatureOfInterest",
+      "@id": "sosa:hasFeatureOfInterest",
       "@type": "@id"
     },
-    "observedProperty": "http://www.w3.org/ns/sosa/observedProperty",
+    "observedProperty": "sosa:observedProperty",
     "usedProcedure": {
-      "@id": "http://www.w3.org/ns/sosa/usedProcedure",
+      "@id": "sosa:usedProcedure",
       "@type": "@id"
     },
     "madeBySensor": {
-      "@id": "http://www.w3.org/ns/sosa/madeBySensor",
+      "@id": "sosa:madeBySensor",
       "@type": "@id"
     },
-    "observes": "sosa:observes",
-    "isHostedBy": "sosa:isHostedBy",
-    "implementedBy": "ssn:implementedBy",
-    "isProxyFor": "ssn:isProxyFor",
-    "madeObservation": "sosa:madeObservation",
-    "hasSystemCapability": "ssn-system:hasSystemCapability",
-    "inCondition": "ssn-system:inCondition",
-    "hasOperatingRange": "ssn-system:hasOperatingRange",
-    "hasMember": "sosa:hasMember",
-    "isFeatureOfInterestOf": "sosa:isFeatureOfInterestOf",
-    "isActedOnBy": "sosa:isActedOnBy",
-    "hasSubSystem": "ssn:hasSubSystem",
-    "hasDeployment": "ssn:hasDeployment",
-    "hasProperty": "ssn:hasProperty",
-    "Sample": "sosa:Sample",
-    "isSampleOf": "sosa:isSampleOf",
-    "madeSampling": "sosa:madeSampling",
-    "forProperty": "ssn:forProperty",
-    "inDeployment": "ssn:inDeployment",
-    "madeByActuator": "sosa:madeByActuator",
-    "qualityOfObservation": "ssn-system:qualityOfObservation",
-    "detects": "ssn:detects",
-    "hasInput": "ssn:hasInput",
-    "madeBySampler": "sosa:madeBySampler",
-    "hasOutput": "ssn:hasOutput",
-    "implements": "ssn:implements",
-    "deployedSystem": "ssn:deployedSystem",
-    "hasSystemProperty": "ssn-system:hasSystemProperty",
-    "hasOperatingProperty": "ssn-system:hasOperatingProperty",
-    "hasSurvivalRange": "ssn-system:hasSurvivalRange",
-    "hasSurvivalProperty": "ssn-system:hasSurvivalProperty",
-    "actsOnProperty": "sosa:actsOnProperty",
-    "madeActuation": "sosa:madeActuation",
-    "deployedOnPlatform": "ssn:deployedOnPlatform",
-    "features": "sosa:hasMember",
-    "isResultOf": "sosa:isResultOf",
     "Observation": "sosa:Observation",
-    "wasOriginatedBy": "ssn:wasOriginatedBy",
+    "Sample": "sosa:Sample",
+    "observes": {
+      "@id": "sosa:observes",
+      "@type": "@id"
+    },
+    "isObservedBy": {
+      "@id": "sosa:isObservedBy",
+      "@type": "@id"
+    },
+    "madeObservation": {
+      "@id": "sosa:madeObservation",
+      "@type": "@id"
+    },
+    "actsOnProperty": {
+      "@id": "sosa:actsOnProperty",
+      "@type": "@id"
+    },
+    "isActedOnBy": {
+      "@id": "sosa:isActedOnBy",
+      "@type": "@id"
+    },
+    "madeActuation": {
+      "@id": "sosa:madeActuation",
+      "@type": "@id"
+    },
+    "madeByActuator": {
+      "@id": "sosa:madeByActuator",
+      "@type": "@id"
+    },
+    "hasSample": {
+      "@id": "sosa:hasSample",
+      "@type": "@id"
+    },
+    "isSampleOf": {
+      "@id": "sosa:isSampleOf",
+      "@type": "@id"
+    },
+    "madeSampling": {
+      "@id": "sosa:madeSampling",
+      "@type": "@id"
+    },
+    "madeBySampler": {
+      "@id": "sosa:madeBySampler",
+      "@type": "@id"
+    },
+    "isFeatureOfInterestOf": {
+      "@id": "sosa:isFeatureOfInterestOf",
+      "@type": "@id"
+    },
     "hasResult": "sosa:hasResult",
-    "isPropertyOf": "ssn:isPropertyOf",
+    "isResultOf": "sosa:isResultOf",
     "hasSimpleResult": "sosa:hasSimpleResult",
-    "isObservedBy": "sosa:isObservedBy",
-    "hasSample": "sosa:hasSample",
-    "hosts": "sosa:hosts"
+    "hosts": {
+      "@id": "sosa:hosts",
+      "@type": "@id"
+    },
+    "isHostedBy": "sosa:isHostedBy",
+    "isProxyFor": "ssn:isProxyFor",
+    "wasOriginatedBy": "ssn:wasOriginatedBy",
+    "detects": "ssn:detects",
+    "hasProperty": "ssn:hasProperty",
+    "isPropertyOf": "ssn:isPropertyOf",
+    "forProperty": "ssn:forProperty",
+    "implements": "ssn:implements",
+    "implementedBy": "ssn:implementedBy",
+    "hasInput": "ssn:hasInput",
+    "hasOutput": "ssn:hasOutput",
+    "hasSubSystem": "ssn:hasSubSystem",
+    "deployedSystem": "ssn:deployedSystem",
+    "hasDeployment": "ssn:hasDeployment",
+    "deployedOnPlatform": "ssn:deployedOnPlatform",
+    "inDeployment": "ssn:inDeployment",
+    "inCondition": "ssn:systems/inCondition",
+    "hasSystemCapability": "ssn:systems/hasSystemCapability",
+    "hasSystemProperty": "ssn:systems/hasSystemProperty",
+    "hasOperatingRange": "ssn:systems/hasOperatingRange",
+    "hasOperatingProperty": "ssn:systems/hasOperatingProperty",
+    "hasSurvivalRange": "ssn:systems/hasSurvivalRange",
+    "hasSurvivalProperty": "ssn:systems/hasSurvivalProperty",
+    "qualityOfObservation": "ssn:systems/qualityOfObservation",
+    "hasMember": "sosa:hasMember",
+    "features": "sosa:hasMember",
+    "sosa": "http://www.w3.org/ns/sosa/",
+    "ssn": "http://www.w3.org/ns/ssn/",
+    "ssn-system": "ssn:systems/"
   }
 }
