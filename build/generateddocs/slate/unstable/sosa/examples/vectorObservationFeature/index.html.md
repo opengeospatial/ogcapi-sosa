@@ -22,8 +22,8 @@ This building block defines an example SOSA Observation Feature for a Vector Obs
 
 [Maturity](https://github.com/cportele/ogcapi-building-blocks#building-block-maturity): Development
 
-<aside class="warning">
-Validation for this building block has <strong><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/unstable/sosa/examples/vectorObservationFeature/" target="_blank">failed</a></strong>
+<aside class="success">
+This building block is <strong><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/unstable/sosa/examples/vectorObservationFeature/" target="_blank">valid</a></strong>
 </aside>
 
 # Examples
