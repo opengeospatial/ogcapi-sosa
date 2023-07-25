@@ -294,7 +294,7 @@
     </script>
   </head>
 
-  <body class="unstable unstable_sosa unstable_sosa_features unstable_sosa_features_observationCollection unstable_sosa_features_observationCollection_index" data-languages="[&quot;json&quot;,&quot;turtle&quot;]">
+  <body class="unstable unstable_sosa unstable_sosa_features unstable_sosa_features_observationCollection unstable_sosa_features_observationCollection_index" data-languages="[&quot;json&quot;,&quot;turtle&quot;,&quot;jsonld&quot;,&quot;ttl&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -306,6 +306,8 @@
         <div class="lang-selector">
               <a href="#" data-language-name="json">JSON</a>
               <a href="#" data-language-name="turtle">RDF/Turtle</a>
+              <a href="#" data-language-name="jsonld">JSON-LD</a>
+              <a href="#" data-language-name="ttl">RDF/Turtle</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -409,7 +411,48 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
 </span><span class="nl">&lt;http://dbpedia.org/ontology/population&gt;</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">skos:</span><span class="n">Concept</span><span class="p">;</span><span class="w">
   </span><span class="nn">skos:</span><span class="n">prefLabel</span><span class="w"> </span><span class="s">"Population"</span><span class="p">;</span><span class="w">
 </span><span class="p">.</span><span class="w">
-</span></code></pre></div><h1 id='json-schema'>JSON Schema</h1><div class="highlight"><pre class="highlight yaml tab-yaml--schema"><code><span class="na">$schema</span><span class="pi">:</span> <span class="s">https://json-schema.org/draft/2020-12/schema</span>
+</span></code></pre></div><div class="highlight"><pre class="highlight jsonld tab-jsonld"><code>{
+  "@id": "c1",
+  "type": "FeatureCollection",
+  "featureType": "sosa:ObservationCollection",
+  "properties": {
+    "observedProperty": "https://dbpedia.org/ontology/population",
+    "resultTime": "1999"
+  },
+  "features": [
+    {
+      "@id": "pop1999",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "comment": "Example of an inline membership - would entail hasMember relations",
+        "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork",
+        "hasSimpleResult": 15555.0
+      }
+    },
+    {
+      "@id": "pop1999",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
+        "hasSimpleResult": 3275.0
+      }
+    }
+  ],
+  "@context": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observationCollection/context.jsonld"
+}
+</code></pre></div><div class="highlight"><pre class="highlight ttl tab-ttl"><code>@prefix ns1: &lt;geojson:&gt; .
+@prefix sosa: &lt;http://www.w3.org/ns/sosa/&gt; .
+
+&lt;file:///github/workspace/c1&gt; sosa:hasMember &lt;file:///github/workspace/pop1999&gt; .
+
+&lt;file:///github/workspace/pop1999&gt; a ns1:Feature ;
+    ns1:properties [ ],
+        [ ] .
+
+
+</code></pre></div><h1 id='json-schema'>JSON Schema</h1><div class="highlight"><pre class="highlight yaml tab-yaml--schema"><code><span class="na">$schema</span><span class="pi">:</span> <span class="s">https://json-schema.org/draft/2020-12/schema</span>
 <span class="na">description</span><span class="pi">:</span> <span class="s">SOSA Observation Feature</span>
 <span class="na">allOf</span><span class="pi">:</span>
 <span class="pi">-</span> <span class="na">$ref</span><span class="pi">:</span> <span class="s">https://opengeospatial.github.io/bblocks/annotated-schemas/geo/json-fg/featureCollection/schema.yaml</span>
@@ -686,6 +729,8 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
           <div class="lang-selector">
                 <a href="#" data-language-name="json">JSON</a>
                 <a href="#" data-language-name="turtle">RDF/Turtle</a>
+                <a href="#" data-language-name="jsonld">JSON-LD</a>
+                <a href="#" data-language-name="ttl">RDF/Turtle</a>
           </div>
       </div>
     </div>

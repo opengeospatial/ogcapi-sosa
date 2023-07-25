@@ -4,6 +4,8 @@ title: SOSA ObservationCollection Feature (Schema)
 language_tabs:
   - json: JSON
   - turtle: RDF/Turtle
+  - jsonld: JSON-LD
+  - ttl: RDF/Turtle
 
 toc_footers:
   - Version 1.0
@@ -93,6 +95,53 @@ eg:pop1999 a sosa:Observation ;
 <http://dbpedia.org/ontology/population> a skos:Concept;
   skos:prefLabel "Population";
 .
+```
+
+```jsonld
+{
+  "@id": "c1",
+  "type": "FeatureCollection",
+  "featureType": "sosa:ObservationCollection",
+  "properties": {
+    "observedProperty": "https://dbpedia.org/ontology/population",
+    "resultTime": "1999"
+  },
+  "features": [
+    {
+      "@id": "pop1999",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "comment": "Example of an inline membership - would entail hasMember relations",
+        "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork",
+        "hasSimpleResult": 15555.0
+      }
+    },
+    {
+      "@id": "pop1999",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
+        "hasSimpleResult": 3275.0
+      }
+    }
+  ],
+  "@context": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observationCollection/context.jsonld"
+}
+```
+
+```ttl
+@prefix ns1: <geojson:> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+
+<file:///github/workspace/c1> sosa:hasMember <file:///github/workspace/pop1999> .
+
+<file:///github/workspace/pop1999> a ns1:Feature ;
+    ns1:properties [ ],
+        [ ] .
+
+
 ```
 
 

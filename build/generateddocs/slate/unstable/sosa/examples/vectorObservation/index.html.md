@@ -1,6 +1,10 @@
 ---
 title: Example SOSA Vector Observation (Schema)
 
+language_tabs:
+  - json: JSON
+  - jsonld: JSON-LD
+  - ttl: RDF/Turtle
 
 toc_footers:
   - Version 1.0
@@ -49,6 +53,38 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
     }
   }
 }
+
+```
+
+```jsonld
+{
+  "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
+  "resultTime": "2023-05-22T16:41:00+2",
+  "hasResult": {
+    "pose": {
+      "position": {
+        "lat": 43.46498208387333,
+        "lon": -3.803638278687769,
+        "h": 0.5
+      },
+      "angles": {
+        "yaw": 5.553,
+        "pitch": -0.92,
+        "roll": 0.33
+      }
+    }
+  },
+  "@context": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservation/context.jsonld"
+}
+```
+
+```ttl
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+
+[] sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
+    sosa:hasResult [ ] ;
+    sosa:resultTime "2023-05-22T16:41:00+2" .
+
 
 ```
 

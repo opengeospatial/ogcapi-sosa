@@ -294,7 +294,7 @@
     </script>
   </head>
 
-  <body class="unstable unstable_sosa unstable_sosa_features unstable_sosa_features_observation unstable_sosa_features_observation_index" data-languages="[&quot;json&quot;,&quot;turtle&quot;]">
+  <body class="unstable unstable_sosa unstable_sosa_features unstable_sosa_features_observation unstable_sosa_features_observation_index" data-languages="[&quot;json&quot;,&quot;turtle&quot;,&quot;jsonld&quot;,&quot;ttl&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -306,6 +306,8 @@
         <div class="lang-selector">
               <a href="#" data-language-name="json">JSON</a>
               <a href="#" data-language-name="turtle">RDF/Turtle</a>
+              <a href="#" data-language-name="jsonld">JSON-LD</a>
+              <a href="#" data-language-name="ttl">RDF/Turtle</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -377,7 +379,34 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
     </span><span class="nn">sosa:</span><span class="n">resultTime</span><span class="w"> </span><span class="s">"2022-05-01T22:33:44Z"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">dateTime
 </span><span class="w">  </span><span class="p">]</span><span class="w">
 </span><span class="p">.</span><span class="w">
-</span></code></pre></div><h1 id='json-schema'>JSON Schema</h1><div class="highlight"><pre class="highlight yaml tab-yaml--schema"><code><span class="na">$schema</span><span class="pi">:</span> <span class="s">https://json-schema.org/draft/2020-12/schema</span>
+</span></code></pre></div><div class="highlight"><pre class="highlight jsonld tab-jsonld"><code>{
+  "@id": "pop1999",
+  "type": "Feature",
+  "featureType": "sosa:Observation",
+  "geometry": null,
+  "properties": {
+    "observedProperty": "https://dbpedia.org/ontology/population",
+    "resultTime": "1999",
+    "@id": "pop1999",
+    "comment": "Example of an inline membership - would entail hasMember relations",
+    "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork",
+    "hasSimpleResult": 15555.0
+  },
+  "@context": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observation/context.jsonld"
+}
+</code></pre></div><div class="highlight"><pre class="highlight ttl tab-ttl"><code>@prefix ns1: &lt;https://purl.org/geojson/vocab#&gt; .
+@prefix sosa: &lt;http://www.w3.org/ns/sosa/&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+&lt;file:///github/workspace/pop1999&gt; a ns1:Feature ;
+    sosa:hasFeatureOfInterest &lt;https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork&gt; ;
+    sosa:hasSimpleResult 1.5555e+04 ;
+    sosa:observedProperty "https://dbpedia.org/ontology/population" ;
+    sosa:resultTime "1999" ;
+    ns1:properties &lt;file:///github/workspace/pop1999&gt; .
+
+
+</code></pre></div><h1 id='json-schema'>JSON Schema</h1><div class="highlight"><pre class="highlight yaml tab-yaml--schema"><code><span class="na">$schema</span><span class="pi">:</span> <span class="s">https://json-schema.org/draft/2020-12/schema</span>
 <span class="na">description</span><span class="pi">:</span> <span class="s">SOSA Observation Feature</span>
 <span class="na">type</span><span class="pi">:</span> <span class="s">object</span>
 <span class="na">allOf</span><span class="pi">:</span>
@@ -643,6 +672,8 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
           <div class="lang-selector">
                 <a href="#" data-language-name="json">JSON</a>
                 <a href="#" data-language-name="turtle">RDF/Turtle</a>
+                <a href="#" data-language-name="jsonld">JSON-LD</a>
+                <a href="#" data-language-name="ttl">RDF/Turtle</a>
           </div>
       </div>
     </div>

@@ -4,6 +4,8 @@ title: SOSA ObservationCollection (Schema)
 language_tabs:
   - json: JSON
   - turtle: RDF/Turtle
+  - jsonld: JSON-LD
+  - ttl: RDF/Turtle
 
 toc_footers:
   - Version 1.0
@@ -82,6 +84,36 @@ eg:a1 a sosa:Observation ;
 eg:p1 a skos:Concept;
   skos:prefLabel "Some Observable Property";
 .
+```
+
+```jsonld
+{
+  "observedProperty": "p1",
+  "resultTime": "2022-05-01T22:33:44Z",
+  "hasMember": [
+    {
+      "@id": "a1",
+      "comment": "Example of an inline membership - would entail hasMember relations",
+      "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
+      "hasSimpleResult": 1995.2
+    }
+  ],
+  "@context": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/properties/observationCollection/context.jsonld"
+}
+```
+
+```ttl
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<file:///github/workspace/a1> sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
+    sosa:hasSimpleResult 1.9952e+03 .
+
+[] sosa:hasMember <file:///github/workspace/a1> ;
+    sosa:observedProperty "p1" ;
+    sosa:resultTime "2022-05-01T22:33:44Z" .
+
+
 ```
 
 

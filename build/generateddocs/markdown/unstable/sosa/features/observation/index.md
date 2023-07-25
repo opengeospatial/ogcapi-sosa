@@ -42,6 +42,41 @@ _:a1 a geojson:Feature;
 .
 ```
 
+#### jsonld
+```jsonld
+{
+  "@id": "pop1999",
+  "type": "Feature",
+  "featureType": "sosa:Observation",
+  "geometry": null,
+  "properties": {
+    "observedProperty": "https://dbpedia.org/ontology/population",
+    "resultTime": "1999",
+    "@id": "pop1999",
+    "comment": "Example of an inline membership - would entail hasMember relations",
+    "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork",
+    "hasSimpleResult": 15555.0
+  },
+  "@context": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observation/context.jsonld"
+}
+```
+
+#### ttl
+```ttl
+@prefix ns1: <https://purl.org/geojson/vocab#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<file:///github/workspace/pop1999> a ns1:Feature ;
+    sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork> ;
+    sosa:hasSimpleResult 1.5555e+04 ;
+    sosa:observedProperty "https://dbpedia.org/ontology/population" ;
+    sosa:resultTime "1999" ;
+    ns1:properties <file:///github/workspace/pop1999> .
+
+
+```
+
 ## Schema
 
 ```yaml

@@ -294,7 +294,7 @@
     </script>
   </head>
 
-  <body class="unstable unstable_sosa unstable_sosa_examples unstable_sosa_examples_vectorObservation unstable_sosa_examples_vectorObservation_index" data-languages="[]">
+  <body class="unstable unstable_sosa unstable_sosa_examples unstable_sosa_examples_vectorObservation unstable_sosa_examples_vectorObservation_index" data-languages="[&quot;json&quot;,&quot;jsonld&quot;,&quot;ttl&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -303,6 +303,11 @@
     </a>
     <div class="toc-wrapper">
       <img src="../../../../images/logo-4d9dfd05.svg" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="json">JSON</a>
+              <a href="#" data-language-name="jsonld">JSON-LD</a>
+              <a href="#" data-language-name="ttl">RDF/Turtle</a>
+        </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
         </div>
@@ -368,7 +373,33 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h1 id='json-schema'>JSON Schema</h1><div class="highlight"><pre class="highlight yaml tab-yaml--schema"><code><span class="na">$schema</span><span class="pi">:</span> <span class="s">https://json-schema.org/draft/2020-12/schema</span>
+</span></code></pre></div><div class="highlight"><pre class="highlight jsonld tab-jsonld"><code>{
+  "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
+  "resultTime": "2023-05-22T16:41:00+2",
+  "hasResult": {
+    "pose": {
+      "position": {
+        "lat": 43.46498208387333,
+        "lon": -3.803638278687769,
+        "h": 0.5
+      },
+      "angles": {
+        "yaw": 5.553,
+        "pitch": -0.92,
+        "roll": 0.33
+      }
+    }
+  },
+  "@context": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservation/context.jsonld"
+}
+</code></pre></div><div class="highlight"><pre class="highlight ttl tab-ttl"><code>@prefix sosa: &lt;http://www.w3.org/ns/sosa/&gt; .
+
+[] sosa:hasFeatureOfInterest &lt;https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem&gt; ;
+    sosa:hasResult [ ] ;
+    sosa:resultTime "2023-05-22T16:41:00+2" .
+
+
+</code></pre></div><h1 id='json-schema'>JSON Schema</h1><div class="highlight"><pre class="highlight yaml tab-yaml--schema"><code><span class="na">$schema</span><span class="pi">:</span> <span class="s">https://json-schema.org/draft/2020-12/schema</span>
 <span class="na">description</span><span class="pi">:</span> <span class="s">Example SOSA Vector Observation</span>
 <span class="na">allOf</span><span class="pi">:</span>
 <span class="pi">-</span> <span class="na">$ref</span><span class="pi">:</span> <span class="s">../../properties/observation/schema.yaml</span>
@@ -539,6 +570,11 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
 
       </div>
       <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="json">JSON</a>
+                <a href="#" data-language-name="jsonld">JSON-LD</a>
+                <a href="#" data-language-name="ttl">RDF/Turtle</a>
+          </div>
       </div>
     </div>
   </body>

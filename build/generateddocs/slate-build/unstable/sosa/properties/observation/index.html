@@ -294,7 +294,7 @@
     </script>
   </head>
 
-  <body class="unstable unstable_sosa unstable_sosa_properties unstable_sosa_properties_observation unstable_sosa_properties_observation_index" data-languages="[&quot;json&quot;,&quot;turtle&quot;]">
+  <body class="unstable unstable_sosa unstable_sosa_properties unstable_sosa_properties_observation unstable_sosa_properties_observation_index" data-languages="[&quot;json&quot;,&quot;turtle&quot;,&quot;jsonld&quot;,&quot;ttl&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -306,6 +306,8 @@
         <div class="lang-selector">
               <a href="#" data-language-name="json">JSON</a>
               <a href="#" data-language-name="turtle">RDF/Turtle</a>
+              <a href="#" data-language-name="jsonld">JSON-LD</a>
+              <a href="#" data-language-name="ttl">RDF/Turtle</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -378,7 +380,21 @@ to detail what that property was associated with.&quot;</p>
   </span><span class="nn">sosa:</span><span class="n">hasSimpleResult</span><span class="w"> </span><span class="mi">33</span><span class="w"> </span><span class="p">;</span><span class="w">
   </span><span class="nn">sosa:</span><span class="n">resultTime</span><span class="w"> </span><span class="s">"2022-05-01T22:33:44Z"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">dateTime</span><span class="w"> </span><span class="p">;</span><span class="w">
 </span><span class="p">.</span><span class="w">
-</span></code></pre></div><h1 id='json-schema'>JSON Schema</h1><div class="highlight"><pre class="highlight yaml tab-yaml--schema"><code><span class="na">$schema</span><span class="pi">:</span> <span class="s">https://json-schema.org/draft/2020-12/schema</span>
+</span></code></pre></div><div class="highlight"><pre class="highlight jsonld tab-jsonld"><code>{
+  "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
+  "hasSimpleResult": 33,
+  "resultTime": "2022-05-01T22:33:44Z",
+  "@context": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/properties/observation/context.jsonld"
+}
+</code></pre></div><div class="highlight"><pre class="highlight ttl tab-ttl"><code>@prefix sosa: &lt;http://www.w3.org/ns/sosa/&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+[] sosa:hasFeatureOfInterest &lt;https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem&gt; ;
+    sosa:hasSimpleResult 33 ;
+    sosa:resultTime "2022-05-01T22:33:44Z" .
+
+
+</code></pre></div><h1 id='json-schema'>JSON Schema</h1><div class="highlight"><pre class="highlight yaml tab-yaml--schema"><code><span class="na">$schema</span><span class="pi">:</span> <span class="s">https://json-schema.org/draft/2020-12/schema</span>
 <span class="na">description</span><span class="pi">:</span> <span class="s">SOSA Observation</span>
 <span class="na">type</span><span class="pi">:</span> <span class="s">object</span>
 <span class="na">properties</span><span class="pi">:</span>
@@ -629,6 +645,8 @@ to detail what that property was associated with.&quot;</p>
           <div class="lang-selector">
                 <a href="#" data-language-name="json">JSON</a>
                 <a href="#" data-language-name="turtle">RDF/Turtle</a>
+                <a href="#" data-language-name="jsonld">JSON-LD</a>
+                <a href="#" data-language-name="ttl">RDF/Turtle</a>
           </div>
       </div>
     </div>

@@ -294,7 +294,7 @@
     </script>
   </head>
 
-  <body class="unstable unstable_sosa unstable_sosa_examples unstable_sosa_examples_vectorObservationFeature unstable_sosa_examples_vectorObservationFeature_index" data-languages="[]">
+  <body class="unstable unstable_sosa unstable_sosa_examples unstable_sosa_examples_vectorObservationFeature unstable_sosa_examples_vectorObservationFeature_index" data-languages="[&quot;json&quot;,&quot;jsonld&quot;,&quot;ttl&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -303,6 +303,11 @@
     </a>
     <div class="toc-wrapper">
       <img src="../../../../images/logo-4d9dfd05.svg" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="json">JSON</a>
+              <a href="#" data-language-name="jsonld">JSON-LD</a>
+              <a href="#" data-language-name="ttl">RDF/Turtle</a>
+        </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
         </div>
@@ -388,7 +393,60 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h1 id='json-schema'>JSON Schema</h1><div class="highlight"><pre class="highlight yaml tab-yaml--schema"><code><span class="na">$schema</span><span class="pi">:</span> <span class="s">https://json-schema.org/draft/2020-12/schema</span>
+</span></code></pre></div><div class="highlight"><pre class="highlight jsonld tab-jsonld"><code>{
+  "@id": "vector-obs-1",
+  "type": "Feature",
+  "geometry": {
+    "type": "LineString",
+    "coordinates": [
+      [
+        -111.67183507997295,
+        40.056709946862874
+      ],
+      [
+        -111.67183507997295,
+        40.056709946862874
+      ]
+    ]
+  },
+  "time": null,
+  "place": null,
+  "properties": {
+    "hasFeatureOfInterest": "eg:Traverse-P1-P2",
+    "resultTime": "2023-05-22T16:41:00+2",
+    "hasResult": {
+      "pose": {
+        "position": {
+          "lat": -111.67183507997295,
+          "lon": 40.056709946862874,
+          "h": 0.5
+        },
+        "angles": {
+          "yaw": 15.35,
+          "pitch": -0.01,
+          "roll": 0
+        }
+      },
+      "distance": 6889234.2
+    }
+  },
+  "@context": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/examples/vectorObservationFeature/context.jsonld"
+}
+</code></pre></div><div class="highlight"><pre class="highlight ttl tab-ttl"><code>@prefix ns1: &lt;https://purl.org/geojson/vocab#&gt; .
+@prefix ns2: &lt;http://example.com/properties/&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix sosa: &lt;http://www.w3.org/ns/sosa/&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+&lt;http://www.example.com/features/vector-obs-1&gt; a ns1:Feature ;
+    ns1:geometry [ a &lt;http://www.example.com/features/LineString&gt; ;
+            ns1:coordinates ( ( -1.116718e+02 4.005671e+01 ) ( -1.116718e+02 4.005671e+01 ) ) ] ;
+    ns1:properties [ sosa:hasFeatureOfInterest &lt;eg:Traverse-P1-P2&gt; ;
+            sosa:hasResult [ ns2:distance "6889234.2"^^xsd:float ] ;
+            sosa:resultTime "2023-05-22T16:41:00+2" ] .
+
+
+</code></pre></div><h1 id='json-schema'>JSON Schema</h1><div class="highlight"><pre class="highlight yaml tab-yaml--schema"><code><span class="na">$schema</span><span class="pi">:</span> <span class="s">https://json-schema.org/draft/2020-12/schema</span>
 <span class="na">description</span><span class="pi">:</span> <span class="s">Example SOSA Vector Observation</span>
 <span class="na">allOf</span><span class="pi">:</span>
 <span class="pi">-</span> <span class="na">$ref</span><span class="pi">:</span> <span class="s">../../features/observation/schema.yaml</span>
@@ -585,6 +643,11 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
 
       </div>
       <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="json">JSON</a>
+                <a href="#" data-language-name="jsonld">JSON-LD</a>
+                <a href="#" data-language-name="ttl">RDF/Turtle</a>
+          </div>
       </div>
     </div>
   </body>
