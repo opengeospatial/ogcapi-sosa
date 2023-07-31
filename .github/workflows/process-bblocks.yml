@@ -1,4 +1,4 @@
-name: Validate and process Building Block
+name: Validate and process Building Blocks
 on:
   workflow_dispatch:
   push:
@@ -6,19 +6,11 @@ on:
       - master
       - main
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   validate-and-process:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      - name: OGC BB postprocess
-        uses: opengeospatial/bblocks-postprocess/full@v1
-        with:
-          fail_on_error: 'true'
-      - name: Add & Commit
-        if: ${{ !endsWith(github.repository, '/bblock-template') }}
-        uses: EndBug/add-and-commit@v9
-        with:
-          message: Building blocks postprocessing
+    uses: opengeospatial/bblocks-postprocess/.github/workflows/validate-and-process.yml@master
