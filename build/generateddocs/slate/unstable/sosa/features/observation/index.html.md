@@ -25,7 +25,10 @@ meta:
 
 This building blocks defines a GeoJSON feature containing a SOSA Observation
 
-[Maturity](https://github.com/cportele/ogcapi-building-blocks#building-block-maturity): Development
+<p class="status">
+    <span data-rainbow-uri="http://www.opengis.net/def/status">Status</span>:
+    <a href="http://www.opengis.net/def/status/under-development" target="_blank" data-rainbow-uri>Under development</a>
+</p>
 
 <aside class="success">
 This building block is <strong><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/unstable/sosa/features/observation/" target="_blank">valid</a></strong>
@@ -79,21 +82,21 @@ _:a1 a geojson:Feature;
     "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork",
     "hasSimpleResult": 15555.0
   },
-  "@context": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observation/context.jsonld"
+  "@context": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observation/context.jsonld"
 }
 ```
 
 ```ttl
-@prefix ns1: <https://purl.org/geojson/vocab#> .
+@prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<file:///github/workspace/pop1999> a ns1:Feature ;
+<file:///github/workspace/pop1999> a geojson:Feature ;
     sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork> ;
     sosa:hasSimpleResult 1.5555e+04 ;
     sosa:observedProperty "https://dbpedia.org/ontology/population" ;
     sosa:resultTime "1999" ;
-    ns1:properties <file:///github/workspace/pop1999> .
+    geojson:properties <file:///github/workspace/pop1999> .
 
 
 ```
@@ -203,8 +206,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: <a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observation/schema.yaml" target="_blank">https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observation/schema.yaml</a>
-* JSON version: <a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observation/schema.json" target="_blank">https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observation/schema.json</a>
+* YAML version: <a href="https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observation/schema.yaml" target="_blank">https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observation/schema.yaml</a>
+* JSON version: <a href="https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observation/schema.json" target="_blank">https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observation/schema.json</a>
 
 
 # JSON-LD Context
@@ -355,7 +358,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-<a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observation/context.jsonld" target="_blank">https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observation/context.jsonld</a>
+<a href="https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observation/context.jsonld" target="_blank">https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observation/context.jsonld</a>
 
 # References
 

@@ -5,7 +5,7 @@
 
 This building blocks defines an ObservationCollection according to the SOSA/SSN v1.1 specification.
 
-[*Maturity*](https://github.com/cportele/ogcapi-building-blocks#building-block-maturity): Development
+[*Status*](http://www.opengis.net/def/status): Under development
 
 ## Description
 
@@ -77,7 +77,7 @@ eg:p1 a skos:Concept;
       "hasSimpleResult": 1995.2
     }
   ],
-  "@context": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/properties/observationCollection/context.jsonld"
+  "@context": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observationCollection/context.jsonld"
 }
 ```
 
@@ -221,8 +221,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/properties/observationCollection/schema.json)
-* JSON version: [schema.json](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/properties/observationCollection/schema.yaml)
+* YAML version: [schema.yaml](https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observationCollection/schema.json)
+* JSON version: [schema.json](https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observationCollection/schema.yaml)
 
 
 # JSON-LD Context
@@ -336,7 +336,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/properties/observationCollection/context.jsonld)
+[context.jsonld](https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observationCollection/context.jsonld)
 
 ## Sources
 

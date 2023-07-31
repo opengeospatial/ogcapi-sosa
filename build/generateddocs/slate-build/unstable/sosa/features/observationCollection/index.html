@@ -285,9 +285,9 @@
   color: #859900;
 }
     </style>
-    <link href="../../../../stylesheets/screen-e762ca82.css" rel="stylesheet" media="screen" />
+    <link href="../../../../stylesheets/screen-78476d1b.css" rel="stylesheet" media="screen" />
     <link href="../../../../stylesheets/print-966d6edc.css" rel="stylesheet" media="print" />
-      <script src="../../../../javascripts/all-fea9e21b.js"></script>
+      <script src="../../../../javascripts/all-0c8314cb.js"></script>
 
     <script>
       $(function() { setupCodeCopy(); });
@@ -350,7 +350,10 @@
         <h1 id='sosa-observationcollection-feature-ogc-unstable-sosa-features-observationcollection'>SOSA ObservationCollection Feature <code>ogc.unstable.sosa.features.observationCollection</code></h1>
 <p>This building blocks defines an ObservationCollection Feature according to the SOSA/SSN v1.1 specification.</p>
 
-<p><a href="https://github.com/cportele/ogcapi-building-blocks#building-block-maturity">Maturity</a>: Development</p>
+<p class="status">
+    <span data-rainbow-uri="http://www.opengis.net/def/status">Status</span>:
+    <a href="http://www.opengis.net/def/status/under-development" target="_blank" data-rainbow-uri>Under development</a>
+</p>
 
 <aside class="success">
 This building block is <strong><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/unstable/sosa/features/observationCollection/" target="_blank">valid</a></strong>
@@ -440,16 +443,19 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
       }
     }
   ],
-  "@context": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observationCollection/context.jsonld"
+  "@context": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observationCollection/context.jsonld"
 }
-</code></pre></div><div class="highlight"><pre class="highlight ttl tab-ttl"><code>@prefix ns1: &lt;geojson:&gt; .
+</code></pre></div><div class="highlight"><pre class="highlight ttl tab-ttl"><code>@prefix geojson: &lt;https://purl.org/geojson/vocab#&gt; .
 @prefix sosa: &lt;http://www.w3.org/ns/sosa/&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 &lt;file:///github/workspace/c1&gt; sosa:hasMember &lt;file:///github/workspace/pop1999&gt; .
 
-&lt;file:///github/workspace/pop1999&gt; a ns1:Feature ;
-    ns1:properties [ ],
-        [ ] .
+&lt;file:///github/workspace/pop1999&gt; a geojson:Feature ;
+    geojson:properties [ sosa:hasFeatureOfInterest &lt;https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork&gt; ;
+            sosa:hasSimpleResult 1.5555e+04 ],
+        [ sosa:hasFeatureOfInterest &lt;https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem&gt; ;
+            sosa:hasSimpleResult 3.275e+03 ] .
 
 
 </code></pre></div><h1 id='json-schema'>JSON Schema</h1><div class="highlight"><pre class="highlight yaml tab-yaml--schema"><code><span class="na">$schema</span><span class="pi">:</span> <span class="s">https://json-schema.org/draft/2020-12/schema</span>
@@ -558,8 +564,8 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
 <p>Links to the schema:</p>
 
 <ul>
-<li>YAML version: <a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observationCollection/schema.yaml" target="_blank">https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observationCollection/schema.yaml</a></li>
-<li>JSON version: <a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observationCollection/schema.json" target="_blank">https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observationCollection/schema.json</a></li>
+<li>YAML version: <a href="https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observationCollection/schema.yaml" target="_blank">https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observationCollection/schema.yaml</a></li>
+<li>JSON version: <a href="https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observationCollection/schema.json" target="_blank">https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observationCollection/schema.json</a></li>
 </ul>
 <h1 id='json-ld-context'>JSON-LD Context</h1><div class="highlight"><pre class="highlight json tab-json--ldContext"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -710,7 +716,7 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>You can find the full JSON-LD context here:
-<a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observationCollection/context.jsonld" target="_blank">https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/build/annotated/unstable/sosa/features/observationCollection/context.jsonld</a></p>
+<a href="https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observationCollection/context.jsonld" target="_blank">https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observationCollection/context.jsonld</a></p>
 <h1 id='references'>References</h1>
 <ul>
 <li><a href="https://www.w3.org/TR/vocab-ssn/">Semantic Sensor Network Ontology</a></li>

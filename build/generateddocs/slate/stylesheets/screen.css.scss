@@ -639,3 +639,43 @@ html, body {
 aside a {
   color: $main-text;
 }
+
+.content .highlight pre.highlight {
+  max-height: 30em;
+}
+
+.rainbow-popup {
+  position: absolute;
+  z-index: 999;
+  max-width: 400px;
+  padding: 0.6em 0.6em 0;
+  background: #8fbcd4 center no-repeat;
+  border-radius: 3px;
+  border: 1px solid #999;
+
+  .title {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: 0.6em;
+  }
+
+  &.loading {
+    width: 32px;
+    height: 32px;
+    background-image: url(../images/ajax-loader.gif);
+
+    * {
+      display: none;
+    }
+  }
+}
+
+[data-rainbow-uri] {
+  cursor: help;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
