@@ -142,10 +142,10 @@ eg:pop1999 a sosa:Observation ;
 <file:///github/workspace/c1> sosa:hasMember <file:///github/workspace/pop1999> .
 
 <file:///github/workspace/pop1999> a geojson:Feature ;
-    geojson:properties [ sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
-            sosa:hasSimpleResult 3.275e+03 ],
-        [ sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork> ;
-            sosa:hasSimpleResult 1.5555e+04 ] .
+    geojson:properties [ sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork> ;
+            sosa:hasSimpleResult 1.5555e+04 ],
+        [ sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
+            sosa:hasSimpleResult 3.275e+03 ] .
 
 
 ```
