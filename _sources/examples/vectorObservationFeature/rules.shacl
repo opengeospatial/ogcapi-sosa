@@ -3,8 +3,9 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
+@base <http://example.com/rules> .
 
-_:testGeometryHasCoordinates
+<#testGeometryHasCoordinates>
   a sh:NodeShape ;
   sh:targetObjectsOf geojson:geometry ;
   sh:property [
@@ -15,7 +16,7 @@ _:testGeometryHasCoordinates
   ]
 .
 
-_:testGeometryCoordinatesIsList
+<#testGeometryCoordinatesIsList>
   a sh:NodeShape ;
   sh:targetObjectsOf geojson:geometry ;
   sh:sparql [
@@ -29,4 +30,14 @@ _:testGeometryCoordinatesIsList
       }
     """ ;
   ]
+.
+
+<#testVectorObservationFeatureHasOneGeometry>
+  a sh:NodeShape ;
+  sh:targetClass geojson:Feature ;
+  sh:property [
+    sh:path geojson:geometry ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
 .
