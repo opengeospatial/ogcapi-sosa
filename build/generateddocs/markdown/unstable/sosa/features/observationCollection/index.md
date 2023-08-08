@@ -118,10 +118,10 @@ eg:pop1999 a sosa:Observation ;
 <file:///github/workspace/c1> sosa:hasMember <file:///github/workspace/pop1999> .
 
 <file:///github/workspace/pop1999> a geojson:Feature ;
-    geojson:properties [ sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork> ;
-            sosa:hasSimpleResult 1.5555e+04 ],
-        [ sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
-            sosa:hasSimpleResult 3.275e+03 ] .
+    geojson:properties [ sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
+            sosa:hasSimpleResult 3.275e+03 ],
+        [ sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork> ;
+            sosa:hasSimpleResult 1.5555e+04 ] .
 
 
 ```
@@ -132,7 +132,7 @@ eg:pop1999 a sosa:Observation ;
 $schema: https://json-schema.org/draft/2020-12/schema
 description: SOSA Observation Feature
 allOf:
-- $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/json-fg/featureCollection/schema.yaml
+- $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/json-fg/featureCollection-lenient/schema.yaml
 - type: object
   properties:
     properties:
@@ -259,12 +259,7 @@ Links to the schema:
         "properties": "geojson:properties",
         "geometry": {
           "@id": "geojson:geometry",
-          "@context": {
-            "coordinates": {
-              "@container": "@list",
-              "@id": "geojson:coordinates"
-            }
-          }
+          "@context": {}
         },
         "bbox": {
           "@container": "@list",
@@ -282,6 +277,10 @@ Links to the schema:
         "features": {
           "@container": "@set",
           "@id": "sosa:hasMember"
+        },
+        "coordinates": {
+          "@container": "@list",
+          "@id": "geojson:coordinates"
         }
       }
     },

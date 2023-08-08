@@ -1,0 +1,48 @@
+=== Files ===
+Using example_1_1.json from examples
+JSON-LD context is present - uplifting
+Output JSON-LD example_1_1.jsonld created
+Output Turtle example_1_1.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+
+=== SHACL ===
+Using SHACL files for validation:
+ - properties/observationCollection/rules.shacl
+
+** Validation error **
+Validation Report
+Conforms: False
+Results (3):
+Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:inversePath sosa:hasMember ] ] sosa:phenomenonTime ) ]
+	Focus Node: Literal("_:a1")
+	Result Path: ( [ sh:zeroOrMorePath [ sh:inversePath sosa:hasMember ] ] sosa:phenomenonTime )
+	Message: Less than 1 values on Literal("_:a1")->( [ sh:zeroOrMorePath [ sh:inversePath sosa:hasMember ] ] sosa:phenomenonTime )
+Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:inversePath sosa:hasMember ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] ) ]
+	Focus Node: Literal("_:a1")
+	Result Path: ( [ sh:zeroOrMorePath [ sh:inversePath sosa:hasMember ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] )
+	Message: Less than 1 values on Literal("_:a1")->( [ sh:zeroOrMorePath [ sh:inversePath sosa:hasMember ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] )
+Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ]
+	Focus Node: Literal("_:a1")
+	Result Path: [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]
+	Message: Less than 1 values on Literal("_:a1")->[ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]
+
+Focus nodes:
+ - Shape <http://example.com/rules#testRequiredProperties>: _:a1
+ - Shape _:n26252691f7914416b19f502222a3d154b6 (path n26252691f7914416b19f502222a3d154b9): *none*
+ - Shape _:n26252691f7914416b19f502222a3d154b11 (path n26252691f7914416b19f502222a3d154b14): *none*
+ - Shape _:n26252691f7914416b19f502222a3d154b16 (path n26252691f7914416b19f502222a3d154b23): *none*
+ - Shape _:n26252691f7914416b19f502222a3d154b1 (path n26252691f7914416b19f502222a3d154b4): *none*
+ - Shape _:n26252691f7914416b19f502222a3d154b25 (path n26252691f7914416b19f502222a3d154b26): *none*
+
+=== End SHACL ===
+

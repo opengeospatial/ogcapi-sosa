@@ -144,12 +144,7 @@ Links to the schema:
     "properties": "geojson:properties",
     "geometry": {
       "@id": "geojson:geometry",
-      "@context": {
-        "coordinates": {
-          "@container": "@list",
-          "@id": "geojson:coordinates"
-        }
-      }
+      "@context": {}
     },
     "bbox": {
       "@container": "@list",
@@ -174,6 +169,10 @@ Links to the schema:
         "href": "@id",
         "title": "rdfs:label"
       }
+    },
+    "coordinates": {
+      "@container": "@list",
+      "@id": "geojson:coordinates"
     },
     "resultTime": "sosa:resultTime",
     "phenomenonTime": "sosa:phenomenonTime",

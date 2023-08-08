@@ -15,12 +15,7 @@
         "properties": "geojson:properties",
         "geometry": {
           "@id": "geojson:geometry",
-          "@context": {
-            "coordinates": {
-              "@container": "@list",
-              "@id": "geojson:coordinates"
-            }
-          }
+          "@context": {}
         },
         "bbox": {
           "@container": "@list",
@@ -38,6 +33,10 @@
         "features": {
           "@container": "@set",
           "@id": "sosa:hasMember"
+        },
+        "coordinates": {
+          "@container": "@list",
+          "@id": "geojson:coordinates"
         }
       }
     },

@@ -285,7 +285,7 @@
   color: #859900;
 }
     </style>
-    <link href="../../../../stylesheets/screen-78476d1b.css" rel="stylesheet" media="screen" />
+    <link href="../../../../stylesheets/screen-c95bb399.css" rel="stylesheet" media="screen" />
     <link href="../../../../stylesheets/print-966d6edc.css" rel="stylesheet" media="print" />
       <script src="../../../../javascripts/all-0c8314cb.js"></script>
 
@@ -294,7 +294,7 @@
     </script>
   </head>
 
-  <body class="unstable unstable_sosa unstable_sosa_properties unstable_sosa_properties_observationCollection unstable_sosa_properties_observationCollection_index" data-languages="[&quot;json&quot;,&quot;turtle&quot;,&quot;jsonld&quot;,&quot;ttl&quot;]">
+  <body class="unstable unstable_sosa unstable_sosa_properties unstable_sosa_properties_observationCollection unstable_sosa_properties_observationCollection_index" data-languages="[&quot;json&quot;,&quot;jsonld&quot;,&quot;ttl&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -305,7 +305,6 @@
       <img src="../../../../images/logo-4d9dfd05.svg" class="logo" alt="" />
         <div class="lang-selector">
               <a href="#" data-language-name="json">JSON</a>
-              <a href="#" data-language-name="turtle">RDF/Turtle</a>
               <a href="#" data-language-name="jsonld">JSON-LD</a>
               <a href="#" data-language-name="ttl">RDF/Turtle</a>
         </div>
@@ -330,6 +329,12 @@
               <ul class="toc-list-h2">
                   <li>
                     <a href="#example-of-sosa-observationcollection" class="toc-h2 toc-link" data-title="Example of SOSA ObservationCollection">Example of SOSA ObservationCollection</a>
+                  </li>
+                  <li>
+                    <a href="#example-of-sosa-observationcollection-2" class="toc-h2 toc-link" data-title="Example of SOSA ObservationCollection">Example of SOSA ObservationCollection</a>
+                  </li>
+                  <li>
+                    <a href="#turtle-example-of-sosa-observationcollection" class="toc-h2 toc-link" data-title="Turtle example of SOSA ObservationCollection">Turtle example of SOSA ObservationCollection</a>
                   </li>
               </ul>
           </li>
@@ -360,11 +365,11 @@
 
 <p class="status">
     <span data-rainbow-uri="http://www.opengis.net/def/status">Status</span>:
-    <a href="http://www.opengis.net/def/status/under-development" target="_blank" data-rainbow-uri>Under development</a>
+    <a href="http://www.opengis.net/def/status/invalid" target="_blank" data-rainbow-uri>Invalid</a>
 </p>
 
-<aside class="success">
-This building block is <strong><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/unstable/sosa/properties/observationCollection/" target="_blank">valid</a></strong>
+<aside class="warning">
+Validation for this building block has <strong><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/unstable/sosa/properties/observationCollection/" target="_blank">failed</a></strong>
 </aside>
 <h1 id='description'>Description</h1><h2 id='sosa-observationcollection'>SOSA ObservationCollection</h2>
 <p>Collection of one or more observations, whose members share a common value for one or more properties.</p>
@@ -375,7 +380,22 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
   </span><span class="nl">"observedProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"_:p1"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"resultTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-05-01T22:33:44Z"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+</span></code></pre></div><div class="highlight"><pre class="highlight jsonld tab-jsonld"><code>{
+  "hasMember": [
+    "_:a1"
+  ],
+  "observedProperty": "_:p1",
+  "resultTime": "2022-05-01T22:33:44Z",
+  "@context": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observationCollection/context.jsonld"
+}
+</code></pre></div><div class="highlight"><pre class="highlight ttl tab-ttl"><code>@prefix sosa: &lt;http://www.w3.org/ns/sosa/&gt; .
+
+[] sosa:hasMember "_:a1" ;
+    sosa:observedProperty "_:p1" ;
+    sosa:resultTime "2022-05-01T22:33:44Z" .
+
+
+</code></pre></div><h2 id='example-of-sosa-observationcollection-2'>Example of SOSA ObservationCollection</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
   </span><span class="nl">"observedProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"p1"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"resultTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-05-01T22:33:44Z"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"hasMember"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -384,27 +404,10 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
       </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example of an inline membership - would entail hasMember relations"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"hasFeatureOfInterest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"hasSimpleResult"</span><span class="p">:</span><span class="w"> </span><span class="mf">1995.2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"phenomenonTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-05-01T22:33:40Z"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><div class="highlight"><pre class="highlight turtle tab-turtle"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">sosa:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/sosa/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">eg:</span><span class="w"> </span><span class="nl">&lt;http://example.org/my-feature/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">skos:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-
-</span><span class="nn">eg:</span><span class="n">c1</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">sosa:</span><span class="n">ObservationCollection</span><span class="w"> </span><span class="p">;</span><span class="w">
-  </span><span class="nn">sosa:</span><span class="n">hasMember</span><span class="w"> </span><span class="nn">eg:</span><span class="n">a1</span><span class="w"> </span><span class="p">;</span><span class="w">
-  </span><span class="nn">sosa:</span><span class="n">observedProperty</span><span class="w"> </span><span class="nn">eg:</span><span class="n">p1</span><span class="w"> </span><span class="p">;</span><span class="w">
-  </span><span class="nn">sosa:</span><span class="n">resultTime</span><span class="w"> </span><span class="s">"2022-05-01T22:33:44Z"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">dateTime</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span><span class="w">
-
-</span><span class="nn">eg:</span><span class="n">a1</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">sosa:</span><span class="n">Observation</span><span class="w"> </span><span class="p">;</span><span class="w">
-  </span><span class="nn">sosa:</span><span class="n">hasFeatureOfInterest</span><span class="w"> </span><span class="nl">&lt;https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-  </span><span class="nn">sosa:</span><span class="n">hasSimpleResult</span><span class="w"> </span><span class="mi">33</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span><span class="w">
-</span><span class="nn">eg:</span><span class="n">p1</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">skos:</span><span class="n">Concept</span><span class="p">;</span><span class="w">
-  </span><span class="nn">skos:</span><span class="n">prefLabel</span><span class="w"> </span><span class="s">"Some Observable Property"</span><span class="p">;</span><span class="w">
-</span><span class="p">.</span><span class="w">
 </span></code></pre></div><div class="highlight"><pre class="highlight jsonld tab-jsonld"><code>{
   "observedProperty": "p1",
   "resultTime": "2022-05-01T22:33:44Z",
@@ -413,7 +416,8 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
       "@id": "a1",
       "comment": "Example of an inline membership - would entail hasMember relations",
       "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
-      "hasSimpleResult": 1995.2
+      "hasSimpleResult": 1995.2,
+      "phenomenonTime": "2022-05-01T22:33:40Z"
     }
   ],
   "@context": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observationCollection/context.jsonld"
@@ -421,14 +425,34 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
 </code></pre></div><div class="highlight"><pre class="highlight ttl tab-ttl"><code>@prefix sosa: &lt;http://www.w3.org/ns/sosa/&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
-&lt;file:///github/workspace/a1&gt; sosa:hasFeatureOfInterest &lt;https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem&gt; ;
-    sosa:hasSimpleResult 1.9952e+03 .
+&lt;http://example.com/a1&gt; sosa:hasFeatureOfInterest &lt;https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem&gt; ;
+    sosa:hasSimpleResult 1.9952e+03 ;
+    sosa:phenomenonTime "2022-05-01T22:33:40Z" .
 
-[] sosa:hasMember &lt;file:///github/workspace/a1&gt; ;
+[] sosa:hasMember &lt;http://example.com/a1&gt; ;
     sosa:observedProperty "p1" ;
     sosa:resultTime "2022-05-01T22:33:44Z" .
 
 
+</code></pre></div><h2 id='turtle-example-of-sosa-observationcollection'>Turtle example of SOSA ObservationCollection</h2><div class="highlight"><pre class="highlight ttl tab-ttl"><code>@prefix sosa: &lt;http://www.w3.org/ns/sosa/&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix eg: &lt;http://example.org/my-feature/&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+
+eg:c1 a sosa:ObservationCollection ;
+  sosa:hasMember eg:a1 ;
+  sosa:observedProperty eg:p1 ;
+  sosa:resultTime "2022-05-01T22:33:44Z"^^xsd:dateTime ;
+  sosa:phenomenonTime "2022-05-01T22:33:40Z"^^xsd:dateTime ;
+.
+
+eg:a1 a sosa:Observation ;
+  sosa:hasFeatureOfInterest &lt;https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem&gt; ;
+  sosa:hasSimpleResult 33 ;
+.
+eg:p1 a skos:Concept;
+  skos:prefLabel "Some Observable Property";
+.
 </code></pre></div><h1 id='json-schema'>JSON Schema</h1><div class="highlight"><pre class="highlight yaml tab-yaml--schema"><code><span class="na">$schema</span><span class="pi">:</span> <span class="s">https://json-schema.org/draft/2020-12/schema</span>
 <span class="na">description</span><span class="pi">:</span> <span class="s">SOSA ObservationCollection</span>
 <span class="na">type</span><span class="pi">:</span> <span class="s">object</span>
@@ -679,7 +703,6 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="json">JSON</a>
-                <a href="#" data-language-name="turtle">RDF/Turtle</a>
                 <a href="#" data-language-name="jsonld">JSON-LD</a>
                 <a href="#" data-language-name="ttl">RDF/Turtle</a>
           </div>

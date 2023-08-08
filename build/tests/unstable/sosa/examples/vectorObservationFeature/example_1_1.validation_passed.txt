@@ -9,3 +9,18 @@ Output Turtle example_1_1.ttl created
 Validation passed
 === End JSON Schema ===
 
+=== SHACL ===
+Using SHACL files for validation:
+ - examples/vectorObservationFeature/rules.shacl
+Validation Report
+Conforms: True
+
+Focus nodes:
+ - Shape <http://example.com/rules#testGeometryHasCoordinates>: _:N7cd2da2ee4774c37973e046fb62a57e3
+ - Shape <http://example.com/rules#testGeometryCoordinatesIsList>: _:N7cd2da2ee4774c37973e046fb62a57e3
+ - Shape <http://example.com/rules#testVectorObservationFeatureHasOneGeometry>: <http://www.example.com/features/vector-obs-1>
+ - Shape _:n5e6c736e64fa42b3a6e1677ef65d4873b1 (path https://purl.org/geojson/vocab#coordinates): *none*
+ - Shape _:n5e6c736e64fa42b3a6e1677ef65d4873b3 (path https://purl.org/geojson/vocab#geometry): *none*
+
+=== End SHACL ===
+

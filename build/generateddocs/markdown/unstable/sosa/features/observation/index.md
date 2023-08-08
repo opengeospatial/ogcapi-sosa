@@ -84,7 +84,7 @@ $schema: https://json-schema.org/draft/2020-12/schema
 description: SOSA Observation Feature
 type: object
 allOf:
-- $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/json-fg/feature/schema.yaml
+- $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/json-fg/feature-lenient/schema.yaml
 - type: object
   properties:
     properties:
@@ -195,12 +195,7 @@ Links to the schema:
     "properties": "geojson:properties",
     "geometry": {
       "@id": "geojson:geometry",
-      "@context": {
-        "coordinates": {
-          "@container": "@list",
-          "@id": "geojson:coordinates"
-        }
-      }
+      "@context": {}
     },
     "bbox": {
       "@container": "@list",
@@ -225,6 +220,10 @@ Links to the schema:
         "href": "@id",
         "title": "rdfs:label"
       }
+    },
+    "coordinates": {
+      "@container": "@list",
+      "@id": "geojson:coordinates"
     },
     "resultTime": "sosa:resultTime",
     "phenomenonTime": "sosa:phenomenonTime",
