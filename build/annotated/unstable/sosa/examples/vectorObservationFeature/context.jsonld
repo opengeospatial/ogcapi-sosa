@@ -2,7 +2,13 @@
   "@context": {
     "type": "@type",
     "id": "@id",
-    "properties": "geojson:properties",
+    "properties": {
+      "@id": "@nest",
+      "@context": {
+        "features": "sosa:hasMember",
+        "properties": "@nest"
+      }
+    },
     "geometry": {
       "@id": "geojson:geometry",
       "@context": {}
@@ -35,25 +41,10 @@
       "@container": "@list",
       "@id": "geojson:coordinates"
     },
-    "resultTime": "sosa:resultTime",
-    "phenomenonTime": "sosa:phenomenonTime",
-    "hasFeatureOfInterest": {
-      "@id": "sosa:hasFeatureOfInterest",
-      "@type": "@id"
-    },
-    "observedProperty": "sosa:observedProperty",
-    "usedProcedure": {
-      "@id": "sosa:usedProcedure",
-      "@type": "@id"
-    },
-    "madeBySensor": {
-      "@id": "sosa:madeBySensor",
-      "@type": "@id"
-    },
-    "hasResult": "sosa:hasResult",
-    "hasSimpleResult": "sosa:hasSimpleResult",
     "Observation": "sosa:Observation",
     "Sample": "sosa:Sample",
+    "observedProperty": "sosa:observedProperty",
+    "phenomenonTime": "sosa:phenomenonTime",
     "observes": {
       "@id": "sosa:observes",
       "@type": "@id"
@@ -64,6 +55,10 @@
     },
     "madeObservation": {
       "@id": "sosa:madeObservation",
+      "@type": "@id"
+    },
+    "madeBySensor": {
+      "@id": "sosa:madeBySensor",
       "@type": "@id"
     },
     "actsOnProperty": {
@@ -98,11 +93,22 @@
       "@id": "sosa:madeBySampler",
       "@type": "@id"
     },
+    "hasFeatureOfInterest": {
+      "@id": "sosa:hasFeatureOfInterest",
+      "@type": "@id"
+    },
     "isFeatureOfInterestOf": {
       "@id": "sosa:isFeatureOfInterestOf",
       "@type": "@id"
     },
+    "hasResult": "sosa:hasResult",
     "isResultOf": "sosa:isResultOf",
+    "hasSimpleResult": "sosa:hasSimpleResult",
+    "resultTime": "sosa:resultTime",
+    "usedProcedure": {
+      "@id": "sosa:usedProcedure",
+      "@type": "@id"
+    },
     "hosts": {
       "@id": "sosa:hosts",
       "@type": "@id"
@@ -132,6 +138,7 @@
     "hasSurvivalProperty": "ssn:systems/hasSurvivalProperty",
     "qualityOfObservation": "ssn:systems/qualityOfObservation",
     "hasMember": "sosa:hasMember",
+    "featureType": "@type",
     "position": {
       "@id": "geopose:position",
       "@context": {
@@ -158,6 +165,7 @@
     "ssn": "http://www.w3.org/ns/ssn/",
     "ssn-system": "ssn:systems/",
     "geopose": "http://example.com/geopose/",
-    "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#"
+    "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+    "@version": 1.1
   }
 }

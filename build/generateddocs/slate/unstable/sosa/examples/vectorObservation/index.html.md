@@ -226,6 +226,8 @@ Links to the schema:
     "qualityOfObservation": "ssn:systems/qualityOfObservation",
     "hasMember": "sosa:hasMember",
     "features": "sosa:hasMember",
+    "properties": "@nest",
+    "featureType": "@type",
     "position": {
       "@id": "geopose:position",
       "@context": {
@@ -250,7 +252,8 @@ Links to the schema:
     "ssn": "http://www.w3.org/ns/ssn/",
     "ssn-system": "ssn:systems/",
     "geopose": "http://example.com/geopose/",
-    "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#"
+    "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+    "@version": 1.1
   }
 }
 ```

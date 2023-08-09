@@ -394,6 +394,7 @@ This building block is <strong>valid</strong>
     <span class="na">properties</span><span class="pi">:</span>
       <span class="na">properties</span><span class="pi">:</span>
         <span class="na">$ref</span><span class="pi">:</span> <span class="s">properties/observation/schema.yaml</span>
+        <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@nest'</span>
   <span class="na">x-jsonld-extra-terms</span><span class="pi">:</span>
     <span class="na">Observation</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/Observation</span>
     <span class="na">Sample</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/Sample</span>
@@ -477,6 +478,7 @@ This building block is <strong>valid</strong>
     <span class="na">qualityOfObservation</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/qualityOfObservation</span>
     <span class="na">hasMember</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasMember</span>
     <span class="na">features</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasMember</span>
+    <span class="na">featureType</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@type'</span>
   <span class="na">x-jsonld-prefixes</span><span class="pi">:</span>
     <span class="na">sosa</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/</span>
     <span class="na">ssn</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/</span>
@@ -489,6 +491,7 @@ This building block is <strong>valid</strong>
     <span class="na">properties</span><span class="pi">:</span>
       <span class="na">properties</span><span class="pi">:</span>
         <span class="na">$ref</span><span class="pi">:</span> <span class="s">properties/observationCollection/schema.yaml</span>
+        <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@nest'</span>
       <span class="na">features</span><span class="pi">:</span>
         <span class="na">type</span><span class="pi">:</span> <span class="s">array</span>
         <span class="na">items</span><span class="pi">:</span>
@@ -578,6 +581,7 @@ This building block is <strong>valid</strong>
     <span class="na">hasSurvivalProperty</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/hasSurvivalProperty</span>
     <span class="na">qualityOfObservation</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/qualityOfObservation</span>
     <span class="na">hasMember</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasMember</span>
+    <span class="na">featureType</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@type'</span>
   <span class="na">x-jsonld-prefixes</span><span class="pi">:</span>
     <span class="na">sosa</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/</span>
     <span class="na">ssn</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/</span>
@@ -696,6 +700,8 @@ This building block is <strong>valid</strong>
     <span class="na">qualityOfObservation</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/qualityOfObservation</span>
     <span class="na">hasMember</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasMember</span>
     <span class="na">features</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasMember</span>
+    <span class="na">properties</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@nest'</span>
+    <span class="na">featureType</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@type'</span>
   <span class="na">x-jsonld-prefixes</span><span class="pi">:</span>
     <span class="na">sosa</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/</span>
     <span class="na">ssn</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/</span>
@@ -813,6 +819,8 @@ This building block is <strong>valid</strong>
     <span class="na">qualityOfObservation</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/qualityOfObservation</span>
     <span class="na">hasMember</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasMember</span>
     <span class="na">features</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasMember</span>
+    <span class="na">properties</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@nest'</span>
+    <span class="na">featureType</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@type'</span>
   <span class="na">x-jsonld-prefixes</span><span class="pi">:</span>
     <span class="na">sosa</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/</span>
     <span class="na">ssn</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/</span>
@@ -930,10 +938,18 @@ This building block is <strong>valid</strong>
       </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"features"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasMember"</span><span class="w">
+          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:features"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@nest"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"features"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasMember"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@nest"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"featureType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@type"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geopose:position"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -956,7 +972,6 @@ This building block is <strong>valid</strong>
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@type"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:properties"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:geometry"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
@@ -991,7 +1006,8 @@ This building block is <strong>valid</strong>
     </span><span class="nl">"geopose"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/geopose/"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"geo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2003/01/geo/wgs84_pos#"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"geojson"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://purl.org/geojson/vocab#"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"rdfs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2000/01/rdf-schema#"</span><span class="w">
+    </span><span class="nl">"rdfs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2000/01/rdf-schema#"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"@version"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.1</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>

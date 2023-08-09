@@ -37,6 +37,7 @@ anyOf:
     properties:
       properties:
         $ref: properties/observation/schema.yaml
+        x-jsonld-id: '@nest'
   x-jsonld-extra-terms:
     Observation: http://www.w3.org/ns/sosa/Observation
     Sample: http://www.w3.org/ns/sosa/Sample
@@ -120,6 +121,7 @@ anyOf:
     qualityOfObservation: http://www.w3.org/ns/ssn/systems/qualityOfObservation
     hasMember: http://www.w3.org/ns/sosa/hasMember
     features: http://www.w3.org/ns/sosa/hasMember
+    featureType: '@type'
   x-jsonld-prefixes:
     sosa: http://www.w3.org/ns/sosa/
     ssn: http://www.w3.org/ns/ssn/
@@ -132,6 +134,7 @@ anyOf:
     properties:
       properties:
         $ref: properties/observationCollection/schema.yaml
+        x-jsonld-id: '@nest'
       features:
         type: array
         items:
@@ -221,6 +224,7 @@ anyOf:
     hasSurvivalProperty: http://www.w3.org/ns/ssn/systems/hasSurvivalProperty
     qualityOfObservation: http://www.w3.org/ns/ssn/systems/qualityOfObservation
     hasMember: http://www.w3.org/ns/sosa/hasMember
+    featureType: '@type'
   x-jsonld-prefixes:
     sosa: http://www.w3.org/ns/sosa/
     ssn: http://www.w3.org/ns/ssn/
@@ -339,6 +343,8 @@ anyOf:
     qualityOfObservation: http://www.w3.org/ns/ssn/systems/qualityOfObservation
     hasMember: http://www.w3.org/ns/sosa/hasMember
     features: http://www.w3.org/ns/sosa/hasMember
+    properties: '@nest'
+    featureType: '@type'
   x-jsonld-prefixes:
     sosa: http://www.w3.org/ns/sosa/
     ssn: http://www.w3.org/ns/ssn/
@@ -456,6 +462,8 @@ anyOf:
     qualityOfObservation: http://www.w3.org/ns/ssn/systems/qualityOfObservation
     hasMember: http://www.w3.org/ns/sosa/hasMember
     features: http://www.w3.org/ns/sosa/hasMember
+    properties: '@nest'
+    featureType: '@type'
   x-jsonld-prefixes:
     sosa: http://www.w3.org/ns/sosa/
     ssn: http://www.w3.org/ns/ssn/

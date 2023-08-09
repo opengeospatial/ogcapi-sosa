@@ -392,9 +392,10 @@ to detail what that property was associated with.&quot;</p>
 </code></pre></div><div class="highlight"><pre class="highlight ttl tab-ttl"><code>@prefix sosa: &lt;http://www.w3.org/ns/sosa/&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
-[] sosa:hasFeatureOfInterest &lt;https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem&gt; ;
+[] a sosa:Observation ;
+    sosa:hasFeatureOfInterest &lt;https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem&gt; ;
     sosa:hasSimpleResult 33 ;
-    sosa:resultTime "2022-05-01T22:33:44Z" .
+    sosa:resultTime "2022-05-01T22:33:44+00:00"^^xsd:dateTime .
 
 
 </code></pre></div><h1 id='json-schema'>JSON Schema</h1><div class="highlight"><pre class="highlight yaml tab-yaml--schema"><code><span class="na">$schema</span><span class="pi">:</span> <span class="s">https://json-schema.org/draft/2020-12/schema</span>
@@ -511,6 +512,8 @@ to detail what that property was associated with.&quot;</p>
   <span class="na">qualityOfObservation</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/qualityOfObservation</span>
   <span class="na">hasMember</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasMember</span>
   <span class="na">features</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasMember</span>
+  <span class="na">properties</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@nest'</span>
+  <span class="na">featureType</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@type'</span>
 <span class="na">x-jsonld-prefixes</span><span class="pi">:</span>
   <span class="na">sosa</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/</span>
   <span class="na">ssn</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/</span>
@@ -623,9 +626,12 @@ to detail what that property was associated with.&quot;</p>
     </span><span class="nl">"qualityOfObservation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:systems/qualityOfObservation"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"hasMember"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasMember"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"features"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasMember"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@nest"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"featureType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@type"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"sosa"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/ns/sosa/"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"ssn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/ns/ssn/"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"ssn-system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:systems/"</span><span class="w">
+    </span><span class="nl">"ssn-system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:systems/"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"@version"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.1</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>

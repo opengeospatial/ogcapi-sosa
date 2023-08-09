@@ -111,17 +111,29 @@ eg:pop1999 a sosa:Observation ;
 
 #### ttl
 ```ttl
-@prefix geojson: <https://purl.org/geojson/vocab#> .
+@prefix eg: <http://example.org/my-feature/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<file:///github/workspace/c1> sosa:hasMember <file:///github/workspace/pop1999> .
+eg:c1 a sosa:ObservationCollection ;
+    sosa:hasMember eg:pop1999,
+        eg:pop2000 ;
+    sosa:observedProperty <http://dbpedia.org/ontology/population> ;
+    sosa:resultTime "2022-05-01T22:33:44+00:00"^^xsd:dateTime .
 
-<file:///github/workspace/pop1999> a geojson:Feature ;
-    geojson:properties [ sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
-            sosa:hasSimpleResult 3.275e+03 ],
-        [ sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork> ;
-            sosa:hasSimpleResult 1.5555e+04 ] .
+<http://dbpedia.org/ontology/population> a skos:Concept ;
+    skos:prefLabel "Population" .
+
+eg:pop1999 a sosa:Observation ;
+    sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
+    sosa:hasSimpleResult 3275.0 ;
+    sosa:resultTime "1999-01-01"^^xsd:date .
+
+eg:pop2000 a sosa:Observation ;
+    sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
+    sosa:hasSimpleResult 4372.0 ;
+    sosa:resultTime "2000"^^xsd:gYear .
 
 
 ```
@@ -137,6 +149,7 @@ allOf:
   properties:
     properties:
       $ref: ../../properties/observationCollection/schema.yaml
+      x-jsonld-id: '@nest'
     features:
       type: array
       items:
@@ -226,6 +239,7 @@ x-jsonld-extra-terms:
   hasSurvivalProperty: http://www.w3.org/ns/ssn/systems/hasSurvivalProperty
   qualityOfObservation: http://www.w3.org/ns/ssn/systems/qualityOfObservation
   hasMember: http://www.w3.org/ns/sosa/hasMember
+  featureType: '@type'
 x-jsonld-prefixes:
   sosa: http://www.w3.org/ns/sosa/
   ssn: http://www.w3.org/ns/ssn/
@@ -256,7 +270,6 @@ Links to the schema:
       "@context": {
         "type": "@type",
         "id": "@id",
-        "properties": "geojson:properties",
         "geometry": {
           "@id": "geojson:geometry",
           "@context": {}
@@ -276,7 +289,7 @@ Links to the schema:
         "Polygon": "geojson:Polygon",
         "features": {
           "@container": "@set",
-          "@id": "sosa:hasMember"
+          "@id": "geojson:features"
         },
         "coordinates": {
           "@container": "@list",
@@ -284,23 +297,17 @@ Links to the schema:
         }
       }
     },
-    "resultTime": "sosa:resultTime",
-    "phenomenonTime": "sosa:phenomenonTime",
-    "hasFeatureOfInterest": {
-      "@id": "sosa:hasFeatureOfInterest",
-      "@type": "@id"
-    },
-    "observedProperty": "sosa:observedProperty",
-    "usedProcedure": {
-      "@id": "sosa:usedProcedure",
-      "@type": "@id"
-    },
-    "madeBySensor": {
-      "@id": "sosa:madeBySensor",
-      "@type": "@id"
+    "properties": {
+      "@id": "@nest",
+      "@context": {
+        "features": "sosa:hasMember",
+        "properties": "@nest"
+      }
     },
     "Observation": "sosa:Observation",
     "Sample": "sosa:Sample",
+    "observedProperty": "sosa:observedProperty",
+    "phenomenonTime": "sosa:phenomenonTime",
     "observes": {
       "@id": "sosa:observes",
       "@type": "@id"
@@ -311,6 +318,10 @@ Links to the schema:
     },
     "madeObservation": {
       "@id": "sosa:madeObservation",
+      "@type": "@id"
+    },
+    "madeBySensor": {
+      "@id": "sosa:madeBySensor",
       "@type": "@id"
     },
     "actsOnProperty": {
@@ -345,6 +356,10 @@ Links to the schema:
       "@id": "sosa:madeBySampler",
       "@type": "@id"
     },
+    "hasFeatureOfInterest": {
+      "@id": "sosa:hasFeatureOfInterest",
+      "@type": "@id"
+    },
     "isFeatureOfInterestOf": {
       "@id": "sosa:isFeatureOfInterestOf",
       "@type": "@id"
@@ -352,6 +367,11 @@ Links to the schema:
     "hasResult": "sosa:hasResult",
     "isResultOf": "sosa:isResultOf",
     "hasSimpleResult": "sosa:hasSimpleResult",
+    "resultTime": "sosa:resultTime",
+    "usedProcedure": {
+      "@id": "sosa:usedProcedure",
+      "@type": "@id"
+    },
     "hosts": {
       "@id": "sosa:hosts",
       "@type": "@id"
@@ -381,11 +401,13 @@ Links to the schema:
     "hasSurvivalProperty": "ssn:systems/hasSurvivalProperty",
     "qualityOfObservation": "ssn:systems/qualityOfObservation",
     "hasMember": "sosa:hasMember",
+    "featureType": "@type",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "geojson": "https://purl.org/geojson/vocab#",
     "sosa": "http://www.w3.org/ns/sosa/",
     "ssn": "http://www.w3.org/ns/ssn/",
-    "ssn-system": "ssn:systems/"
+    "ssn-system": "ssn:systems/",
+    "@version": 1.1
   }
 }
 ```

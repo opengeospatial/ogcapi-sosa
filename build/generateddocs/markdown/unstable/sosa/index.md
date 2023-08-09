@@ -59,6 +59,7 @@ anyOf:
     properties:
       properties:
         $ref: properties/observation/schema.yaml
+        x-jsonld-id: '@nest'
   x-jsonld-extra-terms:
     Observation: http://www.w3.org/ns/sosa/Observation
     Sample: http://www.w3.org/ns/sosa/Sample
@@ -142,6 +143,7 @@ anyOf:
     qualityOfObservation: http://www.w3.org/ns/ssn/systems/qualityOfObservation
     hasMember: http://www.w3.org/ns/sosa/hasMember
     features: http://www.w3.org/ns/sosa/hasMember
+    featureType: '@type'
   x-jsonld-prefixes:
     sosa: http://www.w3.org/ns/sosa/
     ssn: http://www.w3.org/ns/ssn/
@@ -154,6 +156,7 @@ anyOf:
     properties:
       properties:
         $ref: properties/observationCollection/schema.yaml
+        x-jsonld-id: '@nest'
       features:
         type: array
         items:
@@ -243,6 +246,7 @@ anyOf:
     hasSurvivalProperty: http://www.w3.org/ns/ssn/systems/hasSurvivalProperty
     qualityOfObservation: http://www.w3.org/ns/ssn/systems/qualityOfObservation
     hasMember: http://www.w3.org/ns/sosa/hasMember
+    featureType: '@type'
   x-jsonld-prefixes:
     sosa: http://www.w3.org/ns/sosa/
     ssn: http://www.w3.org/ns/ssn/
@@ -361,6 +365,8 @@ anyOf:
     qualityOfObservation: http://www.w3.org/ns/ssn/systems/qualityOfObservation
     hasMember: http://www.w3.org/ns/sosa/hasMember
     features: http://www.w3.org/ns/sosa/hasMember
+    properties: '@nest'
+    featureType: '@type'
   x-jsonld-prefixes:
     sosa: http://www.w3.org/ns/sosa/
     ssn: http://www.w3.org/ns/ssn/
@@ -478,6 +484,8 @@ anyOf:
     qualityOfObservation: http://www.w3.org/ns/ssn/systems/qualityOfObservation
     hasMember: http://www.w3.org/ns/sosa/hasMember
     features: http://www.w3.org/ns/sosa/hasMember
+    properties: '@nest'
+    featureType: '@type'
   x-jsonld-prefixes:
     sosa: http://www.w3.org/ns/sosa/
     ssn: http://www.w3.org/ns/ssn/
@@ -599,10 +607,18 @@ Links to the schema:
       "@context": {
         "features": {
           "@container": "@set",
-          "@id": "sosa:hasMember"
+          "@id": "geojson:features"
         }
       }
     },
+    "properties": {
+      "@id": "@nest",
+      "@context": {
+        "features": "sosa:hasMember",
+        "properties": "@nest"
+      }
+    },
+    "featureType": "@type",
     "position": {
       "@id": "geopose:position",
       "@context": {
@@ -625,7 +641,6 @@ Links to the schema:
     },
     "type": "@type",
     "id": "@id",
-    "properties": "geojson:properties",
     "geometry": {
       "@id": "geojson:geometry",
       "@context": {}
@@ -660,7 +675,8 @@ Links to the schema:
     "geopose": "http://example.com/geopose/",
     "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
     "geojson": "https://purl.org/geojson/vocab#",
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "@version": 1.1
   }
 }
 ```

@@ -266,6 +266,8 @@ x-jsonld-extra-terms:
   qualityOfObservation: http://www.w3.org/ns/ssn/systems/qualityOfObservation
   hasMember: http://www.w3.org/ns/sosa/hasMember
   features: http://www.w3.org/ns/sosa/hasMember
+  properties: '@nest'
+  featureType: '@type'
 x-jsonld-prefixes:
   sosa: http://www.w3.org/ns/sosa/
   ssn: http://www.w3.org/ns/ssn/
@@ -382,9 +384,12 @@ Links to the schema:
     "qualityOfObservation": "ssn:systems/qualityOfObservation",
     "hasMember": "sosa:hasMember",
     "features": "sosa:hasMember",
+    "properties": "@nest",
+    "featureType": "@type",
     "sosa": "http://www.w3.org/ns/sosa/",
     "ssn": "http://www.w3.org/ns/ssn/",
-    "ssn-system": "ssn:systems/"
+    "ssn-system": "ssn:systems/",
+    "@version": 1.1
   }
 }
 ```

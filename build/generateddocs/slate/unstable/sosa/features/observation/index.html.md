@@ -3,9 +3,8 @@ title: SOSA Observation Feature (Schema)
 
 language_tabs:
   - json: JSON
-  - turtle: RDF/Turtle
-  - jsonld: JSON-LD
   - ttl: RDF/Turtle
+  - jsonld: JSON-LD
 
 toc_footers:
   - Version 1.0
@@ -47,7 +46,6 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
   "properties": {
     "observedProperty": "https://dbpedia.org/ontology/population",
     "resultTime": "1999",
-    "@id": "pop1999",
     "comment": "Example of an inline membership - would entail hasMember relations",
     "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork",
     "hasSimpleResult": 15555.0
@@ -55,16 +53,14 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
 }
 ```
 
-```turtle
+```ttl
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
-_:a1 a geojson:Feature;
-  geojson:properties [
-    sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
-    sosa:hasSimpleResult 33 ;
-    sosa:resultTime "2022-05-01T22:33:44Z"^^xsd:dateTime
-  ]
+_:a1 a geojson:Feature, sosa:Observation ;
+  sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
+  sosa:hasSimpleResult 33 ;
+  sosa:resultTime "2022-05-01T22:33:44Z"^^xsd:dateTime
 .
 ```
 
@@ -77,28 +73,12 @@ _:a1 a geojson:Feature;
   "properties": {
     "observedProperty": "https://dbpedia.org/ontology/population",
     "resultTime": "1999",
-    "@id": "pop1999",
     "comment": "Example of an inline membership - would entail hasMember relations",
     "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork",
     "hasSimpleResult": 15555.0
   },
   "@context": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observation/context.jsonld"
 }
-```
-
-```ttl
-@prefix geojson: <https://purl.org/geojson/vocab#> .
-@prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-<file:///github/workspace/pop1999> a geojson:Feature ;
-    sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork> ;
-    sosa:hasSimpleResult 1.5555e+04 ;
-    sosa:observedProperty "https://dbpedia.org/ontology/population" ;
-    sosa:resultTime "1999" ;
-    geojson:properties <file:///github/workspace/pop1999> .
-
-
 ```
 
 
@@ -114,6 +94,7 @@ allOf:
   properties:
     properties:
       $ref: ../../properties/observation/schema.yaml
+      x-jsonld-id: '@nest'
 x-jsonld-extra-terms:
   Observation: http://www.w3.org/ns/sosa/Observation
   Sample: http://www.w3.org/ns/sosa/Sample
@@ -197,6 +178,7 @@ x-jsonld-extra-terms:
   qualityOfObservation: http://www.w3.org/ns/ssn/systems/qualityOfObservation
   hasMember: http://www.w3.org/ns/sosa/hasMember
   features: http://www.w3.org/ns/sosa/hasMember
+  featureType: '@type'
 x-jsonld-prefixes:
   sosa: http://www.w3.org/ns/sosa/
   ssn: http://www.w3.org/ns/ssn/
@@ -217,7 +199,13 @@ Links to the schema:
   "@context": {
     "type": "@type",
     "id": "@id",
-    "properties": "geojson:properties",
+    "properties": {
+      "@id": "@nest",
+      "@context": {
+        "features": "sosa:hasMember",
+        "properties": "@nest"
+      }
+    },
     "geometry": {
       "@id": "geojson:geometry",
       "@context": {}
@@ -237,7 +225,7 @@ Links to the schema:
     "Polygon": "geojson:Polygon",
     "features": {
       "@container": "@set",
-      "@id": "sosa:hasMember"
+      "@id": "geojson:features"
     },
     "links": {
       "@id": "rdfs:seeAlso",
@@ -250,25 +238,10 @@ Links to the schema:
       "@container": "@list",
       "@id": "geojson:coordinates"
     },
-    "resultTime": "sosa:resultTime",
-    "phenomenonTime": "sosa:phenomenonTime",
-    "hasFeatureOfInterest": {
-      "@id": "sosa:hasFeatureOfInterest",
-      "@type": "@id"
-    },
-    "observedProperty": "sosa:observedProperty",
-    "usedProcedure": {
-      "@id": "sosa:usedProcedure",
-      "@type": "@id"
-    },
-    "madeBySensor": {
-      "@id": "sosa:madeBySensor",
-      "@type": "@id"
-    },
-    "hasResult": "sosa:hasResult",
-    "hasSimpleResult": "sosa:hasSimpleResult",
     "Observation": "sosa:Observation",
     "Sample": "sosa:Sample",
+    "observedProperty": "sosa:observedProperty",
+    "phenomenonTime": "sosa:phenomenonTime",
     "observes": {
       "@id": "sosa:observes",
       "@type": "@id"
@@ -279,6 +252,10 @@ Links to the schema:
     },
     "madeObservation": {
       "@id": "sosa:madeObservation",
+      "@type": "@id"
+    },
+    "madeBySensor": {
+      "@id": "sosa:madeBySensor",
       "@type": "@id"
     },
     "actsOnProperty": {
@@ -313,11 +290,22 @@ Links to the schema:
       "@id": "sosa:madeBySampler",
       "@type": "@id"
     },
+    "hasFeatureOfInterest": {
+      "@id": "sosa:hasFeatureOfInterest",
+      "@type": "@id"
+    },
     "isFeatureOfInterestOf": {
       "@id": "sosa:isFeatureOfInterestOf",
       "@type": "@id"
     },
+    "hasResult": "sosa:hasResult",
     "isResultOf": "sosa:isResultOf",
+    "hasSimpleResult": "sosa:hasSimpleResult",
+    "resultTime": "sosa:resultTime",
+    "usedProcedure": {
+      "@id": "sosa:usedProcedure",
+      "@type": "@id"
+    },
     "hosts": {
       "@id": "sosa:hosts",
       "@type": "@id"
@@ -347,11 +335,13 @@ Links to the schema:
     "hasSurvivalProperty": "ssn:systems/hasSurvivalProperty",
     "qualityOfObservation": "ssn:systems/qualityOfObservation",
     "hasMember": "sosa:hasMember",
+    "featureType": "@type",
     "geojson": "https://purl.org/geojson/vocab#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "sosa": "http://www.w3.org/ns/sosa/",
     "ssn": "http://www.w3.org/ns/ssn/",
-    "ssn-system": "ssn:systems/"
+    "ssn-system": "ssn:systems/",
+    "@version": 1.1
   }
 }
 ```

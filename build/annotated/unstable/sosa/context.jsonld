@@ -103,10 +103,18 @@
       "@context": {
         "features": {
           "@container": "@set",
-          "@id": "sosa:hasMember"
+          "@id": "geojson:features"
         }
       }
     },
+    "properties": {
+      "@id": "@nest",
+      "@context": {
+        "features": "sosa:hasMember",
+        "properties": "@nest"
+      }
+    },
+    "featureType": "@type",
     "position": {
       "@id": "geopose:position",
       "@context": {
@@ -129,7 +137,6 @@
     },
     "type": "@type",
     "id": "@id",
-    "properties": "geojson:properties",
     "geometry": {
       "@id": "geojson:geometry",
       "@context": {}
@@ -164,6 +171,7 @@
     "geopose": "http://example.com/geopose/",
     "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
     "geojson": "https://purl.org/geojson/vocab#",
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "@version": 1.1
   }
 }

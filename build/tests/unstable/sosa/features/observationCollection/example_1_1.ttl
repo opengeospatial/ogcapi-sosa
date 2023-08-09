@@ -2,11 +2,14 @@
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<file:///github/workspace/c1> sosa:hasMember <file:///github/workspace/pop1999> .
+<http://www.example.com/sosa/c1> a sosa:ObservationCollection ;
+    sosa:hasMember <http://www.example.com/sosa/pop1999> ;
+    sosa:observedProperty "https://dbpedia.org/ontology/population" ;
+    sosa:resultTime "1999" .
 
-<file:///github/workspace/pop1999> a geojson:Feature ;
-    geojson:properties [ sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
-            sosa:hasSimpleResult 3.275e+03 ],
-        [ sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork> ;
-            sosa:hasSimpleResult 1.5555e+04 ] .
+<http://www.example.com/sosa/pop1999> a geojson:Feature ;
+    sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem>,
+        <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork> ;
+    sosa:hasSimpleResult 3.275e+03,
+        1.5555e+04 .
 

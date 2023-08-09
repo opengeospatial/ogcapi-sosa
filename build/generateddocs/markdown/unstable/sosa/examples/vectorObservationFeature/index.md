@@ -105,11 +105,11 @@ This building block defines an example SOSA Observation Feature for a Vector Obs
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://www.example.com/features/vector-obs-1> a geojson:Feature ;
+    sosa:hasFeatureOfInterest <eg:Traverse-P1-P2> ;
+    sosa:hasResult [ ns1:distance "6889234.2"^^xsd:float ] ;
+    sosa:resultTime "2023-05-22T16:41:00+2" ;
     geojson:geometry [ a geojson:LineString ;
-            geojson:coordinates ( ( -1.116718e+02 4.005671e+01 ) ( -1.116718e+02 4.005671e+01 ) ) ] ;
-    geojson:properties [ sosa:hasFeatureOfInterest <eg:Traverse-P1-P2> ;
-            sosa:hasResult [ ns1:distance "6889234.2"^^xsd:float ] ;
-            sosa:resultTime "2023-05-22T16:41:00+2" ] .
+            geojson:coordinates ( ( -1.116718e+02 4.005671e+01 ) ( -1.116718e+02 4.005671e+01 ) ) ] .
 
 
 ```
@@ -141,7 +141,13 @@ Links to the schema:
   "@context": {
     "type": "@type",
     "id": "@id",
-    "properties": "geojson:properties",
+    "properties": {
+      "@id": "@nest",
+      "@context": {
+        "features": "sosa:hasMember",
+        "properties": "@nest"
+      }
+    },
     "geometry": {
       "@id": "geojson:geometry",
       "@context": {}
@@ -174,25 +180,10 @@ Links to the schema:
       "@container": "@list",
       "@id": "geojson:coordinates"
     },
-    "resultTime": "sosa:resultTime",
-    "phenomenonTime": "sosa:phenomenonTime",
-    "hasFeatureOfInterest": {
-      "@id": "sosa:hasFeatureOfInterest",
-      "@type": "@id"
-    },
-    "observedProperty": "sosa:observedProperty",
-    "usedProcedure": {
-      "@id": "sosa:usedProcedure",
-      "@type": "@id"
-    },
-    "madeBySensor": {
-      "@id": "sosa:madeBySensor",
-      "@type": "@id"
-    },
-    "hasResult": "sosa:hasResult",
-    "hasSimpleResult": "sosa:hasSimpleResult",
     "Observation": "sosa:Observation",
     "Sample": "sosa:Sample",
+    "observedProperty": "sosa:observedProperty",
+    "phenomenonTime": "sosa:phenomenonTime",
     "observes": {
       "@id": "sosa:observes",
       "@type": "@id"
@@ -203,6 +194,10 @@ Links to the schema:
     },
     "madeObservation": {
       "@id": "sosa:madeObservation",
+      "@type": "@id"
+    },
+    "madeBySensor": {
+      "@id": "sosa:madeBySensor",
       "@type": "@id"
     },
     "actsOnProperty": {
@@ -237,11 +232,22 @@ Links to the schema:
       "@id": "sosa:madeBySampler",
       "@type": "@id"
     },
+    "hasFeatureOfInterest": {
+      "@id": "sosa:hasFeatureOfInterest",
+      "@type": "@id"
+    },
     "isFeatureOfInterestOf": {
       "@id": "sosa:isFeatureOfInterestOf",
       "@type": "@id"
     },
+    "hasResult": "sosa:hasResult",
     "isResultOf": "sosa:isResultOf",
+    "hasSimpleResult": "sosa:hasSimpleResult",
+    "resultTime": "sosa:resultTime",
+    "usedProcedure": {
+      "@id": "sosa:usedProcedure",
+      "@type": "@id"
+    },
     "hosts": {
       "@id": "sosa:hosts",
       "@type": "@id"
@@ -271,6 +277,7 @@ Links to the schema:
     "hasSurvivalProperty": "ssn:systems/hasSurvivalProperty",
     "qualityOfObservation": "ssn:systems/qualityOfObservation",
     "hasMember": "sosa:hasMember",
+    "featureType": "@type",
     "position": {
       "@id": "geopose:position",
       "@context": {
@@ -297,7 +304,8 @@ Links to the schema:
     "ssn": "http://www.w3.org/ns/ssn/",
     "ssn-system": "ssn:systems/",
     "geopose": "http://example.com/geopose/",
-    "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#"
+    "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+    "@version": 1.1
   }
 }
 ```

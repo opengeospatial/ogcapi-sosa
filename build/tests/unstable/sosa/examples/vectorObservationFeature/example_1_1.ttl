@@ -5,9 +5,9 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://www.example.com/features/vector-obs-1> a geojson:Feature ;
+    sosa:hasFeatureOfInterest <eg:Traverse-P1-P2> ;
+    sosa:hasResult [ ns1:distance "6889234.2"^^xsd:float ] ;
+    sosa:resultTime "2023-05-22T16:41:00+2" ;
     geojson:geometry [ a geojson:LineString ;
-            geojson:coordinates ( ( -1.116718e+02 4.005671e+01 ) ( -1.116718e+02 4.005671e+01 ) ) ] ;
-    geojson:properties [ sosa:hasFeatureOfInterest <eg:Traverse-P1-P2> ;
-            sosa:hasResult [ ns1:distance "6889234.2"^^xsd:float ] ;
-            sosa:resultTime "2023-05-22T16:41:00+2" ] .
+            geojson:coordinates ( ( -1.116718e+02 4.005671e+01 ) ( -1.116718e+02 4.005671e+01 ) ) ] .
 

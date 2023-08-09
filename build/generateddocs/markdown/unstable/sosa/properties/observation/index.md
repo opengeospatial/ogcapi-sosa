@@ -53,9 +53,10 @@ _:a1 a sosa:Observation ;
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
+[] a sosa:Observation ;
+    sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
     sosa:hasSimpleResult 33 ;
-    sosa:resultTime "2022-05-01T22:33:44Z" .
+    sosa:resultTime "2022-05-01T22:33:44+00:00"^^xsd:dateTime .
 
 
 ```
@@ -177,6 +178,8 @@ x-jsonld-extra-terms:
   qualityOfObservation: http://www.w3.org/ns/ssn/systems/qualityOfObservation
   hasMember: http://www.w3.org/ns/sosa/hasMember
   features: http://www.w3.org/ns/sosa/hasMember
+  properties: '@nest'
+  featureType: '@type'
 x-jsonld-prefixes:
   sosa: http://www.w3.org/ns/sosa/
   ssn: http://www.w3.org/ns/ssn/
@@ -293,9 +296,12 @@ Links to the schema:
     "qualityOfObservation": "ssn:systems/qualityOfObservation",
     "hasMember": "sosa:hasMember",
     "features": "sosa:hasMember",
+    "properties": "@nest",
+    "featureType": "@type",
     "sosa": "http://www.w3.org/ns/sosa/",
     "ssn": "http://www.w3.org/ns/ssn/",
-    "ssn-system": "ssn:systems/"
+    "ssn-system": "ssn:systems/",
+    "@version": 1.1
   }
 }
 ```
