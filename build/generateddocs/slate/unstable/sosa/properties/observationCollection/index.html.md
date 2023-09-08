@@ -4,7 +4,7 @@ title: SOSA ObservationCollection (Schema)
 language_tabs:
   - json: JSON
   - jsonld: JSON-LD
-  - ttl: RDF/Turtle
+  - turtle: RDF/Turtle
 
 toc_footers:
   - Version 1.0
@@ -42,6 +42,8 @@ Collection of one or more observations, whose members share a common value for o
 
 ## Example of SOSA ObservationCollection
 
+
+
 ```json
 { 
   "hasMember": [
@@ -51,6 +53,13 @@ Collection of one or more observations, whose members share a common value for o
   "resultTime": "2022-05-01T22:33:44Z"
 }
 ```
+
+<blockquote class="lang-specific json">
+<p><a target="_blank" href="https://avillar.github.io/TreedocViewer/?dataParser=json&amp;dataUrl=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Funstable%2Fsosa%2Fproperties%2FobservationCollection%2Fexample_1_1.json&amp;expand=2&amp;option=%7B%22showTable%22%3A+false%7D">View on JSON Viewer</a></p>
+</blockquote>
+
+
+
 
 ```jsonld
 {
@@ -63,7 +72,14 @@ Collection of one or more observations, whose members share a common value for o
 }
 ```
 
-```ttl
+<blockquote class="lang-specific jsonld">
+<p><a target="_blank" href="https://json-ld.org/playground/#json-ld=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Funstable%2Fsosa%2Fproperties%2FobservationCollection%2Fexample_1_1.jsonld">View on JSON-LD Playground</a></p>
+</blockquote>
+
+
+
+
+```turtle
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 
 [] sosa:hasMember "_:a1" ;
@@ -75,6 +91,8 @@ Collection of one or more observations, whose members share a common value for o
 
 
 ## Example of SOSA ObservationCollection
+
+
 
 ```json
 { 
@@ -91,6 +109,13 @@ Collection of one or more observations, whose members share a common value for o
   ]
 }
 ```
+
+<blockquote class="lang-specific json">
+<p><a target="_blank" href="https://avillar.github.io/TreedocViewer/?dataParser=json&amp;dataUrl=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Funstable%2Fsosa%2Fproperties%2FobservationCollection%2Fexample_2_1.json&amp;expand=2&amp;option=%7B%22showTable%22%3A+false%7D">View on JSON Viewer</a></p>
+</blockquote>
+
+
+
 
 ```jsonld
 {
@@ -109,7 +134,14 @@ Collection of one or more observations, whose members share a common value for o
 }
 ```
 
-```ttl
+<blockquote class="lang-specific jsonld">
+<p><a target="_blank" href="https://json-ld.org/playground/#json-ld=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Funstable%2Fsosa%2Fproperties%2FobservationCollection%2Fexample_2_1.jsonld">View on JSON-LD Playground</a></p>
+</blockquote>
+
+
+
+
+```turtle
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -127,7 +159,9 @@ Collection of one or more observations, whose members share a common value for o
 
 ## Turtle example of SOSA ObservationCollection
 
-```ttl
+
+
+```turtle
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix eg: <http://example.org/my-feature/> .
@@ -275,6 +309,8 @@ x-jsonld-prefixes:
 
 ```
 
+> <a target="_blank" href="https://avillar.github.io/TreedocViewer/?dataParser=yaml&amp;dataUrl=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Fannotated%2Funstable%2Fsosa%2Fproperties%2FobservationCollection%2Fschema.yaml&amp;expand=2&amp;option=%7B%22showTable%22%3A+false%7D">View on YAML Viewer</a>
+
 Links to the schema:
 
 * YAML version: <a href="https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observationCollection/schema.yaml" target="_blank">https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observationCollection/schema.yaml</a>
@@ -394,6 +430,8 @@ Links to the schema:
 }
 ```
 
+> <a target="_blank" href="https://json-ld.org/playground/#json-ld=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Fannotated%2Funstable%2Fsosa%2Fproperties%2FobservationCollection%2Fcontext.jsonld">View on JSON-LD Playground</a>
+
 You can find the full JSON-LD context here:
 <a href="https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observationCollection/context.jsonld" target="_blank">https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observationCollection/context.jsonld</a>
 
@@ -407,5 +445,6 @@ You can find the full JSON-LD context here:
 The source code for this Building Block can be found in the following repository:
 
 * URL: <a href="https://github.com/opengeospatial/ogcapi-sosa" target="_blank">https://github.com/opengeospatial/ogcapi-sosa</a>
-* Path: `_sources/properties/observationCollection`
+* Path:
+<code><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/HEAD/_sources/properties/observationCollection" target="_blank">_sources/properties/observationCollection</a></code>
 

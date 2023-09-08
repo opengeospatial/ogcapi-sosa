@@ -5,6 +5,11 @@
     "properties": {
       "@id": "@nest",
       "@context": {
+        "resultTime": "sosa:resultTime",
+        "phenomenonTime": "sosa:phenomenonTime",
+        "observedProperty": "sosa:observedProperty",
+        "hasResult": "sosa:hasResult",
+        "hasSimpleResult": "sosa:hasSimpleResult",
         "features": "sosa:hasMember",
         "properties": "@nest"
       }
@@ -33,8 +38,18 @@
     "links": {
       "@id": "rdfs:seeAlso",
       "@context": {
-        "href": "@id",
-        "title": "rdfs:label"
+        "href": "oa:hasTarget",
+        "rel": {
+          "@id": "http://www.iana.org/assignments/relation",
+          "@type": "@id",
+          "@context": {
+            "@base": "http://www.iana.org/assignments/relation/"
+          }
+        },
+        "type": "dct:type",
+        "hreflang": "dct:language",
+        "title": "rdfs:label",
+        "length": "dct:extent"
       }
     },
     "coordinates": {
@@ -140,7 +155,9 @@
     "hasMember": "sosa:hasMember",
     "featureType": "@type",
     "geojson": "https://purl.org/geojson/vocab#",
+    "oa": "http://www.w3.org/ns/oa#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "dct": "http://purl.org/dc/terms/",
     "sosa": "http://www.w3.org/ns/sosa/",
     "ssn": "http://www.w3.org/ns/ssn/",
     "ssn-system": "ssn:systems/",

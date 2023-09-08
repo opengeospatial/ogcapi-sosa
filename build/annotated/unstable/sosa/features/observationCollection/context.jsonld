@@ -1,17 +1,40 @@
 {
   "@context": {
+    "type": "@type",
     "links": {
       "@id": "rdfs:seeAlso",
       "@context": {
-        "href": "@id",
-        "title": "rdfs:label"
+        "href": "oa:hasTarget",
+        "rel": {
+          "@id": "http://www.iana.org/assignments/relation",
+          "@type": "@id",
+          "@context": {
+            "@base": "http://www.iana.org/assignments/relation/"
+          }
+        },
+        "type": "dct:type",
+        "hreflang": "dct:language",
+        "title": "rdfs:label",
+        "length": "dct:extent"
       }
     },
     "features": {
+      "@container": "@set",
       "@id": "sosa:hasMember",
       "@context": {
-        "type": "@type",
         "id": "@id",
+        "properties": {
+          "@id": "@nest",
+          "@context": {
+            "resultTime": "sosa:resultTime",
+            "phenomenonTime": "sosa:phenomenonTime",
+            "observedProperty": "sosa:observedProperty",
+            "hasResult": "sosa:hasResult",
+            "hasSimpleResult": "sosa:hasSimpleResult",
+            "features": "sosa:hasMember",
+            "properties": "@nest"
+          }
+        },
         "geometry": {
           "@id": "geojson:geometry",
           "@context": {}
@@ -42,6 +65,9 @@
     "properties": {
       "@id": "@nest",
       "@context": {
+        "resultTime": "sosa:resultTime",
+        "phenomenonTime": "sosa:phenomenonTime",
+        "observedProperty": "sosa:observedProperty",
         "features": "sosa:hasMember",
         "properties": "@nest"
       }
@@ -144,7 +170,9 @@
     "qualityOfObservation": "ssn:systems/qualityOfObservation",
     "hasMember": "sosa:hasMember",
     "featureType": "@type",
+    "oa": "http://www.w3.org/ns/oa#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "dct": "http://purl.org/dc/terms/",
     "geojson": "https://purl.org/geojson/vocab#",
     "sosa": "http://www.w3.org/ns/sosa/",
     "ssn": "http://www.w3.org/ns/ssn/",

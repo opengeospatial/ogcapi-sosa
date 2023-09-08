@@ -285,7 +285,7 @@
   color: #859900;
 }
     </style>
-    <link href="../../stylesheets/screen-c95bb399.css" rel="stylesheet" media="screen" />
+    <link href="../../stylesheets/screen-89c74da2.css" rel="stylesheet" media="screen" />
     <link href="../../stylesheets/print-966d6edc.css" rel="stylesheet" media="print" />
       <script src="../../javascripts/all-0c8314cb.js"></script>
 
@@ -827,6 +827,10 @@ This building block is <strong>valid</strong>
     <span class="na">ssn-system</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/</span>
 
 </code></pre></div>
+<blockquote>
+<p><a target="_blank" href="https://avillar.github.io/TreedocViewer/?dataParser=yaml&amp;dataUrl=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Fannotated%2Funstable%2Fsosa%2Fschema.yaml&amp;expand=2&amp;option=%7B%22showTable%22%3A+false%7D">View on YAML Viewer</a></p>
+</blockquote>
+
 <p>Links to the schema:</p>
 
 <ul>
@@ -936,10 +940,51 @@ This building block is <strong>valid</strong>
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasMember"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@nest"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"features"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasMember"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@nest"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
         </span><span class="nl">"features"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:features"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"Observation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:Observation"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Sample"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:Sample"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"observedProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:observedProperty"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"phenomenonTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:phenomenonTime"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasResult"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasResult"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isResultOf"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isResultOf"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasSimpleResult"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasSimpleResult"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"resultTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:resultTime"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isHostedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isHostedBy"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isProxyFor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:isProxyFor"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"wasOriginatedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:wasOriginatedBy"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"detects"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:detects"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:hasProperty"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isPropertyOf"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:isPropertyOf"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"forProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:forProperty"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"implements"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:implements"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"implementedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:implementedBy"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasInput"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:hasInput"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasOutput"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:hasOutput"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasSubSystem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:hasSubSystem"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deployedSystem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:deployedSystem"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasDeployment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:hasDeployment"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deployedOnPlatform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:deployedOnPlatform"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"inDeployment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:inDeployment"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"inCondition"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:systems/inCondition"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasSystemCapability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:systems/hasSystemCapability"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasSystemProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:systems/hasSystemProperty"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasOperatingRange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:systems/hasOperatingRange"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasOperatingProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:systems/hasOperatingProperty"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasSurvivalRange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:systems/hasSurvivalRange"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasSurvivalProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:systems/hasSurvivalProperty"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"qualityOfObservation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:systems/qualityOfObservation"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasMember"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasMember"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"featureType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@type"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -992,8 +1037,18 @@ This building block is <strong>valid</strong>
     </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rdfs:seeAlso"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rdfs:label"</span><span class="w">
+        </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oa:hasTarget"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.iana.org/assignments/relation"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"@base"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.iana.org/assignments/relation/"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:type"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hreflang"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:language"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rdfs:label"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"length"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:extent"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -1006,11 +1061,17 @@ This building block is <strong>valid</strong>
     </span><span class="nl">"geopose"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/geopose/"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"geo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2003/01/geo/wgs84_pos#"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"geojson"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://purl.org/geojson/vocab#"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"oa"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/ns/oa#"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"rdfs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2000/01/rdf-schema#"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dct"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://purl.org/dc/terms/"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"@version"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.1</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
+<blockquote>
+<p><a target="_blank" href="https://json-ld.org/playground/#json-ld=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Fannotated%2Funstable%2Fsosa%2Fcontext.jsonld">View on JSON-LD Playground</a></p>
+</blockquote>
+
 <p>You can find the full JSON-LD context here:
 <a href="https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/context.jsonld" target="_blank">https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/context.jsonld</a></p>
 <h1 id='references'>References</h1>
@@ -1022,7 +1083,8 @@ This building block is <strong>valid</strong>
 
 <ul>
 <li>URL: <a href="https://github.com/opengeospatial/ogcapi-sosa" target="_blank">https://github.com/opengeospatial/ogcapi-sosa</a></li>
-<li>Path: <code>_sources</code></li>
+<li>Path:
+<code><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/HEAD/_sources" target="_blank">_sources</a></code></li>
 </ul>
 
       </div>

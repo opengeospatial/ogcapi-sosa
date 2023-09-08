@@ -515,6 +515,8 @@ anyOf:
 
 ```
 
+> <a target="_blank" href="https://avillar.github.io/TreedocViewer/?dataParser=yaml&amp;dataUrl=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Fannotated%2Funstable%2Fsosa%2Fschema.yaml&amp;expand=2&amp;option=%7B%22showTable%22%3A+false%7D">View on YAML Viewer</a>
+
 Links to the schema:
 
 * YAML version: <a href="https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/schema.yaml" target="_blank">https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/schema.yaml</a>
@@ -627,10 +629,51 @@ Links to the schema:
       "@id": "sosa:hasMember",
       "@container": "@set",
       "@context": {
+        "properties": {
+          "@id": "@nest",
+          "@context": {
+            "features": "sosa:hasMember",
+            "properties": "@nest"
+          }
+        },
         "features": {
           "@container": "@set",
           "@id": "geojson:features"
-        }
+        },
+        "Observation": "sosa:Observation",
+        "Sample": "sosa:Sample",
+        "observedProperty": "sosa:observedProperty",
+        "phenomenonTime": "sosa:phenomenonTime",
+        "hasResult": "sosa:hasResult",
+        "isResultOf": "sosa:isResultOf",
+        "hasSimpleResult": "sosa:hasSimpleResult",
+        "resultTime": "sosa:resultTime",
+        "isHostedBy": "sosa:isHostedBy",
+        "isProxyFor": "ssn:isProxyFor",
+        "wasOriginatedBy": "ssn:wasOriginatedBy",
+        "detects": "ssn:detects",
+        "hasProperty": "ssn:hasProperty",
+        "isPropertyOf": "ssn:isPropertyOf",
+        "forProperty": "ssn:forProperty",
+        "implements": "ssn:implements",
+        "implementedBy": "ssn:implementedBy",
+        "hasInput": "ssn:hasInput",
+        "hasOutput": "ssn:hasOutput",
+        "hasSubSystem": "ssn:hasSubSystem",
+        "deployedSystem": "ssn:deployedSystem",
+        "hasDeployment": "ssn:hasDeployment",
+        "deployedOnPlatform": "ssn:deployedOnPlatform",
+        "inDeployment": "ssn:inDeployment",
+        "inCondition": "ssn:systems/inCondition",
+        "hasSystemCapability": "ssn:systems/hasSystemCapability",
+        "hasSystemProperty": "ssn:systems/hasSystemProperty",
+        "hasOperatingRange": "ssn:systems/hasOperatingRange",
+        "hasOperatingProperty": "ssn:systems/hasOperatingProperty",
+        "hasSurvivalRange": "ssn:systems/hasSurvivalRange",
+        "hasSurvivalProperty": "ssn:systems/hasSurvivalProperty",
+        "qualityOfObservation": "ssn:systems/qualityOfObservation",
+        "hasMember": "sosa:hasMember",
+        "featureType": "@type"
       }
     },
     "properties": {
@@ -683,8 +726,18 @@ Links to the schema:
     "links": {
       "@id": "rdfs:seeAlso",
       "@context": {
-        "href": "@id",
-        "title": "rdfs:label"
+        "href": "oa:hasTarget",
+        "rel": {
+          "@id": "http://www.iana.org/assignments/relation",
+          "@type": "@id",
+          "@context": {
+            "@base": "http://www.iana.org/assignments/relation/"
+          }
+        },
+        "type": "dct:type",
+        "hreflang": "dct:language",
+        "title": "rdfs:label",
+        "length": "dct:extent"
       }
     },
     "coordinates": {
@@ -697,11 +750,15 @@ Links to the schema:
     "geopose": "http://example.com/geopose/",
     "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
     "geojson": "https://purl.org/geojson/vocab#",
+    "oa": "http://www.w3.org/ns/oa#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "dct": "http://purl.org/dc/terms/",
     "@version": 1.1
   }
 }
 ```
+
+> <a target="_blank" href="https://json-ld.org/playground/#json-ld=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Fannotated%2Funstable%2Fsosa%2Fcontext.jsonld">View on JSON-LD Playground</a>
 
 You can find the full JSON-LD context here:
 <a href="https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/context.jsonld" target="_blank">https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/context.jsonld</a>
@@ -715,5 +772,6 @@ You can find the full JSON-LD context here:
 The source code for this Building Block can be found in the following repository:
 
 * URL: <a href="https://github.com/opengeospatial/ogcapi-sosa" target="_blank">https://github.com/opengeospatial/ogcapi-sosa</a>
-* Path: `_sources`
+* Path:
+<code><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/HEAD/_sources" target="_blank">_sources</a></code>
 

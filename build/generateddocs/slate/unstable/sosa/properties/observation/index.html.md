@@ -5,7 +5,6 @@ language_tabs:
   - json: JSON
   - turtle: RDF/Turtle
   - jsonld: JSON-LD
-  - ttl: RDF/Turtle
 
 toc_footers:
   - Version 1.0
@@ -46,6 +45,8 @@ to detail what that property was associated with."
 
 ## Example of SOSA observation
 
+
+
 ```json
 { 
   "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
@@ -53,6 +54,13 @@ to detail what that property was associated with."
   "resultTime": "2022-05-01T22:33:44Z"
 }
 ```
+
+<blockquote class="lang-specific json">
+<p><a target="_blank" href="https://avillar.github.io/TreedocViewer/?dataParser=json&amp;dataUrl=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Funstable%2Fsosa%2Fproperties%2Fobservation%2Fexample_1_1.json&amp;expand=2&amp;option=%7B%22showTable%22%3A+false%7D">View on JSON Viewer</a></p>
+</blockquote>
+
+
+
 
 ```turtle
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
@@ -64,6 +72,8 @@ _:a1 a sosa:Observation ;
 .
 ```
 
+
+
 ```jsonld
 {
   "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
@@ -73,7 +83,14 @@ _:a1 a sosa:Observation ;
 }
 ```
 
-```ttl
+<blockquote class="lang-specific jsonld">
+<p><a target="_blank" href="https://json-ld.org/playground/#json-ld=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Funstable%2Fsosa%2Fproperties%2Fobservation%2Fexample_1_1.jsonld">View on JSON-LD Playground</a></p>
+</blockquote>
+
+
+
+
+```turtle
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -212,6 +229,8 @@ x-jsonld-prefixes:
 
 ```
 
+> <a target="_blank" href="https://avillar.github.io/TreedocViewer/?dataParser=yaml&amp;dataUrl=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Fannotated%2Funstable%2Fsosa%2Fproperties%2Fobservation%2Fschema.yaml&amp;expand=2&amp;option=%7B%22showTable%22%3A+false%7D">View on YAML Viewer</a>
+
 Links to the schema:
 
 * YAML version: <a href="https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observation/schema.yaml" target="_blank">https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observation/schema.yaml</a>
@@ -331,6 +350,8 @@ Links to the schema:
 }
 ```
 
+> <a target="_blank" href="https://json-ld.org/playground/#json-ld=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Fannotated%2Funstable%2Fsosa%2Fproperties%2Fobservation%2Fcontext.jsonld">View on JSON-LD Playground</a>
+
 You can find the full JSON-LD context here:
 <a href="https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observation/context.jsonld" target="_blank">https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observation/context.jsonld</a>
 
@@ -343,5 +364,6 @@ You can find the full JSON-LD context here:
 The source code for this Building Block can be found in the following repository:
 
 * URL: <a href="https://github.com/opengeospatial/ogcapi-sosa" target="_blank">https://github.com/opengeospatial/ogcapi-sosa</a>
-* Path: `_sources/properties/observation`
+* Path:
+<code><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/HEAD/_sources/properties/observation" target="_blank">_sources/properties/observation</a></code>
 

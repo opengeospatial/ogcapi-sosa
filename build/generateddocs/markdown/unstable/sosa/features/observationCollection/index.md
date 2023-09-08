@@ -17,7 +17,6 @@ This building blocks defines an ObservationCollection Feature according to the S
   "type": "FeatureCollection",
   "featureType": "sosa:ObservationCollection",
   "properties": {
-    "observedProperty": "https://dbpedia.org/ontology/population",
     "resultTime": "1999"
   },
   "features": [
@@ -26,18 +25,26 @@ This building blocks defines an ObservationCollection Feature according to the S
       "type": "Feature",
       "geometry": null,
       "properties": {
-        "comment": "Example of an inline membership - would entail hasMember relations",
+        "comment": "Simple result case",
+        "observedProperty": "https://dbpedia.org/ontology/population",
         "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork",
         "hasSimpleResult": 15555.0
       }
     },
     {
-      "@id": "pop1999",
+      "@id": "something",
       "type": "Feature",
       "geometry": null,
       "properties": {
+        "observedProperty": "https://example.org/someproperty",
         "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
-        "hasSimpleResult": 3275.0
+        "hasResult": {
+          "a": 1,
+          "b": {
+            "b1": "rb1",
+            "b2": "rb2"
+          }
+        }
       }
     }
   ]
@@ -81,7 +88,6 @@ eg:pop1999 a sosa:Observation ;
   "type": "FeatureCollection",
   "featureType": "sosa:ObservationCollection",
   "properties": {
-    "observedProperty": "https://dbpedia.org/ontology/population",
     "resultTime": "1999"
   },
   "features": [
@@ -90,18 +96,26 @@ eg:pop1999 a sosa:Observation ;
       "type": "Feature",
       "geometry": null,
       "properties": {
-        "comment": "Example of an inline membership - would entail hasMember relations",
+        "comment": "Simple result case",
+        "observedProperty": "https://dbpedia.org/ontology/population",
         "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork",
         "hasSimpleResult": 15555.0
       }
     },
     {
-      "@id": "pop1999",
+      "@id": "something",
       "type": "Feature",
       "geometry": null,
       "properties": {
+        "observedProperty": "https://example.org/someproperty",
         "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
-        "hasSimpleResult": 3275.0
+        "hasResult": {
+          "a": 1,
+          "b": {
+            "b1": "rb1",
+            "b2": "rb2"
+          }
+        }
       }
     }
   ],
@@ -258,18 +272,41 @@ Links to the schema:
 ```jsonld
 {
   "@context": {
+    "type": "@type",
     "links": {
       "@id": "rdfs:seeAlso",
       "@context": {
-        "href": "@id",
-        "title": "rdfs:label"
+        "href": "oa:hasTarget",
+        "rel": {
+          "@id": "http://www.iana.org/assignments/relation",
+          "@type": "@id",
+          "@context": {
+            "@base": "http://www.iana.org/assignments/relation/"
+          }
+        },
+        "type": "dct:type",
+        "hreflang": "dct:language",
+        "title": "rdfs:label",
+        "length": "dct:extent"
       }
     },
     "features": {
+      "@container": "@set",
       "@id": "sosa:hasMember",
       "@context": {
-        "type": "@type",
         "id": "@id",
+        "properties": {
+          "@id": "@nest",
+          "@context": {
+            "resultTime": "sosa:resultTime",
+            "phenomenonTime": "sosa:phenomenonTime",
+            "observedProperty": "sosa:observedProperty",
+            "hasResult": "sosa:hasResult",
+            "hasSimpleResult": "sosa:hasSimpleResult",
+            "features": "sosa:hasMember",
+            "properties": "@nest"
+          }
+        },
         "geometry": {
           "@id": "geojson:geometry",
           "@context": {}
@@ -300,6 +337,9 @@ Links to the schema:
     "properties": {
       "@id": "@nest",
       "@context": {
+        "resultTime": "sosa:resultTime",
+        "phenomenonTime": "sosa:phenomenonTime",
+        "observedProperty": "sosa:observedProperty",
         "features": "sosa:hasMember",
         "properties": "@nest"
       }
@@ -402,7 +442,9 @@ Links to the schema:
     "qualityOfObservation": "ssn:systems/qualityOfObservation",
     "hasMember": "sosa:hasMember",
     "featureType": "@type",
+    "oa": "http://www.w3.org/ns/oa#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "dct": "http://purl.org/dc/terms/",
     "geojson": "https://purl.org/geojson/vocab#",
     "sosa": "http://www.w3.org/ns/sosa/",
     "ssn": "http://www.w3.org/ns/ssn/",

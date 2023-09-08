@@ -285,7 +285,7 @@
   color: #859900;
 }
     </style>
-    <link href="../../../../stylesheets/screen-c95bb399.css" rel="stylesheet" media="screen" />
+    <link href="../../../../stylesheets/screen-89c74da2.css" rel="stylesheet" media="screen" />
     <link href="../../../../stylesheets/print-966d6edc.css" rel="stylesheet" media="print" />
       <script src="../../../../javascripts/all-0c8314cb.js"></script>
 
@@ -294,7 +294,7 @@
     </script>
   </head>
 
-  <body class="unstable unstable_sosa unstable_sosa_properties unstable_sosa_properties_observation unstable_sosa_properties_observation_index" data-languages="[&quot;json&quot;,&quot;turtle&quot;,&quot;jsonld&quot;,&quot;ttl&quot;]">
+  <body class="unstable unstable_sosa unstable_sosa_properties unstable_sosa_properties_observation unstable_sosa_properties_observation_index" data-languages="[&quot;json&quot;,&quot;turtle&quot;,&quot;jsonld&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -307,7 +307,6 @@
               <a href="#" data-language-name="json">JSON</a>
               <a href="#" data-language-name="turtle">RDF/Turtle</a>
               <a href="#" data-language-name="jsonld">JSON-LD</a>
-              <a href="#" data-language-name="ttl">RDF/Turtle</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -376,29 +375,37 @@ to detail what that property was associated with.&quot;</p>
   </span><span class="nl">"hasSimpleResult"</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w">
   </span><span class="nl">"resultTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-05-01T22:33:44Z"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><div class="highlight"><pre class="highlight turtle tab-turtle"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">sosa:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/sosa/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span></code></pre></div>
+<blockquote class="lang-specific json">
+<p><a target="_blank" href="https://avillar.github.io/TreedocViewer/?dataParser=json&amp;dataUrl=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Funstable%2Fsosa%2Fproperties%2Fobservation%2Fexample_1_1.json&amp;expand=2&amp;option=%7B%22showTable%22%3A+false%7D">View on JSON Viewer</a></p>
+</blockquote>
+<div class="highlight"><pre class="highlight turtle tab-turtle"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">sosa:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/sosa/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="nn">_:</span><span class="n">a1</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">sosa:</span><span class="n">Observation</span><span class="w"> </span><span class="p">;</span><span class="w">
   </span><span class="nn">sosa:</span><span class="n">hasFeatureOfInterest</span><span class="w"> </span><span class="nl">&lt;https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
   </span><span class="nn">sosa:</span><span class="n">hasSimpleResult</span><span class="w"> </span><span class="mi">33</span><span class="w"> </span><span class="p">;</span><span class="w">
   </span><span class="nn">sosa:</span><span class="n">resultTime</span><span class="w"> </span><span class="s">"2022-05-01T22:33:44Z"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">dateTime</span><span class="w"> </span><span class="p">;</span><span class="w">
 </span><span class="p">.</span><span class="w">
-</span></code></pre></div><div class="highlight"><pre class="highlight jsonld tab-jsonld"><code>{
-  "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
-  "hasSimpleResult": 33,
-  "resultTime": "2022-05-01T22:33:44Z",
-  "@context": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observation/context.jsonld"
-}
-</code></pre></div><div class="highlight"><pre class="highlight ttl tab-ttl"><code>@prefix sosa: &lt;http://www.w3.org/ns/sosa/&gt; .
-@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+</span></code></pre></div><div class="highlight"><pre class="highlight json tab-jsonld"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"hasFeatureOfInterest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"hasSimpleResult"</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resultTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-05-01T22:33:44Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observation/context.jsonld"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote class="lang-specific jsonld">
+<p><a target="_blank" href="https://json-ld.org/playground/#json-ld=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Funstable%2Fsosa%2Fproperties%2Fobservation%2Fexample_1_1.jsonld">View on JSON-LD Playground</a></p>
+</blockquote>
+<div class="highlight"><pre class="highlight turtle tab-turtle"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">sosa:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/sosa/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 
-[] a sosa:Observation ;
-    sosa:hasFeatureOfInterest &lt;https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem&gt; ;
-    sosa:hasSimpleResult 33 ;
-    sosa:resultTime "2022-05-01T22:33:44+00:00"^^xsd:dateTime .
+</span><span class="p">[]</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">sosa:</span><span class="n">Observation</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">hasFeatureOfInterest</span><span class="w"> </span><span class="nl">&lt;https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">hasSimpleResult</span><span class="w"> </span><span class="mi">33</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">resultTime</span><span class="w"> </span><span class="s">"2022-05-01T22:33:44+00:00"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">dateTime</span><span class="w"> </span><span class="p">.</span><span class="w">
 
 
-</code></pre></div><h1 id='json-schema'>JSON Schema</h1><div class="highlight"><pre class="highlight yaml tab-yaml--schema"><code><span class="na">$schema</span><span class="pi">:</span> <span class="s">https://json-schema.org/draft/2020-12/schema</span>
+</span></code></pre></div><h1 id='json-schema'>JSON Schema</h1><div class="highlight"><pre class="highlight yaml tab-yaml--schema"><code><span class="na">$schema</span><span class="pi">:</span> <span class="s">https://json-schema.org/draft/2020-12/schema</span>
 <span class="na">description</span><span class="pi">:</span> <span class="s">SOSA Observation</span>
 <span class="na">type</span><span class="pi">:</span> <span class="s">object</span>
 <span class="na">properties</span><span class="pi">:</span>
@@ -520,6 +527,10 @@ to detail what that property was associated with.&quot;</p>
   <span class="na">ssn-system</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/</span>
 
 </code></pre></div>
+<blockquote>
+<p><a target="_blank" href="https://avillar.github.io/TreedocViewer/?dataParser=yaml&amp;dataUrl=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Fannotated%2Funstable%2Fsosa%2Fproperties%2Fobservation%2Fschema.yaml&amp;expand=2&amp;option=%7B%22showTable%22%3A+false%7D">View on YAML Viewer</a></p>
+</blockquote>
+
 <p>Links to the schema:</p>
 
 <ul>
@@ -635,6 +646,10 @@ to detail what that property was associated with.&quot;</p>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
+<blockquote>
+<p><a target="_blank" href="https://json-ld.org/playground/#json-ld=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Fannotated%2Funstable%2Fsosa%2Fproperties%2Fobservation%2Fcontext.jsonld">View on JSON-LD Playground</a></p>
+</blockquote>
+
 <p>You can find the full JSON-LD context here:
 <a href="https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observation/context.jsonld" target="_blank">https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observation/context.jsonld</a></p>
 <h1 id='references'>References</h1>
@@ -646,7 +661,8 @@ to detail what that property was associated with.&quot;</p>
 
 <ul>
 <li>URL: <a href="https://github.com/opengeospatial/ogcapi-sosa" target="_blank">https://github.com/opengeospatial/ogcapi-sosa</a></li>
-<li>Path: <code>_sources/properties/observation</code></li>
+<li>Path:
+<code><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/HEAD/_sources/properties/observation" target="_blank">_sources/properties/observation</a></code></li>
 </ul>
 
       </div>
@@ -655,7 +671,6 @@ to detail what that property was associated with.&quot;</p>
                 <a href="#" data-language-name="json">JSON</a>
                 <a href="#" data-language-name="turtle">RDF/Turtle</a>
                 <a href="#" data-language-name="jsonld">JSON-LD</a>
-                <a href="#" data-language-name="ttl">RDF/Turtle</a>
           </div>
       </div>
     </div>

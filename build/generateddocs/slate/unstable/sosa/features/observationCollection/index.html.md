@@ -5,7 +5,6 @@ language_tabs:
   - json: JSON
   - turtle: RDF/Turtle
   - jsonld: JSON-LD
-  - ttl: RDF/Turtle
 
 toc_footers:
   - Version 1.0
@@ -38,13 +37,14 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
 
 ## Example of SOSA ObservationCollection
 
+
+
 ```json
 {
   "@id": "c1",
   "type": "FeatureCollection",
   "featureType": "sosa:ObservationCollection",
   "properties": {
-    "observedProperty": "https://dbpedia.org/ontology/population",
     "resultTime": "1999"
   },
   "features": [
@@ -53,23 +53,38 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
       "type": "Feature",
       "geometry": null,
       "properties": {
-        "comment": "Example of an inline membership - would entail hasMember relations",
+        "comment": "Simple result case",
+        "observedProperty": "https://dbpedia.org/ontology/population",
         "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork",
         "hasSimpleResult": 15555.0
       }
     },
     {
-      "@id": "pop1999",
+      "@id": "something",
       "type": "Feature",
       "geometry": null,
       "properties": {
+        "observedProperty": "https://example.org/someproperty",
         "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
-        "hasSimpleResult": 3275.0
+        "hasResult": {
+          "a": 1,
+          "b": {
+            "b1": "rb1",
+            "b2": "rb2"
+          }
+        }
       }
     }
   ]
 }
 ```
+
+<blockquote class="lang-specific json">
+<p><a target="_blank" href="https://avillar.github.io/TreedocViewer/?dataParser=json&amp;dataUrl=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Funstable%2Fsosa%2Ffeatures%2FobservationCollection%2Fexample_1_1.json&amp;expand=2&amp;option=%7B%22showTable%22%3A+false%7D">View on JSON Viewer</a></p>
+</blockquote>
+
+
+
 
 ```turtle
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
@@ -100,13 +115,14 @@ eg:pop1999 a sosa:Observation ;
 .
 ```
 
+
+
 ```jsonld
 {
   "@id": "c1",
   "type": "FeatureCollection",
   "featureType": "sosa:ObservationCollection",
   "properties": {
-    "observedProperty": "https://dbpedia.org/ontology/population",
     "resultTime": "1999"
   },
   "features": [
@@ -115,18 +131,26 @@ eg:pop1999 a sosa:Observation ;
       "type": "Feature",
       "geometry": null,
       "properties": {
-        "comment": "Example of an inline membership - would entail hasMember relations",
+        "comment": "Simple result case",
+        "observedProperty": "https://dbpedia.org/ontology/population",
         "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork",
         "hasSimpleResult": 15555.0
       }
     },
     {
-      "@id": "pop1999",
+      "@id": "something",
       "type": "Feature",
       "geometry": null,
       "properties": {
+        "observedProperty": "https://example.org/someproperty",
         "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
-        "hasSimpleResult": 3275.0
+        "hasResult": {
+          "a": 1,
+          "b": {
+            "b1": "rb1",
+            "b2": "rb2"
+          }
+        }
       }
     }
   ],
@@ -134,7 +158,14 @@ eg:pop1999 a sosa:Observation ;
 }
 ```
 
-```ttl
+<blockquote class="lang-specific jsonld">
+<p><a target="_blank" href="https://json-ld.org/playground/#json-ld=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Funstable%2Fsosa%2Ffeatures%2FobservationCollection%2Fexample_1_1.jsonld">View on JSON-LD Playground</a></p>
+</blockquote>
+
+
+
+
+```turtle
 @prefix eg: <http://example.org/my-feature/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
@@ -272,6 +303,8 @@ x-jsonld-prefixes:
 
 ```
 
+> <a target="_blank" href="https://avillar.github.io/TreedocViewer/?dataParser=yaml&amp;dataUrl=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Fannotated%2Funstable%2Fsosa%2Ffeatures%2FobservationCollection%2Fschema.yaml&amp;expand=2&amp;option=%7B%22showTable%22%3A+false%7D">View on YAML Viewer</a>
+
 Links to the schema:
 
 * YAML version: <a href="https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observationCollection/schema.yaml" target="_blank">https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observationCollection/schema.yaml</a>
@@ -283,18 +316,41 @@ Links to the schema:
 ```json--ldContext
 {
   "@context": {
+    "type": "@type",
     "links": {
       "@id": "rdfs:seeAlso",
       "@context": {
-        "href": "@id",
-        "title": "rdfs:label"
+        "href": "oa:hasTarget",
+        "rel": {
+          "@id": "http://www.iana.org/assignments/relation",
+          "@type": "@id",
+          "@context": {
+            "@base": "http://www.iana.org/assignments/relation/"
+          }
+        },
+        "type": "dct:type",
+        "hreflang": "dct:language",
+        "title": "rdfs:label",
+        "length": "dct:extent"
       }
     },
     "features": {
+      "@container": "@set",
       "@id": "sosa:hasMember",
       "@context": {
-        "type": "@type",
         "id": "@id",
+        "properties": {
+          "@id": "@nest",
+          "@context": {
+            "resultTime": "sosa:resultTime",
+            "phenomenonTime": "sosa:phenomenonTime",
+            "observedProperty": "sosa:observedProperty",
+            "hasResult": "sosa:hasResult",
+            "hasSimpleResult": "sosa:hasSimpleResult",
+            "features": "sosa:hasMember",
+            "properties": "@nest"
+          }
+        },
         "geometry": {
           "@id": "geojson:geometry",
           "@context": {}
@@ -325,6 +381,9 @@ Links to the schema:
     "properties": {
       "@id": "@nest",
       "@context": {
+        "resultTime": "sosa:resultTime",
+        "phenomenonTime": "sosa:phenomenonTime",
+        "observedProperty": "sosa:observedProperty",
         "features": "sosa:hasMember",
         "properties": "@nest"
       }
@@ -427,7 +486,9 @@ Links to the schema:
     "qualityOfObservation": "ssn:systems/qualityOfObservation",
     "hasMember": "sosa:hasMember",
     "featureType": "@type",
+    "oa": "http://www.w3.org/ns/oa#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "dct": "http://purl.org/dc/terms/",
     "geojson": "https://purl.org/geojson/vocab#",
     "sosa": "http://www.w3.org/ns/sosa/",
     "ssn": "http://www.w3.org/ns/ssn/",
@@ -436,6 +497,8 @@ Links to the schema:
   }
 }
 ```
+
+> <a target="_blank" href="https://json-ld.org/playground/#json-ld=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Fannotated%2Funstable%2Fsosa%2Ffeatures%2FobservationCollection%2Fcontext.jsonld">View on JSON-LD Playground</a>
 
 You can find the full JSON-LD context here:
 <a href="https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observationCollection/context.jsonld" target="_blank">https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observationCollection/context.jsonld</a>
@@ -450,5 +513,6 @@ You can find the full JSON-LD context here:
 The source code for this Building Block can be found in the following repository:
 
 * URL: <a href="https://github.com/opengeospatial/ogcapi-sosa" target="_blank">https://github.com/opengeospatial/ogcapi-sosa</a>
-* Path: `_sources/features/observationCollection`
+* Path:
+<code><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/HEAD/_sources/features/observationCollection" target="_blank">_sources/features/observationCollection</a></code>
 

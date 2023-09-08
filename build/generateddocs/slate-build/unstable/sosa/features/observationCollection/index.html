@@ -285,7 +285,7 @@
   color: #859900;
 }
     </style>
-    <link href="../../../../stylesheets/screen-c95bb399.css" rel="stylesheet" media="screen" />
+    <link href="../../../../stylesheets/screen-89c74da2.css" rel="stylesheet" media="screen" />
     <link href="../../../../stylesheets/print-966d6edc.css" rel="stylesheet" media="print" />
       <script src="../../../../javascripts/all-0c8314cb.js"></script>
 
@@ -294,7 +294,7 @@
     </script>
   </head>
 
-  <body class="unstable unstable_sosa unstable_sosa_features unstable_sosa_features_observationCollection unstable_sosa_features_observationCollection_index" data-languages="[&quot;json&quot;,&quot;turtle&quot;,&quot;jsonld&quot;,&quot;ttl&quot;]">
+  <body class="unstable unstable_sosa unstable_sosa_features unstable_sosa_features_observationCollection unstable_sosa_features_observationCollection_index" data-languages="[&quot;json&quot;,&quot;turtle&quot;,&quot;jsonld&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -307,7 +307,6 @@
               <a href="#" data-language-name="json">JSON</a>
               <a href="#" data-language-name="turtle">RDF/Turtle</a>
               <a href="#" data-language-name="jsonld">JSON-LD</a>
-              <a href="#" data-language-name="ttl">RDF/Turtle</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -363,7 +362,6 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
   </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FeatureCollection"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"featureType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:ObservationCollection"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"observedProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://dbpedia.org/ontology/population"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"resultTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1999"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"features"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -372,23 +370,35 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example of an inline membership - would entail hasMember relations"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Simple result case"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"observedProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://dbpedia.org/ontology/population"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"hasFeatureOfInterest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"hasSimpleResult"</span><span class="p">:</span><span class="w"> </span><span class="mf">15555.0</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pop1999"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"something"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"observedProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/someproperty"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"hasFeatureOfInterest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"hasSimpleResult"</span><span class="p">:</span><span class="w"> </span><span class="mf">3275.0</span><span class="w">
+        </span><span class="nl">"hasResult"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"a"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"b"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"b1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rb1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"b2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rb2"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><div class="highlight"><pre class="highlight turtle tab-turtle"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">sosa:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/sosa/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span></code></pre></div>
+<blockquote class="lang-specific json">
+<p><a target="_blank" href="https://avillar.github.io/TreedocViewer/?dataParser=json&amp;dataUrl=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Funstable%2Fsosa%2Ffeatures%2FobservationCollection%2Fexample_1_1.json&amp;expand=2&amp;option=%7B%22showTable%22%3A+false%7D">View on JSON Viewer</a></p>
+</blockquote>
+<div class="highlight"><pre class="highlight turtle tab-turtle"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">sosa:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/sosa/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">eg:</span><span class="w"> </span><span class="nl">&lt;http://example.org/my-feature/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">skos:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
@@ -414,63 +424,74 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
 </span><span class="nl">&lt;http://dbpedia.org/ontology/population&gt;</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">skos:</span><span class="n">Concept</span><span class="p">;</span><span class="w">
   </span><span class="nn">skos:</span><span class="n">prefLabel</span><span class="w"> </span><span class="s">"Population"</span><span class="p">;</span><span class="w">
 </span><span class="p">.</span><span class="w">
-</span></code></pre></div><div class="highlight"><pre class="highlight jsonld tab-jsonld"><code>{
-  "@id": "c1",
-  "type": "FeatureCollection",
-  "featureType": "sosa:ObservationCollection",
-  "properties": {
-    "observedProperty": "https://dbpedia.org/ontology/population",
-    "resultTime": "1999"
-  },
-  "features": [
-    {
-      "@id": "pop1999",
-      "type": "Feature",
-      "geometry": null,
-      "properties": {
-        "comment": "Example of an inline membership - would entail hasMember relations",
-        "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork",
-        "hasSimpleResult": 15555.0
-      }
-    },
-    {
-      "@id": "pop1999",
-      "type": "Feature",
-      "geometry": null,
-      "properties": {
-        "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
-        "hasSimpleResult": 3275.0
-      }
-    }
-  ],
-  "@context": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observationCollection/context.jsonld"
-}
-</code></pre></div><div class="highlight"><pre class="highlight ttl tab-ttl"><code>@prefix eg: &lt;http://example.org/my-feature/&gt; .
-@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
-@prefix sosa: &lt;http://www.w3.org/ns/sosa/&gt; .
-@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+</span></code></pre></div><div class="highlight"><pre class="highlight json tab-jsonld"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FeatureCollection"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"featureType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:ObservationCollection"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"resultTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1999"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"features"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pop1999"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Simple result case"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"observedProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://dbpedia.org/ontology/population"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasFeatureOfInterest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasSimpleResult"</span><span class="p">:</span><span class="w"> </span><span class="mf">15555.0</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"something"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"observedProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/someproperty"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasFeatureOfInterest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasResult"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"a"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"b"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"b1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rb1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"b2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rb2"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observationCollection/context.jsonld"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote class="lang-specific jsonld">
+<p><a target="_blank" href="https://json-ld.org/playground/#json-ld=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Funstable%2Fsosa%2Ffeatures%2FobservationCollection%2Fexample_1_1.jsonld">View on JSON-LD Playground</a></p>
+</blockquote>
+<div class="highlight"><pre class="highlight turtle tab-turtle"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">eg:</span><span class="w"> </span><span class="nl">&lt;http://example.org/my-feature/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">skos:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">sosa:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/sosa/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 
-eg:c1 a sosa:ObservationCollection ;
-    sosa:hasMember eg:pop1999,
-        eg:pop2000 ;
-    sosa:observedProperty &lt;http://dbpedia.org/ontology/population&gt; ;
-    sosa:resultTime "2022-05-01T22:33:44+00:00"^^xsd:dateTime .
+</span><span class="nn">eg:</span><span class="n">c1</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">sosa:</span><span class="n">ObservationCollection</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">hasMember</span><span class="w"> </span><span class="nn">eg:</span><span class="n">pop1999,
+</span><span class="w">        </span><span class="nn">eg:</span><span class="n">pop2000</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">observedProperty</span><span class="w"> </span><span class="nl">&lt;http://dbpedia.org/ontology/population&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">resultTime</span><span class="w"> </span><span class="s">"2022-05-01T22:33:44+00:00"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">dateTime</span><span class="w"> </span><span class="p">.</span><span class="w">
 
-&lt;http://dbpedia.org/ontology/population&gt; a skos:Concept ;
-    skos:prefLabel "Population" .
+</span><span class="nl">&lt;http://dbpedia.org/ontology/population&gt;</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">skos:</span><span class="n">Concept</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">skos:</span><span class="n">prefLabel</span><span class="w"> </span><span class="s">"Population"</span><span class="w"> </span><span class="p">.</span><span class="w">
 
-eg:pop1999 a sosa:Observation ;
-    sosa:hasFeatureOfInterest &lt;https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem&gt; ;
-    sosa:hasSimpleResult 3275.0 ;
-    sosa:resultTime "1999-01-01"^^xsd:date .
+</span><span class="nn">eg:</span><span class="n">pop1999</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">sosa:</span><span class="n">Observation</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">hasFeatureOfInterest</span><span class="w"> </span><span class="nl">&lt;https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">hasSimpleResult</span><span class="w"> </span><span class="mf">3275.0</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">resultTime</span><span class="w"> </span><span class="s">"1999-01-01"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">date</span><span class="w"> </span><span class="p">.</span><span class="w">
 
-eg:pop2000 a sosa:Observation ;
-    sosa:hasFeatureOfInterest &lt;https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem&gt; ;
-    sosa:hasSimpleResult 4372.0 ;
-    sosa:resultTime "2000"^^xsd:gYear .
+</span><span class="nn">eg:</span><span class="n">pop2000</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">sosa:</span><span class="n">Observation</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">hasFeatureOfInterest</span><span class="w"> </span><span class="nl">&lt;https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">hasSimpleResult</span><span class="w"> </span><span class="mf">4372.0</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">resultTime</span><span class="w"> </span><span class="s">"2000"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">gYear</span><span class="w"> </span><span class="p">.</span><span class="w">
 
 
-</code></pre></div><h1 id='json-schema'>JSON Schema</h1><div class="highlight"><pre class="highlight yaml tab-yaml--schema"><code><span class="na">$schema</span><span class="pi">:</span> <span class="s">https://json-schema.org/draft/2020-12/schema</span>
+</span></code></pre></div><h1 id='json-schema'>JSON Schema</h1><div class="highlight"><pre class="highlight yaml tab-yaml--schema"><code><span class="na">$schema</span><span class="pi">:</span> <span class="s">https://json-schema.org/draft/2020-12/schema</span>
 <span class="na">description</span><span class="pi">:</span> <span class="s">SOSA Observation Feature</span>
 <span class="na">allOf</span><span class="pi">:</span>
 <span class="pi">-</span> <span class="na">$ref</span><span class="pi">:</span> <span class="s">https://opengeospatial.github.io/bblocks/annotated-schemas/geo/json-fg/featureCollection-lenient/schema.yaml</span>
@@ -575,6 +596,10 @@ eg:pop2000 a sosa:Observation ;
   <span class="na">ssn-system</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/</span>
 
 </code></pre></div>
+<blockquote>
+<p><a target="_blank" href="https://avillar.github.io/TreedocViewer/?dataParser=yaml&amp;dataUrl=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Fannotated%2Funstable%2Fsosa%2Ffeatures%2FobservationCollection%2Fschema.yaml&amp;expand=2&amp;option=%7B%22showTable%22%3A+false%7D">View on YAML Viewer</a></p>
+</blockquote>
+
 <p>Links to the schema:</p>
 
 <ul>
@@ -583,18 +608,41 @@ eg:pop2000 a sosa:Observation ;
 </ul>
 <h1 id='json-ld-context'>JSON-LD Context</h1><div class="highlight"><pre class="highlight json tab-json--ldContext"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@type"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rdfs:seeAlso"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rdfs:label"</span><span class="w">
+        </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oa:hasTarget"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.iana.org/assignments/relation"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"@base"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.iana.org/assignments/relation/"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:type"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hreflang"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:language"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rdfs:label"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"length"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:extent"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"features"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasMember"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@type"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@nest"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"resultTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:resultTime"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"phenomenonTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:phenomenonTime"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"observedProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:observedProperty"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"hasResult"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasResult"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"hasSimpleResult"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasSimpleResult"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"features"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasMember"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@nest"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
         </span><span class="nl">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:geometry"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
@@ -625,6 +673,9 @@ eg:pop2000 a sosa:Observation ;
     </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@nest"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"resultTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:resultTime"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"phenomenonTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:phenomenonTime"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"observedProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:observedProperty"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"features"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasMember"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@nest"</span><span class="w">
       </span><span class="p">}</span><span class="w">
@@ -727,7 +778,9 @@ eg:pop2000 a sosa:Observation ;
     </span><span class="nl">"qualityOfObservation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:systems/qualityOfObservation"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"hasMember"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasMember"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"featureType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@type"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"oa"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/ns/oa#"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"rdfs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2000/01/rdf-schema#"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dct"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://purl.org/dc/terms/"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"geojson"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://purl.org/geojson/vocab#"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"sosa"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/ns/sosa/"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"ssn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/ns/ssn/"</span><span class="p">,</span><span class="w">
@@ -736,6 +789,10 @@ eg:pop2000 a sosa:Observation ;
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
+<blockquote>
+<p><a target="_blank" href="https://json-ld.org/playground/#json-ld=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Fannotated%2Funstable%2Fsosa%2Ffeatures%2FobservationCollection%2Fcontext.jsonld">View on JSON-LD Playground</a></p>
+</blockquote>
+
 <p>You can find the full JSON-LD context here:
 <a href="https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observationCollection/context.jsonld" target="_blank">https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observationCollection/context.jsonld</a></p>
 <h1 id='references'>References</h1>
@@ -748,7 +805,8 @@ eg:pop2000 a sosa:Observation ;
 
 <ul>
 <li>URL: <a href="https://github.com/opengeospatial/ogcapi-sosa" target="_blank">https://github.com/opengeospatial/ogcapi-sosa</a></li>
-<li>Path: <code>_sources/features/observationCollection</code></li>
+<li>Path:
+<code><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/HEAD/_sources/features/observationCollection" target="_blank">_sources/features/observationCollection</a></code></li>
 </ul>
 
       </div>
@@ -757,7 +815,6 @@ eg:pop2000 a sosa:Observation ;
                 <a href="#" data-language-name="json">JSON</a>
                 <a href="#" data-language-name="turtle">RDF/Turtle</a>
                 <a href="#" data-language-name="jsonld">JSON-LD</a>
-                <a href="#" data-language-name="ttl">RDF/Turtle</a>
           </div>
       </div>
     </div>
