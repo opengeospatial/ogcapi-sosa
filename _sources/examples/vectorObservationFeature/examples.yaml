@@ -1,42 +1,17 @@
-- snippets:
+- title: VectorObservation - specialisation example.
+  comment:
+    Example of Specialised Observation being a vector, using GeoPose as part of a complex result
+
+  base-uri: http://example.com/features/
+  snippets:
     - language: json
-      base-uri: http://www.example.com/features/
-      code: |
-        {
-          "@id": "vector-obs-1",
-          "type":"Feature",
-          "geometry":{
-            "type":"LineString",
-            "coordinates":[
-              [
-                -111.67183507997295,
-                40.056709946862874
-              ],
-              [
-                -111.67183507997295,
-                40.056709946862874
-              ]
-            ]
-          },
-          "time":null,
-          "place":null,
-          "properties":{
-            "hasFeatureOfInterest":"eg:Traverse-P1-P2",
-            "resultTime":"2023-05-22T16:41:00+2",
-            "hasResult":{
-              "pose":{
-                "position":{
-                  "lat":-111.67183507997295,
-                  "lon":40.056709946862874,
-                  "h":0.5
-                },
-                "angles":{
-                  "yaw":15.35,
-                  "pitch":-0.01,
-                  "roll":0
-                }
-              },
-              "distance":6889234.2
-            }
-          }
-        }
+      ref: examples/observation.json
+
+- title: VectorObservationCollection
+  comment:
+    Example of Specialised ObservationCollection being a vector, using GeoPose as part of a complex result
+
+  base-uri: http://example.com/features/
+  snippets:
+    - language: json
+      ref: examples/observationCollection.json
