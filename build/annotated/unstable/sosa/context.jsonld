@@ -101,51 +101,10 @@
       "@id": "sosa:hasMember",
       "@container": "@set",
       "@context": {
-        "properties": {
-          "@id": "@nest",
-          "@context": {
-            "features": "sosa:hasMember",
-            "properties": "@nest"
-          }
-        },
         "features": {
           "@container": "@set",
           "@id": "geojson:features"
-        },
-        "Observation": "sosa:Observation",
-        "Sample": "sosa:Sample",
-        "observedProperty": "sosa:observedProperty",
-        "phenomenonTime": "sosa:phenomenonTime",
-        "hasResult": "sosa:hasResult",
-        "isResultOf": "sosa:isResultOf",
-        "hasSimpleResult": "sosa:hasSimpleResult",
-        "resultTime": "sosa:resultTime",
-        "isHostedBy": "sosa:isHostedBy",
-        "isProxyFor": "ssn:isProxyFor",
-        "wasOriginatedBy": "ssn:wasOriginatedBy",
-        "detects": "ssn:detects",
-        "hasProperty": "ssn:hasProperty",
-        "isPropertyOf": "ssn:isPropertyOf",
-        "forProperty": "ssn:forProperty",
-        "implements": "ssn:implements",
-        "implementedBy": "ssn:implementedBy",
-        "hasInput": "ssn:hasInput",
-        "hasOutput": "ssn:hasOutput",
-        "hasSubSystem": "ssn:hasSubSystem",
-        "deployedSystem": "ssn:deployedSystem",
-        "hasDeployment": "ssn:hasDeployment",
-        "deployedOnPlatform": "ssn:deployedOnPlatform",
-        "inDeployment": "ssn:inDeployment",
-        "inCondition": "ssn:systems/inCondition",
-        "hasSystemCapability": "ssn:systems/hasSystemCapability",
-        "hasSystemProperty": "ssn:systems/hasSystemProperty",
-        "hasOperatingRange": "ssn:systems/hasOperatingRange",
-        "hasOperatingProperty": "ssn:systems/hasOperatingProperty",
-        "hasSurvivalRange": "ssn:systems/hasSurvivalRange",
-        "hasSurvivalProperty": "ssn:systems/hasSurvivalProperty",
-        "qualityOfObservation": "ssn:systems/qualityOfObservation",
-        "hasMember": "sosa:hasMember",
-        "featureType": "@type"
+        }
       }
     },
     "properties": {
@@ -171,10 +130,6 @@
         "pitch": "geopose:pitch",
         "roll": "geopose:roll"
       }
-    },
-    "distance": {
-      "@id": "http://example.com/properties/distance",
-      "@type": "http://www.w3.org/2001/XMLSchema#float"
     },
     "type": "@type",
     "id": "@id",

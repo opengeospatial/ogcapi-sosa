@@ -82,8 +82,6 @@ allOf:
           $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/geopose/basic/ypr/schema.yaml
         distance:
           type: number
-          x-jsonld-id: http://example.com/properties/distance
-          x-jsonld-type: http://www.w3.org/2001/XMLSchema#float
   required:
   - hasResult
   not:
@@ -218,10 +216,6 @@ Links to the schema:
         "pitch": "geopose:pitch",
         "roll": "geopose:roll"
       }
-    },
-    "distance": {
-      "@id": "http://example.com/properties/distance",
-      "@type": "http://www.w3.org/2001/XMLSchema#float"
     },
     "sosa": "http://www.w3.org/ns/sosa/",
     "ssn": "http://www.w3.org/ns/ssn/",

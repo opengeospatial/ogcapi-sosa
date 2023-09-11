@@ -13,6 +13,17 @@ This building blocks defines an ObservationCollection Feature according to the S
 #### json
 ```json
 {
+  "@context": {
+    "resultschema": "http//example.org/resultchema/",
+    "a": "resultschema:a",
+    "b": {
+      "@id": "resultschema:b",
+      "@context": {
+        "b1": "resultschema:b1",
+        "b2": "resultschema:b2"
+      }
+    }
+  },
   "@id": "c1",
   "type": "FeatureCollection",
   "featureType": "sosa:ObservationCollection",
@@ -84,6 +95,20 @@ eg:pop1999 a sosa:Observation ;
 #### jsonld
 ```jsonld
 {
+  "@context": [
+    "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observationCollection/context.jsonld",
+    {
+      "resultschema": "http//example.org/resultchema/",
+      "a": "resultschema:a",
+      "b": {
+        "@id": "resultschema:b",
+        "@context": {
+          "b1": "resultschema:b1",
+          "b2": "resultschema:b2"
+        }
+      }
+    }
+  ],
   "@id": "c1",
   "type": "FeatureCollection",
   "featureType": "sosa:ObservationCollection",
@@ -118,8 +143,7 @@ eg:pop1999 a sosa:Observation ;
         }
       }
     }
-  ],
-  "@context": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observationCollection/context.jsonld"
+  ]
 }
 ```
 

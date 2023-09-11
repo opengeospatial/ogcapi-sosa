@@ -9,48 +9,47 @@ This building block defines an example SOSA Observation Feature for a Vector Obs
 
 ## Examples
 
-### Example 1
+### VectorObservation - specialisation example.
 #### json
 ```json
 {
-  "@id": "vector-obs-1",
-  "type":"Feature",
-  "geometry":{
-    "type":"LineString",
-    "coordinates":[
-      [
-        -111.67183507997295,
-        40.056709946862874
-      ],
-      [
-        -111.67183507997295,
-        40.056709946862874
-      ]
-    ]
-  },
-  "time":null,
-  "place":null,
-  "properties":{
-    "hasFeatureOfInterest":"eg:Traverse-P1-P2",
-    "resultTime":"2023-05-22T16:41:00+2",
-    "hasResult":{
-      "pose":{
-        "position":{
-          "lat":-111.67183507997295,
-          "lon":40.056709946862874,
-          "h":0.5
-        },
-        "angles":{
-          "yaw":15.35,
-          "pitch":-0.01,
-          "roll":0
+          "@id": "vector-obs-1",
+          "type":"Feature",
+          "geometry":{
+            "type":"LineString",
+            "coordinates":[
+              [
+                -111.67183507997295,
+                40.056709946862874
+              ],
+              [
+                -111.67183507997295,
+                40.056709946862874
+              ]
+            ]
+          },
+          "time":null,
+          "place":null,
+          "properties":{
+            "hasFeatureOfInterest":"eg:Traverse-P1-P2",
+            "resultTime":"2023-05-22T16:41:00+2",
+            "hasResult":{
+              "pose":{
+                "position":{
+                  "lat":-111.67183507997295,
+                  "lon":40.056709946862874,
+                  "h":0.5
+                },
+                "angles":{
+                  "yaw":15.35,
+                  "pitch":-0.01,
+                  "roll":0
+                }
+              },
+              "distance":6889234.2
+            }
+          }
         }
-      },
-      "distance":6889234.2
-    }
-  }
-}
-
 ```
 
 #### jsonld
@@ -99,14 +98,167 @@ This building block defines an example SOSA Observation Feature for a Vector Obs
 #### ttl
 ```ttl
 @prefix geojson: <https://purl.org/geojson/vocab#> .
-@prefix ns1: <http://example.com/properties/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://www.example.com/features/vector-obs-1> a geojson:Feature ;
+<http://example.com/features/vector-obs-1> a geojson:Feature ;
     sosa:hasFeatureOfInterest <eg:Traverse-P1-P2> ;
-    sosa:hasResult [ ns1:distance "6889234.2"^^xsd:float ] ;
+    sosa:hasResult [ ] ;
+    sosa:resultTime "2023-05-22T16:41:00+2" ;
+    geojson:geometry [ a geojson:LineString ;
+            geojson:coordinates ( ( -1.116718e+02 4.005671e+01 ) ( -1.116718e+02 4.005671e+01 ) ) ] .
+
+
+```
+
+
+### VectorObservationCollection
+#### json
+```json
+{
+    "@context": {
+    "resultschema": "http//example.org/resultschema/",
+    "pose": "resultschema:pose",
+    "distance": {
+      "@id": "resultschema:distance"
+    }
+  },
+  "@id": "c1",
+  "type": "FeatureCollection",
+  "featureType": "sosa:ObservationCollection",
+  "properties": {
+    "resultTime": "1999"
+  },
+  "features": [
+    {
+          "@id": "vector-obs-1",
+          "type":"Feature",
+          "geometry":{
+            "type":"LineString",
+            "coordinates":[
+              [
+                -111.67183507997295,
+                40.056709946862874
+              ],
+              [
+                -111.67183507997295,
+                40.056709946862874
+              ]
+            ]
+          },
+          "time":null,
+          "place":null,
+          "properties":{
+            "hasFeatureOfInterest":"eg:Traverse-P1-P2",
+            "resultTime":"2023-05-22T16:41:00+2",
+            "hasResult":{
+              "pose":{
+                "position":{
+                  "lat":-111.67183507997295,
+                  "lon":40.056709946862874,
+                  "h":0.5
+                },
+                "angles":{
+                  "yaw":15.35,
+                  "pitch":-0.01,
+                  "roll":0
+                }
+              },
+              "distance":6889234.2
+            }
+          }
+        }
+  ]
+}
+```
+
+#### jsonld
+```jsonld
+{
+  "@context": [
+    "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/context.jsonld",
+    {
+      "resultschema": "http//example.org/resultschema/",
+      "pose": "resultschema:pose",
+      "distance": {
+        "@id": "resultschema:distance"
+      }
+    }
+  ],
+  "@id": "c1",
+  "type": "FeatureCollection",
+  "featureType": "sosa:ObservationCollection",
+  "properties": {
+    "resultTime": "1999"
+  },
+  "features": [
+    {
+      "@id": "vector-obs-1",
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -111.67183507997295,
+            40.056709946862874
+          ],
+          [
+            -111.67183507997295,
+            40.056709946862874
+          ]
+        ]
+      },
+      "time": null,
+      "place": null,
+      "properties": {
+        "hasFeatureOfInterest": "eg:Traverse-P1-P2",
+        "resultTime": "2023-05-22T16:41:00+2",
+        "hasResult": {
+          "pose": {
+            "position": {
+              "lat": -111.67183507997295,
+              "lon": 40.056709946862874,
+              "h": 0.5
+            },
+            "angles": {
+              "yaw": 15.35,
+              "pitch": -0.01,
+              "roll": 0
+            }
+          },
+          "distance": 6889234.2
+        }
+      }
+    }
+  ]
+}
+```
+
+#### ttl
+```ttl
+@prefix geo1: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix geojson: <https://purl.org/geojson/vocab#> .
+@prefix geopose: <http://example.com/geopose/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix resultschema: <http//example.org/resultschema/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.com/features/c1> a sosa:ObservationCollection,
+        geojson:FeatureCollection ;
+    sosa:hasMember <http://example.com/features/vector-obs-1> ;
+    sosa:resultTime "1999" .
+
+<http://example.com/features/vector-obs-1> a geojson:Feature ;
+    sosa:hasFeatureOfInterest <eg:Traverse-P1-P2> ;
+    sosa:hasResult [ resultschema:distance 6.889234e+06 ;
+            resultschema:pose [ geopose:angles [ geopose:pitch -1e-02 ;
+                            geopose:roll 0 ;
+                            geopose:yaw 1.535e+01 ] ;
+                    geopose:position [ geopose:h 5e-01 ;
+                            geo1:lat -1.116718e+02 ;
+                            geo1:long 4.005671e+01 ] ] ] ;
     sosa:resultTime "2023-05-22T16:41:00+2" ;
     geojson:geometry [ a geojson:LineString ;
             geojson:coordinates ( ( -1.116718e+02 4.005671e+01 ) ( -1.116718e+02 4.005671e+01 ) ) ] .
@@ -118,13 +270,27 @@ This building block defines an example SOSA Observation Feature for a Vector Obs
 
 ```yaml
 $schema: https://json-schema.org/draft/2020-12/schema
-description: Example SOSA Vector Observation
-allOf:
-- $ref: ../../features/observation/schema.yaml
-- type: object
-  properties:
-    properties:
-      $ref: ../vectorObservation/schema.yaml
+description: Example SOSA Observation Specialisation - a vector bearing and distance
+$defs:
+  VectorObservation:
+    allOf:
+    - $ref: ../../features/observation/schema.yaml
+    - type: object
+      properties:
+        properties:
+          $ref: ../vectorObservation/schema.yaml
+  VectorObservationCollection:
+    allOf:
+    - $ref: ../../features/observationCollection/schema.yaml
+    - type: object
+      properties:
+        features:
+          type: array
+          items:
+            $ref: '#/$defs/VectorObservation'
+anyOf:
+- $ref: '#/$defs/VectorObservation'
+- $ref: '#/$defs/VectorObservationCollection'
 
 ```
 
@@ -144,9 +310,50 @@ Links to the schema:
     "properties": {
       "@id": "@nest",
       "@context": {
+        "features": "sosa:hasMember",
+        "properties": "@nest"
+      }
+    },
+    "geometry": {
+      "@id": "geojson:geometry",
+      "@context": {}
+    },
+    "bbox": {
+      "@container": "@list",
+      "@id": "geojson:bbox"
+    },
+    "Feature": "geojson:Feature",
+    "FeatureCollection": "geojson:FeatureCollection",
+    "GeometryCollection": "geojson:GeometryCollection",
+    "LineString": "geojson:LineString",
+    "MultiLineString": "geojson:MultiLineString",
+    "MultiPoint": "geojson:MultiPoint",
+    "MultiPolygon": "geojson:MultiPolygon",
+    "Point": "geojson:Point",
+    "Polygon": "geojson:Polygon",
+    "features": {
+      "@container": "@set",
+      "@id": "sosa:hasMember",
+      "@context": {
+        "properties": {
+          "@id": "@nest",
+          "@context": {
+            "features": "sosa:hasMember",
+            "properties": "@nest"
+          }
+        },
+        "features": {
+          "@container": "@set",
+          "@id": "geojson:features"
+        },
         "Observation": "sosa:Observation",
         "Sample": "sosa:Sample",
+        "observedProperty": "sosa:observedProperty",
+        "phenomenonTime": "sosa:phenomenonTime",
+        "hasResult": "sosa:hasResult",
         "isResultOf": "sosa:isResultOf",
+        "hasSimpleResult": "sosa:hasSimpleResult",
+        "resultTime": "sosa:resultTime",
         "isHostedBy": "sosa:isHostedBy",
         "isProxyFor": "ssn:isProxyFor",
         "wasOriginatedBy": "ssn:wasOriginatedBy",
@@ -172,31 +379,8 @@ Links to the schema:
         "hasSurvivalProperty": "ssn:systems/hasSurvivalProperty",
         "qualityOfObservation": "ssn:systems/qualityOfObservation",
         "hasMember": "sosa:hasMember",
-        "features": "sosa:hasMember",
-        "properties": "@nest",
         "featureType": "@type"
       }
-    },
-    "geometry": {
-      "@id": "geojson:geometry",
-      "@context": {}
-    },
-    "bbox": {
-      "@container": "@list",
-      "@id": "geojson:bbox"
-    },
-    "Feature": "geojson:Feature",
-    "FeatureCollection": "geojson:FeatureCollection",
-    "GeometryCollection": "geojson:GeometryCollection",
-    "LineString": "geojson:LineString",
-    "MultiLineString": "geojson:MultiLineString",
-    "MultiPoint": "geojson:MultiPoint",
-    "MultiPolygon": "geojson:MultiPolygon",
-    "Point": "geojson:Point",
-    "Polygon": "geojson:Polygon",
-    "features": {
-      "@container": "@set",
-      "@id": "sosa:hasMember"
     },
     "links": {
       "@id": "rdfs:seeAlso",
@@ -332,10 +516,6 @@ Links to the schema:
         "pitch": "geopose:pitch",
         "roll": "geopose:roll"
       }
-    },
-    "distance": {
-      "@id": "http://example.com/properties/distance",
-      "@type": "http://www.w3.org/2001/XMLSchema#float"
     },
     "geojson": "https://purl.org/geojson/vocab#",
     "oa": "http://www.w3.org/ns/oa#",

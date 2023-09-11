@@ -5,9 +5,50 @@
     "properties": {
       "@id": "@nest",
       "@context": {
+        "features": "sosa:hasMember",
+        "properties": "@nest"
+      }
+    },
+    "geometry": {
+      "@id": "geojson:geometry",
+      "@context": {}
+    },
+    "bbox": {
+      "@container": "@list",
+      "@id": "geojson:bbox"
+    },
+    "Feature": "geojson:Feature",
+    "FeatureCollection": "geojson:FeatureCollection",
+    "GeometryCollection": "geojson:GeometryCollection",
+    "LineString": "geojson:LineString",
+    "MultiLineString": "geojson:MultiLineString",
+    "MultiPoint": "geojson:MultiPoint",
+    "MultiPolygon": "geojson:MultiPolygon",
+    "Point": "geojson:Point",
+    "Polygon": "geojson:Polygon",
+    "features": {
+      "@container": "@set",
+      "@id": "sosa:hasMember",
+      "@context": {
+        "properties": {
+          "@id": "@nest",
+          "@context": {
+            "features": "sosa:hasMember",
+            "properties": "@nest"
+          }
+        },
+        "features": {
+          "@container": "@set",
+          "@id": "geojson:features"
+        },
         "Observation": "sosa:Observation",
         "Sample": "sosa:Sample",
+        "observedProperty": "sosa:observedProperty",
+        "phenomenonTime": "sosa:phenomenonTime",
+        "hasResult": "sosa:hasResult",
         "isResultOf": "sosa:isResultOf",
+        "hasSimpleResult": "sosa:hasSimpleResult",
+        "resultTime": "sosa:resultTime",
         "isHostedBy": "sosa:isHostedBy",
         "isProxyFor": "ssn:isProxyFor",
         "wasOriginatedBy": "ssn:wasOriginatedBy",
@@ -33,31 +74,8 @@
         "hasSurvivalProperty": "ssn:systems/hasSurvivalProperty",
         "qualityOfObservation": "ssn:systems/qualityOfObservation",
         "hasMember": "sosa:hasMember",
-        "features": "sosa:hasMember",
-        "properties": "@nest",
         "featureType": "@type"
       }
-    },
-    "geometry": {
-      "@id": "geojson:geometry",
-      "@context": {}
-    },
-    "bbox": {
-      "@container": "@list",
-      "@id": "geojson:bbox"
-    },
-    "Feature": "geojson:Feature",
-    "FeatureCollection": "geojson:FeatureCollection",
-    "GeometryCollection": "geojson:GeometryCollection",
-    "LineString": "geojson:LineString",
-    "MultiLineString": "geojson:MultiLineString",
-    "MultiPoint": "geojson:MultiPoint",
-    "MultiPolygon": "geojson:MultiPolygon",
-    "Point": "geojson:Point",
-    "Polygon": "geojson:Polygon",
-    "features": {
-      "@container": "@set",
-      "@id": "sosa:hasMember"
     },
     "links": {
       "@id": "rdfs:seeAlso",
@@ -193,10 +211,6 @@
         "pitch": "geopose:pitch",
         "roll": "geopose:roll"
       }
-    },
-    "distance": {
-      "@id": "http://example.com/properties/distance",
-      "@type": "http://www.w3.org/2001/XMLSchema#float"
     },
     "geojson": "https://purl.org/geojson/vocab#",
     "oa": "http://www.w3.org/ns/oa#",
