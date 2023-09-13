@@ -5,24 +5,83 @@
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix sosa:    <http://www.w3.org/ns/sosa/> .
 
-@base <http://example.com/rules> .
+@prefix :        <http://example.com/rules> .
 
-<#testRequiredInCollectionOrMember>
+:testInCollectionOrMember-observedProperty
     a                   sh:NodeShape ;
     sh:targetSubjectsOf sosa:hasResult, sosa:hasSimpleResult ;
-    sh:name             "Has Observed Property" ;
-    sh:message          "Observations must either declare observed property or be a member of a collection hierarchy that declares it" ;
-    sh:ask              """
+    sh:name             "observedProperty present" ;
+    sh:sparql           [ a            sh:SPARQLConstraint ;
+                          sh:message   "Observations must either declare required properties or be a member of a collection hierarchy that declares them," ;
+                          sh:prefixes: sosa: ;
+                          sh:select    """
         PREFIX dct: <http://purl.org/dc/terms/>
-        PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
-        prefix sosa:    <http://www.w3.org/ns/sosa/>
-        {
-            { ?this sosa:observedProperty ?prop }
-               UNION
-            {
-              ?coll sosa:observedProperty ?prop .
-              ?coll sosa:hasMember ?this
-            }
-        }
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+prefix sosa:    <http://www.w3.org/ns/sosa/>
 
-""" ; .
+                SELECT $this ?path ?total
+        WHERE {
+  			BIND ( sosa:observedProperty as ?path )
+           {
+            SELECT $this ?path ( SUM(?count) as ?total )
+            WHERE {
+                      {
+                          SELECT $this ?coll ?path ( COUNT(?prop1) AS ?count )
+                          WHERE
+                          {
+                              ?coll sosa:hasMember* $this .
+                              BIND ( sosa:observedProperty as ?path )
+                              OPTIONAL { ?coll  ?path ?prop1 }
+                          }
+                          GROUP BY $this ?coll ?path
+                       }
+
+             }
+              GROUP BY $this ?path
+          }
+          FILTER (?total = 0 )
+	}
+
+        """ ]
+.
+
+
+:testInCollectionOrMember-foi
+    a                   sh:NodeShape ;
+    sh:targetSubjectsOf sosa:hasResult, sosa:hasSimpleResult ;
+    sh:name             "Feature Of interest present" ;
+    sh:sparql           [ a            sh:SPARQLConstraint ;
+                          sh:message   "Observations must either declare required properties or be a member of a collection hierarchy that declares them," ;
+                          sh:prefixes: sosa: ;
+                          sh:select    """
+        PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+prefix sosa:    <http://www.w3.org/ns/sosa/>
+
+                SELECT $this ?path ?total
+        WHERE {
+  			BIND ( sosa:hasFeatureOfInterest as ?path )
+           {
+            SELECT $this ?path ( SUM(?count) as ?total )
+            WHERE {
+                      {
+                          SELECT $this ?coll ?path ( COUNT(?prop1) AS ?count )
+                          WHERE
+                          {
+                              ?coll sosa:hasMember* $this .
+                              BIND ( sosa:hasFeatureOfInterest as ?path )
+                              OPTIONAL { ?coll  ?path ?prop1 }
+                          }
+                          GROUP BY $this ?coll ?path
+                       }
+
+             }
+              GROUP BY $this ?path
+          }
+          FILTER (?total = 0 )
+	}
+
+        """ ]
+.
+
+
