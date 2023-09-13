@@ -262,8 +262,8 @@
       "maturity": "development",
       "scope": "unstable",
       "dependsOn": [
-        "ogc.unstable.sosa.properties.observation",
-        "ogc.geo.json-fg.feature-lenient"
+        "ogc.geo.json-fg.feature-lenient",
+        "ogc.unstable.sosa.properties.observation"
       ],
       "tags": [
         "sosa",
@@ -305,7 +305,7 @@
     {
       "name": "SOSA ObservationCollection Feature",
       "abstract": "This building blocks defines an ObservationCollection Feature according to the SOSA/SSN v1.1 specification.",
-      "status": "under-development",
+      "status": "invalid",
       "dateTimeAddition": "2023-04-13T00:00:00Z",
       "itemClass": "schema",
       "register": "ogc-building-block-register",
@@ -332,11 +332,13 @@
       ],
       "group": "SOSA",
       "itemIdentifier": "ogc.unstable.sosa.features.observationCollection",
-      "shaclRules": [],
+      "shaclRules": [
+        "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/rules.shacl"
+      ],
       "dependsOn": [
         "ogc.unstable.sosa.features.observation",
-        "ogc.unstable.sosa.properties.observationCollection",
-        "ogc.geo.json-fg.featureCollection-lenient"
+        "ogc.geo.json-fg.featureCollection-lenient",
+        "ogc.unstable.sosa.properties.observationCollection"
       ],
       "schema": {
         "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observationCollection/schema.yaml",
@@ -344,7 +346,7 @@
       },
       "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observationCollection/context.jsonld",
       "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/",
-      "validationPassed": true,
+      "validationPassed": false,
       "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/unstable/sosa/features/observationCollection/",
       "documentation": {
         "markdown": {
@@ -383,9 +385,9 @@
       "maturity": "development",
       "scope": "unstable",
       "dependsOn": [
-        "ogc.unstable.sosa.examples.vectorObservation",
-        "ogc.unstable.sosa.properties.observation",
         "ogc.unstable.sosa.features.observation",
+        "ogc.unstable.sosa.properties.observation",
+        "ogc.unstable.sosa.examples.vectorObservation",
         "ogc.unstable.sosa.features.observationCollection"
       ],
       "tags": [

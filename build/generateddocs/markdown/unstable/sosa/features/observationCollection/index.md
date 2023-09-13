@@ -5,7 +5,7 @@
 
 This building blocks defines an ObservationCollection Feature according to the SOSA/SSN v1.1 specification.
 
-[*Status*](http://www.opengis.net/def/status): Under development
+[*Status*](http://www.opengis.net/def/status): Invalid
 
 ## Examples
 
