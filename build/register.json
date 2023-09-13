@@ -217,7 +217,7 @@
   {
     "name": "SOSA ObservationCollection Feature",
     "abstract": "This building blocks defines an ObservationCollection Feature according to the SOSA/SSN v1.1 specification.",
-    "status": "invalid",
+    "status": "under-development",
     "dateTimeAddition": "2023-04-13T00:00:00Z",
     "itemClass": "schema",
     "register": "ogc-building-block-register",
@@ -258,7 +258,7 @@
     },
     "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observationCollection/context.jsonld",
     "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/",
-    "validationPassed": false,
+    "validationPassed": true,
     "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/unstable/sosa/features/observationCollection/",
     "documentation": {
       "markdown": {
@@ -293,10 +293,10 @@
     "maturity": "development",
     "scope": "unstable",
     "dependsOn": [
+      "ogc.unstable.sosa.features.observationCollection",
       "ogc.unstable.sosa.features.observation",
-      "ogc.unstable.sosa.properties.observation",
       "ogc.unstable.sosa.examples.vectorObservation",
-      "ogc.unstable.sosa.features.observationCollection"
+      "ogc.unstable.sosa.properties.observation"
     ],
     "tags": [
       "sosa",

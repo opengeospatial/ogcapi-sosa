@@ -1,0 +1,67 @@
+=== Files ===
+Using observationCollection-props-fail.json
+JSON-LD context is present - uplifting
+Output JSON-LD observationCollection-props-fail.jsonld created
+Output Turtle observationCollection-props-fail.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+
+=== SHACL ===
+Using SHACL files for validation:
+ - features/observationCollection/rules.shacl
+
+** Validation error **
+Validation Report
+Conforms: False
+Results (1):
+Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: <http://example.com/rulestestInCollectionOrMember-observedProperty>
+	Focus Node: <file:///github/workspace/pop1999>
+	Value Node: <file:///github/workspace/pop1999>
+	Result Path: sosa:observedProperty
+	Source Constraint: [ <http://www.w3.org/ns/shacl#prefixes:> <http://www.w3.org/ns/sosa/> ; rdf:type sh:SPARQLConstraint ; sh:message Literal("Observations must either declare required properties or be a member of a collection hierarchy that declares them,") ; sh:select Literal("
+        PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+prefix sosa:    <http://www.w3.org/ns/sosa/>
+
+                SELECT $this ?path ?total
+        WHERE {
+  			BIND ( sosa:observedProperty as ?path )
+           {
+            SELECT $this ?path ( SUM(?count) as ?total )
+            WHERE {
+                      {
+                          SELECT $this ?coll ?path ( COUNT(?prop1) AS ?count )
+                          WHERE
+                          {
+                              ?coll sosa:hasMember* $this .
+                              BIND ( sosa:observedProperty as ?path )
+                              OPTIONAL { ?coll  ?path ?prop1 }
+                          }
+                          GROUP BY $this ?coll ?path
+                       }
+
+             }
+              GROUP BY $this ?path
+          }
+          FILTER (?total = 0 )
+	}
+
+        ") ]
+	Message: Observations must either declare required properties or be a member of a collection hierarchy that declares them,
+
+Focus nodes:
+ - Shape :testInCollectionOrMember-foi: <file:///github/workspace/pop1999>
+ - Shape :testInCollectionOrMember-observedProperty: <file:///github/workspace/pop1999>
+
+=== End SHACL ===
+
+=== General ===
+Test was expected to fail and it did.
+
+=== End General ===
+
