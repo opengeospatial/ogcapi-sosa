@@ -21,9 +21,9 @@ It is assumed that this will be backwards compatible with the last published SOS
 This building block self-documents using the build process described below.  For each component building block in this repository the
 deployed documentation is built on commit and can be found here: 
 
-https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/slate-build/unstable/sosa/features/observation
+https://opengeospatial.github.io/ogcapi-sosa/
 
-(TODO - create index in Slate)
+
 
 ## General Building block repository structure
 
