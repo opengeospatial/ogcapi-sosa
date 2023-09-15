@@ -160,7 +160,7 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
 ```json
 {
     "@context": {
-    "resultschema": "http//example.org/resultschema/",
+    "resultschema": "http://example.org/resultschema/",
     "pose": "resultschema:pose",
     "distance": {
       "@id": "resultschema:distance"
@@ -227,7 +227,7 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
   "@context": [
     "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/context.jsonld",
     {
-      "resultschema": "http//example.org/resultschema/",
+      "resultschema": "http://example.org/resultschema/",
       "pose": "resultschema:pose",
       "distance": {
         "@id": "resultschema:distance"
@@ -295,7 +295,7 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix geopose: <http://example.com/geopose/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix resultschema: <http//example.org/resultschema/> .
+@prefix resultschema: <http://example.org/resultschema/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
