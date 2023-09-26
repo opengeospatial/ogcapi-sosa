@@ -51,8 +51,8 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
                 40.056709946862874
               ],
               [
-                -111.67183507997295,
-                40.056709946862874
+                -111.71,
+                40.156709946862874
               ]
             ]
           },
@@ -78,10 +78,13 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
             }
           }
         }
+
 ```
 
 <blockquote class="lang-specific json">
-<p><a target="_blank" href="https://avillar.github.io/TreedocViewer/?dataParser=json&amp;dataUrl=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Funstable%2Fsosa%2Fexamples%2FvectorObservationFeature%2Fexample_1_1.json&amp;expand=2&amp;option=%7B%22showTable%22%3A+false%7D">View on JSON Viewer</a></p>
+  <p class="example-links">
+    <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/unstable/sosa/examples/vectorObservationFeature/example_1_1.json">Open in new window</a>
+    <a target="_blank" href="https://avillar.github.io/TreedocViewer/?dataParser=json&amp;dataUrl=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Funstable%2Fsosa%2Fexamples%2FvectorObservationFeature%2Fexample_1_1.json&amp;expand=2&amp;option=%7B%22showTable%22%3A+false%7D">View on JSON Viewer</a></p>
 </blockquote>
 
 
@@ -99,8 +102,8 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
         40.056709946862874
       ],
       [
-        -111.67183507997295,
-        40.056709946862874
+        -111.71,
+        40.156709946862875
       ]
     ]
   },
@@ -130,7 +133,9 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
 ```
 
 <blockquote class="lang-specific jsonld">
-<p><a target="_blank" href="https://json-ld.org/playground/#json-ld=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Funstable%2Fsosa%2Fexamples%2FvectorObservationFeature%2Fexample_1_1.jsonld">View on JSON-LD Playground</a></p>
+  <p class="example-links">
+    <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/unstable/sosa/examples/vectorObservationFeature/example_1_1.jsonld">Open in new window</a>
+    <a target="_blank" href="https://json-ld.org/playground/#json-ld=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Funstable%2Fsosa%2Fexamples%2FvectorObservationFeature%2Fexample_1_1.jsonld">View on JSON-LD Playground</a>
 </blockquote>
 
 
@@ -140,17 +145,22 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://example.com/features/vector-obs-1> a geojson:Feature ;
     sosa:hasFeatureOfInterest <eg:Traverse-P1-P2> ;
     sosa:hasResult [ ] ;
     sosa:resultTime "2023-05-22T16:41:00+2" ;
     geojson:geometry [ a geojson:LineString ;
-            geojson:coordinates ( ( -1.116718e+02 4.005671e+01 ) ( -1.116718e+02 4.005671e+01 ) ) ] .
+            geojson:coordinates ( "[-111.67183507997295, 40.056709946862874]" "[-111.71, 40.156709946862875]" ) ] .
 
 
 ```
+
+<blockquote class="lang-specific turtle">
+  <p class="example-links">
+    <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/unstable/sosa/examples/vectorObservationFeature/example_1_1.ttl">Open in new window</a>
+</blockquote>
+
 
 
 ## VectorObservationCollection
@@ -216,7 +226,9 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
 ```
 
 <blockquote class="lang-specific json">
-<p><a target="_blank" href="https://avillar.github.io/TreedocViewer/?dataParser=json&amp;dataUrl=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Funstable%2Fsosa%2Fexamples%2FvectorObservationFeature%2Fexample_2_1.json&amp;expand=2&amp;option=%7B%22showTable%22%3A+false%7D">View on JSON Viewer</a></p>
+  <p class="example-links">
+    <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/unstable/sosa/examples/vectorObservationFeature/example_2_1.json">Open in new window</a>
+    <a target="_blank" href="https://avillar.github.io/TreedocViewer/?dataParser=json&amp;dataUrl=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Funstable%2Fsosa%2Fexamples%2FvectorObservationFeature%2Fexample_2_1.json&amp;expand=2&amp;option=%7B%22showTable%22%3A+false%7D">View on JSON Viewer</a></p>
 </blockquote>
 
 
@@ -284,7 +296,9 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
 ```
 
 <blockquote class="lang-specific jsonld">
-<p><a target="_blank" href="https://json-ld.org/playground/#json-ld=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Funstable%2Fsosa%2Fexamples%2FvectorObservationFeature%2Fexample_2_1.jsonld">View on JSON-LD Playground</a></p>
+  <p class="example-links">
+    <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/unstable/sosa/examples/vectorObservationFeature/example_2_1.jsonld">Open in new window</a>
+    <a target="_blank" href="https://json-ld.org/playground/#json-ld=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Funstable%2Fsosa%2Fexamples%2FvectorObservationFeature%2Fexample_2_1.jsonld">View on JSON-LD Playground</a>
 </blockquote>
 
 
@@ -315,10 +329,16 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
                             geo1:long 4.005671e+01 ] ] ] ;
     sosa:resultTime "2023-05-22T16:41:00+2" ;
     geojson:geometry [ a geojson:LineString ;
-            geojson:coordinates ( ( -1.116718e+02 4.005671e+01 ) ( -1.116718e+02 4.005671e+01 ) ) ] .
+            geojson:coordinates ( "[-111.67183507997295, 40.056709946862874]" "[-111.67183507997295, 40.056709946862874]" ) ] .
 
 
 ```
+
+<blockquote class="lang-specific turtle">
+  <p class="example-links">
+    <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/unstable/sosa/examples/vectorObservationFeature/example_2_1.ttl">Open in new window</a>
+</blockquote>
+
 
 
 # JSON Schema
@@ -364,13 +384,7 @@ Links to the schema:
   "@context": {
     "type": "@type",
     "id": "@id",
-    "properties": {
-      "@id": "@nest",
-      "@context": {
-        "features": "sosa:hasMember",
-        "properties": "@nest"
-      }
-    },
+    "properties": "@nest",
     "geometry": {
       "@id": "geojson:geometry",
       "@context": {}
@@ -392,25 +406,13 @@ Links to the schema:
       "@container": "@set",
       "@id": "sosa:hasMember",
       "@context": {
-        "properties": {
-          "@id": "@nest",
-          "@context": {
-            "features": "sosa:hasMember",
-            "properties": "@nest"
-          }
-        },
         "features": {
           "@container": "@set",
-          "@id": "geojson:features"
+          "@id": "sosa:hasMember"
         },
         "Observation": "sosa:Observation",
         "Sample": "sosa:Sample",
-        "observedProperty": "sosa:observedProperty",
-        "phenomenonTime": "sosa:phenomenonTime",
-        "hasResult": "sosa:hasResult",
         "isResultOf": "sosa:isResultOf",
-        "hasSimpleResult": "sosa:hasSimpleResult",
-        "resultTime": "sosa:resultTime",
         "isHostedBy": "sosa:isHostedBy",
         "isProxyFor": "ssn:isProxyFor",
         "wasOriginatedBy": "ssn:wasOriginatedBy",
@@ -460,10 +462,25 @@ Links to the schema:
       "@container": "@list",
       "@id": "geojson:coordinates"
     },
+    "resultTime": "sosa:resultTime",
+    "phenomenonTime": "sosa:phenomenonTime",
+    "hasFeatureOfInterest": {
+      "@id": "sosa:hasFeatureOfInterest",
+      "@type": "@id"
+    },
+    "observedProperty": "sosa:observedProperty",
+    "usedProcedure": {
+      "@id": "sosa:usedProcedure",
+      "@type": "@id"
+    },
+    "madeBySensor": {
+      "@id": "sosa:madeBySensor",
+      "@type": "@id"
+    },
+    "hasResult": "sosa:hasResult",
+    "hasSimpleResult": "sosa:hasSimpleResult",
     "Observation": "sosa:Observation",
     "Sample": "sosa:Sample",
-    "observedProperty": "sosa:observedProperty",
-    "phenomenonTime": "sosa:phenomenonTime",
     "observes": {
       "@id": "sosa:observes",
       "@type": "@id"
@@ -474,10 +491,6 @@ Links to the schema:
     },
     "madeObservation": {
       "@id": "sosa:madeObservation",
-      "@type": "@id"
-    },
-    "madeBySensor": {
-      "@id": "sosa:madeBySensor",
       "@type": "@id"
     },
     "actsOnProperty": {
@@ -512,22 +525,11 @@ Links to the schema:
       "@id": "sosa:madeBySampler",
       "@type": "@id"
     },
-    "hasFeatureOfInterest": {
-      "@id": "sosa:hasFeatureOfInterest",
-      "@type": "@id"
-    },
     "isFeatureOfInterestOf": {
       "@id": "sosa:isFeatureOfInterestOf",
       "@type": "@id"
     },
-    "hasResult": "sosa:hasResult",
     "isResultOf": "sosa:isResultOf",
-    "hasSimpleResult": "sosa:hasSimpleResult",
-    "resultTime": "sosa:resultTime",
-    "usedProcedure": {
-      "@id": "sosa:usedProcedure",
-      "@type": "@id"
-    },
     "hosts": {
       "@id": "sosa:hosts",
       "@type": "@id"
@@ -575,8 +577,8 @@ Links to the schema:
       }
     },
     "geojson": "https://purl.org/geojson/vocab#",
-    "oa": "http://www.w3.org/ns/oa#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "oa": "http://www.w3.org/ns/oa#",
     "dct": "http://purl.org/dc/terms/",
     "sosa": "http://www.w3.org/ns/sosa/",
     "ssn": "http://www.w3.org/ns/ssn/",
@@ -592,6 +594,14 @@ Links to the schema:
 
 You can find the full JSON-LD context here:
 <a href="https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/context.jsonld" target="_blank">https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/context.jsonld</a>
+
+# Validation
+
+## SHACL Shapes
+
+The following SHACL shapes are used for validating this building block:
+
+* [https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservationFeature/rules.shacl](https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservationFeature/rules.shacl)
 
 # References
 

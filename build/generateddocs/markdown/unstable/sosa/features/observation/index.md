@@ -246,18 +246,7 @@ Links to the schema:
   "@context": {
     "type": "@type",
     "id": "@id",
-    "properties": {
-      "@id": "@nest",
-      "@context": {
-        "resultTime": "sosa:resultTime",
-        "phenomenonTime": "sosa:phenomenonTime",
-        "observedProperty": "sosa:observedProperty",
-        "hasResult": "sosa:hasResult",
-        "hasSimpleResult": "sosa:hasSimpleResult",
-        "features": "sosa:hasMember",
-        "properties": "@nest"
-      }
-    },
+    "properties": "@nest",
     "geometry": {
       "@id": "geojson:geometry",
       "@context": {}
@@ -277,7 +266,7 @@ Links to the schema:
     "Polygon": "geojson:Polygon",
     "features": {
       "@container": "@set",
-      "@id": "geojson:features"
+      "@id": "sosa:hasMember"
     },
     "links": {
       "@id": "rdfs:seeAlso",
@@ -300,10 +289,25 @@ Links to the schema:
       "@container": "@list",
       "@id": "geojson:coordinates"
     },
+    "resultTime": "sosa:resultTime",
+    "phenomenonTime": "sosa:phenomenonTime",
+    "hasFeatureOfInterest": {
+      "@id": "sosa:hasFeatureOfInterest",
+      "@type": "@id"
+    },
+    "observedProperty": "sosa:observedProperty",
+    "usedProcedure": {
+      "@id": "sosa:usedProcedure",
+      "@type": "@id"
+    },
+    "madeBySensor": {
+      "@id": "sosa:madeBySensor",
+      "@type": "@id"
+    },
+    "hasResult": "sosa:hasResult",
+    "hasSimpleResult": "sosa:hasSimpleResult",
     "Observation": "sosa:Observation",
     "Sample": "sosa:Sample",
-    "observedProperty": "sosa:observedProperty",
-    "phenomenonTime": "sosa:phenomenonTime",
     "observes": {
       "@id": "sosa:observes",
       "@type": "@id"
@@ -314,10 +318,6 @@ Links to the schema:
     },
     "madeObservation": {
       "@id": "sosa:madeObservation",
-      "@type": "@id"
-    },
-    "madeBySensor": {
-      "@id": "sosa:madeBySensor",
       "@type": "@id"
     },
     "actsOnProperty": {
@@ -352,22 +352,11 @@ Links to the schema:
       "@id": "sosa:madeBySampler",
       "@type": "@id"
     },
-    "hasFeatureOfInterest": {
-      "@id": "sosa:hasFeatureOfInterest",
-      "@type": "@id"
-    },
     "isFeatureOfInterestOf": {
       "@id": "sosa:isFeatureOfInterestOf",
       "@type": "@id"
     },
-    "hasResult": "sosa:hasResult",
     "isResultOf": "sosa:isResultOf",
-    "hasSimpleResult": "sosa:hasSimpleResult",
-    "resultTime": "sosa:resultTime",
-    "usedProcedure": {
-      "@id": "sosa:usedProcedure",
-      "@type": "@id"
-    },
     "hosts": {
       "@id": "sosa:hosts",
       "@type": "@id"
@@ -399,8 +388,8 @@ Links to the schema:
     "hasMember": "sosa:hasMember",
     "featureType": "@type",
     "geojson": "https://purl.org/geojson/vocab#",
-    "oa": "http://www.w3.org/ns/oa#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "oa": "http://www.w3.org/ns/oa#",
     "dct": "http://purl.org/dc/terms/",
     "sosa": "http://www.w3.org/ns/sosa/",
     "ssn": "http://www.w3.org/ns/ssn/",

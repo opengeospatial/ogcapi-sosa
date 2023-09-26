@@ -23,18 +23,6 @@
       "@id": "sosa:hasMember",
       "@context": {
         "id": "@id",
-        "properties": {
-          "@id": "@nest",
-          "@context": {
-            "resultTime": "sosa:resultTime",
-            "phenomenonTime": "sosa:phenomenonTime",
-            "observedProperty": "sosa:observedProperty",
-            "hasResult": "sosa:hasResult",
-            "hasSimpleResult": "sosa:hasSimpleResult",
-            "features": "sosa:hasMember",
-            "properties": "@nest"
-          }
-        },
         "geometry": {
           "@id": "geojson:geometry",
           "@context": {}
@@ -54,28 +42,34 @@
         "Polygon": "geojson:Polygon",
         "features": {
           "@container": "@set",
-          "@id": "geojson:features"
+          "@id": "sosa:hasMember"
         },
         "coordinates": {
           "@container": "@list",
           "@id": "geojson:coordinates"
-        }
+        },
+        "hasResult": "sosa:hasResult",
+        "hasSimpleResult": "sosa:hasSimpleResult"
       }
     },
-    "properties": {
-      "@id": "@nest",
-      "@context": {
-        "resultTime": "sosa:resultTime",
-        "phenomenonTime": "sosa:phenomenonTime",
-        "observedProperty": "sosa:observedProperty",
-        "features": "sosa:hasMember",
-        "properties": "@nest"
-      }
+    "properties": "@nest",
+    "resultTime": "sosa:resultTime",
+    "phenomenonTime": "sosa:phenomenonTime",
+    "hasFeatureOfInterest": {
+      "@id": "sosa:hasFeatureOfInterest",
+      "@type": "@id"
+    },
+    "observedProperty": "sosa:observedProperty",
+    "usedProcedure": {
+      "@id": "sosa:usedProcedure",
+      "@type": "@id"
+    },
+    "madeBySensor": {
+      "@id": "sosa:madeBySensor",
+      "@type": "@id"
     },
     "Observation": "sosa:Observation",
     "Sample": "sosa:Sample",
-    "observedProperty": "sosa:observedProperty",
-    "phenomenonTime": "sosa:phenomenonTime",
     "observes": {
       "@id": "sosa:observes",
       "@type": "@id"
@@ -86,10 +80,6 @@
     },
     "madeObservation": {
       "@id": "sosa:madeObservation",
-      "@type": "@id"
-    },
-    "madeBySensor": {
-      "@id": "sosa:madeBySensor",
       "@type": "@id"
     },
     "actsOnProperty": {
@@ -124,10 +114,6 @@
       "@id": "sosa:madeBySampler",
       "@type": "@id"
     },
-    "hasFeatureOfInterest": {
-      "@id": "sosa:hasFeatureOfInterest",
-      "@type": "@id"
-    },
     "isFeatureOfInterestOf": {
       "@id": "sosa:isFeatureOfInterestOf",
       "@type": "@id"
@@ -135,11 +121,6 @@
     "hasResult": "sosa:hasResult",
     "isResultOf": "sosa:isResultOf",
     "hasSimpleResult": "sosa:hasSimpleResult",
-    "resultTime": "sosa:resultTime",
-    "usedProcedure": {
-      "@id": "sosa:usedProcedure",
-      "@type": "@id"
-    },
     "hosts": {
       "@id": "sosa:hosts",
       "@type": "@id"
@@ -170,10 +151,27 @@
     "qualityOfObservation": "ssn:systems/qualityOfObservation",
     "hasMember": "sosa:hasMember",
     "featureType": "@type",
+    "Feature": "geojson:Feature",
+    "FeatureCollection": "geojson:FeatureCollection",
+    "GeometryCollection": "geojson:GeometryCollection",
+    "LineString": "geojson:LineString",
+    "MultiLineString": "geojson:MultiLineString",
+    "MultiPoint": "geojson:MultiPoint",
+    "MultiPolygon": "geojson:MultiPolygon",
+    "Point": "geojson:Point",
+    "Polygon": "geojson:Polygon",
+    "bbox": {
+      "x-jsonld-container": "@list",
+      "x-jsonld-id": "https://purl.org/geojson/vocab#bbox"
+    },
+    "coordinates": {
+      "x-jsonld-container": "@list",
+      "x-jsonld-id": "https://purl.org/geojson/vocab#coordinates"
+    },
+    "geojson": "https://purl.org/geojson/vocab#",
     "oa": "http://www.w3.org/ns/oa#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "dct": "http://purl.org/dc/terms/",
-    "geojson": "https://purl.org/geojson/vocab#",
     "sosa": "http://www.w3.org/ns/sosa/",
     "ssn": "http://www.w3.org/ns/ssn/",
     "ssn-system": "ssn:systems/",

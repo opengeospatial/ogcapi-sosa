@@ -3,8 +3,8 @@
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://www.example.com/sosa/c1> a <http://www.example.com/sosa/FeatureCollection>,
-        sosa:ObservationCollection ;
+<http://www.example.com/sosa/c1> a sosa:ObservationCollection,
+        geojson:FeatureCollection ;
     sosa:hasMember <http://www.example.com/sosa/pop1999>,
         <http://www.example.com/sosa/something> ;
     sosa:resultTime "1999" .

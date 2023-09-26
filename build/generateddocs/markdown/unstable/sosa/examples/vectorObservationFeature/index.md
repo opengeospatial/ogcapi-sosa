@@ -23,8 +23,8 @@ This building block defines an example SOSA Observation Feature for a Vector Obs
                 40.056709946862874
               ],
               [
-                -111.67183507997295,
-                40.056709946862874
+                -111.71,
+                40.156709946862874
               ]
             ]
           },
@@ -50,6 +50,7 @@ This building block defines an example SOSA Observation Feature for a Vector Obs
             }
           }
         }
+
 ```
 
 #### jsonld
@@ -65,8 +66,8 @@ This building block defines an example SOSA Observation Feature for a Vector Obs
         40.056709946862874
       ],
       [
-        -111.67183507997295,
-        40.056709946862874
+        -111.71,
+        40.156709946862875
       ]
     ]
   },
@@ -100,14 +101,13 @@ This building block defines an example SOSA Observation Feature for a Vector Obs
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://example.com/features/vector-obs-1> a geojson:Feature ;
     sosa:hasFeatureOfInterest <eg:Traverse-P1-P2> ;
     sosa:hasResult [ ] ;
     sosa:resultTime "2023-05-22T16:41:00+2" ;
     geojson:geometry [ a geojson:LineString ;
-            geojson:coordinates ( ( -1.116718e+02 4.005671e+01 ) ( -1.116718e+02 4.005671e+01 ) ) ] .
+            geojson:coordinates ( "[-111.67183507997295, 40.056709946862874]" "[-111.71, 40.156709946862875]" ) ] .
 
 
 ```
@@ -261,7 +261,7 @@ This building block defines an example SOSA Observation Feature for a Vector Obs
                             geo1:long 4.005671e+01 ] ] ] ;
     sosa:resultTime "2023-05-22T16:41:00+2" ;
     geojson:geometry [ a geojson:LineString ;
-            geojson:coordinates ( ( -1.116718e+02 4.005671e+01 ) ( -1.116718e+02 4.005671e+01 ) ) ] .
+            geojson:coordinates ( "[-111.67183507997295, 40.056709946862874]" "[-111.67183507997295, 40.056709946862874]" ) ] .
 
 
 ```
@@ -307,13 +307,7 @@ Links to the schema:
   "@context": {
     "type": "@type",
     "id": "@id",
-    "properties": {
-      "@id": "@nest",
-      "@context": {
-        "features": "sosa:hasMember",
-        "properties": "@nest"
-      }
-    },
+    "properties": "@nest",
     "geometry": {
       "@id": "geojson:geometry",
       "@context": {}
@@ -335,25 +329,13 @@ Links to the schema:
       "@container": "@set",
       "@id": "sosa:hasMember",
       "@context": {
-        "properties": {
-          "@id": "@nest",
-          "@context": {
-            "features": "sosa:hasMember",
-            "properties": "@nest"
-          }
-        },
         "features": {
           "@container": "@set",
-          "@id": "geojson:features"
+          "@id": "sosa:hasMember"
         },
         "Observation": "sosa:Observation",
         "Sample": "sosa:Sample",
-        "observedProperty": "sosa:observedProperty",
-        "phenomenonTime": "sosa:phenomenonTime",
-        "hasResult": "sosa:hasResult",
         "isResultOf": "sosa:isResultOf",
-        "hasSimpleResult": "sosa:hasSimpleResult",
-        "resultTime": "sosa:resultTime",
         "isHostedBy": "sosa:isHostedBy",
         "isProxyFor": "ssn:isProxyFor",
         "wasOriginatedBy": "ssn:wasOriginatedBy",
@@ -403,10 +385,25 @@ Links to the schema:
       "@container": "@list",
       "@id": "geojson:coordinates"
     },
+    "resultTime": "sosa:resultTime",
+    "phenomenonTime": "sosa:phenomenonTime",
+    "hasFeatureOfInterest": {
+      "@id": "sosa:hasFeatureOfInterest",
+      "@type": "@id"
+    },
+    "observedProperty": "sosa:observedProperty",
+    "usedProcedure": {
+      "@id": "sosa:usedProcedure",
+      "@type": "@id"
+    },
+    "madeBySensor": {
+      "@id": "sosa:madeBySensor",
+      "@type": "@id"
+    },
+    "hasResult": "sosa:hasResult",
+    "hasSimpleResult": "sosa:hasSimpleResult",
     "Observation": "sosa:Observation",
     "Sample": "sosa:Sample",
-    "observedProperty": "sosa:observedProperty",
-    "phenomenonTime": "sosa:phenomenonTime",
     "observes": {
       "@id": "sosa:observes",
       "@type": "@id"
@@ -417,10 +414,6 @@ Links to the schema:
     },
     "madeObservation": {
       "@id": "sosa:madeObservation",
-      "@type": "@id"
-    },
-    "madeBySensor": {
-      "@id": "sosa:madeBySensor",
       "@type": "@id"
     },
     "actsOnProperty": {
@@ -455,22 +448,11 @@ Links to the schema:
       "@id": "sosa:madeBySampler",
       "@type": "@id"
     },
-    "hasFeatureOfInterest": {
-      "@id": "sosa:hasFeatureOfInterest",
-      "@type": "@id"
-    },
     "isFeatureOfInterestOf": {
       "@id": "sosa:isFeatureOfInterestOf",
       "@type": "@id"
     },
-    "hasResult": "sosa:hasResult",
     "isResultOf": "sosa:isResultOf",
-    "hasSimpleResult": "sosa:hasSimpleResult",
-    "resultTime": "sosa:resultTime",
-    "usedProcedure": {
-      "@id": "sosa:usedProcedure",
-      "@type": "@id"
-    },
     "hosts": {
       "@id": "sosa:hosts",
       "@type": "@id"
@@ -518,8 +500,8 @@ Links to the schema:
       }
     },
     "geojson": "https://purl.org/geojson/vocab#",
-    "oa": "http://www.w3.org/ns/oa#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "oa": "http://www.w3.org/ns/oa#",
     "dct": "http://purl.org/dc/terms/",
     "sosa": "http://www.w3.org/ns/sosa/",
     "ssn": "http://www.w3.org/ns/ssn/",
