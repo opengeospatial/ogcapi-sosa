@@ -75,7 +75,9 @@ anyOf:
   x-jsonld-extra-terms:
     Observation: http://www.w3.org/ns/sosa/Observation
     Sample: http://www.w3.org/ns/sosa/Sample
-    observedProperty: http://www.w3.org/ns/sosa/observedProperty
+    observedProperty:
+      x-jsonld-id: http://www.w3.org/ns/sosa/observedProperty
+      x-jsonld-type: '@id'
     phenomenonTime: http://www.w3.org/ns/sosa/phenomenonTime
     observes:
       x-jsonld-id: http://www.w3.org/ns/sosa/observes
@@ -179,7 +181,9 @@ anyOf:
   x-jsonld-extra-terms:
     Observation: http://www.w3.org/ns/sosa/Observation
     Sample: http://www.w3.org/ns/sosa/Sample
-    observedProperty: http://www.w3.org/ns/sosa/observedProperty
+    observedProperty:
+      x-jsonld-id: http://www.w3.org/ns/sosa/observedProperty
+      x-jsonld-type: '@id'
     phenomenonTime: http://www.w3.org/ns/sosa/phenomenonTime
     observes:
       x-jsonld-id: http://www.w3.org/ns/sosa/observes
@@ -287,6 +291,7 @@ anyOf:
       - object
       - string
       x-jsonld-id: http://www.w3.org/ns/sosa/observedProperty
+      x-jsonld-type: '@id'
     usedProcedure:
       type:
       - object
@@ -303,7 +308,7 @@ anyOf:
       x-jsonld-id: http://www.w3.org/ns/sosa/hasResult
     hasSimpleResult:
       x-jsonld-id: http://www.w3.org/ns/sosa/hasSimpleResult
-  oneOf:
+  anyOf:
   - required:
     - hasResult
   - required:
@@ -385,46 +390,59 @@ anyOf:
     ssn-system: http://www.w3.org/ns/ssn/systems/
 - $schema: https://json-schema.org/draft/2020-12/schema
   description: SOSA ObservationCollection
-  type: object
-  properties:
-    resultTime:
-      type: string
-      format: date-time
-      x-jsonld-id: http://www.w3.org/ns/sosa/resultTime
-    phenomenonTime:
-      type:
-      - object
-      - string
-      x-jsonld-id: http://www.w3.org/ns/sosa/phenomenonTime
-    hasFeatureOfInterest:
-      type:
-      - object
-      - string
-      x-jsonld-id: http://www.w3.org/ns/sosa/hasFeatureOfInterest
-      x-jsonld-type: '@id'
-    observedProperty:
-      type:
-      - object
-      - string
-      x-jsonld-id: http://www.w3.org/ns/sosa/observedProperty
-    usedProcedure:
-      type:
-      - object
-      - string
-      x-jsonld-id: http://www.w3.org/ns/sosa/usedProcedure
-      x-jsonld-type: '@id'
-    madeBySensor:
-      type:
-      - object
-      - string
-      x-jsonld-id: http://www.w3.org/ns/sosa/madeBySensor
-      x-jsonld-type: '@id'
-  not:
-    anyOf:
-    - required:
-      - hasResult
-    - required:
-      - hasSimpleResult
+  $defs:
+    collection:
+      type: object
+      properties:
+        resultTime:
+          type: string
+          format: date-time
+          x-jsonld-id: http://www.w3.org/ns/sosa/resultTime
+        phenomenonTime:
+          type:
+          - object
+          - string
+          x-jsonld-id: http://www.w3.org/ns/sosa/phenomenonTime
+        hasFeatureOfInterest:
+          type:
+          - object
+          - string
+          x-jsonld-id: http://www.w3.org/ns/sosa/hasFeatureOfInterest
+          x-jsonld-type: '@id'
+        observedProperty:
+          type:
+          - object
+          - string
+          x-jsonld-id: http://www.w3.org/ns/sosa/observedProperty
+          x-jsonld-type: '@id'
+        usedProcedure:
+          type:
+          - object
+          - string
+          x-jsonld-id: http://www.w3.org/ns/sosa/usedProcedure
+          x-jsonld-type: '@id'
+        madeBySensor:
+          type:
+          - object
+          - string
+          x-jsonld-id: http://www.w3.org/ns/sosa/madeBySensor
+          x-jsonld-type: '@id'
+        hasMember:
+          type: array
+          items:
+            anyOf:
+            - $ref: properties/observationCollection/schema.yaml/#/$defs/collection
+            - $ref: properties/observation/schema.yaml
+            - $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml
+          x-jsonld-id: http://www.w3.org/ns/sosa/hasMember
+  allOf:
+  - $ref: properties/observationCollection/schema.yaml/#/$defs/collection
+  - not:
+      anyOf:
+      - required:
+        - hasResult
+      - required:
+        - hasSimpleResult
   x-jsonld-extra-terms:
     Observation: http://www.w3.org/ns/sosa/Observation
     Sample: http://www.w3.org/ns/sosa/Sample
@@ -494,7 +512,6 @@ anyOf:
     hasSurvivalRange: http://www.w3.org/ns/ssn/systems/hasSurvivalRange
     hasSurvivalProperty: http://www.w3.org/ns/ssn/systems/hasSurvivalProperty
     qualityOfObservation: http://www.w3.org/ns/ssn/systems/qualityOfObservation
-    hasMember: http://www.w3.org/ns/sosa/hasMember
     features: http://www.w3.org/ns/sosa/hasMember
     properties: '@nest'
     featureType: '@type'
@@ -522,7 +539,10 @@ Links to the schema:
       "@id": "sosa:hasFeatureOfInterest",
       "@type": "@id"
     },
-    "observedProperty": "sosa:observedProperty",
+    "observedProperty": {
+      "@id": "sosa:observedProperty",
+      "@type": "@id"
+    },
     "usedProcedure": {
       "@id": "sosa:usedProcedure",
       "@type": "@id"
@@ -612,7 +632,18 @@ Links to the schema:
     "hasSurvivalRange": "ssn:systems/hasSurvivalRange",
     "hasSurvivalProperty": "ssn:systems/hasSurvivalProperty",
     "qualityOfObservation": "ssn:systems/qualityOfObservation",
-    "hasMember": "sosa:hasMember",
+    "hasMember": {
+      "@id": "sosa:hasMember",
+      "@context": {
+        "hasMember": {
+          "@id": "sosa:hasMember",
+          "@context": {
+            "hasMember": "sosa:hasMember"
+          }
+        },
+        "features": "sosa:hasMember"
+      }
+    },
     "features": {
       "@id": "sosa:hasMember",
       "@container": "@set",
@@ -620,7 +651,8 @@ Links to the schema:
         "features": {
           "@container": "@set",
           "@id": "sosa:hasMember"
-        }
+        },
+        "hasMember": "sosa:hasMember"
       }
     },
     "properties": "@nest",

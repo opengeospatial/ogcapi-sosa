@@ -26,11 +26,11 @@ This building block defines an example SOSA Observation Feature for a Vector Obs
 
 <p class="status">
     <span data-rainbow-uri="http://www.opengis.net/def/status">Status</span>:
-    <a href="http://www.opengis.net/def/status/under-development" target="_blank" data-rainbow-uri>Under development</a>
+    <a href="http://www.opengis.net/def/status/invalid" target="_blank" data-rainbow-uri>Invalid</a>
 </p>
 
-<aside class="success">
-This building block is <strong><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/unstable/sosa/examples/vectorObservationFeature/" target="_blank">valid</a></strong>
+<aside class="warning">
+Validation for this building block has <strong><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/unstable/sosa/examples/vectorObservationFeature/" target="_blank">failed</a></strong>
 </aside>
 
 # Examples
@@ -468,7 +468,10 @@ Links to the schema:
       "@id": "sosa:hasFeatureOfInterest",
       "@type": "@id"
     },
-    "observedProperty": "sosa:observedProperty",
+    "observedProperty": {
+      "@id": "sosa:observedProperty",
+      "@type": "@id"
+    },
     "usedProcedure": {
       "@id": "sosa:usedProcedure",
       "@type": "@id"
@@ -558,7 +561,46 @@ Links to the schema:
     "hasSurvivalRange": "ssn:systems/hasSurvivalRange",
     "hasSurvivalProperty": "ssn:systems/hasSurvivalProperty",
     "qualityOfObservation": "ssn:systems/qualityOfObservation",
-    "hasMember": "sosa:hasMember",
+    "hasMember": {
+      "@id": "sosa:hasMember",
+      "@context": {
+        "hasMember": {
+          "@id": "sosa:hasMember",
+          "@context": {
+            "hasMember": "sosa:hasMember"
+          }
+        },
+        "Observation": "sosa:Observation",
+        "Sample": "sosa:Sample",
+        "isResultOf": "sosa:isResultOf",
+        "isHostedBy": "sosa:isHostedBy",
+        "isProxyFor": "ssn:isProxyFor",
+        "wasOriginatedBy": "ssn:wasOriginatedBy",
+        "detects": "ssn:detects",
+        "hasProperty": "ssn:hasProperty",
+        "isPropertyOf": "ssn:isPropertyOf",
+        "forProperty": "ssn:forProperty",
+        "implements": "ssn:implements",
+        "implementedBy": "ssn:implementedBy",
+        "hasInput": "ssn:hasInput",
+        "hasOutput": "ssn:hasOutput",
+        "hasSubSystem": "ssn:hasSubSystem",
+        "deployedSystem": "ssn:deployedSystem",
+        "hasDeployment": "ssn:hasDeployment",
+        "deployedOnPlatform": "ssn:deployedOnPlatform",
+        "inDeployment": "ssn:inDeployment",
+        "inCondition": "ssn:systems/inCondition",
+        "hasSystemCapability": "ssn:systems/hasSystemCapability",
+        "hasSystemProperty": "ssn:systems/hasSystemProperty",
+        "hasOperatingRange": "ssn:systems/hasOperatingRange",
+        "hasOperatingProperty": "ssn:systems/hasOperatingProperty",
+        "hasSurvivalRange": "ssn:systems/hasSurvivalRange",
+        "hasSurvivalProperty": "ssn:systems/hasSurvivalProperty",
+        "qualityOfObservation": "ssn:systems/qualityOfObservation",
+        "features": "sosa:hasMember",
+        "featureType": "@type"
+      }
+    },
     "featureType": "@type",
     "position": {
       "@id": "geopose:position",

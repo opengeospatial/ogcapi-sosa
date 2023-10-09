@@ -35,7 +35,8 @@ This building blocks defines a GeoJSON feature containing a SOSA Observation
 _:a1 a geojson:Feature, sosa:Observation ;
   sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
   sosa:hasSimpleResult 33 ;
-  sosa:resultTime "2022-05-01T22:33:44Z"^^xsd:dateTime
+  sosa:resultTime "2022-05-01T22:33:44Z"^^xsd:dateTime ;
+  sosa:observedProperty <http://example.com/observed-property> ;
 .
 ```
 
@@ -123,7 +124,7 @@ _:a1 a geojson:Feature, sosa:Observation ;
     sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork> ;
     sosa:hasResult [ resultschema:a "r1" ;
             resultschema:b "r2" ] ;
-    sosa:observedProperty "https://dbpedia.org/ontology/population" ;
+    sosa:observedProperty <https://dbpedia.org/ontology/population> ;
     sosa:resultTime "1999" .
 
 
@@ -145,7 +146,9 @@ allOf:
 x-jsonld-extra-terms:
   Observation: http://www.w3.org/ns/sosa/Observation
   Sample: http://www.w3.org/ns/sosa/Sample
-  observedProperty: http://www.w3.org/ns/sosa/observedProperty
+  observedProperty:
+    x-jsonld-id: http://www.w3.org/ns/sosa/observedProperty
+    x-jsonld-type: '@id'
   phenomenonTime: http://www.w3.org/ns/sosa/phenomenonTime
   observes:
     x-jsonld-id: http://www.w3.org/ns/sosa/observes
@@ -295,7 +298,10 @@ Links to the schema:
       "@id": "sosa:hasFeatureOfInterest",
       "@type": "@id"
     },
-    "observedProperty": "sosa:observedProperty",
+    "observedProperty": {
+      "@id": "sosa:observedProperty",
+      "@type": "@id"
+    },
     "usedProcedure": {
       "@id": "sosa:usedProcedure",
       "@type": "@id"

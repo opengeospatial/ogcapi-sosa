@@ -5,7 +5,7 @@
 
 This building blocks defines an ObservationCollection according to the SOSA/SSN v1.1 specification.
 
-[*Status*](http://www.opengis.net/def/status): Invalid
+[*Status*](http://www.opengis.net/def/status): Under development
 
 ## Description
 
@@ -43,7 +43,7 @@ Collection of one or more observations, whose members share a common value for o
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 
 [] sosa:hasMember "_:a1" ;
-    sosa:observedProperty "_:p1" ;
+    sosa:observedProperty [ ] ;
     sosa:resultTime "2022-05-01T22:33:44Z" .
 
 
@@ -59,6 +59,7 @@ Collection of one or more observations, whose members share a common value for o
   "hasMember": [
     { 
       "@id": "a1",
+      "@type": "sosa:Observation",
       "comment": "Example of an inline membership - would entail hasMember relations",
       "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
       "hasSimpleResult": 1995.2,
@@ -76,6 +77,7 @@ Collection of one or more observations, whose members share a common value for o
   "hasMember": [
     {
       "@id": "a1",
+      "@type": "sosa:Observation",
       "comment": "Example of an inline membership - would entail hasMember relations",
       "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
       "hasSimpleResult": 1995.2,
@@ -91,12 +93,13 @@ Collection of one or more observations, whose members share a common value for o
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://example.com/a1> sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
+<http://example.com/a1> a sosa:Observation ;
+    sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
     sosa:hasSimpleResult 1.9952e+03 ;
     sosa:phenomenonTime "2022-05-01T22:33:40Z" .
 
 [] sosa:hasMember <http://example.com/a1> ;
-    sosa:observedProperty "p1" ;
+    sosa:observedProperty <http://example.com/p1> ;
     sosa:resultTime "2022-05-01T22:33:44Z" .
 
 
@@ -132,46 +135,59 @@ eg:p1 a skos:Concept;
 ```yaml
 $schema: https://json-schema.org/draft/2020-12/schema
 description: SOSA ObservationCollection
-type: object
-properties:
-  resultTime:
-    type: string
-    format: date-time
-    x-jsonld-id: http://www.w3.org/ns/sosa/resultTime
-  phenomenonTime:
-    type:
-    - object
-    - string
-    x-jsonld-id: http://www.w3.org/ns/sosa/phenomenonTime
-  hasFeatureOfInterest:
-    type:
-    - object
-    - string
-    x-jsonld-id: http://www.w3.org/ns/sosa/hasFeatureOfInterest
-    x-jsonld-type: '@id'
-  observedProperty:
-    type:
-    - object
-    - string
-    x-jsonld-id: http://www.w3.org/ns/sosa/observedProperty
-  usedProcedure:
-    type:
-    - object
-    - string
-    x-jsonld-id: http://www.w3.org/ns/sosa/usedProcedure
-    x-jsonld-type: '@id'
-  madeBySensor:
-    type:
-    - object
-    - string
-    x-jsonld-id: http://www.w3.org/ns/sosa/madeBySensor
-    x-jsonld-type: '@id'
-not:
-  anyOf:
-  - required:
-    - hasResult
-  - required:
-    - hasSimpleResult
+$defs:
+  collection:
+    type: object
+    properties:
+      resultTime:
+        type: string
+        format: date-time
+        x-jsonld-id: http://www.w3.org/ns/sosa/resultTime
+      phenomenonTime:
+        type:
+        - object
+        - string
+        x-jsonld-id: http://www.w3.org/ns/sosa/phenomenonTime
+      hasFeatureOfInterest:
+        type:
+        - object
+        - string
+        x-jsonld-id: http://www.w3.org/ns/sosa/hasFeatureOfInterest
+        x-jsonld-type: '@id'
+      observedProperty:
+        type:
+        - object
+        - string
+        x-jsonld-id: http://www.w3.org/ns/sosa/observedProperty
+        x-jsonld-type: '@id'
+      usedProcedure:
+        type:
+        - object
+        - string
+        x-jsonld-id: http://www.w3.org/ns/sosa/usedProcedure
+        x-jsonld-type: '@id'
+      madeBySensor:
+        type:
+        - object
+        - string
+        x-jsonld-id: http://www.w3.org/ns/sosa/madeBySensor
+        x-jsonld-type: '@id'
+      hasMember:
+        type: array
+        items:
+          anyOf:
+          - $ref: '#/$defs/collection'
+          - $ref: ../observation/schema.yaml
+          - $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml
+        x-jsonld-id: http://www.w3.org/ns/sosa/hasMember
+allOf:
+- $ref: '#/$defs/collection'
+- not:
+    anyOf:
+    - required:
+      - hasResult
+    - required:
+      - hasSimpleResult
 x-jsonld-extra-terms:
   Observation: http://www.w3.org/ns/sosa/Observation
   Sample: http://www.w3.org/ns/sosa/Sample
@@ -241,7 +257,6 @@ x-jsonld-extra-terms:
   hasSurvivalRange: http://www.w3.org/ns/ssn/systems/hasSurvivalRange
   hasSurvivalProperty: http://www.w3.org/ns/ssn/systems/hasSurvivalProperty
   qualityOfObservation: http://www.w3.org/ns/ssn/systems/qualityOfObservation
-  hasMember: http://www.w3.org/ns/sosa/hasMember
   features: http://www.w3.org/ns/sosa/hasMember
   properties: '@nest'
   featureType: '@type'
@@ -269,7 +284,10 @@ Links to the schema:
       "@id": "sosa:hasFeatureOfInterest",
       "@type": "@id"
     },
-    "observedProperty": "sosa:observedProperty",
+    "observedProperty": {
+      "@id": "sosa:observedProperty",
+      "@type": "@id"
+    },
     "usedProcedure": {
       "@id": "sosa:usedProcedure",
       "@type": "@id"
@@ -277,6 +295,19 @@ Links to the schema:
     "madeBySensor": {
       "@id": "sosa:madeBySensor",
       "@type": "@id"
+    },
+    "hasMember": {
+      "@id": "sosa:hasMember",
+      "@context": {
+        "hasMember": {
+          "@id": "sosa:hasMember",
+          "@context": {
+            "hasMember": "sosa:hasMember"
+          }
+        },
+        "hasResult": "sosa:hasResult",
+        "hasSimpleResult": "sosa:hasSimpleResult"
+      }
     },
     "Observation": "sosa:Observation",
     "Sample": "sosa:Sample",
@@ -359,7 +390,6 @@ Links to the schema:
     "hasSurvivalRange": "ssn:systems/hasSurvivalRange",
     "hasSurvivalProperty": "ssn:systems/hasSurvivalProperty",
     "qualityOfObservation": "ssn:systems/qualityOfObservation",
-    "hasMember": "sosa:hasMember",
     "features": "sosa:hasMember",
     "properties": "@nest",
     "featureType": "@type",

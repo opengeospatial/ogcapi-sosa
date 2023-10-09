@@ -328,7 +328,10 @@
             <a href="#examples" class="toc-h1 toc-link" data-title="Examples">Examples</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#example-of-sosa-observation" class="toc-h2 toc-link" data-title="Example of SOSA observation">Example of SOSA observation</a>
+                    <a href="#example-of-sosa-observation-with-simple-result" class="toc-h2 toc-link" data-title="Example of SOSA observation with simple result">Example of SOSA observation with simple result</a>
+                  </li>
+                  <li>
+                    <a href="#example-of-sosa-observation-with-object-result" class="toc-h2 toc-link" data-title="Example of SOSA observation with object result">Example of SOSA observation with object result</a>
                   </li>
               </ul>
           </li>
@@ -337,6 +340,14 @@
           </li>
           <li>
             <a href="#json-ld-context" class="toc-h1 toc-link" data-title="JSON-LD Context">JSON-LD Context</a>
+          </li>
+          <li>
+            <a href="#validation" class="toc-h1 toc-link" data-title="Validation">Validation</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#shacl-shapes" class="toc-h2 toc-link" data-title="SHACL Shapes">SHACL Shapes</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#references" class="toc-h1 toc-link" data-title="References">References</a>
@@ -370,7 +381,7 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
 of a property of a FeatureOfInterest. Links to a Sensor to describe what made the Observation and how;
 links to an ObservableProperty to describe what the result is an estimate of, and to a FeatureOfInterest
 to detail what that property was associated with.&quot;</p>
-<h1 id='examples'>Examples</h1><h2 id='example-of-sosa-observation'>Example of SOSA observation</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+<h1 id='examples'>Examples</h1><h2 id='example-of-sosa-observation-with-simple-result'>Example of SOSA observation with simple result</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
   </span><span class="nl">"hasFeatureOfInterest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"hasSimpleResult"</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w">
   </span><span class="nl">"resultTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-05-01T22:33:44Z"</span><span class="w">
@@ -387,6 +398,7 @@ to detail what that property was associated with.&quot;</p>
   </span><span class="nn">sosa:</span><span class="n">hasFeatureOfInterest</span><span class="w"> </span><span class="nl">&lt;https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
   </span><span class="nn">sosa:</span><span class="n">hasSimpleResult</span><span class="w"> </span><span class="mi">33</span><span class="w"> </span><span class="p">;</span><span class="w">
   </span><span class="nn">sosa:</span><span class="n">resultTime</span><span class="w"> </span><span class="s">"2022-05-01T22:33:44Z"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">dateTime</span><span class="w"> </span><span class="p">;</span><span class="w">
+  </span><span class="nn">sosa:</span><span class="n">observedProperty</span><span class="w"> </span><span class="nl">&lt;http://example.com/p1&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
 </span><span class="p">.</span><span class="w">
 </span></code></pre></div>
 <blockquote class="lang-specific turtle">
@@ -411,6 +423,7 @@ to detail what that property was associated with.&quot;</p>
 </span><span class="p">[]</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">sosa:</span><span class="n">Observation</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">sosa:</span><span class="n">hasFeatureOfInterest</span><span class="w"> </span><span class="nl">&lt;https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">sosa:</span><span class="n">hasSimpleResult</span><span class="w"> </span><span class="mi">33</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">observedProperty</span><span class="w"> </span><span class="nl">&lt;http://example.com/p1&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">sosa:</span><span class="n">resultTime</span><span class="w"> </span><span class="s">"2022-05-01T22:33:44+00:00"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">dateTime</span><span class="w"> </span><span class="p">.</span><span class="w">
 
 
@@ -418,6 +431,50 @@ to detail what that property was associated with.&quot;</p>
 <blockquote class="lang-specific turtle">
   <p class="example-links">
     <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/unstable/sosa/properties/observation/example_1_2.ttl">Open in new window</a>
+</blockquote>
+<h2 id='example-of-sosa-observation-with-object-result'>Example of SOSA observation with object result</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"hasFeatureOfInterest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"hasSimpleResult"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"resultTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-05-01T22:33:44Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote class="lang-specific json">
+  <p class="example-links">
+    <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/unstable/sosa/properties/observation/example_2_1.json">Open in new window</a>
+    <a target="_blank" href="https://avillar.github.io/TreedocViewer/?dataParser=json&amp;dataUrl=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Funstable%2Fsosa%2Fproperties%2Fobservation%2Fexample_2_1.json&amp;expand=2&amp;option=%7B%22showTable%22%3A+false%7D">View on JSON Viewer</a></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-jsonld"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"hasFeatureOfInterest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"hasSimpleResult"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"resultTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-05-01T22:33:44Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observation/context.jsonld"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote class="lang-specific jsonld">
+  <p class="example-links">
+    <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/unstable/sosa/properties/observation/example_2_1.jsonld">Open in new window</a>
+    <a target="_blank" href="https://json-ld.org/playground/#json-ld=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Funstable%2Fsosa%2Fproperties%2Fobservation%2Fexample_2_1.jsonld">View on JSON-LD Playground</a>
+</blockquote>
+<div class="highlight"><pre class="highlight turtle tab-turtle"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">sosa:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/sosa/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+
+</span><span class="p">[]</span><span class="w"> </span><span class="nn">sosa:</span><span class="n">hasFeatureOfInterest</span><span class="w"> </span><span class="nl">&lt;https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">hasSimpleResult</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">resultTime</span><span class="w"> </span><span class="s">"2022-05-01T22:33:44Z"</span><span class="w"> </span><span class="p">.</span><span class="w">
+
+
+</span></code></pre></div>
+<blockquote class="lang-specific turtle">
+  <p class="example-links">
+    <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/unstable/sosa/properties/observation/example_2_1.ttl">Open in new window</a>
 </blockquote>
 <h1 id='json-schema'>JSON Schema</h1><div class="highlight"><pre class="highlight yaml tab-yaml--schema"><code><span class="na">$schema</span><span class="pi">:</span> <span class="s">https://json-schema.org/draft/2020-12/schema</span>
 <span class="na">description</span><span class="pi">:</span> <span class="s">SOSA Observation</span>
@@ -443,6 +500,7 @@ to detail what that property was associated with.&quot;</p>
     <span class="pi">-</span> <span class="s">object</span>
     <span class="pi">-</span> <span class="s">string</span>
     <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/observedProperty</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
   <span class="na">usedProcedure</span><span class="pi">:</span>
     <span class="na">type</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="s">object</span>
@@ -459,7 +517,7 @@ to detail what that property was associated with.&quot;</p>
     <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasResult</span>
   <span class="na">hasSimpleResult</span><span class="pi">:</span>
     <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasSimpleResult</span>
-<span class="na">oneOf</span><span class="pi">:</span>
+<span class="na">anyOf</span><span class="pi">:</span>
 <span class="pi">-</span> <span class="na">required</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="s">hasResult</span>
 <span class="pi">-</span> <span class="na">required</span><span class="pi">:</span>
@@ -559,7 +617,10 @@ to detail what that property was associated with.&quot;</p>
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasFeatureOfInterest"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"observedProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:observedProperty"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"observedProperty"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:observedProperty"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
     </span><span class="nl">"usedProcedure"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:usedProcedure"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
@@ -666,6 +727,12 @@ to detail what that property was associated with.&quot;</p>
 
 <p>You can find the full JSON-LD context here:
 <a href="https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observation/context.jsonld" target="_blank">https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observation/context.jsonld</a></p>
+<h1 id='validation'>Validation</h1><h2 id='shacl-shapes'>SHACL Shapes</h2>
+<p>The following SHACL shapes are used for validating this building block:</p>
+
+<ul>
+<li><a href="https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl">https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl</a></li>
+</ul>
 <h1 id='references'>References</h1>
 <ul>
 <li><a href="https://www.w3.org/TR/vocab-ssn/">Semantic Sensor Network Ontology</a></li>

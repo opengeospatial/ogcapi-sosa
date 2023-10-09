@@ -43,7 +43,7 @@ links to an ObservableProperty to describe what the result is an estimate of, an
 to detail what that property was associated with."
 # Examples
 
-## Example of SOSA observation
+## Example of SOSA observation with simple result
 
 
 
@@ -71,6 +71,7 @@ _:a1 a sosa:Observation ;
   sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
   sosa:hasSimpleResult 33 ;
   sosa:resultTime "2022-05-01T22:33:44Z"^^xsd:dateTime ;
+  sosa:observedProperty <http://example.com/p1> ;
 .
 ```
 
@@ -107,6 +108,7 @@ _:a1 a sosa:Observation ;
 [] a sosa:Observation ;
     sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
     sosa:hasSimpleResult 33 ;
+    sosa:observedProperty <http://example.com/p1> ;
     sosa:resultTime "2022-05-01T22:33:44+00:00"^^xsd:dateTime .
 
 
@@ -115,6 +117,71 @@ _:a1 a sosa:Observation ;
 <blockquote class="lang-specific turtle">
   <p class="example-links">
     <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/unstable/sosa/properties/observation/example_1_2.ttl">Open in new window</a>
+</blockquote>
+
+
+
+## Example of SOSA observation with object result
+
+
+
+```json
+{
+  "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
+  "hasSimpleResult": {
+    "@context": {
+      "label": "",
+    },
+    
+  },
+  "resultTime": "2022-05-01T22:33:44Z"
+}
+```
+
+<blockquote class="lang-specific json">
+  <p class="example-links">
+    <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/unstable/sosa/properties/observation/example_2_1.json">Open in new window</a>
+    <a target="_blank" href="https://avillar.github.io/TreedocViewer/?dataParser=json&amp;dataUrl=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Funstable%2Fsosa%2Fproperties%2Fobservation%2Fexample_2_1.json&amp;expand=2&amp;option=%7B%22showTable%22%3A+false%7D">View on JSON Viewer</a></p>
+</blockquote>
+
+
+
+
+```jsonld
+{
+  "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
+  "hasSimpleResult": {
+    "@context": {
+      "label": ""
+    }
+  },
+  "resultTime": "2022-05-01T22:33:44Z",
+  "@context": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observation/context.jsonld"
+}
+```
+
+<blockquote class="lang-specific jsonld">
+  <p class="example-links">
+    <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/unstable/sosa/properties/observation/example_2_1.jsonld">Open in new window</a>
+    <a target="_blank" href="https://json-ld.org/playground/#json-ld=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Funstable%2Fsosa%2Fproperties%2Fobservation%2Fexample_2_1.jsonld">View on JSON-LD Playground</a>
+</blockquote>
+
+
+
+
+```turtle
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+
+[] sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
+    sosa:hasSimpleResult [ ] ;
+    sosa:resultTime "2022-05-01T22:33:44Z" .
+
+
+```
+
+<blockquote class="lang-specific turtle">
+  <p class="example-links">
+    <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/unstable/sosa/properties/observation/example_2_1.ttl">Open in new window</a>
 </blockquote>
 
 
@@ -146,6 +213,7 @@ properties:
     - object
     - string
     x-jsonld-id: http://www.w3.org/ns/sosa/observedProperty
+    x-jsonld-type: '@id'
   usedProcedure:
     type:
     - object
@@ -162,7 +230,7 @@ properties:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasResult
   hasSimpleResult:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasSimpleResult
-oneOf:
+anyOf:
 - required:
   - hasResult
 - required:
@@ -264,7 +332,10 @@ Links to the schema:
       "@id": "sosa:hasFeatureOfInterest",
       "@type": "@id"
     },
-    "observedProperty": "sosa:observedProperty",
+    "observedProperty": {
+      "@id": "sosa:observedProperty",
+      "@type": "@id"
+    },
     "usedProcedure": {
       "@id": "sosa:usedProcedure",
       "@type": "@id"
@@ -370,6 +441,14 @@ Links to the schema:
 
 You can find the full JSON-LD context here:
 <a href="https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observation/context.jsonld" target="_blank">https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observation/context.jsonld</a>
+
+# Validation
+
+## SHACL Shapes
+
+The following SHACL shapes are used for validating this building block:
+
+* [https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl](https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl)
 
 # References
 

@@ -362,11 +362,11 @@
 
 <p class="status">
     <span data-rainbow-uri="http://www.opengis.net/def/status">Status</span>:
-    <a href="http://www.opengis.net/def/status/under-development" target="_blank" data-rainbow-uri>Under development</a>
+    <a href="http://www.opengis.net/def/status/invalid" target="_blank" data-rainbow-uri>Invalid</a>
 </p>
 
-<aside class="success">
-This building block is <strong><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/unstable/sosa/examples/vectorObservationFeature/" target="_blank">valid</a></strong>
+<aside class="warning">
+Validation for this building block has <strong><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/unstable/sosa/examples/vectorObservationFeature/" target="_blank">failed</a></strong>
 </aside>
 <h1 id='examples'>Examples</h1><h2 id='vectorobservation-specialisation-example'>VectorObservation - specialisation example.</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
           </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vector-obs-1"</span><span class="p">,</span><span class="w">
@@ -754,7 +754,10 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasFeatureOfInterest"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"observedProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:observedProperty"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"observedProperty"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:observedProperty"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
     </span><span class="nl">"usedProcedure"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:usedProcedure"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
@@ -844,7 +847,46 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
     </span><span class="nl">"hasSurvivalRange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:systems/hasSurvivalRange"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"hasSurvivalProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:systems/hasSurvivalProperty"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"qualityOfObservation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:systems/qualityOfObservation"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasMember"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasMember"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hasMember"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasMember"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"hasMember"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasMember"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"hasMember"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasMember"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"Observation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:Observation"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Sample"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:Sample"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isResultOf"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isResultOf"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isHostedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isHostedBy"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isProxyFor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:isProxyFor"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"wasOriginatedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:wasOriginatedBy"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"detects"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:detects"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:hasProperty"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isPropertyOf"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:isPropertyOf"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"forProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:forProperty"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"implements"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:implements"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"implementedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:implementedBy"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasInput"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:hasInput"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasOutput"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:hasOutput"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasSubSystem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:hasSubSystem"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deployedSystem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:deployedSystem"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasDeployment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:hasDeployment"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deployedOnPlatform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:deployedOnPlatform"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"inDeployment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:inDeployment"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"inCondition"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:systems/inCondition"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasSystemCapability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:systems/hasSystemCapability"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasSystemProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:systems/hasSystemProperty"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasOperatingRange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:systems/hasOperatingRange"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasOperatingProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:systems/hasOperatingProperty"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasSurvivalRange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:systems/hasSurvivalRange"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasSurvivalProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:systems/hasSurvivalProperty"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"qualityOfObservation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:systems/qualityOfObservation"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"features"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasMember"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"featureType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@type"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
     </span><span class="nl">"featureType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@type"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geopose:position"</span><span class="p">,</span><span class="w">

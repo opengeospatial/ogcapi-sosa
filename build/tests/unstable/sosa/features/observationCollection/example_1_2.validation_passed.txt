@@ -6,12 +6,22 @@ Output Turtle example_1_2.ttl created
 === SHACL ===
 Using SHACL files for validation:
  - features/observationCollection/rules.shacl
+ - properties/observation/rules.shacl
 Validation Report
 Conforms: True
 
 Focus nodes:
- - Shape :testInCollectionOrMember-foi: eg:pop1999,eg:pop2000
- - Shape :testInCollectionOrMember-observedProperty: eg:pop1999,eg:pop2000
+ - Shape <http://example.com/rules#testObservedProperty>: eg:pop2000,eg:pop1999
+ - Shape <http://example.com/rules#testRequiredTime>: eg:pop2000,eg:pop1999
+ - Shape <http://example.com/rules#testFeatureOfInterest>: eg:pop2000,eg:pop1999
+ - Shape <http://example.com/rules#testResult>: eg:pop2000,eg:pop1999
+ - Shape :testInCollectionOrMember-foi: eg:pop2000,eg:pop1999
+ - Shape :testInCollectionOrMember-observedProperty: eg:pop2000,eg:pop1999
+ - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:rest/rdf:first (path _:n0da46505f4c34702b9fb1057e2afdef5b11): *none*
+ - Shape <http://example.com/rules#testObservedProperty>/sh:property (path _:n0da46505f4c34702b9fb1057e2afdef5b19): *none*
+ - Shape <http://example.com/rules#testFeatureOfInterest>/sh:property (path _:n0da46505f4c34702b9fb1057e2afdef5b29): *none*
+ - Shape <http://example.com/rules#testResult>/sh:property (path _:n0da46505f4c34702b9fb1057e2afdef5b32): *none*
+ - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:first (path _:n0da46505f4c34702b9fb1057e2afdef5b5): *none*
 
 === End SHACL ===
 

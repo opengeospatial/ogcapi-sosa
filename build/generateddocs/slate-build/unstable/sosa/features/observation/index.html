@@ -385,7 +385,8 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
 </span><span class="nn">_:</span><span class="n">a1</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">geojson:</span><span class="n">Feature,</span><span class="w"> </span><span class="nn">sosa:</span><span class="n">Observation</span><span class="w"> </span><span class="p">;</span><span class="w">
   </span><span class="nn">sosa:</span><span class="n">hasFeatureOfInterest</span><span class="w"> </span><span class="nl">&lt;https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
   </span><span class="nn">sosa:</span><span class="n">hasSimpleResult</span><span class="w"> </span><span class="mi">33</span><span class="w"> </span><span class="p">;</span><span class="w">
-  </span><span class="nn">sosa:</span><span class="n">resultTime</span><span class="w"> </span><span class="s">"2022-05-01T22:33:44Z"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">dateTime
+  </span><span class="nn">sosa:</span><span class="n">resultTime</span><span class="w"> </span><span class="s">"2022-05-01T22:33:44Z"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">dateTime</span><span class="w"> </span><span class="p">;</span><span class="w">
+  </span><span class="nn">sosa:</span><span class="n">observedProperty</span><span class="w"> </span><span class="nl">&lt;http://example.com/observed-property&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
 </span><span class="p">.</span><span class="w">
 </span></code></pre></div>
 <blockquote class="lang-specific turtle">
@@ -478,7 +479,7 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
     </span><span class="nn">sosa:</span><span class="n">hasFeatureOfInterest</span><span class="w"> </span><span class="nl">&lt;https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">sosa:</span><span class="n">hasResult</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nn">resultschema:</span><span class="k">a</span><span class="w"> </span><span class="s">"r1"</span><span class="w"> </span><span class="p">;</span><span class="w">
             </span><span class="nn">resultschema:</span><span class="n">b</span><span class="w"> </span><span class="s">"r2"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">sosa:</span><span class="n">observedProperty</span><span class="w"> </span><span class="s">"https://dbpedia.org/ontology/population"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">observedProperty</span><span class="w"> </span><span class="nl">&lt;https://dbpedia.org/ontology/population&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">sosa:</span><span class="n">resultTime</span><span class="w"> </span><span class="s">"1999"</span><span class="w"> </span><span class="p">.</span><span class="w">
 
 
@@ -500,7 +501,9 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
 <span class="na">x-jsonld-extra-terms</span><span class="pi">:</span>
   <span class="na">Observation</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/Observation</span>
   <span class="na">Sample</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/Sample</span>
-  <span class="na">observedProperty</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/observedProperty</span>
+  <span class="na">observedProperty</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/observedProperty</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
   <span class="na">phenomenonTime</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/phenomenonTime</span>
   <span class="na">observes</span><span class="pi">:</span>
     <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/observes</span>
@@ -650,7 +653,10 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasFeatureOfInterest"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"observedProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:observedProperty"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"observedProperty"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:observedProperty"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
     </span><span class="nl">"usedProcedure"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:usedProcedure"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">

@@ -17,7 +17,7 @@ links to an ObservableProperty to describe what the result is an estimate of, an
 to detail what that property was associated with."
 ## Examples
 
-### Example of SOSA observation
+### Example of SOSA observation with simple result
 #### json
 ```json
 { 
@@ -35,6 +35,7 @@ _:a1 a sosa:Observation ;
   sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
   sosa:hasSimpleResult 33 ;
   sosa:resultTime "2022-05-01T22:33:44Z"^^xsd:dateTime ;
+  sosa:observedProperty <http://example.com/p1> ;
 .
 ```
 
@@ -56,7 +57,49 @@ _:a1 a sosa:Observation ;
 [] a sosa:Observation ;
     sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
     sosa:hasSimpleResult 33 ;
+    sosa:observedProperty <http://example.com/p1> ;
     sosa:resultTime "2022-05-01T22:33:44+00:00"^^xsd:dateTime .
+
+
+```
+
+
+### Example of SOSA observation with object result
+#### json
+```json
+{
+  "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
+  "hasSimpleResult": {
+    "@context": {
+      "label": "",
+    },
+    
+  },
+  "resultTime": "2022-05-01T22:33:44Z"
+}
+```
+
+#### jsonld
+```jsonld
+{
+  "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
+  "hasSimpleResult": {
+    "@context": {
+      "label": ""
+    }
+  },
+  "resultTime": "2022-05-01T22:33:44Z",
+  "@context": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observation/context.jsonld"
+}
+```
+
+#### ttl
+```ttl
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+
+[] sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
+    sosa:hasSimpleResult [ ] ;
+    sosa:resultTime "2022-05-01T22:33:44Z" .
 
 
 ```
@@ -88,6 +131,7 @@ properties:
     - object
     - string
     x-jsonld-id: http://www.w3.org/ns/sosa/observedProperty
+    x-jsonld-type: '@id'
   usedProcedure:
     type:
     - object
@@ -104,7 +148,7 @@ properties:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasResult
   hasSimpleResult:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasSimpleResult
-oneOf:
+anyOf:
 - required:
   - hasResult
 - required:
@@ -204,7 +248,10 @@ Links to the schema:
       "@id": "sosa:hasFeatureOfInterest",
       "@type": "@id"
     },
-    "observedProperty": "sosa:observedProperty",
+    "observedProperty": {
+      "@id": "sosa:observedProperty",
+      "@type": "@id"
+    },
     "usedProcedure": {
       "@id": "sosa:usedProcedure",
       "@type": "@id"

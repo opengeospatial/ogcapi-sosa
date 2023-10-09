@@ -86,7 +86,10 @@
       "@id": "sosa:hasFeatureOfInterest",
       "@type": "@id"
     },
-    "observedProperty": "sosa:observedProperty",
+    "observedProperty": {
+      "@id": "sosa:observedProperty",
+      "@type": "@id"
+    },
     "usedProcedure": {
       "@id": "sosa:usedProcedure",
       "@type": "@id"
@@ -176,7 +179,46 @@
     "hasSurvivalRange": "ssn:systems/hasSurvivalRange",
     "hasSurvivalProperty": "ssn:systems/hasSurvivalProperty",
     "qualityOfObservation": "ssn:systems/qualityOfObservation",
-    "hasMember": "sosa:hasMember",
+    "hasMember": {
+      "@id": "sosa:hasMember",
+      "@context": {
+        "hasMember": {
+          "@id": "sosa:hasMember",
+          "@context": {
+            "hasMember": "sosa:hasMember"
+          }
+        },
+        "Observation": "sosa:Observation",
+        "Sample": "sosa:Sample",
+        "isResultOf": "sosa:isResultOf",
+        "isHostedBy": "sosa:isHostedBy",
+        "isProxyFor": "ssn:isProxyFor",
+        "wasOriginatedBy": "ssn:wasOriginatedBy",
+        "detects": "ssn:detects",
+        "hasProperty": "ssn:hasProperty",
+        "isPropertyOf": "ssn:isPropertyOf",
+        "forProperty": "ssn:forProperty",
+        "implements": "ssn:implements",
+        "implementedBy": "ssn:implementedBy",
+        "hasInput": "ssn:hasInput",
+        "hasOutput": "ssn:hasOutput",
+        "hasSubSystem": "ssn:hasSubSystem",
+        "deployedSystem": "ssn:deployedSystem",
+        "hasDeployment": "ssn:hasDeployment",
+        "deployedOnPlatform": "ssn:deployedOnPlatform",
+        "inDeployment": "ssn:inDeployment",
+        "inCondition": "ssn:systems/inCondition",
+        "hasSystemCapability": "ssn:systems/hasSystemCapability",
+        "hasSystemProperty": "ssn:systems/hasSystemProperty",
+        "hasOperatingRange": "ssn:systems/hasOperatingRange",
+        "hasOperatingProperty": "ssn:systems/hasOperatingProperty",
+        "hasSurvivalRange": "ssn:systems/hasSurvivalRange",
+        "hasSurvivalProperty": "ssn:systems/hasSurvivalProperty",
+        "qualityOfObservation": "ssn:systems/qualityOfObservation",
+        "features": "sosa:hasMember",
+        "featureType": "@type"
+      }
+    },
     "featureType": "@type",
     "position": {
       "@id": "geopose:position",

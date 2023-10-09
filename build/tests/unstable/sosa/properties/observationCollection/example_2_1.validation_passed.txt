@@ -11,17 +11,20 @@ Validation passed
 
 === SHACL ===
 Using SHACL files for validation:
- - properties/observationCollection/rules.shacl
+ - properties/observation/rules.shacl
 Validation Report
 Conforms: True
 
 Focus nodes:
- - Shape <http://example.com/rules#testRequiredProperties>: <http://example.com/a1>
- - Shape <http://example.com/rules#testRequiredProperties>/sh:property (path _:n2e5defd155f14f2f8f8040b1b935fc58b26): *none*
- - Shape <http://example.com/rules#testRequiredProperties>/sh:property (path _:n2e5defd155f14f2f8f8040b1b935fc58b9): *none*
- - Shape <http://example.com/rules#testRequiredProperties>/sh:property (path _:n2e5defd155f14f2f8f8040b1b935fc58b14): *none*
- - Shape <http://example.com/rules#testRequiredProperties>/sh:property (path _:n2e5defd155f14f2f8f8040b1b935fc58b23): *none*
- - Shape <http://example.com/rules#testRequiredProperties>/sh:property (path _:n2e5defd155f14f2f8f8040b1b935fc58b4): *none*
+ - Shape <http://example.com/rules#testObservedProperty>: <http://example.com/a1>
+ - Shape <http://example.com/rules#testRequiredTime>: <http://example.com/a1>
+ - Shape <http://example.com/rules#testFeatureOfInterest>: <http://example.com/a1>
+ - Shape <http://example.com/rules#testResult>: <http://example.com/a1>
+ - Shape <http://example.com/rules#testFeatureOfInterest>/sh:property (path _:n02c1e34e1ea5498eac6b50a93e417986b29): *none*
+ - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:first (path _:n02c1e34e1ea5498eac6b50a93e417986b5): *none*
+ - Shape <http://example.com/rules#testObservedProperty>/sh:property (path _:n02c1e34e1ea5498eac6b50a93e417986b19): *none*
+ - Shape <http://example.com/rules#testResult>/sh:property (path _:n02c1e34e1ea5498eac6b50a93e417986b32): *none*
+ - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:rest/rdf:first (path _:n02c1e34e1ea5498eac6b50a93e417986b11): *none*
 
 === End SHACL ===
 

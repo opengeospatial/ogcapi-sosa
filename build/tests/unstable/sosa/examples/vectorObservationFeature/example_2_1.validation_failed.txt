@@ -1,8 +1,8 @@
 === Files ===
-Using observationCollection-props-fail.json
+Using example_2_1.json from examples
 JSON-LD context is present - uplifting
-Output JSON-LD observationCollection-props-fail.jsonld created
-Output Turtle observationCollection-props-fail.ttl created
+Output JSON-LD example_2_1.jsonld created
+Output Turtle example_2_1.ttl created
 === End Files ===
 
 === JSON Schema ===
@@ -11,6 +11,7 @@ Validation passed
 
 === SHACL ===
 Using SHACL files for validation:
+ - examples/vectorObservationFeature/rules.shacl
  - features/observationCollection/rules.shacl
  - properties/observation/rules.shacl
 
@@ -21,8 +22,8 @@ Results (1):
 Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
 	Severity: sh:Violation
 	Source Shape: <http://example.com/rulestestInCollectionOrMember-observedProperty>
-	Focus Node: <file:///github/workspace/pop1999>
-	Value Node: <file:///github/workspace/pop1999>
+	Focus Node: <http://example.com/features/vector-obs-1>
+	Value Node: <http://example.com/features/vector-obs-1>
 	Result Path: sosa:observedProperty
 	Source Constraint: [ <http://www.w3.org/ns/shacl#prefixes:> <http://www.w3.org/ns/sosa/> ; rdf:type sh:SPARQLConstraint ; sh:message Literal("Observations must either declare required properties or be a member of a collection hierarchy that declares them,") ; sh:select Literal("
         PREFIX dct: <http://purl.org/dc/terms/>
@@ -56,22 +57,22 @@ prefix sosa:    <http://www.w3.org/ns/sosa/>
 	Message: Observations must either declare required properties or be a member of a collection hierarchy that declares them,
 
 Focus nodes:
+ - Shape <http://example.com/rules#testFeatureOfInterest>: *none*
+ - Shape <http://example.com/rules#testGeometryHasCoordinates>: <http://example.com/features/vector-obs-1>/geojson:geometry
+ - Shape <http://example.com/rules#testVectorObservationFeatureHasOneGeometry>: <http://example.com/features/vector-obs-1>
+ - Shape <http://example.com/rules#testGeometryCoordinatesIsList>: <http://example.com/features/vector-obs-1>/geojson:geometry
+ - Shape <http://example.com/rules#testResult>: *none*
+ - Shape :testInCollectionOrMember-foi: <http://example.com/features/vector-obs-1>
  - Shape <http://example.com/rules#testObservedProperty>: *none*
  - Shape <http://example.com/rules#testRequiredTime>: *none*
- - Shape <http://example.com/rules#testFeatureOfInterest>: *none*
- - Shape <http://example.com/rules#testResult>: *none*
- - Shape :testInCollectionOrMember-foi: <file:///github/workspace/pop1999>
- - Shape :testInCollectionOrMember-observedProperty: <file:///github/workspace/pop1999>
- - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:rest/rdf:first (path _:n0da46505f4c34702b9fb1057e2afdef5b11): *none*
- - Shape <http://example.com/rules#testObservedProperty>/sh:property (path _:n0da46505f4c34702b9fb1057e2afdef5b19): *none*
- - Shape <http://example.com/rules#testFeatureOfInterest>/sh:property (path _:n0da46505f4c34702b9fb1057e2afdef5b29): *none*
- - Shape <http://example.com/rules#testResult>/sh:property (path _:n0da46505f4c34702b9fb1057e2afdef5b32): *none*
- - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:first (path _:n0da46505f4c34702b9fb1057e2afdef5b5): *none*
+ - Shape :testInCollectionOrMember-observedProperty: <http://example.com/features/vector-obs-1>
+ - Shape <http://example.com/rules#testVectorObservationFeatureHasOneGeometry>/sh:property (path geojson:geometry): *none*
+ - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:first (path _:ncc82f22eea6341659c768891674ef107b5): *none*
+ - Shape <http://example.com/rules#testFeatureOfInterest>/sh:property (path _:ncc82f22eea6341659c768891674ef107b29): *none*
+ - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:rest/rdf:first (path _:ncc82f22eea6341659c768891674ef107b11): *none*
+ - Shape <http://example.com/rules#testGeometryHasCoordinates>/sh:property (path geojson:coordinates): *none*
+ - Shape <http://example.com/rules#testObservedProperty>/sh:property (path _:ncc82f22eea6341659c768891674ef107b19): *none*
+ - Shape <http://example.com/rules#testResult>/sh:property (path _:ncc82f22eea6341659c768891674ef107b32): *none*
 
 === End SHACL ===
-
-=== General ===
-Test was expected to fail and it did.
-
-=== End General ===
 

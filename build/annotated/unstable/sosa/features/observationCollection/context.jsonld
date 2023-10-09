@@ -49,7 +49,8 @@
           "@id": "geojson:coordinates"
         },
         "hasResult": "sosa:hasResult",
-        "hasSimpleResult": "sosa:hasSimpleResult"
+        "hasSimpleResult": "sosa:hasSimpleResult",
+        "hasMember": "sosa:hasMember"
       }
     },
     "properties": "@nest",
@@ -59,7 +60,10 @@
       "@id": "sosa:hasFeatureOfInterest",
       "@type": "@id"
     },
-    "observedProperty": "sosa:observedProperty",
+    "observedProperty": {
+      "@id": "sosa:observedProperty",
+      "@type": "@id"
+    },
     "usedProcedure": {
       "@id": "sosa:usedProcedure",
       "@type": "@id"
@@ -67,6 +71,20 @@
     "madeBySensor": {
       "@id": "sosa:madeBySensor",
       "@type": "@id"
+    },
+    "hasMember": {
+      "@id": "sosa:hasMember",
+      "@context": {
+        "hasMember": {
+          "@id": "sosa:hasMember",
+          "@context": {
+            "hasMember": "sosa:hasMember"
+          }
+        },
+        "hasResult": "sosa:hasResult",
+        "hasSimpleResult": "sosa:hasSimpleResult",
+        "features": "sosa:hasMember"
+      }
     },
     "Observation": "sosa:Observation",
     "Sample": "sosa:Sample",
@@ -149,7 +167,6 @@
     "hasSurvivalRange": "ssn:systems/hasSurvivalRange",
     "hasSurvivalProperty": "ssn:systems/hasSurvivalProperty",
     "qualityOfObservation": "ssn:systems/qualityOfObservation",
-    "hasMember": "sosa:hasMember",
     "featureType": "@type",
     "Feature": "geojson:Feature",
     "FeatureCollection": "geojson:FeatureCollection",

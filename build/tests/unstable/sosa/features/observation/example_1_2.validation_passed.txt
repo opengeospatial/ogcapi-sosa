@@ -3,3 +3,22 @@ Using example_1_2.ttl from examples
 Output Turtle example_1_2.ttl created
 === End Files ===
 
+=== SHACL ===
+Using SHACL files for validation:
+ - properties/observation/rules.shacl
+Validation Report
+Conforms: True
+
+Focus nodes:
+ - Shape <http://example.com/rules#testObservedProperty>: _:nf44dfef74e55437c88d67f792fa954bfb1
+ - Shape <http://example.com/rules#testRequiredTime>: _:nf44dfef74e55437c88d67f792fa954bfb1
+ - Shape <http://example.com/rules#testFeatureOfInterest>: _:nf44dfef74e55437c88d67f792fa954bfb1
+ - Shape <http://example.com/rules#testResult>: _:nf44dfef74e55437c88d67f792fa954bfb1
+ - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:first (path _:nc364f374e52340398aabbbfb716e9634b5): *none*
+ - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:rest/rdf:first (path _:nc364f374e52340398aabbbfb716e9634b11): *none*
+ - Shape <http://example.com/rules#testResult>/sh:property (path _:nc364f374e52340398aabbbfb716e9634b32): *none*
+ - Shape <http://example.com/rules#testFeatureOfInterest>/sh:property (path _:nc364f374e52340398aabbbfb716e9634b29): *none*
+ - Shape <http://example.com/rules#testObservedProperty>/sh:property (path _:nc364f374e52340398aabbbfb716e9634b19): *none*
+
+=== End SHACL ===
+

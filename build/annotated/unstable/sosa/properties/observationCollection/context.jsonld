@@ -6,7 +6,10 @@
       "@id": "sosa:hasFeatureOfInterest",
       "@type": "@id"
     },
-    "observedProperty": "sosa:observedProperty",
+    "observedProperty": {
+      "@id": "sosa:observedProperty",
+      "@type": "@id"
+    },
     "usedProcedure": {
       "@id": "sosa:usedProcedure",
       "@type": "@id"
@@ -14,6 +17,19 @@
     "madeBySensor": {
       "@id": "sosa:madeBySensor",
       "@type": "@id"
+    },
+    "hasMember": {
+      "@id": "sosa:hasMember",
+      "@context": {
+        "hasMember": {
+          "@id": "sosa:hasMember",
+          "@context": {
+            "hasMember": "sosa:hasMember"
+          }
+        },
+        "hasResult": "sosa:hasResult",
+        "hasSimpleResult": "sosa:hasSimpleResult"
+      }
     },
     "Observation": "sosa:Observation",
     "Sample": "sosa:Sample",
@@ -96,7 +112,6 @@
     "hasSurvivalRange": "ssn:systems/hasSurvivalRange",
     "hasSurvivalProperty": "ssn:systems/hasSurvivalProperty",
     "qualityOfObservation": "ssn:systems/qualityOfObservation",
-    "hasMember": "sosa:hasMember",
     "features": "sosa:hasMember",
     "properties": "@nest",
     "featureType": "@type",

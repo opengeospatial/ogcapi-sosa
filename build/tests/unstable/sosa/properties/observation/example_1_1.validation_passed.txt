@@ -9,3 +9,22 @@ Output Turtle example_1_1.ttl created
 Validation passed
 === End JSON Schema ===
 
+=== SHACL ===
+Using SHACL files for validation:
+ - properties/observation/rules.shacl
+Validation Report
+Conforms: True
+
+Focus nodes:
+ - Shape <http://example.com/rules#testObservedProperty>: *none*
+ - Shape <http://example.com/rules#testRequiredTime>: *none*
+ - Shape <http://example.com/rules#testFeatureOfInterest>: *none*
+ - Shape <http://example.com/rules#testResult>: *none*
+ - Shape <http://example.com/rules#testResult>/sh:property (path _:n2ab9cab9b9f241a4a9e0a8b955bfe087b32): *none*
+ - Shape <http://example.com/rules#testObservedProperty>/sh:property (path _:n2ab9cab9b9f241a4a9e0a8b955bfe087b19): *none*
+ - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:rest/rdf:first (path _:n2ab9cab9b9f241a4a9e0a8b955bfe087b11): *none*
+ - Shape <http://example.com/rules#testFeatureOfInterest>/sh:property (path _:n2ab9cab9b9f241a4a9e0a8b955bfe087b29): *none*
+ - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:first (path _:n2ab9cab9b9f241a4a9e0a8b955bfe087b5): *none*
+
+=== End SHACL ===
+

@@ -108,7 +108,6 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
 eg:c1 a sosa:ObservationCollection ;
   sosa:hasMember eg:pop1999, eg:pop2000 ;
   sosa:observedProperty <http://dbpedia.org/ontology/population> ;
-  sosa:resultTime "2022-05-01T22:33:44Z"^^xsd:dateTime ;
 .
 
 eg:pop1999 a sosa:Observation ;
@@ -208,8 +207,7 @@ eg:pop1999 a sosa:Observation ;
 eg:c1 a sosa:ObservationCollection ;
     sosa:hasMember eg:pop1999,
         eg:pop2000 ;
-    sosa:observedProperty <http://dbpedia.org/ontology/population> ;
-    sosa:resultTime "2022-05-01T22:33:44+00:00"^^xsd:dateTime .
+    sosa:observedProperty <http://dbpedia.org/ontology/population> .
 
 <http://dbpedia.org/ontology/population> a skos:Concept ;
     skos:prefLabel "Population" .
@@ -256,7 +254,9 @@ allOf:
 x-jsonld-extra-terms:
   Observation: http://www.w3.org/ns/sosa/Observation
   Sample: http://www.w3.org/ns/sosa/Sample
-  observedProperty: http://www.w3.org/ns/sosa/observedProperty
+  observedProperty:
+    x-jsonld-id: http://www.w3.org/ns/sosa/observedProperty
+    x-jsonld-type: '@id'
   phenomenonTime: http://www.w3.org/ns/sosa/phenomenonTime
   observes:
     x-jsonld-id: http://www.w3.org/ns/sosa/observes
@@ -405,7 +405,8 @@ Links to the schema:
           "@id": "geojson:coordinates"
         },
         "hasResult": "sosa:hasResult",
-        "hasSimpleResult": "sosa:hasSimpleResult"
+        "hasSimpleResult": "sosa:hasSimpleResult",
+        "hasMember": "sosa:hasMember"
       }
     },
     "properties": "@nest",
@@ -415,7 +416,10 @@ Links to the schema:
       "@id": "sosa:hasFeatureOfInterest",
       "@type": "@id"
     },
-    "observedProperty": "sosa:observedProperty",
+    "observedProperty": {
+      "@id": "sosa:observedProperty",
+      "@type": "@id"
+    },
     "usedProcedure": {
       "@id": "sosa:usedProcedure",
       "@type": "@id"
@@ -423,6 +427,20 @@ Links to the schema:
     "madeBySensor": {
       "@id": "sosa:madeBySensor",
       "@type": "@id"
+    },
+    "hasMember": {
+      "@id": "sosa:hasMember",
+      "@context": {
+        "hasMember": {
+          "@id": "sosa:hasMember",
+          "@context": {
+            "hasMember": "sosa:hasMember"
+          }
+        },
+        "hasResult": "sosa:hasResult",
+        "hasSimpleResult": "sosa:hasSimpleResult",
+        "features": "sosa:hasMember"
+      }
     },
     "Observation": "sosa:Observation",
     "Sample": "sosa:Sample",
@@ -505,7 +523,6 @@ Links to the schema:
     "hasSurvivalRange": "ssn:systems/hasSurvivalRange",
     "hasSurvivalProperty": "ssn:systems/hasSurvivalProperty",
     "qualityOfObservation": "ssn:systems/qualityOfObservation",
-    "hasMember": "sosa:hasMember",
     "featureType": "@type",
     "Feature": "geojson:Feature",
     "FeatureCollection": "geojson:FeatureCollection",
