@@ -6,7 +6,10 @@
     "ssn-system": "http://www.w3.org/ns/ssn/systems/",
     "Observation": "sosa:Observation",
     "Sample": "sosa:Sample",
-    "observedProperty": "sosa:observedProperty",
+    "observedProperty": {
+      "@id": "sosa:observedProperty",
+      "@type": "@id"
+    },
     "phenomenonTime": "sosa:phenomenonTime",
     "observes": {
       "@id": "sosa:observes",
@@ -101,7 +104,7 @@
     "hasSurvivalProperty": "ssn-system:hasSurvivalProperty",
     "qualityOfObservation": "ssn-system:qualityOfObservation",
     "hasMember": "sosa:hasMember",
-    "features":  "sosa:hasMember",
+    "features": "sosa:hasMember",
     "properties": "@nest",
     "featureType": "@type"
   }

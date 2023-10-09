@@ -1,0 +1,56 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix geojson: <https://purl.org/geojson/vocab#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@base <http://example.com/rules> .
+
+<#testRequiredTime>
+  a sh:NodeShape ;
+  sh:targetClass sosa:Observation ;
+  sh:message "sosa:resultTime or sosa:phenomenonTime is required, and no more than 1 of each is allowed" ;
+  sh:or (
+      [
+        sh:path ( [sh:zeroOrMorePath [sh:oneOrMorePath [sh:inversePath sosa:hasMember]]] sosa:phenomenonTime ) ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+      ]
+      [
+        sh:path ( [sh:zeroOrMorePath [sh:oneOrMorePath [sh:inversePath sosa:hasMember]]] sosa:resultTime ) ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+      ]
+  ) ;
+.
+<#testObservedProperty>
+  a sh:NodeShape ;
+  sh:targetClass sosa:Observation ;
+  sh:message "Exactly 1 of sosa:observedProperty is required" ;
+  sh:property [
+    sh:path ( [sh:zeroOrMorePath [sh:oneOrMorePath [sh:inversePath sosa:hasMember]]] sosa:observedProperty ) ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+.
+<#testFeatureOfInterest>
+  a sh:NodeShape ;
+  sh:targetClass sosa:Observation ;
+  sh:property [
+    sh:path ( [sh:zeroOrMorePath [sh:oneOrMorePath [sh:inversePath sosa:hasMember]]]
+              [sh:alternativePath ( sosa:hasFeatureOfInterest [sh:inversePath sosa:isFeatureOfInterestOf] )] ) ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:message "Exactly one feature of interest (sosa:hasFeatureOfInterest/sosa:isFeatureOfInterestOf) is required" ;
+.
+<#testResult>
+  a sh:NodeShape ;
+  sh:targetClass sosa:Observation ;
+  sh:property [
+    sh:path [sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult )];
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:message "Exactly one of sosa:hasResult or sosa:hasSimpleResult is required" ;
+.

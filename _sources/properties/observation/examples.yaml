@@ -1,4 +1,4 @@
-- title: Example of SOSA observation
+- title: Example of SOSA observation with simple result
 
   snippets:
     - language: json
@@ -17,4 +17,22 @@
           sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
           sosa:hasSimpleResult 33 ;
           sosa:resultTime "2022-05-01T22:33:44Z"^^xsd:dateTime ;
+          sosa:observedProperty <http://example.com/p1> ;
         .
+      shacl-closure: ['closure.ttl']
+
+- title: Example of SOSA observation with object result
+
+  snippets:
+    - language: json
+      code: |-
+        {
+          "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
+          "hasSimpleResult": {
+            "@context": {
+              "label": "",
+            },
+            
+          },
+          "resultTime": "2022-05-01T22:33:44Z"
+        }

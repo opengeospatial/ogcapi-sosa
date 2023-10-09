@@ -1,36 +1,45 @@
 "$schema": https://json-schema.org/draft/2020-12/schema
 description: 'SOSA ObservationCollection'
 x-jsonld-context: ../../../sosa-ssn.jsonld
-type: object
-properties:
-  resultTime:
-    type: string
-    format: date-time
-  phenomenonTime:
-    type:
-      - object
-      - string
-  hasFeatureOfInterest:
-    type:
-      - object
-      - string
-  observedProperty:
-    type:
-      - object
-      - string
-  usedProcedure:
-    type:
-      - object
-      - string
-  madeBySensor:
-    type:
-      - object
-      - string
-
-
-not:
-  anyOf:
-    - required:
-        - hasResult
-    - required:
-        - hasSimpleResult
+$defs:
+  collection:
+    type: object
+    properties:
+      resultTime:
+        type: string
+        format: date-time
+      phenomenonTime:
+        type:
+          - object
+          - string
+      hasFeatureOfInterest:
+        type:
+          - object
+          - string
+      observedProperty:
+        type:
+          - object
+          - string
+      usedProcedure:
+        type:
+          - object
+          - string
+      madeBySensor:
+        type:
+          - object
+          - string
+      hasMember:
+        type: array
+        items:
+          anyOf:
+            - $ref: '#/$defs/collection'
+            - $ref: '../observation/schema.yaml'
+            - $ref: bblocks://ogc.ogc-utils.iri-or-curie
+allOf:
+  - $ref: '#/$defs/collection'
+  - not:
+      anyOf:
+        - required:
+            - hasResult
+        - required:
+            - hasSimpleResult
