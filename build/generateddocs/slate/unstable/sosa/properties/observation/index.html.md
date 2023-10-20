@@ -448,7 +448,7 @@ You can find the full JSON-LD context here:
 
 The following SHACL shapes are used for validating this building block:
 
-* [https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/_sources/properties/observation/rules.shacl](https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/_sources/properties/observation/rules.shacl)
+* [https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl](https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl)
 
 # References
 

@@ -574,9 +574,9 @@ You can find the full JSON-LD context here:
 
 The following SHACL shapes are used for validating this building block:
 
-* [https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservationFeature/_sources/properties/observation/rules.shacl](https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservationFeature/_sources/properties/observation/rules.shacl)
-* [https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservationFeature/_sources/features/observationCollection/rules.shacl](https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservationFeature/_sources/features/observationCollection/rules.shacl)
-* [https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservationFeature/_sources/examples/vectorObservationFeature/rules.shacl](https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservationFeature/_sources/examples/vectorObservationFeature/rules.shacl)
+* [https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/rules.shacl](https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/rules.shacl)
+* [https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservationFeature/rules.shacl](https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservationFeature/rules.shacl)
+* [https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl](https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl)
 
 # References
 

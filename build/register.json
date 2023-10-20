@@ -30,7 +30,7 @@
       ],
       "group": "SOSA",
       "shaclRules": [
-        "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/_sources/properties/observation/rules.shacl"
+        "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl"
       ],
       "schema": {
         "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observation/schema.yaml",
@@ -74,8 +74,8 @@
       "maturity": "development",
       "scope": "unstable",
       "dependsOn": [
-        "ogc.unstable.sosa.properties.observation",
-        "ogc.geo.geopose.basic.ypr"
+        "ogc.geo.geopose.basic.ypr",
+        "ogc.unstable.sosa.properties.observation"
       ],
       "tags": [
         "sosa",
@@ -87,7 +87,7 @@
       ],
       "group": "SOSA",
       "shaclRules": [
-        "https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservation/_sources/properties/observation/rules.shacl"
+        "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl"
       ],
       "schema": {
         "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/schema.yaml",
@@ -143,11 +143,11 @@
       ],
       "group": "SOSA",
       "shaclRules": [
-        "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observationCollection/_sources/properties/observation/rules.shacl"
+        "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl"
       ],
       "dependsOn": [
-        "ogc.unstable.sosa.properties.observation",
-        "ogc.ogc-utils.iri-or-curie"
+        "ogc.ogc-utils.iri-or-curie",
+        "ogc.unstable.sosa.properties.observation"
       ],
       "schema": {
         "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observationCollection/schema.yaml",
@@ -191,8 +191,8 @@
       "maturity": "development",
       "scope": "unstable",
       "dependsOn": [
-        "ogc.unstable.sosa.properties.observation",
-        "ogc.geo.json-fg.feature-lenient"
+        "ogc.geo.json-fg.feature-lenient",
+        "ogc.unstable.sosa.properties.observation"
       ],
       "tags": [
         "sosa",
@@ -203,7 +203,7 @@
       ],
       "group": "SOSA",
       "shaclRules": [
-        "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observation/_sources/properties/observation/rules.shacl"
+        "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl"
       ],
       "schema": {
         "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observation/schema.yaml",
@@ -259,13 +259,13 @@
       ],
       "group": "SOSA",
       "shaclRules": [
-        "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/_sources/properties/observation/rules.shacl",
-        "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/_sources/features/observationCollection/rules.shacl"
+        "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/rules.shacl",
+        "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl"
       ],
       "dependsOn": [
+        "ogc.unstable.sosa.properties.observationCollection",
         "ogc.unstable.sosa.features.observation",
-        "ogc.geo.json-fg.featureCollection-lenient",
-        "ogc.unstable.sosa.properties.observationCollection"
+        "ogc.geo.json-fg.featureCollection-lenient"
       ],
       "schema": {
         "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observationCollection/schema.yaml",
@@ -309,8 +309,8 @@
       "maturity": "development",
       "scope": "unstable",
       "dependsOn": [
-        "ogc.unstable.sosa.features.observation",
         "ogc.unstable.sosa.examples.vectorObservation",
+        "ogc.unstable.sosa.features.observation",
         "ogc.unstable.sosa.features.observationCollection",
         "ogc.unstable.sosa.properties.observation"
       ],
@@ -324,9 +324,9 @@
       ],
       "group": "SOSA",
       "shaclRules": [
-        "https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservationFeature/_sources/properties/observation/rules.shacl",
-        "https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservationFeature/_sources/features/observationCollection/rules.shacl",
-        "https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservationFeature/_sources/examples/vectorObservationFeature/rules.shacl"
+        "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/rules.shacl",
+        "https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservationFeature/rules.shacl",
+        "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl"
       ],
       "schema": {
         "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema.yaml",
