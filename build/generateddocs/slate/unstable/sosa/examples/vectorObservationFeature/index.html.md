@@ -315,8 +315,8 @@ Validation for this building block has <strong><a href="https://github.com/openg
 
 <http://example.com/features/c1> a sosa:ObservationCollection,
         geojson:FeatureCollection ;
-    sosa:hasMember <http://example.com/features/vector-obs-1> ;
-    sosa:resultTime "1999" .
+    sosa:resultTime "1999" ;
+    geojson:features <http://example.com/features/vector-obs-1> .
 
 <http://example.com/features/vector-obs-1> a geojson:Feature ;
     sosa:hasFeatureOfInterest <eg:Traverse-P1-P2> ;
@@ -382,108 +382,13 @@ Links to the schema:
 ```json--ldContext
 {
   "@context": {
-    "type": "@type",
-    "id": "@id",
-    "properties": "@nest",
-    "geometry": {
-      "@id": "geojson:geometry",
-      "@context": {}
-    },
-    "bbox": {
-      "@container": "@list",
-      "@id": "geojson:bbox"
-    },
-    "Feature": "geojson:Feature",
-    "FeatureCollection": "geojson:FeatureCollection",
-    "GeometryCollection": "geojson:GeometryCollection",
-    "LineString": "geojson:LineString",
-    "MultiLineString": "geojson:MultiLineString",
-    "MultiPoint": "geojson:MultiPoint",
-    "MultiPolygon": "geojson:MultiPolygon",
-    "Point": "geojson:Point",
-    "Polygon": "geojson:Polygon",
-    "features": {
-      "@container": "@set",
-      "@id": "sosa:hasMember",
-      "@context": {
-        "features": {
-          "@container": "@set",
-          "@id": "sosa:hasMember"
-        },
-        "Observation": "sosa:Observation",
-        "Sample": "sosa:Sample",
-        "isResultOf": "sosa:isResultOf",
-        "isHostedBy": "sosa:isHostedBy",
-        "isProxyFor": "ssn:isProxyFor",
-        "wasOriginatedBy": "ssn:wasOriginatedBy",
-        "detects": "ssn:detects",
-        "hasProperty": "ssn:hasProperty",
-        "isPropertyOf": "ssn:isPropertyOf",
-        "forProperty": "ssn:forProperty",
-        "implements": "ssn:implements",
-        "implementedBy": "ssn:implementedBy",
-        "hasInput": "ssn:hasInput",
-        "hasOutput": "ssn:hasOutput",
-        "hasSubSystem": "ssn:hasSubSystem",
-        "deployedSystem": "ssn:deployedSystem",
-        "hasDeployment": "ssn:hasDeployment",
-        "deployedOnPlatform": "ssn:deployedOnPlatform",
-        "inDeployment": "ssn:inDeployment",
-        "inCondition": "ssn:systems/inCondition",
-        "hasSystemCapability": "ssn:systems/hasSystemCapability",
-        "hasSystemProperty": "ssn:systems/hasSystemProperty",
-        "hasOperatingRange": "ssn:systems/hasOperatingRange",
-        "hasOperatingProperty": "ssn:systems/hasOperatingProperty",
-        "hasSurvivalRange": "ssn:systems/hasSurvivalRange",
-        "hasSurvivalProperty": "ssn:systems/hasSurvivalProperty",
-        "qualityOfObservation": "ssn:systems/qualityOfObservation",
-        "hasMember": "sosa:hasMember",
-        "featureType": "@type"
-      }
-    },
-    "links": {
-      "@id": "rdfs:seeAlso",
-      "@context": {
-        "href": "oa:hasTarget",
-        "rel": {
-          "@id": "http://www.iana.org/assignments/relation",
-          "@type": "@id",
-          "@context": {
-            "@base": "http://www.iana.org/assignments/relation/"
-          }
-        },
-        "type": "dct:type",
-        "hreflang": "dct:language",
-        "title": "rdfs:label",
-        "length": "dct:extent"
-      }
-    },
-    "coordinates": {
-      "@container": "@list",
-      "@id": "geojson:coordinates"
-    },
-    "resultTime": "sosa:resultTime",
-    "phenomenonTime": "sosa:phenomenonTime",
-    "hasFeatureOfInterest": {
-      "@id": "sosa:hasFeatureOfInterest",
-      "@type": "@id"
-    },
+    "Observation": "sosa:Observation",
+    "Sample": "sosa:Sample",
     "observedProperty": {
       "@id": "sosa:observedProperty",
       "@type": "@id"
     },
-    "usedProcedure": {
-      "@id": "sosa:usedProcedure",
-      "@type": "@id"
-    },
-    "madeBySensor": {
-      "@id": "sosa:madeBySensor",
-      "@type": "@id"
-    },
-    "hasResult": "sosa:hasResult",
-    "hasSimpleResult": "sosa:hasSimpleResult",
-    "Observation": "sosa:Observation",
-    "Sample": "sosa:Sample",
+    "phenomenonTime": "sosa:phenomenonTime",
     "observes": {
       "@id": "sosa:observes",
       "@type": "@id"
@@ -494,6 +399,10 @@ Links to the schema:
     },
     "madeObservation": {
       "@id": "sosa:madeObservation",
+      "@type": "@id"
+    },
+    "madeBySensor": {
+      "@id": "sosa:madeBySensor",
       "@type": "@id"
     },
     "actsOnProperty": {
@@ -528,11 +437,22 @@ Links to the schema:
       "@id": "sosa:madeBySampler",
       "@type": "@id"
     },
+    "hasFeatureOfInterest": {
+      "@id": "sosa:hasFeatureOfInterest",
+      "@type": "@id"
+    },
     "isFeatureOfInterestOf": {
       "@id": "sosa:isFeatureOfInterestOf",
       "@type": "@id"
     },
+    "hasResult": "sosa:hasResult",
     "isResultOf": "sosa:isResultOf",
+    "hasSimpleResult": "sosa:hasSimpleResult",
+    "resultTime": "sosa:resultTime",
+    "usedProcedure": {
+      "@id": "sosa:usedProcedure",
+      "@type": "@id"
+    },
     "hosts": {
       "@id": "sosa:hosts",
       "@type": "@id"
@@ -561,72 +481,83 @@ Links to the schema:
     "hasSurvivalRange": "ssn:systems/hasSurvivalRange",
     "hasSurvivalProperty": "ssn:systems/hasSurvivalProperty",
     "qualityOfObservation": "ssn:systems/qualityOfObservation",
-    "hasMember": {
-      "@id": "sosa:hasMember",
+    "hasMember": "sosa:hasMember",
+    "features": {
       "@context": {
-        "hasMember": {
-          "@id": "sosa:hasMember",
-          "@context": {
-            "hasMember": "sosa:hasMember"
-          }
-        },
-        "Observation": "sosa:Observation",
-        "Sample": "sosa:Sample",
-        "isResultOf": "sosa:isResultOf",
-        "isHostedBy": "sosa:isHostedBy",
-        "isProxyFor": "ssn:isProxyFor",
-        "wasOriginatedBy": "ssn:wasOriginatedBy",
-        "detects": "ssn:detects",
-        "hasProperty": "ssn:hasProperty",
-        "isPropertyOf": "ssn:isPropertyOf",
-        "forProperty": "ssn:forProperty",
-        "implements": "ssn:implements",
-        "implementedBy": "ssn:implementedBy",
-        "hasInput": "ssn:hasInput",
-        "hasOutput": "ssn:hasOutput",
-        "hasSubSystem": "ssn:hasSubSystem",
-        "deployedSystem": "ssn:deployedSystem",
-        "hasDeployment": "ssn:hasDeployment",
-        "deployedOnPlatform": "ssn:deployedOnPlatform",
-        "inDeployment": "ssn:inDeployment",
-        "inCondition": "ssn:systems/inCondition",
-        "hasSystemCapability": "ssn:systems/hasSystemCapability",
-        "hasSystemProperty": "ssn:systems/hasSystemProperty",
-        "hasOperatingRange": "ssn:systems/hasOperatingRange",
-        "hasOperatingProperty": "ssn:systems/hasOperatingProperty",
-        "hasSurvivalRange": "ssn:systems/hasSurvivalRange",
-        "hasSurvivalProperty": "ssn:systems/hasSurvivalProperty",
-        "qualityOfObservation": "ssn:systems/qualityOfObservation",
-        "features": "sosa:hasMember",
-        "featureType": "@type"
-      }
+        "features": "sosa:hasMember"
+      },
+      "@id": "geojson:features",
+      "@container": "@set"
     },
     "featureType": "@type",
+    "properties": {
+      "@context": {
+        "features": "sosa:hasMember"
+      },
+      "@id": "@nest"
+    },
+    "Feature": "geojson:Feature",
+    "FeatureCollection": "geojson:FeatureCollection",
+    "GeometryCollection": "geojson:GeometryCollection",
+    "LineString": "geojson:LineString",
+    "MultiLineString": "geojson:MultiLineString",
+    "MultiPoint": "geojson:MultiPoint",
+    "MultiPolygon": "geojson:MultiPolygon",
+    "Point": "geojson:Point",
+    "Polygon": "geojson:Polygon",
+    "bbox": {
+      "@container": "@list",
+      "@id": "geojson:bbox"
+    },
+    "coordinates": {
+      "@container": "@list",
+      "@id": "geojson:coordinates"
+    },
+    "type": "@type",
+    "id": "@id",
+    "links": {
+      "@context": {
+        "href": "oa:hasTarget",
+        "rel": {
+          "@context": {
+            "@base": "http://www.iana.org/assignments/relation/"
+          },
+          "@id": "http://www.iana.org/assignments/relation",
+          "@type": "@id"
+        },
+        "type": "dct:type",
+        "hreflang": "dct:language",
+        "title": "rdfs:label",
+        "length": "dct:extent"
+      },
+      "@id": "rdfs:seeAlso"
+    },
+    "geometry": "geojson:geometry",
     "position": {
-      "@id": "geopose:position",
       "@context": {
         "lat": "geo:lat",
         "lon": "geo:long",
         "h": "geopose:h"
-      }
+      },
+      "@id": "geopose:position"
     },
     "angles": {
-      "@id": "geopose:angles",
       "@context": {
         "yaw": "geopose:yaw",
         "pitch": "geopose:pitch",
         "roll": "geopose:roll"
-      }
+      },
+      "@id": "geopose:angles"
     },
-    "geojson": "https://purl.org/geojson/vocab#",
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "oa": "http://www.w3.org/ns/oa#",
-    "dct": "http://purl.org/dc/terms/",
     "sosa": "http://www.w3.org/ns/sosa/",
     "ssn": "http://www.w3.org/ns/ssn/",
     "ssn-system": "ssn:systems/",
+    "geojson": "https://purl.org/geojson/vocab#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "geopose": "http://example.com/geopose/",
     "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+    "oa": "http://www.w3.org/ns/oa#",
+    "dct": "http://purl.org/dc/terms/",
     "@version": 1.1
   }
 }
@@ -643,7 +574,9 @@ You can find the full JSON-LD context here:
 
 The following SHACL shapes are used for validating this building block:
 
-* [https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservationFeature/rules.shacl](https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservationFeature/rules.shacl)
+* [https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservationFeature/_sources/properties/observation/rules.shacl](https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservationFeature/_sources/properties/observation/rules.shacl)
+* [https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservationFeature/_sources/features/observationCollection/rules.shacl](https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservationFeature/_sources/features/observationCollection/rules.shacl)
+* [https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservationFeature/_sources/examples/vectorObservationFeature/rules.shacl](https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservationFeature/_sources/examples/vectorObservationFeature/rules.shacl)
 
 # References
 

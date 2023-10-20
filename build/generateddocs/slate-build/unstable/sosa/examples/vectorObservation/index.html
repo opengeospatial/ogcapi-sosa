@@ -331,6 +331,14 @@
             <a href="#json-ld-context" class="toc-h1 toc-link" data-title="JSON-LD Context">JSON-LD Context</a>
           </li>
           <li>
+            <a href="#validation" class="toc-h1 toc-link" data-title="Validation">Validation</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#shacl-shapes" class="toc-h2 toc-link" data-title="SHACL Shapes">SHACL Shapes</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#references" class="toc-h1 toc-link" data-title="References">References</a>
           </li>
           <li>
@@ -554,20 +562,20 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
     </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@nest"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"featureType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@type"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geopose:position"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"lat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geo:lat"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"lon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geo:long"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"h"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geopose:h"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geopose:position"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"angles"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geopose:angles"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"yaw"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geopose:yaw"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"pitch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geopose:pitch"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"roll"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geopose:roll"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geopose:angles"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"sosa"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/ns/sosa/"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"ssn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/ns/ssn/"</span><span class="p">,</span><span class="w">
@@ -584,6 +592,12 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
 
 <p>You can find the full JSON-LD context here:
 <a href="https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/context.jsonld" target="_blank">https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/context.jsonld</a></p>
+<h1 id='validation'>Validation</h1><h2 id='shacl-shapes'>SHACL Shapes</h2>
+<p>The following SHACL shapes are used for validating this building block:</p>
+
+<ul>
+<li><a href="https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservation/_sources/properties/observation/rules.shacl">https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservation/_sources/properties/observation/rules.shacl</a></li>
+</ul>
 <h1 id='references'>References</h1>
 <ul>
 <li><a href="https://www.w3.org/TR/vocab-ssn/">Semantic Sensor Network Ontology</a></li>

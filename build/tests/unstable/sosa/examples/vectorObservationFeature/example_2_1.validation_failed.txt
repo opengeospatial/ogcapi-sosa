@@ -1,19 +1,21 @@
+Validation report for ogc.unstable.sosa.examples.vectorObservationFeature - Example SOSA Vector Observation Feature
+Generated 2023-10-20T13:26:51.136835+00:00
 === Files ===
 Using example_2_1.json from examples
 JSON-LD context is present - uplifting
 Output JSON-LD example_2_1.jsonld created
 Output Turtle example_2_1.ttl created
-=== End Files ===
+=== End ValidationReportSection.FILES ===
 
 === JSON Schema ===
 Validation passed
-=== End JSON Schema ===
+=== End ValidationReportSection.JSON_SCHEMA ===
 
 === SHACL ===
 Using SHACL files for validation:
- - examples/vectorObservationFeature/rules.shacl
- - features/observationCollection/rules.shacl
- - properties/observation/rules.shacl
+ - _sources/properties/observation/rules.shacl
+ - _sources/features/observationCollection/rules.shacl
+ - _sources/examples/vectorObservationFeature/rules.shacl
 
 ** Validation error **
 Validation Report
@@ -58,21 +60,21 @@ prefix sosa:    <http://www.w3.org/ns/sosa/>
 
 Focus nodes:
  - Shape <http://example.com/rules#testFeatureOfInterest>: *none*
- - Shape <http://example.com/rules#testGeometryHasCoordinates>: <http://example.com/features/vector-obs-1>/geojson:geometry
- - Shape <http://example.com/rules#testVectorObservationFeatureHasOneGeometry>: <http://example.com/features/vector-obs-1>
- - Shape <http://example.com/rules#testGeometryCoordinatesIsList>: <http://example.com/features/vector-obs-1>/geojson:geometry
- - Shape <http://example.com/rules#testResult>: *none*
  - Shape :testInCollectionOrMember-foi: <http://example.com/features/vector-obs-1>
+ - Shape <http://example.com/rules#testVectorObservationFeatureHasOneGeometry>: <http://example.com/features/vector-obs-1>
+ - Shape <http://example.com/rules#testResult>: *none*
  - Shape <http://example.com/rules#testObservedProperty>: *none*
  - Shape <http://example.com/rules#testRequiredTime>: *none*
  - Shape :testInCollectionOrMember-observedProperty: <http://example.com/features/vector-obs-1>
+ - Shape <http://example.com/rules#testGeometryCoordinatesIsList>: <http://example.com/features/vector-obs-1>/geojson:geometry
+ - Shape <http://example.com/rules#testGeometryHasCoordinates>: <http://example.com/features/vector-obs-1>/geojson:geometry
+ - Shape <http://example.com/rules#testResult>/sh:property (path _:ndac87fc4548f45edb6e0d0660cc40ffcb32): *none*
  - Shape <http://example.com/rules#testVectorObservationFeatureHasOneGeometry>/sh:property (path geojson:geometry): *none*
- - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:first (path _:ncc82f22eea6341659c768891674ef107b5): *none*
- - Shape <http://example.com/rules#testFeatureOfInterest>/sh:property (path _:ncc82f22eea6341659c768891674ef107b29): *none*
- - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:rest/rdf:first (path _:ncc82f22eea6341659c768891674ef107b11): *none*
+ - Shape <http://example.com/rules#testObservedProperty>/sh:property (path _:ndac87fc4548f45edb6e0d0660cc40ffcb19): *none*
  - Shape <http://example.com/rules#testGeometryHasCoordinates>/sh:property (path geojson:coordinates): *none*
- - Shape <http://example.com/rules#testObservedProperty>/sh:property (path _:ncc82f22eea6341659c768891674ef107b19): *none*
- - Shape <http://example.com/rules#testResult>/sh:property (path _:ncc82f22eea6341659c768891674ef107b32): *none*
+ - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:rest/rdf:first (path _:ndac87fc4548f45edb6e0d0660cc40ffcb11): *none*
+ - Shape <http://example.com/rules#testFeatureOfInterest>/sh:property (path _:ndac87fc4548f45edb6e0d0660cc40ffcb29): *none*
+ - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:first (path _:ndac87fc4548f45edb6e0d0660cc40ffcb5): *none*
 
-=== End SHACL ===
+=== End ValidationReportSection.SHACL ===
 

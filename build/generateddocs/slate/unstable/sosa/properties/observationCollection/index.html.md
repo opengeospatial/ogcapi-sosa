@@ -363,37 +363,6 @@ Links to the schema:
 ```json--ldContext
 {
   "@context": {
-    "resultTime": "sosa:resultTime",
-    "phenomenonTime": "sosa:phenomenonTime",
-    "hasFeatureOfInterest": {
-      "@id": "sosa:hasFeatureOfInterest",
-      "@type": "@id"
-    },
-    "observedProperty": {
-      "@id": "sosa:observedProperty",
-      "@type": "@id"
-    },
-    "usedProcedure": {
-      "@id": "sosa:usedProcedure",
-      "@type": "@id"
-    },
-    "madeBySensor": {
-      "@id": "sosa:madeBySensor",
-      "@type": "@id"
-    },
-    "hasMember": {
-      "@id": "sosa:hasMember",
-      "@context": {
-        "hasMember": {
-          "@id": "sosa:hasMember",
-          "@context": {
-            "hasMember": "sosa:hasMember"
-          }
-        },
-        "hasResult": "sosa:hasResult",
-        "hasSimpleResult": "sosa:hasSimpleResult"
-      }
-    },
     "Observation": "sosa:Observation",
     "Sample": "sosa:Sample",
     "observes": {
@@ -478,6 +447,28 @@ Links to the schema:
     "features": "sosa:hasMember",
     "properties": "@nest",
     "featureType": "@type",
+    "resultTime": "sosa:resultTime",
+    "phenomenonTime": "sosa:phenomenonTime",
+    "hasFeatureOfInterest": {
+      "@id": "sosa:hasFeatureOfInterest",
+      "@type": "@id"
+    },
+    "observedProperty": {
+      "@id": "sosa:observedProperty",
+      "@type": "@id"
+    },
+    "usedProcedure": {
+      "@id": "sosa:usedProcedure",
+      "@type": "@id"
+    },
+    "madeBySensor": {
+      "@id": "sosa:madeBySensor",
+      "@type": "@id"
+    },
+    "hasMember": {
+      "@context": {},
+      "@id": "sosa:hasMember"
+    },
     "sosa": "http://www.w3.org/ns/sosa/",
     "ssn": "http://www.w3.org/ns/ssn/",
     "ssn-system": "ssn:systems/",
@@ -490,6 +481,14 @@ Links to the schema:
 
 You can find the full JSON-LD context here:
 <a href="https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observationCollection/context.jsonld" target="_blank">https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observationCollection/context.jsonld</a>
+
+# Validation
+
+## SHACL Shapes
+
+The following SHACL shapes are used for validating this building block:
+
+* [https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observationCollection/_sources/properties/observation/rules.shacl](https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observationCollection/_sources/properties/observation/rules.shacl)
 
 # References
 

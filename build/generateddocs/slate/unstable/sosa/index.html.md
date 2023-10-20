@@ -44,28 +44,13 @@ TBD: Convenience API paths may be defined to support traversal of relationships 
 ```json--ldContext
 {
   "@context": {
-    "resultTime": "sosa:resultTime",
-    "phenomenonTime": "sosa:phenomenonTime",
-    "hasFeatureOfInterest": {
-      "@id": "sosa:hasFeatureOfInterest",
-      "@type": "@id"
-    },
+    "Observation": "sosa:Observation",
+    "Sample": "sosa:Sample",
     "observedProperty": {
       "@id": "sosa:observedProperty",
       "@type": "@id"
     },
-    "usedProcedure": {
-      "@id": "sosa:usedProcedure",
-      "@type": "@id"
-    },
-    "madeBySensor": {
-      "@id": "sosa:madeBySensor",
-      "@type": "@id"
-    },
-    "hasResult": "sosa:hasResult",
-    "hasSimpleResult": "sosa:hasSimpleResult",
-    "Observation": "sosa:Observation",
-    "Sample": "sosa:Sample",
+    "phenomenonTime": "sosa:phenomenonTime",
     "observes": {
       "@id": "sosa:observes",
       "@type": "@id"
@@ -76,6 +61,10 @@ TBD: Convenience API paths may be defined to support traversal of relationships 
     },
     "madeObservation": {
       "@id": "sosa:madeObservation",
+      "@type": "@id"
+    },
+    "madeBySensor": {
+      "@id": "sosa:madeBySensor",
       "@type": "@id"
     },
     "actsOnProperty": {
@@ -110,11 +99,22 @@ TBD: Convenience API paths may be defined to support traversal of relationships 
       "@id": "sosa:madeBySampler",
       "@type": "@id"
     },
+    "hasFeatureOfInterest": {
+      "@id": "sosa:hasFeatureOfInterest",
+      "@type": "@id"
+    },
     "isFeatureOfInterestOf": {
       "@id": "sosa:isFeatureOfInterestOf",
       "@type": "@id"
     },
+    "hasResult": "sosa:hasResult",
     "isResultOf": "sosa:isResultOf",
+    "hasSimpleResult": "sosa:hasSimpleResult",
+    "resultTime": "sosa:resultTime",
+    "usedProcedure": {
+      "@id": "sosa:usedProcedure",
+      "@type": "@id"
+    },
     "hosts": {
       "@id": "sosa:hosts",
       "@type": "@id"
@@ -144,55 +144,24 @@ TBD: Convenience API paths may be defined to support traversal of relationships 
     "hasSurvivalProperty": "ssn:systems/hasSurvivalProperty",
     "qualityOfObservation": "ssn:systems/qualityOfObservation",
     "hasMember": {
-      "@id": "sosa:hasMember",
       "@context": {
-        "hasMember": {
-          "@id": "sosa:hasMember",
-          "@context": {
-            "hasMember": "sosa:hasMember"
-          }
-        },
         "features": "sosa:hasMember"
-      }
+      },
+      "@id": "sosa:hasMember"
     },
     "features": {
-      "@id": "sosa:hasMember",
-      "@container": "@set",
       "@context": {
-        "features": {
-          "@container": "@set",
-          "@id": "sosa:hasMember"
-        },
-        "hasMember": "sosa:hasMember"
-      }
+        "features": "sosa:hasMember"
+      },
+      "@id": "geojson:features",
+      "@container": "@set"
     },
-    "properties": "@nest",
     "featureType": "@type",
-    "position": {
-      "@id": "geopose:position",
+    "properties": {
       "@context": {
-        "lat": "geo:lat",
-        "lon": "geo:long",
-        "h": "geopose:h"
-      }
-    },
-    "angles": {
-      "@id": "geopose:angles",
-      "@context": {
-        "yaw": "geopose:yaw",
-        "pitch": "geopose:pitch",
-        "roll": "geopose:roll"
-      }
-    },
-    "type": "@type",
-    "id": "@id",
-    "geometry": {
-      "@id": "geojson:geometry",
-      "@context": {}
-    },
-    "bbox": {
-      "@container": "@list",
-      "@id": "geojson:bbox"
+        "features": "sosa:hasMember"
+      },
+      "@id": "@nest"
     },
     "Feature": "geojson:Feature",
     "FeatureCollection": "geojson:FeatureCollection",
@@ -203,34 +172,57 @@ TBD: Convenience API paths may be defined to support traversal of relationships 
     "MultiPolygon": "geojson:MultiPolygon",
     "Point": "geojson:Point",
     "Polygon": "geojson:Polygon",
-    "links": {
-      "@id": "rdfs:seeAlso",
-      "@context": {
-        "href": "oa:hasTarget",
-        "rel": {
-          "@id": "http://www.iana.org/assignments/relation",
-          "@type": "@id",
-          "@context": {
-            "@base": "http://www.iana.org/assignments/relation/"
-          }
-        },
-        "type": "dct:type",
-        "hreflang": "dct:language",
-        "title": "rdfs:label",
-        "length": "dct:extent"
-      }
+    "bbox": {
+      "@container": "@list",
+      "@id": "geojson:bbox"
     },
     "coordinates": {
       "@container": "@list",
       "@id": "geojson:coordinates"
     },
+    "type": "@type",
+    "id": "@id",
+    "links": {
+      "@context": {
+        "href": "oa:hasTarget",
+        "rel": {
+          "@context": {
+            "@base": "http://www.iana.org/assignments/relation/"
+          },
+          "@id": "http://www.iana.org/assignments/relation",
+          "@type": "@id"
+        },
+        "type": "dct:type",
+        "hreflang": "dct:language",
+        "title": "rdfs:label",
+        "length": "dct:extent"
+      },
+      "@id": "rdfs:seeAlso"
+    },
+    "geometry": "geojson:geometry",
+    "position": {
+      "@context": {
+        "lat": "geo:lat",
+        "lon": "geo:long",
+        "h": "geopose:h"
+      },
+      "@id": "geopose:position"
+    },
+    "angles": {
+      "@context": {
+        "yaw": "geopose:yaw",
+        "pitch": "geopose:pitch",
+        "roll": "geopose:roll"
+      },
+      "@id": "geopose:angles"
+    },
     "sosa": "http://www.w3.org/ns/sosa/",
     "ssn": "http://www.w3.org/ns/ssn/",
     "ssn-system": "ssn:systems/",
-    "geopose": "http://example.com/geopose/",
-    "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
     "geojson": "https://purl.org/geojson/vocab#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "geopose": "http://example.com/geopose/",
+    "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
     "oa": "http://www.w3.org/ns/oa#",
     "dct": "http://purl.org/dc/terms/",
     "@version": 1.1

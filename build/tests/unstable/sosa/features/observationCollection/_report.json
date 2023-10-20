@@ -1,0 +1,461 @@
+{
+  "title": "Validation report for ogc.unstable.sosa.features.observationCollection - SOSA ObservationCollection Feature",
+  "bblockName": "SOSA ObservationCollection Feature",
+  "bblockId": "ogc.unstable.sosa.features.observationCollection",
+  "generated": "2023-10-20T13:26:48.691774+00:00",
+  "result": false,
+  "items": [
+    {
+      "source": {
+        "type": "TEST_RESOURCE",
+        "requireFail": true,
+        "filename": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/tests/observationCollection-props-fail.json",
+        "language": "json"
+      },
+      "result": true,
+      "sections": {
+        "FILES": [
+          {
+            "isError": false,
+            "message": "Using observationCollection-props-fail.json from test resources"
+          },
+          {
+            "op": "jsonld-uplift",
+            "isError": false,
+            "message": "JSON-LD context is present - uplifting"
+          },
+          {
+            "op": "jsonld-create",
+            "filename": "observationCollection-props-fail.jsonld",
+            "isError": false,
+            "message": "Output JSON-LD observationCollection-props-fail.jsonld created"
+          },
+          {
+            "op": "ttl-create",
+            "empty": false,
+            "filename": "observationCollection-props-fail.ttl",
+            "size": 7,
+            "isError": false,
+            "message": "Output Turtle observationCollection-props-fail.ttl created"
+          }
+        ],
+        "JSON_SCHEMA": [
+          {
+            "op": "validation",
+            "result": true,
+            "isError": false,
+            "message": "Validation passed"
+          }
+        ],
+        "SHACL": [
+          {
+            "op": "shacl-files",
+            "files": [
+              "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl",
+              "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/rules.shacl"
+            ],
+            "isError": false,
+            "message": "Using SHACL files for validation:\n - _sources/properties/observation/rules.shacl\n - _sources/features/observationCollection/rules.shacl"
+          },
+          {
+            "op": "shacl-report",
+            "graph": "@prefix : <http://example.com/rules> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <file:///github/workspace/pop1999> ;\n            sh:resultMessage \"Observations must either declare required properties or be a member of a collection hierarchy that declares them,\" ;\n            sh:resultPath sosa:observedProperty ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraint [ a sh:SPARQLConstraint ;\n                    sh:message \"Observations must either declare required properties or be a member of a collection hierarchy that declares them,\" ;\n                    <http://www.w3.org/ns/shacl#prefixes:> sosa: ;\n                    sh:select \"\"\"\n        PREFIX dct: <http://purl.org/dc/terms/>\nPREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>\nprefix sosa:    <http://www.w3.org/ns/sosa/>\n\n                SELECT $this ?path ?total\n        WHERE {\n  \t\t\tBIND ( sosa:observedProperty as ?path )\n           {\n            SELECT $this ?path ( SUM(?count) as ?total )\n            WHERE {\n                      {\n                          SELECT $this ?coll ?path ( COUNT(?prop1) AS ?count )\n                          WHERE\n                          {\n                              ?coll sosa:hasMember* $this .\n                              BIND ( sosa:observedProperty as ?path )\n                              OPTIONAL { ?coll  ?path ?prop1 }\n                          }\n                          GROUP BY $this ?coll ?path\n                       }\n\n             }\n              GROUP BY $this ?path\n          }\n          FILTER (?total = 0 )\n\t}\n\n        \"\"\" ] ;\n            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;\n            sh:sourceShape :testInCollectionOrMember-observedProperty ;\n            sh:value <file:///github/workspace/pop1999> ] .\n\n",
+            "isError": true,
+            "message": "Validation Report\nConforms: False\nResults (1):\nConstraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: <http://example.com/rulestestInCollectionOrMember-observedProperty>\n\tFocus Node: <file:///github/workspace/pop1999>\n\tValue Node: <file:///github/workspace/pop1999>\n\tResult Path: sosa:observedProperty\n\tSource Constraint: [ <http://www.w3.org/ns/shacl#prefixes:> <http://www.w3.org/ns/sosa/> ; rdf:type sh:SPARQLConstraint ; sh:message Literal(\"Observations must either declare required properties or be a member of a collection hierarchy that declares them,\") ; sh:select Literal(\"\n        PREFIX dct: <http://purl.org/dc/terms/>\nPREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>\nprefix sosa:    <http://www.w3.org/ns/sosa/>\n\n                SELECT $this ?path ?total\n        WHERE {\n  \t\t\tBIND ( sosa:observedProperty as ?path )\n           {\n            SELECT $this ?path ( SUM(?count) as ?total )\n            WHERE {\n                      {\n                          SELECT $this ?coll ?path ( COUNT(?prop1) AS ?count )\n                          WHERE\n                          {\n                              ?coll sosa:hasMember* $this .\n                              BIND ( sosa:observedProperty as ?path )\n                              OPTIONAL { ?coll  ?path ?prop1 }\n                          }\n                          GROUP BY $this ?coll ?path\n                       }\n\n             }\n              GROUP BY $this ?path\n          }\n          FILTER (?total = 0 )\n\t}\n\n        \") ]\n\tMessage: Observations must either declare required properties or be a member of a collection hierarchy that declares them,\n"
+          },
+          {
+            "focusNodes": {
+              "<http://example.com/rules#testResult>": {
+                "nodes": []
+              },
+              "<http://example.com/rules#testObservedProperty>": {
+                "nodes": []
+              },
+              "<http://example.com/rules#testFeatureOfInterest>": {
+                "nodes": []
+              },
+              ":testInCollectionOrMember-foi": {
+                "nodes": [
+                  "<file:///github/workspace/pop1999>"
+                ]
+              },
+              "<http://example.com/rules#testRequiredTime>": {
+                "nodes": []
+              },
+              ":testInCollectionOrMember-observedProperty": {
+                "nodes": [
+                  "<file:///github/workspace/pop1999>"
+                ]
+              },
+              "<http://example.com/rules#testRequiredTime>/sh:or/rdf:rest/rdf:first": {
+                "nodes": [],
+                "path": "_:n2ba201ec8731423a901cdcb1e6913558b11"
+              },
+              "<http://example.com/rules#testObservedProperty>/sh:property": {
+                "nodes": [],
+                "path": "_:n2ba201ec8731423a901cdcb1e6913558b19"
+              },
+              "<http://example.com/rules#testRequiredTime>/sh:or/rdf:first": {
+                "nodes": [],
+                "path": "_:n2ba201ec8731423a901cdcb1e6913558b5"
+              },
+              "<http://example.com/rules#testFeatureOfInterest>/sh:property": {
+                "nodes": [],
+                "path": "_:n2ba201ec8731423a901cdcb1e6913558b29"
+              },
+              "<http://example.com/rules#testResult>/sh:property": {
+                "nodes": [],
+                "path": "_:n2ba201ec8731423a901cdcb1e6913558b32"
+              }
+            },
+            "isError": false,
+            "message": "Focus nodes:\n - Shape <http://example.com/rules#testResult>: *none*\n - Shape <http://example.com/rules#testObservedProperty>: *none*\n - Shape <http://example.com/rules#testFeatureOfInterest>: *none*\n - Shape :testInCollectionOrMember-foi: <file:///github/workspace/pop1999>\n - Shape <http://example.com/rules#testRequiredTime>: *none*\n - Shape :testInCollectionOrMember-observedProperty: <file:///github/workspace/pop1999>\n - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:rest/rdf:first (path _:n2ba201ec8731423a901cdcb1e6913558b11): *none*\n - Shape <http://example.com/rules#testObservedProperty>/sh:property (path _:n2ba201ec8731423a901cdcb1e6913558b19): *none*\n - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:first (path _:n2ba201ec8731423a901cdcb1e6913558b5): *none*\n - Shape <http://example.com/rules#testFeatureOfInterest>/sh:property (path _:n2ba201ec8731423a901cdcb1e6913558b29): *none*\n - Shape <http://example.com/rules#testResult>/sh:property (path _:n2ba201ec8731423a901cdcb1e6913558b32): *none*\n"
+          }
+        ],
+        "GENERAL": [
+          {
+            "op": "require-fail",
+            "isError": false,
+            "message": "Test was expected to fail and it did."
+          }
+        ]
+      }
+    },
+    {
+      "source": {
+        "type": "TEST_RESOURCE",
+        "requireFail": false,
+        "filename": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/tests/observationCollection-props.json",
+        "language": "json"
+      },
+      "result": false,
+      "sections": {
+        "FILES": [
+          {
+            "isError": false,
+            "message": "Using observationCollection-props.json from test resources"
+          },
+          {
+            "op": "jsonld-uplift",
+            "isError": false,
+            "message": "JSON-LD context is present - uplifting"
+          },
+          {
+            "op": "jsonld-create",
+            "filename": "observationCollection-props.jsonld",
+            "isError": false,
+            "message": "Output JSON-LD observationCollection-props.jsonld created"
+          },
+          {
+            "op": "ttl-create",
+            "empty": false,
+            "filename": "observationCollection-props.ttl",
+            "size": 16,
+            "isError": false,
+            "message": "Output Turtle observationCollection-props.ttl created"
+          }
+        ],
+        "JSON_SCHEMA": [
+          {
+            "op": "validation",
+            "result": true,
+            "isError": false,
+            "message": "Validation passed"
+          }
+        ],
+        "SHACL": [
+          {
+            "op": "shacl-files",
+            "files": [
+              "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl",
+              "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/rules.shacl"
+            ],
+            "isError": false,
+            "message": "Using SHACL files for validation:\n - _sources/properties/observation/rules.shacl\n - _sources/features/observationCollection/rules.shacl"
+          },
+          {
+            "op": "shacl-report",
+            "graph": "@prefix : <http://example.com/rules> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <file:///github/workspace/pop1999> ;\n            sh:resultMessage \"Observations must either declare required properties or be a member of a collection hierarchy that declares them,\" ;\n            sh:resultPath sosa:observedProperty ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraint _:n788944c1d7bf4bcf932eef46214122d6b1 ;\n            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;\n            sh:sourceShape :testInCollectionOrMember-observedProperty ;\n            sh:value <file:///github/workspace/pop1999> ],\n        [ a sh:ValidationResult ;\n            sh:focusNode <file:///github/workspace/something> ;\n            sh:resultMessage \"Observations must either declare required properties or be a member of a collection hierarchy that declares them,\" ;\n            sh:resultPath sosa:observedProperty ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraint _:n788944c1d7bf4bcf932eef46214122d6b1 ;\n            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;\n            sh:sourceShape :testInCollectionOrMember-observedProperty ;\n            sh:value <file:///github/workspace/something> ] .\n\n_:n788944c1d7bf4bcf932eef46214122d6b1 a sh:SPARQLConstraint ;\n    sh:message \"Observations must either declare required properties or be a member of a collection hierarchy that declares them,\" ;\n    <http://www.w3.org/ns/shacl#prefixes:> sosa: ;\n    sh:select \"\"\"\n        PREFIX dct: <http://purl.org/dc/terms/>\nPREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>\nprefix sosa:    <http://www.w3.org/ns/sosa/>\n\n                SELECT $this ?path ?total\n        WHERE {\n  \t\t\tBIND ( sosa:observedProperty as ?path )\n           {\n            SELECT $this ?path ( SUM(?count) as ?total )\n            WHERE {\n                      {\n                          SELECT $this ?coll ?path ( COUNT(?prop1) AS ?count )\n                          WHERE\n                          {\n                              ?coll sosa:hasMember* $this .\n                              BIND ( sosa:observedProperty as ?path )\n                              OPTIONAL { ?coll  ?path ?prop1 }\n                          }\n                          GROUP BY $this ?coll ?path\n                       }\n\n             }\n              GROUP BY $this ?path\n          }\n          FILTER (?total = 0 )\n\t}\n\n        \"\"\" .\n\n",
+            "isError": true,
+            "message": "Validation Report\nConforms: False\nResults (2):\nConstraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: <http://example.com/rulestestInCollectionOrMember-observedProperty>\n\tFocus Node: <file:///github/workspace/pop1999>\n\tValue Node: <file:///github/workspace/pop1999>\n\tResult Path: sosa:observedProperty\n\tSource Constraint: [ <http://www.w3.org/ns/shacl#prefixes:> <http://www.w3.org/ns/sosa/> ; rdf:type sh:SPARQLConstraint ; sh:message Literal(\"Observations must either declare required properties or be a member of a collection hierarchy that declares them,\") ; sh:select Literal(\"\n        PREFIX dct: <http://purl.org/dc/terms/>\nPREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>\nprefix sosa:    <http://www.w3.org/ns/sosa/>\n\n                SELECT $this ?path ?total\n        WHERE {\n  \t\t\tBIND ( sosa:observedProperty as ?path )\n           {\n            SELECT $this ?path ( SUM(?count) as ?total )\n            WHERE {\n                      {\n                          SELECT $this ?coll ?path ( COUNT(?prop1) AS ?count )\n                          WHERE\n                          {\n                              ?coll sosa:hasMember* $this .\n                              BIND ( sosa:observedProperty as ?path )\n                              OPTIONAL { ?coll  ?path ?prop1 }\n                          }\n                          GROUP BY $this ?coll ?path\n                       }\n\n             }\n              GROUP BY $this ?path\n          }\n          FILTER (?total = 0 )\n\t}\n\n        \") ]\n\tMessage: Observations must either declare required properties or be a member of a collection hierarchy that declares them,\nConstraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: <http://example.com/rulestestInCollectionOrMember-observedProperty>\n\tFocus Node: <file:///github/workspace/something>\n\tValue Node: <file:///github/workspace/something>\n\tResult Path: sosa:observedProperty\n\tSource Constraint: [ <http://www.w3.org/ns/shacl#prefixes:> <http://www.w3.org/ns/sosa/> ; rdf:type sh:SPARQLConstraint ; sh:message Literal(\"Observations must either declare required properties or be a member of a collection hierarchy that declares them,\") ; sh:select Literal(\"\n        PREFIX dct: <http://purl.org/dc/terms/>\nPREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>\nprefix sosa:    <http://www.w3.org/ns/sosa/>\n\n                SELECT $this ?path ?total\n        WHERE {\n  \t\t\tBIND ( sosa:observedProperty as ?path )\n           {\n            SELECT $this ?path ( SUM(?count) as ?total )\n            WHERE {\n                      {\n                          SELECT $this ?coll ?path ( COUNT(?prop1) AS ?count )\n                          WHERE\n                          {\n                              ?coll sosa:hasMember* $this .\n                              BIND ( sosa:observedProperty as ?path )\n                              OPTIONAL { ?coll  ?path ?prop1 }\n                          }\n                          GROUP BY $this ?coll ?path\n                       }\n\n             }\n              GROUP BY $this ?path\n          }\n          FILTER (?total = 0 )\n\t}\n\n        \") ]\n\tMessage: Observations must either declare required properties or be a member of a collection hierarchy that declares them,\n"
+          },
+          {
+            "focusNodes": {
+              "<http://example.com/rules#testResult>": {
+                "nodes": []
+              },
+              "<http://example.com/rules#testObservedProperty>": {
+                "nodes": []
+              },
+              "<http://example.com/rules#testFeatureOfInterest>": {
+                "nodes": []
+              },
+              ":testInCollectionOrMember-foi": {
+                "nodes": [
+                  "<file:///github/workspace/pop1999>",
+                  "<file:///github/workspace/something>"
+                ]
+              },
+              "<http://example.com/rules#testRequiredTime>": {
+                "nodes": []
+              },
+              ":testInCollectionOrMember-observedProperty": {
+                "nodes": [
+                  "<file:///github/workspace/pop1999>",
+                  "<file:///github/workspace/something>"
+                ]
+              },
+              "<http://example.com/rules#testRequiredTime>/sh:or/rdf:rest/rdf:first": {
+                "nodes": [],
+                "path": "_:n2ba201ec8731423a901cdcb1e6913558b11"
+              },
+              "<http://example.com/rules#testObservedProperty>/sh:property": {
+                "nodes": [],
+                "path": "_:n2ba201ec8731423a901cdcb1e6913558b19"
+              },
+              "<http://example.com/rules#testRequiredTime>/sh:or/rdf:first": {
+                "nodes": [],
+                "path": "_:n2ba201ec8731423a901cdcb1e6913558b5"
+              },
+              "<http://example.com/rules#testFeatureOfInterest>/sh:property": {
+                "nodes": [],
+                "path": "_:n2ba201ec8731423a901cdcb1e6913558b29"
+              },
+              "<http://example.com/rules#testResult>/sh:property": {
+                "nodes": [],
+                "path": "_:n2ba201ec8731423a901cdcb1e6913558b32"
+              }
+            },
+            "isError": false,
+            "message": "Focus nodes:\n - Shape <http://example.com/rules#testResult>: *none*\n - Shape <http://example.com/rules#testObservedProperty>: *none*\n - Shape <http://example.com/rules#testFeatureOfInterest>: *none*\n - Shape :testInCollectionOrMember-foi: <file:///github/workspace/pop1999>,<file:///github/workspace/something>\n - Shape <http://example.com/rules#testRequiredTime>: *none*\n - Shape :testInCollectionOrMember-observedProperty: <file:///github/workspace/pop1999>,<file:///github/workspace/something>\n - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:rest/rdf:first (path _:n2ba201ec8731423a901cdcb1e6913558b11): *none*\n - Shape <http://example.com/rules#testObservedProperty>/sh:property (path _:n2ba201ec8731423a901cdcb1e6913558b19): *none*\n - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:first (path _:n2ba201ec8731423a901cdcb1e6913558b5): *none*\n - Shape <http://example.com/rules#testFeatureOfInterest>/sh:property (path _:n2ba201ec8731423a901cdcb1e6913558b29): *none*\n - Shape <http://example.com/rules#testResult>/sh:property (path _:n2ba201ec8731423a901cdcb1e6913558b32): *none*\n"
+          }
+        ]
+      }
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/example_1_1.json",
+        "exampleIndex": 1,
+        "snippetIndex": 1,
+        "language": "json"
+      },
+      "result": true,
+      "sections": {
+        "FILES": [
+          {
+            "isError": false,
+            "message": "Using example_1_1.json from examples"
+          },
+          {
+            "op": "jsonld-uplift",
+            "isError": false,
+            "message": "JSON-LD context is present - uplifting"
+          },
+          {
+            "op": "jsonld-create",
+            "filename": "example_1_1.jsonld",
+            "isError": false,
+            "message": "Output JSON-LD example_1_1.jsonld created"
+          },
+          {
+            "op": "ttl-create",
+            "empty": false,
+            "filename": "example_1_1.ttl",
+            "size": 17,
+            "isError": false,
+            "message": "Output Turtle example_1_1.ttl created"
+          }
+        ],
+        "JSON_SCHEMA": [
+          {
+            "op": "validation",
+            "result": true,
+            "isError": false,
+            "message": "Validation passed"
+          }
+        ],
+        "SHACL": [
+          {
+            "op": "shacl-files",
+            "files": [
+              "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl",
+              "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/rules.shacl"
+            ],
+            "isError": false,
+            "message": "Using SHACL files for validation:\n - _sources/properties/observation/rules.shacl\n - _sources/features/observationCollection/rules.shacl"
+          },
+          {
+            "op": "shacl-report",
+            "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+            "isError": false,
+            "message": "Validation Report\nConforms: True\n"
+          },
+          {
+            "focusNodes": {
+              "<http://example.com/rules#testResult>": {
+                "nodes": []
+              },
+              "<http://example.com/rules#testObservedProperty>": {
+                "nodes": []
+              },
+              "<http://example.com/rules#testFeatureOfInterest>": {
+                "nodes": []
+              },
+              ":testInCollectionOrMember-foi": {
+                "nodes": [
+                  "<http://www.example.com/sosa/something>",
+                  "<http://www.example.com/sosa/pop1999>"
+                ]
+              },
+              "<http://example.com/rules#testRequiredTime>": {
+                "nodes": []
+              },
+              ":testInCollectionOrMember-observedProperty": {
+                "nodes": [
+                  "<http://www.example.com/sosa/something>",
+                  "<http://www.example.com/sosa/pop1999>"
+                ]
+              },
+              "<http://example.com/rules#testRequiredTime>/sh:or/rdf:rest/rdf:first": {
+                "nodes": [],
+                "path": "_:n2ba201ec8731423a901cdcb1e6913558b11"
+              },
+              "<http://example.com/rules#testObservedProperty>/sh:property": {
+                "nodes": [],
+                "path": "_:n2ba201ec8731423a901cdcb1e6913558b19"
+              },
+              "<http://example.com/rules#testRequiredTime>/sh:or/rdf:first": {
+                "nodes": [],
+                "path": "_:n2ba201ec8731423a901cdcb1e6913558b5"
+              },
+              "<http://example.com/rules#testFeatureOfInterest>/sh:property": {
+                "nodes": [],
+                "path": "_:n2ba201ec8731423a901cdcb1e6913558b29"
+              },
+              "<http://example.com/rules#testResult>/sh:property": {
+                "nodes": [],
+                "path": "_:n2ba201ec8731423a901cdcb1e6913558b32"
+              }
+            },
+            "isError": false,
+            "message": "Focus nodes:\n - Shape <http://example.com/rules#testResult>: *none*\n - Shape <http://example.com/rules#testObservedProperty>: *none*\n - Shape <http://example.com/rules#testFeatureOfInterest>: *none*\n - Shape :testInCollectionOrMember-foi: <http://www.example.com/sosa/something>,<http://www.example.com/sosa/pop1999>\n - Shape <http://example.com/rules#testRequiredTime>: *none*\n - Shape :testInCollectionOrMember-observedProperty: <http://www.example.com/sosa/something>,<http://www.example.com/sosa/pop1999>\n - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:rest/rdf:first (path _:n2ba201ec8731423a901cdcb1e6913558b11): *none*\n - Shape <http://example.com/rules#testObservedProperty>/sh:property (path _:n2ba201ec8731423a901cdcb1e6913558b19): *none*\n - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:first (path _:n2ba201ec8731423a901cdcb1e6913558b5): *none*\n - Shape <http://example.com/rules#testFeatureOfInterest>/sh:property (path _:n2ba201ec8731423a901cdcb1e6913558b29): *none*\n - Shape <http://example.com/rules#testResult>/sh:property (path _:n2ba201ec8731423a901cdcb1e6913558b32): *none*\n"
+          }
+        ]
+      }
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/example_1_2.ttl",
+        "exampleIndex": 1,
+        "snippetIndex": 2,
+        "language": "ttl"
+      },
+      "result": true,
+      "sections": {
+        "FILES": [
+          {
+            "isError": false,
+            "message": "Using example_1_2.ttl from examples"
+          },
+          {
+            "op": "ttl-create",
+            "empty": false,
+            "filename": "example_1_2.ttl",
+            "size": 14,
+            "isError": false,
+            "message": "Output Turtle example_1_2.ttl created"
+          }
+        ],
+        "SHACL": [
+          {
+            "op": "shacl-files",
+            "files": [
+              "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl",
+              "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/rules.shacl"
+            ],
+            "isError": false,
+            "message": "Using SHACL files for validation:\n - _sources/properties/observation/rules.shacl\n - _sources/features/observationCollection/rules.shacl"
+          },
+          {
+            "op": "shacl-report",
+            "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+            "isError": false,
+            "message": "Validation Report\nConforms: True\n"
+          },
+          {
+            "focusNodes": {
+              "<http://example.com/rules#testResult>": {
+                "nodes": [
+                  "eg:pop1999",
+                  "eg:pop2000"
+                ]
+              },
+              "<http://example.com/rules#testObservedProperty>": {
+                "nodes": [
+                  "eg:pop1999",
+                  "eg:pop2000"
+                ]
+              },
+              "<http://example.com/rules#testFeatureOfInterest>": {
+                "nodes": [
+                  "eg:pop1999",
+                  "eg:pop2000"
+                ]
+              },
+              ":testInCollectionOrMember-foi": {
+                "nodes": [
+                  "eg:pop1999",
+                  "eg:pop2000"
+                ]
+              },
+              "<http://example.com/rules#testRequiredTime>": {
+                "nodes": [
+                  "eg:pop1999",
+                  "eg:pop2000"
+                ]
+              },
+              ":testInCollectionOrMember-observedProperty": {
+                "nodes": [
+                  "eg:pop1999",
+                  "eg:pop2000"
+                ]
+              },
+              "<http://example.com/rules#testRequiredTime>/sh:or/rdf:rest/rdf:first": {
+                "nodes": [],
+                "path": "_:n2ba201ec8731423a901cdcb1e6913558b11"
+              },
+              "<http://example.com/rules#testObservedProperty>/sh:property": {
+                "nodes": [],
+                "path": "_:n2ba201ec8731423a901cdcb1e6913558b19"
+              },
+              "<http://example.com/rules#testRequiredTime>/sh:or/rdf:first": {
+                "nodes": [],
+                "path": "_:n2ba201ec8731423a901cdcb1e6913558b5"
+              },
+              "<http://example.com/rules#testFeatureOfInterest>/sh:property": {
+                "nodes": [],
+                "path": "_:n2ba201ec8731423a901cdcb1e6913558b29"
+              },
+              "<http://example.com/rules#testResult>/sh:property": {
+                "nodes": [],
+                "path": "_:n2ba201ec8731423a901cdcb1e6913558b32"
+              }
+            },
+            "isError": false,
+            "message": "Focus nodes:\n - Shape <http://example.com/rules#testResult>: eg:pop1999,eg:pop2000\n - Shape <http://example.com/rules#testObservedProperty>: eg:pop1999,eg:pop2000\n - Shape <http://example.com/rules#testFeatureOfInterest>: eg:pop1999,eg:pop2000\n - Shape :testInCollectionOrMember-foi: eg:pop1999,eg:pop2000\n - Shape <http://example.com/rules#testRequiredTime>: eg:pop1999,eg:pop2000\n - Shape :testInCollectionOrMember-observedProperty: eg:pop1999,eg:pop2000\n - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:rest/rdf:first (path _:n2ba201ec8731423a901cdcb1e6913558b11): *none*\n - Shape <http://example.com/rules#testObservedProperty>/sh:property (path _:n2ba201ec8731423a901cdcb1e6913558b19): *none*\n - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:first (path _:n2ba201ec8731423a901cdcb1e6913558b5): *none*\n - Shape <http://example.com/rules#testFeatureOfInterest>/sh:property (path _:n2ba201ec8731423a901cdcb1e6913558b29): *none*\n - Shape <http://example.com/rules#testResult>/sh:property (path _:n2ba201ec8731423a901cdcb1e6913558b32): *none*\n"
+          }
+        ]
+      }
+    }
+  ],
+  "globalErrors": {},
+  "counts": {
+    "total": 4,
+    "passed": 3,
+    "failed": 1
+  }
+}

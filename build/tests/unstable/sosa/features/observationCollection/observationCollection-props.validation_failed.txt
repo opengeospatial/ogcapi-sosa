@@ -1,14 +1,10 @@
 Validation report for ogc.unstable.sosa.features.observationCollection - SOSA ObservationCollection Feature
-Generated 2023-10-20T13:26:48.254643+00:00
-=== General ===
-Test was expected to fail and it did.
-=== End ValidationReportSection.GENERAL ===
-
+Generated 2023-10-20T13:26:48.428860+00:00
 === Files ===
-Using observationCollection-props-fail.json from test resources
+Using observationCollection-props.json from test resources
 JSON-LD context is present - uplifting
-Output JSON-LD observationCollection-props-fail.jsonld created
-Output Turtle observationCollection-props-fail.ttl created
+Output JSON-LD observationCollection-props.jsonld created
+Output Turtle observationCollection-props.ttl created
 === End ValidationReportSection.FILES ===
 
 === JSON Schema ===
@@ -23,7 +19,7 @@ Using SHACL files for validation:
 ** Validation error **
 Validation Report
 Conforms: False
-Results (1):
+Results (2):
 Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
 	Severity: sh:Violation
 	Source Shape: <http://example.com/rulestestInCollectionOrMember-observedProperty>
@@ -60,14 +56,50 @@ prefix sosa:    <http://www.w3.org/ns/sosa/>
 
         ") ]
 	Message: Observations must either declare required properties or be a member of a collection hierarchy that declares them,
+Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: <http://example.com/rulestestInCollectionOrMember-observedProperty>
+	Focus Node: <file:///github/workspace/something>
+	Value Node: <file:///github/workspace/something>
+	Result Path: sosa:observedProperty
+	Source Constraint: [ <http://www.w3.org/ns/shacl#prefixes:> <http://www.w3.org/ns/sosa/> ; rdf:type sh:SPARQLConstraint ; sh:message Literal("Observations must either declare required properties or be a member of a collection hierarchy that declares them,") ; sh:select Literal("
+        PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+prefix sosa:    <http://www.w3.org/ns/sosa/>
+
+                SELECT $this ?path ?total
+        WHERE {
+  			BIND ( sosa:observedProperty as ?path )
+           {
+            SELECT $this ?path ( SUM(?count) as ?total )
+            WHERE {
+                      {
+                          SELECT $this ?coll ?path ( COUNT(?prop1) AS ?count )
+                          WHERE
+                          {
+                              ?coll sosa:hasMember* $this .
+                              BIND ( sosa:observedProperty as ?path )
+                              OPTIONAL { ?coll  ?path ?prop1 }
+                          }
+                          GROUP BY $this ?coll ?path
+                       }
+
+             }
+              GROUP BY $this ?path
+          }
+          FILTER (?total = 0 )
+	}
+
+        ") ]
+	Message: Observations must either declare required properties or be a member of a collection hierarchy that declares them,
 
 Focus nodes:
  - Shape <http://example.com/rules#testResult>: *none*
  - Shape <http://example.com/rules#testObservedProperty>: *none*
  - Shape <http://example.com/rules#testFeatureOfInterest>: *none*
- - Shape :testInCollectionOrMember-foi: <file:///github/workspace/pop1999>
+ - Shape :testInCollectionOrMember-foi: <file:///github/workspace/pop1999>,<file:///github/workspace/something>
  - Shape <http://example.com/rules#testRequiredTime>: *none*
- - Shape :testInCollectionOrMember-observedProperty: <file:///github/workspace/pop1999>
+ - Shape :testInCollectionOrMember-observedProperty: <file:///github/workspace/pop1999>,<file:///github/workspace/something>
  - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:rest/rdf:first (path _:n2ba201ec8731423a901cdcb1e6913558b11): *none*
  - Shape <http://example.com/rules#testObservedProperty>/sh:property (path _:n2ba201ec8731423a901cdcb1e6913558b19): *none*
  - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:first (path _:n2ba201ec8731423a901cdcb1e6913558b5): *none*

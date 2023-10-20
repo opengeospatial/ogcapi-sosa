@@ -5,9 +5,9 @@
 
 <http://www.example.com/sosa/c1> a sosa:ObservationCollection,
         geojson:FeatureCollection ;
-    sosa:hasMember <http://www.example.com/sosa/pop1999>,
-        <http://www.example.com/sosa/something> ;
-    sosa:resultTime "1999" .
+    sosa:resultTime "1999" ;
+    geojson:features <http://www.example.com/sosa/pop1999>,
+        <http://www.example.com/sosa/something> .
 
 <http://www.example.com/sosa/pop1999> a geojson:Feature ;
     sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork> ;

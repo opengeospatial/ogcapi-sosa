@@ -1,36 +1,5 @@
 {
   "@context": {
-    "resultTime": "sosa:resultTime",
-    "phenomenonTime": "sosa:phenomenonTime",
-    "hasFeatureOfInterest": {
-      "@id": "sosa:hasFeatureOfInterest",
-      "@type": "@id"
-    },
-    "observedProperty": {
-      "@id": "sosa:observedProperty",
-      "@type": "@id"
-    },
-    "usedProcedure": {
-      "@id": "sosa:usedProcedure",
-      "@type": "@id"
-    },
-    "madeBySensor": {
-      "@id": "sosa:madeBySensor",
-      "@type": "@id"
-    },
-    "hasMember": {
-      "@id": "sosa:hasMember",
-      "@context": {
-        "hasMember": {
-          "@id": "sosa:hasMember",
-          "@context": {
-            "hasMember": "sosa:hasMember"
-          }
-        },
-        "hasResult": "sosa:hasResult",
-        "hasSimpleResult": "sosa:hasSimpleResult"
-      }
-    },
     "Observation": "sosa:Observation",
     "Sample": "sosa:Sample",
     "observes": {
@@ -115,6 +84,28 @@
     "features": "sosa:hasMember",
     "properties": "@nest",
     "featureType": "@type",
+    "resultTime": "sosa:resultTime",
+    "phenomenonTime": "sosa:phenomenonTime",
+    "hasFeatureOfInterest": {
+      "@id": "sosa:hasFeatureOfInterest",
+      "@type": "@id"
+    },
+    "observedProperty": {
+      "@id": "sosa:observedProperty",
+      "@type": "@id"
+    },
+    "usedProcedure": {
+      "@id": "sosa:usedProcedure",
+      "@type": "@id"
+    },
+    "madeBySensor": {
+      "@id": "sosa:madeBySensor",
+      "@type": "@id"
+    },
+    "hasMember": {
+      "@context": {},
+      "@id": "sosa:hasMember"
+    },
     "sosa": "http://www.w3.org/ns/sosa/",
     "ssn": "http://www.w3.org/ns/ssn/",
     "ssn-system": "ssn:systems/",

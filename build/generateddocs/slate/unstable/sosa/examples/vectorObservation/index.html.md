@@ -258,20 +258,20 @@ Links to the schema:
     "properties": "@nest",
     "featureType": "@type",
     "position": {
-      "@id": "geopose:position",
       "@context": {
         "lat": "geo:lat",
         "lon": "geo:long",
         "h": "geopose:h"
-      }
+      },
+      "@id": "geopose:position"
     },
     "angles": {
-      "@id": "geopose:angles",
       "@context": {
         "yaw": "geopose:yaw",
         "pitch": "geopose:pitch",
         "roll": "geopose:roll"
-      }
+      },
+      "@id": "geopose:angles"
     },
     "sosa": "http://www.w3.org/ns/sosa/",
     "ssn": "http://www.w3.org/ns/ssn/",
@@ -287,6 +287,14 @@ Links to the schema:
 
 You can find the full JSON-LD context here:
 <a href="https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/context.jsonld" target="_blank">https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/context.jsonld</a>
+
+# Validation
+
+## SHACL Shapes
+
+The following SHACL shapes are used for validating this building block:
+
+* [https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservation/_sources/properties/observation/rules.shacl](https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservation/_sources/properties/observation/rules.shacl)
 
 # References
 

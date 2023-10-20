@@ -1,0 +1,977 @@
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Building Blocks validation report</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <style>
+            .entry-message {
+                white-space: pre-wrap;
+                font-size: 90%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="title">Building blocks validation report</h1>
+            <small class="datetime">Generated at 2023-10-20T13:26:51.156076+00:00</small>
+                <p class="summary fw-semibold text-danger">
+                    Number of passing building blocks: 5 / 7 (71.43%)
+                </p>
+            <div class="text-end small" id="expand-collapse">
+                <a href="#" class="expand-all">Expand all</a>
+                <a href="#" class="collapse-all">Collapse all</a>
+            </div>
+            <div class="accordion mt-2" id="bblock-reports">
+                    <div class="accordion-item bblock-report" data-bblock-id="ogc.unstable.sosa.properties.observation" id="bblock-0">
+                        <h2 class="accordion-header bblock-title">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#bblock-collapse-0">
+                                <div class="flex-fill">
+                                    Validation report for SOSA Observation
+                                    <small class="ms-2 bblock-id">ogc.unstable.sosa.properties.observation</small>
+                                </div>
+
+                                <span class="badge text-bg-success me-2">
+                                        Passed
+                                        (100%)
+                                </span>
+                            </button>
+                        </h2>
+                        <div class="accordion-collapse collapse " id="bblock-collapse-0">
+                            <div class="accordion-body">
+                                    <p class="summary fw-semibold text-success">
+                                        Test passed: 4 / 4
+                                    </p>
+                                    <div class="card mb-2 validation-item ">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <a href="https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/tests/test1.jsonld" target="_blank">test1.jsonld</a>
+                                                <span class="badge bg-secondary test_resource">Test resource</span>
+                                                <div class="float-end">
+                                                        <span class="badge text-bg-success me-2">Passed</span>
+                                                </div>
+                                            </div>
+                                            <p class="card-text">
+                                                        <div class="font-monospace entry-message section-files ">Using test1.jsonld from test resources</div>
+                                                        <div class="font-monospace entry-message section-files ">Output Turtle test1.ttl created</div>
+                                                        <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Using SHACL files for validation:
+ - _sources/properties/observation/rules.shacl</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Validation Report
+Conforms: True
+</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Focus nodes:
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;: *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;: *none*
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;: *none*
+ - Shape &lt;http://example.com/rules#testResult&gt;: *none*
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;/sh:property (path _:n95cbd88fb19349aa87630efa342fe973b19): *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:rest/rdf:first (path _:n95cbd88fb19349aa87630efa342fe973b11): *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:first (path _:n95cbd88fb19349aa87630efa342fe973b5): *none*
+ - Shape &lt;http://example.com/rules#testResult&gt;/sh:property (path _:n95cbd88fb19349aa87630efa342fe973b32): *none*
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;/sh:property (path _:n95cbd88fb19349aa87630efa342fe973b29): *none*
+</div>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 validation-item ">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <a href="https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                <span class="badge bg-secondary example">Example</span>
+                                                <div class="float-end">
+                                                        <span class="badge text-bg-success me-2">Passed</span>
+                                                </div>
+                                            </div>
+                                            <p class="card-text">
+                                                        <div class="font-monospace entry-message section-files ">Using example_1_1.json from examples</div>
+                                                        <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                        <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
+                                                        <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                        <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Using SHACL files for validation:
+ - _sources/properties/observation/rules.shacl</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Validation Report
+Conforms: True
+</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Focus nodes:
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;: *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;: *none*
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;: *none*
+ - Shape &lt;http://example.com/rules#testResult&gt;: *none*
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;/sh:property (path _:n95cbd88fb19349aa87630efa342fe973b19): *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:rest/rdf:first (path _:n95cbd88fb19349aa87630efa342fe973b11): *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:first (path _:n95cbd88fb19349aa87630efa342fe973b5): *none*
+ - Shape &lt;http://example.com/rules#testResult&gt;/sh:property (path _:n95cbd88fb19349aa87630efa342fe973b32): *none*
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;/sh:property (path _:n95cbd88fb19349aa87630efa342fe973b29): *none*
+</div>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 validation-item ">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <a href="https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/example_1_2.ttl" target="_blank">example_1_2.ttl</a>
+                                                <span class="badge bg-secondary example">Example</span>
+                                                <div class="float-end">
+                                                        <span class="badge text-bg-success me-2">Passed</span>
+                                                </div>
+                                            </div>
+                                            <p class="card-text">
+                                                        <div class="font-monospace entry-message section-files ">Using example_1_2.ttl from examples</div>
+                                                        <div class="font-monospace entry-message section-files ">Output Turtle example_1_2.ttl created</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Using SHACL files for validation:
+ - _sources/properties/observation/rules.shacl</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Validation Report
+Conforms: True
+</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Focus nodes:
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;: _:nad8c2cb553c14beb841a83ad41aa2161b1
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;: _:nad8c2cb553c14beb841a83ad41aa2161b1
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;: _:nad8c2cb553c14beb841a83ad41aa2161b1
+ - Shape &lt;http://example.com/rules#testResult&gt;: _:nad8c2cb553c14beb841a83ad41aa2161b1
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;/sh:property (path _:n95cbd88fb19349aa87630efa342fe973b19): *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:rest/rdf:first (path _:n95cbd88fb19349aa87630efa342fe973b11): *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:first (path _:n95cbd88fb19349aa87630efa342fe973b5): *none*
+ - Shape &lt;http://example.com/rules#testResult&gt;/sh:property (path _:n95cbd88fb19349aa87630efa342fe973b32): *none*
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;/sh:property (path _:n95cbd88fb19349aa87630efa342fe973b29): *none*
+</div>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 validation-item ">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <a href="https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/example_2_1.json" target="_blank">example_2_1.json</a>
+                                                <span class="badge bg-secondary example">Example</span>
+                                                <div class="float-end">
+                                                        <span class="badge text-bg-success me-2">Passed</span>
+                                                </div>
+                                            </div>
+                                            <p class="card-text">
+                                                        <div class="font-monospace entry-message section-files ">Using example_2_1.json from examples</div>
+                                                        <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                        <div class="font-monospace entry-message section-files ">Output JSON-LD example_2_1.jsonld created</div>
+                                                        <div class="font-monospace entry-message section-files ">Output Turtle example_2_1.ttl created</div>
+                                                        <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Using SHACL files for validation:
+ - _sources/properties/observation/rules.shacl</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Validation Report
+Conforms: True
+</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Focus nodes:
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;: *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;: *none*
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;: *none*
+ - Shape &lt;http://example.com/rules#testResult&gt;: *none*
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;/sh:property (path _:n95cbd88fb19349aa87630efa342fe973b19): *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:rest/rdf:first (path _:n95cbd88fb19349aa87630efa342fe973b11): *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:first (path _:n95cbd88fb19349aa87630efa342fe973b5): *none*
+ - Shape &lt;http://example.com/rules#testResult&gt;/sh:property (path _:n95cbd88fb19349aa87630efa342fe973b32): *none*
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;/sh:property (path _:n95cbd88fb19349aa87630efa342fe973b29): *none*
+</div>
+                                            </p>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item bblock-report" data-bblock-id="ogc.unstable.sosa.examples.vectorObservation" id="bblock-1">
+                        <h2 class="accordion-header bblock-title">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#bblock-collapse-1">
+                                <div class="flex-fill">
+                                    Validation report for Example SOSA Vector Observation
+                                    <small class="ms-2 bblock-id">ogc.unstable.sosa.examples.vectorObservation</small>
+                                </div>
+
+                                <span class="badge text-bg-success me-2">
+                                        Passed
+                                        (100%)
+                                </span>
+                            </button>
+                        </h2>
+                        <div class="accordion-collapse collapse " id="bblock-collapse-1">
+                            <div class="accordion-body">
+                                    <p class="summary fw-semibold text-success">
+                                        Test passed: 1 / 1
+                                    </p>
+                                    <div class="card mb-2 validation-item ">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <a href="https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservation/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                <span class="badge bg-secondary example">Example</span>
+                                                <div class="float-end">
+                                                        <span class="badge text-bg-success me-2">Passed</span>
+                                                </div>
+                                            </div>
+                                            <p class="card-text">
+                                                        <div class="font-monospace entry-message section-files ">Using example_1_1.json from examples</div>
+                                                        <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                        <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
+                                                        <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                        <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Using SHACL files for validation:
+ - _sources/properties/observation/rules.shacl</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Validation Report
+Conforms: True
+</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Focus nodes:
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;: *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;: *none*
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;: *none*
+ - Shape &lt;http://example.com/rules#testResult&gt;: *none*
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;/sh:property (path _:n2e74f29f411641a28f73c15950c4cb1bb19): *none*
+ - Shape &lt;http://example.com/rules#testResult&gt;/sh:property (path _:n2e74f29f411641a28f73c15950c4cb1bb32): *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:first (path _:n2e74f29f411641a28f73c15950c4cb1bb5): *none*
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;/sh:property (path _:n2e74f29f411641a28f73c15950c4cb1bb29): *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:rest/rdf:first (path _:n2e74f29f411641a28f73c15950c4cb1bb11): *none*
+</div>
+                                            </p>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item bblock-report" data-bblock-id="ogc.unstable.sosa.properties.observationCollection" id="bblock-2">
+                        <h2 class="accordion-header bblock-title">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#bblock-collapse-2">
+                                <div class="flex-fill">
+                                    Validation report for SOSA ObservationCollection
+                                    <small class="ms-2 bblock-id">ogc.unstable.sosa.properties.observationCollection</small>
+                                </div>
+
+                                <span class="badge text-bg-success me-2">
+                                        Passed
+                                        (100%)
+                                </span>
+                            </button>
+                        </h2>
+                        <div class="accordion-collapse collapse " id="bblock-collapse-2">
+                            <div class="accordion-body">
+                                    <p class="summary fw-semibold text-success">
+                                        Test passed: 3 / 3
+                                    </p>
+                                    <div class="card mb-2 validation-item ">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <a href="https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observationCollection/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                <span class="badge bg-secondary example">Example</span>
+                                                <div class="float-end">
+                                                        <span class="badge text-bg-success me-2">Passed</span>
+                                                </div>
+                                            </div>
+                                            <p class="card-text">
+                                                        <div class="font-monospace entry-message section-files ">Using example_1_1.json from examples</div>
+                                                        <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                        <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
+                                                        <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                        <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Using SHACL files for validation:
+ - _sources/properties/observation/rules.shacl</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Validation Report
+Conforms: True
+</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Focus nodes:
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;: *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;: *none*
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;: *none*
+ - Shape &lt;http://example.com/rules#testResult&gt;: *none*
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;/sh:property (path _:n13159e1e04ba4c5f8bbb51ec396235eeb19): *none*
+ - Shape &lt;http://example.com/rules#testResult&gt;/sh:property (path _:n13159e1e04ba4c5f8bbb51ec396235eeb32): *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:rest/rdf:first (path _:n13159e1e04ba4c5f8bbb51ec396235eeb11): *none*
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;/sh:property (path _:n13159e1e04ba4c5f8bbb51ec396235eeb29): *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:first (path _:n13159e1e04ba4c5f8bbb51ec396235eeb5): *none*
+</div>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 validation-item ">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <a href="https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observationCollection/example_2_1.json" target="_blank">example_2_1.json</a>
+                                                <span class="badge bg-secondary example">Example</span>
+                                                <div class="float-end">
+                                                        <span class="badge text-bg-success me-2">Passed</span>
+                                                </div>
+                                            </div>
+                                            <p class="card-text">
+                                                        <div class="font-monospace entry-message section-files ">Using example_2_1.json from examples</div>
+                                                        <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                        <div class="font-monospace entry-message section-files ">Output JSON-LD example_2_1.jsonld created</div>
+                                                        <div class="font-monospace entry-message section-files ">Output Turtle example_2_1.ttl created</div>
+                                                        <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Using SHACL files for validation:
+ - _sources/properties/observation/rules.shacl</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Validation Report
+Conforms: True
+</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Focus nodes:
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;: &lt;http://example.com/a1&gt;
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;: &lt;http://example.com/a1&gt;
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;: &lt;http://example.com/a1&gt;
+ - Shape &lt;http://example.com/rules#testResult&gt;: &lt;http://example.com/a1&gt;
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;/sh:property (path _:n13159e1e04ba4c5f8bbb51ec396235eeb19): *none*
+ - Shape &lt;http://example.com/rules#testResult&gt;/sh:property (path _:n13159e1e04ba4c5f8bbb51ec396235eeb32): *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:rest/rdf:first (path _:n13159e1e04ba4c5f8bbb51ec396235eeb11): *none*
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;/sh:property (path _:n13159e1e04ba4c5f8bbb51ec396235eeb29): *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:first (path _:n13159e1e04ba4c5f8bbb51ec396235eeb5): *none*
+</div>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 validation-item ">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <a href="https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observationCollection/example_3_1.ttl" target="_blank">example_3_1.ttl</a>
+                                                <span class="badge bg-secondary example">Example</span>
+                                                <div class="float-end">
+                                                        <span class="badge text-bg-success me-2">Passed</span>
+                                                </div>
+                                            </div>
+                                            <p class="card-text">
+                                                        <div class="font-monospace entry-message section-files ">Using example_3_1.ttl from examples</div>
+                                                        <div class="font-monospace entry-message section-files ">Output Turtle example_3_1.ttl created</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Using SHACL files for validation:
+ - _sources/properties/observation/rules.shacl</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Validation Report
+Conforms: True
+</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Focus nodes:
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;: eg:a1
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;: eg:a1
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;: eg:a1
+ - Shape &lt;http://example.com/rules#testResult&gt;: eg:a1
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;/sh:property (path _:n13159e1e04ba4c5f8bbb51ec396235eeb19): *none*
+ - Shape &lt;http://example.com/rules#testResult&gt;/sh:property (path _:n13159e1e04ba4c5f8bbb51ec396235eeb32): *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:rest/rdf:first (path _:n13159e1e04ba4c5f8bbb51ec396235eeb11): *none*
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;/sh:property (path _:n13159e1e04ba4c5f8bbb51ec396235eeb29): *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:first (path _:n13159e1e04ba4c5f8bbb51ec396235eeb5): *none*
+</div>
+                                            </p>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item bblock-report" data-bblock-id="ogc.unstable.sosa.features.observation" id="bblock-3">
+                        <h2 class="accordion-header bblock-title">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#bblock-collapse-3">
+                                <div class="flex-fill">
+                                    Validation report for SOSA Observation Feature
+                                    <small class="ms-2 bblock-id">ogc.unstable.sosa.features.observation</small>
+                                </div>
+
+                                <span class="badge text-bg-success me-2">
+                                        Passed
+                                        (100%)
+                                </span>
+                            </button>
+                        </h2>
+                        <div class="accordion-collapse collapse " id="bblock-collapse-3">
+                            <div class="accordion-body">
+                                    <p class="summary fw-semibold text-success">
+                                        Test passed: 3 / 3
+                                    </p>
+                                    <div class="card mb-2 validation-item ">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <a href="https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observation/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                <span class="badge bg-secondary example">Example</span>
+                                                <div class="float-end">
+                                                        <span class="badge text-bg-success me-2">Passed</span>
+                                                </div>
+                                            </div>
+                                            <p class="card-text">
+                                                        <div class="font-monospace entry-message section-files ">Using example_1_1.json from examples</div>
+                                                        <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                        <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
+                                                        <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                        <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Using SHACL files for validation:
+ - _sources/properties/observation/rules.shacl</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Validation Report
+Conforms: True
+</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Focus nodes:
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;http://example.com/rules#testResult&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;http://example.com/rules#testResult&gt;/sh:property (path _:n5bae89f518d9464b8eb2b67754f2e5f6b32): *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:first (path _:n5bae89f518d9464b8eb2b67754f2e5f6b5): *none*
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;/sh:property (path _:n5bae89f518d9464b8eb2b67754f2e5f6b29): *none*
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;/sh:property (path _:n5bae89f518d9464b8eb2b67754f2e5f6b19): *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:rest/rdf:first (path _:n5bae89f518d9464b8eb2b67754f2e5f6b11): *none*
+</div>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 validation-item ">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <a href="https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observation/example_1_2.ttl" target="_blank">example_1_2.ttl</a>
+                                                <span class="badge bg-secondary example">Example</span>
+                                                <div class="float-end">
+                                                        <span class="badge text-bg-success me-2">Passed</span>
+                                                </div>
+                                            </div>
+                                            <p class="card-text">
+                                                        <div class="font-monospace entry-message section-files ">Using example_1_2.ttl from examples</div>
+                                                        <div class="font-monospace entry-message section-files ">Output Turtle example_1_2.ttl created</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Using SHACL files for validation:
+ - _sources/properties/observation/rules.shacl</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Validation Report
+Conforms: True
+</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Focus nodes:
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;: _:nb176a22de12d4e0c9dce2cd46cf44c91b1
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;: _:nb176a22de12d4e0c9dce2cd46cf44c91b1
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;: _:nb176a22de12d4e0c9dce2cd46cf44c91b1
+ - Shape &lt;http://example.com/rules#testResult&gt;: _:nb176a22de12d4e0c9dce2cd46cf44c91b1
+ - Shape &lt;http://example.com/rules#testResult&gt;/sh:property (path _:n5bae89f518d9464b8eb2b67754f2e5f6b32): *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:first (path _:n5bae89f518d9464b8eb2b67754f2e5f6b5): *none*
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;/sh:property (path _:n5bae89f518d9464b8eb2b67754f2e5f6b29): *none*
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;/sh:property (path _:n5bae89f518d9464b8eb2b67754f2e5f6b19): *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:rest/rdf:first (path _:n5bae89f518d9464b8eb2b67754f2e5f6b11): *none*
+</div>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 validation-item ">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <a href="https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observation/example_2_1.json" target="_blank">example_2_1.json</a>
+                                                <span class="badge bg-secondary example">Example</span>
+                                                <div class="float-end">
+                                                        <span class="badge text-bg-success me-2">Passed</span>
+                                                </div>
+                                            </div>
+                                            <p class="card-text">
+                                                        <div class="font-monospace entry-message section-files ">Using example_2_1.json from examples</div>
+                                                        <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                        <div class="font-monospace entry-message section-files ">Output JSON-LD example_2_1.jsonld created</div>
+                                                        <div class="font-monospace entry-message section-files ">Output Turtle example_2_1.ttl created</div>
+                                                        <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Using SHACL files for validation:
+ - _sources/properties/observation/rules.shacl</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Validation Report
+Conforms: True
+</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Focus nodes:
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;http://example.com/rules#testResult&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;http://example.com/rules#testResult&gt;/sh:property (path _:n5bae89f518d9464b8eb2b67754f2e5f6b32): *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:first (path _:n5bae89f518d9464b8eb2b67754f2e5f6b5): *none*
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;/sh:property (path _:n5bae89f518d9464b8eb2b67754f2e5f6b29): *none*
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;/sh:property (path _:n5bae89f518d9464b8eb2b67754f2e5f6b19): *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:rest/rdf:first (path _:n5bae89f518d9464b8eb2b67754f2e5f6b11): *none*
+</div>
+                                            </p>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item bblock-report" data-bblock-id="ogc.unstable.sosa.features.observationCollection" id="bblock-4">
+                        <h2 class="accordion-header bblock-title">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#bblock-collapse-4">
+                                <div class="flex-fill">
+                                    Validation report for SOSA ObservationCollection Feature
+                                    <small class="ms-2 bblock-id">ogc.unstable.sosa.features.observationCollection</small>
+                                </div>
+
+                                <span class="badge text-bg-danger me-2">
+                                        Failed
+                                        (75%)
+                                </span>
+                            </button>
+                        </h2>
+                        <div class="accordion-collapse collapse show" id="bblock-collapse-4">
+                            <div class="accordion-body">
+                                    <p class="summary fw-semibold text-danger">
+                                        Test passed: 3 / 4
+                                    </p>
+                                    <div class="card mb-2 validation-item require-fail">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <a href="https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/tests/observationCollection-props-fail.json" target="_blank">observationCollection-props-fail.json</a>
+                                                <span class="badge bg-secondary test_resource">Test resource</span>
+                                                    <span class="badge text-bg-info">Requires fail</span>
+                                                <div class="float-end">
+                                                        <span class="badge text-bg-success me-2">Passed</span>
+                                                </div>
+                                            </div>
+                                            <p class="card-text">
+                                                        <div class="font-monospace entry-message section-files ">Using observationCollection-props-fail.json from test resources</div>
+                                                        <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                        <div class="font-monospace entry-message section-files ">Output JSON-LD observationCollection-props-fail.jsonld created</div>
+                                                        <div class="font-monospace entry-message section-files ">Output Turtle observationCollection-props-fail.ttl created</div>
+                                                        <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Using SHACL files for validation:
+ - _sources/properties/observation/rules.shacl
+ - _sources/features/observationCollection/rules.shacl</div>
+                                                        <div class="font-monospace entry-message section-shacl text-danger">Validation Report
+Conforms: False
+Results (1):
+Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: &lt;http://example.com/rulestestInCollectionOrMember-observedProperty&gt;
+	Focus Node: &lt;file:///github/workspace/pop1999&gt;
+	Value Node: &lt;file:///github/workspace/pop1999&gt;
+	Result Path: sosa:observedProperty
+	Source Constraint: [ &lt;http://www.w3.org/ns/shacl#prefixes:&gt; &lt;http://www.w3.org/ns/sosa/&gt; ; rdf:type sh:SPARQLConstraint ; sh:message Literal(&quot;Observations must either declare required properties or be a member of a collection hierarchy that declares them,&quot;) ; sh:select Literal(&quot;
+        PREFIX dct: &lt;http://purl.org/dc/terms/&gt;
+PREFIX rdfs:    &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+prefix sosa:    &lt;http://www.w3.org/ns/sosa/&gt;
+
+                SELECT $this ?path ?total
+        WHERE {
+  			BIND ( sosa:observedProperty as ?path )
+           {
+            SELECT $this ?path ( SUM(?count) as ?total )
+            WHERE {
+                      {
+                          SELECT $this ?coll ?path ( COUNT(?prop1) AS ?count )
+                          WHERE
+                          {
+                              ?coll sosa:hasMember* $this .
+                              BIND ( sosa:observedProperty as ?path )
+                              OPTIONAL { ?coll  ?path ?prop1 }
+                          }
+                          GROUP BY $this ?coll ?path
+                       }
+
+             }
+              GROUP BY $this ?path
+          }
+          FILTER (?total = 0 )
+	}
+
+        &quot;) ]
+	Message: Observations must either declare required properties or be a member of a collection hierarchy that declares them,
+</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Focus nodes:
+ - Shape &lt;http://example.com/rules#testResult&gt;: *none*
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;: *none*
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;: *none*
+ - Shape :testInCollectionOrMember-foi: &lt;file:///github/workspace/pop1999&gt;
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;: *none*
+ - Shape :testInCollectionOrMember-observedProperty: &lt;file:///github/workspace/pop1999&gt;
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:rest/rdf:first (path _:n2ba201ec8731423a901cdcb1e6913558b11): *none*
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;/sh:property (path _:n2ba201ec8731423a901cdcb1e6913558b19): *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:first (path _:n2ba201ec8731423a901cdcb1e6913558b5): *none*
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;/sh:property (path _:n2ba201ec8731423a901cdcb1e6913558b29): *none*
+ - Shape &lt;http://example.com/rules#testResult&gt;/sh:property (path _:n2ba201ec8731423a901cdcb1e6913558b32): *none*
+</div>
+                                                        <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 validation-item ">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <a href="https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/tests/observationCollection-props.json" target="_blank">observationCollection-props.json</a>
+                                                <span class="badge bg-secondary test_resource">Test resource</span>
+                                                <div class="float-end">
+                                                        <span class="badge text-bg-danger me-2">Failed</span>
+                                                </div>
+                                            </div>
+                                            <p class="card-text">
+                                                        <div class="font-monospace entry-message section-files ">Using observationCollection-props.json from test resources</div>
+                                                        <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                        <div class="font-monospace entry-message section-files ">Output JSON-LD observationCollection-props.jsonld created</div>
+                                                        <div class="font-monospace entry-message section-files ">Output Turtle observationCollection-props.ttl created</div>
+                                                        <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Using SHACL files for validation:
+ - _sources/properties/observation/rules.shacl
+ - _sources/features/observationCollection/rules.shacl</div>
+                                                        <div class="font-monospace entry-message section-shacl text-danger">Validation Report
+Conforms: False
+Results (2):
+Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: &lt;http://example.com/rulestestInCollectionOrMember-observedProperty&gt;
+	Focus Node: &lt;file:///github/workspace/pop1999&gt;
+	Value Node: &lt;file:///github/workspace/pop1999&gt;
+	Result Path: sosa:observedProperty
+	Source Constraint: [ &lt;http://www.w3.org/ns/shacl#prefixes:&gt; &lt;http://www.w3.org/ns/sosa/&gt; ; rdf:type sh:SPARQLConstraint ; sh:message Literal(&quot;Observations must either declare required properties or be a member of a collection hierarchy that declares them,&quot;) ; sh:select Literal(&quot;
+        PREFIX dct: &lt;http://purl.org/dc/terms/&gt;
+PREFIX rdfs:    &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+prefix sosa:    &lt;http://www.w3.org/ns/sosa/&gt;
+
+                SELECT $this ?path ?total
+        WHERE {
+  			BIND ( sosa:observedProperty as ?path )
+           {
+            SELECT $this ?path ( SUM(?count) as ?total )
+            WHERE {
+                      {
+                          SELECT $this ?coll ?path ( COUNT(?prop1) AS ?count )
+                          WHERE
+                          {
+                              ?coll sosa:hasMember* $this .
+                              BIND ( sosa:observedProperty as ?path )
+                              OPTIONAL { ?coll  ?path ?prop1 }
+                          }
+                          GROUP BY $this ?coll ?path
+                       }
+
+             }
+              GROUP BY $this ?path
+          }
+          FILTER (?total = 0 )
+	}
+
+        &quot;) ]
+	Message: Observations must either declare required properties or be a member of a collection hierarchy that declares them,
+Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: &lt;http://example.com/rulestestInCollectionOrMember-observedProperty&gt;
+	Focus Node: &lt;file:///github/workspace/something&gt;
+	Value Node: &lt;file:///github/workspace/something&gt;
+	Result Path: sosa:observedProperty
+	Source Constraint: [ &lt;http://www.w3.org/ns/shacl#prefixes:&gt; &lt;http://www.w3.org/ns/sosa/&gt; ; rdf:type sh:SPARQLConstraint ; sh:message Literal(&quot;Observations must either declare required properties or be a member of a collection hierarchy that declares them,&quot;) ; sh:select Literal(&quot;
+        PREFIX dct: &lt;http://purl.org/dc/terms/&gt;
+PREFIX rdfs:    &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+prefix sosa:    &lt;http://www.w3.org/ns/sosa/&gt;
+
+                SELECT $this ?path ?total
+        WHERE {
+  			BIND ( sosa:observedProperty as ?path )
+           {
+            SELECT $this ?path ( SUM(?count) as ?total )
+            WHERE {
+                      {
+                          SELECT $this ?coll ?path ( COUNT(?prop1) AS ?count )
+                          WHERE
+                          {
+                              ?coll sosa:hasMember* $this .
+                              BIND ( sosa:observedProperty as ?path )
+                              OPTIONAL { ?coll  ?path ?prop1 }
+                          }
+                          GROUP BY $this ?coll ?path
+                       }
+
+             }
+              GROUP BY $this ?path
+          }
+          FILTER (?total = 0 )
+	}
+
+        &quot;) ]
+	Message: Observations must either declare required properties or be a member of a collection hierarchy that declares them,
+</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Focus nodes:
+ - Shape &lt;http://example.com/rules#testResult&gt;: *none*
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;: *none*
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;: *none*
+ - Shape :testInCollectionOrMember-foi: &lt;file:///github/workspace/pop1999&gt;,&lt;file:///github/workspace/something&gt;
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;: *none*
+ - Shape :testInCollectionOrMember-observedProperty: &lt;file:///github/workspace/pop1999&gt;,&lt;file:///github/workspace/something&gt;
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:rest/rdf:first (path _:n2ba201ec8731423a901cdcb1e6913558b11): *none*
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;/sh:property (path _:n2ba201ec8731423a901cdcb1e6913558b19): *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:first (path _:n2ba201ec8731423a901cdcb1e6913558b5): *none*
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;/sh:property (path _:n2ba201ec8731423a901cdcb1e6913558b29): *none*
+ - Shape &lt;http://example.com/rules#testResult&gt;/sh:property (path _:n2ba201ec8731423a901cdcb1e6913558b32): *none*
+</div>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 validation-item ">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <a href="https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                <span class="badge bg-secondary example">Example</span>
+                                                <div class="float-end">
+                                                        <span class="badge text-bg-success me-2">Passed</span>
+                                                </div>
+                                            </div>
+                                            <p class="card-text">
+                                                        <div class="font-monospace entry-message section-files ">Using example_1_1.json from examples</div>
+                                                        <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                        <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
+                                                        <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                        <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Using SHACL files for validation:
+ - _sources/properties/observation/rules.shacl
+ - _sources/features/observationCollection/rules.shacl</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Validation Report
+Conforms: True
+</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Focus nodes:
+ - Shape &lt;http://example.com/rules#testResult&gt;: *none*
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;: *none*
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;: *none*
+ - Shape :testInCollectionOrMember-foi: &lt;http://www.example.com/sosa/something&gt;,&lt;http://www.example.com/sosa/pop1999&gt;
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;: *none*
+ - Shape :testInCollectionOrMember-observedProperty: &lt;http://www.example.com/sosa/something&gt;,&lt;http://www.example.com/sosa/pop1999&gt;
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:rest/rdf:first (path _:n2ba201ec8731423a901cdcb1e6913558b11): *none*
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;/sh:property (path _:n2ba201ec8731423a901cdcb1e6913558b19): *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:first (path _:n2ba201ec8731423a901cdcb1e6913558b5): *none*
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;/sh:property (path _:n2ba201ec8731423a901cdcb1e6913558b29): *none*
+ - Shape &lt;http://example.com/rules#testResult&gt;/sh:property (path _:n2ba201ec8731423a901cdcb1e6913558b32): *none*
+</div>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 validation-item ">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <a href="https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/example_1_2.ttl" target="_blank">example_1_2.ttl</a>
+                                                <span class="badge bg-secondary example">Example</span>
+                                                <div class="float-end">
+                                                        <span class="badge text-bg-success me-2">Passed</span>
+                                                </div>
+                                            </div>
+                                            <p class="card-text">
+                                                        <div class="font-monospace entry-message section-files ">Using example_1_2.ttl from examples</div>
+                                                        <div class="font-monospace entry-message section-files ">Output Turtle example_1_2.ttl created</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Using SHACL files for validation:
+ - _sources/properties/observation/rules.shacl
+ - _sources/features/observationCollection/rules.shacl</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Validation Report
+Conforms: True
+</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Focus nodes:
+ - Shape &lt;http://example.com/rules#testResult&gt;: eg:pop1999,eg:pop2000
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;: eg:pop1999,eg:pop2000
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;: eg:pop1999,eg:pop2000
+ - Shape :testInCollectionOrMember-foi: eg:pop1999,eg:pop2000
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;: eg:pop1999,eg:pop2000
+ - Shape :testInCollectionOrMember-observedProperty: eg:pop1999,eg:pop2000
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:rest/rdf:first (path _:n2ba201ec8731423a901cdcb1e6913558b11): *none*
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;/sh:property (path _:n2ba201ec8731423a901cdcb1e6913558b19): *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:first (path _:n2ba201ec8731423a901cdcb1e6913558b5): *none*
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;/sh:property (path _:n2ba201ec8731423a901cdcb1e6913558b29): *none*
+ - Shape &lt;http://example.com/rules#testResult&gt;/sh:property (path _:n2ba201ec8731423a901cdcb1e6913558b32): *none*
+</div>
+                                            </p>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item bblock-report" data-bblock-id="ogc.unstable.sosa.examples.vectorObservationFeature" id="bblock-5">
+                        <h2 class="accordion-header bblock-title">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#bblock-collapse-5">
+                                <div class="flex-fill">
+                                    Validation report for Example SOSA Vector Observation Feature
+                                    <small class="ms-2 bblock-id">ogc.unstable.sosa.examples.vectorObservationFeature</small>
+                                </div>
+
+                                <span class="badge text-bg-danger me-2">
+                                        Failed
+                                        (0%)
+                                </span>
+                            </button>
+                        </h2>
+                        <div class="accordion-collapse collapse show" id="bblock-collapse-5">
+                            <div class="accordion-body">
+                                    <p class="summary fw-semibold text-danger">
+                                        Test passed: 0 / 2
+                                    </p>
+                                    <div class="card mb-2 validation-item ">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <a href="https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservationFeature/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                <span class="badge bg-secondary example">Example</span>
+                                                <div class="float-end">
+                                                        <span class="badge text-bg-danger me-2">Failed</span>
+                                                </div>
+                                            </div>
+                                            <p class="card-text">
+                                                        <div class="font-monospace entry-message section-files ">Using example_1_1.json from examples</div>
+                                                        <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                        <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
+                                                        <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                        <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Using SHACL files for validation:
+ - _sources/properties/observation/rules.shacl
+ - _sources/features/observationCollection/rules.shacl
+ - _sources/examples/vectorObservationFeature/rules.shacl</div>
+                                                        <div class="font-monospace entry-message section-shacl text-danger">Validation Report
+Conforms: False
+Results (1):
+Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: &lt;http://example.com/rulestestInCollectionOrMember-observedProperty&gt;
+	Focus Node: &lt;http://example.com/features/vector-obs-1&gt;
+	Value Node: &lt;http://example.com/features/vector-obs-1&gt;
+	Result Path: sosa:observedProperty
+	Source Constraint: [ &lt;http://www.w3.org/ns/shacl#prefixes:&gt; &lt;http://www.w3.org/ns/sosa/&gt; ; rdf:type sh:SPARQLConstraint ; sh:message Literal(&quot;Observations must either declare required properties or be a member of a collection hierarchy that declares them,&quot;) ; sh:select Literal(&quot;
+        PREFIX dct: &lt;http://purl.org/dc/terms/&gt;
+PREFIX rdfs:    &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+prefix sosa:    &lt;http://www.w3.org/ns/sosa/&gt;
+
+                SELECT $this ?path ?total
+        WHERE {
+  			BIND ( sosa:observedProperty as ?path )
+           {
+            SELECT $this ?path ( SUM(?count) as ?total )
+            WHERE {
+                      {
+                          SELECT $this ?coll ?path ( COUNT(?prop1) AS ?count )
+                          WHERE
+                          {
+                              ?coll sosa:hasMember* $this .
+                              BIND ( sosa:observedProperty as ?path )
+                              OPTIONAL { ?coll  ?path ?prop1 }
+                          }
+                          GROUP BY $this ?coll ?path
+                       }
+
+             }
+              GROUP BY $this ?path
+          }
+          FILTER (?total = 0 )
+	}
+
+        &quot;) ]
+	Message: Observations must either declare required properties or be a member of a collection hierarchy that declares them,
+</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Focus nodes:
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;: *none*
+ - Shape :testInCollectionOrMember-foi: &lt;http://example.com/features/vector-obs-1&gt;
+ - Shape &lt;http://example.com/rules#testVectorObservationFeatureHasOneGeometry&gt;: &lt;http://example.com/features/vector-obs-1&gt;
+ - Shape &lt;http://example.com/rules#testResult&gt;: *none*
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;: *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;: *none*
+ - Shape :testInCollectionOrMember-observedProperty: &lt;http://example.com/features/vector-obs-1&gt;
+ - Shape &lt;http://example.com/rules#testGeometryCoordinatesIsList&gt;: &lt;http://example.com/features/vector-obs-1&gt;/geojson:geometry
+ - Shape &lt;http://example.com/rules#testGeometryHasCoordinates&gt;: &lt;http://example.com/features/vector-obs-1&gt;/geojson:geometry
+ - Shape &lt;http://example.com/rules#testResult&gt;/sh:property (path _:ndac87fc4548f45edb6e0d0660cc40ffcb32): *none*
+ - Shape &lt;http://example.com/rules#testVectorObservationFeatureHasOneGeometry&gt;/sh:property (path geojson:geometry): *none*
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;/sh:property (path _:ndac87fc4548f45edb6e0d0660cc40ffcb19): *none*
+ - Shape &lt;http://example.com/rules#testGeometryHasCoordinates&gt;/sh:property (path geojson:coordinates): *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:rest/rdf:first (path _:ndac87fc4548f45edb6e0d0660cc40ffcb11): *none*
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;/sh:property (path _:ndac87fc4548f45edb6e0d0660cc40ffcb29): *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:first (path _:ndac87fc4548f45edb6e0d0660cc40ffcb5): *none*
+</div>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 validation-item ">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <a href="https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservationFeature/example_2_1.json" target="_blank">example_2_1.json</a>
+                                                <span class="badge bg-secondary example">Example</span>
+                                                <div class="float-end">
+                                                        <span class="badge text-bg-danger me-2">Failed</span>
+                                                </div>
+                                            </div>
+                                            <p class="card-text">
+                                                        <div class="font-monospace entry-message section-files ">Using example_2_1.json from examples</div>
+                                                        <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                        <div class="font-monospace entry-message section-files ">Output JSON-LD example_2_1.jsonld created</div>
+                                                        <div class="font-monospace entry-message section-files ">Output Turtle example_2_1.ttl created</div>
+                                                        <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Using SHACL files for validation:
+ - _sources/properties/observation/rules.shacl
+ - _sources/features/observationCollection/rules.shacl
+ - _sources/examples/vectorObservationFeature/rules.shacl</div>
+                                                        <div class="font-monospace entry-message section-shacl text-danger">Validation Report
+Conforms: False
+Results (1):
+Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: &lt;http://example.com/rulestestInCollectionOrMember-observedProperty&gt;
+	Focus Node: &lt;http://example.com/features/vector-obs-1&gt;
+	Value Node: &lt;http://example.com/features/vector-obs-1&gt;
+	Result Path: sosa:observedProperty
+	Source Constraint: [ &lt;http://www.w3.org/ns/shacl#prefixes:&gt; &lt;http://www.w3.org/ns/sosa/&gt; ; rdf:type sh:SPARQLConstraint ; sh:message Literal(&quot;Observations must either declare required properties or be a member of a collection hierarchy that declares them,&quot;) ; sh:select Literal(&quot;
+        PREFIX dct: &lt;http://purl.org/dc/terms/&gt;
+PREFIX rdfs:    &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+prefix sosa:    &lt;http://www.w3.org/ns/sosa/&gt;
+
+                SELECT $this ?path ?total
+        WHERE {
+  			BIND ( sosa:observedProperty as ?path )
+           {
+            SELECT $this ?path ( SUM(?count) as ?total )
+            WHERE {
+                      {
+                          SELECT $this ?coll ?path ( COUNT(?prop1) AS ?count )
+                          WHERE
+                          {
+                              ?coll sosa:hasMember* $this .
+                              BIND ( sosa:observedProperty as ?path )
+                              OPTIONAL { ?coll  ?path ?prop1 }
+                          }
+                          GROUP BY $this ?coll ?path
+                       }
+
+             }
+              GROUP BY $this ?path
+          }
+          FILTER (?total = 0 )
+	}
+
+        &quot;) ]
+	Message: Observations must either declare required properties or be a member of a collection hierarchy that declares them,
+</div>
+                                                        <div class="font-monospace entry-message section-shacl ">Focus nodes:
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;: *none*
+ - Shape :testInCollectionOrMember-foi: &lt;http://example.com/features/vector-obs-1&gt;
+ - Shape &lt;http://example.com/rules#testVectorObservationFeatureHasOneGeometry&gt;: &lt;http://example.com/features/vector-obs-1&gt;
+ - Shape &lt;http://example.com/rules#testResult&gt;: *none*
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;: *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;: *none*
+ - Shape :testInCollectionOrMember-observedProperty: &lt;http://example.com/features/vector-obs-1&gt;
+ - Shape &lt;http://example.com/rules#testGeometryCoordinatesIsList&gt;: &lt;http://example.com/features/vector-obs-1&gt;/geojson:geometry
+ - Shape &lt;http://example.com/rules#testGeometryHasCoordinates&gt;: &lt;http://example.com/features/vector-obs-1&gt;/geojson:geometry
+ - Shape &lt;http://example.com/rules#testResult&gt;/sh:property (path _:ndac87fc4548f45edb6e0d0660cc40ffcb32): *none*
+ - Shape &lt;http://example.com/rules#testVectorObservationFeatureHasOneGeometry&gt;/sh:property (path geojson:geometry): *none*
+ - Shape &lt;http://example.com/rules#testObservedProperty&gt;/sh:property (path _:ndac87fc4548f45edb6e0d0660cc40ffcb19): *none*
+ - Shape &lt;http://example.com/rules#testGeometryHasCoordinates&gt;/sh:property (path geojson:coordinates): *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:rest/rdf:first (path _:ndac87fc4548f45edb6e0d0660cc40ffcb11): *none*
+ - Shape &lt;http://example.com/rules#testFeatureOfInterest&gt;/sh:property (path _:ndac87fc4548f45edb6e0d0660cc40ffcb29): *none*
+ - Shape &lt;http://example.com/rules#testRequiredTime&gt;/sh:or/rdf:first (path _:ndac87fc4548f45edb6e0d0660cc40ffcb5): *none*
+</div>
+                                            </p>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item bblock-report" data-bblock-id="ogc.unstable.sosa" id="bblock-6">
+                        <h2 class="accordion-header bblock-title">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#bblock-collapse-6">
+                                <div class="flex-fill">
+                                    Validation report for Sensor, Observation, Sample, and Actuator (SOSA)
+                                    <small class="ms-2 bblock-id">ogc.unstable.sosa</small>
+                                </div>
+
+                                <span class="badge text-bg-success me-2">
+                                        Passed
+                                        (100%)
+                                </span>
+                            </button>
+                        </h2>
+                        <div class="accordion-collapse collapse " id="bblock-collapse-6">
+                            <div class="accordion-body">
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            window.addEventListener('load', () => {
+                const accordionEntries = [...document.querySelectorAll('#bblock-reports .accordion-collapse')];
+                console.log(accordionEntries);
+                document.querySelector('#expand-collapse').addEventListener('click', ev => {
+                    ev.preventDefault();
+                    if (ev.target.matches('.expand-all')) {
+                        accordionEntries.forEach(e => e.classList.add('show'));
+                    } else if (ev.target.matches('.collapse-all')) {
+                        accordionEntries.forEach(e => e.classList.remove('show'));
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -26,11 +26,11 @@ This building blocks defines an ObservationCollection Feature according to the S
 
 <p class="status">
     <span data-rainbow-uri="http://www.opengis.net/def/status">Status</span>:
-    <a href="http://www.opengis.net/def/status/under-development" target="_blank" data-rainbow-uri>Under development</a>
+    <a href="http://www.opengis.net/def/status/invalid" target="_blank" data-rainbow-uri>Invalid</a>
 </p>
 
-<aside class="success">
-This building block is <strong><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/unstable/sosa/features/observationCollection/" target="_blank">valid</a></strong>
+<aside class="warning">
+Validation for this building block has <strong><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/unstable/sosa/features/observationCollection/" target="_blank">failed</a></strong>
 </aside>
 
 # Examples
@@ -356,94 +356,13 @@ Links to the schema:
 ```json--ldContext
 {
   "@context": {
-    "type": "@type",
-    "links": {
-      "@id": "rdfs:seeAlso",
-      "@context": {
-        "href": "oa:hasTarget",
-        "rel": {
-          "@id": "http://www.iana.org/assignments/relation",
-          "@type": "@id",
-          "@context": {
-            "@base": "http://www.iana.org/assignments/relation/"
-          }
-        },
-        "type": "dct:type",
-        "hreflang": "dct:language",
-        "title": "rdfs:label",
-        "length": "dct:extent"
-      }
-    },
-    "features": {
-      "@container": "@set",
-      "@id": "sosa:hasMember",
-      "@context": {
-        "id": "@id",
-        "geometry": {
-          "@id": "geojson:geometry",
-          "@context": {}
-        },
-        "bbox": {
-          "@container": "@list",
-          "@id": "geojson:bbox"
-        },
-        "Feature": "geojson:Feature",
-        "FeatureCollection": "geojson:FeatureCollection",
-        "GeometryCollection": "geojson:GeometryCollection",
-        "LineString": "geojson:LineString",
-        "MultiLineString": "geojson:MultiLineString",
-        "MultiPoint": "geojson:MultiPoint",
-        "MultiPolygon": "geojson:MultiPolygon",
-        "Point": "geojson:Point",
-        "Polygon": "geojson:Polygon",
-        "features": {
-          "@container": "@set",
-          "@id": "sosa:hasMember"
-        },
-        "coordinates": {
-          "@container": "@list",
-          "@id": "geojson:coordinates"
-        },
-        "hasResult": "sosa:hasResult",
-        "hasSimpleResult": "sosa:hasSimpleResult",
-        "hasMember": "sosa:hasMember"
-      }
-    },
-    "properties": "@nest",
-    "resultTime": "sosa:resultTime",
-    "phenomenonTime": "sosa:phenomenonTime",
-    "hasFeatureOfInterest": {
-      "@id": "sosa:hasFeatureOfInterest",
-      "@type": "@id"
-    },
+    "Observation": "sosa:Observation",
+    "Sample": "sosa:Sample",
     "observedProperty": {
       "@id": "sosa:observedProperty",
       "@type": "@id"
     },
-    "usedProcedure": {
-      "@id": "sosa:usedProcedure",
-      "@type": "@id"
-    },
-    "madeBySensor": {
-      "@id": "sosa:madeBySensor",
-      "@type": "@id"
-    },
-    "hasMember": {
-      "@id": "sosa:hasMember",
-      "@context": {
-        "hasMember": {
-          "@id": "sosa:hasMember",
-          "@context": {
-            "hasMember": "sosa:hasMember"
-          }
-        },
-        "hasResult": "sosa:hasResult",
-        "hasSimpleResult": "sosa:hasSimpleResult",
-        "features": "sosa:hasMember"
-      }
-    },
-    "Observation": "sosa:Observation",
-    "Sample": "sosa:Sample",
+    "phenomenonTime": "sosa:phenomenonTime",
     "observes": {
       "@id": "sosa:observes",
       "@type": "@id"
@@ -454,6 +373,10 @@ Links to the schema:
     },
     "madeObservation": {
       "@id": "sosa:madeObservation",
+      "@type": "@id"
+    },
+    "madeBySensor": {
+      "@id": "sosa:madeBySensor",
       "@type": "@id"
     },
     "actsOnProperty": {
@@ -488,6 +411,10 @@ Links to the schema:
       "@id": "sosa:madeBySampler",
       "@type": "@id"
     },
+    "hasFeatureOfInterest": {
+      "@id": "sosa:hasFeatureOfInterest",
+      "@type": "@id"
+    },
     "isFeatureOfInterestOf": {
       "@id": "sosa:isFeatureOfInterestOf",
       "@type": "@id"
@@ -495,6 +422,11 @@ Links to the schema:
     "hasResult": "sosa:hasResult",
     "isResultOf": "sosa:isResultOf",
     "hasSimpleResult": "sosa:hasSimpleResult",
+    "resultTime": "sosa:resultTime",
+    "usedProcedure": {
+      "@id": "sosa:usedProcedure",
+      "@type": "@id"
+    },
     "hosts": {
       "@id": "sosa:hosts",
       "@type": "@id"
@@ -523,7 +455,57 @@ Links to the schema:
     "hasSurvivalRange": "ssn:systems/hasSurvivalRange",
     "hasSurvivalProperty": "ssn:systems/hasSurvivalProperty",
     "qualityOfObservation": "ssn:systems/qualityOfObservation",
+    "hasMember": "sosa:hasMember",
     "featureType": "@type",
+    "properties": {
+      "@context": {
+        "features": "sosa:hasMember"
+      },
+      "@id": "@nest"
+    },
+    "features": {
+      "@context": {
+        "features": "sosa:hasMember",
+        "coordinates": {
+          "@container": "@list",
+          "@id": "geojson:coordinates"
+        }
+      },
+      "@id": "geojson:features",
+      "@container": "@set"
+    },
+    "type": "@type",
+    "links": {
+      "@context": {
+        "href": "oa:hasTarget",
+        "rel": {
+          "@context": {
+            "@base": "http://www.iana.org/assignments/relation/"
+          },
+          "@id": "http://www.iana.org/assignments/relation",
+          "@type": "@id"
+        },
+        "type": "dct:type",
+        "hreflang": "dct:language",
+        "title": "rdfs:label",
+        "length": "dct:extent"
+      },
+      "@id": "rdfs:seeAlso"
+    },
+    "id": "@id",
+    "geometry": {
+      "@context": {
+        "coordinates": {
+          "@container": "@list",
+          "@id": "geojson:coordinates"
+        }
+      },
+      "@id": "geojson:geometry"
+    },
+    "bbox": {
+      "@container": "@list",
+      "@id": "geojson:bbox"
+    },
     "Feature": "geojson:Feature",
     "FeatureCollection": "geojson:FeatureCollection",
     "GeometryCollection": "geojson:GeometryCollection",
@@ -533,21 +515,17 @@ Links to the schema:
     "MultiPolygon": "geojson:MultiPolygon",
     "Point": "geojson:Point",
     "Polygon": "geojson:Polygon",
-    "bbox": {
-      "x-jsonld-container": "@list",
-      "x-jsonld-id": "https://purl.org/geojson/vocab#bbox"
-    },
     "coordinates": {
       "x-jsonld-container": "@list",
       "x-jsonld-id": "https://purl.org/geojson/vocab#coordinates"
     },
-    "geojson": "https://purl.org/geojson/vocab#",
-    "oa": "http://www.w3.org/ns/oa#",
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "dct": "http://purl.org/dc/terms/",
     "sosa": "http://www.w3.org/ns/sosa/",
     "ssn": "http://www.w3.org/ns/ssn/",
     "ssn-system": "ssn:systems/",
+    "geojson": "https://purl.org/geojson/vocab#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "oa": "http://www.w3.org/ns/oa#",
+    "dct": "http://purl.org/dc/terms/",
     "@version": 1.1
   }
 }
@@ -564,7 +542,8 @@ You can find the full JSON-LD context here:
 
 The following SHACL shapes are used for validating this building block:
 
-* [https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/rules.shacl](https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/rules.shacl)
+* [https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/_sources/properties/observation/rules.shacl](https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/_sources/properties/observation/rules.shacl)
+* [https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/_sources/features/observationCollection/rules.shacl](https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/_sources/features/observationCollection/rules.shacl)
 
 # References
 

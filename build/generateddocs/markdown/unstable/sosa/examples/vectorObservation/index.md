@@ -205,20 +205,20 @@ Links to the schema:
     "properties": "@nest",
     "featureType": "@type",
     "position": {
-      "@id": "geopose:position",
       "@context": {
         "lat": "geo:lat",
         "lon": "geo:long",
         "h": "geopose:h"
-      }
+      },
+      "@id": "geopose:position"
     },
     "angles": {
-      "@id": "geopose:angles",
       "@context": {
         "yaw": "geopose:yaw",
         "pitch": "geopose:pitch",
         "roll": "geopose:roll"
-      }
+      },
+      "@id": "geopose:angles"
     },
     "sosa": "http://www.w3.org/ns/sosa/",
     "ssn": "http://www.w3.org/ns/ssn/",
