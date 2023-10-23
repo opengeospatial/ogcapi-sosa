@@ -1,9 +1,21 @@
 Validation report for ogc.unstable.sosa.features.observationCollection - SOSA ObservationCollection Feature
-Generated 2023-10-23T20:58:36.825540+00:00
+Generated 2023-10-23T20:58:36.790549+00:00
+=== General ===
+
+** Validation error **
+Test was expected to fail but it did not.
+=== End General ===
+
 === Files ===
-Using example_1_2.ttl from examples
-Output Turtle example_1_2.ttl created
+Using observationCollection-props-fail.json from test resources
+JSON-LD context is present - uplifting
+Output JSON-LD observationCollection-props-fail.jsonld created
+Output Turtle observationCollection-props-fail.ttl created
 === End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
 
 === SHACL ===
 Using SHACL files for validation:
@@ -12,10 +24,10 @@ Validation Report
 Conforms: True
 
 Focus nodes:
- - Shape <http://example.com/rules#testFeatureOfInterest>: eg:pop1999,eg:pop2000
- - Shape <http://example.com/rules#testRequiredTime>: eg:pop1999,eg:pop2000
- - Shape <http://example.com/rules#testResult>: eg:pop1999,eg:pop2000
- - Shape <http://example.com/rules#testObservedProperty>: eg:pop1999,eg:pop2000
+ - Shape <http://example.com/rules#testFeatureOfInterest>: *none*
+ - Shape <http://example.com/rules#testRequiredTime>: *none*
+ - Shape <http://example.com/rules#testResult>: *none*
+ - Shape <http://example.com/rules#testObservedProperty>: *none*
  - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:rest/rdf:first (path _:nb466bd3ce38c462984f1222296f057d3b11): *none*
  - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:first (path _:nb466bd3ce38c462984f1222296f057d3b5): *none*
  - Shape <http://example.com/rules#testFeatureOfInterest>/sh:property (path _:nb466bd3ce38c462984f1222296f057d3b29): *none*

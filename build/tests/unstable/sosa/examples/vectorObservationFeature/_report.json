@@ -2,8 +2,8 @@
   "title": "Validation report for ogc.unstable.sosa.examples.vectorObservationFeature - Example SOSA Vector Observation Feature",
   "bblockName": "Example SOSA Vector Observation Feature",
   "bblockId": "ogc.unstable.sosa.examples.vectorObservationFeature",
-  "generated": "2023-10-20T14:38:25.729217+00:00",
-  "result": false,
+  "generated": "2023-10-23T20:58:38.450630+00:00",
+  "result": true,
   "items": [
     {
       "source": {
@@ -14,7 +14,7 @@
         "snippetIndex": 1,
         "language": "json"
       },
-      "result": false,
+      "result": true,
       "sections": {
         "FILES": [
           {
@@ -53,21 +53,23 @@
           {
             "op": "shacl-files",
             "files": [
-              "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/rules.shacl",
-              "https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservationFeature/rules.shacl",
-              "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl"
+              "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl",
+              "https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservationFeature/rules.shacl"
             ],
             "isError": false,
-            "message": "Using SHACL files for validation:\n - _sources/features/observationCollection/rules.shacl\n - _sources/examples/vectorObservationFeature/rules.shacl\n - _sources/properties/observation/rules.shacl"
+            "message": "Using SHACL files for validation:\n - _sources/properties/observation/rules.shacl\n - _sources/examples/vectorObservationFeature/rules.shacl"
           },
           {
             "op": "shacl-report",
-            "graph": "@prefix : <http://example.com/rules> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <http://example.com/features/vector-obs-1> ;\n            sh:resultMessage \"Observations must either declare required properties or be a member of a collection hierarchy that declares them,\" ;\n            sh:resultPath sosa:observedProperty ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraint [ a sh:SPARQLConstraint ;\n                    sh:message \"Observations must either declare required properties or be a member of a collection hierarchy that declares them,\" ;\n                    <http://www.w3.org/ns/shacl#prefixes:> sosa: ;\n                    sh:select \"\"\"\n        PREFIX dct: <http://purl.org/dc/terms/>\nPREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>\nprefix sosa:    <http://www.w3.org/ns/sosa/>\n\n                SELECT $this ?path ?total\n        WHERE {\n  \t\t\tBIND ( sosa:observedProperty as ?path )\n           {\n            SELECT $this ?path ( SUM(?count) as ?total )\n            WHERE {\n                      {\n                          SELECT $this ?coll ?path ( COUNT(?prop1) AS ?count )\n                          WHERE\n                          {\n                              ?coll sosa:hasMember* $this .\n                              BIND ( sosa:observedProperty as ?path )\n                              OPTIONAL { ?coll  ?path ?prop1 }\n                          }\n                          GROUP BY $this ?coll ?path\n                       }\n\n             }\n              GROUP BY $this ?path\n          }\n          FILTER (?total = 0 )\n\t}\n\n        \"\"\" ] ;\n            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;\n            sh:sourceShape :testInCollectionOrMember-observedProperty ;\n            sh:value <http://example.com/features/vector-obs-1> ] .\n\n",
-            "isError": true,
-            "message": "Validation Report\nConforms: False\nResults (1):\nConstraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: <http://example.com/rulestestInCollectionOrMember-observedProperty>\n\tFocus Node: <http://example.com/features/vector-obs-1>\n\tValue Node: <http://example.com/features/vector-obs-1>\n\tResult Path: sosa:observedProperty\n\tSource Constraint: [ <http://www.w3.org/ns/shacl#prefixes:> <http://www.w3.org/ns/sosa/> ; rdf:type sh:SPARQLConstraint ; sh:message Literal(\"Observations must either declare required properties or be a member of a collection hierarchy that declares them,\") ; sh:select Literal(\"\n        PREFIX dct: <http://purl.org/dc/terms/>\nPREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>\nprefix sosa:    <http://www.w3.org/ns/sosa/>\n\n                SELECT $this ?path ?total\n        WHERE {\n  \t\t\tBIND ( sosa:observedProperty as ?path )\n           {\n            SELECT $this ?path ( SUM(?count) as ?total )\n            WHERE {\n                      {\n                          SELECT $this ?coll ?path ( COUNT(?prop1) AS ?count )\n                          WHERE\n                          {\n                              ?coll sosa:hasMember* $this .\n                              BIND ( sosa:observedProperty as ?path )\n                              OPTIONAL { ?coll  ?path ?prop1 }\n                          }\n                          GROUP BY $this ?coll ?path\n                       }\n\n             }\n              GROUP BY $this ?path\n          }\n          FILTER (?total = 0 )\n\t}\n\n        \") ]\n\tMessage: Observations must either declare required properties or be a member of a collection hierarchy that declares them,\n"
+            "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+            "isError": false,
+            "message": "Validation Report\nConforms: True\n"
           },
           {
             "focusNodes": {
+              "<http://example.com/rules#testFeatureOfInterest>": {
+                "nodes": []
+              },
               "<http://example.com/rules#testGeometryCoordinatesIsList>": {
                 "nodes": [
                   "<http://example.com/features/vector-obs-1>/geojson:geometry"
@@ -83,59 +85,46 @@
                   "<http://example.com/features/vector-obs-1>/geojson:geometry"
                 ]
               },
+              "<http://example.com/rules#testRequiredTime>": {
+                "nodes": []
+              },
               "<http://example.com/rules#testResult>": {
                 "nodes": []
               },
               "<http://example.com/rules#testObservedProperty>": {
                 "nodes": []
               },
-              "<http://example.com/rules#testFeatureOfInterest>": {
-                "nodes": []
-              },
-              ":testInCollectionOrMember-foi": {
-                "nodes": [
-                  "<http://example.com/features/vector-obs-1>"
-                ]
-              },
-              ":testInCollectionOrMember-observedProperty": {
-                "nodes": [
-                  "<http://example.com/features/vector-obs-1>"
-                ]
-              },
-              "<http://example.com/rules#testRequiredTime>": {
-                "nodes": []
-              },
-              "<http://example.com/rules#testFeatureOfInterest>/sh:property": {
+              "<http://example.com/rules#testObservedProperty>/sh:property": {
                 "nodes": [],
-                "path": "_:n085a8b8065ab41148d2595f9fc4d338ab29"
+                "path": "_:nec94b27bccea475c8bf511ebd4f45615b19"
               },
               "<http://example.com/rules#testRequiredTime>/sh:or/rdf:rest/rdf:first": {
                 "nodes": [],
-                "path": "_:n085a8b8065ab41148d2595f9fc4d338ab11"
-              },
-              "<http://example.com/rules#testResult>/sh:property": {
-                "nodes": [],
-                "path": "_:n085a8b8065ab41148d2595f9fc4d338ab32"
-              },
-              "<http://example.com/rules#testVectorObservationFeatureHasOneGeometry>/sh:property": {
-                "nodes": [],
-                "path": "geojson:geometry"
-              },
-              "<http://example.com/rules#testObservedProperty>/sh:property": {
-                "nodes": [],
-                "path": "_:n085a8b8065ab41148d2595f9fc4d338ab19"
-              },
-              "<http://example.com/rules#testRequiredTime>/sh:or/rdf:first": {
-                "nodes": [],
-                "path": "_:n085a8b8065ab41148d2595f9fc4d338ab5"
+                "path": "_:nec94b27bccea475c8bf511ebd4f45615b11"
               },
               "<http://example.com/rules#testGeometryHasCoordinates>/sh:property": {
                 "nodes": [],
                 "path": "geojson:coordinates"
+              },
+              "<http://example.com/rules#testFeatureOfInterest>/sh:property": {
+                "nodes": [],
+                "path": "_:nec94b27bccea475c8bf511ebd4f45615b29"
+              },
+              "<http://example.com/rules#testRequiredTime>/sh:or/rdf:first": {
+                "nodes": [],
+                "path": "_:nec94b27bccea475c8bf511ebd4f45615b5"
+              },
+              "<http://example.com/rules#testResult>/sh:property": {
+                "nodes": [],
+                "path": "_:nec94b27bccea475c8bf511ebd4f45615b32"
+              },
+              "<http://example.com/rules#testVectorObservationFeatureHasOneGeometry>/sh:property": {
+                "nodes": [],
+                "path": "geojson:geometry"
               }
             },
             "isError": false,
-            "message": "Focus nodes:\n - Shape <http://example.com/rules#testGeometryCoordinatesIsList>: <http://example.com/features/vector-obs-1>/geojson:geometry\n - Shape <http://example.com/rules#testVectorObservationFeatureHasOneGeometry>: <http://example.com/features/vector-obs-1>\n - Shape <http://example.com/rules#testGeometryHasCoordinates>: <http://example.com/features/vector-obs-1>/geojson:geometry\n - Shape <http://example.com/rules#testResult>: *none*\n - Shape <http://example.com/rules#testObservedProperty>: *none*\n - Shape <http://example.com/rules#testFeatureOfInterest>: *none*\n - Shape :testInCollectionOrMember-foi: <http://example.com/features/vector-obs-1>\n - Shape :testInCollectionOrMember-observedProperty: <http://example.com/features/vector-obs-1>\n - Shape <http://example.com/rules#testRequiredTime>: *none*\n - Shape <http://example.com/rules#testFeatureOfInterest>/sh:property (path _:n085a8b8065ab41148d2595f9fc4d338ab29): *none*\n - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:rest/rdf:first (path _:n085a8b8065ab41148d2595f9fc4d338ab11): *none*\n - Shape <http://example.com/rules#testResult>/sh:property (path _:n085a8b8065ab41148d2595f9fc4d338ab32): *none*\n - Shape <http://example.com/rules#testVectorObservationFeatureHasOneGeometry>/sh:property (path geojson:geometry): *none*\n - Shape <http://example.com/rules#testObservedProperty>/sh:property (path _:n085a8b8065ab41148d2595f9fc4d338ab19): *none*\n - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:first (path _:n085a8b8065ab41148d2595f9fc4d338ab5): *none*\n - Shape <http://example.com/rules#testGeometryHasCoordinates>/sh:property (path geojson:coordinates): *none*\n"
+            "message": "Focus nodes:\n - Shape <http://example.com/rules#testFeatureOfInterest>: *none*\n - Shape <http://example.com/rules#testGeometryCoordinatesIsList>: <http://example.com/features/vector-obs-1>/geojson:geometry\n - Shape <http://example.com/rules#testVectorObservationFeatureHasOneGeometry>: <http://example.com/features/vector-obs-1>\n - Shape <http://example.com/rules#testGeometryHasCoordinates>: <http://example.com/features/vector-obs-1>/geojson:geometry\n - Shape <http://example.com/rules#testRequiredTime>: *none*\n - Shape <http://example.com/rules#testResult>: *none*\n - Shape <http://example.com/rules#testObservedProperty>: *none*\n - Shape <http://example.com/rules#testObservedProperty>/sh:property (path _:nec94b27bccea475c8bf511ebd4f45615b19): *none*\n - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:rest/rdf:first (path _:nec94b27bccea475c8bf511ebd4f45615b11): *none*\n - Shape <http://example.com/rules#testGeometryHasCoordinates>/sh:property (path geojson:coordinates): *none*\n - Shape <http://example.com/rules#testFeatureOfInterest>/sh:property (path _:nec94b27bccea475c8bf511ebd4f45615b29): *none*\n - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:first (path _:nec94b27bccea475c8bf511ebd4f45615b5): *none*\n - Shape <http://example.com/rules#testResult>/sh:property (path _:nec94b27bccea475c8bf511ebd4f45615b32): *none*\n - Shape <http://example.com/rules#testVectorObservationFeatureHasOneGeometry>/sh:property (path geojson:geometry): *none*\n"
           }
         ]
       }
@@ -149,7 +138,7 @@
         "snippetIndex": 1,
         "language": "json"
       },
-      "result": false,
+      "result": true,
       "sections": {
         "FILES": [
           {
@@ -188,21 +177,23 @@
           {
             "op": "shacl-files",
             "files": [
-              "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/rules.shacl",
-              "https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservationFeature/rules.shacl",
-              "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl"
+              "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl",
+              "https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservationFeature/rules.shacl"
             ],
             "isError": false,
-            "message": "Using SHACL files for validation:\n - _sources/features/observationCollection/rules.shacl\n - _sources/examples/vectorObservationFeature/rules.shacl\n - _sources/properties/observation/rules.shacl"
+            "message": "Using SHACL files for validation:\n - _sources/properties/observation/rules.shacl\n - _sources/examples/vectorObservationFeature/rules.shacl"
           },
           {
             "op": "shacl-report",
-            "graph": "@prefix : <http://example.com/rules> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <http://example.com/features/vector-obs-1> ;\n            sh:resultMessage \"Observations must either declare required properties or be a member of a collection hierarchy that declares them,\" ;\n            sh:resultPath sosa:observedProperty ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraint [ a sh:SPARQLConstraint ;\n                    sh:message \"Observations must either declare required properties or be a member of a collection hierarchy that declares them,\" ;\n                    <http://www.w3.org/ns/shacl#prefixes:> sosa: ;\n                    sh:select \"\"\"\n        PREFIX dct: <http://purl.org/dc/terms/>\nPREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>\nprefix sosa:    <http://www.w3.org/ns/sosa/>\n\n                SELECT $this ?path ?total\n        WHERE {\n  \t\t\tBIND ( sosa:observedProperty as ?path )\n           {\n            SELECT $this ?path ( SUM(?count) as ?total )\n            WHERE {\n                      {\n                          SELECT $this ?coll ?path ( COUNT(?prop1) AS ?count )\n                          WHERE\n                          {\n                              ?coll sosa:hasMember* $this .\n                              BIND ( sosa:observedProperty as ?path )\n                              OPTIONAL { ?coll  ?path ?prop1 }\n                          }\n                          GROUP BY $this ?coll ?path\n                       }\n\n             }\n              GROUP BY $this ?path\n          }\n          FILTER (?total = 0 )\n\t}\n\n        \"\"\" ] ;\n            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;\n            sh:sourceShape :testInCollectionOrMember-observedProperty ;\n            sh:value <http://example.com/features/vector-obs-1> ] .\n\n",
-            "isError": true,
-            "message": "Validation Report\nConforms: False\nResults (1):\nConstraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: <http://example.com/rulestestInCollectionOrMember-observedProperty>\n\tFocus Node: <http://example.com/features/vector-obs-1>\n\tValue Node: <http://example.com/features/vector-obs-1>\n\tResult Path: sosa:observedProperty\n\tSource Constraint: [ <http://www.w3.org/ns/shacl#prefixes:> <http://www.w3.org/ns/sosa/> ; rdf:type sh:SPARQLConstraint ; sh:message Literal(\"Observations must either declare required properties or be a member of a collection hierarchy that declares them,\") ; sh:select Literal(\"\n        PREFIX dct: <http://purl.org/dc/terms/>\nPREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>\nprefix sosa:    <http://www.w3.org/ns/sosa/>\n\n                SELECT $this ?path ?total\n        WHERE {\n  \t\t\tBIND ( sosa:observedProperty as ?path )\n           {\n            SELECT $this ?path ( SUM(?count) as ?total )\n            WHERE {\n                      {\n                          SELECT $this ?coll ?path ( COUNT(?prop1) AS ?count )\n                          WHERE\n                          {\n                              ?coll sosa:hasMember* $this .\n                              BIND ( sosa:observedProperty as ?path )\n                              OPTIONAL { ?coll  ?path ?prop1 }\n                          }\n                          GROUP BY $this ?coll ?path\n                       }\n\n             }\n              GROUP BY $this ?path\n          }\n          FILTER (?total = 0 )\n\t}\n\n        \") ]\n\tMessage: Observations must either declare required properties or be a member of a collection hierarchy that declares them,\n"
+            "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+            "isError": false,
+            "message": "Validation Report\nConforms: True\n"
           },
           {
             "focusNodes": {
+              "<http://example.com/rules#testFeatureOfInterest>": {
+                "nodes": []
+              },
               "<http://example.com/rules#testGeometryCoordinatesIsList>": {
                 "nodes": [
                   "<http://example.com/features/vector-obs-1>/geojson:geometry"
@@ -218,59 +209,46 @@
                   "<http://example.com/features/vector-obs-1>/geojson:geometry"
                 ]
               },
+              "<http://example.com/rules#testRequiredTime>": {
+                "nodes": []
+              },
               "<http://example.com/rules#testResult>": {
                 "nodes": []
               },
               "<http://example.com/rules#testObservedProperty>": {
                 "nodes": []
               },
-              "<http://example.com/rules#testFeatureOfInterest>": {
-                "nodes": []
-              },
-              ":testInCollectionOrMember-foi": {
-                "nodes": [
-                  "<http://example.com/features/vector-obs-1>"
-                ]
-              },
-              ":testInCollectionOrMember-observedProperty": {
-                "nodes": [
-                  "<http://example.com/features/vector-obs-1>"
-                ]
-              },
-              "<http://example.com/rules#testRequiredTime>": {
-                "nodes": []
-              },
-              "<http://example.com/rules#testFeatureOfInterest>/sh:property": {
+              "<http://example.com/rules#testObservedProperty>/sh:property": {
                 "nodes": [],
-                "path": "_:n085a8b8065ab41148d2595f9fc4d338ab29"
+                "path": "_:nec94b27bccea475c8bf511ebd4f45615b19"
               },
               "<http://example.com/rules#testRequiredTime>/sh:or/rdf:rest/rdf:first": {
                 "nodes": [],
-                "path": "_:n085a8b8065ab41148d2595f9fc4d338ab11"
-              },
-              "<http://example.com/rules#testResult>/sh:property": {
-                "nodes": [],
-                "path": "_:n085a8b8065ab41148d2595f9fc4d338ab32"
-              },
-              "<http://example.com/rules#testVectorObservationFeatureHasOneGeometry>/sh:property": {
-                "nodes": [],
-                "path": "geojson:geometry"
-              },
-              "<http://example.com/rules#testObservedProperty>/sh:property": {
-                "nodes": [],
-                "path": "_:n085a8b8065ab41148d2595f9fc4d338ab19"
-              },
-              "<http://example.com/rules#testRequiredTime>/sh:or/rdf:first": {
-                "nodes": [],
-                "path": "_:n085a8b8065ab41148d2595f9fc4d338ab5"
+                "path": "_:nec94b27bccea475c8bf511ebd4f45615b11"
               },
               "<http://example.com/rules#testGeometryHasCoordinates>/sh:property": {
                 "nodes": [],
                 "path": "geojson:coordinates"
+              },
+              "<http://example.com/rules#testFeatureOfInterest>/sh:property": {
+                "nodes": [],
+                "path": "_:nec94b27bccea475c8bf511ebd4f45615b29"
+              },
+              "<http://example.com/rules#testRequiredTime>/sh:or/rdf:first": {
+                "nodes": [],
+                "path": "_:nec94b27bccea475c8bf511ebd4f45615b5"
+              },
+              "<http://example.com/rules#testResult>/sh:property": {
+                "nodes": [],
+                "path": "_:nec94b27bccea475c8bf511ebd4f45615b32"
+              },
+              "<http://example.com/rules#testVectorObservationFeatureHasOneGeometry>/sh:property": {
+                "nodes": [],
+                "path": "geojson:geometry"
               }
             },
             "isError": false,
-            "message": "Focus nodes:\n - Shape <http://example.com/rules#testGeometryCoordinatesIsList>: <http://example.com/features/vector-obs-1>/geojson:geometry\n - Shape <http://example.com/rules#testVectorObservationFeatureHasOneGeometry>: <http://example.com/features/vector-obs-1>\n - Shape <http://example.com/rules#testGeometryHasCoordinates>: <http://example.com/features/vector-obs-1>/geojson:geometry\n - Shape <http://example.com/rules#testResult>: *none*\n - Shape <http://example.com/rules#testObservedProperty>: *none*\n - Shape <http://example.com/rules#testFeatureOfInterest>: *none*\n - Shape :testInCollectionOrMember-foi: <http://example.com/features/vector-obs-1>\n - Shape :testInCollectionOrMember-observedProperty: <http://example.com/features/vector-obs-1>\n - Shape <http://example.com/rules#testRequiredTime>: *none*\n - Shape <http://example.com/rules#testFeatureOfInterest>/sh:property (path _:n085a8b8065ab41148d2595f9fc4d338ab29): *none*\n - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:rest/rdf:first (path _:n085a8b8065ab41148d2595f9fc4d338ab11): *none*\n - Shape <http://example.com/rules#testResult>/sh:property (path _:n085a8b8065ab41148d2595f9fc4d338ab32): *none*\n - Shape <http://example.com/rules#testVectorObservationFeatureHasOneGeometry>/sh:property (path geojson:geometry): *none*\n - Shape <http://example.com/rules#testObservedProperty>/sh:property (path _:n085a8b8065ab41148d2595f9fc4d338ab19): *none*\n - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:first (path _:n085a8b8065ab41148d2595f9fc4d338ab5): *none*\n - Shape <http://example.com/rules#testGeometryHasCoordinates>/sh:property (path geojson:coordinates): *none*\n"
+            "message": "Focus nodes:\n - Shape <http://example.com/rules#testFeatureOfInterest>: *none*\n - Shape <http://example.com/rules#testGeometryCoordinatesIsList>: <http://example.com/features/vector-obs-1>/geojson:geometry\n - Shape <http://example.com/rules#testVectorObservationFeatureHasOneGeometry>: <http://example.com/features/vector-obs-1>\n - Shape <http://example.com/rules#testGeometryHasCoordinates>: <http://example.com/features/vector-obs-1>/geojson:geometry\n - Shape <http://example.com/rules#testRequiredTime>: *none*\n - Shape <http://example.com/rules#testResult>: *none*\n - Shape <http://example.com/rules#testObservedProperty>: *none*\n - Shape <http://example.com/rules#testObservedProperty>/sh:property (path _:nec94b27bccea475c8bf511ebd4f45615b19): *none*\n - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:rest/rdf:first (path _:nec94b27bccea475c8bf511ebd4f45615b11): *none*\n - Shape <http://example.com/rules#testGeometryHasCoordinates>/sh:property (path geojson:coordinates): *none*\n - Shape <http://example.com/rules#testFeatureOfInterest>/sh:property (path _:nec94b27bccea475c8bf511ebd4f45615b29): *none*\n - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:first (path _:nec94b27bccea475c8bf511ebd4f45615b5): *none*\n - Shape <http://example.com/rules#testResult>/sh:property (path _:nec94b27bccea475c8bf511ebd4f45615b32): *none*\n - Shape <http://example.com/rules#testVectorObservationFeatureHasOneGeometry>/sh:property (path geojson:geometry): *none*\n"
           }
         ]
       }
@@ -279,7 +257,7 @@
   "globalErrors": {},
   "counts": {
     "total": 2,
-    "passed": 0,
-    "failed": 2
+    "passed": 2,
+    "failed": 0
   }
 }

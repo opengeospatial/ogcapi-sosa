@@ -1,0 +1,38 @@
+Validation report for ogc.unstable.sosa.examples.vectorObservationFeature - Example SOSA Vector Observation Feature
+Generated 2023-10-23T20:58:38.450540+00:00
+=== Files ===
+Using example_2_1.json from examples
+JSON-LD context is present - uplifting
+Output JSON-LD example_2_1.jsonld created
+Output Turtle example_2_1.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+
+=== SHACL ===
+Using SHACL files for validation:
+ - _sources/properties/observation/rules.shacl
+ - _sources/examples/vectorObservationFeature/rules.shacl
+Validation Report
+Conforms: True
+
+Focus nodes:
+ - Shape <http://example.com/rules#testFeatureOfInterest>: *none*
+ - Shape <http://example.com/rules#testGeometryCoordinatesIsList>: <http://example.com/features/vector-obs-1>/geojson:geometry
+ - Shape <http://example.com/rules#testVectorObservationFeatureHasOneGeometry>: <http://example.com/features/vector-obs-1>
+ - Shape <http://example.com/rules#testGeometryHasCoordinates>: <http://example.com/features/vector-obs-1>/geojson:geometry
+ - Shape <http://example.com/rules#testRequiredTime>: *none*
+ - Shape <http://example.com/rules#testResult>: *none*
+ - Shape <http://example.com/rules#testObservedProperty>: *none*
+ - Shape <http://example.com/rules#testObservedProperty>/sh:property (path _:nec94b27bccea475c8bf511ebd4f45615b19): *none*
+ - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:rest/rdf:first (path _:nec94b27bccea475c8bf511ebd4f45615b11): *none*
+ - Shape <http://example.com/rules#testGeometryHasCoordinates>/sh:property (path geojson:coordinates): *none*
+ - Shape <http://example.com/rules#testFeatureOfInterest>/sh:property (path _:nec94b27bccea475c8bf511ebd4f45615b29): *none*
+ - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:first (path _:nec94b27bccea475c8bf511ebd4f45615b5): *none*
+ - Shape <http://example.com/rules#testResult>/sh:property (path _:nec94b27bccea475c8bf511ebd4f45615b32): *none*
+ - Shape <http://example.com/rules#testVectorObservationFeatureHasOneGeometry>/sh:property (path geojson:geometry): *none*
+
+=== End SHACL ===
+

@@ -5,7 +5,7 @@
 
 This building block defines an example SOSA Observation Feature for a Vector Observation
 
-[*Status*](http://www.opengis.net/def/status): Invalid
+[*Status*](http://www.opengis.net/def/status): Under development
 
 ## Examples
 

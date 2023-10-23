@@ -114,4 +114,51 @@ $(function() {
     activeRainbow = null;
     $rainbowPopup.hide();
   });
+
+  var prefixKw = false, currentPrefix = null, prefixes = {}, creatingLink = null;
+  $('.highlight code span').each(function() {
+    var $span = $(this),
+      text = $span.text().trim();
+    if (text === '@prefix') {
+      if ($span.parent().parent().hasClass('turtle')) {
+        prefixKw = true;
+        return;
+      }
+    } else if (text && prefixKw) {
+      if (currentPrefix) {
+        prefixes[currentPrefix] = text.substring(1, text.length - 1);
+        prefixKw = false;
+        currentPrefix = null;
+      } else if (text[text.length - 1] === ':') {
+        currentPrefix = text.substring(0, text.length - 1);
+      }
+      return;
+    }
+
+    if (text[text.length - 1] === ':') {
+      var termPrefix = text.substring(0, text.length - 1),
+        creatingLinkPrefix = prefixes[termPrefix];
+      if (creatingLinkPrefix) {
+        var suffix = $span.next().text().trim();
+        if ([',', ';'].includes(suffix[suffix.length - 1])) {
+          suffix = suffix.substring(0, suffix.length - 1);
+        }
+        creatingLink = creatingLinkPrefix + suffix;
+        $span.empty().append($('<a target="_blank">').text(text).attr('href', creatingLink));
+      }
+      return;
+    }
+
+    if (creatingLink) {
+      $span.empty().append($('<a target="_blank">').text(text).attr('href', creatingLink));
+      creatingLink = null;
+      return;
+    }
+
+    var urlMatch = text.match('^["<]?(https?://.*)[">]?$');
+    if (urlMatch) {
+      $span.empty().append($('<a target="_blank">').text(text).attr('href', urlMatch[1]));
+    }
+  });
+
 });

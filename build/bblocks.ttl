@@ -11,10 +11,10 @@ bblocks:ogc.unstable.sosa a skos:Concept,
     rdfs:label "Sensor, Observation, Sample, and Actuator (SOSA)" ;
     dct:abstract "The SOSA (Sensor, Observation, Sample, and Actuator) ontology  is a realisation of the Observations, Measurements and Sampling (OMS) Conceptual model" ;
     dct:created "2023-04-13T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/unstable/sosa/index.md" ],
-        [ dct:format "application/json" ;
+    dct:description [ dct:format "application/json" ;
             rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/unstable/sosa/index.json" ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/unstable/sosa/index.md" ],
         [ dct:format "text/html" ;
             rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/slate-build/unstable/sosa/" ] ;
     dct:hasVersion "1.0" ;
@@ -50,7 +50,7 @@ bblocks:ogc.unstable.sosa.examples.vectorObservationFeature a skos:Concept,
     bblocks:hasSchema <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema.json>,
         <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema.yaml> ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/unstable> ;
-    bblocks:status <http://www.opengis.net/def/status/invalid> .
+    bblocks:status <http://www.opengis.net/def/status/under-development> .
 
 bblocks:ogc.unstable.sosa.examples.vectorObservation a skos:Concept,
         bblocks:Schema ;
@@ -80,12 +80,12 @@ bblocks:ogc.unstable.sosa.features.observationCollection a skos:Concept,
     rdfs:label "SOSA ObservationCollection Feature" ;
     dct:abstract "This building blocks defines an ObservationCollection Feature according to the SOSA/SSN v1.1 specification." ;
     dct:created "2023-04-13T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
+    dct:description [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/unstable/sosa/features/observationCollection/index.md" ],
+        [ dct:format "application/json" ;
             rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/unstable/sosa/features/observationCollection/index.json" ],
         [ dct:format "text/html" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/slate-build/unstable/sosa/features/observationCollection/" ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/unstable/sosa/features/observationCollection/index.md" ] ;
+            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/slate-build/unstable/sosa/features/observationCollection/" ] ;
     dct:hasVersion "1.0" ;
     dct:modified "2023-04-28"^^xsd:date ;
     dct:source <https://www.w3.org/TR/vocab-ssn-ext/>,
@@ -98,19 +98,19 @@ bblocks:ogc.unstable.sosa.features.observationCollection a skos:Concept,
     bblocks:hasSchema <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observationCollection/schema.json>,
         <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observationCollection/schema.yaml> ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/unstable> ;
-    bblocks:status <http://www.opengis.net/def/status/invalid> .
+    bblocks:status <http://www.opengis.net/def/status/under-development> .
 
 bblocks:ogc.unstable.sosa.properties.observationCollection a skos:Concept,
         bblocks:Schema ;
     rdfs:label "SOSA ObservationCollection" ;
     dct:abstract "This building blocks defines an ObservationCollection according to the SOSA/SSN v1.1 specification." ;
     dct:created "2023-04-13T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
+    dct:description [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/unstable/sosa/properties/observationCollection/index.md" ],
+        [ dct:format "text/html" ;
             rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/slate-build/unstable/sosa/properties/observationCollection/" ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/unstable/sosa/properties/observationCollection/index.json" ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/unstable/sosa/properties/observationCollection/index.md" ] ;
+            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/unstable/sosa/properties/observationCollection/index.json" ] ;
     dct:hasVersion "1.0" ;
     dct:modified "2023-04-28"^^xsd:date ;
     dct:source <https://www.w3.org/TR/vocab-ssn-ext/>,
@@ -129,12 +129,12 @@ bblocks:ogc.unstable.sosa.features.observation a skos:Concept,
     rdfs:label "SOSA Observation Feature" ;
     dct:abstract "This building blocks defines a GeoJSON feature containing a SOSA Observation" ;
     dct:created "2023-05-18T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/slate-build/unstable/sosa/features/observation/" ],
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/unstable/sosa/features/observation/index.json" ],
         [ dct:format "text/markdown" ;
             rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/unstable/sosa/features/observation/index.md" ],
-        [ dct:format "application/json" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/unstable/sosa/features/observation/index.json" ] ;
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/slate-build/unstable/sosa/features/observation/" ] ;
     dct:hasVersion "1.0" ;
     dct:modified "2023-05-18"^^xsd:date ;
     dct:source <https://www.w3.org/TR/vocab-ssn/> ;
@@ -154,10 +154,10 @@ bblocks:ogc.unstable.sosa.properties.observation a skos:Concept,
     rdfs:label "SOSA Observation" ;
     dct:abstract "This building block defines the set of properties for an observation according to the SOSA/SSN specification. These properties may be directly included into a root element of a JSON object or used in the properties container of a GeoJSON feature." ;
     dct:created "2023-04-13T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/slate-build/unstable/sosa/properties/observation/" ],
-        [ dct:format "text/markdown" ;
+    dct:description [ dct:format "text/markdown" ;
             rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/unstable/sosa/properties/observation/index.md" ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/slate-build/unstable/sosa/properties/observation/" ],
         [ dct:format "application/json" ;
             rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/unstable/sosa/properties/observation/index.json" ] ;
     dct:hasVersion "1.0" ;
@@ -176,8 +176,8 @@ bblocks:ogc.unstable.sosa.properties.observation a skos:Concept,
 <https://www.w3.org/TR/vocab-ssn/> rdfs:label "Semantic Sensor Network Ontology" .
 
 [] a prov:Activity ;
-    prov:endedAtTime "2023-10-20T14:38:25.834972"^^xsd:dateTime ;
-    prov:startedAtTime "2023-10-20T14:38:25.750827"^^xsd:dateTime ;
+    prov:endedAtTime "2023-10-23T20:58:38.550892"^^xsd:dateTime ;
+    prov:startedAtTime "2023-10-23T20:58:38.470248"^^xsd:dateTime ;
     prov:used [ a prov:Entity ;
             dct:format "application/yaml" ;
             rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ],
