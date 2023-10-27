@@ -646,12 +646,7 @@ Links to the schema:
       "@container": "@set"
     },
     "featureType": "@type",
-    "properties": {
-      "@context": {
-        "features": "sosa:hasMember"
-      },
-      "@id": "@nest"
-    },
+    "properties": "@nest",
     "Feature": "geojson:Feature",
     "FeatureCollection": "geojson:FeatureCollection",
     "GeometryCollection": "geojson:GeometryCollection",

@@ -157,12 +157,7 @@ TBD: Convenience API paths may be defined to support traversal of relationships 
       "@container": "@set"
     },
     "featureType": "@type",
-    "properties": {
-      "@context": {
-        "features": "sosa:hasMember"
-      },
-      "@id": "@nest"
-    },
+    "properties": "@nest",
     "Feature": "geojson:Feature",
     "FeatureCollection": "geojson:FeatureCollection",
     "GeometryCollection": "geojson:GeometryCollection",

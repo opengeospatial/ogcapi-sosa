@@ -455,14 +455,14 @@ Links to the schema:
     "hasSurvivalRange": "ssn:systems/hasSurvivalRange",
     "hasSurvivalProperty": "ssn:systems/hasSurvivalProperty",
     "qualityOfObservation": "ssn:systems/qualityOfObservation",
-    "hasMember": "sosa:hasMember",
-    "featureType": "@type",
-    "properties": {
+    "hasMember": {
       "@context": {
         "features": "sosa:hasMember"
       },
-      "@id": "@nest"
+      "@id": "sosa:hasMember"
     },
+    "featureType": "@type",
+    "properties": "@nest",
     "features": {
       "@context": {
         "features": "sosa:hasMember",
