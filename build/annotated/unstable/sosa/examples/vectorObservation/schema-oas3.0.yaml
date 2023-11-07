@@ -1,14 +1,14 @@
-$defs:
-  1d0be15632193a6bb1b6afc878492b08a3562340:
+x-defs:
+  ogc.unstable.sosa.examples.vectorObservation:
     description: Example SOSA Vector Observation
     allOf:
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/schema-oas3.0.yaml#/$defs/e12640919ef6c271d60a2aca72c6ea72ca391ca2
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/schema-oas3.0.yaml#/x-defs/ogc.unstable.sosa.properties.observation
     - type: object
       properties:
         hasResult:
           properties:
             pose:
-              $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/schema-oas3.0.yaml#/$defs/14a630a250b3d8e2bc892d5fa9cfee5a50eb30e6
+              $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/schema-oas3.0.yaml#/x-defs/ogc.geo.geopose.basic.ypr
             distance:
               type: number
       required:
@@ -18,7 +18,7 @@ $defs:
         - hasSimpleResult
     x-schema-version: https://json-schema.org/draft/2020-12/schema
     x-schema-source: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/schema-oas3.0.yaml
-  e12640919ef6c271d60a2aca72c6ea72ca391ca2:
+  ogc.unstable.sosa.properties.observation:
     description: SOSA Observation
     type: object
     properties:
@@ -161,7 +161,7 @@ $defs:
       ssn-system: http://www.w3.org/ns/ssn/systems/
     x-schema-version: https://json-schema.org/draft/2020-12/schema
     x-schema-source: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/properties/observation/schema.yaml
-  14a630a250b3d8e2bc892d5fa9cfee5a50eb30e6:
+  ogc.geo.geopose.basic.ypr:
     description: 'Basic-YPR: Basic GeoPose using yaw, pitch, and roll to specify orientation'
     definitions:
       angles:
@@ -207,7 +207,7 @@ $defs:
       geopose: http://example.com/geopose/
       geo: http://www.w3.org/2003/01/geo/wgs84_pos#
     x-schema-source: https://schemas.opengis.net/geopose/1.0/schemata/GeoPose.Basic.YPR.Schema.json
-  f08124ee1e911e959545d91e581cf8f5d56b11f9:
+  schemas.opengis.net_geopose_1.0_schemata_GeoPose.Basic.YPR.Schema.json:
     description: 'Basic-YPR: Basic GeoPose using yaw, pitch, and roll to specify orientation'
     definitions:
       angles:
@@ -239,12 +239,12 @@ $defs:
     type: object
     properties:
       position:
-        $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/schema-oas3.0.yaml#/$defs/f08124ee1e911e959545d91e581cf8f5d56b11f9/definitions/Position
+        $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/schema-oas3.0.yaml#/x-defs/schemas.opengis.net_geopose_1.0_schemata_GeoPose.Basic.YPR.Schema.json/definitions/Position
       angles:
-        $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/schema-oas3.0.yaml#/$defs/f08124ee1e911e959545d91e581cf8f5d56b11f9/definitions/angles
+        $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/schema-oas3.0.yaml#/x-defs/schemas.opengis.net_geopose_1.0_schemata_GeoPose.Basic.YPR.Schema.json/definitions/angles
     required:
     - position
     - angles
     x-schema-source: https://schemas.opengis.net/geopose/1.0/schemata/GeoPose.Basic.YPR.Schema.json
 allOf:
-- $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/schema-oas3.0.yaml#/$defs/1d0be15632193a6bb1b6afc878492b08a3562340
+- $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/schema-oas3.0.yaml#/x-defs/ogc.unstable.sosa.examples.vectorObservation

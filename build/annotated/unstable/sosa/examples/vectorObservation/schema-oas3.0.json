@@ -1,10 +1,10 @@
 {
-  "$defs": {
-    "193c04b458876a37be0079afe951de2ddd1dbcc9": {
+  "x-defs": {
+    "ogc.unstable.sosa.examples.vectorObservation": {
       "description": "Example SOSA Vector Observation",
       "allOf": [
         {
-          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/schema-oas3.0.json#/$defs/dd30cff817672e7a59b99aa22919a700d1939e2f"
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/schema-oas3.0.json#/x-defs/ogc.unstable.sosa.properties.observation"
         },
         {
           "type": "object",
@@ -12,7 +12,7 @@
             "hasResult": {
               "properties": {
                 "pose": {
-                  "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/schema-oas3.0.json#/$defs/92d20796815304017ea7c806dddcd0f49588ea0f"
+                  "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/schema-oas3.0.json#/x-defs/ogc.geo.geopose.basic.ypr"
                 },
                 "distance": {
                   "type": "number"
@@ -33,7 +33,7 @@
       "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
       "x-schema-source": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/schema-oas3.0.json"
     },
-    "dd30cff817672e7a59b99aa22919a700d1939e2f": {
+    "ogc.unstable.sosa.properties.observation": {
       "description": "SOSA Observation",
       "type": "object",
       "properties": {
@@ -243,7 +243,7 @@
       "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
       "x-schema-source": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/properties/observation/schema.json"
     },
-    "92d20796815304017ea7c806dddcd0f49588ea0f": {
+    "ogc.geo.geopose.basic.ypr": {
       "description": "Basic-YPR: Basic GeoPose using yaw, pitch, and roll to specify orientation",
       "definitions": {
         "angles": {
@@ -306,7 +306,7 @@
       },
       "x-schema-source": "https://schemas.opengis.net/geopose/1.0/schemata/GeoPose.Basic.YPR.Schema.json"
     },
-    "f08124ee1e911e959545d91e581cf8f5d56b11f9": {
+    "schemas.opengis.net_geopose_1.0_schemata_GeoPose.Basic.YPR.Schema.json": {
       "description": "Basic-YPR: Basic GeoPose using yaw, pitch, and roll to specify orientation",
       "definitions": {
         "angles": {
@@ -351,10 +351,10 @@
       "type": "object",
       "properties": {
         "position": {
-          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/schema-oas3.0.json#/$defs/f08124ee1e911e959545d91e581cf8f5d56b11f9/definitions/Position"
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/schema-oas3.0.json#/x-defs/schemas.opengis.net_geopose_1.0_schemata_GeoPose.Basic.YPR.Schema.json/definitions/Position"
         },
         "angles": {
-          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/schema-oas3.0.json#/$defs/f08124ee1e911e959545d91e581cf8f5d56b11f9/definitions/angles"
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/schema-oas3.0.json#/x-defs/schemas.opengis.net_geopose_1.0_schemata_GeoPose.Basic.YPR.Schema.json/definitions/angles"
         }
       },
       "required": [
@@ -366,7 +366,7 @@
   },
   "allOf": [
     {
-      "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/schema-oas3.0.json#/$defs/193c04b458876a37be0079afe951de2ddd1dbcc9"
+      "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/schema-oas3.0.json#/x-defs/ogc.unstable.sosa.examples.vectorObservation"
     }
   ]
 }

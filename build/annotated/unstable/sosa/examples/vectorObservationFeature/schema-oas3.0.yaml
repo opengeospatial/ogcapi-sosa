@@ -1,33 +1,33 @@
-$defs:
-  5b2ad1ce28448df5b7112c5c3c41ef243350fbb9:
+x-defs:
+  ogc.unstable.sosa.examples.vectorObservationFeature:
     description: Example SOSA Observation Specialisation - a vector bearing and distance
     $defs:
       VectorObservation:
         allOf:
-        - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/2a211f53f019a7d521e0e477a52d01544ec68882
+        - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/ogc.unstable.sosa.features.observation
         - type: object
           properties:
             properties:
-              $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/1d0be15632193a6bb1b6afc878492b08a3562340
+              $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/ogc.unstable.sosa.examples.vectorObservation
       VectorObservationCollection:
         allOf:
-        - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/b4aa01076f4d6d90796aad2f9f2d76274f091849
+        - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/ogc.unstable.sosa.features.observationCollection
         - type: object
           properties:
             features:
               type: array
               items:
-                $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/5b2ad1ce28448df5b7112c5c3c41ef243350fbb9/$defs/VectorObservation
+                $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/ogc.unstable.sosa.examples.vectorObservationFeature/$defs/VectorObservation
     anyOf:
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/5b2ad1ce28448df5b7112c5c3c41ef243350fbb9/$defs/VectorObservation
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/5b2ad1ce28448df5b7112c5c3c41ef243350fbb9/$defs/VectorObservationCollection
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/ogc.unstable.sosa.examples.vectorObservationFeature/$defs/VectorObservation
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/ogc.unstable.sosa.examples.vectorObservationFeature/$defs/VectorObservationCollection
     x-schema-version: https://json-schema.org/draft/2020-12/schema
     x-schema-source: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml
-  2a211f53f019a7d521e0e477a52d01544ec68882:
+  ogc.unstable.sosa.features.observation:
     description: SOSA Observation Feature
     type: object
     allOf:
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/84769a2f0167b0e5ffaa2fa63419dbf733e93170
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/ogc.geo.json-fg.feature-lenient
     - type: object
       properties:
         properties: {}
@@ -123,16 +123,16 @@ $defs:
       ssn-system: http://www.w3.org/ns/ssn/systems/
     x-schema-version: https://json-schema.org/draft/2020-12/schema
     x-schema-source: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/features/observation/schema.yaml
-  1d0be15632193a6bb1b6afc878492b08a3562340:
+  ogc.unstable.sosa.examples.vectorObservation:
     description: Example SOSA Vector Observation
     allOf:
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e12640919ef6c271d60a2aca72c6ea72ca391ca2
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/ogc.unstable.sosa.properties.observation
     - type: object
       properties:
         hasResult:
           properties:
             pose:
-              $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/14a630a250b3d8e2bc892d5fa9cfee5a50eb30e6
+              $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/ogc.geo.geopose.basic.ypr
             distance:
               type: number
       required:
@@ -142,10 +142,10 @@ $defs:
         - hasSimpleResult
     x-schema-version: https://json-schema.org/draft/2020-12/schema
     x-schema-source: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/vectorObservation/schema.yaml
-  b4aa01076f4d6d90796aad2f9f2d76274f091849:
+  ogc.unstable.sosa.features.observationCollection:
     description: SOSA Observation Feature
     allOf:
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/25d0a2e4ff911842e906a43da6e8dc27bdcc0bd1
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/ogc.geo.json-fg.featureCollection-lenient
     - type: object
       properties:
         properties: {}
@@ -153,7 +153,7 @@ $defs:
           type: array
           items:
             oneOf:
-            - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/2a211f53f019a7d521e0e477a52d01544ec68882
+            - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/ogc.unstable.sosa.features.observation
             - type: string
           x-jsonld-id: http://www.w3.org/ns/sosa/hasMember
     x-jsonld-extra-terms:
@@ -247,9 +247,9 @@ $defs:
       ssn-system: http://www.w3.org/ns/ssn/systems/
     x-schema-version: https://json-schema.org/draft/2020-12/schema
     x-schema-source: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/features/observationCollection/schema.yaml
-  84769a2f0167b0e5ffaa2fa63419dbf733e93170:
+  ogc.geo.json-fg.feature-lenient:
     allOf:
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/3877573afb4b91f9b2eef617ee300536f8ab95c3
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/ogc.geo.features.feature
     - type: object
       required:
       - type
@@ -267,20 +267,20 @@ $defs:
           - type: string
           x-jsonld-id: '@id'
         featureType:
-          $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/9266ba6d64c364becfa54e80a2f1d08dc23740f4
+          $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_featuretype.json
         links:
           type: array
           items:
             allOf:
-            - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/f94be10242bfc434acef2e8bc9bdab6260d27736
-            - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/648eb6c310a477581a39f33f78d6f71495d65a7f
+            - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_link.json
+            - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/ogc.ogc-utils.json-link
           x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#seeAlso
         time:
-          $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/002dda5ff8bca530c6a6ff7c5259d810954f0eb7
+          $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_time.json
         coordRefSys:
-          $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/f07afb90a82f7d8db5783178eb11a65871d4466a
+          $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_coordrefsys.json
         place:
-          $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/02ad29c2bcb6a89f82b2e52d706294f1d816d186
+          $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_place.json
         geometry: {}
         properties:
           oneOf:
@@ -310,7 +310,7 @@ $defs:
       geojson: https://purl.org/geojson/vocab#
       rdfs: http://www.w3.org/2000/01/rdf-schema#
     x-schema-source: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/json-fg/feature-lenient/schema.yaml
-  e12640919ef6c271d60a2aca72c6ea72ca391ca2:
+  ogc.unstable.sosa.properties.observation:
     description: SOSA Observation
     type: object
     properties:
@@ -453,7 +453,7 @@ $defs:
       ssn-system: http://www.w3.org/ns/ssn/systems/
     x-schema-version: https://json-schema.org/draft/2020-12/schema
     x-schema-source: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/properties/observation/schema.yaml
-  14a630a250b3d8e2bc892d5fa9cfee5a50eb30e6:
+  ogc.geo.geopose.basic.ypr:
     description: 'Basic-YPR: Basic GeoPose using yaw, pitch, and roll to specify orientation'
     definitions:
       angles:
@@ -499,7 +499,7 @@ $defs:
       geopose: http://example.com/geopose/
       geo: http://www.w3.org/2003/01/geo/wgs84_pos#
     x-schema-source: https://schemas.opengis.net/geopose/1.0/schemata/GeoPose.Basic.YPR.Schema.json
-  25d0a2e4ff911842e906a43da6e8dc27bdcc0bd1:
+  ogc.geo.json-fg.featureCollection-lenient:
     allOf:
     - title: a JSON-FG Feature Collection
       description: This JSON Schema is part of JSON-FG version 0.1.1
@@ -514,31 +514,31 @@ $defs:
           - FeatureCollection
           x-jsonld-id: '@type'
         featureType:
-          $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/9266ba6d64c364becfa54e80a2f1d08dc23740f4
+          $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_featuretype.json
         geometryDimension:
           type: integer
           minimum: 0
           maximum: 3
         coordRefSys:
-          $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/f07afb90a82f7d8db5783178eb11a65871d4466a
+          $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_coordrefsys.json
         links:
           type: array
           items:
             allOf:
-            - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/f94be10242bfc434acef2e8bc9bdab6260d27736
-            - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/648eb6c310a477581a39f33f78d6f71495d65a7f
+            - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_link.json
+            - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/ogc.ogc-utils.json-link
           x-jsonld-id: rdfs:seeAlso
         features:
           type: array
           items:
-            $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/84769a2f0167b0e5ffaa2fa63419dbf733e93170
+            $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/ogc.geo.json-fg.feature-lenient
           x-jsonld-container: '@set'
           x-jsonld-id: https://purl.org/geojson/vocab#features
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/564c63ddcb5164ba9c8ef43bce485656d3a6ff3b
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/ogc.geo.features.featureCollection
     x-jsonld-prefixes:
       geojson: https://purl.org/geojson/vocab#
     x-schema-source: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/json-fg/featureCollection-lenient/schema.yaml
-  c638d3569dfec79f4b35792b54b2214517f02129:
+  ogc.unstable.sosa.properties.observationCollection:
     description: SOSA ObservationCollection
     $defs:
       collection:
@@ -601,12 +601,12 @@ $defs:
             type: array
             items:
               anyOf:
-              - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/c638d3569dfec79f4b35792b54b2214517f02129/$defs/collection
-              - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e12640919ef6c271d60a2aca72c6ea72ca391ca2
-              - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/2267ebecb2e5ec5dac3dce9e6dc9f68da658e7ac
+              - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/ogc.unstable.sosa.properties.observationCollection/$defs/collection
+              - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/ogc.unstable.sosa.properties.observation
+              - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/ogc.ogc-utils.iri-or-curie
             x-jsonld-id: http://www.w3.org/ns/sosa/hasMember
     allOf:
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/c638d3569dfec79f4b35792b54b2214517f02129/$defs/collection
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/ogc.unstable.sosa.properties.observationCollection/$defs/collection
     - not:
         anyOf:
         - required:
@@ -691,15 +691,15 @@ $defs:
       ssn-system: http://www.w3.org/ns/ssn/systems/
     x-schema-version: https://json-schema.org/draft/2020-12/schema
     x-schema-source: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/properties/observationCollection/schema.yaml
-  3877573afb4b91f9b2eef617ee300536f8ab95c3:
+  ogc.geo.features.feature:
     allOf:
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/06a21ec4ff2e50a755a327451b99e5016ed5b373
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/ogc.geo.common.data_types.geojson
     - type: object
       properties:
         links:
           type: array
           items:
-            $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/648eb6c310a477581a39f33f78d6f71495d65a7f
+            $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/ogc.ogc-utils.json-link
           x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#seeAlso
         type:
           const: Feature
@@ -712,7 +712,7 @@ $defs:
     x-jsonld-prefixes:
       rdfs: http://www.w3.org/2000/01/rdf-schema#
     x-schema-source: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/features/feature/schema.yaml
-  9266ba6d64c364becfa54e80a2f1d08dc23740f4:
+  beta.schemas.opengis.net_json-fg_featuretype.json:
     title: the featureType member
     description: This JSON Schema is part of JSON-FG version 0.1.1
     oneOf:
@@ -722,7 +722,7 @@ $defs:
         type: string
     x-schema-version: https://json-schema.org/draft/2019-09/schema
     x-schema-source: https://beta.schemas.opengis.net/json-fg/featuretype.json
-  f94be10242bfc434acef2e8bc9bdab6260d27736:
+  beta.schemas.opengis.net_json-fg_link.json:
     title: the Link object
     description: This JSON Schema is part of JSON-FG version 0.1.1
     type: object
@@ -747,7 +747,7 @@ $defs:
         type: string
     x-schema-version: https://json-schema.org/draft/2019-09/schema
     x-schema-source: https://beta.schemas.opengis.net/json-fg/link.json
-  648eb6c310a477581a39f33f78d6f71495d65a7f:
+  ogc.ogc-utils.json-link:
     description: JSON Link
     type: object
     required:
@@ -783,18 +783,18 @@ $defs:
       dct: http://purl.org/dc/terms/
     x-schema-version: https://json-schema.org/draft/2020-12/schema
     x-schema-source: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/schema.yaml
-  002dda5ff8bca530c6a6ff7c5259d810954f0eb7:
+  beta.schemas.opengis.net_json-fg_time.json:
     title: the time member
     description: This JSON Schema is part of JSON-FG version 0.1.1
     oneOf:
     - type: object
       properties:
         date:
-          $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/002dda5ff8bca530c6a6ff7c5259d810954f0eb7/$defs/date
+          $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_time.json/$defs/date
         timestamp:
-          $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/002dda5ff8bca530c6a6ff7c5259d810954f0eb7/$defs/timestamp
+          $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_time.json/$defs/timestamp
         interval:
-          $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/002dda5ff8bca530c6a6ff7c5259d810954f0eb7/$defs/interval
+          $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_time.json/$defs/interval
     $defs:
       date:
         type: string
@@ -808,28 +808,28 @@ $defs:
         maxItems: 2
         items:
           oneOf:
-          - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/002dda5ff8bca530c6a6ff7c5259d810954f0eb7/$defs/date
-          - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/002dda5ff8bca530c6a6ff7c5259d810954f0eb7/$defs/timestamp
+          - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_time.json/$defs/date
+          - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_time.json/$defs/timestamp
           - type: string
             enum:
             - ..
     nullable: true
     x-schema-version: https://json-schema.org/draft/2019-09/schema
     x-schema-source: https://beta.schemas.opengis.net/json-fg/time.json
-  f07afb90a82f7d8db5783178eb11a65871d4466a:
+  beta.schemas.opengis.net_json-fg_coordrefsys.json:
     title: the coordRefSys member
     description: This JSON Schema is part of JSON-FG version 0.1.1
     oneOf:
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/f07afb90a82f7d8db5783178eb11a65871d4466a/$defs/single-refsys
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_coordrefsys.json/$defs/single-refsys
     - type: array
       items:
-        $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/f07afb90a82f7d8db5783178eb11a65871d4466a/$defs/single-refsys
+        $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_coordrefsys.json/$defs/single-refsys
     $defs:
       single-refsys:
         oneOf:
-        - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/f07afb90a82f7d8db5783178eb11a65871d4466a/$defs/refsys-simpleref
-        - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/f07afb90a82f7d8db5783178eb11a65871d4466a/$defs/refsys-byref
-        - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/f07afb90a82f7d8db5783178eb11a65871d4466a/$defs/refsys-custom
+        - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_coordrefsys.json/$defs/refsys-simpleref
+        - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_coordrefsys.json/$defs/refsys-byref
+        - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_coordrefsys.json/$defs/refsys-custom
       refsys-simpleref:
         type: string
         format: uri
@@ -860,39 +860,39 @@ $defs:
               - Reference
     x-schema-version: https://json-schema.org/draft/2019-09/schema
     x-schema-source: https://beta.schemas.opengis.net/json-fg/coordrefsys.json
-  02ad29c2bcb6a89f82b2e52d706294f1d816d186:
+  beta.schemas.opengis.net_json-fg_place.json:
     title: the place member
     description: This JSON Schema is part of JSON-FG version 0.1.1
     oneOf:
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/Point
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/MultiPoint
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/LineString
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/MultiLineString
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/Polygon
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/MultiPolygon
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/Polyhedron
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/MultiPolyhedron
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/Prism
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/MultiPrism
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/CustomGeometry
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/Point
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/MultiPoint
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/LineString
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/MultiLineString
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/Polygon
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/MultiPolygon
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/Polyhedron
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/MultiPolyhedron
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/Prism
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/MultiPrism
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/CustomGeometry
     nullable: true
     x-schema-version: https://json-schema.org/draft/2019-09/schema
     x-schema-source: https://beta.schemas.opengis.net/json-fg/place.json
-  47ee3442629631c44da5a44e1f4c6507dd0112f2:
+  beta.schemas.opengis.net_json-fg_geometry.json:
     title: the geometry member
     description: This JSON Schema is part of JSON-FG version 0.1.1
     oneOf:
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/Point
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/MultiPoint
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/LineString
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/MultiLineString
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/Polygon
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/MultiPolygon
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/GeometryCollection
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/Point
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/MultiPoint
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/LineString
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/MultiLineString
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/Polygon
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/MultiPolygon
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/GeometryCollection
     nullable: true
     x-schema-version: https://json-schema.org/draft/2019-09/schema
     x-schema-source: https://beta.schemas.opengis.net/json-fg/geometry.json
-  f08124ee1e911e959545d91e581cf8f5d56b11f9:
+  schemas.opengis.net_geopose_1.0_schemata_GeoPose.Basic.YPR.Schema.json:
     description: 'Basic-YPR: Basic GeoPose using yaw, pitch, and roll to specify orientation'
     definitions:
       angles:
@@ -924,22 +924,22 @@ $defs:
     type: object
     properties:
       position:
-        $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/f08124ee1e911e959545d91e581cf8f5d56b11f9/definitions/Position
+        $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/schemas.opengis.net_geopose_1.0_schemata_GeoPose.Basic.YPR.Schema.json/definitions/Position
       angles:
-        $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/f08124ee1e911e959545d91e581cf8f5d56b11f9/definitions/angles
+        $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/schemas.opengis.net_geopose_1.0_schemata_GeoPose.Basic.YPR.Schema.json/definitions/angles
     required:
     - position
     - angles
     x-schema-source: https://schemas.opengis.net/geopose/1.0/schemata/GeoPose.Basic.YPR.Schema.json
-  564c63ddcb5164ba9c8ef43bce485656d3a6ff3b:
+  ogc.geo.features.featureCollection:
     allOf:
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/c91e52f769a91e546450bef84f1dac326f3acb5e
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/geojson.org_schema_FeatureCollection.json
     - type: object
       properties:
         links:
           type: array
           items:
-            $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/648eb6c310a477581a39f33f78d6f71495d65a7f
+            $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/ogc.ogc-utils.json-link
           x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#seeAlso
         timeStamp:
           type: string
@@ -953,16 +953,16 @@ $defs:
         features:
           type: array
           items:
-            $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/3877573afb4b91f9b2eef617ee300536f8ab95c3
+            $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/ogc.geo.features.feature
     x-jsonld-extra-terms:
       properties: '@nest'
     x-jsonld-prefixes:
       rdfs: http://www.w3.org/2000/01/rdf-schema#
     x-schema-source: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/features/featureCollection/schema.yaml
-  2267ebecb2e5ec5dac3dce9e6dc9f68da658e7ac:
+  ogc.ogc-utils.iri-or-curie:
     x-schema-version: https://json-schema.org/draft/2020-12/schema
     x-schema-source: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml
-  06a21ec4ff2e50a755a327451b99e5016ed5b373:
+  ogc.geo.common.data_types.geojson:
     title: GeoJSON Feature
     type: object
     required:
@@ -1379,7 +1379,7 @@ $defs:
       geojson: https://purl.org/geojson/vocab#
     x-schema-version: http://json-schema.org/draft-07/schema#
     x-schema-source: https://geojson.org/schema/Feature.json
-  e0360137ccef1a906d983cd65b9ffbffd218e8a9:
+  beta.schemas.opengis.net_json-fg_geometry-objects.json:
     title: the geometry objects
     description: This JSON Schema is part of JSON-FG version 0.1.1
     $defs:
@@ -1416,9 +1416,9 @@ $defs:
             enum:
             - Point
           coordinates:
-            $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/position
+            $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/position
           bbox:
-            $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/bbox
+            $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/bbox
       LineString:
         title: GeoJSON LineString
         type: object
@@ -1434,9 +1434,9 @@ $defs:
             type: array
             minItems: 2
             items:
-              $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/position
+              $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/position
           bbox:
-            $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/bbox
+            $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/bbox
       Polygon:
         title: GeoJSON Polygon
         type: object
@@ -1454,9 +1454,9 @@ $defs:
               type: array
               minItems: 4
               items:
-                $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/position
+                $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/position
           bbox:
-            $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/bbox
+            $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/bbox
       MultiPoint:
         title: GeoJSON MultiPoint
         type: object
@@ -1471,9 +1471,9 @@ $defs:
           coordinates:
             type: array
             items:
-              $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/position
+              $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/position
           bbox:
-            $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/bbox
+            $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/bbox
       MultiLineString:
         title: GeoJSON MultiLineString
         type: object
@@ -1491,9 +1491,9 @@ $defs:
               type: array
               minItems: 2
               items:
-                $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/position
+                $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/position
           bbox:
-            $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/bbox
+            $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/bbox
       MultiPolygon:
         title: GeoJSON MultiPolygon
         type: object
@@ -1513,9 +1513,9 @@ $defs:
                 type: array
                 minItems: 4
                 items:
-                  $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/position
+                  $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/position
           bbox:
-            $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/bbox
+            $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/bbox
       Polyhedron:
         title: JSON-FG Polyhedron
         type: object
@@ -1540,9 +1540,9 @@ $defs:
                   type: array
                   minItems: 4
                   items:
-                    $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/position3d
+                    $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/position3d
           bbox:
-            $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/bbox3d
+            $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/bbox3d
       MultiPolyhedron:
         title: JSON-FG MultiPolyhedron
         type: object
@@ -1569,9 +1569,9 @@ $defs:
                     type: array
                     minItems: 4
                     items:
-                      $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/position3d
+                      $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/position3d
           bbox:
-            $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/bbox3d
+            $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/bbox3d
       Prism:
         title: JSON-FG Prism
         type: object
@@ -1586,18 +1586,18 @@ $defs:
             - Prism
           base:
             oneOf:
-            - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/Point
-            - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/LineString
-            - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/Polygon
-            - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/MultiPoint
-            - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/MultiLineString
-            - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/MultiPolygon
+            - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/Point
+            - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/LineString
+            - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/Polygon
+            - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/MultiPoint
+            - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/MultiLineString
+            - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/MultiPolygon
           lower:
             type: number
           upper:
             type: number
           bbox:
-            $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/bbox3d
+            $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/bbox3d
       MultiPrism:
         title: JSON-FG Multi-Prism
         type: object
@@ -1612,9 +1612,9 @@ $defs:
           prisms:
             type: array
             items:
-              $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/Prism
+              $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/Prism
           bbox:
-            $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/bbox3d
+            $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/bbox3d
       GeometryCollection:
         title: GeoJSON GeometryCollection
         type: object
@@ -1630,14 +1630,14 @@ $defs:
             type: array
             items:
               oneOf:
-              - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/Point
-              - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/MultiPoint
-              - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/LineString
-              - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/MultiLineString
-              - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/Polygon
-              - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/MultiPolygon
+              - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/Point
+              - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/MultiPoint
+              - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/LineString
+              - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/MultiLineString
+              - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/Polygon
+              - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/MultiPolygon
           bbox:
-            $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/bbox
+            $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/bbox
       position:
         type: array
         minItems: 2
@@ -1652,8 +1652,8 @@ $defs:
           type: number
       bbox:
         oneOf:
-        - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/bbox2d
-        - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/bbox3d
+        - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/bbox2d
+        - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/beta.schemas.opengis.net_json-fg_geometry-objects.json/$defs/bbox3d
       bbox2d:
         type: array
         minItems: 4
@@ -1668,7 +1668,7 @@ $defs:
           type: number
     x-schema-version: https://json-schema.org/draft/2019-09/schema
     x-schema-source: https://beta.schemas.opengis.net/json-fg/geometry-objects.json
-  c91e52f769a91e546450bef84f1dac326f3acb5e:
+  geojson.org_schema_FeatureCollection.json:
     title: GeoJSON FeatureCollection
     type: object
     required:
@@ -2020,4 +2020,4 @@ $defs:
     x-schema-version: http://json-schema.org/draft-07/schema#
     x-schema-source: https://geojson.org/schema/FeatureCollection.json
 allOf:
-- $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/$defs/5b2ad1ce28448df5b7112c5c3c41ef243350fbb9
+- $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.yaml#/x-defs/ogc.unstable.sosa.examples.vectorObservationFeature
