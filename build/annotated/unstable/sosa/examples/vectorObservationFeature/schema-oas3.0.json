@@ -1,0 +1,3012 @@
+{
+  "$defs": {
+    "8fd2ae08331de4582c9f006842b6a47056489be0": {
+      "description": "Example SOSA Observation Specialisation - a vector bearing and distance",
+      "$defs": {
+        "VectorObservation": {
+          "allOf": [
+            {
+              "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/1ee0023049d0e1ec820df433158476ed91d8572e"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "properties": {
+                  "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/193c04b458876a37be0079afe951de2ddd1dbcc9"
+                }
+              }
+            }
+          ]
+        },
+        "VectorObservationCollection": {
+          "allOf": [
+            {
+              "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/b87c19f697316240600db1fd66f4e8cb3fe1cd13"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "features": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/8fd2ae08331de4582c9f006842b6a47056489be0/$defs/VectorObservation"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      "anyOf": [
+        {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/8fd2ae08331de4582c9f006842b6a47056489be0/$defs/VectorObservation"
+        },
+        {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/8fd2ae08331de4582c9f006842b6a47056489be0/$defs/VectorObservationCollection"
+        }
+      ],
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
+      "x-schema-source": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json"
+    },
+    "1ee0023049d0e1ec820df433158476ed91d8572e": {
+      "description": "SOSA Observation Feature",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/8b000fa51fc962530040b3ce7860d1611f037d58"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "properties": {}
+          }
+        }
+      ],
+      "x-jsonld-extra-terms": {
+        "Observation": "http://www.w3.org/ns/sosa/Observation",
+        "Sample": "http://www.w3.org/ns/sosa/Sample",
+        "observedProperty": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/observedProperty",
+          "x-jsonld-type": "@id"
+        },
+        "phenomenonTime": "http://www.w3.org/ns/sosa/phenomenonTime",
+        "observes": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/observes",
+          "x-jsonld-type": "@id"
+        },
+        "isObservedBy": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/isObservedBy",
+          "x-jsonld-type": "@id"
+        },
+        "madeObservation": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/madeObservation",
+          "x-jsonld-type": "@id"
+        },
+        "madeBySensor": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/madeBySensor",
+          "x-jsonld-type": "@id"
+        },
+        "actsOnProperty": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/actsOnProperty",
+          "x-jsonld-type": "@id"
+        },
+        "isActedOnBy": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/isActedOnBy",
+          "x-jsonld-type": "@id"
+        },
+        "madeActuation": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/madeActuation",
+          "x-jsonld-type": "@id"
+        },
+        "madeByActuator": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/madeByActuator",
+          "x-jsonld-type": "@id"
+        },
+        "hasSample": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/hasSample",
+          "x-jsonld-type": "@id"
+        },
+        "isSampleOf": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/isSampleOf",
+          "x-jsonld-type": "@id"
+        },
+        "madeSampling": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/madeSampling",
+          "x-jsonld-type": "@id"
+        },
+        "madeBySampler": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/madeBySampler",
+          "x-jsonld-type": "@id"
+        },
+        "hasFeatureOfInterest": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/hasFeatureOfInterest",
+          "x-jsonld-type": "@id"
+        },
+        "isFeatureOfInterestOf": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/isFeatureOfInterestOf",
+          "x-jsonld-type": "@id"
+        },
+        "hasResult": "http://www.w3.org/ns/sosa/hasResult",
+        "isResultOf": "http://www.w3.org/ns/sosa/isResultOf",
+        "hasSimpleResult": "http://www.w3.org/ns/sosa/hasSimpleResult",
+        "resultTime": "http://www.w3.org/ns/sosa/resultTime",
+        "usedProcedure": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/usedProcedure",
+          "x-jsonld-type": "@id"
+        },
+        "hosts": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/hosts",
+          "x-jsonld-type": "@id"
+        },
+        "isHostedBy": "http://www.w3.org/ns/sosa/isHostedBy",
+        "isProxyFor": "http://www.w3.org/ns/ssn/isProxyFor",
+        "wasOriginatedBy": "http://www.w3.org/ns/ssn/wasOriginatedBy",
+        "detects": "http://www.w3.org/ns/ssn/detects",
+        "hasProperty": "http://www.w3.org/ns/ssn/hasProperty",
+        "isPropertyOf": "http://www.w3.org/ns/ssn/isPropertyOf",
+        "forProperty": "http://www.w3.org/ns/ssn/forProperty",
+        "implements": "http://www.w3.org/ns/ssn/implements",
+        "implementedBy": "http://www.w3.org/ns/ssn/implementedBy",
+        "hasInput": "http://www.w3.org/ns/ssn/hasInput",
+        "hasOutput": "http://www.w3.org/ns/ssn/hasOutput",
+        "hasSubSystem": "http://www.w3.org/ns/ssn/hasSubSystem",
+        "deployedSystem": "http://www.w3.org/ns/ssn/deployedSystem",
+        "hasDeployment": "http://www.w3.org/ns/ssn/hasDeployment",
+        "deployedOnPlatform": "http://www.w3.org/ns/ssn/deployedOnPlatform",
+        "inDeployment": "http://www.w3.org/ns/ssn/inDeployment",
+        "inCondition": "http://www.w3.org/ns/ssn/systems/inCondition",
+        "hasSystemCapability": "http://www.w3.org/ns/ssn/systems/hasSystemCapability",
+        "hasSystemProperty": "http://www.w3.org/ns/ssn/systems/hasSystemProperty",
+        "hasOperatingRange": "http://www.w3.org/ns/ssn/systems/hasOperatingRange",
+        "hasOperatingProperty": "http://www.w3.org/ns/ssn/systems/hasOperatingProperty",
+        "hasSurvivalRange": "http://www.w3.org/ns/ssn/systems/hasSurvivalRange",
+        "hasSurvivalProperty": "http://www.w3.org/ns/ssn/systems/hasSurvivalProperty",
+        "qualityOfObservation": "http://www.w3.org/ns/ssn/systems/qualityOfObservation",
+        "hasMember": "http://www.w3.org/ns/sosa/hasMember",
+        "features": "http://www.w3.org/ns/sosa/hasMember",
+        "featureType": "@type"
+      },
+      "x-jsonld-prefixes": {
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "ssn": "http://www.w3.org/ns/ssn/",
+        "ssn-system": "http://www.w3.org/ns/ssn/systems/"
+      },
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
+      "x-schema-source": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/features/observation/schema.json"
+    },
+    "193c04b458876a37be0079afe951de2ddd1dbcc9": {
+      "description": "Example SOSA Vector Observation",
+      "allOf": [
+        {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/dd30cff817672e7a59b99aa22919a700d1939e2f"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "hasResult": {
+              "properties": {
+                "pose": {
+                  "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/92d20796815304017ea7c806dddcd0f49588ea0f"
+                },
+                "distance": {
+                  "type": "number"
+                }
+              }
+            }
+          },
+          "required": [
+            "hasResult"
+          ],
+          "not": {
+            "required": [
+              "hasSimpleResult"
+            ]
+          }
+        }
+      ],
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
+      "x-schema-source": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/vectorObservation/schema.json"
+    },
+    "b87c19f697316240600db1fd66f4e8cb3fe1cd13": {
+      "description": "SOSA Observation Feature",
+      "allOf": [
+        {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/9d393f0695f2bf8e79d977f8d2783abc7d46e0b3"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "properties": {},
+            "features": {
+              "type": "array",
+              "items": {
+                "oneOf": [
+                  {
+                    "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/1ee0023049d0e1ec820df433158476ed91d8572e"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
+              },
+              "x-jsonld-id": "http://www.w3.org/ns/sosa/hasMember"
+            }
+          }
+        }
+      ],
+      "x-jsonld-extra-terms": {
+        "Observation": "http://www.w3.org/ns/sosa/Observation",
+        "Sample": "http://www.w3.org/ns/sosa/Sample",
+        "observedProperty": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/observedProperty",
+          "x-jsonld-type": "@id"
+        },
+        "phenomenonTime": "http://www.w3.org/ns/sosa/phenomenonTime",
+        "observes": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/observes",
+          "x-jsonld-type": "@id"
+        },
+        "isObservedBy": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/isObservedBy",
+          "x-jsonld-type": "@id"
+        },
+        "madeObservation": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/madeObservation",
+          "x-jsonld-type": "@id"
+        },
+        "madeBySensor": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/madeBySensor",
+          "x-jsonld-type": "@id"
+        },
+        "actsOnProperty": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/actsOnProperty",
+          "x-jsonld-type": "@id"
+        },
+        "isActedOnBy": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/isActedOnBy",
+          "x-jsonld-type": "@id"
+        },
+        "madeActuation": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/madeActuation",
+          "x-jsonld-type": "@id"
+        },
+        "madeByActuator": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/madeByActuator",
+          "x-jsonld-type": "@id"
+        },
+        "hasSample": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/hasSample",
+          "x-jsonld-type": "@id"
+        },
+        "isSampleOf": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/isSampleOf",
+          "x-jsonld-type": "@id"
+        },
+        "madeSampling": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/madeSampling",
+          "x-jsonld-type": "@id"
+        },
+        "madeBySampler": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/madeBySampler",
+          "x-jsonld-type": "@id"
+        },
+        "hasFeatureOfInterest": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/hasFeatureOfInterest",
+          "x-jsonld-type": "@id"
+        },
+        "isFeatureOfInterestOf": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/isFeatureOfInterestOf",
+          "x-jsonld-type": "@id"
+        },
+        "hasResult": "http://www.w3.org/ns/sosa/hasResult",
+        "isResultOf": "http://www.w3.org/ns/sosa/isResultOf",
+        "hasSimpleResult": "http://www.w3.org/ns/sosa/hasSimpleResult",
+        "resultTime": "http://www.w3.org/ns/sosa/resultTime",
+        "usedProcedure": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/usedProcedure",
+          "x-jsonld-type": "@id"
+        },
+        "hosts": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/hosts",
+          "x-jsonld-type": "@id"
+        },
+        "isHostedBy": "http://www.w3.org/ns/sosa/isHostedBy",
+        "isProxyFor": "http://www.w3.org/ns/ssn/isProxyFor",
+        "wasOriginatedBy": "http://www.w3.org/ns/ssn/wasOriginatedBy",
+        "detects": "http://www.w3.org/ns/ssn/detects",
+        "hasProperty": "http://www.w3.org/ns/ssn/hasProperty",
+        "isPropertyOf": "http://www.w3.org/ns/ssn/isPropertyOf",
+        "forProperty": "http://www.w3.org/ns/ssn/forProperty",
+        "implements": "http://www.w3.org/ns/ssn/implements",
+        "implementedBy": "http://www.w3.org/ns/ssn/implementedBy",
+        "hasInput": "http://www.w3.org/ns/ssn/hasInput",
+        "hasOutput": "http://www.w3.org/ns/ssn/hasOutput",
+        "hasSubSystem": "http://www.w3.org/ns/ssn/hasSubSystem",
+        "deployedSystem": "http://www.w3.org/ns/ssn/deployedSystem",
+        "hasDeployment": "http://www.w3.org/ns/ssn/hasDeployment",
+        "deployedOnPlatform": "http://www.w3.org/ns/ssn/deployedOnPlatform",
+        "inDeployment": "http://www.w3.org/ns/ssn/inDeployment",
+        "inCondition": "http://www.w3.org/ns/ssn/systems/inCondition",
+        "hasSystemCapability": "http://www.w3.org/ns/ssn/systems/hasSystemCapability",
+        "hasSystemProperty": "http://www.w3.org/ns/ssn/systems/hasSystemProperty",
+        "hasOperatingRange": "http://www.w3.org/ns/ssn/systems/hasOperatingRange",
+        "hasOperatingProperty": "http://www.w3.org/ns/ssn/systems/hasOperatingProperty",
+        "hasSurvivalRange": "http://www.w3.org/ns/ssn/systems/hasSurvivalRange",
+        "hasSurvivalProperty": "http://www.w3.org/ns/ssn/systems/hasSurvivalProperty",
+        "qualityOfObservation": "http://www.w3.org/ns/ssn/systems/qualityOfObservation",
+        "hasMember": "http://www.w3.org/ns/sosa/hasMember",
+        "featureType": "@type"
+      },
+      "x-jsonld-prefixes": {
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "ssn": "http://www.w3.org/ns/ssn/",
+        "ssn-system": "http://www.w3.org/ns/ssn/systems/"
+      },
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
+      "x-schema-source": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/features/observationCollection/schema.json"
+    },
+    "8b000fa51fc962530040b3ce7860d1611f037d58": {
+      "allOf": [
+        {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/4acb40cafa96fd0184ea6a3673b4ec895b9805a4"
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "geometry",
+            "properties"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "Feature"
+              ],
+              "x-jsonld-id": "@type"
+            },
+            "id": {
+              "oneOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "x-jsonld-id": "@id"
+            },
+            "featureType": {
+              "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/9266ba6d64c364becfa54e80a2f1d08dc23740f4"
+            },
+            "links": {
+              "type": "array",
+              "items": {
+                "allOf": [
+                  {
+                    "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/f94be10242bfc434acef2e8bc9bdab6260d27736"
+                  },
+                  {
+                    "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/455e121727378c526bb285e7170ed1af5f7845e8"
+                  }
+                ]
+              },
+              "x-jsonld-id": "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+            },
+            "time": {
+              "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/002dda5ff8bca530c6a6ff7c5259d810954f0eb7"
+            },
+            "coordRefSys": {
+              "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/f07afb90a82f7d8db5783178eb11a65871d4466a"
+            },
+            "place": {
+              "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/02ad29c2bcb6a89f82b2e52d706294f1d816d186"
+            },
+            "geometry": {},
+            "properties": {
+              "oneOf": [
+                {
+                  "type": "object"
+                }
+              ],
+              "x-jsonld-id": "@nest",
+              "nullable": true
+            }
+          }
+        }
+      ],
+      "x-jsonld-extra-terms": {
+        "Feature": "https://purl.org/geojson/vocab#Feature",
+        "FeatureCollection": "https://purl.org/geojson/vocab#FeatureCollection",
+        "GeometryCollection": "https://purl.org/geojson/vocab#GeometryCollection",
+        "LineString": "https://purl.org/geojson/vocab#LineString",
+        "MultiLineString": "https://purl.org/geojson/vocab#MultiLineString",
+        "MultiPoint": "https://purl.org/geojson/vocab#MultiPoint",
+        "MultiPolygon": "https://purl.org/geojson/vocab#MultiPolygon",
+        "Point": "https://purl.org/geojson/vocab#Point",
+        "Polygon": "https://purl.org/geojson/vocab#Polygon",
+        "bbox": {
+          "x-jsonld-container": "@list",
+          "x-jsonld-id": "https://purl.org/geojson/vocab#bbox"
+        },
+        "coordinates": {
+          "x-jsonld-container": "@list",
+          "x-jsonld-id": "https://purl.org/geojson/vocab#coordinates"
+        },
+        "features": {
+          "x-jsonld-container": "@set",
+          "x-jsonld-id": "https://purl.org/geojson/vocab#features"
+        }
+      },
+      "x-jsonld-prefixes": {
+        "geojson": "https://purl.org/geojson/vocab#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+      },
+      "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/geo/json-fg/feature-lenient/schema.json"
+    },
+    "dd30cff817672e7a59b99aa22919a700d1939e2f": {
+      "description": "SOSA Observation",
+      "type": "object",
+      "properties": {
+        "resultTime": {
+          "type": "string",
+          "format": "date-time",
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/resultTime"
+        },
+        "phenomenonTime": {
+          "type": [
+            "object",
+            "string"
+          ],
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/phenomenonTime",
+          "anyOf": {
+            "anyOf": [
+              {
+                "type": "object"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "hasFeatureOfInterest": {
+          "type": [
+            "object",
+            "string"
+          ],
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/hasFeatureOfInterest",
+          "x-jsonld-type": "@id",
+          "anyOf": {
+            "anyOf": [
+              {
+                "type": "object"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "observedProperty": {
+          "type": [
+            "object",
+            "string"
+          ],
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/observedProperty",
+          "x-jsonld-type": "@id",
+          "anyOf": {
+            "anyOf": [
+              {
+                "type": "object"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "usedProcedure": {
+          "type": [
+            "object",
+            "string"
+          ],
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/usedProcedure",
+          "x-jsonld-type": "@id",
+          "anyOf": {
+            "anyOf": [
+              {
+                "type": "object"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "madeBySensor": {
+          "type": [
+            "object",
+            "string"
+          ],
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/madeBySensor",
+          "x-jsonld-type": "@id",
+          "anyOf": {
+            "anyOf": [
+              {
+                "type": "object"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "hasResult": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/hasResult"
+        },
+        "hasSimpleResult": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/hasSimpleResult"
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "hasResult"
+          ]
+        },
+        {
+          "required": [
+            "hasSimpleResult"
+          ]
+        }
+      ],
+      "x-jsonld-extra-terms": {
+        "Observation": "http://www.w3.org/ns/sosa/Observation",
+        "Sample": "http://www.w3.org/ns/sosa/Sample",
+        "observes": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/observes",
+          "x-jsonld-type": "@id"
+        },
+        "isObservedBy": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/isObservedBy",
+          "x-jsonld-type": "@id"
+        },
+        "madeObservation": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/madeObservation",
+          "x-jsonld-type": "@id"
+        },
+        "actsOnProperty": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/actsOnProperty",
+          "x-jsonld-type": "@id"
+        },
+        "isActedOnBy": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/isActedOnBy",
+          "x-jsonld-type": "@id"
+        },
+        "madeActuation": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/madeActuation",
+          "x-jsonld-type": "@id"
+        },
+        "madeByActuator": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/madeByActuator",
+          "x-jsonld-type": "@id"
+        },
+        "hasSample": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/hasSample",
+          "x-jsonld-type": "@id"
+        },
+        "isSampleOf": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/isSampleOf",
+          "x-jsonld-type": "@id"
+        },
+        "madeSampling": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/madeSampling",
+          "x-jsonld-type": "@id"
+        },
+        "madeBySampler": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/madeBySampler",
+          "x-jsonld-type": "@id"
+        },
+        "isFeatureOfInterestOf": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/isFeatureOfInterestOf",
+          "x-jsonld-type": "@id"
+        },
+        "isResultOf": "http://www.w3.org/ns/sosa/isResultOf",
+        "hosts": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/hosts",
+          "x-jsonld-type": "@id"
+        },
+        "isHostedBy": "http://www.w3.org/ns/sosa/isHostedBy",
+        "isProxyFor": "http://www.w3.org/ns/ssn/isProxyFor",
+        "wasOriginatedBy": "http://www.w3.org/ns/ssn/wasOriginatedBy",
+        "detects": "http://www.w3.org/ns/ssn/detects",
+        "hasProperty": "http://www.w3.org/ns/ssn/hasProperty",
+        "isPropertyOf": "http://www.w3.org/ns/ssn/isPropertyOf",
+        "forProperty": "http://www.w3.org/ns/ssn/forProperty",
+        "implements": "http://www.w3.org/ns/ssn/implements",
+        "implementedBy": "http://www.w3.org/ns/ssn/implementedBy",
+        "hasInput": "http://www.w3.org/ns/ssn/hasInput",
+        "hasOutput": "http://www.w3.org/ns/ssn/hasOutput",
+        "hasSubSystem": "http://www.w3.org/ns/ssn/hasSubSystem",
+        "deployedSystem": "http://www.w3.org/ns/ssn/deployedSystem",
+        "hasDeployment": "http://www.w3.org/ns/ssn/hasDeployment",
+        "deployedOnPlatform": "http://www.w3.org/ns/ssn/deployedOnPlatform",
+        "inDeployment": "http://www.w3.org/ns/ssn/inDeployment",
+        "inCondition": "http://www.w3.org/ns/ssn/systems/inCondition",
+        "hasSystemCapability": "http://www.w3.org/ns/ssn/systems/hasSystemCapability",
+        "hasSystemProperty": "http://www.w3.org/ns/ssn/systems/hasSystemProperty",
+        "hasOperatingRange": "http://www.w3.org/ns/ssn/systems/hasOperatingRange",
+        "hasOperatingProperty": "http://www.w3.org/ns/ssn/systems/hasOperatingProperty",
+        "hasSurvivalRange": "http://www.w3.org/ns/ssn/systems/hasSurvivalRange",
+        "hasSurvivalProperty": "http://www.w3.org/ns/ssn/systems/hasSurvivalProperty",
+        "qualityOfObservation": "http://www.w3.org/ns/ssn/systems/qualityOfObservation",
+        "hasMember": "http://www.w3.org/ns/sosa/hasMember",
+        "features": "http://www.w3.org/ns/sosa/hasMember",
+        "properties": "@nest",
+        "featureType": "@type"
+      },
+      "x-jsonld-prefixes": {
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "ssn": "http://www.w3.org/ns/ssn/",
+        "ssn-system": "http://www.w3.org/ns/ssn/systems/"
+      },
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
+      "x-schema-source": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/properties/observation/schema.json"
+    },
+    "92d20796815304017ea7c806dddcd0f49588ea0f": {
+      "description": "Basic-YPR: Basic GeoPose using yaw, pitch, and roll to specify orientation",
+      "definitions": {
+        "angles": {
+          "type": "object",
+          "properties": {
+            "yaw": {
+              "type": "number",
+              "x-jsonld-id": "http://example.com/geopose/yaw"
+            },
+            "pitch": {
+              "type": "number",
+              "x-jsonld-id": "http://example.com/geopose/pitch"
+            },
+            "roll": {
+              "type": "number",
+              "x-jsonld-id": "http://example.com/geopose/roll"
+            }
+          },
+          "required": [
+            "yaw",
+            "pitch",
+            "roll"
+          ]
+        },
+        "Position": {
+          "type": "object",
+          "properties": {
+            "lat": {
+              "type": "number",
+              "x-jsonld-id": "http://www.w3.org/2003/01/geo/wgs84_pos#lat"
+            },
+            "lon": {
+              "type": "number",
+              "x-jsonld-id": "http://www.w3.org/2003/01/geo/wgs84_pos#long"
+            },
+            "h": {
+              "type": "number",
+              "x-jsonld-id": "http://example.com/geopose/h"
+            }
+          },
+          "required": [
+            "lat",
+            "lon",
+            "h"
+          ]
+        }
+      },
+      "type": "object",
+      "properties": {
+        "position": {},
+        "angles": {}
+      },
+      "required": [
+        "position",
+        "angles"
+      ],
+      "x-jsonld-prefixes": {
+        "geopose": "http://example.com/geopose/",
+        "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#"
+      },
+      "x-schema-source": "https://schemas.opengis.net/geopose/1.0/schemata/GeoPose.Basic.YPR.Schema.json"
+    },
+    "9d393f0695f2bf8e79d977f8d2783abc7d46e0b3": {
+      "allOf": [
+        {
+          "title": "a JSON-FG Feature Collection",
+          "description": "This JSON Schema is part of JSON-FG version 0.1.1",
+          "type": "object",
+          "required": [
+            "type",
+            "features"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "FeatureCollection"
+              ],
+              "x-jsonld-id": "@type"
+            },
+            "featureType": {
+              "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/9266ba6d64c364becfa54e80a2f1d08dc23740f4"
+            },
+            "geometryDimension": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 3
+            },
+            "coordRefSys": {
+              "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/f07afb90a82f7d8db5783178eb11a65871d4466a"
+            },
+            "links": {
+              "type": "array",
+              "items": {
+                "allOf": [
+                  {
+                    "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/f94be10242bfc434acef2e8bc9bdab6260d27736"
+                  },
+                  {
+                    "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/455e121727378c526bb285e7170ed1af5f7845e8"
+                  }
+                ]
+              },
+              "x-jsonld-id": "rdfs:seeAlso"
+            },
+            "features": {
+              "type": "array",
+              "items": {
+                "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/8b000fa51fc962530040b3ce7860d1611f037d58"
+              },
+              "x-jsonld-container": "@set",
+              "x-jsonld-id": "https://purl.org/geojson/vocab#features"
+            }
+          }
+        },
+        {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/d77a4d663247755926c4c19a42fbeb3013347673"
+        }
+      ],
+      "x-jsonld-prefixes": {
+        "geojson": "https://purl.org/geojson/vocab#"
+      },
+      "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/geo/json-fg/featureCollection-lenient/schema.json"
+    },
+    "46afc549112d2adf6cd78998502480d165c73dee": {
+      "description": "SOSA ObservationCollection",
+      "$defs": {
+        "collection": {
+          "type": "object",
+          "properties": {
+            "resultTime": {
+              "type": "string",
+              "format": "date-time",
+              "x-jsonld-id": "http://www.w3.org/ns/sosa/resultTime"
+            },
+            "phenomenonTime": {
+              "type": [
+                "object",
+                "string"
+              ],
+              "x-jsonld-id": "http://www.w3.org/ns/sosa/phenomenonTime",
+              "anyOf": {
+                "anyOf": [
+                  {
+                    "type": "object"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "hasFeatureOfInterest": {
+              "type": [
+                "object",
+                "string"
+              ],
+              "x-jsonld-id": "http://www.w3.org/ns/sosa/hasFeatureOfInterest",
+              "x-jsonld-type": "@id",
+              "anyOf": {
+                "anyOf": [
+                  {
+                    "type": "object"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "observedProperty": {
+              "type": [
+                "object",
+                "string"
+              ],
+              "x-jsonld-id": "http://www.w3.org/ns/sosa/observedProperty",
+              "x-jsonld-type": "@id",
+              "anyOf": {
+                "anyOf": [
+                  {
+                    "type": "object"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "usedProcedure": {
+              "type": [
+                "object",
+                "string"
+              ],
+              "x-jsonld-id": "http://www.w3.org/ns/sosa/usedProcedure",
+              "x-jsonld-type": "@id",
+              "anyOf": {
+                "anyOf": [
+                  {
+                    "type": "object"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "madeBySensor": {
+              "type": [
+                "object",
+                "string"
+              ],
+              "x-jsonld-id": "http://www.w3.org/ns/sosa/madeBySensor",
+              "x-jsonld-type": "@id",
+              "anyOf": {
+                "anyOf": [
+                  {
+                    "type": "object"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "hasMember": {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/46afc549112d2adf6cd78998502480d165c73dee/$defs/collection"
+                  },
+                  {
+                    "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/dd30cff817672e7a59b99aa22919a700d1939e2f"
+                  },
+                  {
+                    "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/df083a3250fb6d0a29871b8b6dfa0a78d1392f20"
+                  }
+                ]
+              },
+              "x-jsonld-id": "http://www.w3.org/ns/sosa/hasMember"
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/46afc549112d2adf6cd78998502480d165c73dee/$defs/collection"
+        },
+        {
+          "not": {
+            "anyOf": [
+              {
+                "required": [
+                  "hasResult"
+                ]
+              },
+              {
+                "required": [
+                  "hasSimpleResult"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "x-jsonld-extra-terms": {
+        "Observation": "http://www.w3.org/ns/sosa/Observation",
+        "Sample": "http://www.w3.org/ns/sosa/Sample",
+        "observes": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/observes",
+          "x-jsonld-type": "@id"
+        },
+        "isObservedBy": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/isObservedBy",
+          "x-jsonld-type": "@id"
+        },
+        "madeObservation": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/madeObservation",
+          "x-jsonld-type": "@id"
+        },
+        "actsOnProperty": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/actsOnProperty",
+          "x-jsonld-type": "@id"
+        },
+        "isActedOnBy": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/isActedOnBy",
+          "x-jsonld-type": "@id"
+        },
+        "madeActuation": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/madeActuation",
+          "x-jsonld-type": "@id"
+        },
+        "madeByActuator": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/madeByActuator",
+          "x-jsonld-type": "@id"
+        },
+        "hasSample": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/hasSample",
+          "x-jsonld-type": "@id"
+        },
+        "isSampleOf": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/isSampleOf",
+          "x-jsonld-type": "@id"
+        },
+        "madeSampling": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/madeSampling",
+          "x-jsonld-type": "@id"
+        },
+        "madeBySampler": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/madeBySampler",
+          "x-jsonld-type": "@id"
+        },
+        "isFeatureOfInterestOf": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/isFeatureOfInterestOf",
+          "x-jsonld-type": "@id"
+        },
+        "hasResult": "http://www.w3.org/ns/sosa/hasResult",
+        "isResultOf": "http://www.w3.org/ns/sosa/isResultOf",
+        "hasSimpleResult": "http://www.w3.org/ns/sosa/hasSimpleResult",
+        "hosts": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/hosts",
+          "x-jsonld-type": "@id"
+        },
+        "isHostedBy": "http://www.w3.org/ns/sosa/isHostedBy",
+        "isProxyFor": "http://www.w3.org/ns/ssn/isProxyFor",
+        "wasOriginatedBy": "http://www.w3.org/ns/ssn/wasOriginatedBy",
+        "detects": "http://www.w3.org/ns/ssn/detects",
+        "hasProperty": "http://www.w3.org/ns/ssn/hasProperty",
+        "isPropertyOf": "http://www.w3.org/ns/ssn/isPropertyOf",
+        "forProperty": "http://www.w3.org/ns/ssn/forProperty",
+        "implements": "http://www.w3.org/ns/ssn/implements",
+        "implementedBy": "http://www.w3.org/ns/ssn/implementedBy",
+        "hasInput": "http://www.w3.org/ns/ssn/hasInput",
+        "hasOutput": "http://www.w3.org/ns/ssn/hasOutput",
+        "hasSubSystem": "http://www.w3.org/ns/ssn/hasSubSystem",
+        "deployedSystem": "http://www.w3.org/ns/ssn/deployedSystem",
+        "hasDeployment": "http://www.w3.org/ns/ssn/hasDeployment",
+        "deployedOnPlatform": "http://www.w3.org/ns/ssn/deployedOnPlatform",
+        "inDeployment": "http://www.w3.org/ns/ssn/inDeployment",
+        "inCondition": "http://www.w3.org/ns/ssn/systems/inCondition",
+        "hasSystemCapability": "http://www.w3.org/ns/ssn/systems/hasSystemCapability",
+        "hasSystemProperty": "http://www.w3.org/ns/ssn/systems/hasSystemProperty",
+        "hasOperatingRange": "http://www.w3.org/ns/ssn/systems/hasOperatingRange",
+        "hasOperatingProperty": "http://www.w3.org/ns/ssn/systems/hasOperatingProperty",
+        "hasSurvivalRange": "http://www.w3.org/ns/ssn/systems/hasSurvivalRange",
+        "hasSurvivalProperty": "http://www.w3.org/ns/ssn/systems/hasSurvivalProperty",
+        "qualityOfObservation": "http://www.w3.org/ns/ssn/systems/qualityOfObservation",
+        "features": "http://www.w3.org/ns/sosa/hasMember",
+        "properties": "@nest",
+        "featureType": "@type"
+      },
+      "x-jsonld-prefixes": {
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "ssn": "http://www.w3.org/ns/ssn/",
+        "ssn-system": "http://www.w3.org/ns/ssn/systems/"
+      },
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
+      "x-schema-source": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/properties/observationCollection/schema.json"
+    },
+    "4acb40cafa96fd0184ea6a3673b4ec895b9805a4": {
+      "allOf": [
+        {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/45809d72c1cb76f2c8d0b659b195abbfd94b298d"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "links": {
+              "type": "array",
+              "items": {
+                "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/455e121727378c526bb285e7170ed1af5f7845e8"
+              },
+              "x-jsonld-id": "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+            },
+            "type": {
+              "const": "Feature"
+            }
+          },
+          "required": [
+            "type",
+            "geometry",
+            "properties"
+          ]
+        }
+      ],
+      "x-jsonld-extra-terms": {
+        "properties": "@nest"
+      },
+      "x-jsonld-prefixes": {
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+      },
+      "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/geo/features/feature/schema.json"
+    },
+    "9266ba6d64c364becfa54e80a2f1d08dc23740f4": {
+      "title": "the featureType member",
+      "description": "This JSON Schema is part of JSON-FG version 0.1.1",
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      ],
+      "x-schema-version": "https://json-schema.org/draft/2019-09/schema",
+      "x-schema-source": "https://beta.schemas.opengis.net/json-fg/featuretype.json"
+    },
+    "f94be10242bfc434acef2e8bc9bdab6260d27736": {
+      "title": "the Link object",
+      "description": "This JSON Schema is part of JSON-FG version 0.1.1",
+      "type": "object",
+      "required": [
+        "href",
+        "rel"
+      ],
+      "properties": {
+        "href": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "rel": {
+          "type": "string"
+        },
+        "anchor": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "hreflang": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "length": {
+          "type": "string"
+        }
+      },
+      "x-schema-version": "https://json-schema.org/draft/2019-09/schema",
+      "x-schema-source": "https://beta.schemas.opengis.net/json-fg/link.json"
+    },
+    "455e121727378c526bb285e7170ed1af5f7845e8": {
+      "description": "JSON Link",
+      "type": "object",
+      "required": [
+        "href",
+        "rel"
+      ],
+      "properties": {
+        "href": {
+          "type": "string",
+          "format": "uri-reference",
+          "x-jsonld-id": "http://www.w3.org/ns/oa#hasTarget"
+        },
+        "rel": {
+          "type": "string",
+          "x-jsonld-id": "http://www.iana.org/assignments/relation",
+          "x-jsonld-type": "@id",
+          "x-jsonld-base": "http://www.iana.org/assignments/relation/"
+        },
+        "anchor": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "x-jsonld-id": "http://purl.org/dc/terms/type"
+        },
+        "hreflang": {
+          "type": "string",
+          "x-jsonld-id": "http://purl.org/dc/terms/language"
+        },
+        "title": {
+          "type": "string",
+          "x-jsonld-id": "http://www.w3.org/2000/01/rdf-schema#label"
+        },
+        "length": {
+          "type": "integer",
+          "x-jsonld-id": "http://purl.org/dc/terms/extent"
+        }
+      },
+      "x-jsonld-prefixes": {
+        "oa": "http://www.w3.org/ns/oa#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "dct": "http://purl.org/dc/terms/"
+      },
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
+      "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/schema.json"
+    },
+    "002dda5ff8bca530c6a6ff7c5259d810954f0eb7": {
+      "title": "the time member",
+      "description": "This JSON Schema is part of JSON-FG version 0.1.1",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "date": {
+              "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/002dda5ff8bca530c6a6ff7c5259d810954f0eb7/$defs/date"
+            },
+            "timestamp": {
+              "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/002dda5ff8bca530c6a6ff7c5259d810954f0eb7/$defs/timestamp"
+            },
+            "interval": {
+              "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/002dda5ff8bca530c6a6ff7c5259d810954f0eb7/$defs/interval"
+            }
+          }
+        }
+      ],
+      "$defs": {
+        "date": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "timestamp": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?Z$"
+        },
+        "interval": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/002dda5ff8bca530c6a6ff7c5259d810954f0eb7/$defs/date"
+              },
+              {
+                "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/002dda5ff8bca530c6a6ff7c5259d810954f0eb7/$defs/timestamp"
+              },
+              {
+                "type": "string",
+                "enum": [
+                  ".."
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "nullable": true,
+      "x-schema-version": "https://json-schema.org/draft/2019-09/schema",
+      "x-schema-source": "https://beta.schemas.opengis.net/json-fg/time.json"
+    },
+    "f07afb90a82f7d8db5783178eb11a65871d4466a": {
+      "title": "the coordRefSys member",
+      "description": "This JSON Schema is part of JSON-FG version 0.1.1",
+      "oneOf": [
+        {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/f07afb90a82f7d8db5783178eb11a65871d4466a/$defs/single-refsys"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/f07afb90a82f7d8db5783178eb11a65871d4466a/$defs/single-refsys"
+          }
+        }
+      ],
+      "$defs": {
+        "single-refsys": {
+          "oneOf": [
+            {
+              "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/f07afb90a82f7d8db5783178eb11a65871d4466a/$defs/refsys-simpleref"
+            },
+            {
+              "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/f07afb90a82f7d8db5783178eb11a65871d4466a/$defs/refsys-byref"
+            },
+            {
+              "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/f07afb90a82f7d8db5783178eb11a65871d4466a/$defs/refsys-custom"
+            }
+          ]
+        },
+        "refsys-simpleref": {
+          "type": "string",
+          "format": "uri"
+        },
+        "refsys-byref": {
+          "type": "object",
+          "required": [
+            "type",
+            "href"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "Reference"
+              ]
+            },
+            "href": {
+              "type": "string",
+              "format": "uri"
+            },
+            "epoch": {
+              "type": "number"
+            }
+          }
+        },
+        "refsys-custom": {
+          "type": "object",
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "not": {
+                "enum": [
+                  "Reference"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "x-schema-version": "https://json-schema.org/draft/2019-09/schema",
+      "x-schema-source": "https://beta.schemas.opengis.net/json-fg/coordrefsys.json"
+    },
+    "02ad29c2bcb6a89f82b2e52d706294f1d816d186": {
+      "title": "the place member",
+      "description": "This JSON Schema is part of JSON-FG version 0.1.1",
+      "oneOf": [
+        {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/Point"
+        },
+        {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/MultiPoint"
+        },
+        {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/LineString"
+        },
+        {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/MultiLineString"
+        },
+        {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/Polygon"
+        },
+        {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/MultiPolygon"
+        },
+        {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/Polyhedron"
+        },
+        {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/MultiPolyhedron"
+        },
+        {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/Prism"
+        },
+        {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/MultiPrism"
+        },
+        {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/CustomGeometry"
+        }
+      ],
+      "nullable": true,
+      "x-schema-version": "https://json-schema.org/draft/2019-09/schema",
+      "x-schema-source": "https://beta.schemas.opengis.net/json-fg/place.json"
+    },
+    "47ee3442629631c44da5a44e1f4c6507dd0112f2": {
+      "title": "the geometry member",
+      "description": "This JSON Schema is part of JSON-FG version 0.1.1",
+      "oneOf": [
+        {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/Point"
+        },
+        {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/MultiPoint"
+        },
+        {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/LineString"
+        },
+        {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/MultiLineString"
+        },
+        {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/Polygon"
+        },
+        {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/MultiPolygon"
+        },
+        {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/GeometryCollection"
+        }
+      ],
+      "nullable": true,
+      "x-schema-version": "https://json-schema.org/draft/2019-09/schema",
+      "x-schema-source": "https://beta.schemas.opengis.net/json-fg/geometry.json"
+    },
+    "f08124ee1e911e959545d91e581cf8f5d56b11f9": {
+      "description": "Basic-YPR: Basic GeoPose using yaw, pitch, and roll to specify orientation",
+      "definitions": {
+        "angles": {
+          "type": "object",
+          "properties": {
+            "yaw": {
+              "type": "number"
+            },
+            "pitch": {
+              "type": "number"
+            },
+            "roll": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "yaw",
+            "pitch",
+            "roll"
+          ]
+        },
+        "Position": {
+          "type": "object",
+          "properties": {
+            "lat": {
+              "type": "number"
+            },
+            "lon": {
+              "type": "number"
+            },
+            "h": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "lat",
+            "lon",
+            "h"
+          ]
+        }
+      },
+      "type": "object",
+      "properties": {
+        "position": {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/f08124ee1e911e959545d91e581cf8f5d56b11f9/definitions/Position"
+        },
+        "angles": {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/f08124ee1e911e959545d91e581cf8f5d56b11f9/definitions/angles"
+        }
+      },
+      "required": [
+        "position",
+        "angles"
+      ],
+      "x-schema-source": "https://schemas.opengis.net/geopose/1.0/schemata/GeoPose.Basic.YPR.Schema.json"
+    },
+    "d77a4d663247755926c4c19a42fbeb3013347673": {
+      "allOf": [
+        {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/c91e52f769a91e546450bef84f1dac326f3acb5e"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "links": {
+              "type": "array",
+              "items": {
+                "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/455e121727378c526bb285e7170ed1af5f7845e8"
+              },
+              "x-jsonld-id": "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+            },
+            "timeStamp": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "numberMatched": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "numberReturned": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "features": {
+              "type": "array",
+              "items": {
+                "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/4acb40cafa96fd0184ea6a3673b4ec895b9805a4"
+              }
+            }
+          }
+        }
+      ],
+      "x-jsonld-extra-terms": {
+        "properties": "@nest"
+      },
+      "x-jsonld-prefixes": {
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+      },
+      "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/geo/features/featureCollection/schema.json"
+    },
+    "df083a3250fb6d0a29871b8b6dfa0a78d1392f20": {
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
+      "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.json"
+    },
+    "45809d72c1cb76f2c8d0b659b195abbfd94b298d": {
+      "title": "GeoJSON Feature",
+      "type": "object",
+      "required": [
+        "type",
+        "properties",
+        "geometry"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Feature"
+          ],
+          "x-jsonld-id": "@type"
+        },
+        "id": {
+          "oneOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "x-jsonld-id": "@id"
+        },
+        "properties": {
+          "oneOf": [
+            {
+              "type": "object"
+            }
+          ],
+          "x-jsonld-id": "@nest",
+          "nullable": true
+        },
+        "geometry": {
+          "oneOf": [
+            {
+              "title": "GeoJSON Point",
+              "type": "object",
+              "required": [
+                "type",
+                "coordinates"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "Point"
+                  ],
+                  "x-jsonld-id": "@type"
+                },
+                "coordinates": {
+                  "type": "array",
+                  "minItems": 2,
+                  "items": {
+                    "type": "number"
+                  },
+                  "x-jsonld-container": "@list",
+                  "x-jsonld-id": "https://purl.org/geojson/vocab#coordinates"
+                },
+                "bbox": {
+                  "type": "array",
+                  "minItems": 4,
+                  "items": {
+                    "type": "number"
+                  },
+                  "x-jsonld-container": "@list",
+                  "x-jsonld-id": "https://purl.org/geojson/vocab#bbox"
+                }
+              }
+            },
+            {
+              "title": "GeoJSON LineString",
+              "type": "object",
+              "required": [
+                "type",
+                "coordinates"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "LineString"
+                  ],
+                  "x-jsonld-id": "@type"
+                },
+                "coordinates": {
+                  "type": "array",
+                  "minItems": 2,
+                  "items": {
+                    "type": "array",
+                    "minItems": 2,
+                    "items": {
+                      "type": "number"
+                    }
+                  },
+                  "x-jsonld-container": "@list",
+                  "x-jsonld-id": "https://purl.org/geojson/vocab#coordinates"
+                },
+                "bbox": {
+                  "type": "array",
+                  "minItems": 4,
+                  "items": {
+                    "type": "number"
+                  },
+                  "x-jsonld-container": "@list",
+                  "x-jsonld-id": "https://purl.org/geojson/vocab#bbox"
+                }
+              }
+            },
+            {
+              "title": "GeoJSON Polygon",
+              "type": "object",
+              "required": [
+                "type",
+                "coordinates"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "Polygon"
+                  ],
+                  "x-jsonld-id": "@type"
+                },
+                "coordinates": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "minItems": 4,
+                    "items": {
+                      "type": "array",
+                      "minItems": 2,
+                      "items": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "x-jsonld-container": "@list",
+                  "x-jsonld-id": "https://purl.org/geojson/vocab#coordinates"
+                },
+                "bbox": {
+                  "type": "array",
+                  "minItems": 4,
+                  "items": {
+                    "type": "number"
+                  },
+                  "x-jsonld-container": "@list",
+                  "x-jsonld-id": "https://purl.org/geojson/vocab#bbox"
+                }
+              }
+            },
+            {
+              "title": "GeoJSON MultiPoint",
+              "type": "object",
+              "required": [
+                "type",
+                "coordinates"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "MultiPoint"
+                  ],
+                  "x-jsonld-id": "@type"
+                },
+                "coordinates": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "minItems": 2,
+                    "items": {
+                      "type": "number"
+                    }
+                  },
+                  "x-jsonld-container": "@list",
+                  "x-jsonld-id": "https://purl.org/geojson/vocab#coordinates"
+                },
+                "bbox": {
+                  "type": "array",
+                  "minItems": 4,
+                  "items": {
+                    "type": "number"
+                  },
+                  "x-jsonld-container": "@list",
+                  "x-jsonld-id": "https://purl.org/geojson/vocab#bbox"
+                }
+              }
+            },
+            {
+              "title": "GeoJSON MultiLineString",
+              "type": "object",
+              "required": [
+                "type",
+                "coordinates"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "MultiLineString"
+                  ],
+                  "x-jsonld-id": "@type"
+                },
+                "coordinates": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "minItems": 2,
+                    "items": {
+                      "type": "array",
+                      "minItems": 2,
+                      "items": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "x-jsonld-container": "@list",
+                  "x-jsonld-id": "https://purl.org/geojson/vocab#coordinates"
+                },
+                "bbox": {
+                  "type": "array",
+                  "minItems": 4,
+                  "items": {
+                    "type": "number"
+                  },
+                  "x-jsonld-container": "@list",
+                  "x-jsonld-id": "https://purl.org/geojson/vocab#bbox"
+                }
+              }
+            },
+            {
+              "title": "GeoJSON MultiPolygon",
+              "type": "object",
+              "required": [
+                "type",
+                "coordinates"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "MultiPolygon"
+                  ],
+                  "x-jsonld-id": "@type"
+                },
+                "coordinates": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "minItems": 4,
+                      "items": {
+                        "type": "array",
+                        "minItems": 2,
+                        "items": {
+                          "type": "number"
+                        }
+                      }
+                    }
+                  },
+                  "x-jsonld-container": "@list",
+                  "x-jsonld-id": "https://purl.org/geojson/vocab#coordinates"
+                },
+                "bbox": {
+                  "type": "array",
+                  "minItems": 4,
+                  "items": {
+                    "type": "number"
+                  },
+                  "x-jsonld-container": "@list",
+                  "x-jsonld-id": "https://purl.org/geojson/vocab#bbox"
+                }
+              }
+            },
+            {
+              "title": "GeoJSON GeometryCollection",
+              "type": "object",
+              "required": [
+                "type",
+                "geometries"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "GeometryCollection"
+                  ],
+                  "x-jsonld-id": "@type"
+                },
+                "geometries": {
+                  "type": "array",
+                  "items": {
+                    "oneOf": [
+                      {
+                        "title": "GeoJSON Point",
+                        "type": "object",
+                        "required": [
+                          "type",
+                          "coordinates"
+                        ],
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "Point"
+                            ],
+                            "x-jsonld-id": "@type"
+                          },
+                          "coordinates": {
+                            "type": "array",
+                            "minItems": 2,
+                            "items": {
+                              "type": "number"
+                            },
+                            "x-jsonld-container": "@list",
+                            "x-jsonld-id": "https://purl.org/geojson/vocab#coordinates"
+                          },
+                          "bbox": {
+                            "type": "array",
+                            "minItems": 4,
+                            "items": {
+                              "type": "number"
+                            },
+                            "x-jsonld-container": "@list",
+                            "x-jsonld-id": "https://purl.org/geojson/vocab#bbox"
+                          }
+                        }
+                      },
+                      {
+                        "title": "GeoJSON LineString",
+                        "type": "object",
+                        "required": [
+                          "type",
+                          "coordinates"
+                        ],
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "LineString"
+                            ],
+                            "x-jsonld-id": "@type"
+                          },
+                          "coordinates": {
+                            "type": "array",
+                            "minItems": 2,
+                            "items": {
+                              "type": "array",
+                              "minItems": 2,
+                              "items": {
+                                "type": "number"
+                              }
+                            },
+                            "x-jsonld-container": "@list",
+                            "x-jsonld-id": "https://purl.org/geojson/vocab#coordinates"
+                          },
+                          "bbox": {
+                            "type": "array",
+                            "minItems": 4,
+                            "items": {
+                              "type": "number"
+                            },
+                            "x-jsonld-container": "@list",
+                            "x-jsonld-id": "https://purl.org/geojson/vocab#bbox"
+                          }
+                        }
+                      },
+                      {
+                        "title": "GeoJSON Polygon",
+                        "type": "object",
+                        "required": [
+                          "type",
+                          "coordinates"
+                        ],
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "Polygon"
+                            ],
+                            "x-jsonld-id": "@type"
+                          },
+                          "coordinates": {
+                            "type": "array",
+                            "items": {
+                              "type": "array",
+                              "minItems": 4,
+                              "items": {
+                                "type": "array",
+                                "minItems": 2,
+                                "items": {
+                                  "type": "number"
+                                }
+                              }
+                            },
+                            "x-jsonld-container": "@list",
+                            "x-jsonld-id": "https://purl.org/geojson/vocab#coordinates"
+                          },
+                          "bbox": {
+                            "type": "array",
+                            "minItems": 4,
+                            "items": {
+                              "type": "number"
+                            },
+                            "x-jsonld-container": "@list",
+                            "x-jsonld-id": "https://purl.org/geojson/vocab#bbox"
+                          }
+                        }
+                      },
+                      {
+                        "title": "GeoJSON MultiPoint",
+                        "type": "object",
+                        "required": [
+                          "type",
+                          "coordinates"
+                        ],
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "MultiPoint"
+                            ],
+                            "x-jsonld-id": "@type"
+                          },
+                          "coordinates": {
+                            "type": "array",
+                            "items": {
+                              "type": "array",
+                              "minItems": 2,
+                              "items": {
+                                "type": "number"
+                              }
+                            },
+                            "x-jsonld-container": "@list",
+                            "x-jsonld-id": "https://purl.org/geojson/vocab#coordinates"
+                          },
+                          "bbox": {
+                            "type": "array",
+                            "minItems": 4,
+                            "items": {
+                              "type": "number"
+                            },
+                            "x-jsonld-container": "@list",
+                            "x-jsonld-id": "https://purl.org/geojson/vocab#bbox"
+                          }
+                        }
+                      },
+                      {
+                        "title": "GeoJSON MultiLineString",
+                        "type": "object",
+                        "required": [
+                          "type",
+                          "coordinates"
+                        ],
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "MultiLineString"
+                            ],
+                            "x-jsonld-id": "@type"
+                          },
+                          "coordinates": {
+                            "type": "array",
+                            "items": {
+                              "type": "array",
+                              "minItems": 2,
+                              "items": {
+                                "type": "array",
+                                "minItems": 2,
+                                "items": {
+                                  "type": "number"
+                                }
+                              }
+                            },
+                            "x-jsonld-container": "@list",
+                            "x-jsonld-id": "https://purl.org/geojson/vocab#coordinates"
+                          },
+                          "bbox": {
+                            "type": "array",
+                            "minItems": 4,
+                            "items": {
+                              "type": "number"
+                            },
+                            "x-jsonld-container": "@list",
+                            "x-jsonld-id": "https://purl.org/geojson/vocab#bbox"
+                          }
+                        }
+                      },
+                      {
+                        "title": "GeoJSON MultiPolygon",
+                        "type": "object",
+                        "required": [
+                          "type",
+                          "coordinates"
+                        ],
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "MultiPolygon"
+                            ],
+                            "x-jsonld-id": "@type"
+                          },
+                          "coordinates": {
+                            "type": "array",
+                            "items": {
+                              "type": "array",
+                              "items": {
+                                "type": "array",
+                                "minItems": 4,
+                                "items": {
+                                  "type": "array",
+                                  "minItems": 2,
+                                  "items": {
+                                    "type": "number"
+                                  }
+                                }
+                              }
+                            },
+                            "x-jsonld-container": "@list",
+                            "x-jsonld-id": "https://purl.org/geojson/vocab#coordinates"
+                          },
+                          "bbox": {
+                            "type": "array",
+                            "minItems": 4,
+                            "items": {
+                              "type": "number"
+                            },
+                            "x-jsonld-container": "@list",
+                            "x-jsonld-id": "https://purl.org/geojson/vocab#bbox"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                "bbox": {
+                  "type": "array",
+                  "minItems": 4,
+                  "items": {
+                    "type": "number"
+                  },
+                  "x-jsonld-container": "@list",
+                  "x-jsonld-id": "https://purl.org/geojson/vocab#bbox"
+                }
+              }
+            }
+          ],
+          "x-jsonld-id": "https://purl.org/geojson/vocab#geometry",
+          "nullable": true
+        },
+        "bbox": {
+          "type": "array",
+          "minItems": 4,
+          "items": {
+            "type": "number"
+          },
+          "x-jsonld-container": "@list",
+          "x-jsonld-id": "https://purl.org/geojson/vocab#bbox"
+        }
+      },
+      "x-jsonld-extra-terms": {
+        "Feature": "https://purl.org/geojson/vocab#Feature",
+        "FeatureCollection": "https://purl.org/geojson/vocab#FeatureCollection",
+        "GeometryCollection": "https://purl.org/geojson/vocab#GeometryCollection",
+        "LineString": "https://purl.org/geojson/vocab#LineString",
+        "MultiLineString": "https://purl.org/geojson/vocab#MultiLineString",
+        "MultiPoint": "https://purl.org/geojson/vocab#MultiPoint",
+        "MultiPolygon": "https://purl.org/geojson/vocab#MultiPolygon",
+        "Point": "https://purl.org/geojson/vocab#Point",
+        "Polygon": "https://purl.org/geojson/vocab#Polygon",
+        "features": {
+          "x-jsonld-container": "@set",
+          "x-jsonld-id": "https://purl.org/geojson/vocab#features"
+        }
+      },
+      "x-jsonld-prefixes": {
+        "geojson": "https://purl.org/geojson/vocab#"
+      },
+      "x-schema-version": "http://json-schema.org/draft-07/schema#",
+      "x-schema-source": "https://geojson.org/schema/Feature.json"
+    },
+    "e0360137ccef1a906d983cd65b9ffbffd218e8a9": {
+      "title": "the geometry objects",
+      "description": "This JSON Schema is part of JSON-FG version 0.1.1",
+      "$defs": {
+        "CustomGeometry": {
+          "title": "A custom geometry object",
+          "type": "object",
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "not": {
+                "enum": [
+                  "Point",
+                  "MultiPoint",
+                  "LineString",
+                  "MultiLineString",
+                  "Polygon",
+                  "MultiPolygon",
+                  "Polyhedron",
+                  "MultiPolyhedron",
+                  "Prism",
+                  "MultiPrism",
+                  "GeometryCollection"
+                ]
+              }
+            }
+          }
+        },
+        "Point": {
+          "title": "GeoJSON Point",
+          "type": "object",
+          "required": [
+            "type",
+            "coordinates"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "Point"
+              ]
+            },
+            "coordinates": {
+              "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/position"
+            },
+            "bbox": {
+              "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/bbox"
+            }
+          }
+        },
+        "LineString": {
+          "title": "GeoJSON LineString",
+          "type": "object",
+          "required": [
+            "type",
+            "coordinates"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "LineString"
+              ]
+            },
+            "coordinates": {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/position"
+              }
+            },
+            "bbox": {
+              "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/bbox"
+            }
+          }
+        },
+        "Polygon": {
+          "title": "GeoJSON Polygon",
+          "type": "object",
+          "required": [
+            "type",
+            "coordinates"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "Polygon"
+              ]
+            },
+            "coordinates": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "minItems": 4,
+                "items": {
+                  "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/position"
+                }
+              }
+            },
+            "bbox": {
+              "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/bbox"
+            }
+          }
+        },
+        "MultiPoint": {
+          "title": "GeoJSON MultiPoint",
+          "type": "object",
+          "required": [
+            "type",
+            "coordinates"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "MultiPoint"
+              ]
+            },
+            "coordinates": {
+              "type": "array",
+              "items": {
+                "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/position"
+              }
+            },
+            "bbox": {
+              "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/bbox"
+            }
+          }
+        },
+        "MultiLineString": {
+          "title": "GeoJSON MultiLineString",
+          "type": "object",
+          "required": [
+            "type",
+            "coordinates"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "MultiLineString"
+              ]
+            },
+            "coordinates": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/position"
+                }
+              }
+            },
+            "bbox": {
+              "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/bbox"
+            }
+          }
+        },
+        "MultiPolygon": {
+          "title": "GeoJSON MultiPolygon",
+          "type": "object",
+          "required": [
+            "type",
+            "coordinates"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "MultiPolygon"
+              ]
+            },
+            "coordinates": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "minItems": 4,
+                  "items": {
+                    "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/position"
+                  }
+                }
+              }
+            },
+            "bbox": {
+              "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/bbox"
+            }
+          }
+        },
+        "Polyhedron": {
+          "title": "JSON-FG Polyhedron",
+          "type": "object",
+          "required": [
+            "type",
+            "coordinates"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "Polyhedron"
+              ]
+            },
+            "coordinates": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "array",
+                    "minItems": 4,
+                    "items": {
+                      "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/position3d"
+                    }
+                  }
+                }
+              }
+            },
+            "bbox": {
+              "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/bbox3d"
+            }
+          }
+        },
+        "MultiPolyhedron": {
+          "title": "JSON-FG MultiPolyhedron",
+          "type": "object",
+          "required": [
+            "type",
+            "coordinates"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "MultiPolyhedron"
+              ]
+            },
+            "coordinates": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "array",
+                      "minItems": 4,
+                      "items": {
+                        "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/position3d"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "bbox": {
+              "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/bbox3d"
+            }
+          }
+        },
+        "Prism": {
+          "title": "JSON-FG Prism",
+          "type": "object",
+          "required": [
+            "type",
+            "base",
+            "upper"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "Prism"
+              ]
+            },
+            "base": {
+              "oneOf": [
+                {
+                  "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/Point"
+                },
+                {
+                  "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/LineString"
+                },
+                {
+                  "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/Polygon"
+                },
+                {
+                  "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/MultiPoint"
+                },
+                {
+                  "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/MultiLineString"
+                },
+                {
+                  "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/MultiPolygon"
+                }
+              ]
+            },
+            "lower": {
+              "type": "number"
+            },
+            "upper": {
+              "type": "number"
+            },
+            "bbox": {
+              "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/bbox3d"
+            }
+          }
+        },
+        "MultiPrism": {
+          "title": "JSON-FG Multi-Prism",
+          "type": "object",
+          "required": [
+            "type",
+            "prisms"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "MultiPrism"
+              ]
+            },
+            "prisms": {
+              "type": "array",
+              "items": {
+                "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/Prism"
+              }
+            },
+            "bbox": {
+              "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/bbox3d"
+            }
+          }
+        },
+        "GeometryCollection": {
+          "title": "GeoJSON GeometryCollection",
+          "type": "object",
+          "required": [
+            "type",
+            "geometries"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "GeometryCollection"
+              ]
+            },
+            "geometries": {
+              "type": "array",
+              "items": {
+                "oneOf": [
+                  {
+                    "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/Point"
+                  },
+                  {
+                    "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/MultiPoint"
+                  },
+                  {
+                    "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/LineString"
+                  },
+                  {
+                    "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/MultiLineString"
+                  },
+                  {
+                    "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/Polygon"
+                  },
+                  {
+                    "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/MultiPolygon"
+                  }
+                ]
+              }
+            },
+            "bbox": {
+              "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/bbox"
+            }
+          }
+        },
+        "position": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 3,
+          "items": {
+            "type": "number"
+          }
+        },
+        "position3d": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "number"
+          }
+        },
+        "bbox": {
+          "oneOf": [
+            {
+              "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/bbox2d"
+            },
+            {
+              "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/e0360137ccef1a906d983cd65b9ffbffd218e8a9/$defs/bbox3d"
+            }
+          ]
+        },
+        "bbox2d": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "number"
+          }
+        },
+        "bbox3d": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "type": "number"
+          }
+        }
+      },
+      "x-schema-version": "https://json-schema.org/draft/2019-09/schema",
+      "x-schema-source": "https://beta.schemas.opengis.net/json-fg/geometry-objects.json"
+    },
+    "c91e52f769a91e546450bef84f1dac326f3acb5e": {
+      "title": "GeoJSON FeatureCollection",
+      "type": "object",
+      "required": [
+        "type",
+        "features"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "FeatureCollection"
+          ]
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "title": "GeoJSON Feature",
+            "type": "object",
+            "required": [
+              "type",
+              "properties",
+              "geometry"
+            ],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "Feature"
+                ]
+              },
+              "id": {
+                "oneOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
+              },
+              "properties": {
+                "oneOf": [
+                  {
+                    "type": "object"
+                  }
+                ],
+                "nullable": true
+              },
+              "geometry": {
+                "oneOf": [
+                  {
+                    "title": "GeoJSON Point",
+                    "type": "object",
+                    "required": [
+                      "type",
+                      "coordinates"
+                    ],
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "Point"
+                        ]
+                      },
+                      "coordinates": {
+                        "type": "array",
+                        "minItems": 2,
+                        "items": {
+                          "type": "number"
+                        }
+                      },
+                      "bbox": {
+                        "type": "array",
+                        "minItems": 4,
+                        "items": {
+                          "type": "number"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "title": "GeoJSON LineString",
+                    "type": "object",
+                    "required": [
+                      "type",
+                      "coordinates"
+                    ],
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "LineString"
+                        ]
+                      },
+                      "coordinates": {
+                        "type": "array",
+                        "minItems": 2,
+                        "items": {
+                          "type": "array",
+                          "minItems": 2,
+                          "items": {
+                            "type": "number"
+                          }
+                        }
+                      },
+                      "bbox": {
+                        "type": "array",
+                        "minItems": 4,
+                        "items": {
+                          "type": "number"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "title": "GeoJSON Polygon",
+                    "type": "object",
+                    "required": [
+                      "type",
+                      "coordinates"
+                    ],
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "Polygon"
+                        ]
+                      },
+                      "coordinates": {
+                        "type": "array",
+                        "items": {
+                          "type": "array",
+                          "minItems": 4,
+                          "items": {
+                            "type": "array",
+                            "minItems": 2,
+                            "items": {
+                              "type": "number"
+                            }
+                          }
+                        }
+                      },
+                      "bbox": {
+                        "type": "array",
+                        "minItems": 4,
+                        "items": {
+                          "type": "number"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "title": "GeoJSON MultiPoint",
+                    "type": "object",
+                    "required": [
+                      "type",
+                      "coordinates"
+                    ],
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "MultiPoint"
+                        ]
+                      },
+                      "coordinates": {
+                        "type": "array",
+                        "items": {
+                          "type": "array",
+                          "minItems": 2,
+                          "items": {
+                            "type": "number"
+                          }
+                        }
+                      },
+                      "bbox": {
+                        "type": "array",
+                        "minItems": 4,
+                        "items": {
+                          "type": "number"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "title": "GeoJSON MultiLineString",
+                    "type": "object",
+                    "required": [
+                      "type",
+                      "coordinates"
+                    ],
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "MultiLineString"
+                        ]
+                      },
+                      "coordinates": {
+                        "type": "array",
+                        "items": {
+                          "type": "array",
+                          "minItems": 2,
+                          "items": {
+                            "type": "array",
+                            "minItems": 2,
+                            "items": {
+                              "type": "number"
+                            }
+                          }
+                        }
+                      },
+                      "bbox": {
+                        "type": "array",
+                        "minItems": 4,
+                        "items": {
+                          "type": "number"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "title": "GeoJSON MultiPolygon",
+                    "type": "object",
+                    "required": [
+                      "type",
+                      "coordinates"
+                    ],
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "MultiPolygon"
+                        ]
+                      },
+                      "coordinates": {
+                        "type": "array",
+                        "items": {
+                          "type": "array",
+                          "items": {
+                            "type": "array",
+                            "minItems": 4,
+                            "items": {
+                              "type": "array",
+                              "minItems": 2,
+                              "items": {
+                                "type": "number"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "bbox": {
+                        "type": "array",
+                        "minItems": 4,
+                        "items": {
+                          "type": "number"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "title": "GeoJSON GeometryCollection",
+                    "type": "object",
+                    "required": [
+                      "type",
+                      "geometries"
+                    ],
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "GeometryCollection"
+                        ]
+                      },
+                      "geometries": {
+                        "type": "array",
+                        "items": {
+                          "oneOf": [
+                            {
+                              "title": "GeoJSON Point",
+                              "type": "object",
+                              "required": [
+                                "type",
+                                "coordinates"
+                              ],
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "Point"
+                                  ]
+                                },
+                                "coordinates": {
+                                  "type": "array",
+                                  "minItems": 2,
+                                  "items": {
+                                    "type": "number"
+                                  }
+                                },
+                                "bbox": {
+                                  "type": "array",
+                                  "minItems": 4,
+                                  "items": {
+                                    "type": "number"
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "title": "GeoJSON LineString",
+                              "type": "object",
+                              "required": [
+                                "type",
+                                "coordinates"
+                              ],
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "LineString"
+                                  ]
+                                },
+                                "coordinates": {
+                                  "type": "array",
+                                  "minItems": 2,
+                                  "items": {
+                                    "type": "array",
+                                    "minItems": 2,
+                                    "items": {
+                                      "type": "number"
+                                    }
+                                  }
+                                },
+                                "bbox": {
+                                  "type": "array",
+                                  "minItems": 4,
+                                  "items": {
+                                    "type": "number"
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "title": "GeoJSON Polygon",
+                              "type": "object",
+                              "required": [
+                                "type",
+                                "coordinates"
+                              ],
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "Polygon"
+                                  ]
+                                },
+                                "coordinates": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "array",
+                                    "minItems": 4,
+                                    "items": {
+                                      "type": "array",
+                                      "minItems": 2,
+                                      "items": {
+                                        "type": "number"
+                                      }
+                                    }
+                                  }
+                                },
+                                "bbox": {
+                                  "type": "array",
+                                  "minItems": 4,
+                                  "items": {
+                                    "type": "number"
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "title": "GeoJSON MultiPoint",
+                              "type": "object",
+                              "required": [
+                                "type",
+                                "coordinates"
+                              ],
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "MultiPoint"
+                                  ]
+                                },
+                                "coordinates": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "array",
+                                    "minItems": 2,
+                                    "items": {
+                                      "type": "number"
+                                    }
+                                  }
+                                },
+                                "bbox": {
+                                  "type": "array",
+                                  "minItems": 4,
+                                  "items": {
+                                    "type": "number"
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "title": "GeoJSON MultiLineString",
+                              "type": "object",
+                              "required": [
+                                "type",
+                                "coordinates"
+                              ],
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "MultiLineString"
+                                  ]
+                                },
+                                "coordinates": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "array",
+                                    "minItems": 2,
+                                    "items": {
+                                      "type": "array",
+                                      "minItems": 2,
+                                      "items": {
+                                        "type": "number"
+                                      }
+                                    }
+                                  }
+                                },
+                                "bbox": {
+                                  "type": "array",
+                                  "minItems": 4,
+                                  "items": {
+                                    "type": "number"
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "title": "GeoJSON MultiPolygon",
+                              "type": "object",
+                              "required": [
+                                "type",
+                                "coordinates"
+                              ],
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "MultiPolygon"
+                                  ]
+                                },
+                                "coordinates": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "array",
+                                      "minItems": 4,
+                                      "items": {
+                                        "type": "array",
+                                        "minItems": 2,
+                                        "items": {
+                                          "type": "number"
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "bbox": {
+                                  "type": "array",
+                                  "minItems": 4,
+                                  "items": {
+                                    "type": "number"
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "bbox": {
+                        "type": "array",
+                        "minItems": 4,
+                        "items": {
+                          "type": "number"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "nullable": true
+              },
+              "bbox": {
+                "type": "array",
+                "minItems": 4,
+                "items": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        },
+        "bbox": {
+          "type": "array",
+          "minItems": 4,
+          "items": {
+            "type": "number"
+          }
+        }
+      },
+      "x-schema-version": "http://json-schema.org/draft-07/schema#",
+      "x-schema-source": "https://geojson.org/schema/FeatureCollection.json"
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservationFeature/schema-oas3.0.json#/$defs/8fd2ae08331de4582c9f006842b6a47056489be0"
+    }
+  ]
+}

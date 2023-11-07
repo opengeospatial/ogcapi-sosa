@@ -1,0 +1,372 @@
+{
+  "$defs": {
+    "193c04b458876a37be0079afe951de2ddd1dbcc9": {
+      "description": "Example SOSA Vector Observation",
+      "allOf": [
+        {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/schema-oas3.0.json#/$defs/dd30cff817672e7a59b99aa22919a700d1939e2f"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "hasResult": {
+              "properties": {
+                "pose": {
+                  "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/schema-oas3.0.json#/$defs/92d20796815304017ea7c806dddcd0f49588ea0f"
+                },
+                "distance": {
+                  "type": "number"
+                }
+              }
+            }
+          },
+          "required": [
+            "hasResult"
+          ],
+          "not": {
+            "required": [
+              "hasSimpleResult"
+            ]
+          }
+        }
+      ],
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
+      "x-schema-source": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/schema-oas3.0.json"
+    },
+    "dd30cff817672e7a59b99aa22919a700d1939e2f": {
+      "description": "SOSA Observation",
+      "type": "object",
+      "properties": {
+        "resultTime": {
+          "type": "string",
+          "format": "date-time",
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/resultTime"
+        },
+        "phenomenonTime": {
+          "type": [
+            "object",
+            "string"
+          ],
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/phenomenonTime",
+          "anyOf": {
+            "anyOf": [
+              {
+                "type": "object"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "hasFeatureOfInterest": {
+          "type": [
+            "object",
+            "string"
+          ],
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/hasFeatureOfInterest",
+          "x-jsonld-type": "@id",
+          "anyOf": {
+            "anyOf": [
+              {
+                "type": "object"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "observedProperty": {
+          "type": [
+            "object",
+            "string"
+          ],
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/observedProperty",
+          "x-jsonld-type": "@id",
+          "anyOf": {
+            "anyOf": [
+              {
+                "type": "object"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "usedProcedure": {
+          "type": [
+            "object",
+            "string"
+          ],
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/usedProcedure",
+          "x-jsonld-type": "@id",
+          "anyOf": {
+            "anyOf": [
+              {
+                "type": "object"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "madeBySensor": {
+          "type": [
+            "object",
+            "string"
+          ],
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/madeBySensor",
+          "x-jsonld-type": "@id",
+          "anyOf": {
+            "anyOf": [
+              {
+                "type": "object"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "hasResult": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/hasResult"
+        },
+        "hasSimpleResult": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/hasSimpleResult"
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "hasResult"
+          ]
+        },
+        {
+          "required": [
+            "hasSimpleResult"
+          ]
+        }
+      ],
+      "x-jsonld-extra-terms": {
+        "Observation": "http://www.w3.org/ns/sosa/Observation",
+        "Sample": "http://www.w3.org/ns/sosa/Sample",
+        "observes": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/observes",
+          "x-jsonld-type": "@id"
+        },
+        "isObservedBy": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/isObservedBy",
+          "x-jsonld-type": "@id"
+        },
+        "madeObservation": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/madeObservation",
+          "x-jsonld-type": "@id"
+        },
+        "actsOnProperty": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/actsOnProperty",
+          "x-jsonld-type": "@id"
+        },
+        "isActedOnBy": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/isActedOnBy",
+          "x-jsonld-type": "@id"
+        },
+        "madeActuation": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/madeActuation",
+          "x-jsonld-type": "@id"
+        },
+        "madeByActuator": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/madeByActuator",
+          "x-jsonld-type": "@id"
+        },
+        "hasSample": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/hasSample",
+          "x-jsonld-type": "@id"
+        },
+        "isSampleOf": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/isSampleOf",
+          "x-jsonld-type": "@id"
+        },
+        "madeSampling": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/madeSampling",
+          "x-jsonld-type": "@id"
+        },
+        "madeBySampler": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/madeBySampler",
+          "x-jsonld-type": "@id"
+        },
+        "isFeatureOfInterestOf": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/isFeatureOfInterestOf",
+          "x-jsonld-type": "@id"
+        },
+        "isResultOf": "http://www.w3.org/ns/sosa/isResultOf",
+        "hosts": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/hosts",
+          "x-jsonld-type": "@id"
+        },
+        "isHostedBy": "http://www.w3.org/ns/sosa/isHostedBy",
+        "isProxyFor": "http://www.w3.org/ns/ssn/isProxyFor",
+        "wasOriginatedBy": "http://www.w3.org/ns/ssn/wasOriginatedBy",
+        "detects": "http://www.w3.org/ns/ssn/detects",
+        "hasProperty": "http://www.w3.org/ns/ssn/hasProperty",
+        "isPropertyOf": "http://www.w3.org/ns/ssn/isPropertyOf",
+        "forProperty": "http://www.w3.org/ns/ssn/forProperty",
+        "implements": "http://www.w3.org/ns/ssn/implements",
+        "implementedBy": "http://www.w3.org/ns/ssn/implementedBy",
+        "hasInput": "http://www.w3.org/ns/ssn/hasInput",
+        "hasOutput": "http://www.w3.org/ns/ssn/hasOutput",
+        "hasSubSystem": "http://www.w3.org/ns/ssn/hasSubSystem",
+        "deployedSystem": "http://www.w3.org/ns/ssn/deployedSystem",
+        "hasDeployment": "http://www.w3.org/ns/ssn/hasDeployment",
+        "deployedOnPlatform": "http://www.w3.org/ns/ssn/deployedOnPlatform",
+        "inDeployment": "http://www.w3.org/ns/ssn/inDeployment",
+        "inCondition": "http://www.w3.org/ns/ssn/systems/inCondition",
+        "hasSystemCapability": "http://www.w3.org/ns/ssn/systems/hasSystemCapability",
+        "hasSystemProperty": "http://www.w3.org/ns/ssn/systems/hasSystemProperty",
+        "hasOperatingRange": "http://www.w3.org/ns/ssn/systems/hasOperatingRange",
+        "hasOperatingProperty": "http://www.w3.org/ns/ssn/systems/hasOperatingProperty",
+        "hasSurvivalRange": "http://www.w3.org/ns/ssn/systems/hasSurvivalRange",
+        "hasSurvivalProperty": "http://www.w3.org/ns/ssn/systems/hasSurvivalProperty",
+        "qualityOfObservation": "http://www.w3.org/ns/ssn/systems/qualityOfObservation",
+        "hasMember": "http://www.w3.org/ns/sosa/hasMember",
+        "features": "http://www.w3.org/ns/sosa/hasMember",
+        "properties": "@nest",
+        "featureType": "@type"
+      },
+      "x-jsonld-prefixes": {
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "ssn": "http://www.w3.org/ns/ssn/",
+        "ssn-system": "http://www.w3.org/ns/ssn/systems/"
+      },
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
+      "x-schema-source": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/properties/observation/schema.json"
+    },
+    "92d20796815304017ea7c806dddcd0f49588ea0f": {
+      "description": "Basic-YPR: Basic GeoPose using yaw, pitch, and roll to specify orientation",
+      "definitions": {
+        "angles": {
+          "type": "object",
+          "properties": {
+            "yaw": {
+              "type": "number",
+              "x-jsonld-id": "http://example.com/geopose/yaw"
+            },
+            "pitch": {
+              "type": "number",
+              "x-jsonld-id": "http://example.com/geopose/pitch"
+            },
+            "roll": {
+              "type": "number",
+              "x-jsonld-id": "http://example.com/geopose/roll"
+            }
+          },
+          "required": [
+            "yaw",
+            "pitch",
+            "roll"
+          ]
+        },
+        "Position": {
+          "type": "object",
+          "properties": {
+            "lat": {
+              "type": "number",
+              "x-jsonld-id": "http://www.w3.org/2003/01/geo/wgs84_pos#lat"
+            },
+            "lon": {
+              "type": "number",
+              "x-jsonld-id": "http://www.w3.org/2003/01/geo/wgs84_pos#long"
+            },
+            "h": {
+              "type": "number",
+              "x-jsonld-id": "http://example.com/geopose/h"
+            }
+          },
+          "required": [
+            "lat",
+            "lon",
+            "h"
+          ]
+        }
+      },
+      "type": "object",
+      "properties": {
+        "position": {},
+        "angles": {}
+      },
+      "required": [
+        "position",
+        "angles"
+      ],
+      "x-jsonld-prefixes": {
+        "geopose": "http://example.com/geopose/",
+        "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#"
+      },
+      "x-schema-source": "https://schemas.opengis.net/geopose/1.0/schemata/GeoPose.Basic.YPR.Schema.json"
+    },
+    "f08124ee1e911e959545d91e581cf8f5d56b11f9": {
+      "description": "Basic-YPR: Basic GeoPose using yaw, pitch, and roll to specify orientation",
+      "definitions": {
+        "angles": {
+          "type": "object",
+          "properties": {
+            "yaw": {
+              "type": "number"
+            },
+            "pitch": {
+              "type": "number"
+            },
+            "roll": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "yaw",
+            "pitch",
+            "roll"
+          ]
+        },
+        "Position": {
+          "type": "object",
+          "properties": {
+            "lat": {
+              "type": "number"
+            },
+            "lon": {
+              "type": "number"
+            },
+            "h": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "lat",
+            "lon",
+            "h"
+          ]
+        }
+      },
+      "type": "object",
+      "properties": {
+        "position": {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/schema-oas3.0.json#/$defs/f08124ee1e911e959545d91e581cf8f5d56b11f9/definitions/Position"
+        },
+        "angles": {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/schema-oas3.0.json#/$defs/f08124ee1e911e959545d91e581cf8f5d56b11f9/definitions/angles"
+        }
+      },
+      "required": [
+        "position",
+        "angles"
+      ],
+      "x-schema-source": "https://schemas.opengis.net/geopose/1.0/schemata/GeoPose.Basic.YPR.Schema.json"
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/schema-oas3.0.json#/$defs/193c04b458876a37be0079afe951de2ddd1dbcc9"
+    }
+  ]
+}

@@ -572,10 +572,12 @@ You can find the full JSON-LD context here:
 
 ## SHACL Shapes
 
-The following SHACL shapes are used for validating this building block:
+The following sets of SHACL shapes are used for validating this building block:
 
-* [https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservationFeature/rules.shacl](https://opengeospatial.github.io/ogcapi-sosa/_sources/examples/vectorObservationFeature/rules.shacl)
-* [https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl](https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl)
+* Example SOSA Vector Observation Feature <small><code>ogc.unstable.sosa.examples.vectorObservationFeature</code></small>
+  * [https://opengeospatial.github.io/github/workspace/_sources/examples/vectorObservationFeature/rules.shacl](https://opengeospatial.github.io/github/workspace/_sources/examples/vectorObservationFeature/rules.shacl)
+* SOSA Observation <small><code>ogc.unstable.sosa.properties.observation</code></small>
+  * [https://opengeospatial.github.io/github/workspace/_sources/properties/observation/rules.shacl](https://opengeospatial.github.io/github/workspace/_sources/properties/observation/rules.shacl)
 
 # References
 
