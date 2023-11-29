@@ -397,19 +397,17 @@ Links to the schema:
     "qualityOfObservation": "ssn:systems/qualityOfObservation",
     "hasMember": {
       "@context": {
-        "features": "sosa:hasMember"
+        "features": "sosa:hasMember",
+        "featureType": "@type"
       },
       "@id": "sosa:hasMember"
     },
-    "featureType": "@type",
+    "featureType": "geojson:collectionFeatureType",
     "properties": "@nest",
     "features": {
       "@context": {
         "features": "sosa:hasMember",
-        "coordinates": {
-          "@container": "@list",
-          "@id": "geojson:coordinates"
-        }
+        "featureType": "@type"
       },
       "@id": "geojson:features",
       "@container": "@set"
@@ -434,12 +432,7 @@ Links to the schema:
     },
     "id": "@id",
     "geometry": {
-      "@context": {
-        "coordinates": {
-          "@container": "@list",
-          "@id": "geojson:coordinates"
-        }
-      },
+      "@context": {},
       "@id": "geojson:geometry"
     },
     "bbox": {
@@ -456,8 +449,8 @@ Links to the schema:
     "Point": "geojson:Point",
     "Polygon": "geojson:Polygon",
     "coordinates": {
-      "x-jsonld-container": "@list",
-      "x-jsonld-id": "https://purl.org/geojson/vocab#coordinates"
+      "@container": "@list",
+      "@id": "geojson:coordinates"
     },
     "sosa": "http://www.w3.org/ns/sosa/",
     "ssn": "http://www.w3.org/ns/ssn/",

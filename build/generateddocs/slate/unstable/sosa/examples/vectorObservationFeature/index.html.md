@@ -495,7 +495,6 @@ Links to the schema:
       "@container": "@set"
     },
     "featureType": "@type",
-    "properties": "@nest",
     "Feature": "geojson:Feature",
     "FeatureCollection": "geojson:FeatureCollection",
     "GeometryCollection": "geojson:GeometryCollection",
@@ -513,6 +512,7 @@ Links to the schema:
       "@container": "@list",
       "@id": "geojson:coordinates"
     },
+    "properties": "@nest",
     "type": "@type",
     "id": "@id",
     "links": {

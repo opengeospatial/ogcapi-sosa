@@ -2,9 +2,9 @@
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<file:///github/workspace/c1> a sosa:ObservationCollection,
-        geojson:FeatureCollection ;
+<file:///github/workspace/c1> a geojson:FeatureCollection ;
     sosa:resultTime "1999" ;
+    geojson:collectionFeatureType "sosa:ObservationCollection" ;
     geojson:features <file:///github/workspace/pop1999> .
 
 <file:///github/workspace/pop1999> a geojson:Feature ;

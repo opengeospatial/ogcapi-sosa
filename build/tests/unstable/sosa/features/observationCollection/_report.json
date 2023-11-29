@@ -2,107 +2,9 @@
   "title": "Validation report for ogc.unstable.sosa.features.observationCollection - SOSA ObservationCollection Feature",
   "bblockName": "SOSA ObservationCollection Feature",
   "bblockId": "ogc.unstable.sosa.features.observationCollection",
-  "generated": "2023-11-07T14:51:02.395663+00:00",
+  "generated": "2023-11-29T10:23:03.028046+00:00",
   "result": true,
   "items": [
-    {
-      "source": {
-        "type": "TEST_RESOURCE",
-        "requireFail": false,
-        "filename": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/tests/observationCollection-props.json",
-        "language": "json"
-      },
-      "result": true,
-      "sections": {
-        "FILES": [
-          {
-            "isError": false,
-            "message": "Using observationCollection-props.json from test resources"
-          },
-          {
-            "op": "jsonld-uplift",
-            "isError": false,
-            "message": "JSON-LD context is present - uplifting"
-          },
-          {
-            "op": "jsonld-create",
-            "filename": "observationCollection-props.jsonld",
-            "isError": false,
-            "message": "Output JSON-LD observationCollection-props.jsonld created"
-          },
-          {
-            "op": "ttl-create",
-            "empty": false,
-            "filename": "observationCollection-props.ttl",
-            "size": 16,
-            "isError": false,
-            "message": "Output Turtle observationCollection-props.ttl created"
-          }
-        ],
-        "JSON_SCHEMA": [
-          {
-            "op": "validation",
-            "result": true,
-            "isError": false,
-            "message": "Validation passed"
-          }
-        ],
-        "SHACL": [
-          {
-            "op": "shacl-files",
-            "files": [
-              "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl"
-            ],
-            "isError": false,
-            "message": "Using SHACL files for validation:\n - _sources/properties/observation/rules.shacl"
-          },
-          {
-            "op": "shacl-report",
-            "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-            "isError": false,
-            "message": "Validation Report\nConforms: True\n"
-          },
-          {
-            "focusNodes": {
-              "<http://example.com/rules#testFeatureOfInterest>": {
-                "nodes": []
-              },
-              "<http://example.com/rules#testRequiredTime>": {
-                "nodes": []
-              },
-              "<http://example.com/rules#testResult>": {
-                "nodes": []
-              },
-              "<http://example.com/rules#testObservedProperty>": {
-                "nodes": []
-              },
-              "<http://example.com/rules#testRequiredTime>/sh:or/rdf:rest/rdf:first": {
-                "nodes": [],
-                "path": "_:n8c125fd76ea94f2f99bdc925b43f8e10b11"
-              },
-              "<http://example.com/rules#testObservedProperty>/sh:property": {
-                "nodes": [],
-                "path": "_:n8c125fd76ea94f2f99bdc925b43f8e10b19"
-              },
-              "<http://example.com/rules#testResult>/sh:property": {
-                "nodes": [],
-                "path": "_:n8c125fd76ea94f2f99bdc925b43f8e10b32"
-              },
-              "<http://example.com/rules#testRequiredTime>/sh:or/rdf:first": {
-                "nodes": [],
-                "path": "_:n8c125fd76ea94f2f99bdc925b43f8e10b5"
-              },
-              "<http://example.com/rules#testFeatureOfInterest>/sh:property": {
-                "nodes": [],
-                "path": "_:n8c125fd76ea94f2f99bdc925b43f8e10b29"
-              }
-            },
-            "isError": false,
-            "message": "Focus nodes:\n - Shape <http://example.com/rules#testFeatureOfInterest>: *none*\n - Shape <http://example.com/rules#testRequiredTime>: *none*\n - Shape <http://example.com/rules#testResult>: *none*\n - Shape <http://example.com/rules#testObservedProperty>: *none*\n - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:rest/rdf:first (path _:n8c125fd76ea94f2f99bdc925b43f8e10b11): *none*\n - Shape <http://example.com/rules#testObservedProperty>/sh:property (path _:n8c125fd76ea94f2f99bdc925b43f8e10b19): *none*\n - Shape <http://example.com/rules#testResult>/sh:property (path _:n8c125fd76ea94f2f99bdc925b43f8e10b32): *none*\n - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:first (path _:n8c125fd76ea94f2f99bdc925b43f8e10b5): *none*\n - Shape <http://example.com/rules#testFeatureOfInterest>/sh:property (path _:n8c125fd76ea94f2f99bdc925b43f8e10b29): *none*\n"
-          }
-        ]
-      }
-    },
     {
       "source": {
         "type": "TEST_RESOURCE",
@@ -111,102 +13,211 @@
         "language": "json"
       },
       "result": true,
-      "sections": {
-        "FILES": [
-          {
-            "isError": false,
-            "message": "Using observationCollection-props-fail.json from test resources"
-          },
-          {
-            "op": "jsonld-uplift",
-            "isError": false,
-            "message": "JSON-LD context is present - uplifting"
-          },
-          {
-            "op": "jsonld-create",
-            "filename": "observationCollection-props-fail.jsonld",
-            "isError": false,
-            "message": "Output JSON-LD observationCollection-props-fail.jsonld created"
-          },
-          {
-            "op": "ttl-create",
-            "empty": false,
-            "filename": "observationCollection-props-fail.ttl",
-            "size": 7,
-            "isError": false,
-            "message": "Output Turtle observationCollection-props-fail.ttl created"
-          }
-        ],
-        "JSON_SCHEMA": [
-          {
-            "op": "validation",
-            "result": true,
-            "isError": false,
-            "message": "Validation passed"
-          }
-        ],
-        "SHACL": [
-          {
-            "op": "shacl-files",
-            "files": [
-              "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl"
-            ],
-            "isError": false,
-            "message": "Using SHACL files for validation:\n - _sources/properties/observation/rules.shacl"
-          },
-          {
-            "op": "shacl-report",
-            "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-            "isError": false,
-            "message": "Validation Report\nConforms: True\n"
-          },
-          {
-            "focusNodes": {
-              "<http://example.com/rules#testFeatureOfInterest>": {
-                "nodes": []
-              },
-              "<http://example.com/rules#testRequiredTime>": {
-                "nodes": []
-              },
-              "<http://example.com/rules#testResult>": {
-                "nodes": []
-              },
-              "<http://example.com/rules#testObservedProperty>": {
-                "nodes": []
-              },
-              "<http://example.com/rules#testRequiredTime>/sh:or/rdf:rest/rdf:first": {
-                "nodes": [],
-                "path": "_:n8c125fd76ea94f2f99bdc925b43f8e10b11"
-              },
-              "<http://example.com/rules#testObservedProperty>/sh:property": {
-                "nodes": [],
-                "path": "_:n8c125fd76ea94f2f99bdc925b43f8e10b19"
-              },
-              "<http://example.com/rules#testResult>/sh:property": {
-                "nodes": [],
-                "path": "_:n8c125fd76ea94f2f99bdc925b43f8e10b32"
-              },
-              "<http://example.com/rules#testRequiredTime>/sh:or/rdf:first": {
-                "nodes": [],
-                "path": "_:n8c125fd76ea94f2f99bdc925b43f8e10b5"
-              },
-              "<http://example.com/rules#testFeatureOfInterest>/sh:property": {
-                "nodes": [],
-                "path": "_:n8c125fd76ea94f2f99bdc925b43f8e10b29"
-              }
+      "sections": [
+        {
+          "name": "GENERAL",
+          "title": "General",
+          "entries": [
+            {
+              "op": "require-fail",
+              "isError": true,
+              "message": "Test was expected to fail but it did not."
+            }
+          ]
+        },
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using observationCollection-props-fail.json from test resources"
             },
-            "isError": false,
-            "message": "Focus nodes:\n - Shape <http://example.com/rules#testFeatureOfInterest>: *none*\n - Shape <http://example.com/rules#testRequiredTime>: *none*\n - Shape <http://example.com/rules#testResult>: *none*\n - Shape <http://example.com/rules#testObservedProperty>: *none*\n - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:rest/rdf:first (path _:n8c125fd76ea94f2f99bdc925b43f8e10b11): *none*\n - Shape <http://example.com/rules#testObservedProperty>/sh:property (path _:n8c125fd76ea94f2f99bdc925b43f8e10b19): *none*\n - Shape <http://example.com/rules#testResult>/sh:property (path _:n8c125fd76ea94f2f99bdc925b43f8e10b32): *none*\n - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:first (path _:n8c125fd76ea94f2f99bdc925b43f8e10b5): *none*\n - Shape <http://example.com/rules#testFeatureOfInterest>/sh:property (path _:n8c125fd76ea94f2f99bdc925b43f8e10b29): *none*\n"
-          }
-        ],
-        "GENERAL": [
-          {
-            "op": "require-fail",
-            "isError": true,
-            "message": "Test was expected to fail but it did not."
-          }
-        ]
-      }
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "observationCollection-props-fail.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD observationCollection-props-fail.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "observationCollection-props-fail.ttl",
+              "size": 7,
+              "isError": false,
+              "message": "Output Turtle observationCollection-props-fail.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        },
+        {
+          "name": "JSON_LD",
+          "title": "JSON-LD",
+          "entries": []
+        },
+        {
+          "name": "TURTLE",
+          "title": "Turtle",
+          "entries": []
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/observation/rules.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/observation/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/observation/rules.shacl",
+              "focusNodes": {
+                "<http://example.com/rules#testObservedProperty>": {
+                  "nodes": []
+                },
+                "<http://example.com/rules#testResult>": {
+                  "nodes": []
+                },
+                "<http://example.com/rules#testFeatureOfInterest>": {
+                  "nodes": []
+                },
+                "<http://example.com/rules#testRequiredTime>": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <http://example.com/rules#testObservedProperty>: *none*\n - Shape <http://example.com/rules#testResult>: *none*\n - Shape <http://example.com/rules#testFeatureOfInterest>: *none*\n - Shape <http://example.com/rules#testRequiredTime>: *none*\n"
+            }
+          ]
+        },
+        {
+          "name": "UNKNOWN",
+          "title": "Unknown errors",
+          "entries": []
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "TEST_RESOURCE",
+        "requireFail": false,
+        "filename": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/tests/observationCollection-props.json",
+        "language": "json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "GENERAL",
+          "title": "General",
+          "entries": []
+        },
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using observationCollection-props.json from test resources"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "observationCollection-props.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD observationCollection-props.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "observationCollection-props.ttl",
+              "size": 16,
+              "isError": false,
+              "message": "Output Turtle observationCollection-props.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        },
+        {
+          "name": "JSON_LD",
+          "title": "JSON-LD",
+          "entries": []
+        },
+        {
+          "name": "TURTLE",
+          "title": "Turtle",
+          "entries": []
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/observation/rules.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/observation/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/observation/rules.shacl",
+              "focusNodes": {
+                "<http://example.com/rules#testObservedProperty>": {
+                  "nodes": []
+                },
+                "<http://example.com/rules#testResult>": {
+                  "nodes": []
+                },
+                "<http://example.com/rules#testFeatureOfInterest>": {
+                  "nodes": []
+                },
+                "<http://example.com/rules#testRequiredTime>": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <http://example.com/rules#testObservedProperty>: *none*\n - Shape <http://example.com/rules#testResult>: *none*\n - Shape <http://example.com/rules#testFeatureOfInterest>: *none*\n - Shape <http://example.com/rules#testRequiredTime>: *none*\n"
+            }
+          ]
+        },
+        {
+          "name": "UNKNOWN",
+          "title": "Unknown errors",
+          "entries": []
+        }
+      ]
     },
     {
       "source": {
@@ -218,95 +229,101 @@
         "language": "json"
       },
       "result": true,
-      "sections": {
-        "FILES": [
-          {
-            "isError": false,
-            "message": "Using example_1_1.json from examples"
-          },
-          {
-            "op": "jsonld-uplift",
-            "isError": false,
-            "message": "JSON-LD context is present - uplifting"
-          },
-          {
-            "op": "jsonld-create",
-            "filename": "example_1_1.jsonld",
-            "isError": false,
-            "message": "Output JSON-LD example_1_1.jsonld created"
-          },
-          {
-            "op": "ttl-create",
-            "empty": false,
-            "filename": "example_1_1.ttl",
-            "size": 17,
-            "isError": false,
-            "message": "Output Turtle example_1_1.ttl created"
-          }
-        ],
-        "JSON_SCHEMA": [
-          {
-            "op": "validation",
-            "result": true,
-            "isError": false,
-            "message": "Validation passed"
-          }
-        ],
-        "SHACL": [
-          {
-            "op": "shacl-files",
-            "files": [
-              "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl"
-            ],
-            "isError": false,
-            "message": "Using SHACL files for validation:\n - _sources/properties/observation/rules.shacl"
-          },
-          {
-            "op": "shacl-report",
-            "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-            "isError": false,
-            "message": "Validation Report\nConforms: True\n"
-          },
-          {
-            "focusNodes": {
-              "<http://example.com/rules#testFeatureOfInterest>": {
-                "nodes": []
-              },
-              "<http://example.com/rules#testRequiredTime>": {
-                "nodes": []
-              },
-              "<http://example.com/rules#testResult>": {
-                "nodes": []
-              },
-              "<http://example.com/rules#testObservedProperty>": {
-                "nodes": []
-              },
-              "<http://example.com/rules#testRequiredTime>/sh:or/rdf:rest/rdf:first": {
-                "nodes": [],
-                "path": "_:n8c125fd76ea94f2f99bdc925b43f8e10b11"
-              },
-              "<http://example.com/rules#testObservedProperty>/sh:property": {
-                "nodes": [],
-                "path": "_:n8c125fd76ea94f2f99bdc925b43f8e10b19"
-              },
-              "<http://example.com/rules#testResult>/sh:property": {
-                "nodes": [],
-                "path": "_:n8c125fd76ea94f2f99bdc925b43f8e10b32"
-              },
-              "<http://example.com/rules#testRequiredTime>/sh:or/rdf:first": {
-                "nodes": [],
-                "path": "_:n8c125fd76ea94f2f99bdc925b43f8e10b5"
-              },
-              "<http://example.com/rules#testFeatureOfInterest>/sh:property": {
-                "nodes": [],
-                "path": "_:n8c125fd76ea94f2f99bdc925b43f8e10b29"
-              }
+      "sections": [
+        {
+          "name": "GENERAL",
+          "title": "General",
+          "entries": []
+        },
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_1_1.json from examples"
             },
-            "isError": false,
-            "message": "Focus nodes:\n - Shape <http://example.com/rules#testFeatureOfInterest>: *none*\n - Shape <http://example.com/rules#testRequiredTime>: *none*\n - Shape <http://example.com/rules#testResult>: *none*\n - Shape <http://example.com/rules#testObservedProperty>: *none*\n - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:rest/rdf:first (path _:n8c125fd76ea94f2f99bdc925b43f8e10b11): *none*\n - Shape <http://example.com/rules#testObservedProperty>/sh:property (path _:n8c125fd76ea94f2f99bdc925b43f8e10b19): *none*\n - Shape <http://example.com/rules#testResult>/sh:property (path _:n8c125fd76ea94f2f99bdc925b43f8e10b32): *none*\n - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:first (path _:n8c125fd76ea94f2f99bdc925b43f8e10b5): *none*\n - Shape <http://example.com/rules#testFeatureOfInterest>/sh:property (path _:n8c125fd76ea94f2f99bdc925b43f8e10b29): *none*\n"
-          }
-        ]
-      }
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "example_1_1.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD example_1_1.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_1_1.ttl",
+              "size": 17,
+              "isError": false,
+              "message": "Output Turtle example_1_1.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        },
+        {
+          "name": "JSON_LD",
+          "title": "JSON-LD",
+          "entries": []
+        },
+        {
+          "name": "TURTLE",
+          "title": "Turtle",
+          "entries": []
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/observation/rules.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/observation/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/observation/rules.shacl",
+              "focusNodes": {
+                "<http://example.com/rules#testObservedProperty>": {
+                  "nodes": []
+                },
+                "<http://example.com/rules#testResult>": {
+                  "nodes": []
+                },
+                "<http://example.com/rules#testFeatureOfInterest>": {
+                  "nodes": []
+                },
+                "<http://example.com/rules#testRequiredTime>": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <http://example.com/rules#testObservedProperty>: *none*\n - Shape <http://example.com/rules#testResult>: *none*\n - Shape <http://example.com/rules#testFeatureOfInterest>: *none*\n - Shape <http://example.com/rules#testRequiredTime>: *none*\n"
+            }
+          ]
+        },
+        {
+          "name": "UNKNOWN",
+          "title": "Unknown errors",
+          "entries": []
+        }
+      ]
     },
     {
       "source": {
@@ -318,88 +335,95 @@
         "language": "ttl"
       },
       "result": true,
-      "sections": {
-        "FILES": [
-          {
-            "isError": false,
-            "message": "Using example_1_2.ttl from examples"
-          },
-          {
-            "op": "ttl-create",
-            "empty": false,
-            "filename": "example_1_2.ttl",
-            "size": 14,
-            "isError": false,
-            "message": "Output Turtle example_1_2.ttl created"
-          }
-        ],
-        "SHACL": [
-          {
-            "op": "shacl-files",
-            "files": [
-              "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl"
-            ],
-            "isError": false,
-            "message": "Using SHACL files for validation:\n - _sources/properties/observation/rules.shacl"
-          },
-          {
-            "op": "shacl-report",
-            "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-            "isError": false,
-            "message": "Validation Report\nConforms: True\n"
-          },
-          {
-            "focusNodes": {
-              "<http://example.com/rules#testFeatureOfInterest>": {
-                "nodes": [
-                  "eg:pop2000",
-                  "eg:pop1999"
-                ]
-              },
-              "<http://example.com/rules#testRequiredTime>": {
-                "nodes": [
-                  "eg:pop2000",
-                  "eg:pop1999"
-                ]
-              },
-              "<http://example.com/rules#testResult>": {
-                "nodes": [
-                  "eg:pop2000",
-                  "eg:pop1999"
-                ]
-              },
-              "<http://example.com/rules#testObservedProperty>": {
-                "nodes": [
-                  "eg:pop2000",
-                  "eg:pop1999"
-                ]
-              },
-              "<http://example.com/rules#testRequiredTime>/sh:or/rdf:rest/rdf:first": {
-                "nodes": [],
-                "path": "_:n8c125fd76ea94f2f99bdc925b43f8e10b11"
-              },
-              "<http://example.com/rules#testObservedProperty>/sh:property": {
-                "nodes": [],
-                "path": "_:n8c125fd76ea94f2f99bdc925b43f8e10b19"
-              },
-              "<http://example.com/rules#testResult>/sh:property": {
-                "nodes": [],
-                "path": "_:n8c125fd76ea94f2f99bdc925b43f8e10b32"
-              },
-              "<http://example.com/rules#testRequiredTime>/sh:or/rdf:first": {
-                "nodes": [],
-                "path": "_:n8c125fd76ea94f2f99bdc925b43f8e10b5"
-              },
-              "<http://example.com/rules#testFeatureOfInterest>/sh:property": {
-                "nodes": [],
-                "path": "_:n8c125fd76ea94f2f99bdc925b43f8e10b29"
-              }
+      "sections": [
+        {
+          "name": "GENERAL",
+          "title": "General",
+          "entries": []
+        },
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_1_2.ttl from examples"
             },
-            "isError": false,
-            "message": "Focus nodes:\n - Shape <http://example.com/rules#testFeatureOfInterest>: eg:pop2000,eg:pop1999\n - Shape <http://example.com/rules#testRequiredTime>: eg:pop2000,eg:pop1999\n - Shape <http://example.com/rules#testResult>: eg:pop2000,eg:pop1999\n - Shape <http://example.com/rules#testObservedProperty>: eg:pop2000,eg:pop1999\n - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:rest/rdf:first (path _:n8c125fd76ea94f2f99bdc925b43f8e10b11): *none*\n - Shape <http://example.com/rules#testObservedProperty>/sh:property (path _:n8c125fd76ea94f2f99bdc925b43f8e10b19): *none*\n - Shape <http://example.com/rules#testResult>/sh:property (path _:n8c125fd76ea94f2f99bdc925b43f8e10b32): *none*\n - Shape <http://example.com/rules#testRequiredTime>/sh:or/rdf:first (path _:n8c125fd76ea94f2f99bdc925b43f8e10b5): *none*\n - Shape <http://example.com/rules#testFeatureOfInterest>/sh:property (path _:n8c125fd76ea94f2f99bdc925b43f8e10b29): *none*\n"
-          }
-        ]
-      }
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_1_2.ttl",
+              "size": 14,
+              "isError": false,
+              "message": "Output Turtle example_1_2.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": []
+        },
+        {
+          "name": "JSON_LD",
+          "title": "JSON-LD",
+          "entries": []
+        },
+        {
+          "name": "TURTLE",
+          "title": "Turtle",
+          "entries": []
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/observation/rules.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/observation/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/observation/rules.shacl",
+              "focusNodes": {
+                "<http://example.com/rules#testObservedProperty>": {
+                  "nodes": [
+                    "eg:pop1999",
+                    "eg:pop2000"
+                  ]
+                },
+                "<http://example.com/rules#testResult>": {
+                  "nodes": [
+                    "eg:pop1999",
+                    "eg:pop2000"
+                  ]
+                },
+                "<http://example.com/rules#testFeatureOfInterest>": {
+                  "nodes": [
+                    "eg:pop1999",
+                    "eg:pop2000"
+                  ]
+                },
+                "<http://example.com/rules#testRequiredTime>": {
+                  "nodes": [
+                    "eg:pop1999",
+                    "eg:pop2000"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <http://example.com/rules#testObservedProperty>: eg:pop1999,eg:pop2000\n - Shape <http://example.com/rules#testResult>: eg:pop1999,eg:pop2000\n - Shape <http://example.com/rules#testFeatureOfInterest>: eg:pop1999,eg:pop2000\n - Shape <http://example.com/rules#testRequiredTime>: eg:pop1999,eg:pop2000\n"
+            }
+          ]
+        },
+        {
+          "name": "UNKNOWN",
+          "title": "Unknown errors",
+          "entries": []
+        }
+      ]
     }
   ],
   "globalErrors": {},
