@@ -76,8 +76,8 @@
       "maturity": "development",
       "scope": "unstable",
       "dependsOn": [
-        "ogc.unstable.sosa.properties.observation",
-        "ogc.geo.geopose.basic.ypr"
+        "ogc.geo.geopose.basic.ypr",
+        "ogc.unstable.sosa.properties.observation"
       ],
       "tags": [
         "sosa",
@@ -152,8 +152,8 @@
         ]
       },
       "dependsOn": [
-        "ogc.unstable.sosa.properties.observation",
-        "ogc.ogc-utils.iri-or-curie"
+        "ogc.ogc-utils.iri-or-curie",
+        "ogc.unstable.sosa.properties.observation"
       ],
       "schema": {
         "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observationCollection/schema.yaml",
@@ -197,8 +197,8 @@
       "maturity": "development",
       "scope": "unstable",
       "dependsOn": [
-        "ogc.unstable.sosa.properties.observation",
-        "ogc.geo.json-fg.feature-lenient"
+        "ogc.geo.json-fg.feature-lenient",
+        "ogc.unstable.sosa.properties.observation"
       ],
       "tags": [
         "sosa",
@@ -272,9 +272,9 @@
         ]
       },
       "dependsOn": [
-        "ogc.unstable.sosa.properties.observationCollection",
+        "ogc.unstable.sosa.features.observation",
         "ogc.geo.json-fg.featureCollection-lenient",
-        "ogc.unstable.sosa.features.observation"
+        "ogc.unstable.sosa.properties.observationCollection"
       ],
       "schema": {
         "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observationCollection/schema.yaml",
@@ -318,10 +318,10 @@
       "maturity": "development",
       "scope": "unstable",
       "dependsOn": [
-        "ogc.unstable.sosa.properties.observation",
-        "ogc.unstable.sosa.examples.vectorObservation",
+        "ogc.unstable.sosa.features.observationCollection",
         "ogc.unstable.sosa.features.observation",
-        "ogc.unstable.sosa.features.observationCollection"
+        "ogc.unstable.sosa.properties.observation",
+        "ogc.unstable.sosa.examples.vectorObservation"
       ],
       "tags": [
         "sosa",

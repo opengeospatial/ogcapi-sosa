@@ -2,14 +2,14 @@
   "title": "Validation report for ogc.unstable.sosa.properties.observation - SOSA Observation",
   "bblockName": "SOSA Observation",
   "bblockId": "ogc.unstable.sosa.properties.observation",
-  "generated": "2023-11-29T10:23:00.123332+00:00",
+  "generated": "2023-11-30T07:07:42.370783+00:00",
   "result": true,
   "items": [
     {
       "source": {
         "type": "TEST_RESOURCE",
-        "requireFail": false,
-        "filename": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/tests/test1.jsonld",
+        "requireFail": true,
+        "filename": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/tests/non-simpleresult-fail.jsonld",
         "language": "jsonld"
       },
       "result": true,
@@ -17,7 +17,13 @@
         {
           "name": "GENERAL",
           "title": "General",
-          "entries": []
+          "entries": [
+            {
+              "op": "require-fail",
+              "isError": true,
+              "message": "Test was expected to fail but it did not."
+            }
+          ]
         },
         {
           "name": "FILES",
@@ -25,15 +31,15 @@
           "entries": [
             {
               "isError": false,
-              "message": "Using test1.jsonld from test resources"
+              "message": "Using non-simpleresult-fail.jsonld from test resources"
             },
             {
               "op": "ttl-create",
               "empty": false,
-              "filename": "test1.ttl",
-              "size": 3,
+              "filename": "non-simpleresult-fail.ttl",
+              "size": 6,
               "isError": false,
-              "message": "Output Turtle test1.ttl created"
+              "message": "Output Turtle non-simpleresult-fail.ttl created"
             }
           ]
         },
@@ -73,7 +79,7 @@
             {
               "shaclFile": "_sources/properties/observation/rules.shacl",
               "focusNodes": {
-                "<http://example.com/rules#testObservedProperty>": {
+                "<http://example.com/rules#testRequiredTime>": {
                   "nodes": []
                 },
                 "<http://example.com/rules#testResult>": {
@@ -82,12 +88,210 @@
                 "<http://example.com/rules#testFeatureOfInterest>": {
                   "nodes": []
                 },
-                "<http://example.com/rules#testRequiredTime>": {
+                "<http://example.com/rules#testObservedProperty>": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <http://example.com/rules#testObservedProperty>: *none*\n - Shape <http://example.com/rules#testResult>: *none*\n - Shape <http://example.com/rules#testFeatureOfInterest>: *none*\n - Shape <http://example.com/rules#testRequiredTime>: *none*\n"
+              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <http://example.com/rules#testRequiredTime>: *none*\n - Shape <http://example.com/rules#testResult>: *none*\n - Shape <http://example.com/rules#testFeatureOfInterest>: *none*\n - Shape <http://example.com/rules#testObservedProperty>: *none*\n"
+            }
+          ]
+        },
+        {
+          "name": "UNKNOWN",
+          "title": "Unknown errors",
+          "entries": []
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "TEST_RESOURCE",
+        "requireFail": true,
+        "filename": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/tests/tworesults-fail.jsonld",
+        "language": "jsonld"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "GENERAL",
+          "title": "General",
+          "entries": [
+            {
+              "op": "require-fail",
+              "isError": true,
+              "message": "Test was expected to fail but it did not."
+            }
+          ]
+        },
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using tworesults-fail.jsonld from test resources"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "tworesults-fail.ttl",
+              "size": 4,
+              "isError": false,
+              "message": "Output Turtle tworesults-fail.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        },
+        {
+          "name": "JSON_LD",
+          "title": "JSON-LD",
+          "entries": []
+        },
+        {
+          "name": "TURTLE",
+          "title": "Turtle",
+          "entries": []
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/observation/rules.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/observation/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/observation/rules.shacl",
+              "focusNodes": {
+                "<http://example.com/rules#testRequiredTime>": {
+                  "nodes": []
+                },
+                "<http://example.com/rules#testResult>": {
+                  "nodes": []
+                },
+                "<http://example.com/rules#testFeatureOfInterest>": {
+                  "nodes": []
+                },
+                "<http://example.com/rules#testObservedProperty>": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <http://example.com/rules#testRequiredTime>: *none*\n - Shape <http://example.com/rules#testResult>: *none*\n - Shape <http://example.com/rules#testFeatureOfInterest>: *none*\n - Shape <http://example.com/rules#testObservedProperty>: *none*\n"
+            }
+          ]
+        },
+        {
+          "name": "UNKNOWN",
+          "title": "Unknown errors",
+          "entries": []
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "TEST_RESOURCE",
+        "requireFail": true,
+        "filename": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/tests/observedprop-fail.jsonld",
+        "language": "jsonld"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "GENERAL",
+          "title": "General",
+          "entries": [
+            {
+              "op": "require-fail",
+              "isError": true,
+              "message": "Test was expected to fail but it did not."
+            }
+          ]
+        },
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using observedprop-fail.jsonld from test resources"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "observedprop-fail.ttl",
+              "size": 3,
+              "isError": false,
+              "message": "Output Turtle observedprop-fail.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        },
+        {
+          "name": "JSON_LD",
+          "title": "JSON-LD",
+          "entries": []
+        },
+        {
+          "name": "TURTLE",
+          "title": "Turtle",
+          "entries": []
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/observation/rules.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/observation/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/observation/rules.shacl",
+              "focusNodes": {
+                "<http://example.com/rules#testRequiredTime>": {
+                  "nodes": []
+                },
+                "<http://example.com/rules#testResult>": {
+                  "nodes": []
+                },
+                "<http://example.com/rules#testFeatureOfInterest>": {
+                  "nodes": []
+                },
+                "<http://example.com/rules#testObservedProperty>": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <http://example.com/rules#testRequiredTime>: *none*\n - Shape <http://example.com/rules#testResult>: *none*\n - Shape <http://example.com/rules#testFeatureOfInterest>: *none*\n - Shape <http://example.com/rules#testObservedProperty>: *none*\n"
             }
           ]
         },
@@ -179,7 +383,7 @@
             {
               "shaclFile": "_sources/properties/observation/rules.shacl",
               "focusNodes": {
-                "<http://example.com/rules#testObservedProperty>": {
+                "<http://example.com/rules#testRequiredTime>": {
                   "nodes": []
                 },
                 "<http://example.com/rules#testResult>": {
@@ -188,12 +392,12 @@
                 "<http://example.com/rules#testFeatureOfInterest>": {
                   "nodes": []
                 },
-                "<http://example.com/rules#testRequiredTime>": {
+                "<http://example.com/rules#testObservedProperty>": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <http://example.com/rules#testObservedProperty>: *none*\n - Shape <http://example.com/rules#testResult>: *none*\n - Shape <http://example.com/rules#testFeatureOfInterest>: *none*\n - Shape <http://example.com/rules#testRequiredTime>: *none*\n"
+              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <http://example.com/rules#testRequiredTime>: *none*\n - Shape <http://example.com/rules#testResult>: *none*\n - Shape <http://example.com/rules#testFeatureOfInterest>: *none*\n - Shape <http://example.com/rules#testObservedProperty>: *none*\n"
             }
           ]
         },
@@ -267,29 +471,29 @@
             {
               "shaclFile": "_sources/properties/observation/rules.shacl",
               "focusNodes": {
-                "<http://example.com/rules#testObservedProperty>": {
+                "<http://example.com/rules#testRequiredTime>": {
                   "nodes": [
-                    "_:nbbf6d69d3c6b4d2a8f1db285f35fdc30b1"
+                    "_:nb1c6864ea5084ea7ae92823f8ea7c024b1"
                   ]
                 },
                 "<http://example.com/rules#testResult>": {
                   "nodes": [
-                    "_:nbbf6d69d3c6b4d2a8f1db285f35fdc30b1"
+                    "_:nb1c6864ea5084ea7ae92823f8ea7c024b1"
                   ]
                 },
                 "<http://example.com/rules#testFeatureOfInterest>": {
                   "nodes": [
-                    "_:nbbf6d69d3c6b4d2a8f1db285f35fdc30b1"
+                    "_:nb1c6864ea5084ea7ae92823f8ea7c024b1"
                   ]
                 },
-                "<http://example.com/rules#testRequiredTime>": {
+                "<http://example.com/rules#testObservedProperty>": {
                   "nodes": [
-                    "_:nbbf6d69d3c6b4d2a8f1db285f35fdc30b1"
+                    "_:nb1c6864ea5084ea7ae92823f8ea7c024b1"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <http://example.com/rules#testObservedProperty>: _:nbbf6d69d3c6b4d2a8f1db285f35fdc30b1\n - Shape <http://example.com/rules#testResult>: _:nbbf6d69d3c6b4d2a8f1db285f35fdc30b1\n - Shape <http://example.com/rules#testFeatureOfInterest>: _:nbbf6d69d3c6b4d2a8f1db285f35fdc30b1\n - Shape <http://example.com/rules#testRequiredTime>: _:nbbf6d69d3c6b4d2a8f1db285f35fdc30b1\n"
+              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <http://example.com/rules#testRequiredTime>: _:nb1c6864ea5084ea7ae92823f8ea7c024b1\n - Shape <http://example.com/rules#testResult>: _:nb1c6864ea5084ea7ae92823f8ea7c024b1\n - Shape <http://example.com/rules#testFeatureOfInterest>: _:nb1c6864ea5084ea7ae92823f8ea7c024b1\n - Shape <http://example.com/rules#testObservedProperty>: _:nb1c6864ea5084ea7ae92823f8ea7c024b1\n"
             }
           ]
         },
@@ -381,7 +585,7 @@
             {
               "shaclFile": "_sources/properties/observation/rules.shacl",
               "focusNodes": {
-                "<http://example.com/rules#testObservedProperty>": {
+                "<http://example.com/rules#testRequiredTime>": {
                   "nodes": []
                 },
                 "<http://example.com/rules#testResult>": {
@@ -390,12 +594,12 @@
                 "<http://example.com/rules#testFeatureOfInterest>": {
                   "nodes": []
                 },
-                "<http://example.com/rules#testRequiredTime>": {
+                "<http://example.com/rules#testObservedProperty>": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <http://example.com/rules#testObservedProperty>: *none*\n - Shape <http://example.com/rules#testResult>: *none*\n - Shape <http://example.com/rules#testFeatureOfInterest>: *none*\n - Shape <http://example.com/rules#testRequiredTime>: *none*\n"
+              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <http://example.com/rules#testRequiredTime>: *none*\n - Shape <http://example.com/rules#testResult>: *none*\n - Shape <http://example.com/rules#testFeatureOfInterest>: *none*\n - Shape <http://example.com/rules#testObservedProperty>: *none*\n"
             }
           ]
         },
@@ -409,8 +613,8 @@
   ],
   "globalErrors": {},
   "counts": {
-    "total": 4,
-    "passed": 4,
+    "total": 6,
+    "passed": 6,
     "failed": 0
   }
 }

@@ -2,7 +2,7 @@
   "title": "Validation report for ogc.unstable.sosa.examples.vectorObservationFeature - Example SOSA Vector Observation Feature",
   "bblockName": "Example SOSA Vector Observation Feature",
   "bblockId": "ogc.unstable.sosa.examples.vectorObservationFeature",
-  "generated": "2023-11-29T10:23:05.069662+00:00",
+  "generated": "2023-11-30T07:07:47.385415+00:00",
   "result": true,
   "items": [
     {
@@ -86,7 +86,7 @@
             {
               "shaclFile": "_sources/examples/vectorObservationFeature/rules.shacl",
               "focusNodes": {
-                "<http://example.com/rules#testGeometryCoordinatesIsList>": {
+                "<http://example.com/rules#testGeometryHasCoordinates>": {
                   "nodes": [
                     "<http://example.com/features/vector-obs-1>/geojson:geometry"
                   ]
@@ -96,14 +96,14 @@
                     "<http://example.com/features/vector-obs-1>"
                   ]
                 },
-                "<http://example.com/rules#testGeometryHasCoordinates>": {
+                "<http://example.com/rules#testGeometryCoordinatesIsList>": {
                   "nodes": [
                     "<http://example.com/features/vector-obs-1>/geojson:geometry"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/examples/vectorObservationFeature/rules.shacl:\n - Shape <http://example.com/rules#testGeometryCoordinatesIsList>: <http://example.com/features/vector-obs-1>/geojson:geometry\n - Shape <http://example.com/rules#testVectorObservationFeatureHasOneGeometry>: <http://example.com/features/vector-obs-1>\n - Shape <http://example.com/rules#testGeometryHasCoordinates>: <http://example.com/features/vector-obs-1>/geojson:geometry\n"
+              "message": "Focus nodes for _sources/examples/vectorObservationFeature/rules.shacl:\n - Shape <http://example.com/rules#testGeometryHasCoordinates>: <http://example.com/features/vector-obs-1>/geojson:geometry\n - Shape <http://example.com/rules#testVectorObservationFeatureHasOneGeometry>: <http://example.com/features/vector-obs-1>\n - Shape <http://example.com/rules#testGeometryCoordinatesIsList>: <http://example.com/features/vector-obs-1>/geojson:geometry\n"
             },
             {
               "op": "shacl-report",
@@ -115,7 +115,7 @@
             {
               "shaclFile": "_sources/properties/observation/rules.shacl",
               "focusNodes": {
-                "<http://example.com/rules#testObservedProperty>": {
+                "<http://example.com/rules#testRequiredTime>": {
                   "nodes": []
                 },
                 "<http://example.com/rules#testResult>": {
@@ -124,12 +124,12 @@
                 "<http://example.com/rules#testFeatureOfInterest>": {
                   "nodes": []
                 },
-                "<http://example.com/rules#testRequiredTime>": {
+                "<http://example.com/rules#testObservedProperty>": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <http://example.com/rules#testObservedProperty>: *none*\n - Shape <http://example.com/rules#testResult>: *none*\n - Shape <http://example.com/rules#testFeatureOfInterest>: *none*\n - Shape <http://example.com/rules#testRequiredTime>: *none*\n"
+              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <http://example.com/rules#testRequiredTime>: *none*\n - Shape <http://example.com/rules#testResult>: *none*\n - Shape <http://example.com/rules#testFeatureOfInterest>: *none*\n - Shape <http://example.com/rules#testObservedProperty>: *none*\n"
             }
           ]
         },
@@ -221,7 +221,7 @@
             {
               "shaclFile": "_sources/examples/vectorObservationFeature/rules.shacl",
               "focusNodes": {
-                "<http://example.com/rules#testGeometryCoordinatesIsList>": {
+                "<http://example.com/rules#testGeometryHasCoordinates>": {
                   "nodes": [
                     "<http://example.com/features/vector-obs-1>/geojson:geometry"
                   ]
@@ -231,14 +231,14 @@
                     "<http://example.com/features/vector-obs-1>"
                   ]
                 },
-                "<http://example.com/rules#testGeometryHasCoordinates>": {
+                "<http://example.com/rules#testGeometryCoordinatesIsList>": {
                   "nodes": [
                     "<http://example.com/features/vector-obs-1>/geojson:geometry"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/examples/vectorObservationFeature/rules.shacl:\n - Shape <http://example.com/rules#testGeometryCoordinatesIsList>: <http://example.com/features/vector-obs-1>/geojson:geometry\n - Shape <http://example.com/rules#testVectorObservationFeatureHasOneGeometry>: <http://example.com/features/vector-obs-1>\n - Shape <http://example.com/rules#testGeometryHasCoordinates>: <http://example.com/features/vector-obs-1>/geojson:geometry\n"
+              "message": "Focus nodes for _sources/examples/vectorObservationFeature/rules.shacl:\n - Shape <http://example.com/rules#testGeometryHasCoordinates>: <http://example.com/features/vector-obs-1>/geojson:geometry\n - Shape <http://example.com/rules#testVectorObservationFeatureHasOneGeometry>: <http://example.com/features/vector-obs-1>\n - Shape <http://example.com/rules#testGeometryCoordinatesIsList>: <http://example.com/features/vector-obs-1>/geojson:geometry\n"
             },
             {
               "op": "shacl-report",
@@ -250,7 +250,7 @@
             {
               "shaclFile": "_sources/properties/observation/rules.shacl",
               "focusNodes": {
-                "<http://example.com/rules#testObservedProperty>": {
+                "<http://example.com/rules#testRequiredTime>": {
                   "nodes": []
                 },
                 "<http://example.com/rules#testResult>": {
@@ -259,12 +259,12 @@
                 "<http://example.com/rules#testFeatureOfInterest>": {
                   "nodes": []
                 },
-                "<http://example.com/rules#testRequiredTime>": {
+                "<http://example.com/rules#testObservedProperty>": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <http://example.com/rules#testObservedProperty>: *none*\n - Shape <http://example.com/rules#testResult>: *none*\n - Shape <http://example.com/rules#testFeatureOfInterest>: *none*\n - Shape <http://example.com/rules#testRequiredTime>: *none*\n"
+              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <http://example.com/rules#testRequiredTime>: *none*\n - Shape <http://example.com/rules#testResult>: *none*\n - Shape <http://example.com/rules#testFeatureOfInterest>: *none*\n - Shape <http://example.com/rules#testObservedProperty>: *none*\n"
             }
           ]
         },
