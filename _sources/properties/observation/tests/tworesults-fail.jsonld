@@ -13,10 +13,22 @@
   "hasFeatureOfInterest": {
     "id": "http://something.org/1"
   },
+  "observedProperty": "something",
   "hasResult": {
-    "irure31": -8150858,
-    "quis70f": false,
-    "quisc": "nulla Duis do ullamco"
+    "@context": {
+      "resultschema": "http//example.org/resultschema/",
+      "a": "resultschema:a",
+      "b": {
+        "@id": "resultschema:b",
+        "@context": {
+          "b1": "resultschema:b1",
+          "b2": "resultschema:b2"
+        }
+      }
+    },
+    "a": -8150858,
+    "b": false
   },
+  "hasSimpleResult": "frogginess",
   "madeBySensor": "ea est culpa esse"
 }
