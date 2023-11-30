@@ -1,5 +1,5 @@
 Validation report for ogc.unstable.sosa.properties.observation - SOSA Observation
-Generated 2023-11-30T07:11:48.532553+00:00
+Generated 2023-11-30T23:30:15.580033+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -19,22 +19,7 @@ Validation passed
 Validation result for _sources/properties/observation/rules.shacl:
   Validation Report
   Conforms: False
-  Results (2):
-  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>
-  	Focus Node: [ sosa:hasFeatureOfInterest [ ] ; sosa:hasResult [ ] ; sosa:madeBySensor Literal("ea est culpa esse") ; sosa:resultTime Literal("2016-05-04T02:27:02.0Z") ]
-  	Value Node: [ ]
-  	Result Path: sosa:hasResult
-  	Source Constraint: [ sh:select Literal("
-        PREFIX geojson: <https://purl.org/geojson/vocab#>
-        SELECT $this (sosa:hasResult as ?path) ?value
-        WHERE {
-          $this sosa:hasResult ?value .
-          FILTER NOT EXISTS { ?value ?p ?o }
-        }
-      ") ]
-  	Message: sosa:hasResult not a blank node
+  Results (1):
   Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
   	Severity: sh:Violation
   	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty ) ]
@@ -43,12 +28,12 @@ Validation result for _sources/properties/observation/rules.shacl:
   	Message: Less than 1 values on [ sosa:hasFeatureOfInterest [ ] ; sosa:hasResult [ ] ; sosa:madeBySensor Literal("ea est culpa esse") ; sosa:resultTime Literal("2016-05-04T02:27:02.0Z") ]->( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty )
   
 Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: _:Nd5677e59dc4b42ea9526cf6d12102f45
- - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: _:Nd5677e59dc4b42ea9526cf6d12102f45
- - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: _:Nd5677e59dc4b42ea9526cf6d12102f45
  - Shape <https://www.ogc.org/rules/sosa/#testResult>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: _:Nd5677e59dc4b42ea9526cf6d12102f45
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: _:N64c7e6ddaf364eb694814e627112e093
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: _:N64c7e6ddaf364eb694814e627112e093
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: _:N64c7e6ddaf364eb694814e627112e093
 
 === End SHACL ===
 
