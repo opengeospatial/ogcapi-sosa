@@ -1,5 +1,5 @@
 Validation report for ogc.unstable.sosa.examples.vectorObservationFeature - Example SOSA Vector Observation Feature
-Generated 2023-11-30T07:07:47.385295+00:00
+Generated 2023-11-30T07:11:50.487955+00:00
 === Files ===
 Using example_2_1.json from examples
 JSON-LD context is present - uplifting
@@ -18,18 +18,20 @@ Validation result for _sources/examples/vectorObservationFeature/rules.shacl:
   
 Focus nodes for _sources/examples/vectorObservationFeature/rules.shacl:
  - Shape <http://example.com/rules#testGeometryHasCoordinates>: <http://example.com/features/vector-obs-1>/geojson:geometry
- - Shape <http://example.com/rules#testVectorObservationFeatureHasOneGeometry>: <http://example.com/features/vector-obs-1>
  - Shape <http://example.com/rules#testGeometryCoordinatesIsList>: <http://example.com/features/vector-obs-1>/geojson:geometry
+ - Shape <http://example.com/rules#testVectorObservationFeatureHasOneGeometry>: <http://example.com/features/vector-obs-1>
 
 Validation result for _sources/properties/observation/rules.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape <http://example.com/rules#testRequiredTime>: *none*
- - Shape <http://example.com/rules#testResult>: *none*
- - Shape <http://example.com/rules#testFeatureOfInterest>: *none*
- - Shape <http://example.com/rules#testObservedProperty>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <http://example.com/features/vector-obs-1>
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: <http://example.com/features/vector-obs-1>
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <http://example.com/features/vector-obs-1>
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: <http://example.com/features/vector-obs-1>
 
 === End SHACL ===
 

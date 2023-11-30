@@ -320,7 +320,7 @@
             <a href="#description" class="toc-h1 toc-link" data-title="Description">Description</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#sosa-observation" class="toc-h2 toc-link" data-title="SOSA Observation">SOSA Observation</a>
+                    <a href="#sosa-observation-properties" class="toc-h2 toc-link" data-title="SOSA Observation Properties">SOSA Observation Properties</a>
                   </li>
               </ul>
           </li>
@@ -376,13 +376,18 @@
 <aside class="success">
 This building block is <strong><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/unstable/sosa/properties/observation/" target="_blank">valid</a></strong>
 </aside>
-<h1 id='description'>Description</h1><h2 id='sosa-observation'>SOSA Observation</h2>
+<h1 id='description'>Description</h1><h2 id='sosa-observation-properties'>SOSA Observation Properties</h2>
+<p>This building block describes the canonical set of properties for an Observation object.</p>
+
+<p>These properties are independent of the feature model implementation - for example may be included in the &quot;properties&quot; component of a GeoJSON object, or used in any other schema.</p>
+
 <p>An observation is &quot;the Act of carrying out an (Observation) Procedure to estimate or calculate a value 
 of a property of a FeatureOfInterest. Links to a Sensor to describe what made the Observation and how;
 links to an ObservableProperty to describe what the result is an estimate of, and to a FeatureOfInterest
 to detail what that property was associated with.&quot;</p>
 <h1 id='examples'>Examples</h1><h2 id='example-of-sosa-observation-with-simple-result'>Example of SOSA observation with simple result</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
   </span><span class="nl">"hasFeatureOfInterest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"observedProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"p1"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"hasSimpleResult"</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w">
   </span><span class="nl">"resultTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-05-01T22:33:44Z"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -407,6 +412,7 @@ to detail what that property was associated with.&quot;</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-jsonld"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"hasFeatureOfInterest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"observedProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"p1"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"hasSimpleResult"</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w">
   </span><span class="nl">"resultTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-05-01T22:33:44Z"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observation/context.jsonld"</span><span class="w">
@@ -434,11 +440,12 @@ to detail what that property was associated with.&quot;</p>
 </blockquote>
 <h2 id='example-of-sosa-observation-with-object-result'>Example of SOSA observation with object result</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"hasFeatureOfInterest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"hasSimpleResult"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"observedProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"p1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"hasResult"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rdfs:comment"</span><span class="p">,</span><span class="w">
     </span><span class="p">},</span><span class="w">
-
+    </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"I feel good"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"resultTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-05-01T22:33:44Z"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -450,10 +457,12 @@ to detail what that property was associated with.&quot;</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-jsonld"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"hasFeatureOfInterest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"hasSimpleResult"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"observedProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"p1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"hasResult"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+      </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rdfs:comment"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"I feel good"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"resultTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-05-01T22:33:44Z"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observation/context.jsonld"</span><span class="w">
@@ -464,10 +473,12 @@ to detail what that property was associated with.&quot;</p>
     <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/unstable/sosa/properties/observation/example_2_1.jsonld">Open in new window</a>
     <a target="_blank" href="https://json-ld.org/playground/#json-ld=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Funstable%2Fsosa%2Fproperties%2Fobservation%2Fexample_2_1.jsonld">View on JSON-LD Playground</a>
 </blockquote>
-<div class="highlight"><pre class="highlight turtle tab-turtle"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">sosa:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/sosa/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+<div class="highlight"><pre class="highlight turtle tab-turtle"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">ns1:</span><span class="w"> </span><span class="nl">&lt;rdfs:&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">sosa:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/sosa/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 
 </span><span class="p">[]</span><span class="w"> </span><span class="nn">sosa:</span><span class="n">hasFeatureOfInterest</span><span class="w"> </span><span class="nl">&lt;https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">sosa:</span><span class="n">hasSimpleResult</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">hasResult</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nn">ns1:</span><span class="n">comment</span><span class="w"> </span><span class="s">"I feel good"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">observedProperty</span><span class="w"> </span><span class="nl">&lt;file:///github/workspace/p1&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">sosa:</span><span class="n">resultTime</span><span class="w"> </span><span class="s">"2022-05-01T22:33:44Z"</span><span class="w"> </span><span class="p">.</span><span class="w">
 
 

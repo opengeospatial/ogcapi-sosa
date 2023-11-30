@@ -1,5 +1,5 @@
 Validation report for ogc.unstable.sosa.properties.observationCollection - SOSA ObservationCollection
-Generated 2023-11-30T07:07:42.742295+00:00
+Generated 2023-11-30T07:11:48.827625+00:00
 === Files ===
 Using example_3_1.ttl from examples
 Output Turtle example_3_1.ttl created
@@ -11,10 +11,12 @@ Validation result for _sources/properties/observation/rules.shacl:
   Conforms: True
   
 Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape <http://example.com/rules#testRequiredTime>: eg:a1
- - Shape <http://example.com/rules#testResult>: eg:a1
- - Shape <http://example.com/rules#testFeatureOfInterest>: eg:a1
- - Shape <http://example.com/rules#testObservedProperty>: eg:a1
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: eg:a1
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: eg:a1/sosa:hasSimpleResult
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: eg:a1
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: eg:a1
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: eg:a1
 
 === End SHACL ===
 

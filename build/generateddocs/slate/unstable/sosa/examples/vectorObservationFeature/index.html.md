@@ -22,7 +22,7 @@ meta:
 
 # Example SOSA Vector Observation Feature `ogc.unstable.sosa.examples.vectorObservationFeature`
 
-This building block defines an example SOSA Observation Feature for a Vector Observation
+This building block defines an example SOSA Observation Feature using another schema to define a result set - in this case the GeoPose model
 
 <p class="status">
     <span data-rainbow-uri="http://www.opengis.net/def/status">Status</span>:
@@ -41,43 +41,51 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
 
 ```json
 {
-          "@id": "vector-obs-1",
-          "type":"Feature",
-          "geometry":{
-            "type":"LineString",
-            "coordinates":[
-              [
-                -111.67183507997295,
-                40.056709946862874
-              ],
-              [
-                -111.71,
-                40.156709946862874
-              ]
-            ]
-          },
-          "time":null,
-          "place":null,
-          "properties":{
-            "hasFeatureOfInterest":"eg:Traverse-P1-P2",
-            "resultTime":"2023-05-22T16:41:00+2",
-            "hasResult":{
-              "pose":{
-                "position":{
-                  "lat":-111.67183507997295,
-                  "lon":40.056709946862874,
-                  "h":0.5
-                },
-                "angles":{
-                  "yaw":15.35,
-                  "pitch":-0.01,
-                  "roll":0
-                }
-              },
-              "distance":6889234.2
-            }
-          }
+  "@id": "vector-obs-1",
+  "type": "Feature",
+  "geometry": {
+    "type": "LineString",
+    "coordinates": [
+      [
+        -111.67183507997295,
+        40.056709946862874
+      ],
+      [
+        -111.71,
+        40.156709946862874
+      ]
+    ]
+  },
+  "time": null,
+  "place": null,
+  "properties": {
+    "hasFeatureOfInterest": "eg:Traverse-P1-P2",
+    "observedProperty": "Geopose (or a URI for this concept)",
+    "resultTime": "2023-05-22T16:41:00+2",
+    "hasResult": {
+      "@context": {
+        "resultschema": "http://example.org/resultschema/",
+        "pose": "resultschema:pose",
+        "distance": {
+          "@id": "resultschema:distance"
         }
+      },
+      "pose": {
+        "position": {
+          "lat": -111.67183507997295,
+          "lon": 40.056709946862874,
+          "h": 0.5
+        },
+        "angles": {
+          "yaw": 15.35,
+          "pitch": -0.01,
+          "roll": 0
+        }
+      },
+      "distance": 6889234.2
+    }
+  }
+}
 
 ```
 
@@ -111,8 +119,16 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
   "place": null,
   "properties": {
     "hasFeatureOfInterest": "eg:Traverse-P1-P2",
+    "observedProperty": "Geopose (or a URI for this concept)",
     "resultTime": "2023-05-22T16:41:00+2",
     "hasResult": {
+      "@context": {
+        "resultschema": "http://example.org/resultschema/",
+        "pose": "resultschema:pose",
+        "distance": {
+          "@id": "resultschema:distance"
+        }
+      },
       "pose": {
         "position": {
           "lat": -111.67183507997295,
@@ -142,13 +158,24 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
 
 
 ```turtle
+@prefix geo1: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
+@prefix geopose: <http://example.com/geopose/> .
+@prefix ns1: <http://example.org/resultschema/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://example.com/features/vector-obs-1> a geojson:Feature ;
     sosa:hasFeatureOfInterest <eg:Traverse-P1-P2> ;
-    sosa:hasResult [ ] ;
+    sosa:hasResult [ ns1:distance 6.889234e+06 ;
+            ns1:pose [ geopose:angles [ geopose:pitch -1e-02 ;
+                            geopose:roll 0 ;
+                            geopose:yaw 1.535e+01 ] ;
+                    geopose:position [ geopose:h 5e-01 ;
+                            geo1:lat -1.116718e+02 ;
+                            geo1:long 4.005671e+01 ] ] ] ;
+    sosa:observedProperty <http://example.com/features/> ;
     sosa:resultTime "2023-05-22T16:41:00+2" ;
     geojson:geometry [ a geojson:LineString ;
             geojson:coordinates ( "[-111.67183507997295, 40.056709946862874]" "[-111.71, 40.156709946862875]" ) ] .
@@ -169,7 +196,7 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
 
 ```json
 {
-    "@context": {
+  "@context": {
     "resultschema": "http://example.org/resultschema/",
     "pose": "resultschema:pose",
     "distance": {
@@ -179,48 +206,49 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
   "@id": "c1",
   "type": "FeatureCollection",
   "featureType": "sosa:ObservationCollection",
+  "observedProperty": "Geopose (or a URI for this concept)",
   "properties": {
     "resultTime": "1999"
   },
   "features": [
     {
-          "@id": "vector-obs-1",
-          "type":"Feature",
-          "geometry":{
-            "type":"LineString",
-            "coordinates":[
-              [
-                -111.67183507997295,
-                40.056709946862874
-              ],
-              [
-                -111.67183507997295,
-                40.056709946862874
-              ]
-            ]
-          },
-          "time":null,
-          "place":null,
-          "properties":{
-            "hasFeatureOfInterest":"eg:Traverse-P1-P2",
-            "resultTime":"2023-05-22T16:41:00+2",
-            "hasResult":{
-              "pose":{
-                "position":{
-                  "lat":-111.67183507997295,
-                  "lon":40.056709946862874,
-                  "h":0.5
-                },
-                "angles":{
-                  "yaw":15.35,
-                  "pitch":-0.01,
-                  "roll":0
-                }
-              },
-              "distance":6889234.2
+      "@id": "vector-obs-1",
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -111.67183507997295,
+            40.056709946862874
+          ],
+          [
+            -111.67183507997295,
+            40.056709946862874
+          ]
+        ]
+      },
+      "time": null,
+      "place": null,
+      "properties": {
+        "hasFeatureOfInterest": "eg:Traverse-P1-P2",
+        "resultTime": "2023-05-22T16:41:00+2",
+        "hasResult": {
+          "pose": {
+            "position": {
+              "lat": -111.67183507997295,
+              "lon": 40.056709946862874,
+              "h": 0.5
+            },
+            "angles": {
+              "yaw": 15.35,
+              "pitch": -0.01,
+              "roll": 0
             }
-          }
+          },
+          "distance": 6889234.2
         }
+      }
+    }
   ]
 }
 ```
@@ -249,6 +277,7 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
   "@id": "c1",
   "type": "FeatureCollection",
   "featureType": "sosa:ObservationCollection",
+  "observedProperty": "Geopose (or a URI for this concept)",
   "properties": {
     "resultTime": "1999"
   },
@@ -315,6 +344,7 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
 
 <http://example.com/features/c1> a sosa:ObservationCollection,
         geojson:FeatureCollection ;
+    sosa:observedProperty <http://example.com/features/> ;
     sosa:resultTime "1999" ;
     geojson:features <http://example.com/features/vector-obs-1> .
 

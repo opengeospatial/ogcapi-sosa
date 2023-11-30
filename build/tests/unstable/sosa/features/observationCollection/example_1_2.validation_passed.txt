@@ -1,5 +1,5 @@
 Validation report for ogc.unstable.sosa.features.observationCollection - SOSA ObservationCollection Feature
-Generated 2023-11-30T07:07:45.148826+00:00
+Generated 2023-11-30T07:11:49.828937+00:00
 === Files ===
 Using example_1_2.ttl from examples
 Output Turtle example_1_2.ttl created
@@ -11,10 +11,12 @@ Validation result for _sources/properties/observation/rules.shacl:
   Conforms: True
   
 Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape <http://example.com/rules#testRequiredTime>: eg:pop2000,eg:pop1999
- - Shape <http://example.com/rules#testResult>: eg:pop2000,eg:pop1999
- - Shape <http://example.com/rules#testFeatureOfInterest>: eg:pop2000,eg:pop1999
- - Shape <http://example.com/rules#testObservedProperty>: eg:pop2000,eg:pop1999
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: eg:pop2000,eg:pop1999
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: eg:pop1999/sosa:hasSimpleResult,eg:pop2000/sosa:hasSimpleResult
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: eg:pop2000,eg:pop1999
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: eg:pop2000,eg:pop1999
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: eg:pop2000,eg:pop1999
 
 === End SHACL ===
 

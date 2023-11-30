@@ -1,0 +1,39 @@
+Validation report for ogc.unstable.sosa.properties.observation - SOSA Observation
+Generated 2023-11-30T07:11:48.438404+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using non-simpleresult-fail.jsonld from test resources
+Output Turtle non-simpleresult-fail.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+
+=== SHACL ===
+
+** Validation error **
+Validation result for _sources/properties/observation/rules.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Constraint Violation in NodeKindConstraintComponent (http://www.w3.org/ns/shacl#NodeKindConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>
+  	Focus Node: [ ]
+  	Value Node: [ ]
+  	Message: sosa:hasSimpleResult is a simple Literal
+  
+Focus nodes for _sources/properties/observation/rules.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: _:N8345e3f3275342f5b0007252e0980ea7
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: _:N5cd9552ced8e48bfaec13edbca62dd60
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: _:N8345e3f3275342f5b0007252e0980ea7
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: _:N8345e3f3275342f5b0007252e0980ea7
+
+=== End SHACL ===
+

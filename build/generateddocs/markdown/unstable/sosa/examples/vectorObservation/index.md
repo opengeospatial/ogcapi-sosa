@@ -15,7 +15,15 @@ This building block defines an example SOSA Vector Observation
 {
   "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
   "resultTime": "2023-05-22T16:41:00+2",
+  "observedProperty": "p1",
   "hasResult": {
+    "@context": {
+       "resultschema": "http://example.org/resultschema/",
+       "pose": "resultschema:pose",
+       "distance": {
+         "@id": "resultschema:distance"
+       }
+     },
     "pose": {
       "position": {
         "lat": 43.46498208387333,
@@ -38,7 +46,15 @@ This building block defines an example SOSA Vector Observation
 {
   "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
   "resultTime": "2023-05-22T16:41:00+2",
+  "observedProperty": "p1",
   "hasResult": {
+    "@context": {
+      "resultschema": "http://example.org/resultschema/",
+      "pose": "resultschema:pose",
+      "distance": {
+        "@id": "resultschema:distance"
+      }
+    },
     "pose": {
       "position": {
         "lat": 43.46498208387333,
@@ -58,10 +74,20 @@ This building block defines an example SOSA Vector Observation
 
 #### ttl
 ```ttl
+@prefix geo1: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix geopose: <http://example.com/geopose/> .
+@prefix ns1: <http://example.org/resultschema/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 [] sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
-    sosa:hasResult [ ] ;
+    sosa:hasResult [ ns1:pose [ geopose:angles [ geopose:pitch -9.2e-01 ;
+                            geopose:roll 3.3e-01 ;
+                            geopose:yaw 5.553e+00 ] ;
+                    geopose:position [ geopose:h 5e-01 ;
+                            geo1:lat 4.346498e+01 ;
+                            geo1:long -3.803638e+00 ] ] ] ;
+    sosa:observedProperty <file:///github/workspace/p1> ;
     sosa:resultTime "2023-05-22T16:41:00+2" .
 
 

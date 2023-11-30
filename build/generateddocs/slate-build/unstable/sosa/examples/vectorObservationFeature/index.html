@@ -358,7 +358,7 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='example-sosa-vector-observation-feature-ogc-unstable-sosa-examples-vectorobservationfeature'>Example SOSA Vector Observation Feature <code>ogc.unstable.sosa.examples.vectorObservationFeature</code></h1>
-<p>This building block defines an example SOSA Observation Feature for a Vector Observation</p>
+<p>This building block defines an example SOSA Observation Feature using another schema to define a result set - in this case the GeoPose model</p>
 
 <p class="status">
     <span data-rainbow-uri="http://www.opengis.net/def/status">Status</span>:
@@ -369,43 +369,51 @@
 This building block is <strong><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/unstable/sosa/examples/vectorObservationFeature/" target="_blank">valid</a></strong>
 </aside>
 <h1 id='examples'>Examples</h1><h2 id='vectorobservation-specialisation-example'>VectorObservation - specialisation example.</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vector-obs-1"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"geometry"</span><span class="p">:{</span><span class="w">
-            </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"LineString"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"coordinates"</span><span class="p">:[</span><span class="w">
-              </span><span class="p">[</span><span class="w">
-                </span><span class="mf">-111.67183507997295</span><span class="p">,</span><span class="w">
-                </span><span class="mf">40.056709946862874</span><span class="w">
-              </span><span class="p">],</span><span class="w">
-              </span><span class="p">[</span><span class="w">
-                </span><span class="mf">-111.71</span><span class="p">,</span><span class="w">
-                </span><span class="mf">40.156709946862874</span><span class="w">
-              </span><span class="p">]</span><span class="w">
-            </span><span class="p">]</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="nl">"time"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"place"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"properties"</span><span class="p">:{</span><span class="w">
-            </span><span class="nl">"hasFeatureOfInterest"</span><span class="p">:</span><span class="s2">"eg:Traverse-P1-P2"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"resultTime"</span><span class="p">:</span><span class="s2">"2023-05-22T16:41:00+2"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"hasResult"</span><span class="p">:{</span><span class="w">
-              </span><span class="nl">"pose"</span><span class="p">:{</span><span class="w">
-                </span><span class="nl">"position"</span><span class="p">:{</span><span class="w">
-                  </span><span class="nl">"lat"</span><span class="p">:</span><span class="mf">-111.67183507997295</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"lon"</span><span class="p">:</span><span class="mf">40.056709946862874</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"h"</span><span class="p">:</span><span class="mf">0.5</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"angles"</span><span class="p">:{</span><span class="w">
-                  </span><span class="nl">"yaw"</span><span class="p">:</span><span class="mf">15.35</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"pitch"</span><span class="p">:</span><span class="mf">-0.01</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"roll"</span><span class="p">:</span><span class="mi">0</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-              </span><span class="p">},</span><span class="w">
-              </span><span class="nl">"distance"</span><span class="p">:</span><span class="mf">6889234.2</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">}</span><span class="w">
+  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vector-obs-1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LineString"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">[</span><span class="w">
+        </span><span class="mf">-111.67183507997295</span><span class="p">,</span><span class="w">
+        </span><span class="mf">40.056709946862874</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="p">[</span><span class="w">
+        </span><span class="mf">-111.71</span><span class="p">,</span><span class="w">
+        </span><span class="mf">40.156709946862874</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"place"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"hasFeatureOfInterest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eg:Traverse-P1-P2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"observedProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Geopose (or a URI for this concept)"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"resultTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-05-22T16:41:00+2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hasResult"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"resultschema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.org/resultschema/"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pose"</span><span class="p">:</span><span class="w"> </span><span class="s2">"resultschema:pose"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"distance"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"resultschema:distance"</span><span class="w">
         </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"pose"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">-111.67183507997295</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">40.056709946862874</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"h"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"angles"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"yaw"</span><span class="p">:</span><span class="w"> </span><span class="mf">15.35</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"pitch"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.01</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"roll"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"distance"</span><span class="p">:</span><span class="w"> </span><span class="mf">6889234.2</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
 <blockquote class="lang-specific json">
@@ -433,8 +441,16 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
   </span><span class="nl">"place"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
   </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"hasFeatureOfInterest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eg:Traverse-P1-P2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"observedProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Geopose (or a URI for this concept)"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"resultTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-05-22T16:41:00+2"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"hasResult"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"resultschema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.org/resultschema/"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pose"</span><span class="p">:</span><span class="w"> </span><span class="s2">"resultschema:pose"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"distance"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"resultschema:distance"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
       </span><span class="nl">"pose"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">-111.67183507997295</span><span class="p">,</span><span class="w">
@@ -458,13 +474,24 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
     <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/unstable/sosa/examples/vectorObservationFeature/example_1_1.jsonld">Open in new window</a>
     <a target="_blank" href="https://json-ld.org/playground/#json-ld=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Funstable%2Fsosa%2Fexamples%2FvectorObservationFeature%2Fexample_1_1.jsonld">View on JSON-LD Playground</a>
 </blockquote>
-<div class="highlight"><pre class="highlight turtle tab-turtle"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">geojson:</span><span class="w"> </span><span class="nl">&lt;https://purl.org/geojson/vocab#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+<div class="highlight"><pre class="highlight turtle tab-turtle"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">geo1:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2003/01/geo/wgs84_pos#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">geojson:</span><span class="w"> </span><span class="nl">&lt;https://purl.org/geojson/vocab#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">geopose:</span><span class="w"> </span><span class="nl">&lt;http://example.com/geopose/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">ns1:</span><span class="w"> </span><span class="nl">&lt;http://example.org/resultschema/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">sosa:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/sosa/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 
 </span><span class="nl">&lt;http://example.com/features/vector-obs-1&gt;</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">geojson:</span><span class="n">Feature</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">sosa:</span><span class="n">hasFeatureOfInterest</span><span class="w"> </span><span class="nl">&lt;eg:Traverse-P1-P2&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">sosa:</span><span class="n">hasResult</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">hasResult</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nn">ns1:</span><span class="n">distance</span><span class="w"> </span><span class="mf">6.8</span><span class="mi">89234</span><span class="n">e+06</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">ns1:</span><span class="n">pose</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nn">geopose:</span><span class="n">angles</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nn">geopose:</span><span class="n">pitch</span><span class="w"> </span><span class="mi">-1</span><span class="n">e-02</span><span class="w"> </span><span class="p">;</span><span class="w">
+                            </span><span class="nn">geopose:</span><span class="n">roll</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w">
+                            </span><span class="nn">geopose:</span><span class="n">yaw</span><span class="w"> </span><span class="mf">1.5</span><span class="mi">35</span><span class="n">e+01</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+                    </span><span class="nn">geopose:</span><span class="n">position</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nn">geopose:</span><span class="n">h</span><span class="w"> </span><span class="mi">5</span><span class="n">e-01</span><span class="w"> </span><span class="p">;</span><span class="w">
+                            </span><span class="nn">geo1:</span><span class="n">lat</span><span class="w"> </span><span class="mf">-1.1</span><span class="mi">16718</span><span class="n">e+02</span><span class="w"> </span><span class="p">;</span><span class="w">
+                            </span><span class="nn">geo1:</span><span class="n">long</span><span class="w"> </span><span class="mf">4.0</span><span class="mi">05671</span><span class="n">e+01</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">observedProperty</span><span class="w"> </span><span class="nl">&lt;http://example.com/features/&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">sosa:</span><span class="n">resultTime</span><span class="w"> </span><span class="s">"2023-05-22T16:41:00+2"</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">geojson:</span><span class="n">geometry</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">geojson:</span><span class="n">LineString</span><span class="w"> </span><span class="p">;</span><span class="w">
             </span><span class="nn">geojson:</span><span class="n">coordinates</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="s">"[-111.67183507997295, 40.056709946862874]"</span><span class="w"> </span><span class="s">"[-111.71, 40.156709946862875]"</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">.</span><span class="w">
@@ -476,7 +503,7 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
     <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/unstable/sosa/examples/vectorObservationFeature/example_1_1.ttl">Open in new window</a>
 </blockquote>
 <h2 id='vectorobservationcollection'>VectorObservationCollection</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"resultschema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.org/resultschema/"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"pose"</span><span class="p">:</span><span class="w"> </span><span class="s2">"resultschema:pose"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"distance"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -486,48 +513,49 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
   </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c1"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FeatureCollection"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"featureType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:ObservationCollection"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"observedProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Geopose (or a URI for this concept)"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"resultTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1999"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"features"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vector-obs-1"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"geometry"</span><span class="p">:{</span><span class="w">
-            </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"LineString"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"coordinates"</span><span class="p">:[</span><span class="w">
-              </span><span class="p">[</span><span class="w">
-                </span><span class="mf">-111.67183507997295</span><span class="p">,</span><span class="w">
-                </span><span class="mf">40.056709946862874</span><span class="w">
-              </span><span class="p">],</span><span class="w">
-              </span><span class="p">[</span><span class="w">
-                </span><span class="mf">-111.67183507997295</span><span class="p">,</span><span class="w">
-                </span><span class="mf">40.056709946862874</span><span class="w">
-              </span><span class="p">]</span><span class="w">
-            </span><span class="p">]</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="nl">"time"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"place"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"properties"</span><span class="p">:{</span><span class="w">
-            </span><span class="nl">"hasFeatureOfInterest"</span><span class="p">:</span><span class="s2">"eg:Traverse-P1-P2"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"resultTime"</span><span class="p">:</span><span class="s2">"2023-05-22T16:41:00+2"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"hasResult"</span><span class="p">:{</span><span class="w">
-              </span><span class="nl">"pose"</span><span class="p">:{</span><span class="w">
-                </span><span class="nl">"position"</span><span class="p">:{</span><span class="w">
-                  </span><span class="nl">"lat"</span><span class="p">:</span><span class="mf">-111.67183507997295</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"lon"</span><span class="p">:</span><span class="mf">40.056709946862874</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"h"</span><span class="p">:</span><span class="mf">0.5</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"angles"</span><span class="p">:{</span><span class="w">
-                  </span><span class="nl">"yaw"</span><span class="p">:</span><span class="mf">15.35</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"pitch"</span><span class="p">:</span><span class="mf">-0.01</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"roll"</span><span class="p">:</span><span class="mi">0</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-              </span><span class="p">},</span><span class="w">
-              </span><span class="nl">"distance"</span><span class="p">:</span><span class="mf">6889234.2</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vector-obs-1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LineString"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">[</span><span class="w">
+            </span><span class="mf">-111.67183507997295</span><span class="p">,</span><span class="w">
+            </span><span class="mf">40.056709946862874</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="p">[</span><span class="w">
+            </span><span class="mf">-111.67183507997295</span><span class="p">,</span><span class="w">
+            </span><span class="mf">40.056709946862874</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"place"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"hasFeatureOfInterest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eg:Traverse-P1-P2"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"resultTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-05-22T16:41:00+2"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasResult"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"pose"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">-111.67183507997295</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">40.056709946862874</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"h"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"angles"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"yaw"</span><span class="p">:</span><span class="w"> </span><span class="mf">15.35</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"pitch"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.01</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"roll"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
             </span><span class="p">}</span><span class="w">
-          </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"distance"</span><span class="p">:</span><span class="w"> </span><span class="mf">6889234.2</span><span class="w">
         </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -550,6 +578,7 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
   </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c1"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FeatureCollection"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"featureType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:ObservationCollection"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"observedProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Geopose (or a URI for this concept)"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"resultTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1999"</span><span class="w">
   </span><span class="p">},</span><span class="w">
@@ -610,6 +639,7 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
 
 </span><span class="nl">&lt;http://example.com/features/c1&gt;</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">sosa:</span><span class="n">ObservationCollection,
 </span><span class="w">        </span><span class="nn">geojson:</span><span class="n">FeatureCollection</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">observedProperty</span><span class="w"> </span><span class="nl">&lt;http://example.com/features/&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">sosa:</span><span class="n">resultTime</span><span class="w"> </span><span class="s">"1999"</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">geojson:</span><span class="n">features</span><span class="w"> </span><span class="nl">&lt;http://example.com/features/vector-obs-1&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 

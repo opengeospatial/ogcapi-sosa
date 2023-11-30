@@ -19,8 +19,8 @@
   "maturity": "development",
   "scope": "unstable",
   "dependsOn": [
-    "ogc.geo.geopose.basic.ypr",
-    "ogc.unstable.sosa.properties.observation"
+    "ogc.unstable.sosa.properties.observation",
+    "ogc.geo.geopose.basic.ypr"
   ],
   "tags": [
     "sosa",
@@ -49,17 +49,17 @@
       "snippets": [
         {
           "language": "json",
-          "code": "{\n  \"hasFeatureOfInterest\": \"https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem\",\n  \"resultTime\": \"2023-05-22T16:41:00+2\",\n  \"hasResult\": {\n    \"pose\": {\n      \"position\": {\n        \"lat\": 43.46498208387333,\n        \"lon\": -3.803638278687769,\n        \"h\": 0.5\n      },\n      \"angles\": {\n        \"yaw\": 5.553,\n        \"pitch\": -0.92,\n        \"roll\": 0.33\n      }\n    }\n  }\n}\n",
+          "code": "{\n  \"hasFeatureOfInterest\": \"https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem\",\n  \"resultTime\": \"2023-05-22T16:41:00+2\",\n  \"observedProperty\": \"p1\",\n  \"hasResult\": {\n    \"@context\": {\n       \"resultschema\": \"http://example.org/resultschema/\",\n       \"pose\": \"resultschema:pose\",\n       \"distance\": {\n         \"@id\": \"resultschema:distance\"\n       }\n     },\n    \"pose\": {\n      \"position\": {\n        \"lat\": 43.46498208387333,\n        \"lon\": -3.803638278687769,\n        \"h\": 0.5\n      },\n      \"angles\": {\n        \"yaw\": 5.553,\n        \"pitch\": -0.92,\n        \"roll\": 0.33\n      }\n    }\n  }\n}\n",
           "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/unstable/sosa/examples/vectorObservation/example_1_1.json"
         },
         {
           "language": "jsonld",
-          "code": "{\n  \"hasFeatureOfInterest\": \"https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem\",\n  \"resultTime\": \"2023-05-22T16:41:00+2\",\n  \"hasResult\": {\n    \"pose\": {\n      \"position\": {\n        \"lat\": 43.46498208387333,\n        \"lon\": -3.803638278687769,\n        \"h\": 0.5\n      },\n      \"angles\": {\n        \"yaw\": 5.553,\n        \"pitch\": -0.92,\n        \"roll\": 0.33\n      }\n    }\n  },\n  \"@context\": \"https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/context.jsonld\"\n}",
+          "code": "{\n  \"hasFeatureOfInterest\": \"https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem\",\n  \"resultTime\": \"2023-05-22T16:41:00+2\",\n  \"observedProperty\": \"p1\",\n  \"hasResult\": {\n    \"@context\": {\n      \"resultschema\": \"http://example.org/resultschema/\",\n      \"pose\": \"resultschema:pose\",\n      \"distance\": {\n        \"@id\": \"resultschema:distance\"\n      }\n    },\n    \"pose\": {\n      \"position\": {\n        \"lat\": 43.46498208387333,\n        \"lon\": -3.803638278687769,\n        \"h\": 0.5\n      },\n      \"angles\": {\n        \"yaw\": 5.553,\n        \"pitch\": -0.92,\n        \"roll\": 0.33\n      }\n    }\n  },\n  \"@context\": \"https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/examples/vectorObservation/context.jsonld\"\n}",
           "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/unstable/sosa/examples/vectorObservation/example_1_1.jsonld"
         },
         {
           "language": "ttl",
-          "code": "@prefix sosa: <http://www.w3.org/ns/sosa/> .\n\n[] sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;\n    sosa:hasResult [ ] ;\n    sosa:resultTime \"2023-05-22T16:41:00+2\" .\n\n",
+          "code": "@prefix geo1: <http://www.w3.org/2003/01/geo/wgs84_pos#> .\n@prefix geopose: <http://example.com/geopose/> .\n@prefix ns1: <http://example.org/resultschema/> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;\n    sosa:hasResult [ ns1:pose [ geopose:angles [ geopose:pitch -9.2e-01 ;\n                            geopose:roll 3.3e-01 ;\n                            geopose:yaw 5.553e+00 ] ;\n                    geopose:position [ geopose:h 5e-01 ;\n                            geo1:lat 4.346498e+01 ;\n                            geo1:long -3.803638e+00 ] ] ] ;\n    sosa:observedProperty <file:///github/workspace/p1> ;\n    sosa:resultTime \"2023-05-22T16:41:00+2\" .\n\n",
           "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/unstable/sosa/examples/vectorObservation/example_1_1.ttl"
         }
       ]
