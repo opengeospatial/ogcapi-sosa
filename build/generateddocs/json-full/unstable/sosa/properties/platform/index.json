@@ -1,0 +1,69 @@
+
+
+{
+  "itemIdentifier": "ogc.unstable.sosa.properties.platform",
+  "name": "SOSA Platform",
+  "abstract": "This building block defines the set of properties for an observation Platform according to the SOSA/SSN specification. These properties may be directly included into a root element of a JSON object or used in the properties container of a GeoJSON feature.",
+  "status": "under-development",
+  "dateTimeAddition": "2023-12-05T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ogc-building-block-register",
+  "version": "1.0",
+  "dateOfLastChange": "2023-04-13",
+  "sources": [
+    {
+      "title": "Semantic Sensor Network Ontology",
+      "link": "https://www.w3.org/TR/vocab-ssn/"
+    }
+  ],
+  "maturity": "development",
+  "scope": "unstable",
+  "tags": [
+    "sosa",
+    "ssn",
+    "observations",
+    "o&m",
+    "o&m&s"
+  ],
+  "group": "SOSA",
+  "shaclRules": {},
+  "dependsOn": [
+    "ogc.ogc-utils.iri-or-curie",
+    "ogc.unstable.sosa.properties.sensor"
+  ],
+  "schema": {
+    "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/platform/schema.yaml",
+    "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/platform/schema.json"
+  },
+  "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/platform/context.jsonld",
+  "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/platform/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/unstable/sosa/properties/platform/",
+  "description": "## SOSA Platform Properties\n\nThis building block describes the canonical set of properties for an Platform object.\n\nThese properties are independent of the feature model implementation - for example may be included in the \"properties\" component of a GeoJSON object, or used in any other schema.\n\n\n\n",
+  "examples": [
+    {
+      "title": "Example of Platform hosting multiple sensors",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "examples/platform.json",
+          "code": "{\n  \"@context\": {\n    \"eg\": \"http://example.org/sensors\",\n    \"resolution\": \"http://camera-specs.org/params/imageResolution\"\n  },\n  \"id\": \"eg:myPhone\",\n  \"sensorType\": \"eg:phone\",\n  \"hosts\": [\n    {\n      \"sensorType\": \"eg:camera\",\n      \"id\": \"eg:123\",\n      \"resolution\": 20000\n    },\n    {\n      \"sensorType\": \"eg:compass\",\n      \"id\": \"eg:mkV\"\n    }\n  ]\n}",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/unstable/sosa/properties/platform/example_1_1.json"
+        },
+        {
+          "language": "jsonld",
+          "code": "{\n  \"@context\": [\n    \"https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/platform/context.jsonld\",\n    {\n      \"eg\": \"http://example.org/sensors\",\n      \"resolution\": \"http://camera-specs.org/params/imageResolution\"\n    }\n  ],\n  \"id\": \"eg:myPhone\",\n  \"sensorType\": \"eg:phone\",\n  \"hosts\": [\n    {\n      \"sensorType\": \"eg:camera\",\n      \"id\": \"eg:123\",\n      \"resolution\": 20000\n    },\n    {\n      \"sensorType\": \"eg:compass\",\n      \"id\": \"eg:mkV\"\n    }\n  ]\n}",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/unstable/sosa/properties/platform/example_1_1.jsonld"
+        },
+        {
+          "language": "ttl",
+          "code": "@prefix ns1: <http://camera-specs.org/params/> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<eg:myPhone> sosa:hosts <eg:123>,\n        <eg:mkV> .\n\n<eg:123> ns1:imageResolution 20000 .\n\n",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/unstable/sosa/properties/platform/example_1_1.ttl"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: SOSA Platform\n$definitions:\n  Platform:\n    anyOf:\n    - $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml\n    - type: object\n      properties:\n        hosts:\n          type: array\n          items:\n            anyOf:\n            - $ref: '#/$definitions/Platform'\n            - $ref: ../sensor/schema.yaml#/$definitions/Sensor\n          x-jsonld-id: http://www.w3.org/ns/sosa/hosts\n          x-jsonld-type: '@id'\n          x-jsonld-container: '@set'\nallOf:\n- $ref: '#/$definitions/Platform'\nx-jsonld-extra-terms:\n  Observation: http://www.w3.org/ns/sosa/Observation\n  Sample: http://www.w3.org/ns/sosa/Sample\n  System: http://www.w3.org/ns/sosa/System\n  Platform: http://www.w3.org/ns/sosa/Platform\n  observedProperty:\n    x-jsonld-id: http://www.w3.org/ns/sosa/observedProperty\n    x-jsonld-type: '@id'\n  id: '@id'\n  phenomenonTime: http://www.w3.org/ns/sosa/phenomenonTime\n  observes:\n    x-jsonld-id: http://www.w3.org/ns/sosa/observes\n    x-jsonld-type: '@id'\n  isObservedBy:\n    x-jsonld-id: http://www.w3.org/ns/sosa/isObservedBy\n    x-jsonld-type: '@id'\n  madeObservation:\n    x-jsonld-id: http://www.w3.org/ns/sosa/madeObservation\n    x-jsonld-type: '@id'\n  madeBySensor:\n    x-jsonld-id: http://www.w3.org/ns/sosa/madeBySensor\n    x-jsonld-type: '@id'\n  actsOnProperty:\n    x-jsonld-id: http://www.w3.org/ns/sosa/actsOnProperty\n    x-jsonld-type: '@id'\n  isActedOnBy:\n    x-jsonld-id: http://www.w3.org/ns/sosa/isActedOnBy\n    x-jsonld-type: '@id'\n  madeActuation:\n    x-jsonld-id: http://www.w3.org/ns/sosa/madeActuation\n    x-jsonld-type: '@id'\n  madeByActuator:\n    x-jsonld-id: http://www.w3.org/ns/sosa/madeByActuator\n    x-jsonld-type: '@id'\n  hasSample:\n    x-jsonld-id: http://www.w3.org/ns/sosa/hasSample\n    x-jsonld-type: '@id'\n  isSampleOf:\n    x-jsonld-id: http://www.w3.org/ns/sosa/isSampleOf\n    x-jsonld-type: '@id'\n  madeSampling:\n    x-jsonld-id: http://www.w3.org/ns/sosa/madeSampling\n    x-jsonld-type: '@id'\n  madeBySampler:\n    x-jsonld-id: http://www.w3.org/ns/sosa/madeBySampler\n    x-jsonld-type: '@id'\n  hasFeatureOfInterest:\n    x-jsonld-id: http://www.w3.org/ns/sosa/hasFeatureOfInterest\n    x-jsonld-type: '@id'\n  isFeatureOfInterestOf:\n    x-jsonld-id: http://www.w3.org/ns/sosa/isFeatureOfInterestOf\n    x-jsonld-type: '@id'\n  hasResult: http://www.w3.org/ns/sosa/hasResult\n  isResultOf: http://www.w3.org/ns/sosa/isResultOf\n  hasSimpleResult: http://www.w3.org/ns/sosa/hasSimpleResult\n  resultTime: http://www.w3.org/ns/sosa/resultTime\n  usedProcedure:\n    x-jsonld-id: http://www.w3.org/ns/sosa/usedProcedure\n    x-jsonld-type: '@id'\n  isHostedBy: http://www.w3.org/ns/sosa/isHostedBy\n  isProxyFor: http://www.w3.org/ns/sosa/isProxyFor\n  wasOriginatedBy: http://www.w3.org/ns/sosa/wasOriginatedBy\n  detects: http://www.w3.org/ns/sosa/detects\n  hasProperty: http://www.w3.org/ns/sosa/hasProperty\n  isPropertyOf: http://www.w3.org/ns/sosa/isPropertyOf\n  forProperty: http://www.w3.org/ns/sosa/forProperty\n  implements: http://www.w3.org/ns/sosa/implements\n  implementedBy: http://www.w3.org/ns/sosa/implementedBy\n  hasInput: http://www.w3.org/ns/sosa/hasInput\n  hasOutput: http://www.w3.org/ns/sosa/hasOutput\n  hasSubSystem:\n    x-jsonld-id: http://www.w3.org/ns/sosa/hasSubSystem\n    x-jsonld-type: '@id'\n    x-jsonld-container: '@set'\n  deployedSystem: http://www.w3.org/ns/sosa/deployedSystem\n  hasDeployment: http://www.w3.org/ns/sosa/hasDeployment\n  deployedOnPlatform: http://www.w3.org/ns/sosa/deployedOnPlatform\n  inDeployment: http://www.w3.org/ns/sosa/inDeployment\n  inCondition: http://www.w3.org/ns/ssn/systems/inCondition\n  hasSystemCapability: http://www.w3.org/ns/ssn/systems/hasSystemCapability\n  hasSystemProperty: http://www.w3.org/ns/ssn/systems/hasSystemProperty\n  hasOperatingRange: http://www.w3.org/ns/ssn/systems/hasOperatingRange\n  hasOperatingProperty: http://www.w3.org/ns/ssn/systems/hasOperatingProperty\n  hasSurvivalRange: http://www.w3.org/ns/ssn/systems/hasSurvivalRange\n  hasSurvivalProperty: http://www.w3.org/ns/ssn/systems/hasSurvivalProperty\n  qualityOfObservation: http://www.w3.org/ns/ssn/systems/qualityOfObservation\n  hasMember: http://www.w3.org/ns/sosa/hasMember\n  features: http://www.w3.org/ns/sosa/hasMember\n  properties: '@nest'\n  featureType: '@type'\nx-jsonld-prefixes:\n  sosa: http://www.w3.org/ns/sosa/\n  ssn-system: http://www.w3.org/ns/ssn/systems/\n  ssn: http://www.w3.org/ns/ssn/\n",
+  "gitRepository": "https://github.com/opengeospatial/ogcapi-sosa",
+  "gitPath": "_sources/properties/platform"
+}

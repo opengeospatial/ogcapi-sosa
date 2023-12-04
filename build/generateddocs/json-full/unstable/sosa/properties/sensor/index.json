@@ -1,0 +1,88 @@
+
+
+{
+  "itemIdentifier": "ogc.unstable.sosa.properties.sensor",
+  "name": "SOSA Sensor",
+  "abstract": "An identifiable entity that can generate Observations pertaining to an ObservableProperty by implementing an ObservingProcedure. Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms.",
+  "status": "under-development",
+  "dateTimeAddition": "2023-12-05T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ogc-building-block-register",
+  "version": "1.0",
+  "dateOfLastChange": "2023-04-13",
+  "sources": [
+    {
+      "title": "Semantic Sensor Network Ontology",
+      "link": "https://www.w3.org/TR/vocab-ssn/"
+    }
+  ],
+  "maturity": "development",
+  "scope": "unstable",
+  "tags": [
+    "sosa",
+    "ssn",
+    "observations",
+    "o&m",
+    "o&m&s"
+  ],
+  "group": "SOSA",
+  "shaclRules": {},
+  "dependsOn": [
+    "ogc.ogc-utils.iri-or-curie"
+  ],
+  "schema": {
+    "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/sensor/schema.yaml",
+    "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/sensor/schema.json"
+  },
+  "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/sensor/context.jsonld",
+  "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/sensor/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/unstable/sosa/properties/sensor/",
+  "description": "## SOSA Platform Properties\n\nThis building block describes the canonical set of properties for a System object.\n\nThese properties are independent of the feature (or object) model implementation \n\nthese properties may be combined with other sets of properties for polymorphic objects - for example a Sensor that has a complex result, but can be broken down into a set of subSystems (a System) or hosted Sensors (a Platform)\n\nProperty sets are mix-in aspects that for example may be included in the \"properties\" component of a GeoJSON object, or used in any other schema.\n\nThe \"id\" property is assumed to be common and compatible with other mix-in aspects.\n\n\n\n\n",
+  "examples": [
+    {
+      "title": "Example of of a basic sensor",
+      "snippets": [
+        {
+          "language": "json",
+          "code": "{         \"@context\": { \"eg\": \"http://example.org/sensors\",\n            \"sensorType\": {\n                  \"type\": \"@id\",\n                  \"@id\": \"sosa:sensorKind\"\n                } },\n          \"id\": \"eg:sensor1\",\n          \"sensorType\": \"eg:gnss-pair\"\n}",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/unstable/sosa/properties/sensor/example_1_1.json"
+        },
+        {
+          "language": "jsonld",
+          "code": "{\n  \"@context\": [\n    \"https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/sensor/context.jsonld\",\n    {\n      \"eg\": \"http://example.org/sensors\",\n      \"sensorType\": {\n        \"type\": \"@id\",\n        \"@id\": \"sosa:sensorKind\"\n      }\n    }\n  ],\n  \"id\": \"eg:sensor1\",\n  \"sensorType\": \"eg:gnss-pair\"\n}",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/unstable/sosa/properties/sensor/example_1_1.jsonld"
+        },
+        {
+          "language": "ttl",
+          "code": "@prefix sosa: <http://www.w3.org/ns/sosa/> .\n\n<eg:sensor1> sosa:sensorKind \"eg:gnss-pair\" .\n\n",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/unstable/sosa/properties/sensor/example_1_1.ttl"
+        }
+      ]
+    },
+    {
+      "title": "Example of of a compound sensor using the System polymorphism option",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "examples/compound.json",
+          "code": "{\n  \"@context\": {\n    \"eg\": \"http://example.org/sensors\",\n    \"sensorType\": {\n      \"type\": \"@id\",\n      \"@id\": \"sosa:sensorKind\"\n    },\n    \"description\": \"eg:description\",\n    \"lastCalibrated\": \"eg:calibrationDate\",\n    \"purpose\": \"eg.purpose\"\n  },\n  \"id\": \"eg:gnss-pair-1\",\n  \"sensorType\": \"eg:gnss-pair\",\n  \"hasSubSystem\": [\n    {\n      \"sensorType\": \"eg:gnss\",\n      \"id\": \"eg:785439870523\",\n      \"description\": \"Leica Viva GS10\",\n      \"lastCalibrated\": \"2022-09-14T15:32:45\",\n      \"purpose\": \"eg:base\"\n    },\n    {\n      \"sensorType\": \"eg:gnss\",\n      \"id\": \"eg:785439870524\",\n      \"description\": \"Leica Viva GS10\",\n      \"lastCalibrated\": \"2022-09-14T15:35:05\",\n      \"purpose\": \"eg:rover\"\n    }\n  ]\n}",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/unstable/sosa/properties/sensor/example_2_1.json"
+        },
+        {
+          "language": "jsonld",
+          "code": "{\n  \"@context\": [\n    \"https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/sensor/context.jsonld\",\n    {\n      \"eg\": \"http://example.org/sensors\",\n      \"sensorType\": {\n        \"type\": \"@id\",\n        \"@id\": \"sosa:sensorKind\"\n      },\n      \"description\": \"eg:description\",\n      \"lastCalibrated\": \"eg:calibrationDate\",\n      \"purpose\": \"eg.purpose\"\n    }\n  ],\n  \"id\": \"eg:gnss-pair-1\",\n  \"sensorType\": \"eg:gnss-pair\",\n  \"hasSubSystem\": [\n    {\n      \"sensorType\": \"eg:gnss\",\n      \"id\": \"eg:785439870523\",\n      \"description\": \"Leica Viva GS10\",\n      \"lastCalibrated\": \"2022-09-14T15:32:45\",\n      \"purpose\": \"eg:base\"\n    },\n    {\n      \"sensorType\": \"eg:gnss\",\n      \"id\": \"eg:785439870524\",\n      \"description\": \"Leica Viva GS10\",\n      \"lastCalibrated\": \"2022-09-14T15:35:05\",\n      \"purpose\": \"eg:rover\"\n    }\n  ]\n}",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/unstable/sosa/properties/sensor/example_2_1.jsonld"
+        },
+        {
+          "language": "ttl",
+          "code": "@prefix ns1: <http://example.org/> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n\n<eg:gnss-pair-1> sosa:hasSubSystem <eg:785439870523>,\n        <eg:785439870524> ;\n    sosa:sensorKind \"eg:gnss-pair\" .\n\n<eg:785439870523> <eg.purpose> \"eg:base\" ;\n    ns1:sensorscalibrationDate \"2022-09-14T15:32:45\" ;\n    ns1:sensorsdescription \"Leica Viva GS10\" ;\n    sosa:sensorKind \"eg:gnss\" .\n\n<eg:785439870524> <eg.purpose> \"eg:rover\" ;\n    ns1:sensorscalibrationDate \"2022-09-14T15:35:05\" ;\n    ns1:sensorsdescription \"Leica Viva GS10\" ;\n    sosa:sensorKind \"eg:gnss\" .\n\n",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/unstable/sosa/properties/sensor/example_2_1.ttl"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: SOSA Sensor\n$definitions:\n  Sensor:\n    anyOf:\n    - $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml\n    - type: object\n      properties:\n        id:\n          $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml\n          x-jsonld-id: '@id'\n        name:\n          type: string\nallOf:\n- $ref: '#/$definitions/Sensor'\nx-jsonld-extra-terms:\n  Observation: http://www.w3.org/ns/sosa/Observation\n  Sample: http://www.w3.org/ns/sosa/Sample\n  System: http://www.w3.org/ns/sosa/System\n  Platform: http://www.w3.org/ns/sosa/Platform\n  observedProperty:\n    x-jsonld-id: http://www.w3.org/ns/sosa/observedProperty\n    x-jsonld-type: '@id'\n  phenomenonTime: http://www.w3.org/ns/sosa/phenomenonTime\n  observes:\n    x-jsonld-id: http://www.w3.org/ns/sosa/observes\n    x-jsonld-type: '@id'\n  isObservedBy:\n    x-jsonld-id: http://www.w3.org/ns/sosa/isObservedBy\n    x-jsonld-type: '@id'\n  madeObservation:\n    x-jsonld-id: http://www.w3.org/ns/sosa/madeObservation\n    x-jsonld-type: '@id'\n  madeBySensor:\n    x-jsonld-id: http://www.w3.org/ns/sosa/madeBySensor\n    x-jsonld-type: '@id'\n  actsOnProperty:\n    x-jsonld-id: http://www.w3.org/ns/sosa/actsOnProperty\n    x-jsonld-type: '@id'\n  isActedOnBy:\n    x-jsonld-id: http://www.w3.org/ns/sosa/isActedOnBy\n    x-jsonld-type: '@id'\n  madeActuation:\n    x-jsonld-id: http://www.w3.org/ns/sosa/madeActuation\n    x-jsonld-type: '@id'\n  madeByActuator:\n    x-jsonld-id: http://www.w3.org/ns/sosa/madeByActuator\n    x-jsonld-type: '@id'\n  hasSample:\n    x-jsonld-id: http://www.w3.org/ns/sosa/hasSample\n    x-jsonld-type: '@id'\n  isSampleOf:\n    x-jsonld-id: http://www.w3.org/ns/sosa/isSampleOf\n    x-jsonld-type: '@id'\n  madeSampling:\n    x-jsonld-id: http://www.w3.org/ns/sosa/madeSampling\n    x-jsonld-type: '@id'\n  madeBySampler:\n    x-jsonld-id: http://www.w3.org/ns/sosa/madeBySampler\n    x-jsonld-type: '@id'\n  hasFeatureOfInterest:\n    x-jsonld-id: http://www.w3.org/ns/sosa/hasFeatureOfInterest\n    x-jsonld-type: '@id'\n  isFeatureOfInterestOf:\n    x-jsonld-id: http://www.w3.org/ns/sosa/isFeatureOfInterestOf\n    x-jsonld-type: '@id'\n  hasResult: http://www.w3.org/ns/sosa/hasResult\n  isResultOf: http://www.w3.org/ns/sosa/isResultOf\n  hasSimpleResult: http://www.w3.org/ns/sosa/hasSimpleResult\n  resultTime: http://www.w3.org/ns/sosa/resultTime\n  usedProcedure:\n    x-jsonld-id: http://www.w3.org/ns/sosa/usedProcedure\n    x-jsonld-type: '@id'\n  hosts:\n    x-jsonld-id: http://www.w3.org/ns/sosa/hosts\n    x-jsonld-type: '@id'\n    x-jsonld-container: '@set'\n  isHostedBy: http://www.w3.org/ns/sosa/isHostedBy\n  isProxyFor: http://www.w3.org/ns/sosa/isProxyFor\n  wasOriginatedBy: http://www.w3.org/ns/sosa/wasOriginatedBy\n  detects: http://www.w3.org/ns/sosa/detects\n  hasProperty: http://www.w3.org/ns/sosa/hasProperty\n  isPropertyOf: http://www.w3.org/ns/sosa/isPropertyOf\n  forProperty: http://www.w3.org/ns/sosa/forProperty\n  implements: http://www.w3.org/ns/sosa/implements\n  implementedBy: http://www.w3.org/ns/sosa/implementedBy\n  hasInput: http://www.w3.org/ns/sosa/hasInput\n  hasOutput: http://www.w3.org/ns/sosa/hasOutput\n  hasSubSystem:\n    x-jsonld-id: http://www.w3.org/ns/sosa/hasSubSystem\n    x-jsonld-type: '@id'\n    x-jsonld-container: '@set'\n  deployedSystem: http://www.w3.org/ns/sosa/deployedSystem\n  hasDeployment: http://www.w3.org/ns/sosa/hasDeployment\n  deployedOnPlatform: http://www.w3.org/ns/sosa/deployedOnPlatform\n  inDeployment: http://www.w3.org/ns/sosa/inDeployment\n  inCondition: http://www.w3.org/ns/ssn/systems/inCondition\n  hasSystemCapability: http://www.w3.org/ns/ssn/systems/hasSystemCapability\n  hasSystemProperty: http://www.w3.org/ns/ssn/systems/hasSystemProperty\n  hasOperatingRange: http://www.w3.org/ns/ssn/systems/hasOperatingRange\n  hasOperatingProperty: http://www.w3.org/ns/ssn/systems/hasOperatingProperty\n  hasSurvivalRange: http://www.w3.org/ns/ssn/systems/hasSurvivalRange\n  hasSurvivalProperty: http://www.w3.org/ns/ssn/systems/hasSurvivalProperty\n  qualityOfObservation: http://www.w3.org/ns/ssn/systems/qualityOfObservation\n  hasMember: http://www.w3.org/ns/sosa/hasMember\n  features: http://www.w3.org/ns/sosa/hasMember\n  properties: '@nest'\n  featureType: '@type'\nx-jsonld-prefixes:\n  sosa: http://www.w3.org/ns/sosa/\n  ssn-system: http://www.w3.org/ns/ssn/systems/\n  ssn: http://www.w3.org/ns/ssn/\n",
+  "gitRepository": "https://github.com/opengeospatial/ogcapi-sosa",
+  "gitPath": "_sources/properties/sensor"
+}

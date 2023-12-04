@@ -536,6 +536,9 @@ to detail what that property was associated with.&quot;</p>
 <span class="na">x-jsonld-extra-terms</span><span class="pi">:</span>
   <span class="na">Observation</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/Observation</span>
   <span class="na">Sample</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/Sample</span>
+  <span class="na">System</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/System</span>
+  <span class="na">Platform</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/Platform</span>
+  <span class="na">id</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
   <span class="na">observes</span><span class="pi">:</span>
     <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/observes</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
@@ -576,22 +579,26 @@ to detail what that property was associated with.&quot;</p>
   <span class="na">hosts</span><span class="pi">:</span>
     <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hosts</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
   <span class="na">isHostedBy</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/isHostedBy</span>
-  <span class="na">isProxyFor</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/isProxyFor</span>
-  <span class="na">wasOriginatedBy</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/wasOriginatedBy</span>
-  <span class="na">detects</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/detects</span>
-  <span class="na">hasProperty</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/hasProperty</span>
-  <span class="na">isPropertyOf</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/isPropertyOf</span>
-  <span class="na">forProperty</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/forProperty</span>
-  <span class="na">implements</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/implements</span>
-  <span class="na">implementedBy</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/implementedBy</span>
-  <span class="na">hasInput</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/hasInput</span>
-  <span class="na">hasOutput</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/hasOutput</span>
-  <span class="na">hasSubSystem</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/hasSubSystem</span>
-  <span class="na">deployedSystem</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/deployedSystem</span>
-  <span class="na">hasDeployment</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/hasDeployment</span>
-  <span class="na">deployedOnPlatform</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/deployedOnPlatform</span>
-  <span class="na">inDeployment</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/inDeployment</span>
+  <span class="na">isProxyFor</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/isProxyFor</span>
+  <span class="na">wasOriginatedBy</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/wasOriginatedBy</span>
+  <span class="na">detects</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/detects</span>
+  <span class="na">hasProperty</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasProperty</span>
+  <span class="na">isPropertyOf</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/isPropertyOf</span>
+  <span class="na">forProperty</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/forProperty</span>
+  <span class="na">implements</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/implements</span>
+  <span class="na">implementedBy</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/implementedBy</span>
+  <span class="na">hasInput</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasInput</span>
+  <span class="na">hasOutput</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasOutput</span>
+  <span class="na">hasSubSystem</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasSubSystem</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
+  <span class="na">deployedSystem</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/deployedSystem</span>
+  <span class="na">hasDeployment</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasDeployment</span>
+  <span class="na">deployedOnPlatform</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/deployedOnPlatform</span>
+  <span class="na">inDeployment</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/inDeployment</span>
   <span class="na">inCondition</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/inCondition</span>
   <span class="na">hasSystemCapability</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/hasSystemCapability</span>
   <span class="na">hasSystemProperty</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/hasSystemProperty</span>
@@ -606,8 +613,8 @@ to detail what that property was associated with.&quot;</p>
   <span class="na">featureType</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@type'</span>
 <span class="na">x-jsonld-prefixes</span><span class="pi">:</span>
   <span class="na">sosa</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/</span>
-  <span class="na">ssn</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/</span>
   <span class="na">ssn-system</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/</span>
+  <span class="na">ssn</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/</span>
 
 </code></pre></div>
 <blockquote>
@@ -644,6 +651,9 @@ to detail what that property was associated with.&quot;</p>
     </span><span class="nl">"hasSimpleResult"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasSimpleResult"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"Observation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:Observation"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"Sample"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:Sample"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"System"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:System"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Platform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:Platform"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"observes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:observes"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
@@ -695,39 +705,44 @@ to detail what that property was associated with.&quot;</p>
     </span><span class="nl">"isResultOf"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isResultOf"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"hosts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hosts"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"isHostedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isHostedBy"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"isProxyFor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:isProxyFor"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"wasOriginatedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:wasOriginatedBy"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"detects"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:detects"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:hasProperty"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"isPropertyOf"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:isPropertyOf"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"forProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:forProperty"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"implements"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:implements"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"implementedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:implementedBy"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasInput"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:hasInput"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasOutput"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:hasOutput"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasSubSystem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:hasSubSystem"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"deployedSystem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:deployedSystem"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasDeployment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:hasDeployment"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"deployedOnPlatform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:deployedOnPlatform"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"inDeployment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:inDeployment"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"inCondition"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:systems/inCondition"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasSystemCapability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:systems/hasSystemCapability"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasSystemProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:systems/hasSystemProperty"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasOperatingRange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:systems/hasOperatingRange"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasOperatingProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:systems/hasOperatingProperty"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasSurvivalRange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:systems/hasSurvivalRange"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasSurvivalProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:systems/hasSurvivalProperty"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"qualityOfObservation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:systems/qualityOfObservation"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isProxyFor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isProxyFor"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"wasOriginatedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:wasOriginatedBy"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"detects"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:detects"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hasProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasProperty"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isPropertyOf"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isPropertyOf"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"forProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:forProperty"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"implements"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:implements"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"implementedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:implementedBy"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hasInput"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasInput"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hasOutput"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasOutput"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hasSubSystem"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasSubSystem"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"deployedSystem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:deployedSystem"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hasDeployment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasDeployment"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"deployedOnPlatform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:deployedOnPlatform"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"inDeployment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:inDeployment"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"inCondition"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:inCondition"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hasSystemCapability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:hasSystemCapability"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hasSystemProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:hasSystemProperty"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hasOperatingRange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:hasOperatingRange"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hasOperatingProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:hasOperatingProperty"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hasSurvivalRange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:hasSurvivalRange"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hasSurvivalProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:hasSurvivalProperty"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"qualityOfObservation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:qualityOfObservation"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"hasMember"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasMember"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"features"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasMember"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@nest"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"featureType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@type"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"sosa"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/ns/sosa/"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"ssn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/ns/ssn/"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"ssn-system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn:systems/"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ssn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/ns/ssn/"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"@version"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.1</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">

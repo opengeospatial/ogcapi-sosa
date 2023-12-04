@@ -65,10 +65,13 @@
       "x-jsonld-extra-terms": {
         "Observation": "http://www.w3.org/ns/sosa/Observation",
         "Sample": "http://www.w3.org/ns/sosa/Sample",
+        "System": "http://www.w3.org/ns/sosa/System",
+        "Platform": "http://www.w3.org/ns/sosa/Platform",
         "observedProperty": {
           "x-jsonld-id": "http://www.w3.org/ns/sosa/observedProperty",
           "x-jsonld-type": "@id"
         },
+        "id": "@id",
         "phenomenonTime": "http://www.w3.org/ns/sosa/phenomenonTime",
         "observes": {
           "x-jsonld-id": "http://www.w3.org/ns/sosa/observes",
@@ -136,24 +139,29 @@
         },
         "hosts": {
           "x-jsonld-id": "http://www.w3.org/ns/sosa/hosts",
-          "x-jsonld-type": "@id"
+          "x-jsonld-type": "@id",
+          "x-jsonld-container": "@set"
         },
         "isHostedBy": "http://www.w3.org/ns/sosa/isHostedBy",
-        "isProxyFor": "http://www.w3.org/ns/ssn/isProxyFor",
-        "wasOriginatedBy": "http://www.w3.org/ns/ssn/wasOriginatedBy",
-        "detects": "http://www.w3.org/ns/ssn/detects",
-        "hasProperty": "http://www.w3.org/ns/ssn/hasProperty",
-        "isPropertyOf": "http://www.w3.org/ns/ssn/isPropertyOf",
-        "forProperty": "http://www.w3.org/ns/ssn/forProperty",
-        "implements": "http://www.w3.org/ns/ssn/implements",
-        "implementedBy": "http://www.w3.org/ns/ssn/implementedBy",
-        "hasInput": "http://www.w3.org/ns/ssn/hasInput",
-        "hasOutput": "http://www.w3.org/ns/ssn/hasOutput",
-        "hasSubSystem": "http://www.w3.org/ns/ssn/hasSubSystem",
-        "deployedSystem": "http://www.w3.org/ns/ssn/deployedSystem",
-        "hasDeployment": "http://www.w3.org/ns/ssn/hasDeployment",
-        "deployedOnPlatform": "http://www.w3.org/ns/ssn/deployedOnPlatform",
-        "inDeployment": "http://www.w3.org/ns/ssn/inDeployment",
+        "isProxyFor": "http://www.w3.org/ns/sosa/isProxyFor",
+        "wasOriginatedBy": "http://www.w3.org/ns/sosa/wasOriginatedBy",
+        "detects": "http://www.w3.org/ns/sosa/detects",
+        "hasProperty": "http://www.w3.org/ns/sosa/hasProperty",
+        "isPropertyOf": "http://www.w3.org/ns/sosa/isPropertyOf",
+        "forProperty": "http://www.w3.org/ns/sosa/forProperty",
+        "implements": "http://www.w3.org/ns/sosa/implements",
+        "implementedBy": "http://www.w3.org/ns/sosa/implementedBy",
+        "hasInput": "http://www.w3.org/ns/sosa/hasInput",
+        "hasOutput": "http://www.w3.org/ns/sosa/hasOutput",
+        "hasSubSystem": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/hasSubSystem",
+          "x-jsonld-type": "@id",
+          "x-jsonld-container": "@set"
+        },
+        "deployedSystem": "http://www.w3.org/ns/sosa/deployedSystem",
+        "hasDeployment": "http://www.w3.org/ns/sosa/hasDeployment",
+        "deployedOnPlatform": "http://www.w3.org/ns/sosa/deployedOnPlatform",
+        "inDeployment": "http://www.w3.org/ns/sosa/inDeployment",
         "inCondition": "http://www.w3.org/ns/ssn/systems/inCondition",
         "hasSystemCapability": "http://www.w3.org/ns/ssn/systems/hasSystemCapability",
         "hasSystemProperty": "http://www.w3.org/ns/ssn/systems/hasSystemProperty",
@@ -168,8 +176,8 @@
       },
       "x-jsonld-prefixes": {
         "sosa": "http://www.w3.org/ns/sosa/",
-        "ssn": "http://www.w3.org/ns/ssn/",
-        "ssn-system": "http://www.w3.org/ns/ssn/systems/"
+        "ssn-system": "http://www.w3.org/ns/ssn/systems/",
+        "ssn": "http://www.w3.org/ns/ssn/"
       },
       "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
       "x-schema-source": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/features/observation/schema.json"
@@ -237,10 +245,13 @@
       "x-jsonld-extra-terms": {
         "Observation": "http://www.w3.org/ns/sosa/Observation",
         "Sample": "http://www.w3.org/ns/sosa/Sample",
+        "System": "http://www.w3.org/ns/sosa/System",
+        "Platform": "http://www.w3.org/ns/sosa/Platform",
         "observedProperty": {
           "x-jsonld-id": "http://www.w3.org/ns/sosa/observedProperty",
           "x-jsonld-type": "@id"
         },
+        "id": "@id",
         "phenomenonTime": "http://www.w3.org/ns/sosa/phenomenonTime",
         "observes": {
           "x-jsonld-id": "http://www.w3.org/ns/sosa/observes",
@@ -308,24 +319,29 @@
         },
         "hosts": {
           "x-jsonld-id": "http://www.w3.org/ns/sosa/hosts",
-          "x-jsonld-type": "@id"
+          "x-jsonld-type": "@id",
+          "x-jsonld-container": "@set"
         },
         "isHostedBy": "http://www.w3.org/ns/sosa/isHostedBy",
-        "isProxyFor": "http://www.w3.org/ns/ssn/isProxyFor",
-        "wasOriginatedBy": "http://www.w3.org/ns/ssn/wasOriginatedBy",
-        "detects": "http://www.w3.org/ns/ssn/detects",
-        "hasProperty": "http://www.w3.org/ns/ssn/hasProperty",
-        "isPropertyOf": "http://www.w3.org/ns/ssn/isPropertyOf",
-        "forProperty": "http://www.w3.org/ns/ssn/forProperty",
-        "implements": "http://www.w3.org/ns/ssn/implements",
-        "implementedBy": "http://www.w3.org/ns/ssn/implementedBy",
-        "hasInput": "http://www.w3.org/ns/ssn/hasInput",
-        "hasOutput": "http://www.w3.org/ns/ssn/hasOutput",
-        "hasSubSystem": "http://www.w3.org/ns/ssn/hasSubSystem",
-        "deployedSystem": "http://www.w3.org/ns/ssn/deployedSystem",
-        "hasDeployment": "http://www.w3.org/ns/ssn/hasDeployment",
-        "deployedOnPlatform": "http://www.w3.org/ns/ssn/deployedOnPlatform",
-        "inDeployment": "http://www.w3.org/ns/ssn/inDeployment",
+        "isProxyFor": "http://www.w3.org/ns/sosa/isProxyFor",
+        "wasOriginatedBy": "http://www.w3.org/ns/sosa/wasOriginatedBy",
+        "detects": "http://www.w3.org/ns/sosa/detects",
+        "hasProperty": "http://www.w3.org/ns/sosa/hasProperty",
+        "isPropertyOf": "http://www.w3.org/ns/sosa/isPropertyOf",
+        "forProperty": "http://www.w3.org/ns/sosa/forProperty",
+        "implements": "http://www.w3.org/ns/sosa/implements",
+        "implementedBy": "http://www.w3.org/ns/sosa/implementedBy",
+        "hasInput": "http://www.w3.org/ns/sosa/hasInput",
+        "hasOutput": "http://www.w3.org/ns/sosa/hasOutput",
+        "hasSubSystem": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/hasSubSystem",
+          "x-jsonld-type": "@id",
+          "x-jsonld-container": "@set"
+        },
+        "deployedSystem": "http://www.w3.org/ns/sosa/deployedSystem",
+        "hasDeployment": "http://www.w3.org/ns/sosa/hasDeployment",
+        "deployedOnPlatform": "http://www.w3.org/ns/sosa/deployedOnPlatform",
+        "inDeployment": "http://www.w3.org/ns/sosa/inDeployment",
         "inCondition": "http://www.w3.org/ns/ssn/systems/inCondition",
         "hasSystemCapability": "http://www.w3.org/ns/ssn/systems/hasSystemCapability",
         "hasSystemProperty": "http://www.w3.org/ns/ssn/systems/hasSystemProperty",
@@ -339,8 +355,8 @@
       },
       "x-jsonld-prefixes": {
         "sosa": "http://www.w3.org/ns/sosa/",
-        "ssn": "http://www.w3.org/ns/ssn/",
-        "ssn-system": "http://www.w3.org/ns/ssn/systems/"
+        "ssn-system": "http://www.w3.org/ns/ssn/systems/",
+        "ssn": "http://www.w3.org/ns/ssn/"
       },
       "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
       "x-schema-source": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/features/observationCollection/schema.json"
@@ -562,6 +578,9 @@
       "x-jsonld-extra-terms": {
         "Observation": "http://www.w3.org/ns/sosa/Observation",
         "Sample": "http://www.w3.org/ns/sosa/Sample",
+        "System": "http://www.w3.org/ns/sosa/System",
+        "Platform": "http://www.w3.org/ns/sosa/Platform",
+        "id": "@id",
         "observes": {
           "x-jsonld-id": "http://www.w3.org/ns/sosa/observes",
           "x-jsonld-type": "@id"
@@ -613,24 +632,29 @@
         "isResultOf": "http://www.w3.org/ns/sosa/isResultOf",
         "hosts": {
           "x-jsonld-id": "http://www.w3.org/ns/sosa/hosts",
-          "x-jsonld-type": "@id"
+          "x-jsonld-type": "@id",
+          "x-jsonld-container": "@set"
         },
         "isHostedBy": "http://www.w3.org/ns/sosa/isHostedBy",
-        "isProxyFor": "http://www.w3.org/ns/ssn/isProxyFor",
-        "wasOriginatedBy": "http://www.w3.org/ns/ssn/wasOriginatedBy",
-        "detects": "http://www.w3.org/ns/ssn/detects",
-        "hasProperty": "http://www.w3.org/ns/ssn/hasProperty",
-        "isPropertyOf": "http://www.w3.org/ns/ssn/isPropertyOf",
-        "forProperty": "http://www.w3.org/ns/ssn/forProperty",
-        "implements": "http://www.w3.org/ns/ssn/implements",
-        "implementedBy": "http://www.w3.org/ns/ssn/implementedBy",
-        "hasInput": "http://www.w3.org/ns/ssn/hasInput",
-        "hasOutput": "http://www.w3.org/ns/ssn/hasOutput",
-        "hasSubSystem": "http://www.w3.org/ns/ssn/hasSubSystem",
-        "deployedSystem": "http://www.w3.org/ns/ssn/deployedSystem",
-        "hasDeployment": "http://www.w3.org/ns/ssn/hasDeployment",
-        "deployedOnPlatform": "http://www.w3.org/ns/ssn/deployedOnPlatform",
-        "inDeployment": "http://www.w3.org/ns/ssn/inDeployment",
+        "isProxyFor": "http://www.w3.org/ns/sosa/isProxyFor",
+        "wasOriginatedBy": "http://www.w3.org/ns/sosa/wasOriginatedBy",
+        "detects": "http://www.w3.org/ns/sosa/detects",
+        "hasProperty": "http://www.w3.org/ns/sosa/hasProperty",
+        "isPropertyOf": "http://www.w3.org/ns/sosa/isPropertyOf",
+        "forProperty": "http://www.w3.org/ns/sosa/forProperty",
+        "implements": "http://www.w3.org/ns/sosa/implements",
+        "implementedBy": "http://www.w3.org/ns/sosa/implementedBy",
+        "hasInput": "http://www.w3.org/ns/sosa/hasInput",
+        "hasOutput": "http://www.w3.org/ns/sosa/hasOutput",
+        "hasSubSystem": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/hasSubSystem",
+          "x-jsonld-type": "@id",
+          "x-jsonld-container": "@set"
+        },
+        "deployedSystem": "http://www.w3.org/ns/sosa/deployedSystem",
+        "hasDeployment": "http://www.w3.org/ns/sosa/hasDeployment",
+        "deployedOnPlatform": "http://www.w3.org/ns/sosa/deployedOnPlatform",
+        "inDeployment": "http://www.w3.org/ns/sosa/inDeployment",
         "inCondition": "http://www.w3.org/ns/ssn/systems/inCondition",
         "hasSystemCapability": "http://www.w3.org/ns/ssn/systems/hasSystemCapability",
         "hasSystemProperty": "http://www.w3.org/ns/ssn/systems/hasSystemProperty",
@@ -646,8 +670,8 @@
       },
       "x-jsonld-prefixes": {
         "sosa": "http://www.w3.org/ns/sosa/",
-        "ssn": "http://www.w3.org/ns/ssn/",
-        "ssn-system": "http://www.w3.org/ns/ssn/systems/"
+        "ssn-system": "http://www.w3.org/ns/ssn/systems/",
+        "ssn": "http://www.w3.org/ns/ssn/"
       },
       "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
       "x-schema-source": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/properties/observation/schema.json"
@@ -919,6 +943,9 @@
       "x-jsonld-extra-terms": {
         "Observation": "http://www.w3.org/ns/sosa/Observation",
         "Sample": "http://www.w3.org/ns/sosa/Sample",
+        "System": "http://www.w3.org/ns/sosa/System",
+        "Platform": "http://www.w3.org/ns/sosa/Platform",
+        "id": "@id",
         "observes": {
           "x-jsonld-id": "http://www.w3.org/ns/sosa/observes",
           "x-jsonld-type": "@id"
@@ -972,24 +999,29 @@
         "hasSimpleResult": "http://www.w3.org/ns/sosa/hasSimpleResult",
         "hosts": {
           "x-jsonld-id": "http://www.w3.org/ns/sosa/hosts",
-          "x-jsonld-type": "@id"
+          "x-jsonld-type": "@id",
+          "x-jsonld-container": "@set"
         },
         "isHostedBy": "http://www.w3.org/ns/sosa/isHostedBy",
-        "isProxyFor": "http://www.w3.org/ns/ssn/isProxyFor",
-        "wasOriginatedBy": "http://www.w3.org/ns/ssn/wasOriginatedBy",
-        "detects": "http://www.w3.org/ns/ssn/detects",
-        "hasProperty": "http://www.w3.org/ns/ssn/hasProperty",
-        "isPropertyOf": "http://www.w3.org/ns/ssn/isPropertyOf",
-        "forProperty": "http://www.w3.org/ns/ssn/forProperty",
-        "implements": "http://www.w3.org/ns/ssn/implements",
-        "implementedBy": "http://www.w3.org/ns/ssn/implementedBy",
-        "hasInput": "http://www.w3.org/ns/ssn/hasInput",
-        "hasOutput": "http://www.w3.org/ns/ssn/hasOutput",
-        "hasSubSystem": "http://www.w3.org/ns/ssn/hasSubSystem",
-        "deployedSystem": "http://www.w3.org/ns/ssn/deployedSystem",
-        "hasDeployment": "http://www.w3.org/ns/ssn/hasDeployment",
-        "deployedOnPlatform": "http://www.w3.org/ns/ssn/deployedOnPlatform",
-        "inDeployment": "http://www.w3.org/ns/ssn/inDeployment",
+        "isProxyFor": "http://www.w3.org/ns/sosa/isProxyFor",
+        "wasOriginatedBy": "http://www.w3.org/ns/sosa/wasOriginatedBy",
+        "detects": "http://www.w3.org/ns/sosa/detects",
+        "hasProperty": "http://www.w3.org/ns/sosa/hasProperty",
+        "isPropertyOf": "http://www.w3.org/ns/sosa/isPropertyOf",
+        "forProperty": "http://www.w3.org/ns/sosa/forProperty",
+        "implements": "http://www.w3.org/ns/sosa/implements",
+        "implementedBy": "http://www.w3.org/ns/sosa/implementedBy",
+        "hasInput": "http://www.w3.org/ns/sosa/hasInput",
+        "hasOutput": "http://www.w3.org/ns/sosa/hasOutput",
+        "hasSubSystem": {
+          "x-jsonld-id": "http://www.w3.org/ns/sosa/hasSubSystem",
+          "x-jsonld-type": "@id",
+          "x-jsonld-container": "@set"
+        },
+        "deployedSystem": "http://www.w3.org/ns/sosa/deployedSystem",
+        "hasDeployment": "http://www.w3.org/ns/sosa/hasDeployment",
+        "deployedOnPlatform": "http://www.w3.org/ns/sosa/deployedOnPlatform",
+        "inDeployment": "http://www.w3.org/ns/sosa/inDeployment",
         "inCondition": "http://www.w3.org/ns/ssn/systems/inCondition",
         "hasSystemCapability": "http://www.w3.org/ns/ssn/systems/hasSystemCapability",
         "hasSystemProperty": "http://www.w3.org/ns/ssn/systems/hasSystemProperty",
@@ -1004,8 +1036,8 @@
       },
       "x-jsonld-prefixes": {
         "sosa": "http://www.w3.org/ns/sosa/",
-        "ssn": "http://www.w3.org/ns/ssn/",
-        "ssn-system": "http://www.w3.org/ns/ssn/systems/"
+        "ssn-system": "http://www.w3.org/ns/ssn/systems/",
+        "ssn": "http://www.w3.org/ns/ssn/"
       },
       "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
       "x-schema-source": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/properties/observationCollection/schema.json"
