@@ -1,0 +1,20 @@
+- title: Example of of a basic sensor
+
+  snippets:
+    - language: json
+      code: |-
+        {         "@context": { "eg": "http://example.org/sensors",
+                    "sensorType": {
+                          "type": "@id",
+                          "@id": "sosa:sensorKind"
+                        } },
+                  "id": "eg:sensor1",
+                  "sensorType": "eg:gnss-pair"
+        }
+
+- title: Example of of a compound sensor using the System polymorphism option
+
+  snippets:
+    - language: json
+      ref: examples/compound.json
+

@@ -1,0 +1,15 @@
+"$schema": https://json-schema.org/draft/2020-12/schema
+description: 'SOSA Sensor'
+x-jsonld-context: ../../../sosa-ssn.jsonld
+$definitions:
+  Sensor:
+    anyOf:
+      - $ref: bblocks://ogc.ogc-utils.iri-or-curie
+      - type: object
+        properties:
+          id:
+            $ref: bblocks://ogc.ogc-utils.iri-or-curie
+          name:
+            type: string
+allOf:
+  - $ref: '#/$definitions/Sensor'

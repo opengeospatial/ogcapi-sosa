@@ -1,0 +1,17 @@
+'$schema': https://json-schema.org/draft/2020-12/schema
+description: 'SOSA Platform'
+x-jsonld-context: ../../../sosa-ssn.jsonld
+$definitions:
+  Platform:
+    anyOf:
+      - $ref: bblocks://ogc.ogc-utils.iri-or-curie
+      - type: object
+        properties:
+          hosts:
+            type: array
+            items:
+              anyOf:
+                - $ref: '#/$definitions/Platform'
+                - $ref: ../sensor/schema.yaml#/$definitions/Sensor
+allOf:
+  - $ref: '#/$definitions/Platform'
