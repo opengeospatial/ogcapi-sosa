@@ -267,6 +267,12 @@ Links to the schema:
 ```json--ldContext
 {
   "@context": {
+    "hosts": {
+      "@context": {},
+      "@id": "sosa:hosts",
+      "@type": "@id",
+      "@container": "@set"
+    },
     "Observation": "sosa:Observation",
     "Sample": "sosa:Sample",
     "System": "sosa:System",
@@ -373,12 +379,6 @@ Links to the schema:
     "features": "sosa:hasMember",
     "properties": "@nest",
     "featureType": "@type",
-    "hosts": {
-      "@context": {},
-      "@id": "sosa:hosts",
-      "@type": "@id",
-      "@container": "@set"
-    },
     "sosa": "http://www.w3.org/ns/sosa/",
     "ssn-system": "ssn:systems/",
     "ssn": "http://www.w3.org/ns/ssn/",

@@ -19,10 +19,10 @@
   "maturity": "development",
   "scope": "unstable",
   "dependsOn": [
-    "ogc.unstable.sosa.properties.observation",
-    "ogc.unstable.sosa.features.observation",
+    "ogc.unstable.sosa.examples.vectorObservation",
     "ogc.unstable.sosa.features.observationCollection",
-    "ogc.unstable.sosa.examples.vectorObservation"
+    "ogc.unstable.sosa.properties.observation",
+    "ogc.unstable.sosa.features.observation"
   ],
   "tags": [
     "sosa",
@@ -91,7 +91,7 @@
         },
         {
           "language": "ttl",
-          "code": "@prefix geo1: <http://www.w3.org/2003/01/geo/wgs84_pos#> .\n@prefix geojson: <https://purl.org/geojson/vocab#> .\n@prefix geopose: <http://example.com/geopose/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix resultschema: <http://example.org/resultschema/> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<http://example.com/features/c1> a sosa:ObservationCollection,\n        geojson:FeatureCollection ;\n    sosa:observedProperty <http://example.com/features/> ;\n    sosa:resultTime \"1999\" ;\n    geojson:features <http://example.com/features/vector-obs-1> .\n\n<http://example.com/features/vector-obs-1> a geojson:Feature ;\n    sosa:hasFeatureOfInterest <eg:Traverse-P1-P2> ;\n    sosa:hasResult [ resultschema:distance 6.889234e+06 ;\n            resultschema:pose [ geopose:angles [ geopose:pitch -1e-02 ;\n                            geopose:roll 0 ;\n                            geopose:yaw 1.535e+01 ] ;\n                    geopose:position [ geopose:h 5e-01 ;\n                            geo1:lat -1.116718e+02 ;\n                            geo1:long 4.005671e+01 ] ] ] ;\n    sosa:resultTime \"2023-05-22T16:41:00+2\" ;\n    geojson:geometry [ a geojson:LineString ;\n            geojson:coordinates ( \"[-111.67183507997295, 40.056709946862874]\" \"[-111.67183507997295, 40.056709946862874]\" ) ] .\n\n",
+          "code": "@prefix geo1: <http://www.w3.org/2003/01/geo/wgs84_pos#> .\n@prefix geojson: <https://purl.org/geojson/vocab#> .\n@prefix geopose: <http://example.com/geopose/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix resultschema: <http://example.org/resultschema/> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<http://example.com/features/c1> a sosa:ObservationCollection,\n        geojson:FeatureCollection ;\n    sosa:hasMember <http://example.com/features/vector-obs-1> ;\n    sosa:observedProperty <http://example.com/features/> ;\n    sosa:resultTime \"1999\" .\n\n<http://example.com/features/vector-obs-1> a geojson:Feature ;\n    sosa:hasFeatureOfInterest <eg:Traverse-P1-P2> ;\n    sosa:hasResult [ resultschema:distance 6.889234e+06 ;\n            resultschema:pose [ geopose:angles [ geopose:pitch -1e-02 ;\n                            geopose:roll 0 ;\n                            geopose:yaw 1.535e+01 ] ;\n                    geopose:position [ geopose:h 5e-01 ;\n                            geo1:lat -1.116718e+02 ;\n                            geo1:long 4.005671e+01 ] ] ] ;\n    sosa:resultTime \"2023-05-22T16:41:00+2\" ;\n    geojson:geometry [ a geojson:LineString ;\n            geojson:coordinates ( \"[-111.67183507997295, 40.056709946862874]\" \"[-111.67183507997295, 40.056709946862874]\" ) ] .\n\n",
           "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/unstable/sosa/examples/vectorObservationFeature/example_2_1.ttl"
         }
       ]

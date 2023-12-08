@@ -4,10 +4,10 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://www.example.com/sosa/c1> a geojson:FeatureCollection ;
+    sosa:hasMember <http://www.example.com/sosa/pop1999>,
+        <http://www.example.com/sosa/something> ;
     sosa:resultTime "1999" ;
-    geojson:collectionFeatureType "sosa:ObservationCollection" ;
-    geojson:features <http://www.example.com/sosa/pop1999>,
-        <http://www.example.com/sosa/something> .
+    geojson:collectionFeatureType "sosa:ObservationCollection" .
 
 <http://www.example.com/sosa/pop1999> a geojson:Feature ;
     sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork> ;
