@@ -157,7 +157,7 @@ $(function() {
 
     var urlMatch = text.match('^["<]?(https?://.*)[">]?$');
     if (urlMatch) {
-      $span.empty().append($('<a target="_blank">').text(text).attr('href', urlMatch[1]));
+      $span.empty().append($('<a target="_blank">').text(text).attr('href', urlMatch[1].replace(/>$/, '')));
     }
   });
 

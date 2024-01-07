@@ -4,14 +4,16 @@ x-defs:
     $definitions:
       Sensor:
         anyOf:
-        - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/sensor/schema-oas3.0.yaml#/x-defs/ogc.ogc-utils.iri-or-curie
+        - $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml
         - type: object
           properties:
-            id: {}
+            id:
+              $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml
+              x-jsonld-id: '@id'
             name:
               type: string
     allOf:
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/sensor/schema-oas3.0.yaml#/x-defs/ogc.unstable.sosa.properties.sensor/$definitions/Sensor
+    - $ref: '#/$definitions/Sensor'
     x-jsonld-extra-terms:
       Observation: http://www.w3.org/ns/sosa/Observation
       Sample: http://www.w3.org/ns/sosa/Sample
@@ -111,8 +113,5 @@ x-defs:
       ssn: http://www.w3.org/ns/ssn/
     x-schema-version: https://json-schema.org/draft/2020-12/schema
     x-schema-source: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/sensor/schema-oas3.0.yaml
-  ogc.ogc-utils.iri-or-curie:
-    x-schema-version: https://json-schema.org/draft/2020-12/schema
-    x-schema-source: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml
 allOf:
 - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/sensor/schema-oas3.0.yaml#/x-defs/ogc.unstable.sosa.properties.sensor
