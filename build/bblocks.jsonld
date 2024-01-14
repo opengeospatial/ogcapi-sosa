@@ -108,7 +108,7 @@
       },
       "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observation/context.jsonld",
       "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/",
-      "validationPassed": false,
+      "validationPassed": true,
       "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/unstable/sosa/properties/observation/",
       "documentation": {
         "json-full": {
@@ -230,8 +230,8 @@
         ]
       },
       "dependsOn": [
-        "ogc.ogc-utils.iri-or-curie",
-        "ogc.unstable.sosa.properties.observation"
+        "ogc.unstable.sosa.properties.observation",
+        "ogc.ogc-utils.iri-or-curie"
       ],
       "schema": {
         "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/observationCollection/schema.yaml",
@@ -292,8 +292,8 @@
       "group": "SOSA",
       "shaclRules": {},
       "dependsOn": [
-        "ogc.ogc-utils.iri-or-curie",
-        "ogc.unstable.sosa.properties.sensor"
+        "ogc.unstable.sosa.properties.sensor",
+        "ogc.ogc-utils.iri-or-curie"
       ],
       "schema": {
         "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/properties/platform/schema.yaml",
@@ -428,9 +428,9 @@
         ]
       },
       "dependsOn": [
-        "ogc.geo.json-fg.featureCollection-lenient",
+        "ogc.unstable.sosa.features.observation",
         "ogc.unstable.sosa.properties.observationCollection",
-        "ogc.unstable.sosa.features.observation"
+        "ogc.geo.json-fg.featureCollection-lenient"
       ],
       "schema": {
         "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observationCollection/schema.yaml",
