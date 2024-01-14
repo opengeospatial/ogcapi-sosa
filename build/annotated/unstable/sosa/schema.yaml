@@ -2,45 +2,6 @@ $schema: https://json-schema.org/draft/2020-12/schema
 description: Sensor, Observation, Sample, and Actuator (SOSA)
 anyOf:
 - $schema: https://json-schema.org/draft/2020-12/schema
-  description: Example SOSA Vector Observation
-  allOf:
-  - $ref: properties/observation/schema.yaml
-  - type: object
-    properties:
-      hasResult:
-        properties:
-          pose:
-            $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/geopose/basic/ypr/schema.yaml
-          distance:
-            type: number
-    required:
-    - hasResult
-    not:
-      required:
-      - hasSimpleResult
-- $schema: https://json-schema.org/draft/2020-12/schema
-  description: Example SOSA Observation Specialisation - a vector bearing and distance
-  $defs:
-    VectorObservation:
-      allOf:
-      - $ref: features/observation/schema.yaml
-      - type: object
-        properties:
-          properties:
-            $ref: examples/vectorObservation/schema.yaml
-    VectorObservationCollection:
-      allOf:
-      - $ref: features/observationCollection/schema.yaml
-      - type: object
-        properties:
-          features:
-            type: array
-            items:
-              $ref: examples/vectorObservationFeature/schema.yaml/#/$defs/VectorObservation
-  anyOf:
-  - $ref: examples/vectorObservationFeature/schema.yaml/#/$defs/VectorObservation
-  - $ref: examples/vectorObservationFeature/schema.yaml/#/$defs/VectorObservationCollection
-- $schema: https://json-schema.org/draft/2020-12/schema
   description: SOSA Observation Feature
   type: object
   allOf:
