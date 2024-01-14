@@ -1,20 +1,19 @@
 path	@id
-allOf[0]/$ref[../../properties/observation/schema.yaml]/properties/resultTime	http://www.w3.org/ns/sosa/resultTime
-allOf[0]/$ref[../../properties/observation/schema.yaml]/properties/phenomenonTime	http://www.w3.org/ns/sosa/phenomenonTime
-allOf[0]/$ref[../../properties/observation/schema.yaml]/properties/hasFeatureOfInterest	http://www.w3.org/ns/sosa/hasFeatureOfInterest
-allOf[0]/$ref[../../properties/observation/schema.yaml]/properties/observedProperty	http://www.w3.org/ns/sosa/observedProperty
-allOf[0]/$ref[../../properties/observation/schema.yaml]/properties/usedProcedure	http://www.w3.org/ns/sosa/usedProcedure
-allOf[0]/$ref[../../properties/observation/schema.yaml]/properties/madeBySensor	http://www.w3.org/ns/sosa/madeBySensor
-allOf[0]/$ref[../../properties/observation/schema.yaml]/properties/hasResult	http://www.w3.org/ns/sosa/hasResult
-allOf[0]/$ref[../../properties/observation/schema.yaml]/properties/hasSimpleResult	http://www.w3.org/ns/sosa/hasSimpleResult
-allOf[1]/properties/hasResult	
-allOf[1]/properties/hasResult/properties/pose	
-allOf[1]/properties/hasResult/properties/pose/$ref[https://opengeospatial.github.io/bblocks/annotated-schemas/geo/geopose/basic/ypr/schema.yaml]/properties/position	http://example.com/geopose/position
-allOf[1]/properties/hasResult/properties/pose/$ref[https://opengeospatial.github.io/bblocks/annotated-schemas/geo/geopose/basic/ypr/schema.yaml]/properties/position/$ref[#/definitions/Position]/properties/lat	http://www.w3.org/2003/01/geo/wgs84_pos#lat
-allOf[1]/properties/hasResult/properties/pose/$ref[https://opengeospatial.github.io/bblocks/annotated-schemas/geo/geopose/basic/ypr/schema.yaml]/properties/position/$ref[#/definitions/Position]/properties/lon	http://www.w3.org/2003/01/geo/wgs84_pos#long
-allOf[1]/properties/hasResult/properties/pose/$ref[https://opengeospatial.github.io/bblocks/annotated-schemas/geo/geopose/basic/ypr/schema.yaml]/properties/position/$ref[#/definitions/Position]/properties/h	http://example.com/geopose/h
-allOf[1]/properties/hasResult/properties/pose/$ref[https://opengeospatial.github.io/bblocks/annotated-schemas/geo/geopose/basic/ypr/schema.yaml]/properties/angles	http://example.com/geopose/angles
-allOf[1]/properties/hasResult/properties/pose/$ref[https://opengeospatial.github.io/bblocks/annotated-schemas/geo/geopose/basic/ypr/schema.yaml]/properties/angles/$ref[#/definitions/angles]/properties/yaw	http://example.com/geopose/yaw
-allOf[1]/properties/hasResult/properties/pose/$ref[https://opengeospatial.github.io/bblocks/annotated-schemas/geo/geopose/basic/ypr/schema.yaml]/properties/angles/$ref[#/definitions/angles]/properties/pitch	http://example.com/geopose/pitch
-allOf[1]/properties/hasResult/properties/pose/$ref[https://opengeospatial.github.io/bblocks/annotated-schemas/geo/geopose/basic/ypr/schema.yaml]/properties/angles/$ref[#/definitions/angles]/properties/roll	http://example.com/geopose/roll
-allOf[1]/properties/hasResult/properties/distance	
+/resultTime	http://www.w3.org/ns/sosa/resultTime
+/phenomenonTime	http://www.w3.org/ns/sosa/phenomenonTime
+/hasFeatureOfInterest	http://www.w3.org/ns/sosa/hasFeatureOfInterest
+/observedProperty	http://www.w3.org/ns/sosa/observedProperty
+/usedProcedure	http://www.w3.org/ns/sosa/usedProcedure
+/madeBySensor	http://www.w3.org/ns/sosa/madeBySensor
+/hasResult	
+/hasSimpleResult	http://www.w3.org/ns/sosa/hasSimpleResult
+hasResult/pose	
+hasResult/pose/position	http://example.com/geopose/position
+hasResult/pose/position/lat	http://www.w3.org/2003/01/geo/wgs84_pos#lat
+hasResult/pose/position/lon	http://www.w3.org/2003/01/geo/wgs84_pos#long
+hasResult/pose/position/h	http://example.com/geopose/h
+hasResult/pose/angles	http://example.com/geopose/angles
+hasResult/pose/angles/yaw	http://example.com/geopose/yaw
+hasResult/pose/angles/pitch	http://example.com/geopose/pitch
+hasResult/pose/angles/roll	http://example.com/geopose/roll
+hasResult/distance	
