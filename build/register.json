@@ -29,6 +29,7 @@
         "o&m&s"
       ],
       "group": "SOSA",
+      "highlighted": true,
       "shaclRules": {
         "ogc.unstable.sosa.properties.observation": [
           "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl"
@@ -121,7 +122,8 @@
     {
       "itemIdentifier": "ogc.unstable.sosa.properties.observationCollection",
       "name": "SOSA ObservationCollection",
-      "abstract": "This building blocks defines an ObservationCollection according to the SOSA/SSN v1.1 specification.",
+      "highlighted": true,
+      "abstract": "This building block defines an ObservationCollection according to the SOSA/SSN v1.1 specification. It defines a set of logical rules regarding presence of mandatory properties anywhere within a potentially nested collection hierarchy. (implemented in SHACL, exploiting the semantic mapping to SOSA)",
       "status": "under-development",
       "dateTimeAddition": "2023-04-13T00:00:00Z",
       "itemClass": "schema",
@@ -132,20 +134,16 @@
         {
           "title": "Semantic Sensor Network Ontology",
           "link": "https://www.w3.org/TR/vocab-ssn/"
-        },
-        {
-          "title": "Extensions to the Semantic Sensor Network Ontology",
-          "link": "https://www.w3.org/TR/vocab-ssn-ext/"
         }
       ],
       "maturity": "development",
       "scope": "unstable",
       "tags": [
         "sosa",
-        "ssn",
         "observations",
         "o&m",
-        "o&m&s"
+        "OMS",
+        "ISO19156"
       ],
       "group": "SOSA",
       "shaclRules": {
@@ -340,9 +338,9 @@
         ]
       },
       "dependsOn": [
+        "ogc.unstable.sosa.features.observation",
         "ogc.geo.json-fg.featureCollection-lenient",
-        "ogc.unstable.sosa.properties.observationCollection",
-        "ogc.unstable.sosa.features.observation"
+        "ogc.unstable.sosa.properties.observationCollection"
       ],
       "schema": {
         "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/unstable/sosa/features/observationCollection/schema.yaml",

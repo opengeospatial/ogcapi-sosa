@@ -22,7 +22,7 @@ meta:
 
 # SOSA ObservationCollection `ogc.unstable.sosa.properties.observationCollection`
 
-This building blocks defines an ObservationCollection according to the SOSA/SSN v1.1 specification.
+This building block defines an ObservationCollection according to the SOSA/SSN v1.1 specification. It defines a set of logical rules regarding presence of mandatory properties anywhere within a potentially nested collection hierarchy. (implemented in SHACL, exploiting the semantic mapping to SOSA)
 
 <p class="status">
     <span data-rainbow-uri="http://www.opengis.net/def/status">Status</span>:
@@ -933,7 +933,6 @@ The following sets of SHACL shapes are used for validating this building block:
 # References
 
 * [Semantic Sensor Network Ontology](https://www.w3.org/TR/vocab-ssn/)
-* [Extensions to the Semantic Sensor Network Ontology](https://www.w3.org/TR/vocab-ssn-ext/)
 
 # For developers
 

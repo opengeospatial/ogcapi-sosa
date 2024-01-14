@@ -3,7 +3,7 @@
 
 `ogc.unstable.sosa.properties.observationCollection` *v1.0*
 
-This building blocks defines an ObservationCollection according to the SOSA/SSN v1.1 specification.
+This building block defines an ObservationCollection according to the SOSA/SSN v1.1 specification. It defines a set of logical rules regarding presence of mandatory properties anywhere within a potentially nested collection hierarchy. (implemented in SHACL, exploiting the semantic mapping to SOSA)
 
 [*Status*](http://www.opengis.net/def/status): Under development
 
@@ -837,7 +837,6 @@ You can find the full JSON-LD context here:
 ## Sources
 
 * [Semantic Sensor Network Ontology](https://www.w3.org/TR/vocab-ssn/)
-* [Extensions to the Semantic Sensor Network Ontology](https://www.w3.org/TR/vocab-ssn-ext/)
 
 # For developers
 
