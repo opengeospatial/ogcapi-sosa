@@ -62,6 +62,7 @@
 <#testResult>
     a              sh:NodeShape ;
     sh:targetClass sosa:Observation ;
+    sh:targetSubjectsOf sosa:hasResult, sosa:hasSimpleResult ;
     sh:property    [ sh:path     [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ;
                      sh:minCount 1 ;
                      sh:maxCount 1 ; ] ;
