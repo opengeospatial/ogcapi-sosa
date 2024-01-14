@@ -507,32 +507,148 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
       <span class="na">$ref</span><span class="pi">:</span> <span class="s">../../properties/observation/schema.yaml</span>
       <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@nest'</span>
 <span class="na">x-jsonld-extra-terms</span><span class="pi">:</span>
-  <span class="na">Observation</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/Observation</span>
-  <span class="na">Sample</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/Sample</span>
-  <span class="na">System</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/System</span>
-  <span class="na">Platform</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/Platform</span>
-  <span class="na">observedProperty</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/observedProperty</span>
-    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
   <span class="na">id</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">phenomenonTime</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/phenomenonTime</span>
-  <span class="na">observes</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/observes</span>
+  <span class="na">ActuatableProperty</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/ActuatableProperty</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">isObservedBy</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/isObservedBy</span>
+  <span class="na">Actuation</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/Actuation</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">madeObservation</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/madeObservation</span>
+  <span class="na">Actuator</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/Actuator</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">madeBySensor</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/madeBySensor</span>
+  <span class="na">Deployment</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/Deployment</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">FeatureOfInterest</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/FeatureOfInterest</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">Input</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/Input</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">ObservableProperty</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/ObservableProperty</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">Observation</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/Observation</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">Output</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/Output</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">Platform</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/Platform</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">Property</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/Property</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="s1">'</span><span class="s">Procedure</span><span class="nv"> </span><span class="s">'</span><span class="err">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/Procedure</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">Result</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/Result</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">Sample</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/Sample</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">Sampler</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/Sampler</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">Sampling</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/Sampling</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">Sensor</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/Sensor</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">Stimulus</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/Stimulus</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">System</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/System</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
   <span class="na">actsOnProperty</span><span class="pi">:</span>
     <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/actsOnProperty</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">deployedOnPlatform</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/deployedOnPlatform</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">deployedSystem</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/deployedSystem</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">detects</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/detects</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">features</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasMember</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">forProperty</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/forProperty</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">hasDeployment</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasDeployment</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">hasFeatureOfInterest</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasFeatureOfInterest</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">hasInput</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasInput</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">hasMember</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasMember</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">hasOutput</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasOutput</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">hasProperty</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasProperty</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">hasResult</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasResult</span>
+  <span class="na">hasSample</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasSample</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">hasSimpleResult</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasSimpleResult</span>
+  <span class="na">hasSubSystem</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasSubSystem</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
+  <span class="na">hasUltimateFeatureOfInterest</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasUltimateFeatureOfInterest</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">hosts</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hosts</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
+  <span class="na">implementedBy</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/implementedBy</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">implements</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/implements</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">inDeployment</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/inDeployment</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
   <span class="na">isActedOnBy</span><span class="pi">:</span>
     <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/isActedOnBy</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">isFeatureOfInterestOf</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/isFeatureOfInterestOf</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">isHostedBy</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/isHostedBy</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">isObservedBy</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/isObservedBy</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">isPropertyOf</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/isPropertyOf</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">isProxyFor</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/isProxyFor</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">isResultOf</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/isResultOf</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">isSampleOf</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/isSampleOf</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
   <span class="na">madeActuation</span><span class="pi">:</span>
     <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/madeActuation</span>
@@ -540,64 +656,127 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
   <span class="na">madeByActuator</span><span class="pi">:</span>
     <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/madeByActuator</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">hasSample</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasSample</span>
+  <span class="na">madeBySampler</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/madeBySampler</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">isSampleOf</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/isSampleOf</span>
+  <span class="na">madeBySensor</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/madeBySensor</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">madeObservation</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/madeObservation</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
   <span class="na">madeSampling</span><span class="pi">:</span>
     <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/madeSampling</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">madeBySampler</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/madeBySampler</span>
+  <span class="na">observedProperty</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/observedProperty</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">hasFeatureOfInterest</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasFeatureOfInterest</span>
+  <span class="na">observes</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/observes</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">isFeatureOfInterestOf</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/isFeatureOfInterestOf</span>
+  <span class="na">phenomenonTime</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/phenomenonTime</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">hasResult</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasResult</span>
-  <span class="na">isResultOf</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/isResultOf</span>
-  <span class="na">hasSimpleResult</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasSimpleResult</span>
   <span class="na">resultTime</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/resultTime</span>
   <span class="na">usedProcedure</span><span class="pi">:</span>
     <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/usedProcedure</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">hosts</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hosts</span>
+  <span class="na">wasOriginatedBy</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/wasOriginatedBy</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
-  <span class="na">isHostedBy</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/isHostedBy</span>
-  <span class="na">isProxyFor</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/isProxyFor</span>
-  <span class="na">wasOriginatedBy</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/wasOriginatedBy</span>
-  <span class="na">detects</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/detects</span>
-  <span class="na">hasProperty</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasProperty</span>
-  <span class="na">isPropertyOf</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/isPropertyOf</span>
-  <span class="na">forProperty</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/forProperty</span>
-  <span class="na">implements</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/implements</span>
-  <span class="na">implementedBy</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/implementedBy</span>
-  <span class="na">hasInput</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasInput</span>
-  <span class="na">hasOutput</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasOutput</span>
-  <span class="na">hasSubSystem</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasSubSystem</span>
+  <span class="na">inCondition</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/inCondition</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
-  <span class="na">deployedSystem</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/deployedSystem</span>
-  <span class="na">hasDeployment</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasDeployment</span>
-  <span class="na">deployedOnPlatform</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/deployedOnPlatform</span>
-  <span class="na">inDeployment</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/inDeployment</span>
-  <span class="na">inCondition</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/inCondition</span>
-  <span class="na">hasSystemCapability</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/hasSystemCapability</span>
-  <span class="na">hasSystemProperty</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/hasSystemProperty</span>
-  <span class="na">hasOperatingRange</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/hasOperatingRange</span>
-  <span class="na">hasOperatingProperty</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/hasOperatingProperty</span>
-  <span class="na">hasSurvivalRange</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/hasSurvivalRange</span>
-  <span class="na">hasSurvivalProperty</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/hasSurvivalProperty</span>
-  <span class="na">qualityOfObservation</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/qualityOfObservation</span>
-  <span class="na">hasMember</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasMember</span>
-  <span class="na">features</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasMember</span>
+  <span class="na">Condition</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/Condition</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">hasSystemCapability</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/hasSystemCapability</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">SystemCapability</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/SystemCapability</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">hasSystemProperty</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/hasSystemProperty</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">SystemProperty</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/SystemProperty</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">MeasurementRange</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/MeasurementRange</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">ActuationRange</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/ActuationRange</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">Accuracy</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/Accuracy</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">DetectionLimit</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/DetectionLimit</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">Drift</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/Drift</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">Frequency</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/Frequency</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">Latency</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/Latency</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">Precision</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/Precision</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">Resolution</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/Resolution</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">ResponseTime</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/ResponseTime</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">Selectivity</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/Selectivity</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">Sensitivity</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/Sensitivity</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">hasOperatingRange</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/hasOperatingRange</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">OperatingRange</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/OperatingRange</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">hasOperatingProperty</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/hasOperatingProperty</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">OperatingProperty</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/OperatingProperty</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">MaintenanceSchedule</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/MaintenanceSchedule</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">OperatingPowerRange</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/OperatingPowerRange</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">hasSurvivalRange</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/hasSurvivalRange</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">SurvivalRange</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/SurvivalRange</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">hasSurvivalProperty</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/hasSurvivalProperty</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">SurvivalProperty</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/SurvivalProperty</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">SystemLifetime</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/SystemLifetime</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">BatteryLifetime</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/BatteryLifetime</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">qualityOfObservation</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/ssn/systems/qualityOfObservation</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
   <span class="na">featureType</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@type'</span>
 <span class="na">x-jsonld-prefixes</span><span class="pi">:</span>
   <span class="na">sosa</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/</span>
@@ -667,7 +846,10 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:coordinates"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"resultTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:resultTime"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"phenomenonTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:phenomenonTime"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"phenomenonTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:phenomenonTime"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
     </span><span class="nl">"hasFeatureOfInterest"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasFeatureOfInterest"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
@@ -686,28 +868,182 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"hasResult"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasResult"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"hasSimpleResult"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasSimpleResult"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Observation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:Observation"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Sample"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:Sample"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"System"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:System"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Platform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:Platform"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"observes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:observes"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ActuatableProperty"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:ActuatableProperty"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"isObservedBy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isObservedBy"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Actuation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:Actuation"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"madeObservation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:madeObservation"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Actuator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:Actuator"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Deployment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:Deployment"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"FeatureOfInterest"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:FeatureOfInterest"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Input"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:Input"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"ObservableProperty"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:ObservableProperty"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Observation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:Observation"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Output"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:Output"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Platform"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:Platform"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Property"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:Property"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Procedure "</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:Procedure"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:Result"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Sample"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:Sample"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Sampler"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:Sampler"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Sampling"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:Sampling"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Sensor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:Sensor"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Stimulus"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:Stimulus"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"System"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:System"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"actsOnProperty"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:actsOnProperty"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"deployedOnPlatform"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:deployedOnPlatform"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"deployedSystem"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:deployedSystem"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"detects"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:detects"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"forProperty"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:forProperty"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"hasDeployment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasDeployment"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"hasInput"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasInput"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"hasMember"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasMember"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"hasOutput"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasOutput"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"hasProperty"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasProperty"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"hasSample"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasSample"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"hasSubSystem"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasSubSystem"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"hasUltimateFeatureOfInterest"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasUltimateFeatureOfInterest"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"hosts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hosts"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"implementedBy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:implementedBy"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"implements"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:implements"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"inDeployment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:inDeployment"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
     </span><span class="nl">"isActedOnBy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isActedOnBy"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"isFeatureOfInterestOf"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isFeatureOfInterestOf"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"isHostedBy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isHostedBy"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"isObservedBy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isObservedBy"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"isPropertyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isPropertyOf"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"isProxyFor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isProxyFor"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"isResultOf"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isResultOf"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"isSampleOf"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isSampleOf"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"madeActuation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -718,61 +1054,150 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:madeByActuator"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"hasSample"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasSample"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"madeBySampler"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:madeBySampler"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"isSampleOf"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isSampleOf"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"madeObservation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:madeObservation"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"madeSampling"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:madeSampling"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"madeBySampler"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:madeBySampler"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"observes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:observes"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"isFeatureOfInterestOf"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isFeatureOfInterestOf"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"wasOriginatedBy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:wasOriginatedBy"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"isResultOf"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isResultOf"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hosts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hosts"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="w">
+    </span><span class="nl">"inCondition"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:inCondition"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"isHostedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isHostedBy"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"isProxyFor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isProxyFor"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"wasOriginatedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:wasOriginatedBy"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"detects"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:detects"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasProperty"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"isPropertyOf"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:isPropertyOf"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"forProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:forProperty"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"implements"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:implements"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"implementedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:implementedBy"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasInput"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasInput"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasOutput"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasOutput"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasSubSystem"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasSubSystem"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="w">
+    </span><span class="nl">"Condition"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:Condition"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"deployedSystem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:deployedSystem"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasDeployment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasDeployment"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"deployedOnPlatform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:deployedOnPlatform"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"inDeployment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:inDeployment"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"inCondition"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:inCondition"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasSystemCapability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:hasSystemCapability"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasSystemProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:hasSystemProperty"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasOperatingRange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:hasOperatingRange"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasOperatingProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:hasOperatingProperty"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasSurvivalRange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:hasSurvivalRange"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasSurvivalProperty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:hasSurvivalProperty"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"qualityOfObservation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:qualityOfObservation"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hasMember"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sosa:hasMember"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hasSystemCapability"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:hasSystemCapability"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"SystemCapability"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:SystemCapability"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"hasSystemProperty"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:hasSystemProperty"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"SystemProperty"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:SystemProperty"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"MeasurementRange"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:MeasurementRange"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"ActuationRange"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:ActuationRange"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Accuracy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:Accuracy"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"DetectionLimit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:DetectionLimit"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Drift"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:Drift"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Frequency"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:Frequency"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Latency"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:Latency"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Precision"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:Precision"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Resolution"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:Resolution"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"ResponseTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:ResponseTime"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Selectivity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:Selectivity"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Sensitivity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:Sensitivity"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"hasOperatingRange"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:hasOperatingRange"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"OperatingRange"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:OperatingRange"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"hasOperatingProperty"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:hasOperatingProperty"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"OperatingProperty"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:OperatingProperty"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"MaintenanceSchedule"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:MaintenanceSchedule"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"OperatingPowerRange"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:OperatingPowerRange"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"hasSurvivalRange"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:hasSurvivalRange"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"SurvivalRange"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:SurvivalRange"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"hasSurvivalProperty"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:hasSurvivalProperty"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"SurvivalProperty"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:SurvivalProperty"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"SystemLifetime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:SystemLifetime"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"BatteryLifetime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:BatteryLifetime"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"qualityOfObservation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssn-system:qualityOfObservation"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
     </span><span class="nl">"geojson"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://purl.org/geojson/vocab#"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"rdfs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2000/01/rdf-schema#"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"oa"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/ns/oa#"</span><span class="p">,</span><span class="w">
