@@ -243,6 +243,7 @@ TBD: Convenience API paths may be defined to support traversal of relationships 
       "@id": "sosa:hasProperty",
       "@type": "@id"
     },
+    "hasResultQuality": "sosa:hasResultQuality",
     "hasSample": {
       "@id": "sosa:hasSample",
       "@type": "@id"
