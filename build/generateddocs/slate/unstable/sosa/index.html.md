@@ -122,14 +122,24 @@ TBD: Convenience API paths may be defined to support traversal of relationships 
       "@id": "sosa:madeBySensor",
       "@type": "@id"
     },
-    "hasResult": "sosa:hasResult",
-    "hasSimpleResult": "sosa:hasSimpleResult",
+    "hasResult": {
+      "@id": "sosa:hasResult",
+      "@type": "@id"
+    },
+    "hasSimpleResult": {
+      "@id": "sosa:hasSimpleResult",
+      "@type": "@id"
+    },
     "ActuatableProperty": {
       "@id": "sosa:ActuatableProperty",
       "@type": "@id"
     },
     "Actuation": {
       "@id": "sosa:Actuation",
+      "@type": "@id"
+    },
+    "ActuationCollection": {
+      "@id": "sosa:ActuationCollection",
       "@type": "@id"
     },
     "Actuator": {
@@ -140,12 +150,12 @@ TBD: Convenience API paths may be defined to support traversal of relationships 
       "@id": "sosa:Deployment",
       "@type": "@id"
     },
-    "FeatureOfInterest": {
-      "@id": "sosa:FeatureOfInterest",
+    "Execution": {
+      "@id": "sosa:Execution",
       "@type": "@id"
     },
-    "Input": {
-      "@id": "sosa:Input",
+    "FeatureOfInterest": {
+      "@id": "sosa:FeatureOfInterest",
       "@type": "@id"
     },
     "ObservableProperty": {
@@ -156,8 +166,8 @@ TBD: Convenience API paths may be defined to support traversal of relationships 
       "@id": "sosa:Observation",
       "@type": "@id"
     },
-    "Output": {
-      "@id": "sosa:Output",
+    "ObservationCollection": {
+      "@id": "sosa:ObservationCollection",
       "@type": "@id"
     },
     "Platform": {
@@ -172,12 +182,12 @@ TBD: Convenience API paths may be defined to support traversal of relationships 
       "@id": "sosa:Procedure",
       "@type": "@id"
     },
-    "Result": {
-      "@id": "sosa:Result",
-      "@type": "@id"
-    },
     "Sample": {
       "@id": "sosa:Sample",
+      "@type": "@id"
+    },
+    "SampleCollection": {
+      "@id": "sosa:SampleCollection",
       "@type": "@id"
     },
     "Sampler": {
@@ -235,6 +245,10 @@ TBD: Convenience API paths may be defined to support traversal of relationships 
         "featureType": "@type"
       }
     },
+    "hasOriginalSample": {
+      "@id": "sosa:hasOriginalSample",
+      "@type": "@id"
+    },
     "hasOutput": {
       "@id": "sosa:hasOutput",
       "@type": "@id"
@@ -243,9 +257,16 @@ TBD: Convenience API paths may be defined to support traversal of relationships 
       "@id": "sosa:hasProperty",
       "@type": "@id"
     },
-    "hasResultQuality": "sosa:hasResultQuality",
+    "hasResultQuality": {
+      "@id": "sosa:hasResultQuality",
+      "@type": "@id"
+    },
     "hasSample": {
       "@id": "sosa:hasSample",
+      "@type": "@id"
+    },
+    "hasSampledFeature": {
+      "@id": "sosa:hasSampledFeature",
       "@type": "@id"
     },
     "hasSubSystem": {
@@ -303,6 +324,14 @@ TBD: Convenience API paths may be defined to support traversal of relationships 
       "@id": "sosa:isResultOf",
       "@type": "@id"
     },
+    "isResultOfMadeBySampler": {
+      "@id": "sosa:isResultOfMadeBySampler",
+      "@type": "@id"
+    },
+    "isResultOfUsedProcedure": {
+      "@id": "sosa:isResultOfUsedProcedure",
+      "@type": "@id"
+    },
     "isSampleOf": {
       "@id": "sosa:isSampleOf",
       "@type": "@id"
@@ -335,40 +364,16 @@ TBD: Convenience API paths may be defined to support traversal of relationships 
       "@id": "sosa:wasOriginatedBy",
       "@type": "@id"
     },
-    "inCondition": {
-      "@id": "ssn-system:inCondition",
-      "@type": "@id"
-    },
-    "Condition": {
-      "@id": "ssn-system:Condition",
-      "@type": "@id"
-    },
-    "hasSystemCapability": {
-      "@id": "ssn-system:hasSystemCapability",
-      "@type": "@id"
-    },
-    "SystemCapability": {
-      "@id": "ssn-system:SystemCapability",
-      "@type": "@id"
-    },
-    "hasSystemProperty": {
-      "@id": "ssn-system:hasSystemProperty",
-      "@type": "@id"
-    },
-    "SystemProperty": {
-      "@id": "ssn-system:SystemProperty",
-      "@type": "@id"
-    },
-    "MeasurementRange": {
-      "@id": "ssn-system:MeasurementRange",
+    "Accuracy": {
+      "@id": "ssn-system:Accuracy",
       "@type": "@id"
     },
     "ActuationRange": {
       "@id": "ssn-system:ActuationRange",
       "@type": "@id"
     },
-    "Accuracy": {
-      "@id": "ssn-system:Accuracy",
+    "BatteryLifetime": {
+      "@id": "ssn-system:BatteryLifetime",
       "@type": "@id"
     },
     "DetectionLimit": {
@@ -385,6 +390,26 @@ TBD: Convenience API paths may be defined to support traversal of relationships 
     },
     "Latency": {
       "@id": "ssn-system:Latency",
+      "@type": "@id"
+    },
+    "MaintenanceSchedule": {
+      "@id": "ssn-system:MaintenanceSchedule",
+      "@type": "@id"
+    },
+    "MeasurementRange": {
+      "@id": "ssn-system:MeasurementRange",
+      "@type": "@id"
+    },
+    "OperatingPowerRange": {
+      "@id": "ssn-system:OperatingPowerRange",
+      "@type": "@id"
+    },
+    "OperatingProperty": {
+      "@id": "ssn-system:OperatingProperty",
+      "@type": "@id"
+    },
+    "OperatingRange": {
+      "@id": "ssn-system:OperatingRange",
       "@type": "@id"
     },
     "Precision": {
@@ -407,42 +432,6 @@ TBD: Convenience API paths may be defined to support traversal of relationships 
       "@id": "ssn-system:Sensitivity",
       "@type": "@id"
     },
-    "hasOperatingRange": {
-      "@id": "ssn-system:hasOperatingRange",
-      "@type": "@id"
-    },
-    "OperatingRange": {
-      "@id": "ssn-system:OperatingRange",
-      "@type": "@id"
-    },
-    "hasOperatingProperty": {
-      "@id": "ssn-system:hasOperatingProperty",
-      "@type": "@id"
-    },
-    "OperatingProperty": {
-      "@id": "ssn-system:OperatingProperty",
-      "@type": "@id"
-    },
-    "MaintenanceSchedule": {
-      "@id": "ssn-system:MaintenanceSchedule",
-      "@type": "@id"
-    },
-    "OperatingPowerRange": {
-      "@id": "ssn-system:OperatingPowerRange",
-      "@type": "@id"
-    },
-    "hasSurvivalRange": {
-      "@id": "ssn-system:hasSurvivalRange",
-      "@type": "@id"
-    },
-    "SurvivalRange": {
-      "@id": "ssn-system:SurvivalRange",
-      "@type": "@id"
-    },
-    "hasSurvivalProperty": {
-      "@id": "ssn-system:hasSurvivalProperty",
-      "@type": "@id"
-    },
     "SurvivalProperty": {
       "@id": "ssn-system:SurvivalProperty",
       "@type": "@id"
@@ -451,8 +440,44 @@ TBD: Convenience API paths may be defined to support traversal of relationships 
       "@id": "ssn-system:SystemLifetime",
       "@type": "@id"
     },
-    "BatteryLifetime": {
-      "@id": "ssn-system:BatteryLifetime",
+    "SurvivalRange": {
+      "@id": "ssn-system:SurvivalRange",
+      "@type": "@id"
+    },
+    "SystemCapability": {
+      "@id": "ssn-system:SystemCapability",
+      "@type": "@id"
+    },
+    "SystemProperty": {
+      "@id": "ssn-system:SystemProperty",
+      "@type": "@id"
+    },
+    "hasOperatingProperty": {
+      "@id": "ssn-system:hasOperatingProperty",
+      "@type": "@id"
+    },
+    "hasOperatingRange": {
+      "@id": "ssn-system:hasOperatingRange",
+      "@type": "@id"
+    },
+    "hasSurvivalProperty": {
+      "@id": "ssn-system:hasSurvivalProperty",
+      "@type": "@id"
+    },
+    "hasSystemCapability": {
+      "@id": "ssn-system:hasSystemCapability",
+      "@type": "@id"
+    },
+    "hasSystemProperty": {
+      "@id": "ssn-system:hasSystemProperty",
+      "@type": "@id"
+    },
+    "hasSurvivalRange": {
+      "@id": "ssn-system:hasSurvivalRange",
+      "@type": "@id"
+    },
+    "inCondition": {
+      "@id": "ssn-system:inCondition",
       "@type": "@id"
     },
     "qualityOfObservation": {
