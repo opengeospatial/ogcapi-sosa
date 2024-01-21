@@ -314,6 +314,7 @@ x-jsonld-extra-terms:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasProperty
     x-jsonld-type: '@id'
   hasResult: http://www.w3.org/ns/sosa/hasResult
+  hasResultQuality: http://www.w3.org/ns/sosa/hasResultQuality
   hasSample:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasSample
     x-jsonld-type: '@id'
@@ -698,6 +699,7 @@ Links to the schema:
       "@id": "sosa:hasProperty",
       "@type": "@id"
     },
+    "hasResultQuality": "sosa:hasResultQuality",
     "hasSample": {
       "@id": "sosa:hasSample",
       "@type": "@id"
