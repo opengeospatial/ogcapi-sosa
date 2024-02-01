@@ -1,0 +1,39 @@
+Validation report for ogc.sosa.properties.observation - SOSA Observation
+Generated 2024-02-01T06:18:51.757149+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using observedprop-fail.jsonld from test resources
+Output Turtle observedprop-fail.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+
+=== SHACL ===
+
+** Validation error **
+Validation result for _sources/properties/observation/rules.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty ) ]
+  	Focus Node: [ sosa:hasFeatureOfInterest [ ] ; sosa:hasResult [ ] ; sosa:madeBySensor Literal("ea est culpa esse") ; sosa:resultTime Literal("2016-05-04T02:27:02.0Z") ]
+  	Result Path: ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty )
+  	Message: Less than 1 values on [ sosa:hasFeatureOfInterest [ ] ; sosa:hasResult [ ] ; sosa:madeBySensor Literal("ea est culpa esse") ; sosa:resultTime Literal("2016-05-04T02:27:02.0Z") ]->( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty )
+  
+Focus nodes for _sources/properties/observation/rules.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: _:Nb8d3001e16014b63b6f9b97fdecd13df
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: _:Nb8d3001e16014b63b6f9b97fdecd13df
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: _:Nb8d3001e16014b63b6f9b97fdecd13df
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: _:Nb8d3001e16014b63b6f9b97fdecd13df
+
+=== End SHACL ===
+
