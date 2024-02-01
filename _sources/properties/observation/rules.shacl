@@ -11,28 +11,25 @@
     sh:targetClass      sosa:Observation ;
     sh:targetSubjectsOf sosa:hasResult, sosa:hasSimpleResult ;
     sh:message          "sosa:resultTime or sosa:phenomenonTime is required, and no more than 1 of each is allowed" ;
-    sh:or               ( [ sh:path     ( [ sh:zeroOrMorePath
-                                                    [ sh:oneOrMorePath
-                                                              [ sh:inversePath
-                                                                        sosa:hasMember ] ] ] sosa:phenomenonTime ) ;
+    sh:or               ( [ sh:path     ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:inversePath sosa:hasMember ] ] ]
+                                          sosa:phenomenonTime ) ;
                             sh:minCount 1 ;
-                            sh:maxCount 1 ; ]
-                             [ sh:path     ( [ sh:zeroOrMorePath
-                                                    [ sh:oneOrMorePath
-                                                              [ sh:inversePath
-                                                                        geojson:features ] ] ] sosa:phenomenonTime ) ;
-                            sh:minCount 1 ;
-                            sh:maxCount 1 ; ]
-                          [ sh:path     ( [ sh:zeroOrMorePath
-                                                    [ sh:oneOrMorePath
-                                                              [ sh:inversePath sosa:hasMember ] ] ] sosa:resultTime ) ;
-                            sh:minCount 1 ;
-                            sh:maxCount 1 ; ]
-[ sh:path     ( [ sh:zeroOrMorePath
-                                                    [ sh:oneOrMorePath
-                                                              [ sh:inversePath geojson:features ] ] ] sosa:resultTime ) ;
-                            sh:minCount 1 ;
-                            sh:maxCount 1 ; ] ) ;
+                            sh:maxCount 1 ; ] [ sh:path     ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:inversePath
+                                                                                                               geojson:features ] ] ]
+                                                              sosa:phenomenonTime ) ;
+                                                sh:minCount 1 ;
+                                                sh:maxCount 1 ; ] [ sh:path     ( [ sh:zeroOrMorePath [ sh:oneOrMorePath
+                                                                                                                [ sh:inversePath
+                                                                                                                          sosa:hasMember ] ] ]
+                                                                                  sosa:resultTime ) ;
+                                                                    sh:minCount 1 ;
+                                                                    sh:maxCount 1 ; ] [ sh:path     ( [ sh:zeroOrMorePath
+                                                                                                                [ sh:oneOrMorePath
+                                                                                                                          [ sh:inversePath
+                                                                                                                                    geojson:features ] ] ]
+                                                                                                      sosa:resultTime ) ;
+                                                                                        sh:minCount 1 ;
+                                                                                        sh:maxCount 1 ; ] ) ;
 .
 
 <#testObservedProperty>
@@ -40,18 +37,24 @@
     sh:targetClass      sosa:Observation ;
     sh:targetSubjectsOf sosa:hasResult, sosa:hasSimpleResult ;
     sh:message          "Exactly 1 of sosa:observedProperty is required" ;
-    sh:property         [ sh:path     ( [ sh:zeroOrMorePath
-                                                  [ sh:oneOrMorePath
-                                                             [ sh:alternativePath ([ sh:inversePath geojson:features ] [sh:inversePath sosa:hasMember] ) ] ] ] sosa:observedProperty ) ;
+    sh:property         [ sh:path     ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath ( [ sh:inversePath
+                                                                                                                geojson:features ]
+                                                                                                      [ sh:inversePath
+                                                                                                                sosa:hasMember ] ) ] ] ]
+                                        sosa:observedProperty ) ;
                           sh:minCount 1 ;
                           sh:maxCount 1 ; ] ;
 .
+
 
 <#testFeatureOfInterest>
     a                   sh:NodeShape ;
     sh:targetClass      sosa:Observation ;
     sh:targetSubjectsOf sosa:hasResult, sosa:hasSimpleResult ;
-    sh:property         [ sh:path     ( [ sh:zeroOrMorePath [ sh:oneOrMorePath  [ sh:alternativePath ([ sh:inversePath geojson:features ] [sh:inversePath sosa:hasMember] ) ] ] ]
+    sh:property         [ sh:path     ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath ( [ sh:inversePath
+                                                                                                                geojson:features ]
+                                                                                                      [ sh:inversePath
+                                                                                                                sosa:hasMember ] ) ] ] ]
                                         [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath
                                                                                                    sosa:isFeatureOfInterestOf ] ) ] ) ;
                           sh:minCount 1 ;
@@ -60,13 +63,13 @@
 .
 
 <#testResult>
-    a              sh:NodeShape ;
-    sh:targetClass sosa:Observation ;
+    a                   sh:NodeShape ;
+    sh:targetClass      sosa:Observation ;
     sh:targetSubjectsOf sosa:hasResult, sosa:hasSimpleResult ;
-    sh:property    [ sh:path     [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ;
-                     sh:minCount 1 ;
-                     sh:maxCount 1 ; ] ;
-    sh:message     "Exactly one of sosa:hasResult or sosa:hasSimpleResult is required per observation" ;
+    sh:property         [ sh:path     [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ;
+                          sh:minCount 1 ;
+                          sh:maxCount 1 ; ] ;
+    sh:message          "Exactly one of sosa:hasResult or sosa:hasSimpleResult is required per observation" ;
 .
 
 
@@ -81,14 +84,12 @@
     a                   sh:NodeShape ;
     sh:targetSubjectsOf sosa:hasResult-Disabled ;
     sh:message          "sosa:hasResult not a blank node" ;
-     sh:sparql [
-    sh:select """
+    sh:sparql           [ sh:select """
       PREFIX geojson: <https://purl.org/geojson/vocab#>
       SELECT $this (sosa:hasResult as ?path) ?value
       WHERE {
         $this sosa:hasResult ?value .
         FILTER NOT EXISTS { ?value ?p ?o }
       }
-    """ ;
-  ]
+    """ ; ]
 .
