@@ -41,7 +41,7 @@ This building block is <strong><a href="https://github.com/opengeospatial/ogcapi
 
 ```json
 {
-  "@id": "pop1999",
+  "id": "pop1999",
   "type": "Feature",
   "featureType": "sosa:Observation",
   "geometry": null,
@@ -86,7 +86,7 @@ _:a1 a geojson:Feature, sosa:Observation ;
 
 ```jsonld
 {
-  "@id": "pop1999",
+  "id": "pop1999",
   "type": "Feature",
   "featureType": "sosa:Observation",
   "geometry": null,
@@ -120,7 +120,7 @@ _:a1 a geojson:Feature, sosa:Observation ;
     "a": "resultschema:a",
     "b": "resultschema:b"
   },
-  "@id": "pop1999",
+  "id": "pop1999",
   "type": "Feature",
   "featureType": "sosa:Observation",
   "geometry": null,
@@ -156,7 +156,7 @@ _:a1 a geojson:Feature, sosa:Observation ;
       "b": "resultschema:b"
     }
   ],
-  "@id": "pop1999",
+  "id": "pop1999",
   "type": "Feature",
   "featureType": "sosa:Observation",
   "geometry": null,

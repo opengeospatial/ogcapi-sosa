@@ -29,8 +29,8 @@ This building block defines the set of properties for an observation according t
     <a href="http://www.opengis.net/def/status/under-development" target="_blank" data-rainbow-uri>Under development</a>
 </p>
 
-<aside class="warning">
-Validation for this building block has <strong><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/properties/observation/" target="_blank">failed</a></strong>
+<aside class="success">
+This building block is <strong><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/properties/observation/" target="_blank">valid</a></strong>
 </aside>
 
 # Description
@@ -139,7 +139,7 @@ _:a1 a sosa:Observation ;
   "observedProperty": "p1",
   "hasResult": {
     "@context": {
-      "comment": "rdfs:comment",
+      "comment": "rdfs:comment"
     },
     "comment": "I feel good"
   },
@@ -151,6 +151,50 @@ _:a1 a sosa:Observation ;
   <p class="example-links">
     <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observation/example_2_1.json">Open in new window</a>
     <a target="_blank" href="https://avillar.github.io/TreedocViewer/?dataParser=json&amp;dataUrl=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Fsosa%2Fproperties%2Fobservation%2Fexample_2_1.json&amp;expand=2&amp;option=%7B%22showTable%22%3A+false%7D">View on JSON Viewer</a></p>
+</blockquote>
+
+
+
+
+```jsonld
+{
+  "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
+  "observedProperty": "p1",
+  "hasResult": {
+    "@context": {
+      "comment": "rdfs:comment"
+    },
+    "comment": "I feel good"
+  },
+  "resultTime": "2022-05-01T22:33:44Z",
+  "@context": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/context.jsonld"
+}
+```
+
+<blockquote class="lang-specific jsonld">
+  <p class="example-links">
+    <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observation/example_2_1.jsonld">Open in new window</a>
+    <a target="_blank" href="https://json-ld.org/playground/#json-ld=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Fsosa%2Fproperties%2Fobservation%2Fexample_2_1.jsonld">View on JSON-LD Playground</a>
+</blockquote>
+
+
+
+
+```turtle
+@prefix ns1: <rdfs:> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+
+[] sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
+    sosa:hasResult [ ns1:comment "I feel good" ] ;
+    sosa:observedProperty <file:///github/workspace/p1> ;
+    sosa:resultTime "2022-05-01T22:33:44Z" .
+
+
+```
+
+<blockquote class="lang-specific turtle">
+  <p class="example-links">
+    <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observation/example_2_1.ttl">Open in new window</a>
 </blockquote>
 
 

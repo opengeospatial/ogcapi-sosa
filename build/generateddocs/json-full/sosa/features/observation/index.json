@@ -9,7 +9,7 @@
   "itemClass": "schema",
   "register": "ogc-building-block-register",
   "version": "1.0",
-  "dateOfLastChange": "2024-02-01",
+  "dateOfLastChange": "2024-02-06",
   "sources": [
     {
       "title": "Semantic Sensor Network Ontology",
@@ -19,8 +19,8 @@
   "maturity": "development",
   "scope": "development",
   "dependsOn": [
-    "ogc.sosa.properties.observation",
-    "ogc.geo.json-fg.feature-lenient"
+    "ogc.geo.json-fg.feature-lenient",
+    "ogc.sosa.properties.observation"
   ],
   "tags": [
     "sosa",
@@ -40,6 +40,7 @@
     "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.json"
   },
   "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/context.jsonld",
+  "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observation/schema.yaml",
   "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observation/",
   "validationPassed": true,
   "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/features/observation/",
@@ -51,7 +52,7 @@
         {
           "language": "json",
           "ref": "examples/observation.json",
-          "code": "{\n  \"@id\": \"pop1999\",\n  \"type\": \"Feature\",\n  \"featureType\": \"sosa:Observation\",\n  \"geometry\": null,\n  \"properties\": {\n    \"observedProperty\": \"https://dbpedia.org/ontology/population\",\n    \"resultTime\": \"1999\",\n    \"comment\": \"Example of an inline membership - would entail hasMember relations\",\n    \"hasFeatureOfInterest\": \"https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork\",\n    \"hasSimpleResult\": 15555.0\n  }\n}",
+          "code": "{\n  \"id\": \"pop1999\",\n  \"type\": \"Feature\",\n  \"featureType\": \"sosa:Observation\",\n  \"geometry\": null,\n  \"properties\": {\n    \"observedProperty\": \"https://dbpedia.org/ontology/population\",\n    \"resultTime\": \"1999\",\n    \"comment\": \"Example of an inline membership - would entail hasMember relations\",\n    \"hasFeatureOfInterest\": \"https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork\",\n    \"hasSimpleResult\": 15555.0\n  }\n}",
           "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/features/observation/example_1_1.json"
         },
         {
@@ -61,7 +62,7 @@
         },
         {
           "language": "jsonld",
-          "code": "{\n  \"@id\": \"pop1999\",\n  \"type\": \"Feature\",\n  \"featureType\": \"sosa:Observation\",\n  \"geometry\": null,\n  \"properties\": {\n    \"observedProperty\": \"https://dbpedia.org/ontology/population\",\n    \"resultTime\": \"1999\",\n    \"comment\": \"Example of an inline membership - would entail hasMember relations\",\n    \"hasFeatureOfInterest\": \"https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork\",\n    \"hasSimpleResult\": 15555.0\n  },\n  \"@context\": \"https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/context.jsonld\"\n}",
+          "code": "{\n  \"id\": \"pop1999\",\n  \"type\": \"Feature\",\n  \"featureType\": \"sosa:Observation\",\n  \"geometry\": null,\n  \"properties\": {\n    \"observedProperty\": \"https://dbpedia.org/ontology/population\",\n    \"resultTime\": \"1999\",\n    \"comment\": \"Example of an inline membership - would entail hasMember relations\",\n    \"hasFeatureOfInterest\": \"https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork\",\n    \"hasSimpleResult\": 15555.0\n  },\n  \"@context\": \"https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/context.jsonld\"\n}",
           "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/features/observation/example_1_1.jsonld"
         }
       ]
@@ -74,12 +75,12 @@
         {
           "language": "json",
           "ref": "examples/hasResult.json",
-          "code": "{\n  \"@context\": {\n    \"resultschema\": \"http//example.org/resultchema/\",\n    \"a\": \"resultschema:a\",\n    \"b\": \"resultschema:b\"\n  },\n  \"@id\": \"pop1999\",\n  \"type\": \"Feature\",\n  \"featureType\": \"sosa:Observation\",\n  \"geometry\": null,\n  \"properties\": {\n    \"observedProperty\": \"https://dbpedia.org/ontology/population\",\n    \"resultTime\": \"1999\",\n    \"comment\": \"A complex result example\",\n    \"hasFeatureOfInterest\": \"https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork\",\n    \"hasResult\": {\n      \"a\": \"r1\",\n      \"b\": \"r2\"\n    }\n  }\n}",
+          "code": "{\n  \"@context\": {\n    \"resultschema\": \"http//example.org/resultchema/\",\n    \"a\": \"resultschema:a\",\n    \"b\": \"resultschema:b\"\n  },\n  \"id\": \"pop1999\",\n  \"type\": \"Feature\",\n  \"featureType\": \"sosa:Observation\",\n  \"geometry\": null,\n  \"properties\": {\n    \"observedProperty\": \"https://dbpedia.org/ontology/population\",\n    \"resultTime\": \"1999\",\n    \"comment\": \"A complex result example\",\n    \"hasFeatureOfInterest\": \"https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork\",\n    \"hasResult\": {\n      \"a\": \"r1\",\n      \"b\": \"r2\"\n    }\n  }\n}",
           "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/features/observation/example_2_1.json"
         },
         {
           "language": "jsonld",
-          "code": "{\n  \"@context\": [\n    \"https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/context.jsonld\",\n    {\n      \"resultschema\": \"http//example.org/resultchema/\",\n      \"a\": \"resultschema:a\",\n      \"b\": \"resultschema:b\"\n    }\n  ],\n  \"@id\": \"pop1999\",\n  \"type\": \"Feature\",\n  \"featureType\": \"sosa:Observation\",\n  \"geometry\": null,\n  \"properties\": {\n    \"observedProperty\": \"https://dbpedia.org/ontology/population\",\n    \"resultTime\": \"1999\",\n    \"comment\": \"A complex result example\",\n    \"hasFeatureOfInterest\": \"https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork\",\n    \"hasResult\": {\n      \"a\": \"r1\",\n      \"b\": \"r2\"\n    }\n  }\n}",
+          "code": "{\n  \"@context\": [\n    \"https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/context.jsonld\",\n    {\n      \"resultschema\": \"http//example.org/resultchema/\",\n      \"a\": \"resultschema:a\",\n      \"b\": \"resultschema:b\"\n    }\n  ],\n  \"id\": \"pop1999\",\n  \"type\": \"Feature\",\n  \"featureType\": \"sosa:Observation\",\n  \"geometry\": null,\n  \"properties\": {\n    \"observedProperty\": \"https://dbpedia.org/ontology/population\",\n    \"resultTime\": \"1999\",\n    \"comment\": \"A complex result example\",\n    \"hasFeatureOfInterest\": \"https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork\",\n    \"hasResult\": {\n      \"a\": \"r1\",\n      \"b\": \"r2\"\n    }\n  }\n}",
           "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/features/observation/example_2_1.jsonld"
         },
         {

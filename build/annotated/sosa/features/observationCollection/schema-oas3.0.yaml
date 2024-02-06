@@ -1566,6 +1566,8 @@ x-defs:
     - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observationCollection/schema-oas3.0.yaml#/x-defs/ogc.geo.common.data_types.geojson
     - type: object
       properties:
+        bbox:
+          $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observationCollection/schema-oas3.0.yaml#/x-defs/ogc.geo.common.data_types.bounding_box
         links:
           type: array
           items:
@@ -2415,6 +2417,16 @@ x-defs:
       geojson: https://purl.org/geojson/vocab#
     x-schema-version: http://json-schema.org/draft-07/schema#
     x-schema-source: https://geojson.org/schema/Feature.json
+  ogc.geo.common.data_types.bounding_box:
+    type: array
+    oneOf:
+    - minItems: 4
+      maxItems: 4
+    - minItems: 6
+      maxItems: 6
+    items:
+      type: number
+    x-schema-source: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/common/data_types/bounding_box/schema.yaml
   beta.schemas.opengis.net_json-fg_geometry-objects.json:
     title: the geometry objects
     description: This JSON Schema is part of JSON-FG version 0.1.1

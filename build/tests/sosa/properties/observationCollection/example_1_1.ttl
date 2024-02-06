@@ -1,7 +1,12 @@
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] sosa:hasFeatureOfInterest <http://something.org/1> ;
-    sosa:hasSimpleResult [ ] ;
-    sosa:observedProperty "something" ;
-    sosa:resultTime "2016-05-04T02:27:02.0Z" .
+<http://example.com/a1> a sosa:Observation ;
+    sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
+    sosa:hasSimpleResult 1.9952e+03 ;
+    sosa:phenomenonTime <2022-05-01t22:33:40Z> .
+
+[] sosa:hasMember <http://example.com/a1> ;
+    sosa:observedProperty <http://example.com/p1> ;
+    sosa:resultTime "2022-05-01T22:33:44Z" .
 

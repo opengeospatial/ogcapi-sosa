@@ -10,7 +10,7 @@
   "itemClass": "schema",
   "register": "ogc-building-block-register",
   "version": "1.0",
-  "dateOfLastChange": "2024-02-01",
+  "dateOfLastChange": "2024-02-06",
   "sources": [
     {
       "title": "Semantic Sensor Network Ontology",
@@ -41,32 +41,12 @@
     "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.json"
   },
   "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/context.jsonld",
+  "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observationCollection/schema.yaml",
   "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observationCollection/",
-  "validationPassed": false,
+  "validationPassed": true,
   "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/properties/observationCollection/",
   "description": "## SOSA ObservationCollection\n\nCollection of one or more observations, whose members share a common value for one or more properties.",
   "examples": [
-    {
-      "title": "Test remote fail-test",
-      "snippets": [
-        {
-          "language": "json",
-          "ref": "https://raw.githubusercontent.com/opengeospatial/ogcapi-sosa/master/_sources/properties/observation/tests/non-simpleresult-fail.jsonld",
-          "code": "{\n  \"@context\": {\n    \"hasResult\": \"http://www.w3.org/ns/sosa/hasResult\",\n    \"hasSimpleResult\": \"http://www.w3.org/ns/sosa/hasSimpleResult\",\n    \"resultTime\": \"http://www.w3.org/ns/sosa/resultTime\",\n    \"phenomenonTime\": \"http://www.w3.org/ns/sosa/phenomenonTime\",\n    \"hasFeatureOfInterest\": \"http://www.w3.org/ns/sosa/hasFeatureOfInterest\",\n    \"observedProperty\": \"http://www.w3.org/ns/sosa/observedProperty\",\n    \"usedProcedure\": \"http://www.w3.org/ns/sosa/usedProcedure\",\n    \"madeBySensor\": \"http://www.w3.org/ns/sosa/madeBySensor\"\n  },\n  \"resultTime\": \"2016-05-04T02:27:02.0Z\",\n  \"hasFeatureOfInterest\": {\n    \"id\": \"http://something.org/1\"\n  },\n  \"observedProperty\": \"something\",\n  \"hasSimpleResult\": {\n    \"irure31\": -8150858,\n    \"quis70f\": false,\n    \"quisc\": \"nulla Duis do ullamco\"\n  }\n}",
-          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observationCollection/example_1_1.json"
-        },
-        {
-          "language": "jsonld",
-          "code": "{\n  \"@context\": [\n    \"https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/context.jsonld\",\n    {\n      \"hasResult\": \"http://www.w3.org/ns/sosa/hasResult\",\n      \"hasSimpleResult\": \"http://www.w3.org/ns/sosa/hasSimpleResult\",\n      \"resultTime\": \"http://www.w3.org/ns/sosa/resultTime\",\n      \"phenomenonTime\": \"http://www.w3.org/ns/sosa/phenomenonTime\",\n      \"hasFeatureOfInterest\": \"http://www.w3.org/ns/sosa/hasFeatureOfInterest\",\n      \"observedProperty\": \"http://www.w3.org/ns/sosa/observedProperty\",\n      \"usedProcedure\": \"http://www.w3.org/ns/sosa/usedProcedure\",\n      \"madeBySensor\": \"http://www.w3.org/ns/sosa/madeBySensor\"\n    }\n  ],\n  \"resultTime\": \"2016-05-04T02:27:02.0Z\",\n  \"hasFeatureOfInterest\": {\n    \"id\": \"http://something.org/1\"\n  },\n  \"observedProperty\": \"something\",\n  \"hasSimpleResult\": {\n    \"irure31\": -8150858,\n    \"quis70f\": false,\n    \"quisc\": \"nulla Duis do ullamco\"\n  }\n}",
-          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observationCollection/example_1_1.jsonld"
-        },
-        {
-          "language": "ttl",
-          "code": "@prefix sosa: <http://www.w3.org/ns/sosa/> .\n\n[] sosa:hasFeatureOfInterest <http://something.org/1> ;\n    sosa:hasSimpleResult [ ] ;\n    sosa:observedProperty \"something\" ;\n    sosa:resultTime \"2016-05-04T02:27:02.0Z\" .\n\n",
-          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observationCollection/example_1_1.ttl"
-        }
-      ]
-    },
     {
       "title": "Example of SOSA ObservationCollection",
       "snippets": [
@@ -77,17 +57,17 @@
           "shacl-closure": [
             "closure.ttl"
           ],
-          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observationCollection/example_2_1.json"
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observationCollection/example_1_1.json"
         },
         {
           "language": "jsonld",
           "code": "{\n  \"observedProperty\": \"p1\",\n  \"resultTime\": \"2022-05-01T22:33:44Z\",\n  \"hasMember\": [\n    {\n      \"@id\": \"a1\",\n      \"@type\": \"sosa:Observation\",\n      \"comment\": \"Example of an inline membership - would entail hasMember relations\",\n      \"hasFeatureOfInterest\": \"https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem\",\n      \"hasSimpleResult\": 1995.2,\n      \"phenomenonTime\": \"2022-05-01T22:33:40Z\"\n    }\n  ],\n  \"@context\": \"https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/context.jsonld\"\n}",
-          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observationCollection/example_2_1.jsonld"
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observationCollection/example_1_1.jsonld"
         },
         {
           "language": "ttl",
           "code": "@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<http://example.com/a1> a sosa:Observation ;\n    sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;\n    sosa:hasSimpleResult 1.9952e+03 ;\n    sosa:phenomenonTime <2022-05-01t22:33:40Z> .\n\n[] sosa:hasMember <http://example.com/a1> ;\n    sosa:observedProperty <http://example.com/p1> ;\n    sosa:resultTime \"2022-05-01T22:33:44Z\" .\n\n",
-          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observationCollection/example_2_1.ttl"
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observationCollection/example_1_1.ttl"
         }
       ]
     },
@@ -97,7 +77,7 @@
         {
           "language": "ttl",
           "code": "@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix eg: <http://example.org/my-feature/> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n\neg:c1 a sosa:ObservationCollection ;\n  sosa:hasMember eg:a1 ;\n  sosa:observedProperty eg:p1 ;\n  sosa:resultTime \"2022-05-01T22:33:44Z\"^^xsd:dateTime ;\n  sosa:phenomenonTime \"2022-05-01T22:33:40Z\"^^xsd:dateTime ;\n.\n\neg:a1 a sosa:Observation ;\n  sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;\n  sosa:hasSimpleResult 33 ;\n.\neg:p1 a skos:Concept;\n  skos:prefLabel \"Some Observable Property\";\n.",
-          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observationCollection/example_3_1.ttl"
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observationCollection/example_2_1.ttl"
         }
       ]
     }

@@ -29,8 +29,8 @@ This building block defines an ObservationCollection according to the SOSA/SSN v
     <a href="http://www.opengis.net/def/status/under-development" target="_blank" data-rainbow-uri>Under development</a>
 </p>
 
-<aside class="warning">
-Validation for this building block has <strong><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/properties/observationCollection/" target="_blank">failed</a></strong>
+<aside class="success">
+This building block is <strong><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/properties/observationCollection/" target="_blank">valid</a></strong>
 </aside>
 
 # Description
@@ -39,99 +39,6 @@ Validation for this building block has <strong><a href="https://github.com/openg
 
 Collection of one or more observations, whose members share a common value for one or more properties.
 # Examples
-
-## Test remote fail-test
-
-
-
-```json
-{
-  "@context": {
-    "hasResult": "http://www.w3.org/ns/sosa/hasResult",
-    "hasSimpleResult": "http://www.w3.org/ns/sosa/hasSimpleResult",
-    "resultTime": "http://www.w3.org/ns/sosa/resultTime",
-    "phenomenonTime": "http://www.w3.org/ns/sosa/phenomenonTime",
-    "hasFeatureOfInterest": "http://www.w3.org/ns/sosa/hasFeatureOfInterest",
-    "observedProperty": "http://www.w3.org/ns/sosa/observedProperty",
-    "usedProcedure": "http://www.w3.org/ns/sosa/usedProcedure",
-    "madeBySensor": "http://www.w3.org/ns/sosa/madeBySensor"
-  },
-  "resultTime": "2016-05-04T02:27:02.0Z",
-  "hasFeatureOfInterest": {
-    "id": "http://something.org/1"
-  },
-  "observedProperty": "something",
-  "hasSimpleResult": {
-    "irure31": -8150858,
-    "quis70f": false,
-    "quisc": "nulla Duis do ullamco"
-  }
-}
-```
-
-<blockquote class="lang-specific json">
-  <p class="example-links">
-    <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observationCollection/example_1_1.json">Open in new window</a>
-    <a target="_blank" href="https://avillar.github.io/TreedocViewer/?dataParser=json&amp;dataUrl=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Fsosa%2Fproperties%2FobservationCollection%2Fexample_1_1.json&amp;expand=2&amp;option=%7B%22showTable%22%3A+false%7D">View on JSON Viewer</a></p>
-</blockquote>
-
-
-
-
-```jsonld
-{
-  "@context": [
-    "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/context.jsonld",
-    {
-      "hasResult": "http://www.w3.org/ns/sosa/hasResult",
-      "hasSimpleResult": "http://www.w3.org/ns/sosa/hasSimpleResult",
-      "resultTime": "http://www.w3.org/ns/sosa/resultTime",
-      "phenomenonTime": "http://www.w3.org/ns/sosa/phenomenonTime",
-      "hasFeatureOfInterest": "http://www.w3.org/ns/sosa/hasFeatureOfInterest",
-      "observedProperty": "http://www.w3.org/ns/sosa/observedProperty",
-      "usedProcedure": "http://www.w3.org/ns/sosa/usedProcedure",
-      "madeBySensor": "http://www.w3.org/ns/sosa/madeBySensor"
-    }
-  ],
-  "resultTime": "2016-05-04T02:27:02.0Z",
-  "hasFeatureOfInterest": {
-    "id": "http://something.org/1"
-  },
-  "observedProperty": "something",
-  "hasSimpleResult": {
-    "irure31": -8150858,
-    "quis70f": false,
-    "quisc": "nulla Duis do ullamco"
-  }
-}
-```
-
-<blockquote class="lang-specific jsonld">
-  <p class="example-links">
-    <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observationCollection/example_1_1.jsonld">Open in new window</a>
-    <a target="_blank" href="https://json-ld.org/playground/#json-ld=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Fsosa%2Fproperties%2FobservationCollection%2Fexample_1_1.jsonld">View on JSON-LD Playground</a>
-</blockquote>
-
-
-
-
-```turtle
-@prefix sosa: <http://www.w3.org/ns/sosa/> .
-
-[] sosa:hasFeatureOfInterest <http://something.org/1> ;
-    sosa:hasSimpleResult [ ] ;
-    sosa:observedProperty "something" ;
-    sosa:resultTime "2016-05-04T02:27:02.0Z" .
-
-
-```
-
-<blockquote class="lang-specific turtle">
-  <p class="example-links">
-    <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observationCollection/example_1_1.ttl">Open in new window</a>
-</blockquote>
-
-
 
 ## Example of SOSA ObservationCollection
 
@@ -156,8 +63,8 @@ Collection of one or more observations, whose members share a common value for o
 
 <blockquote class="lang-specific json">
   <p class="example-links">
-    <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observationCollection/example_2_1.json">Open in new window</a>
-    <a target="_blank" href="https://avillar.github.io/TreedocViewer/?dataParser=json&amp;dataUrl=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Fsosa%2Fproperties%2FobservationCollection%2Fexample_2_1.json&amp;expand=2&amp;option=%7B%22showTable%22%3A+false%7D">View on JSON Viewer</a></p>
+    <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observationCollection/example_1_1.json">Open in new window</a>
+    <a target="_blank" href="https://avillar.github.io/TreedocViewer/?dataParser=json&amp;dataUrl=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Fsosa%2Fproperties%2FobservationCollection%2Fexample_1_1.json&amp;expand=2&amp;option=%7B%22showTable%22%3A+false%7D">View on JSON Viewer</a></p>
 </blockquote>
 
 
@@ -183,8 +90,8 @@ Collection of one or more observations, whose members share a common value for o
 
 <blockquote class="lang-specific jsonld">
   <p class="example-links">
-    <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observationCollection/example_2_1.jsonld">Open in new window</a>
-    <a target="_blank" href="https://json-ld.org/playground/#json-ld=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Fsosa%2Fproperties%2FobservationCollection%2Fexample_2_1.jsonld">View on JSON-LD Playground</a>
+    <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observationCollection/example_1_1.jsonld">Open in new window</a>
+    <a target="_blank" href="https://json-ld.org/playground/#json-ld=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Fsosa%2Fproperties%2FobservationCollection%2Fexample_1_1.jsonld">View on JSON-LD Playground</a>
 </blockquote>
 
 
@@ -208,7 +115,7 @@ Collection of one or more observations, whose members share a common value for o
 
 <blockquote class="lang-specific turtle">
   <p class="example-links">
-    <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observationCollection/example_2_1.ttl">Open in new window</a>
+    <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observationCollection/example_1_1.ttl">Open in new window</a>
 </blockquote>
 
 
@@ -241,7 +148,7 @@ eg:p1 a skos:Concept;
 
 <blockquote class="lang-specific turtle">
   <p class="example-links">
-    <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observationCollection/example_3_1.ttl">Open in new window</a>
+    <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observationCollection/example_2_1.ttl">Open in new window</a>
 </blockquote>
 
 

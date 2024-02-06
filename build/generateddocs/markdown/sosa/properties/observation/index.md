@@ -80,12 +80,41 @@ _:a1 a sosa:Observation ;
   "observedProperty": "p1",
   "hasResult": {
     "@context": {
-      "comment": "rdfs:comment",
+      "comment": "rdfs:comment"
     },
     "comment": "I feel good"
   },
   "resultTime": "2022-05-01T22:33:44Z"
 }
+```
+
+#### jsonld
+```jsonld
+{
+  "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
+  "observedProperty": "p1",
+  "hasResult": {
+    "@context": {
+      "comment": "rdfs:comment"
+    },
+    "comment": "I feel good"
+  },
+  "resultTime": "2022-05-01T22:33:44Z",
+  "@context": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/context.jsonld"
+}
+```
+
+#### ttl
+```ttl
+@prefix ns1: <rdfs:> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+
+[] sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
+    sosa:hasResult [ ns1:comment "I feel good" ] ;
+    sosa:observedProperty <file:///github/workspace/p1> ;
+    sosa:resultTime "2022-05-01T22:33:44Z" .
+
+
 ```
 
 ## Schema
