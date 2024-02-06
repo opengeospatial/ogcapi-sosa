@@ -1,5 +1,5 @@
 ---
-title: SOSA Observation (Schema)
+title: Observation Properties (Schema)
 
 language_tabs:
   - json: JSON
@@ -8,7 +8,7 @@ language_tabs:
 
 toc_footers:
   - Version 1.0
-  - <a href='#'>SOSA Observation</a>
+  - <a href='#'>Observation Properties</a>
   - <a href='https://blocks.ogc.org/register.html'>Building Blocks register</a>
 
 search: true
@@ -16,11 +16,11 @@ search: true
 code_clipboard: true
 
 meta:
-  - name: SOSA Observation (Schema)
+  - name: Observation Properties (Schema)
 ---
 
 
-# SOSA Observation `ogc.sosa.properties.observation`
+# Observation Properties `ogc.sosa.properties.observation`
 
 This building block defines the set of properties for an observation according to the SOSA/SSN specification. These properties may be directly included into a root element of a JSON object or used in the properties container of a GeoJSON feature.
 
@@ -946,7 +946,7 @@ You can find the full JSON-LD context here:
 
 The following sets of SHACL shapes are used for validating this building block:
 
-* SOSA Observation <small><code>ogc.sosa.properties.observation</code></small>
+* Observation Properties <small><code>ogc.sosa.properties.observation</code></small>
   * [https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl](https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl)
 
 # References

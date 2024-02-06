@@ -1,5 +1,5 @@
 
-# SOSA Observation (Schema)
+# Observation Properties (Schema)
 
 `ogc.sosa.properties.observation` *v1.0*
 

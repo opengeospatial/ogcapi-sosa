@@ -3,7 +3,7 @@
 
 `ogc.sosa.features.observation` *v1.0*
 
-This building blocks defines a GeoJSON feature containing a SOSA Observation
+This building blocks defines a GeoJSON feature containing a SOSA Observation, using the properties defined in the Observation Properties schema
 
 [*Status*](http://www.opengis.net/def/status): Under development
 

@@ -1,5 +1,5 @@
 ---
-title: SOSA ObservationCollection (Schema)
+title: ObservationCollection Properties (Schema)
 
 language_tabs:
   - json: JSON
@@ -8,7 +8,7 @@ language_tabs:
 
 toc_footers:
   - Version 1.0
-  - <a href='#'>SOSA ObservationCollection</a>
+  - <a href='#'>ObservationCollection Properties</a>
   - <a href='https://blocks.ogc.org/register.html'>Building Blocks register</a>
 
 search: true
@@ -16,11 +16,11 @@ search: true
 code_clipboard: true
 
 meta:
-  - name: SOSA ObservationCollection (Schema)
+  - name: ObservationCollection Properties (Schema)
 ---
 
 
-# SOSA ObservationCollection `ogc.sosa.properties.observationCollection`
+# ObservationCollection Properties `ogc.sosa.properties.observationCollection`
 
 This building block defines an ObservationCollection according to the SOSA/SSN v1.1 specification. It defines a set of logical rules regarding presence of mandatory properties anywhere within a potentially nested collection hierarchy. (implemented in SHACL, exploiting the semantic mapping to SOSA)
 
@@ -912,7 +912,7 @@ You can find the full JSON-LD context here:
 
 The following sets of SHACL shapes are used for validating this building block:
 
-* SOSA Observation <small><code>ogc.sosa.properties.observation</code></small>
+* Observation Properties <small><code>ogc.sosa.properties.observation</code></small>
   * [https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl](https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl)
 
 # References

@@ -22,7 +22,7 @@ meta:
 
 # SOSA Observation Feature `ogc.sosa.features.observation`
 
-This building blocks defines a GeoJSON feature containing a SOSA Observation
+This building blocks defines a GeoJSON feature containing a SOSA Observation, using the properties defined in the Observation Properties schema
 
 <p class="status">
     <span data-rainbow-uri="http://www.opengis.net/def/status">Status</span>:
@@ -980,7 +980,7 @@ You can find the full JSON-LD context here:
 
 The following sets of SHACL shapes are used for validating this building block:
 
-* SOSA Observation <small><code>ogc.sosa.properties.observation</code></small>
+* Observation Properties <small><code>ogc.sosa.properties.observation</code></small>
   * [https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl](https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl)
 
 # References
