@@ -216,7 +216,7 @@ allOf:
 - type: object
   properties:
     properties:
-      $ref: ../../properties/observation/schema.yaml
+      $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.yaml
       x-jsonld-id: '@nest'
 x-jsonld-extra-terms:
   id: '@id'

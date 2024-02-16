@@ -19,7 +19,7 @@
                         "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/schema-oas3.0.json#/x-defs/ogc.sosa.properties.platform/$definitions/Platform"
                       },
                       {
-                        "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/schema-oas3.0.json#/x-defs/ogc.sosa.properties.sensor/$definitions/Sensor"
+                        "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/schema-oas3.0.json#/x-defs/opengeospatial.github.io_ogcapi-sosa_build_annotated_sosa_properties_sensor_schema.json/$definitions/Sensor"
                       }
                     ]
                   }
@@ -429,19 +429,19 @@
       "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
       "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.json"
     },
-    "ogc.sosa.properties.sensor": {
+    "opengeospatial.github.io_ogcapi-sosa_build_annotated_sosa_properties_sensor_schema.json": {
       "description": "SOSA Sensor",
       "$definitions": {
         "Sensor": {
           "anyOf": [
             {
-              "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/schema-oas3.0.json#/x-defs/ogc.ogc-utils.iri-or-curie"
+              "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/schema-oas3.0.json#/x-defs/ogc.ogc-utils.iri-or-curie_"
             },
             {
               "type": "object",
               "properties": {
                 "id": {
-                  "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/schema-oas3.0.json#/x-defs/ogc.ogc-utils.iri-or-curie"
+                  "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/schema-oas3.0.json#/x-defs/ogc.ogc-utils.iri-or-curie_"
                 },
                 "name": {
                   "type": "string"
@@ -453,7 +453,7 @@
       },
       "allOf": [
         {
-          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/schema-oas3.0.json#/x-defs/ogc.sosa.properties.sensor/$definitions/Sensor"
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/schema-oas3.0.json#/x-defs/opengeospatial.github.io_ogcapi-sosa_build_annotated_sosa_properties_sensor_schema.json/$definitions/Sensor"
         }
       ],
       "x-jsonld-extra-terms": {
@@ -849,7 +849,11 @@
         "ssn": "http://www.w3.org/ns/ssn/"
       },
       "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
-      "x-schema-source": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/sensor/schema.json"
+      "x-schema-source": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sensor/schema.json"
+    },
+    "ogc.ogc-utils.iri-or-curie_": {
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
+      "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml"
     }
   },
   "allOf": [

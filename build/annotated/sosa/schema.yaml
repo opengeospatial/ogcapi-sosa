@@ -9,7 +9,7 @@ anyOf:
   - type: object
     properties:
       properties:
-        $ref: properties/observation/schema.yaml
+        $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.yaml
         x-jsonld-id: '@nest'
   x-jsonld-extra-terms:
     id: '@id'
@@ -313,13 +313,13 @@ anyOf:
   - type: object
     properties:
       properties:
-        $ref: properties/observationCollection/schema.yaml
+        $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.yaml
         x-jsonld-id: '@nest'
       features:
         type: array
         items:
           oneOf:
-          - $ref: features/observation/schema.yaml
+          - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.yaml
           - type: string
         x-jsonld-id: http://www.w3.org/ns/sosa/hasMember
         x-jsonld-type: '@id'
@@ -983,7 +983,7 @@ anyOf:
           items:
             anyOf:
             - $ref: properties/observationCollection/schema.yaml/#/$defs/collection
-            - $ref: properties/observation/schema.yaml
+            - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.yaml
             - $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml
           x-jsonld-id: http://www.w3.org/ns/sosa/hasMember
           x-jsonld-type: '@id'
@@ -1285,7 +1285,7 @@ anyOf:
             items:
               anyOf:
               - $ref: properties/platform/schema.yaml/#/$definitions/Platform
-              - $ref: properties/sensor/schema.yaml#/$definitions/Sensor
+              - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sensor/schema.yaml#/$definitions/Sensor
   allOf:
   - $ref: properties/platform/schema.yaml/#/$definitions/Platform
   x-jsonld-extra-terms:

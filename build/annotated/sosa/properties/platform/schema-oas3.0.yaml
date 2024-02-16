@@ -12,7 +12,7 @@ x-defs:
               items:
                 anyOf:
                 - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/schema-oas3.0.yaml#/x-defs/ogc.sosa.properties.platform/$definitions/Platform
-                - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/schema-oas3.0.yaml#/x-defs/ogc.sosa.properties.sensor/$definitions/Sensor
+                - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/schema-oas3.0.yaml#/x-defs/opengeospatial.github.io_ogcapi-sosa_build_annotated_sosa_properties_sensor_schema.yaml/$definitions/Sensor
     allOf:
     - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/schema-oas3.0.yaml#/x-defs/ogc.sosa.properties.platform/$definitions/Platform
     x-jsonld-extra-terms:
@@ -312,7 +312,7 @@ x-defs:
   ogc.ogc-utils.iri-or-curie:
     x-schema-version: https://json-schema.org/draft/2020-12/schema
     x-schema-source: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml
-  ogc.sosa.properties.sensor:
+  opengeospatial.github.io_ogcapi-sosa_build_annotated_sosa_properties_sensor_schema.yaml:
     description: SOSA Sensor
     $definitions:
       Sensor:
@@ -325,7 +325,7 @@ x-defs:
             name:
               type: string
     allOf:
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/schema-oas3.0.yaml#/x-defs/ogc.sosa.properties.sensor/$definitions/Sensor
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/schema-oas3.0.yaml#/x-defs/opengeospatial.github.io_ogcapi-sosa_build_annotated_sosa_properties_sensor_schema.yaml/$definitions/Sensor
     x-jsonld-extra-terms:
       properties: '@nest'
       featureType: '@type'
@@ -622,6 +622,6 @@ x-defs:
       ssn-system: http://www.w3.org/ns/ssn/systems/
       ssn: http://www.w3.org/ns/ssn/
     x-schema-version: https://json-schema.org/draft/2020-12/schema
-    x-schema-source: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/sensor/schema.yaml
+    x-schema-source: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sensor/schema.yaml
 allOf:
 - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/schema-oas3.0.yaml#/x-defs/ogc.sosa.properties.platform

@@ -142,7 +142,7 @@ $defs:
         items:
           anyOf:
           - $ref: '#/$defs/collection'
-          - $ref: ../observation/schema.yaml
+          - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.yaml
           - $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml
         x-jsonld-id: http://www.w3.org/ns/sosa/hasMember
         x-jsonld-type: '@id'

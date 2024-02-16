@@ -10,7 +10,7 @@ x-defs:
           type: array
           items:
             oneOf:
-            - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observationCollection/schema-oas3.0.yaml#/x-defs/ogc.sosa.features.observation
+            - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observationCollection/schema-oas3.0.yaml#/x-defs/opengeospatial.github.io_ogcapi-sosa_build_annotated_sosa_features_observation_schema.yaml
             - type: string
           x-jsonld-id: http://www.w3.org/ns/sosa/hasMember
           x-jsonld-type: '@id'
@@ -346,7 +346,7 @@ x-defs:
     x-jsonld-prefixes:
       geojson: https://purl.org/geojson/vocab#
     x-schema-source: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/json-fg/featureCollection-lenient/schema.yaml
-  ogc.sosa.properties.observationCollection:
+  opengeospatial.github.io_ogcapi-sosa_build_annotated_sosa_properties_observationCollection_schema.yaml:
     description: SOSA ObservationCollection
     $defs:
       collection:
@@ -410,13 +410,13 @@ x-defs:
             type: array
             items:
               anyOf:
-              - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observationCollection/schema-oas3.0.yaml#/x-defs/ogc.sosa.properties.observationCollection/$defs/collection
-              - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observationCollection/schema-oas3.0.yaml#/x-defs/ogc.sosa.properties.observation
+              - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observationCollection/schema-oas3.0.yaml#/x-defs/opengeospatial.github.io_ogcapi-sosa_build_annotated_sosa_properties_observationCollection_schema.yaml/$defs/collection
+              - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observationCollection/schema-oas3.0.yaml#/x-defs/opengeospatial.github.io_ogcapi-sosa_build_annotated_sosa_properties_observation_schema.yaml
               - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observationCollection/schema-oas3.0.yaml#/x-defs/ogc.ogc-utils.iri-or-curie
             x-jsonld-id: http://www.w3.org/ns/sosa/hasMember
             x-jsonld-type: '@id'
     allOf:
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observationCollection/schema-oas3.0.yaml#/x-defs/ogc.sosa.properties.observationCollection/$defs/collection
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observationCollection/schema-oas3.0.yaml#/x-defs/opengeospatial.github.io_ogcapi-sosa_build_annotated_sosa_properties_observationCollection_schema.yaml/$defs/collection
     - not:
         anyOf:
         - required:
@@ -701,8 +701,8 @@ x-defs:
       ssn-system: http://www.w3.org/ns/ssn/systems/
       ssn: http://www.w3.org/ns/ssn/
     x-schema-version: https://json-schema.org/draft/2020-12/schema
-    x-schema-source: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/properties/observationCollection/schema.yaml
-  ogc.sosa.features.observation:
+    x-schema-source: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.yaml
+  opengeospatial.github.io_ogcapi-sosa_build_annotated_sosa_features_observation_schema.yaml:
     description: SOSA Observation Feature
     type: object
     allOf:
@@ -1006,7 +1006,7 @@ x-defs:
       ssn-system: http://www.w3.org/ns/ssn/systems/
       ssn: http://www.w3.org/ns/ssn/
     x-schema-version: https://json-schema.org/draft/2020-12/schema
-    x-schema-source: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/observation/schema.yaml
+    x-schema-source: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.yaml
   beta.schemas.opengis.net_json-fg_featuretype.json:
     title: the featureType member
     description: This JSON Schema is part of JSON-FG version 0.1.1
@@ -1213,7 +1213,7 @@ x-defs:
     x-jsonld-prefixes:
       rdfs: http://www.w3.org/2000/01/rdf-schema#
     x-schema-source: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/features/featureCollection/schema.yaml
-  ogc.sosa.properties.observation:
+  opengeospatial.github.io_ogcapi-sosa_build_annotated_sosa_properties_observation_schema.yaml:
     description: SOSA Observation
     type: object
     properties:
@@ -1557,7 +1557,7 @@ x-defs:
       ssn-system: http://www.w3.org/ns/ssn/systems/
       ssn: http://www.w3.org/ns/ssn/
     x-schema-version: https://json-schema.org/draft/2020-12/schema
-    x-schema-source: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/properties/observation/schema.yaml
+    x-schema-source: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.yaml
   ogc.ogc-utils.iri-or-curie:
     x-schema-version: https://json-schema.org/draft/2020-12/schema
     x-schema-source: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml

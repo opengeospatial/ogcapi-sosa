@@ -184,13 +184,13 @@ allOf:
 - type: object
   properties:
     properties:
-      $ref: ../../properties/observationCollection/schema.yaml
+      $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.yaml
       x-jsonld-id: '@nest'
     features:
       type: array
       items:
         oneOf:
-        - $ref: ../observation/schema.yaml
+        - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.yaml
         - type: string
       x-jsonld-id: http://www.w3.org/ns/sosa/hasMember
       x-jsonld-type: '@id'

@@ -100,7 +100,7 @@ $definitions:
           items:
             anyOf:
             - $ref: '#/$definitions/Platform'
-            - $ref: ../sensor/schema.yaml#/$definitions/Sensor
+            - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sensor/schema.yaml#/$definitions/Sensor
 allOf:
 - $ref: '#/$definitions/Platform'
 x-jsonld-extra-terms:
