@@ -1,5 +1,5 @@
 Validation report for ogc.sosa.properties.observation - Observation Properties
-Generated 2024-03-22T08:13:35.895561+00:00
+Generated 2024-03-22T09:56:10.841173+00:00
 === Files ===
 Using house134.ttl from test resources
 Output Turtle house134.ttl created
@@ -12,24 +12,6 @@ Validation result for _sources/properties/observation/rules.shacl:
   Validation Report
   Conforms: False
   Results (12):
-  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] ) ]
-  	Focus Node: <http://example.org/observation/235716>
-  	Result Path: ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] )
-  	Message: Less than 1 values on <http://example.org/observation/235716>->( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] )
-  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] ) ]
-  	Focus Node: <http://example.org/observation/235715>
-  	Result Path: ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] )
-  	Message: Less than 1 values on <http://example.org/observation/235715>->( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] )
-  Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: <https://www.ogc.org/rules/sosa/#testRequiredTime>
-  	Focus Node: <http://example.org/observation/235728>
-  	Value Node: <http://example.org/observation/235728>
-  	Message: sosa:resultTime or sosa:phenomenonTime is required, and no more than 1 of each is allowed
   Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
   	Severity: sh:Violation
   	Source Shape: <https://www.ogc.org/rules/sosa/#testRequiredTime>
@@ -39,27 +21,21 @@ Validation result for _sources/properties/observation/rules.shacl:
   Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
   	Severity: sh:Violation
   	Source Shape: <https://www.ogc.org/rules/sosa/#testRequiredTime>
+  	Focus Node: <http://example.org/observation/235728>
+  	Value Node: <http://example.org/observation/235728>
+  	Message: sosa:resultTime or sosa:phenomenonTime is required, and no more than 1 of each is allowed
+  Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: <https://www.ogc.org/rules/sosa/#testRequiredTime>
   	Focus Node: <http://example.org/observation/235727>
   	Value Node: <http://example.org/observation/235727>
   	Message: sosa:resultTime or sosa:phenomenonTime is required, and no more than 1 of each is allowed
   Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
   	Severity: sh:Violation
-  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ]
-  	Focus Node: <http://example.org/observation/235728>
-  	Result Path: [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]
-  	Message: Less than 1 values on <http://example.org/observation/235728>->[ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]
-  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ]
-  	Focus Node: <http://example.org/observation/235714>
-  	Result Path: [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]
-  	Message: Less than 1 values on <http://example.org/observation/235714>->[ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]
-  Constraint Violation in MaxCountConstraintComponent (http://www.w3.org/ns/shacl#MaxCountConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ]
-  	Focus Node: <http://example.org/observation/235727>
-  	Result Path: [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]
-  	Message: More than 1 values on <http://example.org/observation/235727>->[ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]
+  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty ) ]
+  	Focus Node: <http://example.org/sampling/4578>
+  	Result Path: ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty )
+  	Message: Less than 1 values on <http://example.org/sampling/4578>->( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty )
   Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
   	Severity: sh:Violation
   	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty ) ]
@@ -75,23 +51,47 @@ Validation result for _sources/properties/observation/rules.shacl:
   Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
   	Severity: sh:Violation
   	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty ) ]
-  	Focus Node: <http://example.org/sampling/4578>
-  	Result Path: ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty )
-  	Message: Less than 1 values on <http://example.org/sampling/4578>->( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty )
-  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty ) ]
   	Focus Node: <http://example.org/observation/235715>
   	Result Path: ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty )
   	Message: Less than 1 values on <http://example.org/observation/235715>->( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty )
+  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ]
+  	Focus Node: <http://example.org/observation/235714>
+  	Result Path: [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]
+  	Message: Less than 1 values on <http://example.org/observation/235714>->[ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]
+  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ]
+  	Focus Node: <http://example.org/observation/235728>
+  	Result Path: [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]
+  	Message: Less than 1 values on <http://example.org/observation/235728>->[ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]
+  Constraint Violation in MaxCountConstraintComponent (http://www.w3.org/ns/shacl#MaxCountConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ]
+  	Focus Node: <http://example.org/observation/235727>
+  	Result Path: [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]
+  	Message: More than 1 values on <http://example.org/observation/235727>->[ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]
+  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] ) ]
+  	Focus Node: <http://example.org/observation/235716>
+  	Result Path: ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] )
+  	Message: Less than 1 values on <http://example.org/observation/235716>->( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] )
+  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] ) ]
+  	Focus Node: <http://example.org/observation/235715>
+  	Result Path: ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] )
+  	Message: Less than 1 values on <http://example.org/observation/235715>->( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] )
   
 Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <http://example.org/observation/235728>,<http://example.org/actuation/188>,<http://example.org/observation/235716>,<http://example.org/sampling/4578>,<http://example.org/observation/235714>,<http://example.org/observation/s1/5>,<http://example.org/observation/235715>,<http://example.org/observation/235727>
- - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <http://example.org/observation/s1/5>/sosa:hasSimpleResult,<http://example.org/observation/235715>/sosa:hasSimpleResult,<http://example.org/observation/235727>/sosa:hasSimpleResult,<http://example.org/actuation/188>/sosa:hasSimpleResult
- - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <http://example.org/observation/235728>,<http://example.org/actuation/188>,<http://example.org/observation/235716>,<http://example.org/sampling/4578>,<http://example.org/observation/235714>,<http://example.org/observation/s1/5>,<http://example.org/observation/235715>,<http://example.org/observation/235727>
- - Shape <https://www.ogc.org/rules/sosa/#testResult>: <http://example.org/observation/235728>,<http://example.org/actuation/188>,<http://example.org/observation/235716>,<http://example.org/sampling/4578>,<http://example.org/observation/235714>,<http://example.org/observation/s1/5>,<http://example.org/observation/235715>,<http://example.org/observation/235727>
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <http://example.org/observation/235715>/sosa:hasSimpleResult,<http://example.org/observation/235727>/sosa:hasSimpleResult,<http://example.org/observation/s1/5>/sosa:hasSimpleResult,<http://example.org/actuation/188>/sosa:hasSimpleResult
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <http://example.org/observation/s1/5>,<http://example.org/observation/235714>,<http://example.org/sampling/4578>,<http://example.org/actuation/188>,<http://example.org/observation/235716>,<http://example.org/observation/235728>,<http://example.org/observation/235727>,<http://example.org/observation/235715>
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: <http://example.org/observation/s1/5>,<http://example.org/observation/235714>,<http://example.org/sampling/4578>,<http://example.org/actuation/188>,<http://example.org/observation/235716>,<http://example.org/observation/235728>,<http://example.org/observation/235727>,<http://example.org/observation/235715>
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: <http://example.org/observation/s1/5>,<http://example.org/observation/235714>,<http://example.org/sampling/4578>,<http://example.org/actuation/188>,<http://example.org/observation/235716>,<http://example.org/observation/235728>,<http://example.org/observation/235727>,<http://example.org/observation/235715>
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <http://example.org/observation/s1/5>,<http://example.org/observation/235714>,<http://example.org/sampling/4578>,<http://example.org/actuation/188>,<http://example.org/observation/235716>,<http://example.org/observation/235728>,<http://example.org/observation/235727>,<http://example.org/observation/235715>
  - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: <http://example.org/observation/235728>,<http://example.org/actuation/188>,<http://example.org/observation/235716>,<http://example.org/sampling/4578>,<http://example.org/observation/235714>,<http://example.org/observation/s1/5>,<http://example.org/observation/235715>,<http://example.org/observation/235727>
 
 === End SHACL ===
 

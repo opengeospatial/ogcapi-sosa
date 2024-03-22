@@ -1,5 +1,5 @@
 Validation report for ogc.sosa.properties.observation - Observation Properties
-Generated 2024-03-22T08:13:34.839704+00:00
+Generated 2024-03-22T09:56:09.718458+00:00
 === Files ===
 Using observation.ttl from test resources
 Output Turtle observation.ttl created
@@ -12,26 +12,26 @@ Validation result for _sources/properties/observation/rules.shacl:
   Validation Report
   Conforms: False
   Results (2):
-  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] ) ]
-  	Focus Node: [ rdf:type sosa:Observation ; sosa:hasSimpleResult Literal("0.323", datatype=xsd:decimal) ; sosa:madeBySensor [ dct:identifier Literal("SN/2313Q432") ; rdf:type sensor:BME280 ] ; sosa:observedProperty property:pm10 ]
-  	Result Path: ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] )
-  	Message: Less than 1 values on [ rdf:type sosa:Observation ; sosa:hasSimpleResult Literal("0.323", datatype=xsd:decimal) ; sosa:madeBySensor [ dct:identifier Literal("SN/2313Q432") ; rdf:type sensor:BME280 ] ; sosa:observedProperty property:pm10 ]->( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] )
   Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
   	Severity: sh:Violation
   	Source Shape: <https://www.ogc.org/rules/sosa/#testRequiredTime>
   	Focus Node: [ rdf:type sosa:Observation ; sosa:hasSimpleResult Literal("0.323", datatype=xsd:decimal) ; sosa:madeBySensor [ dct:identifier Literal("SN/2313Q432") ; rdf:type sensor:BME280 ] ; sosa:observedProperty property:pm10 ]
   	Value Node: [ rdf:type sosa:Observation ; sosa:hasSimpleResult Literal("0.323", datatype=xsd:decimal) ; sosa:madeBySensor [ dct:identifier Literal("SN/2313Q432") ; rdf:type sensor:BME280 ] ; sosa:observedProperty property:pm10 ]
   	Message: sosa:resultTime or sosa:phenomenonTime is required, and no more than 1 of each is allowed
+  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] ) ]
+  	Focus Node: [ rdf:type sosa:Observation ; sosa:hasSimpleResult Literal("0.323", datatype=xsd:decimal) ; sosa:madeBySensor [ dct:identifier Literal("SN/2313Q432") ; rdf:type sensor:BME280 ] ; sosa:observedProperty property:pm10 ]
+  	Result Path: ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] )
+  	Message: Less than 1 values on [ rdf:type sosa:Observation ; sosa:hasSimpleResult Literal("0.323", datatype=xsd:decimal) ; sosa:madeBySensor [ dct:identifier Literal("SN/2313Q432") ; rdf:type sensor:BME280 ] ; sosa:observedProperty property:pm10 ]->( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] )
   
 Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: _:n1033793a25334a4da4c1a449f39f56abb1
  - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: 0.323
- - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: _:n1033793a25334a4da4c1a449f39f56abb1
- - Shape <https://www.ogc.org/rules/sosa/#testResult>: _:n1033793a25334a4da4c1a449f39f56abb1
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: _:n60cf93f2d3f046648d26ae14c190f99eb1
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: _:n60cf93f2d3f046648d26ae14c190f99eb1
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: _:n60cf93f2d3f046648d26ae14c190f99eb1
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: _:n60cf93f2d3f046648d26ae14c190f99eb1
  - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: _:n1033793a25334a4da4c1a449f39f56abb1
 
 === End SHACL ===
 
