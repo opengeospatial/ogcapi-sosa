@@ -1,0 +1,31 @@
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/data/observation/147> a sosa:Observation ;
+    sosa:hasSimpleResult "47 km/h"^^<http://example.org/data/speed> ;
+    sosa:madeBySensor <http://example.org/data/windSensor/14> ;
+    sosa:observedProperty <http://example.org/data/location/4687#windSpeed> ;
+    sosa:resultTime "2017-04-12T12:00:00+00:00"^^xsd:dateTime ;
+    ssn:wasOriginatedBy <http://example.org/data/observation/147#spinningCupsMovement> .
+
+<http://example.org/data/observation/148> a sosa:Observation ;
+    sosa:hasSimpleResult "43 km/h"^^<http://example.org/data/speed> ;
+    sosa:madeBySensor <http://example.org/data/windSensor/14> ;
+    sosa:observedProperty <http://example.org/data/location/4687#windSpeed> ;
+    sosa:resultTime "2017-04-12T12:01:00+00:00"^^xsd:dateTime ;
+    ssn:wasOriginatedBy <http://example.org/data/observation/148#spinningCupsMovement> .
+
+<http://example.org/data/observation/147#spinningCupsMovement> a ssn:Stimulus ;
+    ssn:isProxyFor <http://example.org/data/location/4687#windSpeed> .
+
+<http://example.org/data/observation/148#spinningCupsMovement> a ssn:Stimulus ;
+    ssn:isProxyFor <http://example.org/data/location/4687#windSpeed> .
+
+<http://example.org/data/windSensor/14> a sosa:Sensor ;
+    sosa:madeObservation <http://example.org/data/observation/147>,
+        <http://example.org/data/observation/148> ;
+    sosa:observes <http://example.org/data/location/4687#windSpeed> ;
+    ssn:detects <http://example.org/data/observation/147#spinningCupsMovement>,
+        <http://example.org/data/observation/148#spinningCupsMovement> .
+

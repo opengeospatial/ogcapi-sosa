@@ -1,0 +1,37 @@
+@prefix cdt: <http://w3id.org/lindt/custom_datatypes#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/data/Observation/346344> a sosa:Observation ;
+    sosa:hasFeatureOfInterest <http://example.org/data/earthAtmosphere> ;
+    sosa:hasSimpleResult "1021.45 hPa"^^cdt:ucum ;
+    sosa:madeBySensor <http://example.org/data/sensor/35-207306-844818-0/BMP282> ;
+    sosa:observedProperty <http://example.org/data/sensor/35-207306-844818-0/BMP282/atmosphericPressure> ;
+    sosa:resultTime "2017-06-06T12:36:12+00:00"^^xsd:dateTime .
+
+<http://example.org/data/Observation/346345> a sosa:Observation ;
+    sosa:hasFeatureOfInterest <http://example.org/data/earthAtmosphere> ;
+    sosa:hasResult [ a qudt:QuantityValue ;
+            qudt:hasUnit unit:Pascal ;
+            qudt:numericValue 1.01936e+05 ] ;
+    sosa:madeBySensor <http://example.org/data/sensor/35-207306-844818-0/BMP282> ;
+    sosa:observedProperty <http://example.org/data/sensor/35-207306-844818-0/BMP282/atmosphericPressure> ;
+    sosa:resultTime [ a time:Instant ;
+            time:inXSDDateTimeStamp "2017-06-06T12:36:13+00:00"^^xsd:dateTimeStamp ] .
+
+<http://example.org/data/iphone7/35-207306-844818-0> a sosa:Platform ;
+    rdfs:label "IPhone 7 - IMEI 35-207306-844818-0"@en ;
+    rdfs:comment "IPhone 7 - IMEI 35-207306-844818-0 - John Doe"@en ;
+    sosa:hosts <http://example.org/data/sensor/35-207306-844818-0/BMP282> .
+
+<http://example.org/data/earthAtmosphere> a sosa:FeatureOfInterest ;
+    rdfs:label "Atmosphere of Earth"@en .
+
+<http://example.org/data/sensor/35-207306-844818-0/BMP282> a sosa:Sensor ;
+    rdfs:label "Bosch Sensortec BMP282"@en ;
+    sosa:observes <http://example.org/data/sensor/35-207306-844818-0/BMP282/atmosphericPressure> .
+

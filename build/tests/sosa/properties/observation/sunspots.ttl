@@ -1,0 +1,11 @@
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/data/Observation/7536> a sosa:Observation ;
+    sosa:hasSimpleResult 66 ;
+    sosa:observedProperty <http://example.org/data/Sun#sunspotNumber> ;
+    sosa:phenomenonTime [ a time:Instant ;
+            time:inXSDDateTimeStamp "2017-03-31T11:51:42+00:00"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2017-03-31T12:00:00+00:00"^^xsd:dateTimeStamp .
+

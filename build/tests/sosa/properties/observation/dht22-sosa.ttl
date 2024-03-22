@@ -1,0 +1,17 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+
+<http://example.org/data/observation/1087> a sosa:Observation ;
+    sosa:madeBySensor <http://example.org/data/DHT22/4578#TemperatureSensor> ;
+    sosa:usedProcedure <http://example.org/data/DHT22#Procedure> .
+
+<http://example.org/data/DHT22#Procedure> a sosa:Procedure .
+
+<http://example.org/data/DHT22/4578> a sosa:Platform ;
+    rdfs:comment "DHT22 sensor #4578 contains a humidity and a temperature sensor."@en ;
+    rdfs:seeAlso <https://www.sparkfun.com/datasheets/Sensors/Temperature/DHT22.pdf> .
+
+<http://example.org/data/DHT22/4578#TemperatureSensor> a sosa:Sensor ;
+    rdfs:comment "The embedded temperature sensor, a specific instance of temperature sensor."@en ;
+    sosa:isHostedBy <http://example.org/data/DHT22/4578> .
+

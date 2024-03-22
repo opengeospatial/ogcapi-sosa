@@ -1,0 +1,47 @@
+@prefix cdt: <http://w3id.org/lindt/custom_datatypes#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sosa1: <http://www.w3.org/ns/sosa#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/data/RH_avg_1_COPR_15min_201706020300PM> a sosa1:Observation ;
+    rdfs:label "Relative humidity, AVG, 15min, COPR, 06.02.2017, 3:00 PM"@en ;
+    rdfs:comment "Relative humidity as averaged over 15min at COPR."@en ;
+    sosa1:hasFeatureOfInterest <http://example.org/data/COPR_Station_Location> ;
+    sosa1:hasSimpleResult "92.5 %"^^cdt:ucum ;
+    sosa1:madeBySensor <http://example.org/data/HUMICAP-H> ;
+    sosa1:observedProperty <http://example.org/data/RelativeHumidity> ;
+    sosa1:resultTime "2017-06-02T03:00:00"^^xsd:dateTime ;
+    sosa1:usedProcedure <http://example.org/data/MeasuringRelativeHumidityA23> .
+
+<http://example.org/data/COPR> a sosa1:FeatureOfInterest ;
+    rdfs:label "Coal Oil Point Reserve"@en ;
+    rdfs:comment "Coal Oil Point Reserve: UC Santa Barbara Natural Reserve System"@en ;
+    sosa1:hasSample <http://example.org/data/COPR_SL> .
+
+<http://example.org/data/COPR_Station> a sosa1:Platform ;
+    rdfs:label "Coal Oil Point Reserve Wx Station"@en ;
+    rdfs:comment "Station at Coal Oil Point Reserve, CA (see http://www.geog.ucsb.edu/ideas/COPR.html for details)"@en ;
+    rdfs:seeAlso <http://www.geog.ucsb.edu/ideas/COPR.html> ;
+    sosa1:hosts <http://example.org/data/COPR-HMP45C-L> .
+
+<http://example.org/data/COPR_Station_Location> a sosa1:Sample ;
+    rdfs:label "Air around COPR Station"@en ;
+    rdfs:comment "."@en ;
+    sosa1:isSampleOf <http://example.org/data/COPR> .
+
+<http://example.org/data/MeasuringRelativeHumidityA23> a sosa1:Procedure ;
+    rdfs:comment "... detailed instructions for measuring relative humidity ..."@en .
+
+<http://example.org/data/RelativeHumidity> a sosa1:ObservableProperty ;
+    rdfs:label "Relative Humidity"@en ;
+    rdfs:comment "Humidity is a measure of the moisture content of air."@en .
+
+<http://example.org/data/COPR-HMP45C-L> a sosa1:Platform ;
+    rdfs:label "HMP45C-L Temperature and Relative Humidity Probe at Coal Oil Point, UCSB, CA"@en ;
+    sosa1:hosts <http://example.org/data/HUMICAP-H> ;
+    sosa1:isHostedBy <http://example.org/data/COPR_Station> .
+
+<http://example.org/data/HUMICAP-H> a sosa1:Sensor ;
+    rdfs:label "Vaisala HUMICAP H-chip"@en ;
+    sosa1:isHostedBy <http://example.org/data/COPR-HMP45C-L> .
+
