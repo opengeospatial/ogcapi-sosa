@@ -2,14 +2,15 @@
   "title": "Validation report for ogc.sosa.features.observationCollection - SOSA ObservationCollection Feature",
   "bblockName": "SOSA ObservationCollection Feature",
   "bblockId": "ogc.sosa.features.observationCollection",
-  "generated": "2024-03-22T09:56:14.940100+00:00",
+  "generated": "2024-03-22T10:05:08.136279+00:00",
   "result": true,
   "items": [
     {
       "source": {
         "type": "TEST_RESOURCE",
         "requireFail": true,
-        "filename": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/tests/observationCollection-props-fail.json",
+        "filename": "_sources/features/observationCollection/tests/observationCollection-props-fail.json",
+        "url": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/tests/observationCollection-props-fail.json",
         "language": "json"
       },
       "result": true,
@@ -90,6 +91,19 @@
             {
               "shaclFile": "_sources/properties/observation/rules.shacl",
               "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testResult>": {
+                  "nodes": [
+                    "<file:///github/workspace/pop1999>"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
+                  "nodes": [
+                    "<file:///github/workspace/pop1999>"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
+                  "nodes": []
+                },
                 "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
                   "nodes": [
                     "<file:///github/workspace/pop1999>/sosa:hasSimpleResult"
@@ -104,23 +118,10 @@
                   "nodes": [
                     "<file:///github/workspace/pop1999>"
                   ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testResult>": {
-                  "nodes": [
-                    "<file:///github/workspace/pop1999>"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
-                  "nodes": [
-                    "<file:///github/workspace/pop1999>"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
-                  "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <file:///github/workspace/pop1999>/sosa:hasSimpleResult\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <file:///github/workspace/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: <file:///github/workspace/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: <file:///github/workspace/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <file:///github/workspace/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n"
+              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: <file:///github/workspace/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <file:///github/workspace/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <file:///github/workspace/pop1999>/sosa:hasSimpleResult\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <file:///github/workspace/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: <file:///github/workspace/pop1999>\n"
             }
           ]
         },
@@ -135,7 +136,8 @@
       "source": {
         "type": "TEST_RESOURCE",
         "requireFail": false,
-        "filename": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/tests/observationCollection-props.json",
+        "filename": "_sources/features/observationCollection/tests/observationCollection-props.json",
+        "url": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/tests/observationCollection-props.json",
         "language": "json"
       },
       "result": true,
@@ -210,6 +212,21 @@
             {
               "shaclFile": "_sources/properties/observation/rules.shacl",
               "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testResult>": {
+                  "nodes": [
+                    "<file:///github/workspace/something>",
+                    "<file:///github/workspace/pop1999>"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
+                  "nodes": [
+                    "<file:///github/workspace/something>",
+                    "<file:///github/workspace/pop1999>"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
+                  "nodes": []
+                },
                 "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
                   "nodes": [
                     "<file:///github/workspace/pop1999>/sosa:hasSimpleResult"
@@ -217,34 +234,19 @@
                 },
                 "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
                   "nodes": [
-                    "<file:///github/workspace/pop1999>",
-                    "<file:///github/workspace/something>"
+                    "<file:///github/workspace/something>",
+                    "<file:///github/workspace/pop1999>"
                   ]
                 },
                 "<https://www.ogc.org/rules/sosa/#testObservedProperty>": {
                   "nodes": [
-                    "<file:///github/workspace/pop1999>",
-                    "<file:///github/workspace/something>"
+                    "<file:///github/workspace/something>",
+                    "<file:///github/workspace/pop1999>"
                   ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testResult>": {
-                  "nodes": [
-                    "<file:///github/workspace/pop1999>",
-                    "<file:///github/workspace/something>"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
-                  "nodes": [
-                    "<file:///github/workspace/pop1999>",
-                    "<file:///github/workspace/something>"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
-                  "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <file:///github/workspace/pop1999>/sosa:hasSimpleResult\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <file:///github/workspace/pop1999>,<file:///github/workspace/something>\n - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: <file:///github/workspace/pop1999>,<file:///github/workspace/something>\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: <file:///github/workspace/pop1999>,<file:///github/workspace/something>\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <file:///github/workspace/pop1999>,<file:///github/workspace/something>\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n"
+              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: <file:///github/workspace/something>,<file:///github/workspace/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <file:///github/workspace/something>,<file:///github/workspace/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <file:///github/workspace/pop1999>/sosa:hasSimpleResult\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <file:///github/workspace/something>,<file:///github/workspace/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: <file:///github/workspace/something>,<file:///github/workspace/pop1999>\n"
             }
           ]
         },
@@ -259,7 +261,8 @@
       "source": {
         "type": "EXAMPLE",
         "requireFail": false,
-        "filename": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/features/observationCollection/example_1_1.json",
+        "filename": "build/tests/sosa/features/observationCollection/example_1_1.json",
+        "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/features/observationCollection/example_1_1.json",
         "exampleIndex": 1,
         "snippetIndex": 1,
         "language": "json"
@@ -336,6 +339,21 @@
             {
               "shaclFile": "_sources/properties/observation/rules.shacl",
               "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testResult>": {
+                  "nodes": [
+                    "<http://www.example.com/sosa/something>",
+                    "<http://www.example.com/sosa/pop1999>"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
+                  "nodes": [
+                    "<http://www.example.com/sosa/something>",
+                    "<http://www.example.com/sosa/pop1999>"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
+                  "nodes": []
+                },
                 "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
                   "nodes": [
                     "<http://www.example.com/sosa/pop1999>/sosa:hasSimpleResult"
@@ -343,34 +361,19 @@
                 },
                 "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
                   "nodes": [
-                    "<http://www.example.com/sosa/pop1999>",
-                    "<http://www.example.com/sosa/something>"
+                    "<http://www.example.com/sosa/something>",
+                    "<http://www.example.com/sosa/pop1999>"
                   ]
                 },
                 "<https://www.ogc.org/rules/sosa/#testObservedProperty>": {
                   "nodes": [
-                    "<http://www.example.com/sosa/pop1999>",
-                    "<http://www.example.com/sosa/something>"
+                    "<http://www.example.com/sosa/something>",
+                    "<http://www.example.com/sosa/pop1999>"
                   ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testResult>": {
-                  "nodes": [
-                    "<http://www.example.com/sosa/pop1999>",
-                    "<http://www.example.com/sosa/something>"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
-                  "nodes": [
-                    "<http://www.example.com/sosa/pop1999>",
-                    "<http://www.example.com/sosa/something>"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
-                  "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <http://www.example.com/sosa/pop1999>/sosa:hasSimpleResult\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <http://www.example.com/sosa/pop1999>,<http://www.example.com/sosa/something>\n - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: <http://www.example.com/sosa/pop1999>,<http://www.example.com/sosa/something>\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: <http://www.example.com/sosa/pop1999>,<http://www.example.com/sosa/something>\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <http://www.example.com/sosa/pop1999>,<http://www.example.com/sosa/something>\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n"
+              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: <http://www.example.com/sosa/something>,<http://www.example.com/sosa/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <http://www.example.com/sosa/something>,<http://www.example.com/sosa/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <http://www.example.com/sosa/pop1999>/sosa:hasSimpleResult\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <http://www.example.com/sosa/something>,<http://www.example.com/sosa/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: <http://www.example.com/sosa/something>,<http://www.example.com/sosa/pop1999>\n"
             }
           ]
         },
@@ -385,7 +388,8 @@
       "source": {
         "type": "EXAMPLE",
         "requireFail": false,
-        "filename": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/features/observationCollection/example_1_2.ttl",
+        "filename": "build/tests/sosa/features/observationCollection/example_1_2.ttl",
+        "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/features/observationCollection/example_1_2.ttl",
         "exampleIndex": 1,
         "snippetIndex": 2,
         "language": "ttl"
@@ -444,6 +448,21 @@
             {
               "shaclFile": "_sources/properties/observation/rules.shacl",
               "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testResult>": {
+                  "nodes": [
+                    "eg:pop2000",
+                    "eg:pop1999"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
+                  "nodes": [
+                    "eg:pop2000",
+                    "eg:pop1999"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
+                  "nodes": []
+                },
                 "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
                   "nodes": [
                     "eg:pop1999/sosa:hasSimpleResult",
@@ -461,25 +480,10 @@
                     "eg:pop2000",
                     "eg:pop1999"
                   ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testResult>": {
-                  "nodes": [
-                    "eg:pop2000",
-                    "eg:pop1999"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
-                  "nodes": [
-                    "eg:pop2000",
-                    "eg:pop1999"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
-                  "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: eg:pop1999/sosa:hasSimpleResult,eg:pop2000/sosa:hasSimpleResult\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: eg:pop2000,eg:pop1999\n - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: eg:pop2000,eg:pop1999\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: eg:pop2000,eg:pop1999\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: eg:pop2000,eg:pop1999\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n"
+              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: eg:pop2000,eg:pop1999\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: eg:pop2000,eg:pop1999\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: eg:pop1999/sosa:hasSimpleResult,eg:pop2000/sosa:hasSimpleResult\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: eg:pop2000,eg:pop1999\n - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: eg:pop2000,eg:pop1999\n"
             }
           ]
         },

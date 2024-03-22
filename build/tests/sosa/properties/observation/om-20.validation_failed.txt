@@ -1,5 +1,5 @@
 Validation report for ogc.sosa.properties.observation - Observation Properties
-Generated 2024-03-22T09:56:12.536676+00:00
+Generated 2024-03-22T10:05:05.732628+00:00
 === Files ===
 Using om-20.ttl from test resources
 Output Turtle om-20.ttl created
@@ -12,18 +12,6 @@ Validation result for _sources/properties/observation/rules.shacl:
   Validation Report
   Conforms: False
   Results (4):
-  Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: <https://www.ogc.org/rules/sosa/#testRequiredTime>
-  	Focus Node: examples:obsTest1s
-  	Value Node: examples:obsTest1s
-  	Message: sosa:resultTime or sosa:phenomenonTime is required, and no more than 1 of each is allowed
-  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty ) ]
-  	Focus Node: examples:obsTest1s
-  	Result Path: ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty )
-  	Message: Less than 1 values on examples:obsTest1s->( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty )
   Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
   	Severity: sh:Violation
   	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ]
@@ -36,14 +24,26 @@ Validation result for _sources/properties/observation/rules.shacl:
   	Focus Node: examples:obsTest1s
   	Result Path: ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] )
   	Message: Less than 1 values on examples:obsTest1s->( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] )
+  Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: <https://www.ogc.org/rules/sosa/#testRequiredTime>
+  	Focus Node: examples:obsTest1s
+  	Value Node: examples:obsTest1s
+  	Message: sosa:resultTime or sosa:phenomenonTime is required, and no more than 1 of each is allowed
+  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty ) ]
+  	Focus Node: examples:obsTest1s
+  	Result Path: ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty )
+  	Message: Less than 1 values on examples:obsTest1s->( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty )
   
 Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: examples:b1_lith1,examples:b1_p1,examples:obsTest1s,examples:obsTest2,examples:b1_ms1,examples:OPTest1,examples:O35235,examples:COTest3,examples:obsTest4,examples:obsTest1
- - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: examples:b1_lith1,examples:b1_p1,examples:obsTest1s,examples:obsTest2,examples:b1_ms1,examples:OPTest1,examples:O35235,examples:COTest3,examples:obsTest4,examples:obsTest1
- - Shape <https://www.ogc.org/rules/sosa/#testResult>: examples:b1_lith1,examples:b1_p1,examples:obsTest1s,examples:obsTest2,examples:b1_ms1,examples:OPTest1,examples:O35235,examples:COTest3,examples:obsTest4,examples:obsTest1
- - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: examples:b1_lith1,examples:b1_p1,examples:obsTest1s,examples:obsTest2,examples:b1_ms1,examples:OPTest1,examples:O35235,examples:COTest3,examples:obsTest4,examples:obsTest1
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: examples:obsTest4,examples:b1_ms1,examples:OPTest1,examples:b1_lith1,examples:obsTest1s,examples:obsTest2,examples:O35235,examples:b1_p1,examples:COTest3,examples:obsTest1
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: examples:obsTest4,examples:b1_ms1,examples:OPTest1,examples:b1_lith1,examples:obsTest1s,examples:obsTest2,examples:O35235,examples:b1_p1,examples:COTest3,examples:obsTest1
  - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: examples:obsTest4,examples:b1_ms1,examples:OPTest1,examples:b1_lith1,examples:obsTest1s,examples:obsTest2,examples:O35235,examples:b1_p1,examples:COTest3,examples:obsTest1
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: examples:obsTest4,examples:b1_ms1,examples:OPTest1,examples:b1_lith1,examples:obsTest1s,examples:obsTest2,examples:O35235,examples:b1_p1,examples:COTest3,examples:obsTest1
 
 === End SHACL ===
 
