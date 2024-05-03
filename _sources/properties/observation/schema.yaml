@@ -2,34 +2,10 @@
 description: 'SOSA Observation'
 x-jsonld-context: ../../../sosa-ssn.jsonld
 type: object
-properties:
-  resultTime:
-    type: string
-    format: date-time
-  phenomenonTime:
-    type:
-      - object
-      - string
-  hasFeatureOfInterest:
-    type:
-      - object
-      - string
-  observedProperty:
-    type:
-      - object
-      - string
-  usedProcedure:
-    type:
-      - object
-      - string
-  madeBySensor:
-    type:
-      - object
-      - string
-  hasResult: true
-  hasSimpleResult: true
-anyOf:
-  - required:
-    - hasResult
-  - required:
-    - hasSimpleResult
+allOf:
+ - $ref: bblocks://ogc.sosa.properties.observation-owa
+ - anyOf:
+   - required:
+     - hasResult
+   - required:
+     - hasSimpleResult
