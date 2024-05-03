@@ -490,48 +490,13 @@ to detail what that property was associated with.&quot;</p>
 <h1 id='json-schema'>JSON Schema</h1><div class="highlight"><pre class="highlight yaml tab-yaml--schema"><code><span class="na">$schema</span><span class="pi">:</span> <span class="s">https://json-schema.org/draft/2020-12/schema</span>
 <span class="na">description</span><span class="pi">:</span> <span class="s">SOSA Observation</span>
 <span class="na">type</span><span class="pi">:</span> <span class="s">object</span>
-<span class="na">properties</span><span class="pi">:</span>
-  <span class="na">resultTime</span><span class="pi">:</span>
-    <span class="na">type</span><span class="pi">:</span> <span class="s">string</span>
-    <span class="na">format</span><span class="pi">:</span> <span class="s">date-time</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/resultTime</span>
-  <span class="na">phenomenonTime</span><span class="pi">:</span>
-    <span class="na">type</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">object</span>
-    <span class="pi">-</span> <span class="s">string</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/phenomenonTime</span>
-    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">hasFeatureOfInterest</span><span class="pi">:</span>
-    <span class="na">type</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">object</span>
-    <span class="pi">-</span> <span class="s">string</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasFeatureOfInterest</span>
-    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">observedProperty</span><span class="pi">:</span>
-    <span class="na">type</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">object</span>
-    <span class="pi">-</span> <span class="s">string</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/observedProperty</span>
-    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">usedProcedure</span><span class="pi">:</span>
-    <span class="na">type</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">object</span>
-    <span class="pi">-</span> <span class="s">string</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/usedProcedure</span>
-    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">madeBySensor</span><span class="pi">:</span>
-    <span class="na">type</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">object</span>
-    <span class="pi">-</span> <span class="s">string</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/madeBySensor</span>
-    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">hasResult</span><span class="pi">:</span> <span class="no">true</span>
-  <span class="na">hasSimpleResult</span><span class="pi">:</span> <span class="no">true</span>
-<span class="na">anyOf</span><span class="pi">:</span>
-<span class="pi">-</span> <span class="na">required</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s">hasResult</span>
-<span class="pi">-</span> <span class="na">required</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s">hasSimpleResult</span>
+<span class="na">allOf</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="na">$ref</span><span class="pi">:</span> <span class="s">https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation-owa/schema.yaml</span>
+<span class="pi">-</span> <span class="na">anyOf</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">required</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">hasResult</span>
+  <span class="pi">-</span> <span class="na">required</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">hasSimpleResult</span>
 <span class="na">x-jsonld-extra-terms</span><span class="pi">:</span>
   <span class="na">id</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
   <span class="na">properties</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@nest'</span>
@@ -616,6 +581,9 @@ to detail what that property was associated with.&quot;</p>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
   <span class="na">hasDeployment</span><span class="pi">:</span>
     <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasDeployment</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">hasFeatureOfInterest</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasFeatureOfInterest</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
   <span class="na">hasInput</span><span class="pi">:</span>
     <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/hasInput</span>
@@ -706,14 +674,27 @@ to detail what that property was associated with.&quot;</p>
   <span class="na">madeBySampler</span><span class="pi">:</span>
     <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/madeBySampler</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">madeBySensor</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/madeBySensor</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
   <span class="na">madeObservation</span><span class="pi">:</span>
     <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/madeObservation</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
   <span class="na">madeSampling</span><span class="pi">:</span>
     <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/madeSampling</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">observedProperty</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/observedProperty</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
   <span class="na">observes</span><span class="pi">:</span>
     <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/observes</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">phenomenonTime</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/phenomenonTime</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">resultTime</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/resultTime</span>
+  <span class="na">usedProcedure</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/usedProcedure</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
   <span class="na">wasOriginatedBy</span><span class="pi">:</span>
     <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/sosa/wasOriginatedBy</span>
