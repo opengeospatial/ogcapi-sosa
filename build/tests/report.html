@@ -27,9 +27,9 @@
     <body>
         <div class="container">
             <h1 class="title">Building blocks validation report</h1>
-            <small class="datetime">Generated at 2024-05-03T05:36:06.721392+00:00</small>
-                <p class="summary fw-semibold text-success">
-                    Number of passing building blocks: 8 / 8 (100%)
+            <small class="datetime">Generated at 2024-05-03T09:10:39.674011+00:00</small>
+                <p class="summary fw-semibold text-danger">
+                    Number of passing building blocks: 7 / 8 (87.5%)
                 </p>
             <div class="text-end small" id="expand-collapse">
                 <a href="#" class="expand-all">Expand all</a>
@@ -38,22 +38,22 @@
                 <div class="accordion mt-2" id="bblock-reports">
                         <div class="accordion-item bblock-report" data-bblock-id="ogc.sosa.properties.observation-owa" id="bblock-0">
                             <h2 class="accordion-header bblock-title">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bblock-collapse-0">
+                                <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#bblock-collapse-0">
                                     <div class="flex-fill">
                                         Observation Properties (SOSA OWA)
                                         <small class="ms-2 bblock-id">ogc.sosa.properties.observation-owa</small>
                                     </div>
 
-                                    <span class="badge text-bg-success me-2">
-                                            Passed
-                                            (100% passed)
+                                    <span class="badge text-bg-danger me-2">
+                                            Tests Failed
+                                            (77.59% passed)
                                     </span>
                                 </button>
                             </h2>
-                            <div class="accordion-collapse collapse " id="bblock-collapse-0">
+                            <div class="accordion-collapse collapse show" id="bblock-collapse-0">
                                 <div class="accordion-body">
-                                        <p class="summary fw-semibold text-success">
-                                            Test passed: 58 / 58
+                                        <p class="summary fw-semibold text-danger">
+                                            Test passed: 45 / 58
                                         </p>
                                         <div class="card mb-2 validation-item ">
                                             <div class="card-body">
@@ -93,13 +93,13 @@
                                                     <a href="https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex15.ttl" target="_blank">2017ex15.ttl</a>
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-2">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Turtle</div>
-                                                                    <div class="font-monospace entry-message section-turtle ">at line 38 of &lt;&gt;:
+                                                                    <div class="font-monospace entry-message section-turtle text-danger">at line 38 of &lt;&gt;:
 Bad syntax (Prefix &quot;qudt-1-1:&quot; not bound) at ^ in:
 &quot;...b&#x27;groundDisplacementSpeed&gt; ;\n  sosa:hasResult [\n     rdf:type &#x27;^b&#x27;qudt-1-1:QuantityValue ;\n     qudt:numericValue &quot;5e-4&quot;^^xsd:&#x27;...&quot;</div>
                                                     </div>
@@ -144,13 +144,13 @@ Bad syntax (Prefix &quot;qudt-1-1:&quot; not bound) at ^ in:
                                                     <a href="https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex25.ttl" target="_blank">2017ex25.ttl</a>
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-4">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Turtle</div>
-                                                                    <div class="font-monospace entry-message section-turtle ">at line 20 of &lt;&gt;:
+                                                                    <div class="font-monospace entry-message section-turtle text-danger">at line 20 of &lt;&gt;:
 Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
 &quot;...b&#x27;e/Metropolis_of_Lyon&gt; .\n\n&lt;Air&gt; a sosa:FeatureOfInterest ;\n  &#x27;^b&#x27;rdfs:label &quot;The air.&quot;@en .\n\n&lt;IP68_Outdoor_Temperature_Sensor&#x27;...&quot;</div>
                                                     </div>
@@ -370,13 +370,13 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
                                                     <a href="https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/complex-sensors/entailments.shacl.ttl" target="_blank">entailments.shacl.ttl</a>
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-13">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Turtle</div>
-                                                                    <div class="font-monospace entry-message section-turtle ">at line 1 of &lt;&gt;:
+                                                                    <div class="font-monospace entry-message section-turtle text-danger">at line 1 of &lt;&gt;:
 Bad syntax (Prefix &quot;ex:&quot; not bound) at ^ in:
 &quot;b&#x27;&#x27;^b&#x27;ex:ObservationEntailments\n  a sh:NodeShape ;\n  sh:targetClas&#x27;...&quot;</div>
                                                     </div>
@@ -421,13 +421,13 @@ Bad syntax (Prefix &quot;ex:&quot; not bound) at ^ in:
                                                     <a href="https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex7.ttl" target="_blank">2017ex7.ttl</a>
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-15">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Turtle</div>
-                                                                    <div class="font-monospace entry-message section-turtle ">at line 1 of &lt;&gt;:
+                                                                    <div class="font-monospace entry-message section-turtle text-danger">at line 1 of &lt;&gt;:
 Bad syntax (Prefix &quot;ex:&quot; not bound) at ^ in:
 &quot;b&#x27;&#x27;^b&#x27;ex:TemperatureSensor a owl:Class ;\n  rdfs:subClassOf sosa:Sy&#x27;...&quot;</div>
                                                     </div>
@@ -547,13 +547,13 @@ Bad syntax (Prefix &quot;ex:&quot; not bound) at ^ in:
                                                     <a href="https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/ip68.ttl" target="_blank">ip68.ttl</a>
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-20">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Turtle</div>
-                                                                    <div class="font-monospace entry-message section-turtle ">at line 86 of &lt;&gt;:
+                                                                    <div class="font-monospace entry-message section-turtle text-danger">at line 86 of &lt;&gt;:
 Bad syntax (Prefix &quot;xsd:&quot; not bound) at ^ in:
 &quot;...b&#x27;ystem &lt;Sensor/SL-T-P1&gt; ;\n  prov:startedAtTime &quot;2017-06-06&quot;^^&#x27;^b&#x27;xsd:date ;\n  prov:wasAssociatedWith &lt;Organization/1&gt; ;\n  sos&#x27;...&quot;</div>
                                                     </div>
@@ -823,13 +823,13 @@ Bad syntax (Prefix &quot;xsd:&quot; not bound) at ^ in:
                                                     <a href="https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex5.ttl" target="_blank">2017ex5.ttl</a>
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-31">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Turtle</div>
-                                                                    <div class="font-monospace entry-message section-turtle ">at line 1 of &lt;&gt;:
+                                                                    <div class="font-monospace entry-message section-turtle text-danger">at line 1 of &lt;&gt;:
 Bad syntax (Prefix &quot;ex:&quot; not bound) at ^ in:
 &quot;b&#x27;&#x27;^b&#x27;ex:Temperature a owl:Class ;\n  rdfs:subClassOf sosa:Property&#x27;...&quot;</div>
                                                     </div>
@@ -899,13 +899,13 @@ Bad syntax (Prefix &quot;ex:&quot; not bound) at ^ in:
                                                     <a href="https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex6.ttl" target="_blank">2017ex6.ttl</a>
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-34">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Turtle</div>
-                                                                    <div class="font-monospace entry-message section-turtle ">at line 1 of &lt;&gt;:
+                                                                    <div class="font-monospace entry-message section-turtle text-danger">at line 1 of &lt;&gt;:
 Bad syntax (Prefix &quot;ex:&quot; not bound) at ^ in:
 &quot;b&#x27;&#x27;^b&#x27;ex:TemperatureSensor a sosa:System .\n\n&lt;Observation/1&gt; a sosa&#x27;...&quot;</div>
                                                     </div>
@@ -1000,13 +1000,13 @@ Bad syntax (Prefix &quot;ex:&quot; not bound) at ^ in:
                                                     <a href="https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex11.ttl" target="_blank">2017ex11.ttl</a>
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-38">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Turtle</div>
-                                                                    <div class="font-monospace entry-message section-turtle ">at line 16 of &lt;&gt;:
+                                                                    <div class="font-monospace entry-message section-turtle text-danger">at line 16 of &lt;&gt;:
 Bad syntax (Prefix &quot;qudt-1-1:&quot; not bound) at ^ in:
 &quot;...b&#x27;deBySensor &lt;sensor/926&gt; ; \n  sosa:hasResult [\n     rdf:type &#x27;^b&#x27;qudt-1-1:QuantityValue ;\n     qudt:numericValue &quot;22.4&quot;^^xsd:&#x27;...&quot;</div>
                                                     </div>
@@ -1026,13 +1026,13 @@ Bad syntax (Prefix &quot;qudt-1-1:&quot; not bound) at ^ in:
                                                     <a href="https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex13.ttl" target="_blank">2017ex13.ttl</a>
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-39">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Turtle</div>
-                                                                    <div class="font-monospace entry-message section-turtle ">at line 42 of &lt;&gt;:
+                                                                    <div class="font-monospace entry-message section-turtle text-danger">at line 42 of &lt;&gt;:
 Bad syntax (Prefix &quot;qunit:&quot; not bound) at ^ in:
 &quot;...b&#x27;    qudt:numericValue &quot;23.0&quot;^^xsd:double ;\n    qudt:hasUnit &#x27;^b&#x27;qunit:M ] .\n\n&lt;tree/125&gt;  rdf:type    sosa:FeatureOfInterest &#x27;...&quot;</div>
                                                     </div>
@@ -1252,13 +1252,13 @@ Bad syntax (Prefix &quot;qunit:&quot; not bound) at ^ in:
                                                     <a href="https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex1.ttl" target="_blank">2017ex1.ttl</a>
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-48">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Turtle</div>
-                                                                    <div class="font-monospace entry-message section-turtle ">at line 7 of &lt;&gt;:
+                                                                    <div class="font-monospace entry-message section-turtle text-danger">at line 7 of &lt;&gt;:
 Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
 &quot;...b&#x27;ocab/unit/&gt; .\n\n&lt;Observation/234534&gt; a sosa:Observation ;\n   &#x27;^b&#x27;rdfs:comment &quot;Observation of the difference between the outs&#x27;...&quot;</div>
                                                     </div>
@@ -1278,13 +1278,13 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
                                                     <a href="https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex4.ttl" target="_blank">2017ex4.ttl</a>
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-49">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Turtle</div>
-                                                                    <div class="font-monospace entry-message section-turtle ">at line 1 of &lt;&gt;:
+                                                                    <div class="font-monospace entry-message section-turtle text-danger">at line 1 of &lt;&gt;:
 Bad syntax (Prefix &quot;ex:&quot; not bound) at ^ in:
 &quot;b&#x27;&#x27;^b&#x27;ex:Temperature a sosa:Property .\n\n&lt;office/1&gt; a sosa:FeatureO&#x27;...&quot;</div>
                                                     </div>
@@ -1304,13 +1304,13 @@ Bad syntax (Prefix &quot;ex:&quot; not bound) at ^ in:
                                                     <a href="https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/dht22.ttl" target="_blank">dht22.ttl</a>
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-50">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Turtle</div>
-                                                                    <div class="font-monospace entry-message section-turtle ">at line 114 of &lt;&gt;:
+                                                                    <div class="font-monospace entry-message section-turtle text-danger">at line 114 of &lt;&gt;:
 Bad syntax (expected &#x27;.&#x27; or &#x27;}&#x27; or &#x27;]&#x27; at end of statement) at ^ in:
 &quot;...b&#x27;ify this quality.\n\n&lt;observation/1087#quality&gt;\n  ex:evaluated&#x27;^b&#x27;By &lt;Tom&gt; ;\n  ex:confidenceValue &quot;6&quot;^^xsd:integer ;\n  rdfs:co&#x27;...&quot;</div>
                                                     </div>
@@ -1355,13 +1355,13 @@ Bad syntax (expected &#x27;.&#x27; or &#x27;}&#x27; or &#x27;]&#x27; at end of s
                                                     <a href="https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex2.ttl" target="_blank">2017ex2.ttl</a>
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-52">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Turtle</div>
-                                                                    <div class="font-monospace entry-message section-turtle ">at line 6 of &lt;&gt;:
+                                                                    <div class="font-monospace entry-message section-turtle text-danger">at line 6 of &lt;&gt;:
 Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
 &quot;...b&#x27;urce/om-2/&gt; .\n\n&lt;Observation/234534&gt; a sosa:Observation ;\n   &#x27;^b&#x27;rdfs:comment &quot;Observation of the difference between the outs&#x27;...&quot;</div>
                                                     </div>
@@ -1667,12 +1667,12 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
   	Message: sosa:hasSimpleResult is a simple Literal
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: _:Nd709aab5e147426a8baf118073941bfb
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: _:N54dd65d6a8a8408d8a4a949d443486b2
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:N71f5d6a0e8f947648ec34d92b8a2b60b
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:N71f5d6a0e8f947648ec34d92b8a2b60b
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:N71f5d6a0e8f947648ec34d92b8a2b60b
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:N71f5d6a0e8f947648ec34d92b8a2b60b
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:Nb7c1529543d241488439441042c5a84d
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:Nb7c1529543d241488439441042c5a84d
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:Nb7c1529543d241488439441042c5a84d
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:Nb7c1529543d241488439441042c5a84d
 </div>
                                                     </div>
                                                 </div>
@@ -1717,12 +1717,12 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
   	Message: Less than 1 values on [ sosa:hasFeatureOfInterest [ ] ; sosa:hasResult [ ] ; sosa:madeBySensor Literal(&quot;ea est culpa esse&quot;) ; sosa:resultTime Literal(&quot;2016-05-04T02:27:02.0Z&quot;) ]-&gt;( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath &lt;http://recursion.too.deep&gt; ] ] ] sosa:observedProperty )
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:Ncccaae9857834a4db15963b9bcb37e0c
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:Ncccaae9857834a4db15963b9bcb37e0c
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:Ncccaae9857834a4db15963b9bcb37e0c
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:Ncccaae9857834a4db15963b9bcb37e0c
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:Nc0f037bbdae24b63845bc4306d25bcf9
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:Nc0f037bbdae24b63845bc4306d25bcf9
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:Nc0f037bbdae24b63845bc4306d25bcf9
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:Nc0f037bbdae24b63845bc4306d25bcf9
 </div>
                                                     </div>
                                                 </div>
@@ -1767,12 +1767,12 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
   	Message: More than 1 values on [ sosa:hasFeatureOfInterest [ ] ; sosa:hasResult [ ns1:a Literal(&quot;-8150858&quot;, datatype=xsd:integer) ; ns1:b Literal(&quot;false&quot; = False, datatype=xsd:boolean) ] ; sosa:hasSimpleResult Literal(&quot;frogginess&quot;) ; sosa:madeBySensor Literal(&quot;ea est culpa esse&quot;) ; sosa:observedProperty Literal(&quot;something&quot;) ; sosa:resultTime Literal(&quot;2016-05-04T02:27:02.0Z&quot;) ]-&gt;[ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: frogginess
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:Nced33180eca24506a3f2997b5d0a83e3
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:Nced33180eca24506a3f2997b5d0a83e3
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:Nced33180eca24506a3f2997b5d0a83e3
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:Nced33180eca24506a3f2997b5d0a83e3
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:N88d3ea81984242cf836ffad6335a6263
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:N88d3ea81984242cf836ffad6335a6263
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:N88d3ea81984242cf836ffad6335a6263
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:N88d3ea81984242cf836ffad6335a6263
 </div>
                                                     </div>
                                                 </div>
@@ -1809,12 +1809,12 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: 33
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:N06137f05d64f4ae39fd01ec53e40142e
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:N06137f05d64f4ae39fd01ec53e40142e
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:N06137f05d64f4ae39fd01ec53e40142e
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:N06137f05d64f4ae39fd01ec53e40142e
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:N13c4ecaa720f4793909e99b4dc06f2f4
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:N13c4ecaa720f4793909e99b4dc06f2f4
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:N13c4ecaa720f4793909e99b4dc06f2f4
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:N13c4ecaa720f4793909e99b4dc06f2f4
 </div>
                                                     </div>
                                                 </div>
@@ -1847,12 +1847,12 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: 33
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:n047bc975664f4985a4cc88102eb55a66b1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:n047bc975664f4985a4cc88102eb55a66b1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:n047bc975664f4985a4cc88102eb55a66b1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:n047bc975664f4985a4cc88102eb55a66b1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:n15b7f86ada664aac80318a9bfbae67adb1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:n15b7f86ada664aac80318a9bfbae67adb1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:n15b7f86ada664aac80318a9bfbae67adb1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:n15b7f86ada664aac80318a9bfbae67adb1
 </div>
                                                     </div>
                                                 </div>
@@ -1889,12 +1889,12 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:N6d4a15d5a8d4498ba73d24c28eca1447
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:N6d4a15d5a8d4498ba73d24c28eca1447
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:N6d4a15d5a8d4498ba73d24c28eca1447
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:N6d4a15d5a8d4498ba73d24c28eca1447
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:N81c8b312e1d8494586e3cfc74062145f
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:N81c8b312e1d8494586e3cfc74062145f
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:N81c8b312e1d8494586e3cfc74062145f
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:N81c8b312e1d8494586e3cfc74062145f
 </div>
                                                     </div>
                                                 </div>
@@ -2004,11 +2004,11 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: &lt;http://example.com/a1&gt;/sosa:hasSimpleResult
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://example.com/a1&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;http://example.com/a1&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;http://example.com/a1&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://example.com/a1&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;http://example.com/a1&gt;
 </div>
                                                     </div>
@@ -2042,11 +2042,11 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: eg:a1/sosa:hasSimpleResult
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: eg:a1
  - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: eg:a1
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: eg:a1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: eg:a1
  - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: eg:a1
 </div>
                                                     </div>
@@ -2106,11 +2106,11 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: &lt;http://example.com/pop1999&gt;/sosa:hasSimpleResult
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://example.com/pop1999&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;http://example.com/pop1999&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;http://example.com/pop1999&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://example.com/pop1999&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;http://example.com/pop1999&gt;
 </div>
                                                     </div>
@@ -2144,12 +2144,12 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: 33
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:n6a100e34a2284df2b7cc051405d5dd78b1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:n6a100e34a2284df2b7cc051405d5dd78b1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:n6a100e34a2284df2b7cc051405d5dd78b1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:n6a100e34a2284df2b7cc051405d5dd78b1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:n8c2414ae40d24b43b1838d907bf5e812b1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:n8c2414ae40d24b43b1838d907bf5e812b1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:n8c2414ae40d24b43b1838d907bf5e812b1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:n8c2414ae40d24b43b1838d907bf5e812b1
 </div>
                                                     </div>
                                                 </div>
@@ -2186,11 +2186,11 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://example.com/pop1999&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;http://example.com/pop1999&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;http://example.com/pop1999&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://example.com/pop1999&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;http://example.com/pop1999&gt;
 </div>
                                                     </div>
@@ -2260,11 +2260,11 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
   	Message: Less than 1 values on &lt;file:///github/workspace/pop1999&gt;-&gt;( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath &lt;http://recursion.too.deep&gt; ] ] ] sosa:observedProperty )
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: &lt;file:///github/workspace/pop1999&gt;/sosa:hasSimpleResult
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;file:///github/workspace/pop1999&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;file:///github/workspace/pop1999&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;file:///github/workspace/pop1999&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;file:///github/workspace/pop1999&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;file:///github/workspace/pop1999&gt;
 </div>
                                                     </div>
@@ -2302,11 +2302,11 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: &lt;file:///github/workspace/pop1999&gt;/sosa:hasSimpleResult
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;file:///github/workspace/pop1999&gt;,&lt;file:///github/workspace/something&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;file:///github/workspace/pop1999&gt;,&lt;file:///github/workspace/something&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;file:///github/workspace/pop1999&gt;,&lt;file:///github/workspace/something&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;file:///github/workspace/pop1999&gt;,&lt;file:///github/workspace/something&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;file:///github/workspace/pop1999&gt;,&lt;file:///github/workspace/something&gt;
 </div>
                                                     </div>
@@ -2344,11 +2344,11 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: &lt;http://www.example.com/sosa/pop1999&gt;/sosa:hasSimpleResult
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://www.example.com/sosa/pop1999&gt;,&lt;http://www.example.com/sosa/something&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;http://www.example.com/sosa/pop1999&gt;,&lt;http://www.example.com/sosa/something&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;http://www.example.com/sosa/pop1999&gt;,&lt;http://www.example.com/sosa/something&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://www.example.com/sosa/pop1999&gt;,&lt;http://www.example.com/sosa/something&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;http://www.example.com/sosa/pop1999&gt;,&lt;http://www.example.com/sosa/something&gt;
 </div>
                                                     </div>
@@ -2382,11 +2382,11 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: eg:pop1999/sosa:hasSimpleResult,eg:pop2000/sosa:hasSimpleResult
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: eg:pop2000,eg:pop1999
  - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: eg:pop2000,eg:pop1999
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: eg:pop2000,eg:pop1999
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: eg:pop2000,eg:pop1999
  - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: eg:pop2000,eg:pop1999
 </div>
                                                     </div>
