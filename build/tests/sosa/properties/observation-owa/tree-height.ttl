@@ -1,0 +1,44 @@
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/data/observation/1087> a sosa:Observation ;
+    rdfs:label "observation #1087"@en ;
+    sosa:hasFeatureOfInterest <http://example.org/data/tree/124> ;
+    sosa:hasResult [ qudt:hasUnit unit:M ;
+            qudt:numericValue 1.53e+01 ] ;
+    sosa:madeBySensor <http://example.org/data/rangefinder/30> ;
+    sosa:observedProperty <http://example.org/data/tree/124/height> .
+
+<http://example.org/data/observation/1088> a sosa:Observation ;
+    rdfs:label "observation #1088"@en ;
+    sosa:hasFeatureOfInterest <http://example.org/data/tree/125> ;
+    sosa:hasResult [ qudt:hasUnit unit:M ;
+            qudt:numericValue 2.3e+01 ] ;
+    sosa:madeBySensor <http://example.org/data/rangefinder/30> ;
+    sosa:observedProperty <http://example.org/data/tree/125/height> .
+
+<http://example.org/data/tree/124#height> a sosa:ObservableProperty,
+        sosa:Property ;
+    rdfs:label "the height of tree #124"@en ;
+    sosa:isPropertyOf <http://example.org/data/tree/124> .
+
+<http://example.org/data/tree/125#height> a sosa:ObservableProperty,
+        sosa:Property ;
+    rdfs:label "the height of tree #125"@en ;
+    sosa:isPropertyOf <http://example.org/data/tree/125> .
+
+<http://example.org/data/rangefinder/30> a sosa:Sensor ;
+    rdfs:label "rangefinder #30"@en ;
+    rdfs:comment "rangefinder #30 is a laser range finder sensor."@en .
+
+<http://example.org/data/tree/124> a sosa:FeatureOfInterest ;
+    rdfs:label "tree #124"@en ;
+    sosa:hasProperty <http://example.org/data/tree/124#height> .
+
+<http://example.org/data/tree/125> a sosa:FeatureOfInterest ;
+    rdfs:label "tree #125"@en ;
+    sosa:hasProperty <http://example.org/data/tree/125#height> .
+
