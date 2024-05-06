@@ -22,12 +22,36 @@
             *[data-bs-toggle].collapsed .caret {
                 transform: rotate(0deg);
             }
+            .highlighted {
+                animation: highlight-border 3500ms ease-out;
+            }
+            .highlighted h2 button {
+                animation: highlight 3500ms ease-out;
+            }
+            @keyframes highlight {
+                0% {
+                    background: #ffff90;
+                }
+                100% {
+                    background: var(--bs-accordion-active-bg);
+                }
+            }
+            @keyframes highlight-border {
+                0% {
+                    border-color: red;
+                    border-width: 2px;
+                }
+                100% {
+                    border-color: var(--bs-accordion-border-color);
+                    border-width: var(--bs-accordion-border-width);
+                }
+            }
         </style>
     </head>
     <body>
         <div class="container">
             <h1 class="title">Building blocks validation report</h1>
-            <small class="datetime">Generated at 2024-05-03T09:10:39.674011+00:00</small>
+            <small class="datetime">Generated at 2024-05-06T08:09:38.684260+00:00</small>
                 <p class="summary fw-semibold text-danger">
                     Number of passing building blocks: 7 / 8 (87.5%)
                 </p>
@@ -36,9 +60,11 @@
                 <a href="#" class="collapse-all">Collapse all</a>
             </div>
                 <div class="accordion mt-2" id="bblock-reports">
-                        <div class="accordion-item bblock-report" data-bblock-id="ogc.sosa.properties.observation-owa" id="bblock-0">
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.sosa.properties.observation-owa" id="bblock-ogc.sosa.properties.observation-owa">
                             <h2 class="accordion-header bblock-title">
-                                <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#bblock-collapse-0">
+                                <button class="accordion-button " type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.sosa\.properties\.observation-owa">
                                     <div class="flex-fill">
                                         Observation Properties (SOSA OWA)
                                         <small class="ms-2 bblock-id">ogc.sosa.properties.observation-owa</small>
@@ -50,7 +76,7 @@
                                     </span>
                                 </button>
                             </h2>
-                            <div class="accordion-collapse collapse show" id="bblock-collapse-0">
+                            <div class="accordion-collapse collapse show" id="bblock-collapse-ogc.sosa.properties.observation-owa">
                                 <div class="accordion-body">
                                         <p class="summary fw-semibold text-danger">
                                             Test passed: 45 / 58
@@ -1529,9 +1555,11 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item bblock-report" data-bblock-id="ogc.sosa.properties.sensor" id="bblock-1">
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.sosa.properties.sensor" id="bblock-ogc.sosa.properties.sensor">
                             <h2 class="accordion-header bblock-title">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bblock-collapse-1">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.sosa\.properties\.sensor">
                                     <div class="flex-fill">
                                         SOSA Sensor
                                         <small class="ms-2 bblock-id">ogc.sosa.properties.sensor</small>
@@ -1543,7 +1571,7 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
                                     </span>
                                 </button>
                             </h2>
-                            <div class="accordion-collapse collapse " id="bblock-collapse-1">
+                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.sosa.properties.sensor">
                                 <div class="accordion-body">
                                         <p class="summary fw-semibold text-success">
                                             Test passed: 2 / 2
@@ -1609,9 +1637,11 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item bblock-report" data-bblock-id="ogc.sosa.properties.observation" id="bblock-2">
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.sosa.properties.observation" id="bblock-ogc.sosa.properties.observation">
                             <h2 class="accordion-header bblock-title">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bblock-collapse-2">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.sosa\.properties\.observation">
                                     <div class="flex-fill">
                                         Observation Properties
                                         <small class="ms-2 bblock-id">ogc.sosa.properties.observation</small>
@@ -1623,7 +1653,7 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
                                     </span>
                                 </button>
                             </h2>
-                            <div class="accordion-collapse collapse " id="bblock-collapse-2">
+                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.sosa.properties.observation">
                                 <div class="accordion-body">
                                         <p class="summary fw-semibold text-success">
                                             Test passed: 6 / 6
@@ -1667,12 +1697,12 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
   	Message: sosa:hasSimpleResult is a simple Literal
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: _:Nd709aab5e147426a8baf118073941bfb
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:N57b28b5579d940059e8934b30c78be9d
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: _:N8b93628a4a58491799944e315d6423d0
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:N57b28b5579d940059e8934b30c78be9d
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:Nb7c1529543d241488439441042c5a84d
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:Nb7c1529543d241488439441042c5a84d
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:Nb7c1529543d241488439441042c5a84d
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:Nb7c1529543d241488439441042c5a84d
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:N57b28b5579d940059e8934b30c78be9d
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:N57b28b5579d940059e8934b30c78be9d
 </div>
                                                     </div>
                                                 </div>
@@ -1717,12 +1747,12 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
   	Message: Less than 1 values on [ sosa:hasFeatureOfInterest [ ] ; sosa:hasResult [ ] ; sosa:madeBySensor Literal(&quot;ea est culpa esse&quot;) ; sosa:resultTime Literal(&quot;2016-05-04T02:27:02.0Z&quot;) ]-&gt;( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath &lt;http://recursion.too.deep&gt; ] ] ] sosa:observedProperty )
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:N75dc6c703ff4474ca5cf01a8a4ceaea1
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:N75dc6c703ff4474ca5cf01a8a4ceaea1
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:Nc0f037bbdae24b63845bc4306d25bcf9
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:Nc0f037bbdae24b63845bc4306d25bcf9
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:Nc0f037bbdae24b63845bc4306d25bcf9
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:Nc0f037bbdae24b63845bc4306d25bcf9
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:N75dc6c703ff4474ca5cf01a8a4ceaea1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:N75dc6c703ff4474ca5cf01a8a4ceaea1
 </div>
                                                     </div>
                                                 </div>
@@ -1767,12 +1797,12 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
   	Message: More than 1 values on [ sosa:hasFeatureOfInterest [ ] ; sosa:hasResult [ ns1:a Literal(&quot;-8150858&quot;, datatype=xsd:integer) ; ns1:b Literal(&quot;false&quot; = False, datatype=xsd:boolean) ] ; sosa:hasSimpleResult Literal(&quot;frogginess&quot;) ; sosa:madeBySensor Literal(&quot;ea est culpa esse&quot;) ; sosa:observedProperty Literal(&quot;something&quot;) ; sosa:resultTime Literal(&quot;2016-05-04T02:27:02.0Z&quot;) ]-&gt;[ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:N536cee06285e4cd2b361b35d732eb1f7
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: frogginess
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:N536cee06285e4cd2b361b35d732eb1f7
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:N88d3ea81984242cf836ffad6335a6263
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:N88d3ea81984242cf836ffad6335a6263
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:N88d3ea81984242cf836ffad6335a6263
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:N88d3ea81984242cf836ffad6335a6263
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:N536cee06285e4cd2b361b35d732eb1f7
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:N536cee06285e4cd2b361b35d732eb1f7
 </div>
                                                     </div>
                                                 </div>
@@ -1809,12 +1839,12 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:Nf225c8311cb345d490efa39b6f1308f0
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: 33
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:Nf225c8311cb345d490efa39b6f1308f0
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:N13c4ecaa720f4793909e99b4dc06f2f4
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:N13c4ecaa720f4793909e99b4dc06f2f4
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:N13c4ecaa720f4793909e99b4dc06f2f4
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:N13c4ecaa720f4793909e99b4dc06f2f4
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:Nf225c8311cb345d490efa39b6f1308f0
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:Nf225c8311cb345d490efa39b6f1308f0
 </div>
                                                     </div>
                                                 </div>
@@ -1847,12 +1877,12 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:nbbbaabd8158d4dca9df6d9873073cc18b1
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: 33
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:nbbbaabd8158d4dca9df6d9873073cc18b1
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:n15b7f86ada664aac80318a9bfbae67adb1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:n15b7f86ada664aac80318a9bfbae67adb1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:n15b7f86ada664aac80318a9bfbae67adb1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:n15b7f86ada664aac80318a9bfbae67adb1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:nbbbaabd8158d4dca9df6d9873073cc18b1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:nbbbaabd8158d4dca9df6d9873073cc18b1
 </div>
                                                     </div>
                                                 </div>
@@ -1889,12 +1919,12 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:N55e2c47551874e768309d734611c8d9e
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:N55e2c47551874e768309d734611c8d9e
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:N81c8b312e1d8494586e3cfc74062145f
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:N81c8b312e1d8494586e3cfc74062145f
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:N81c8b312e1d8494586e3cfc74062145f
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:N81c8b312e1d8494586e3cfc74062145f
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:N55e2c47551874e768309d734611c8d9e
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:N55e2c47551874e768309d734611c8d9e
 </div>
                                                     </div>
                                                 </div>
@@ -1903,9 +1933,11 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item bblock-report" data-bblock-id="ogc.sosa.properties.platform" id="bblock-3">
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.sosa.properties.platform" id="bblock-ogc.sosa.properties.platform">
                             <h2 class="accordion-header bblock-title">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bblock-collapse-3">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.sosa\.properties\.platform">
                                     <div class="flex-fill">
                                         SOSA Platform
                                         <small class="ms-2 bblock-id">ogc.sosa.properties.platform</small>
@@ -1917,7 +1949,7 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
                                     </span>
                                 </button>
                             </h2>
-                            <div class="accordion-collapse collapse " id="bblock-collapse-3">
+                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.sosa.properties.platform">
                                 <div class="accordion-body">
                                         <p class="summary fw-semibold text-success">
                                             Test passed: 1 / 1
@@ -1954,9 +1986,11 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item bblock-report" data-bblock-id="ogc.sosa.properties.observationCollection" id="bblock-4">
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.sosa.properties.observationCollection" id="bblock-ogc.sosa.properties.observationCollection">
                             <h2 class="accordion-header bblock-title">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bblock-collapse-4">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.sosa\.properties\.observationCollection">
                                     <div class="flex-fill">
                                         ObservationCollection Properties
                                         <small class="ms-2 bblock-id">ogc.sosa.properties.observationCollection</small>
@@ -1968,7 +2002,7 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
                                     </span>
                                 </button>
                             </h2>
-                            <div class="accordion-collapse collapse " id="bblock-collapse-4">
+                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.sosa.properties.observationCollection">
                                 <div class="accordion-body">
                                         <p class="summary fw-semibold text-success">
                                             Test passed: 2 / 2
@@ -2004,12 +2038,12 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: &lt;http://example.com/a1&gt;/sosa:hasSimpleResult
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://example.com/a1&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;http://example.com/a1&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;http://example.com/a1&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: &lt;http://example.com/a1&gt;/sosa:hasSimpleResult
  - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;http://example.com/a1&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;http://example.com/a1&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://example.com/a1&gt;
 </div>
                                                     </div>
                                                 </div>
@@ -2042,12 +2076,12 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: eg:a1/sosa:hasSimpleResult
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: eg:a1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: eg:a1
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: eg:a1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: eg:a1/sosa:hasSimpleResult
  - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: eg:a1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: eg:a1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: eg:a1
 </div>
                                                     </div>
                                                 </div>
@@ -2056,9 +2090,11 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item bblock-report" data-bblock-id="ogc.sosa.features.observation" id="bblock-5">
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.sosa.features.observation" id="bblock-ogc.sosa.features.observation">
                             <h2 class="accordion-header bblock-title">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bblock-collapse-5">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.sosa\.features\.observation">
                                     <div class="flex-fill">
                                         SOSA Observation Feature
                                         <small class="ms-2 bblock-id">ogc.sosa.features.observation</small>
@@ -2070,7 +2106,7 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
                                     </span>
                                 </button>
                             </h2>
-                            <div class="accordion-collapse collapse " id="bblock-collapse-5">
+                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.sosa.features.observation">
                                 <div class="accordion-body">
                                         <p class="summary fw-semibold text-success">
                                             Test passed: 3 / 3
@@ -2106,12 +2142,12 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: &lt;http://example.com/pop1999&gt;/sosa:hasSimpleResult
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://example.com/pop1999&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;http://example.com/pop1999&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: &lt;http://example.com/pop1999&gt;/sosa:hasSimpleResult
  - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://example.com/pop1999&gt;
 </div>
                                                     </div>
                                                 </div>
@@ -2144,12 +2180,12 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:n8dc40785c7734313b3c50b8afcbbe589b1
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: 33
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:n8dc40785c7734313b3c50b8afcbbe589b1
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:n8c2414ae40d24b43b1838d907bf5e812b1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:n8c2414ae40d24b43b1838d907bf5e812b1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:n8c2414ae40d24b43b1838d907bf5e812b1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:n8c2414ae40d24b43b1838d907bf5e812b1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:n8dc40785c7734313b3c50b8afcbbe589b1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:n8dc40785c7734313b3c50b8afcbbe589b1
 </div>
                                                     </div>
                                                 </div>
@@ -2186,12 +2222,12 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://example.com/pop1999&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;http://example.com/pop1999&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://example.com/pop1999&gt;
 </div>
                                                     </div>
                                                 </div>
@@ -2200,9 +2236,11 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item bblock-report" data-bblock-id="ogc.sosa.features.observationCollection" id="bblock-6">
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.sosa.features.observationCollection" id="bblock-ogc.sosa.features.observationCollection">
                             <h2 class="accordion-header bblock-title">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bblock-collapse-6">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.sosa\.features\.observationCollection">
                                     <div class="flex-fill">
                                         SOSA ObservationCollection Feature
                                         <small class="ms-2 bblock-id">ogc.sosa.features.observationCollection</small>
@@ -2214,7 +2252,7 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
                                     </span>
                                 </button>
                             </h2>
-                            <div class="accordion-collapse collapse " id="bblock-collapse-6">
+                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.sosa.features.observationCollection">
                                 <div class="accordion-body">
                                         <p class="summary fw-semibold text-success">
                                             Test passed: 4 / 4
@@ -2260,12 +2298,12 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
   	Message: Less than 1 values on &lt;file:///github/workspace/pop1999&gt;-&gt;( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath &lt;http://recursion.too.deep&gt; ] ] ] sosa:observedProperty )
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: &lt;file:///github/workspace/pop1999&gt;/sosa:hasSimpleResult
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;file:///github/workspace/pop1999&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;file:///github/workspace/pop1999&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;file:///github/workspace/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: &lt;file:///github/workspace/pop1999&gt;/sosa:hasSimpleResult
  - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;file:///github/workspace/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;file:///github/workspace/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;file:///github/workspace/pop1999&gt;
 </div>
                                                     </div>
                                                 </div>
@@ -2302,12 +2340,12 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: &lt;file:///github/workspace/pop1999&gt;/sosa:hasSimpleResult
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;file:///github/workspace/pop1999&gt;,&lt;file:///github/workspace/something&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;file:///github/workspace/pop1999&gt;,&lt;file:///github/workspace/something&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;file:///github/workspace/pop1999&gt;,&lt;file:///github/workspace/something&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: &lt;file:///github/workspace/pop1999&gt;/sosa:hasSimpleResult
  - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;file:///github/workspace/pop1999&gt;,&lt;file:///github/workspace/something&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;file:///github/workspace/pop1999&gt;,&lt;file:///github/workspace/something&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;file:///github/workspace/pop1999&gt;,&lt;file:///github/workspace/something&gt;
 </div>
                                                     </div>
                                                 </div>
@@ -2344,12 +2382,12 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;http://www.example.com/sosa/something&gt;,&lt;http://www.example.com/sosa/pop1999&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: &lt;http://www.example.com/sosa/pop1999&gt;/sosa:hasSimpleResult
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;http://www.example.com/sosa/something&gt;,&lt;http://www.example.com/sosa/pop1999&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://www.example.com/sosa/pop1999&gt;,&lt;http://www.example.com/sosa/something&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;http://www.example.com/sosa/pop1999&gt;,&lt;http://www.example.com/sosa/something&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;http://www.example.com/sosa/pop1999&gt;,&lt;http://www.example.com/sosa/something&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;http://www.example.com/sosa/pop1999&gt;,&lt;http://www.example.com/sosa/something&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;http://www.example.com/sosa/something&gt;,&lt;http://www.example.com/sosa/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://www.example.com/sosa/something&gt;,&lt;http://www.example.com/sosa/pop1999&gt;
 </div>
                                                     </div>
                                                 </div>
@@ -2382,12 +2420,12 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: eg:pop1999/sosa:hasSimpleResult,eg:pop2000/sosa:hasSimpleResult
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: eg:pop1999,eg:pop2000
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: eg:pop2000/sosa:hasSimpleResult,eg:pop1999/sosa:hasSimpleResult
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: eg:pop1999,eg:pop2000
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: eg:pop2000,eg:pop1999
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: eg:pop2000,eg:pop1999
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: eg:pop2000,eg:pop1999
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: eg:pop2000,eg:pop1999
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: eg:pop1999,eg:pop2000
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: eg:pop1999,eg:pop2000
 </div>
                                                     </div>
                                                 </div>
@@ -2396,9 +2434,11 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item bblock-report" data-bblock-id="ogc.sosa" id="bblock-7">
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.sosa" id="bblock-ogc.sosa">
                             <h2 class="accordion-header bblock-title">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bblock-collapse-7">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.sosa">
                                     <div class="flex-fill">
                                         Sensor, Observation, Sample, and Actuator (SOSA)
                                         <small class="ms-2 bblock-id">ogc.sosa</small>
@@ -2410,7 +2450,7 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
                                     </span>
                                 </button>
                             </h2>
-                            <div class="accordion-collapse collapse " id="bblock-collapse-7">
+                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.sosa">
                                 <div class="accordion-body">
                                         <div class="alert alert-info mb-0">No tests were found for this building block.</div>
                                 </div>
@@ -2430,6 +2470,13 @@ Bad syntax (Prefix &quot;rdfs:&quot; not bound) at ^ in:
                         accordionEntries.forEach(e => e.classList.remove('show'));
                     }
                 });
+                if (location.hash.startsWith('#bblock-')) {
+                    const highlight = document.querySelector(location.hash.replaceAll('.', '\\.'));
+                    if (highlight) {
+                        highlight.querySelector('.accordion-collapse').classList.add('show');
+                        highlight.classList.add('highlighted');
+                    }
+                }
             });
         </script>
     </body>
