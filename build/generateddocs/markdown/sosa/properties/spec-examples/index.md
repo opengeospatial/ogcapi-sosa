@@ -1,218 +1,53 @@
----
-title: ObservationCollection Properties (Schema)
 
-language_tabs:
-  - json: JSON
-  - jsonld: JSON-LD
-  - turtle: RDF/Turtle
+# Tests for SOSA specification (Schema)
 
-toc_footers:
-  - Version 1.0
-  - <a href='#'>ObservationCollection Properties</a>
-  - <a href='https://blocks.ogc.org/register.html'>Building Blocks register</a>
+`ogc.sosa.properties.spec-examples` *v1.0*
 
-search: true
+This BuildingBlock adds test cases from the SOSA specification to the base Observation properties model
 
-code_clipboard: true
+[*Status*](http://www.opengis.net/def/status): Under development
 
-meta:
-  - name: ObservationCollection Properties (Schema)
----
+## Description
 
+## SOSA Specification Examples
 
-# ObservationCollection Properties `ogc.sosa.properties.observationCollection`
+This building block runs tests against the SOSA specification examples.
 
-This building block defines an ObservationCollection according to the SOSA/SSN v1.1 specification. It defines a set of logical rules regarding presence of mandatory properties anywhere within a potentially nested collection hierarchy. (implemented in SHACL, exploiting the semantic mapping to SOSA)
+As TTL files these examples are validated against the SHACL rules inherited from the building blocks for elements of the specification
 
-<p class="status">
-    <span data-rainbow-uri="http://www.opengis.net/def/status">Status</span>:
-    <a href="http://www.opengis.net/def/status/under-development" target="_blank" data-rainbow-uri>Under development</a>
-</p>
+## Examples
 
-<aside class="success">
-This building block is <strong><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/properties/observationCollection/" target="_blank">valid</a></strong>
-</aside>
-
-# Description
-
-## SOSA ObservationCollection
-
-Collection of one or more observations, whose members share a common value for one or more properties.
-# Examples
-
-## Example of SOSA ObservationCollection
-
-
-
-```json
-{ 
-  "observedProperty": "p1",
-  "resultTime": "2022-05-01T22:33:44Z",
-  "hasMember": [
-    { 
-      "@id": "a1",
-      "@type": "sosa:Observation",
-      "comment": "Example of an inline membership - would entail hasMember relations",
-      "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
-      "hasSimpleResult": 1995.2,
-      "phenomenonTime": "2022-05-01T22:33:40Z"
-    }
-  ]
-}
-```
-
-<blockquote class="lang-specific json">
-  <p class="example-links">
-    <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observationCollection/example_1_1.json">Open in new window</a>
-    <a target="_blank" href="https://avillar.github.io/TreedocViewer/?dataParser=json&amp;dataUrl=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Fsosa%2Fproperties%2FobservationCollection%2Fexample_1_1.json&amp;expand=2&amp;option=%7B%22showTable%22%3A+false%7D">View on JSON Viewer</a></p>
-</blockquote>
-
-
-
-
-```jsonld
-{
-  "observedProperty": "p1",
-  "resultTime": "2022-05-01T22:33:44Z",
-  "hasMember": [
-    {
-      "@id": "a1",
-      "@type": "sosa:Observation",
-      "comment": "Example of an inline membership - would entail hasMember relations",
-      "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
-      "hasSimpleResult": 1995.2,
-      "phenomenonTime": "2022-05-01T22:33:40Z"
-    }
-  ],
-  "@context": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/context.jsonld"
-}
-```
-
-<blockquote class="lang-specific jsonld">
-  <p class="example-links">
-    <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observationCollection/example_1_1.jsonld">Open in new window</a>
-    <a target="_blank" href="https://json-ld.org/playground/#json-ld=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Ftests%2Fsosa%2Fproperties%2FobservationCollection%2Fexample_1_1.jsonld">View on JSON-LD Playground</a>
-</blockquote>
-
-
-
-
+### Example 1
+#### turtle
 ```turtle
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
 
-<http://example.com/a1> a sosa:Observation ;
-    sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
-    sosa:hasSimpleResult 1.9952e+03 ;
-    sosa:phenomenonTime <2022-05-01t22:33:40Z> .
+<Observation/234534> a sosa:Observation ;
+   rdfs:comment "Observation of the difference between the outside temperature and the inside temperature."@en ;
+   sosa:hasFeatureOfInterest <apartment/134> ;
+   sosa:hasResult [
+      a qudt:QuantityValue ;
+      qudt:hasUnit unit:DEG_C ;
+      qudt:value "-29.9"^^xsd:decimal ] .
 
-[] sosa:hasMember <http://example.com/a1> ;
-    sosa:observedProperty <http://example.com/p1> ;
-    sosa:resultTime "2022-05-01T22:33:44Z" .
-
-
+<Observation/83985> a sosa:Observation ;
+   rdfs:comment "Observation of the temperature inside apartment #134."@en ;
+   sosa:hasFeatureOfInterest <apartment/134> ;
+   sosa:hasResult [
+      a qudt:QuantityValue ;
+      qudt:hasUnit unit:DEG_C ;
+      qudt:value "22.4"^^xsd:decimal ] .
 ```
 
-<blockquote class="lang-specific turtle">
-  <p class="example-links">
-    <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observationCollection/example_1_1.ttl">Open in new window</a>
-</blockquote>
+## Schema
 
-
-
-## Turtle example of SOSA ObservationCollection
-
-
-
-```turtle
-@prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix eg: <http://example.org/my-feature/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-
-eg:c1 a sosa:ObservationCollection ;
-  sosa:hasMember eg:a1 ;
-  sosa:observedProperty eg:p1 ;
-  sosa:resultTime "2022-05-01T22:33:44Z"^^xsd:dateTime ;
-  sosa:phenomenonTime "2022-05-01T22:33:40Z"^^xsd:dateTime ;
-.
-
-eg:a1 a sosa:Observation ;
-  sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
-  sosa:hasSimpleResult 33 ;
-.
-eg:p1 a skos:Concept;
-  skos:prefLabel "Some Observable Property";
-.
-```
-
-<blockquote class="lang-specific turtle">
-  <p class="example-links">
-    <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observationCollection/example_2_1.ttl">Open in new window</a>
-</blockquote>
-
-
-
-# JSON Schema
-
-```yaml--schema
+```yaml
 $schema: https://json-schema.org/draft/2020-12/schema
-description: SOSA ObservationCollection
-$defs:
-  collection:
-    type: object
-    properties:
-      resultTime:
-        type: string
-        format: date-time
-        x-jsonld-id: http://www.w3.org/ns/sosa/resultTime
-      phenomenonTime:
-        type:
-        - object
-        - string
-        x-jsonld-id: http://www.w3.org/ns/sosa/phenomenonTime
-        x-jsonld-type: '@id'
-      hasFeatureOfInterest:
-        type:
-        - object
-        - string
-        x-jsonld-id: http://www.w3.org/ns/sosa/hasFeatureOfInterest
-        x-jsonld-type: '@id'
-      observedProperty:
-        type:
-        - object
-        - string
-        x-jsonld-id: http://www.w3.org/ns/sosa/observedProperty
-        x-jsonld-type: '@id'
-      usedProcedure:
-        type:
-        - object
-        - string
-        x-jsonld-id: http://www.w3.org/ns/sosa/usedProcedure
-        x-jsonld-type: '@id'
-      madeBySensor:
-        type:
-        - object
-        - string
-        x-jsonld-id: http://www.w3.org/ns/sosa/madeBySensor
-        x-jsonld-type: '@id'
-      hasMember:
-        type: array
-        items:
-          anyOf:
-          - $ref: '#/$defs/collection'
-          - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.yaml
-          - $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml
-        x-jsonld-id: http://www.w3.org/ns/sosa/hasMember
-        x-jsonld-type: '@id'
-allOf:
-- $ref: '#/$defs/collection'
-- not:
-    anyOf:
-    - required:
-      - hasResult
-    - required:
-      - hasSimpleResult
+description: SOSA Observation
+$ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation-owa/schema.yaml
 x-jsonld-extra-terms:
   id: '@id'
   properties: '@nest'
@@ -298,8 +133,14 @@ x-jsonld-extra-terms:
   hasDeployment:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasDeployment
     x-jsonld-type: '@id'
+  hasFeatureOfInterest:
+    x-jsonld-id: http://www.w3.org/ns/sosa/hasFeatureOfInterest
+    x-jsonld-type: '@id'
   hasInput:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasInput
+    x-jsonld-type: '@id'
+  hasMember:
+    x-jsonld-id: http://www.w3.org/ns/sosa/hasMember
     x-jsonld-type: '@id'
   hasOriginalSample:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasOriginalSample
@@ -384,14 +225,27 @@ x-jsonld-extra-terms:
   madeBySampler:
     x-jsonld-id: http://www.w3.org/ns/sosa/madeBySampler
     x-jsonld-type: '@id'
+  madeBySensor:
+    x-jsonld-id: http://www.w3.org/ns/sosa/madeBySensor
+    x-jsonld-type: '@id'
   madeObservation:
     x-jsonld-id: http://www.w3.org/ns/sosa/madeObservation
     x-jsonld-type: '@id'
   madeSampling:
     x-jsonld-id: http://www.w3.org/ns/sosa/madeSampling
     x-jsonld-type: '@id'
+  observedProperty:
+    x-jsonld-id: http://www.w3.org/ns/sosa/observedProperty
+    x-jsonld-type: '@id'
   observes:
     x-jsonld-id: http://www.w3.org/ns/sosa/observes
+    x-jsonld-type: '@id'
+  phenomenonTime:
+    x-jsonld-id: http://www.w3.org/ns/sosa/phenomenonTime
+    x-jsonld-type: '@id'
+  resultTime: http://www.w3.org/ns/sosa/resultTime
+  usedProcedure:
+    x-jsonld-id: http://www.w3.org/ns/sosa/usedProcedure
     x-jsonld-type: '@id'
   wasOriginatedBy:
     x-jsonld-id: http://www.w3.org/ns/sosa/wasOriginatedBy
@@ -493,17 +347,15 @@ x-jsonld-prefixes:
 
 ```
 
-> <a target="_blank" href="https://avillar.github.io/TreedocViewer/?dataParser=yaml&amp;dataUrl=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Fannotated%2Fsosa%2Fproperties%2FobservationCollection%2Fschema.yaml&amp;expand=2&amp;option=%7B%22showTable%22%3A+false%7D">View on YAML Viewer</a>
-
 Links to the schema:
 
-* YAML version: <a href="https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.yaml" target="_blank">https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.yaml</a>
-* JSON version: <a href="https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.json" target="_blank">https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.json</a>
+* YAML version: [schema.yaml](https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/spec-examples/schema.json)
+* JSON version: [schema.json](https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/spec-examples/schema.yaml)
 
 
 # JSON-LD Context
 
-```json--ldContext
+```jsonld
 {
   "@context": {
     "resultTime": "sosa:resultTime",
@@ -525,10 +377,6 @@ Links to the schema:
     },
     "madeBySensor": {
       "@id": "sosa:madeBySensor",
-      "@type": "@id"
-    },
-    "hasMember": {
-      "@id": "sosa:hasMember",
       "@type": "@id"
     },
     "id": "@id",
@@ -644,6 +492,10 @@ Links to the schema:
     },
     "hasInput": {
       "@id": "sosa:hasInput",
+      "@type": "@id"
+    },
+    "hasMember": {
+      "@id": "sosa:hasMember",
       "@type": "@id"
     },
     "hasOriginalSample": {
@@ -900,21 +752,10 @@ Links to the schema:
 }
 ```
 
-> <a target="_blank" href="https://json-ld.org/playground/#json-ld=https%3A%2F%2Fopengeospatial.github.io%2Fogcapi-sosa%2Fbuild%2Fannotated%2Fsosa%2Fproperties%2FobservationCollection%2Fcontext.jsonld">View on JSON-LD Playground</a>
-
 You can find the full JSON-LD context here:
-<a href="https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/context.jsonld" target="_blank">https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/context.jsonld</a>
+[context.jsonld](https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/spec-examples/context.jsonld)
 
-# Validation
-
-## SHACL Shapes
-
-The following sets of SHACL shapes are used for validating this building block:
-
-* Observation Properties <small><code>ogc.sosa.properties.observation</code></small>
-  * [https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl](https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl)
-
-# References
+## Sources
 
 * [Semantic Sensor Network Ontology](https://www.w3.org/TR/vocab-ssn/)
 
@@ -922,7 +763,6 @@ The following sets of SHACL shapes are used for validating this building block:
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: <a href="https://github.com/opengeospatial/ogcapi-sosa" target="_blank">https://github.com/opengeospatial/ogcapi-sosa</a>
-* Path:
-<code><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/HEAD/_sources/properties/observationCollection" target="_blank">_sources/properties/observationCollection</a></code>
+* URL: [https://github.com/opengeospatial/ogcapi-sosa](https://github.com/opengeospatial/ogcapi-sosa)
+* Path: `_sources/properties/spec-examples`
 

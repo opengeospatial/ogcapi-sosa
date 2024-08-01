@@ -467,7 +467,6 @@ Links to the schema:
       "@type": "@id"
     },
     "hasMember": {
-      "@context": {},
       "@id": "sosa:hasMember",
       "@type": "@id"
     },

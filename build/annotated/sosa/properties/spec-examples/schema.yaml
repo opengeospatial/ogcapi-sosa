@@ -1,19 +1,8 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-description: SOSA Sensor
-$definitions:
-  Sensor:
-    anyOf:
-    - $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml
-    - type: object
-      properties:
-        id:
-          $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml
-          x-jsonld-id: '@id'
-        name:
-          type: string
-allOf:
-- $ref: '#/$definitions/Sensor'
+description: SOSA Observation
+$ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation-owa/schema.yaml
 x-jsonld-extra-terms:
+  id: '@id'
   properties: '@nest'
   featureType: '@type'
   ActuatableProperty:

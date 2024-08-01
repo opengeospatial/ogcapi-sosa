@@ -1,69 +1,5 @@
 {
   "@context": {
-    "type": "@type",
-    "featureType": "@type",
-    "links": {
-      "@context": {
-        "href": {
-          "@type": "@id",
-          "@id": "oa:hasTarget"
-        },
-        "rel": {
-          "@context": {
-            "@base": "http://www.iana.org/assignments/relation/"
-          },
-          "@id": "http://www.iana.org/assignments/relation",
-          "@type": "@id"
-        },
-        "type": "dct:type",
-        "hreflang": "dct:language",
-        "title": "rdfs:label",
-        "length": "dct:extent"
-      },
-      "@id": "rdfs:seeAlso"
-    },
-    "features": {
-      "@context": {
-        "time": {
-          "@context": {
-            "date": {
-              "@id": "owlTime:hasTime",
-              "@type": "xsd:date"
-            },
-            "timestamp": {
-              "@id": "owlTime:hasTime",
-              "@type": "xsd:dateTime"
-            },
-            "interval": {
-              "@id": "owlTime:hasTime",
-              "@container": "@list"
-            }
-          },
-          "@id": "dct:time"
-        },
-        "coordRefSys": "http://www.opengis.net/def/glossary/term/CoordinateReferenceSystemCRS",
-        "place": "dct:spatial"
-      },
-      "@container": "@set",
-      "@id": "sosa:hasMember",
-      "@type": "@id"
-    },
-    "id": "@id",
-    "properties": "@nest",
-    "geometry": "geojson:geometry",
-    "bbox": {
-      "@container": "@list",
-      "@id": "geojson:bbox"
-    },
-    "Feature": "geojson:Feature",
-    "FeatureCollection": "geojson:FeatureCollection",
-    "GeometryCollection": "geojson:GeometryCollection",
-    "LineString": "geojson:LineString",
-    "MultiLineString": "geojson:MultiLineString",
-    "MultiPoint": "geojson:MultiPoint",
-    "MultiPolygon": "geojson:MultiPolygon",
-    "Point": "geojson:Point",
-    "Polygon": "geojson:Polygon",
     "resultTime": "sosa:resultTime",
     "phenomenonTime": {
       "@id": "sosa:phenomenonTime",
@@ -85,10 +21,9 @@
       "@id": "sosa:madeBySensor",
       "@type": "@id"
     },
-    "hasMember": {
-      "@id": "sosa:hasMember",
-      "@type": "@id"
-    },
+    "id": "@id",
+    "properties": "@nest",
+    "featureType": "@type",
     "ActuatableProperty": {
       "@id": "sosa:ActuatableProperty",
       "@type": "@id"
@@ -185,6 +120,10 @@
       "@id": "sosa:detects",
       "@type": "@id"
     },
+    "features": {
+      "@id": "sosa:hasMember",
+      "@type": "@id"
+    },
     "forProperty": {
       "@id": "sosa:forProperty",
       "@type": "@id"
@@ -195,6 +134,10 @@
     },
     "hasInput": {
       "@id": "sosa:hasInput",
+      "@type": "@id"
+    },
+    "hasMember": {
+      "@id": "sosa:hasMember",
       "@type": "@id"
     },
     "hasOriginalSample": {
@@ -443,37 +386,6 @@
       "@id": "ssn-system:qualityOfObservation",
       "@type": "@id"
     },
-    "Polyhedron": "geojson:Polyhedron",
-    "MultiPolyhedron": "geojson:MultiPolyhedron",
-    "Prism": {
-      "@id": "geojson:Prism",
-      "@context": {
-        "base": "geojson:prismBase",
-        "lower": "geojson:prismLower",
-        "upper": "geojson:prismUpper"
-      }
-    },
-    "MultiPrism": {
-      "@id": "geojson:MultiPrism",
-      "@context": {
-        "prisms": "geojson:prisms"
-      }
-    },
-    "coordinates": {
-      "@container": "@list",
-      "@id": "geojson:coordinates"
-    },
-    "geometries": {
-      "@id": "geojson:geometry",
-      "@container": "@list"
-    },
-    "geojson": "https://purl.org/geojson/vocab#",
-    "oa": "http://www.w3.org/ns/oa#",
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "dct": "http://purl.org/dc/terms/",
-    "owlTime": "http://www.w3.org/2006/time#",
-    "time": "http://www.w3.org/2006/time#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#",
     "sosa": "http://www.w3.org/ns/sosa/",
     "ssn-system": "ssn:systems/",
     "ssn": "http://www.w3.org/ns/ssn/",

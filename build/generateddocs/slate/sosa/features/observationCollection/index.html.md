@@ -561,7 +561,7 @@ Links to the schema:
 {
   "@context": {
     "type": "@type",
-    "featureType": "geojson:collectionFeatureType",
+    "featureType": "@type",
     "links": {
       "@context": {
         "href": {
@@ -584,11 +584,25 @@ Links to the schema:
     },
     "features": {
       "@context": {
-        "features": {
-          "@container": "@set",
-          "@id": "geojson:features"
+        "time": {
+          "@context": {
+            "date": {
+              "@id": "owlTime:hasTime",
+              "@type": "xsd:date"
+            },
+            "timestamp": {
+              "@id": "owlTime:hasTime",
+              "@type": "xsd:dateTime"
+            },
+            "interval": {
+              "@id": "owlTime:hasTime",
+              "@container": "@list"
+            }
+          },
+          "@id": "dct:time"
         },
-        "featureType": "@type"
+        "coordRefSys": "http://www.opengis.net/def/glossary/term/CoordinateReferenceSystemCRS",
+        "place": "dct:spatial"
       },
       "@container": "@set",
       "@id": "sosa:hasMember",
@@ -596,10 +610,7 @@ Links to the schema:
     },
     "id": "@id",
     "properties": "@nest",
-    "geometry": {
-      "@context": {},
-      "@id": "geojson:geometry"
-    },
+    "geometry": "geojson:geometry",
     "bbox": {
       "@container": "@list",
       "@id": "geojson:bbox"
@@ -635,9 +646,6 @@ Links to the schema:
       "@type": "@id"
     },
     "hasMember": {
-      "@context": {
-        "featureType": "@type"
-      },
       "@id": "sosa:hasMember",
       "@type": "@id"
     },
@@ -995,14 +1003,37 @@ Links to the schema:
       "@id": "ssn-system:qualityOfObservation",
       "@type": "@id"
     },
+    "Polyhedron": "geojson:Polyhedron",
+    "MultiPolyhedron": "geojson:MultiPolyhedron",
+    "Prism": {
+      "@id": "geojson:Prism",
+      "@context": {
+        "base": "geojson:prismBase",
+        "lower": "geojson:prismLower",
+        "upper": "geojson:prismUpper"
+      }
+    },
+    "MultiPrism": {
+      "@id": "geojson:MultiPrism",
+      "@context": {
+        "prisms": "geojson:prisms"
+      }
+    },
     "coordinates": {
       "@container": "@list",
       "@id": "geojson:coordinates"
+    },
+    "geometries": {
+      "@id": "geojson:geometry",
+      "@container": "@list"
     },
     "geojson": "https://purl.org/geojson/vocab#",
     "oa": "http://www.w3.org/ns/oa#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "dct": "http://purl.org/dc/terms/",
+    "owlTime": "http://www.w3.org/2006/time#",
+    "time": "http://www.w3.org/2006/time#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
     "sosa": "http://www.w3.org/ns/sosa/",
     "ssn-system": "ssn:systems/",
     "ssn": "http://www.w3.org/ns/ssn/",

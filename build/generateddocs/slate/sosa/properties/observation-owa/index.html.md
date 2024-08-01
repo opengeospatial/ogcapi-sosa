@@ -29,8 +29,8 @@ This is set of properties defined by the SOSA ontology, assuming a "Open World A
     <a href="http://www.opengis.net/def/status/under-development" target="_blank" data-rainbow-uri>Under development</a>
 </p>
 
-<aside class="warning">
-Validation for this building block has <strong><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/properties/observation-owa/" target="_blank">failed</a></strong>
+<aside class="success">
+This building block is <strong><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/properties/observation-owa/" target="_blank">valid</a></strong>
 </aside>
 
 # Description
@@ -106,18 +106,17 @@ _:a1 a sosa:Observation ;
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] a sosa:Observation ;
-    sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
+[] sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
     sosa:hasSimpleResult 33 ;
-    sosa:observedProperty <http://example.com/p1> ;
-    sosa:resultTime "2022-05-01T22:33:44+00:00"^^xsd:dateTime .
+    sosa:observedProperty <file:///github/workspace/p1> ;
+    sosa:resultTime "2022-05-01T22:33:44Z" .
 
 
 ```
 
 <blockquote class="lang-specific turtle">
   <p class="example-links">
-    <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observation-owa/example_1_2.ttl">Open in new window</a>
+    <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observation-owa/example_1_1.ttl">Open in new window</a>
 </blockquote>
 
 

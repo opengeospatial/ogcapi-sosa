@@ -106,7 +106,7 @@ The "id" property is assumed to be common and compatible with other mix-in aspec
 ```turtle
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 
-[] sosa:sensorKind "eg:gnss-pair" .
+<eg:sensor1> sosa:sensorKind "eg:gnss-pair" .
 
 
 ```
@@ -213,15 +213,19 @@ The "id" property is assumed to be common and compatible with other mix-in aspec
 @prefix ns1: <http://example.org/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 
-[] sosa:hasSubSystem [ <eg.purpose> "eg:rover" ;
-            ns1:sensorscalibrationDate "2022-09-14T15:35:05" ;
-            ns1:sensorsdescription "Leica Viva GS10" ;
-            sosa:sensorKind "eg:gnss" ],
-        [ <eg.purpose> "eg:base" ;
-            ns1:sensorscalibrationDate "2022-09-14T15:32:45" ;
-            ns1:sensorsdescription "Leica Viva GS10" ;
-            sosa:sensorKind "eg:gnss" ] ;
+<eg:gnss-pair-1> sosa:hasSubSystem <eg:785439870523>,
+        <eg:785439870524> ;
     sosa:sensorKind "eg:gnss-pair" .
+
+<eg:785439870523> <eg.purpose> "eg:base" ;
+    ns1:sensorscalibrationDate "2022-09-14T15:32:45" ;
+    ns1:sensorsdescription "Leica Viva GS10" ;
+    sosa:sensorKind "eg:gnss" .
+
+<eg:785439870524> <eg.purpose> "eg:rover" ;
+    ns1:sensorscalibrationDate "2022-09-14T15:35:05" ;
+    ns1:sensorsdescription "Leica Viva GS10" ;
+    sosa:sensorKind "eg:gnss" .
 
 
 ```
@@ -246,6 +250,7 @@ $definitions:
       properties:
         id:
           $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml
+          x-jsonld-id: '@id'
         name:
           type: string
 allOf:
@@ -561,6 +566,7 @@ Links to the schema:
 ```json--ldContext
 {
   "@context": {
+    "id": "@id",
     "properties": "@nest",
     "featureType": "@type",
     "ActuatableProperty": {

@@ -152,6 +152,9 @@ $definitions:
             anyOf:
             - $ref: '#/$definitions/Platform'
             - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sensor/schema.yaml#/$definitions/Sensor
+          x-jsonld-id: http://www.w3.org/ns/sosa/hosts
+          x-jsonld-type: '@id'
+          x-jsonld-container: '@set'
 allOf:
 - $ref: '#/$definitions/Platform'
 x-jsonld-extra-terms:
@@ -462,6 +465,11 @@ Links to the schema:
 ```json--ldContext
 {
   "@context": {
+    "hosts": {
+      "@id": "sosa:hosts",
+      "@type": "@id",
+      "@container": "@set"
+    },
     "id": "@id",
     "properties": "@nest",
     "featureType": "@type",
@@ -842,11 +850,6 @@ Links to the schema:
     "qualityOfObservation": {
       "@id": "ssn-system:qualityOfObservation",
       "@type": "@id"
-    },
-    "hosts": {
-      "@id": "sosa:hosts",
-      "@type": "@id",
-      "@container": "@set"
     },
     "sosa": "http://www.w3.org/ns/sosa/",
     "ssn-system": "ssn:systems/",
