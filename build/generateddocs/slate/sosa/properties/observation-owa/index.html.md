@@ -106,17 +106,18 @@ _:a1 a sosa:Observation ;
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
+[] a sosa:Observation ;
+    sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
     sosa:hasSimpleResult 33 ;
-    sosa:observedProperty <file:///github/workspace/p1> ;
-    sosa:resultTime "2022-05-01T22:33:44Z" .
+    sosa:observedProperty <http://example.com/p1> ;
+    sosa:resultTime "2022-05-01T22:33:44+00:00"^^xsd:dateTime .
 
 
 ```
 
 <blockquote class="lang-specific turtle">
   <p class="example-links">
-    <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observation-owa/example_1_1.ttl">Open in new window</a>
+    <a target="_blank" href="https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observation-owa/example_1_2.ttl">Open in new window</a>
 </blockquote>
 
 

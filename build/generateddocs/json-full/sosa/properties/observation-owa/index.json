@@ -9,7 +9,7 @@
   "itemClass": "schema",
   "register": "ogc-building-block-register",
   "version": "1.0",
-  "dateOfLastChange": "2024-08-01",
+  "dateOfLastChange": "2023-04-13",
   "sources": [
     {
       "title": "Semantic Sensor Network Ontology",
@@ -63,8 +63,8 @@
         },
         {
           "language": "ttl",
-          "code": "@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;\n    sosa:hasSimpleResult 33 ;\n    sosa:observedProperty <file:///github/workspace/p1> ;\n    sosa:resultTime \"2022-05-01T22:33:44Z\" .\n\n",
-          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observation-owa/example_1_1.ttl"
+          "code": "@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sosa:Observation ;\n    sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;\n    sosa:hasSimpleResult 33 ;\n    sosa:observedProperty <http://example.com/p1> ;\n    sosa:resultTime \"2022-05-01T22:33:44+00:00\"^^xsd:dateTime .\n\n",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observation-owa/example_1_2.ttl"
         }
       ]
     },

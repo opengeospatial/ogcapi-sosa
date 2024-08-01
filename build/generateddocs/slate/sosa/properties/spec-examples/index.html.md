@@ -26,7 +26,7 @@ This BuildingBlock adds test cases from the SOSA specification to the base Obser
 </p>
 
 <aside class="success">
-This building block is <strong>valid</strong>
+This building block is <strong><a href="https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/properties/spec-examples/" target="_blank">valid</a></strong>
 </aside>
 
 # Description
