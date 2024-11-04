@@ -49,11 +49,11 @@ _:a1 a sosa:Observation ;
 #### jsonld
 ```jsonld
 {
+  "@context": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/context.jsonld",
   "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
   "observedProperty": "p1",
   "hasSimpleResult": 33,
-  "resultTime": "2022-05-01T22:33:44Z",
-  "@context": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/context.jsonld"
+  "resultTime": "2022-05-01T22:33:44Z"
 }
 ```
 
@@ -91,6 +91,7 @@ _:a1 a sosa:Observation ;
 #### jsonld
 ```jsonld
 {
+  "@context": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/context.jsonld",
   "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
   "observedProperty": "p1",
   "hasResult": {
@@ -99,8 +100,7 @@ _:a1 a sosa:Observation ;
     },
     "comment": "I feel good"
   },
-  "resultTime": "2022-05-01T22:33:44Z",
-  "@context": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/context.jsonld"
+  "resultTime": "2022-05-01T22:33:44Z"
 }
 ```
 

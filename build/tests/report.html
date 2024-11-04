@@ -51,15 +51,37 @@
     <body>
         <div class="container">
             <h1 class="title">Building blocks validation report</h1>
-            <small class="datetime">Generated at 2024-09-30T08:51:39.428826+00:00</small>
+            <small class="datetime">Generated at 2024-11-04T16:07:15.832184+00:00</small>
                 <p class="summary fw-semibold text-danger">
-                    Number of passing building blocks: 8 / 9 (88.89%)
+                    Number of passing building blocks: 7 / 9 (77.78%)
                 </p>
             <div class="text-end small" id="expand-collapse">
                 <a href="#" class="expand-all">Expand all</a>
                 <a href="#" class="collapse-all">Collapse all</a>
             </div>
                 <div class="accordion mt-2" id="bblock-reports">
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.sosa" id="bblock-ogc.sosa">
+                            <h2 class="accordion-header bblock-title">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.sosa">
+                                    <div class="flex-fill">
+                                        Sensor, Observation, Sample, and Actuator (SOSA)
+                                        <small class="ms-2 bblock-id">ogc.sosa</small>
+                                    </div>
+
+                                    <span class="badge text-bg-success me-2">
+                                            Passed
+                                            (no tests)
+                                    </span>
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.sosa">
+                                <div class="accordion-body">
+                                        <div class="alert alert-info mb-0">No tests were found for this building block.</div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="accordion-item bblock-report" data-bblock-id="ogc.sosa.properties.observation-owa" id="bblock-ogc.sosa.properties.observation-owa">
                             <h2 class="accordion-header bblock-title">
                                 <button class="accordion-button collapsed" type="button"
@@ -1818,12 +1840,12 @@ Bad syntax (expected &#x27;.&#x27; or &#x27;}&#x27; or &#x27;]&#x27; at end of s
   	Message: sosa:hasSimpleResult is a simple Literal
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:Na170e336e4334f17b7299b8b2727d897
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:Nfec058b0cc65450c9329fcdeb6068a6c
- - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: _:N29cf961e844e4228b558746b54165b92
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:Nfec058b0cc65450c9329fcdeb6068a6c
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:Nfec058b0cc65450c9329fcdeb6068a6c
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:Nfec058b0cc65450c9329fcdeb6068a6c
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:Na170e336e4334f17b7299b8b2727d897
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: _:Nc5acd2c278b449a9b3a4e59fbaf32aef
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:Na170e336e4334f17b7299b8b2727d897
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:Na170e336e4334f17b7299b8b2727d897
 </div>
                                                     </div>
                                                 </div>
@@ -1868,12 +1890,12 @@ Bad syntax (expected &#x27;.&#x27; or &#x27;}&#x27; or &#x27;]&#x27; at end of s
   	Message: Less than 1 values on [ sosa:hasFeatureOfInterest [ ] ; sosa:hasResult [ ] ; sosa:madeBySensor Literal(&quot;ea est culpa esse&quot;) ; sosa:resultTime Literal(&quot;2016-05-04T02:27:02.0Z&quot;) ]-&gt;( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath &lt;http://recursion.too.deep&gt; ] ] ] sosa:observedProperty )
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:N3a12e897a8744d799151aded0555cdd9
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:N70305feb5b1b41059d3b15b76881482d
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:N3a12e897a8744d799151aded0555cdd9
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:N70305feb5b1b41059d3b15b76881482d
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:N70305feb5b1b41059d3b15b76881482d
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:N70305feb5b1b41059d3b15b76881482d
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:N3a12e897a8744d799151aded0555cdd9
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:N3a12e897a8744d799151aded0555cdd9
 </div>
                                                     </div>
                                                 </div>
@@ -1918,12 +1940,12 @@ Bad syntax (expected &#x27;.&#x27; or &#x27;}&#x27; or &#x27;]&#x27; at end of s
   	Message: More than 1 values on [ sosa:hasFeatureOfInterest [ ] ; sosa:hasResult [ ns1:a Literal(&quot;-8150858&quot;, datatype=xsd:integer) ; ns1:b Literal(&quot;false&quot; = False, datatype=xsd:boolean) ] ; sosa:hasSimpleResult Literal(&quot;frogginess&quot;) ; sosa:madeBySensor Literal(&quot;ea est culpa esse&quot;) ; sosa:observedProperty Literal(&quot;something&quot;) ; sosa:resultTime Literal(&quot;2016-05-04T02:27:02.0Z&quot;) ]-&gt;[ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:Nfa8cc2358a8b4173a64eec36dcb5a9ad
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:N7f4f9639a56a455ea9d48312b6e521d8
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:Nfa8cc2358a8b4173a64eec36dcb5a9ad
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: frogginess
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:N7f4f9639a56a455ea9d48312b6e521d8
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:N7f4f9639a56a455ea9d48312b6e521d8
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:N7f4f9639a56a455ea9d48312b6e521d8
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:Nfa8cc2358a8b4173a64eec36dcb5a9ad
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:Nfa8cc2358a8b4173a64eec36dcb5a9ad
 </div>
                                                     </div>
                                                 </div>
@@ -1960,12 +1982,12 @@ Bad syntax (expected &#x27;.&#x27; or &#x27;}&#x27; or &#x27;]&#x27; at end of s
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:Nfad2d1eeee5f4c5f97f71926ca6ead91
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:Nfbc2ea2fa5594ab79201d798f2b6a36e
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:Nfad2d1eeee5f4c5f97f71926ca6ead91
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: 33
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:Nfbc2ea2fa5594ab79201d798f2b6a36e
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:Nfbc2ea2fa5594ab79201d798f2b6a36e
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:Nfbc2ea2fa5594ab79201d798f2b6a36e
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:Nfad2d1eeee5f4c5f97f71926ca6ead91
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:Nfad2d1eeee5f4c5f97f71926ca6ead91
 </div>
                                                     </div>
                                                 </div>
@@ -1998,12 +2020,12 @@ Bad syntax (expected &#x27;.&#x27; or &#x27;}&#x27; or &#x27;]&#x27; at end of s
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:n6b616ad56a49420e98c0fb9f8000bf31b1
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:n5e8937e71568468cb6979ca80e2aa3feb1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:n6b616ad56a49420e98c0fb9f8000bf31b1
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: 33
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:n5e8937e71568468cb6979ca80e2aa3feb1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:n5e8937e71568468cb6979ca80e2aa3feb1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:n5e8937e71568468cb6979ca80e2aa3feb1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:n6b616ad56a49420e98c0fb9f8000bf31b1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:n6b616ad56a49420e98c0fb9f8000bf31b1
 </div>
                                                     </div>
                                                 </div>
@@ -2040,12 +2062,12 @@ Bad syntax (expected &#x27;.&#x27; or &#x27;}&#x27; or &#x27;]&#x27; at end of s
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:N5a91c449e701467f9f92604c281aa57a
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:N9f9a9daa43824a2aa776f0ade47c1db2
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:N5a91c449e701467f9f92604c281aa57a
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:N9f9a9daa43824a2aa776f0ade47c1db2
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:N9f9a9daa43824a2aa776f0ade47c1db2
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:N9f9a9daa43824a2aa776f0ade47c1db2
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:N5a91c449e701467f9f92604c281aa57a
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:N5a91c449e701467f9f92604c281aa57a
 </div>
                                                     </div>
                                                 </div>
@@ -2159,12 +2181,12 @@ Bad syntax (expected &#x27;.&#x27; or &#x27;}&#x27; or &#x27;]&#x27; at end of s
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;http://example.com/a1&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: &lt;http://example.com/a1&gt;/sosa:hasSimpleResult
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://example.com/a1&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;http://example.com/a1&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;http://example.com/a1&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: &lt;http://example.com/a1&gt;/sosa:hasSimpleResult
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;http://example.com/a1&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://example.com/a1&gt;
 </div>
                                                     </div>
                                                 </div>
@@ -2197,12 +2219,12 @@ Bad syntax (expected &#x27;.&#x27; or &#x27;}&#x27; or &#x27;]&#x27; at end of s
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: eg:a1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: eg:a1/sosa:hasSimpleResult
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: eg:a1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: eg:a1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: eg:a1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: eg:a1/sosa:hasSimpleResult
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: eg:a1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: eg:a1
 </div>
                                                     </div>
                                                 </div>
@@ -2263,13 +2285,15 @@ Bad syntax (expected &#x27;.&#x27; or &#x27;}&#x27; or &#x27;]&#x27; at end of s
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;http://example.com/pop1999&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: &lt;http://example.com/pop1999&gt;/sosa:hasSimpleResult
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://example.com/pop1999&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: &lt;http://example.com/pop1999&gt;/sosa:hasSimpleResult
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://example.com/pop1999&gt;
 </div>
+                                                                    <div class="font-monospace subsection-title mt-2">Semantic Uplift</div>
+                                                                    <div class="font-monospace entry-message section-semantic_uplift ">Running post-uplift shacl transform step from semantic-uplift/featureType.shacl</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -2301,12 +2325,12 @@ Bad syntax (expected &#x27;.&#x27; or &#x27;}&#x27; or &#x27;]&#x27; at end of s
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:n7db586acc0bd40f985b55306fd3b2b3bb1
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:nbaeb7325bdd34fbc93ce18e6680c2cadb1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:n7db586acc0bd40f985b55306fd3b2b3bb1
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: 33
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:nbaeb7325bdd34fbc93ce18e6680c2cadb1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:nbaeb7325bdd34fbc93ce18e6680c2cadb1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:nbaeb7325bdd34fbc93ce18e6680c2cadb1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:n7db586acc0bd40f985b55306fd3b2b3bb1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:n7db586acc0bd40f985b55306fd3b2b3bb1
 </div>
                                                     </div>
                                                 </div>
@@ -2343,13 +2367,15 @@ Bad syntax (expected &#x27;.&#x27; or &#x27;}&#x27; or &#x27;]&#x27; at end of s
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;http://example.com/pop1999&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://example.com/pop1999&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://example.com/pop1999&gt;
 </div>
+                                                                    <div class="font-monospace subsection-title mt-2">Semantic Uplift</div>
+                                                                    <div class="font-monospace entry-message section-semantic_uplift ">Running post-uplift shacl transform step from semantic-uplift/featureType.shacl</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -2359,7 +2385,7 @@ Bad syntax (expected &#x27;.&#x27; or &#x27;}&#x27; or &#x27;]&#x27; at end of s
                         </div>
                         <div class="accordion-item bblock-report" data-bblock-id="ogc.sosa.features.observationCollection" id="bblock-ogc.sosa.features.observationCollection">
                             <h2 class="accordion-header bblock-title">
-                                <button class="accordion-button collapsed" type="button"
+                                <button class="accordion-button " type="button"
                                     data-bs-toggle="collapse"
                                     data-bs-target="#bblock-collapse-ogc\.sosa\.features\.observationCollection">
                                     <div class="flex-fill">
@@ -2367,16 +2393,16 @@ Bad syntax (expected &#x27;.&#x27; or &#x27;}&#x27; or &#x27;]&#x27; at end of s
                                         <small class="ms-2 bblock-id">ogc.sosa.features.observationCollection</small>
                                     </div>
 
-                                    <span class="badge text-bg-success me-2">
-                                            Passed
-                                            (100% passed)
+                                    <span class="badge text-bg-danger me-2">
+                                            Tests Failed
+                                            (50% passed)
                                     </span>
                                 </button>
                             </h2>
-                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.sosa.features.observationCollection">
+                            <div class="accordion-collapse collapse show" id="bblock-collapse-ogc.sosa.features.observationCollection">
                                 <div class="accordion-body">
-                                        <p class="summary fw-semibold text-success">
-                                            Test passed: 4 / 4
+                                        <p class="summary fw-semibold text-danger">
+                                            Test passed: 2 / 4
                                         </p>
                                         <div class="card mb-2 validation-item require-fail">
                                             <div class="card-body">
@@ -2410,7 +2436,25 @@ Bad syntax (expected &#x27;.&#x27; or &#x27;}&#x27; or &#x27;]&#x27; at end of s
                                                                     <div class="font-monospace entry-message section-shacl text-danger">Validation result for _sources/properties/observation/rules.shacl:
   Validation Report
   Conforms: False
-  Results (1):
+  Results (4):
+  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:maxCount Literal(&quot;1&quot;, datatype=xsd:integer) ; sh:minCount Literal(&quot;1&quot;, datatype=xsd:integer) ; sh:path [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ]
+  	Focus Node: &lt;file:///github/workspace/c1&gt;
+  	Result Path: [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]
+  	Message: Less than 1 values on &lt;file:///github/workspace/c1&gt;-&gt;[ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]
+  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:maxCount Literal(&quot;1&quot;, datatype=xsd:integer) ; sh:minCount Literal(&quot;1&quot;, datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath &lt;http://recursion.too.deep&gt; ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] ) ]
+  	Focus Node: &lt;file:///github/workspace/c1&gt;
+  	Result Path: ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath &lt;http://recursion.too.deep&gt; ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] )
+  	Message: Less than 1 values on &lt;file:///github/workspace/c1&gt;-&gt;( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath &lt;http://recursion.too.deep&gt; ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] )
+  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:maxCount Literal(&quot;1&quot;, datatype=xsd:integer) ; sh:minCount Literal(&quot;1&quot;, datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath &lt;http://recursion.too.deep&gt; ] ] ] sosa:observedProperty ) ]
+  	Focus Node: &lt;file:///github/workspace/c1&gt;
+  	Result Path: ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath &lt;http://recursion.too.deep&gt; ] ] ] sosa:observedProperty )
+  	Message: Less than 1 values on &lt;file:///github/workspace/c1&gt;-&gt;( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath &lt;http://recursion.too.deep&gt; ] ] ] sosa:observedProperty )
   Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
   	Severity: sh:Violation
   	Source Shape: [ sh:maxCount Literal(&quot;1&quot;, datatype=xsd:integer) ; sh:minCount Literal(&quot;1&quot;, datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath &lt;http://recursion.too.deep&gt; ] ] ] sosa:observedProperty ) ]
@@ -2419,13 +2463,15 @@ Bad syntax (expected &#x27;.&#x27; or &#x27;}&#x27; or &#x27;]&#x27; at end of s
   	Message: Less than 1 values on &lt;file:///github/workspace/pop1999&gt;-&gt;( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath &lt;http://recursion.too.deep&gt; ] ] ] sosa:observedProperty )
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;file:///github/workspace/c1&gt;,&lt;file:///github/workspace/pop1999&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;file:///github/workspace/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;file:///github/workspace/c1&gt;,&lt;file:///github/workspace/pop1999&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: &lt;file:///github/workspace/pop1999&gt;/sosa:hasSimpleResult
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;file:///github/workspace/pop1999&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;file:///github/workspace/pop1999&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;file:///github/workspace/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;file:///github/workspace/c1&gt;,&lt;file:///github/workspace/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;file:///github/workspace/c1&gt;,&lt;file:///github/workspace/pop1999&gt;
 </div>
+                                                                    <div class="font-monospace subsection-title mt-2">Semantic Uplift</div>
+                                                                    <div class="font-monospace entry-message section-semantic_uplift ">Running post-uplift shacl transform step from ../observation/semantic-uplift/featureType.shacl</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -2443,7 +2489,7 @@ Bad syntax (expected &#x27;.&#x27; or &#x27;}&#x27; or &#x27;]&#x27; at end of s
                                                     <a href="../../_sources/features/observationCollection/tests/observationCollection-props.json" target="_blank">observationCollection-props.json</a>
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-74">
@@ -2456,18 +2502,33 @@ Bad syntax (expected &#x27;.&#x27; or &#x27;}&#x27; or &#x27;]&#x27; at end of s
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
                                                                     <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
                                                                     <div class="font-monospace subsection-title mt-2">SHACL</div>
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/properties/observation/rules.shacl:
+                                                                    <div class="font-monospace entry-message section-shacl text-danger">Validation result for _sources/properties/observation/rules.shacl:
   Validation Report
-  Conforms: True
+  Conforms: False
+  Results (2):
+  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:maxCount Literal(&quot;1&quot;, datatype=xsd:integer) ; sh:minCount Literal(&quot;1&quot;, datatype=xsd:integer) ; sh:path [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ]
+  	Focus Node: &lt;file:///github/workspace/c1&gt;
+  	Result Path: [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]
+  	Message: Less than 1 values on &lt;file:///github/workspace/c1&gt;-&gt;[ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]
+  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:maxCount Literal(&quot;1&quot;, datatype=xsd:integer) ; sh:minCount Literal(&quot;1&quot;, datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath &lt;http://recursion.too.deep&gt; ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] ) ]
+  	Focus Node: &lt;file:///github/workspace/c1&gt;
+  	Result Path: ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath &lt;http://recursion.too.deep&gt; ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] )
+  	Message: Less than 1 values on &lt;file:///github/workspace/c1&gt;-&gt;( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath &lt;http://recursion.too.deep&gt; ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] )
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;file:///github/workspace/pop1999&gt;,&lt;file:///github/workspace/c1&gt;,&lt;file:///github/workspace/something&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;file:///github/workspace/something&gt;,&lt;file:///github/workspace/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;file:///github/workspace/pop1999&gt;,&lt;file:///github/workspace/c1&gt;,&lt;file:///github/workspace/something&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: &lt;file:///github/workspace/pop1999&gt;/sosa:hasSimpleResult
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;file:///github/workspace/something&gt;,&lt;file:///github/workspace/pop1999&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;file:///github/workspace/something&gt;,&lt;file:///github/workspace/pop1999&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;file:///github/workspace/something&gt;,&lt;file:///github/workspace/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;file:///github/workspace/pop1999&gt;,&lt;file:///github/workspace/c1&gt;,&lt;file:///github/workspace/something&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;file:///github/workspace/pop1999&gt;,&lt;file:///github/workspace/c1&gt;,&lt;file:///github/workspace/something&gt;
 </div>
+                                                                    <div class="font-monospace subsection-title mt-2">Semantic Uplift</div>
+                                                                    <div class="font-monospace entry-message section-semantic_uplift ">Running post-uplift shacl transform step from ../observation/semantic-uplift/featureType.shacl</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -2485,7 +2546,7 @@ Bad syntax (expected &#x27;.&#x27; or &#x27;}&#x27; or &#x27;]&#x27; at end of s
                                                     <a href="sosa/features/observationCollection/example_1_1.json" target="_blank">example_1_1.json</a>
                                                     <span class="badge bg-secondary example">Example</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-75">
@@ -2498,18 +2559,39 @@ Bad syntax (expected &#x27;.&#x27; or &#x27;}&#x27; or &#x27;]&#x27; at end of s
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
                                                                     <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
                                                                     <div class="font-monospace subsection-title mt-2">SHACL</div>
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/properties/observation/rules.shacl:
+                                                                    <div class="font-monospace entry-message section-shacl text-danger">Validation result for _sources/properties/observation/rules.shacl:
   Validation Report
-  Conforms: True
+  Conforms: False
+  Results (3):
+  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:maxCount Literal(&quot;1&quot;, datatype=xsd:integer) ; sh:minCount Literal(&quot;1&quot;, datatype=xsd:integer) ; sh:path [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ]
+  	Focus Node: &lt;http://www.example.com/sosa/c1&gt;
+  	Result Path: [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]
+  	Message: Less than 1 values on &lt;http://www.example.com/sosa/c1&gt;-&gt;[ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]
+  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:maxCount Literal(&quot;1&quot;, datatype=xsd:integer) ; sh:minCount Literal(&quot;1&quot;, datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath &lt;http://recursion.too.deep&gt; ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] ) ]
+  	Focus Node: &lt;http://www.example.com/sosa/c1&gt;
+  	Result Path: ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath &lt;http://recursion.too.deep&gt; ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] )
+  	Message: Less than 1 values on &lt;http://www.example.com/sosa/c1&gt;-&gt;( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath &lt;http://recursion.too.deep&gt; ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] )
+  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:maxCount Literal(&quot;1&quot;, datatype=xsd:integer) ; sh:minCount Literal(&quot;1&quot;, datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath &lt;http://recursion.too.deep&gt; ] ] ] sosa:observedProperty ) ]
+  	Focus Node: &lt;http://www.example.com/sosa/c1&gt;
+  	Result Path: ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath &lt;http://recursion.too.deep&gt; ] ] ] sosa:observedProperty )
+  	Message: Less than 1 values on &lt;http://www.example.com/sosa/c1&gt;-&gt;( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath &lt;http://recursion.too.deep&gt; ] ] ] sosa:observedProperty )
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;http://www.example.com/sosa/something&gt;,&lt;http://www.example.com/sosa/pop1999&gt;,&lt;http://www.example.com/sosa/c1&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;http://www.example.com/sosa/pop1999&gt;,&lt;http://www.example.com/sosa/something&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;http://www.example.com/sosa/something&gt;,&lt;http://www.example.com/sosa/pop1999&gt;,&lt;http://www.example.com/sosa/c1&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: &lt;http://www.example.com/sosa/pop1999&gt;/sosa:hasSimpleResult
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://www.example.com/sosa/pop1999&gt;,&lt;http://www.example.com/sosa/something&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;http://www.example.com/sosa/pop1999&gt;,&lt;http://www.example.com/sosa/something&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;http://www.example.com/sosa/pop1999&gt;,&lt;http://www.example.com/sosa/something&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;http://www.example.com/sosa/something&gt;,&lt;http://www.example.com/sosa/pop1999&gt;,&lt;http://www.example.com/sosa/c1&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://www.example.com/sosa/something&gt;,&lt;http://www.example.com/sosa/pop1999&gt;,&lt;http://www.example.com/sosa/c1&gt;
 </div>
+                                                                    <div class="font-monospace subsection-title mt-2">Semantic Uplift</div>
+                                                                    <div class="font-monospace entry-message section-semantic_uplift ">Running post-uplift shacl transform step from ../observation/semantic-uplift/featureType.shacl</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -2541,39 +2623,17 @@ Bad syntax (expected &#x27;.&#x27; or &#x27;}&#x27; or &#x27;]&#x27; at end of s
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/rules.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: eg:pop2000,eg:pop1999
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: eg:pop1999,eg:pop2000
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: eg:pop2000,eg:pop1999
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: eg:pop1999/sosa:hasSimpleResult,eg:pop2000/sosa:hasSimpleResult
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: eg:pop1999,eg:pop2000
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: eg:pop1999,eg:pop2000
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: eg:pop1999,eg:pop2000
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: eg:pop2000,eg:pop1999
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: eg:pop2000,eg:pop1999
 </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item bblock-report" data-bblock-id="ogc.sosa" id="bblock-ogc.sosa">
-                            <h2 class="accordion-header bblock-title">
-                                <button class="accordion-button collapsed" type="button"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#bblock-collapse-ogc\.sosa">
-                                    <div class="flex-fill">
-                                        Sensor, Observation, Sample, and Actuator (SOSA)
-                                        <small class="ms-2 bblock-id">ogc.sosa</small>
-                                    </div>
-
-                                    <span class="badge text-bg-success me-2">
-                                            Passed
-                                            (no tests)
-                                    </span>
-                                </button>
-                            </h2>
-                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.sosa">
-                                <div class="accordion-body">
-                                        <div class="alert alert-info mb-0">No tests were found for this building block.</div>
                                 </div>
                             </div>
                         </div>

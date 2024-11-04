@@ -89,7 +89,7 @@ As TTL files these examples are validated against the SHACL rules inherited from
   geo:alt 12.75 ;
   sosa:isSampleOf <earth> .
 
-<VCAB-DP1-BP-40#groundDisplacementSpeed>  rdf:type    sosa:ObservableProperty , sosa:Property ;
+<VCAB-DP1-BP-40#groundDisplacementSpeed>  rdf:type    sosa:Property ;
   rdfs:label "the ground displacement speed at location of VCAB-DP1-BP-40"@en ;
   sosa:isObservedBy <VCAB-DP1-BP-40> .
 
@@ -273,7 +273,7 @@ As TTL files these examples are validated against the SHACL rules inherited from
   sosa:isSampleOf <Air> ;
   sosa:hasProperty <Air?lat=45.75&long=4.85#temperature> .
 
-<Air?lat=45.75&long=4.85#temperature> a sosa:Property , sosa:ObservableProperty ;
+<Air?lat=45.75&long=4.85#temperature> a sosa:Property ;
   sosa:isPropertyOf <Air?lat=45.75&long=4.85> .
 
 <Sensor/SL-T-P1> a gr:ProductOrService, sosa:Sensor , seas:LoRaCommunicationDevice , <IP68_Outdoor_Temperature_Sensor> ;
@@ -420,7 +420,7 @@ relex:CSRWA25569-mount7-spot1
   geo:alt 12.75 ;
   sosa:isSampleOf <earth> .
 
-<VCAB-DP1-BP-40#groundDisplacementSpeed>  rdf:type    sosa:ObservableProperty , sosa:Property ;
+<VCAB-DP1-BP-40#groundDisplacementSpeed>  rdf:type    sosa:Property ;
   rdfs:label "the ground displacement speed at location of VCAB-DP1-BP-40"@en ;
   sosa:isObservedBy <VCAB-DP1-BP-40> .
 
@@ -768,11 +768,11 @@ sensor:BME280 a owl:Class ;
                     skos:broader procedure:pm-humidity-correction ] ] ;
 .
 
-property:pm10 a sosa:ObservableProperty ;
+property:pm10 a sosa:Property ;
   rdfs:label "Particulate matter < 10 µm" ;
 .
 
-property:temperature a sosa:ObservableProperty ;
+property:temperature a sosa:Property ;
   rdfs:label "Air temperature" ;
 .
 
@@ -919,7 +919,7 @@ ex:TemperatureSensor  rdfs:subClassOf [
 <tree/124>  rdf:type    sosa:FeatureOfInterest ;
   rdfs:label "tree #124"@en .
 
-<tree/124#height>  rdf:type    sosa:ObservableProperty , sosa:Property ;
+<tree/124#height>  rdf:type    sosa:Property ;
   rdfs:label "the height of tree #124"@en .
 
 # rangefinder #30 made observation #1088 of the height of tree #125.
@@ -936,7 +936,7 @@ ex:TemperatureSensor  rdfs:subClassOf [
 <tree/125>  rdf:type    sosa:FeatureOfInterest ;
   rdfs:label "tree #125"@en .
 
-<tree/125#height>  rdf:type    sosa:ObservableProperty , sosa:Property ;
+<tree/125#height>  rdf:type    sosa:Property ;
   rdfs:label "the height of tree #125"@en .
 ```
 
@@ -1113,7 +1113,7 @@ ex:s5
   sosa:implements ex:p3 ;
 .
 ex:op2
-  a sosa:ObservableProperty ;
+  a sosa:Property ;
 .
 ex:p3
   a sosa:Procedure ;
@@ -1168,7 +1168,7 @@ ex:examples-collection-obs
 <IP68_Outdoor_Temperature_Sensor#operatingRange> a ssn-system:OperatingRange , sosa:Property ;
   ssn-system:inCondition <IP68_Outdoor_Temperature_Sensor#normalOperatingCondition> .
 
-<IP68_Outdoor_Temperature_Sensor#normalOperatingCondition> a ssn-system:Condition , schema:PropertyValue ;
+<IP68_Outdoor_Temperature_Sensor#normalOperatingCondition> a schema:PropertyValue ;
   rdfs:comment "A temperature range of -20 to 70 Celsius."@en ;
   schema:minValue -20.0 ;
   schema:maxValue 70.0 ;
@@ -1204,7 +1204,7 @@ ex:examples-collection-obs
   sosa:isSampleOf <Air> ;
   sosa:hasProperty <Air?lat=45.75&long=4.85#temperature> .
 
-<Air?lat=45.75&long=4.85#temperature> a sosa:Property , sosa:ObservableProperty ;
+<Air?lat=45.75&long=4.85#temperature> a sosa:Property ;
   sosa:isPropertyOf <Air?lat=45.75&long=4.85> .
 
 <Sensor/SL-T-P1> a gr:ProductOrService, sosa:Sensor , seas:LoRaCommunicationDevice , <IP68_Outdoor_Temperature_Sensor> ;
@@ -1349,7 +1349,7 @@ ex:examples-collection-obs
   rdfs:label "tree #124"@en ;
   sosa:hasProperty <tree/124#height> .
 
-<tree/124#height>  rdf:type    sosa:ObservableProperty , sosa:Property ;
+<tree/124#height>  rdf:type    sosa:Property , sosa:Property ;
   rdfs:label "the height of tree #124"@en ;
   sosa:isPropertyOf <tree/124> .
 
@@ -1370,7 +1370,7 @@ ex:examples-collection-obs
   rdfs:label "tree #125"@en ;
   sosa:hasProperty <tree/125#height> .
 
-<tree/125#height>  rdf:type    sosa:ObservableProperty , sosa:Property ;
+<tree/125#height>  rdf:type    sosa:Property , sosa:Property ;
   rdfs:label "the height of tree #125"@en ;
   sosa:isPropertyOf <tree/124> .
 
@@ -1510,13 +1510,13 @@ ex:examples-collection-obs
 <roofInsulation> a sosa:FeatureOfInterest ;
 	rdfs:comment "The insulation material in the roof of house #134."@en .
 
-# the window opening state is an ActuatableProperty.
+# the window opening state is a Property.
 # SSN allows to explicitly say that <window/104#state> is a property of <window>
 
 <window> a sosa:FeatureOfInterest ;
 	sosa:hasProperty <window/104#state> .
 
-<window/104#state> a sosa:ActuatableProperty ;
+<window/104#state> a sosa:Property ;
 	sosa:isActedOnBy <actuation/188> .
 
 <house/134/kitchen> a sosa:Sample, sosa:Platform ;
@@ -1528,27 +1528,27 @@ ex:examples-collection-obs
 <house/134/bedroom> a sosa:Sample ;
 	sosa:isSampleOf <house/134> .
 
-<AtmosphericTemperature> rdfs:subClassOf sosa:ObservableProperty .
+<AtmosphericTemperature> rdfs:subClassOf sosa:Property .
  
 <AmbientTemperature> rdfs:subClassOf <AtmosphericTemperature> .
 
-<temperature> a sosa:ObservableProperty, qudt:QuantityKind ;
+<temperature> a sosa:Property, qudt:QuantityKind ;
 	rdfs:label "Thermodynamic Temperature"@en .
   
-<airTemperature> a sosa:Property, sosa:ObservableProperty, qudt:QuantityKind, <AmbientTemperature> ;
+<airTemperature> a sosa:Property, sosa:Property, qudt:QuantityKind, <AmbientTemperature> ;
 	qudt:generalization <temperature> ;
 	sosa:isPropertyOf <house/134/bedroom>, <house/134/kitchen> .
  
-<soilTemperature> a sosa:ObservableProperty, qudt:QuantityKind ;
+<soilTemperature> a sosa:Property, qudt:QuantityKind ;
 	qudt:generalization <temperature> .
  
-<waterTemperature> a sosa:ObservableProperty, qudt:QuantityKind ;
+<waterTemperature> a sosa:Property, qudt:QuantityKind ;
 	qudt:generalization <temperature> .
  
-<tapWaterTemperature> a sosa:ObservableProperty, qudt:QuantityKind ;
+<tapWaterTemperature> a sosa:Property, qudt:QuantityKind ;
 	qudt:generalization <waterTemperature> .
  
-<poolWaterTemperature> a sosa:ObservableProperty, qudt:QuantityKind ;
+<poolWaterTemperature> a sosa:Property, qudt:QuantityKind ;
 	qudt:generalization <waterTemperature> .
 
 <nest/D1AA22A8211> a sosa:Platform ;
@@ -1580,7 +1580,7 @@ ex:examples-collection-obs
 	ssn-system:inCondition <normalTemp> ;
 	ssn-system:hasSystemProperty <DHT22TempSensitivity> .
   
-<normalTemp> a ssn-system:Condition, schema:PropertyValue ;
+<normalTemp> a schema:PropertyValue ;
 	rdfs:comment "A temperature range of -40 to 80 Celsius."@en ;
 	schema:minValue -40.0 ;
 	schema:maxValue 80.0 ;
@@ -1746,7 +1746,7 @@ ex:examples-collection-obs
   geo:alt 12.75 ;
   sosa:isSampleOf <earth> .
 
-<VCAB-DP1-BP-40#groundDisplacementSpeed>  rdf:type    sosa:ObservableProperty , sosa:Property ;
+<VCAB-DP1-BP-40#groundDisplacementSpeed>  rdf:type    sosa:Property ;
   rdfs:label "the ground displacement speed at location of VCAB-DP1-BP-40"@en ;
   sosa:isObservedBy <VCAB-DP1-BP-40> .
 
@@ -1844,7 +1844,7 @@ ex:examples-collection-obs
 # This is equivalent to saying that the electric consumption of appartment #134 is 
 # observed by Sensor #926
 
-<Appartment/134/electricConsumption> rdf:type sosa:ObservableProperty ;
+<Appartment/134/electricConsumption> rdf:type sosa:Property ;
   sosa:isObservedBy <sensor/926>  .
 
 
@@ -1862,13 +1862,13 @@ ex:examples-collection-obs
   sosa:madeBySensor <sensor/926> .
 
 
-# the window opening state is an ActuatableProperty.
+# the window opening state is a Property.
 # SSN allows to explicitly say that <window/104#state> is a property of <window>
 
 <window> rdf:type sosa:FeatureOfInterest ;
   sosa:hasProperty <window/104#state> .
 
-<window/104#state> rdf:type sosa:ActuatableProperty ;
+<window/104#state> rdf:type sosa:Property ;
   sosa:isActedOnBy <actuation/188> .
 
 
@@ -1947,7 +1947,7 @@ ex:examples-collection-obs
 # This is equivalent to saying that the electric consumption of apartment #134 is 
 # observed by Sensor #926
 
-<apartment/134/electricConsumption> rdf:type sosa:ObservableProperty ;
+<apartment/134/electricConsumption> rdf:type sosa:Property ;
   sosa:isObservedBy <sensor/926>  .
 
 
@@ -1965,13 +1965,13 @@ ex:examples-collection-obs
   sosa:madeBySensor <sensor/926> .
 
 
-# the window opening state is an ActuatableProperty.
+# the window opening state is a Property.
 # SSN allows to explicitly say that <window/104#state> is a property of <window>
 
 <window> rdf:type sosa:FeatureOfInterest ;
   sosa:hasProperty <window/104#state> .
 
-<window/104#state> rdf:type sosa:ActuatableProperty ;
+<window/104#state> rdf:type sosa:Property ;
   sosa:isActedOnBy <actuation/188> .
 
 
@@ -2154,7 +2154,7 @@ ex:TemperatureSensorOperatingRange a ssn-system:OperatingRange ;
    rdfs:label "Vaisala HUMICAP H-chip"@en ;
    sosa:isHostedBy <COPR-HMP45C-L> .
 
- <RelativeHumidity> a sosa:ObservableProperty ;
+ <RelativeHumidity> a sosa:Property ;
    rdfs:comment "Humidity is a measure of the moisture content of air."@en ;
    rdfs:label "Relative Humidity"@en .
 
@@ -2404,7 +2404,7 @@ eg:p1
 # This is equivalent to saying that the electric consumption of apartment #134 is 
 # observed by Sensor #926
 
-<apartment/134/electricConsumption> rdf:type sosa:ObservableProperty ;
+<apartment/134/electricConsumption> rdf:type sosa:Property ;
   sosa:isObservedBy <sensor/926>  .
 
 
@@ -2422,11 +2422,11 @@ eg:p1
   sosa:madeBySensor <sensor/926> .
 
 
-# the window opening state is an ActuatableProperty.
+# the window opening state is a Property.
 
 <window> rdf:type sosa:FeatureOfInterest .
 
-<window/104#state> rdf:type sosa:ActuatableProperty ;
+<window/104#state> rdf:type sosa:Property ;
   sosa:isActedOnBy <actuation/188> .
 
 
@@ -2478,7 +2478,7 @@ eg:p1
 <tree/124>  rdf:type    sosa:FeatureOfInterest ;
   rdfs:label "tree #124"@en .
 
-<tree/124#height>  rdf:type    sosa:ObservableProperty , sosa:Property ;
+<tree/124#height>  rdf:type    sosa:Property ;
   rdfs:label "the height of tree #124"@en .
 
 # rangefinder #30 made observation #1088 of the height of tree #125.
@@ -2495,7 +2495,7 @@ eg:p1
 <tree/125>  rdf:type    sosa:FeatureOfInterest ;
   rdfs:label "tree #125"@en .
 
-<tree/125#height>  rdf:type    sosa:ObservableProperty , sosa:Property ;
+<tree/125#height>  rdf:type    sosa:Property ;
   rdfs:label "the height of tree #125"@en .
 ```
 
@@ -2663,7 +2663,7 @@ ex:UCSB
   rdfs:label "tree #124"@en ;
   sosa:hasProperty <tree/124#height> .
 
-<tree/124#height>  rdf:type    sosa:ObservableProperty , sosa:Property ;
+<tree/124#height>  rdf:type    sosa:Property ;
   rdfs:label "the height of tree #124"@en ;
   sosa:isPropertyOf <tree/124> .
 
@@ -2684,7 +2684,7 @@ ex:UCSB
   rdfs:label "tree #125"@en ;
   sosa:hasProperty <tree/125#height> .
 
-<tree/125#height>  rdf:type    sosa:ObservableProperty , sosa:Property ;
+<tree/125#height>  rdf:type    sosa:Property ;
   rdfs:label "the height of tree #125"@en ;
   sosa:isPropertyOf <tree/125> .
 
@@ -2746,7 +2746,7 @@ ex:UCSB
 # This is equivalent to saying that the electric consumption of appartment #134 is 
 # observed by Sensor #926
 
-<Appartment/134/electricConsumption> rdf:type sosa:ObservableProperty ;
+<Appartment/134/electricConsumption> rdf:type sosa:Property ;
   sosa:isObservedBy <sensor/926>  .
 
 
@@ -2764,11 +2764,11 @@ ex:UCSB
   sosa:madeBySensor <sensor/926> .
 
 
-# the window opening state is an ActuatableProperty.
+# the window opening state is a Property.
 
 <window> rdf:type sosa:FeatureOfInterest .
 
-<window/104#state> rdf:type sosa:ActuatableProperty ;
+<window/104#state> rdf:type sosa:Property ;
   sosa:isActedOnBy <actuation/188> .
 
 
@@ -2891,7 +2891,7 @@ ex:UCSB
   ] ;
 .
 
-<atmosphericPressure> a sosa:ObservableProperty ;
+<atmosphericPressure> a sosa:Property ;
   rdfs:label "Atmospheric pressure"@en .
 
 
@@ -3138,13 +3138,13 @@ ex:Temperature a sosa:Property .
 
 
 
-<NormalOperatingCondition> a ssn-system:Condition , schema:PropertyValue ;
+<NormalOperatingCondition> a schema:PropertyValue ;
   rdfs:comment "A temperature range of -40 to 80 Celsius."@en ;
   schema:minValue -40.0 ;
   schema:maxValue 80.0 ;
   schema:unitCode unit:DegreeCelsius .
 
-<NormalHumidityCondition> a ssn-system:Condition , schema:PropertyValue ;
+<NormalHumidityCondition> a schema:PropertyValue ;
   rdfs:comment "A relative humidity range of 5 to 85 %."@en ;
   schema:minValue 5.0 ;
   schema:maxValue 85.0 ;
@@ -3635,7 +3635,7 @@ examples:st4
   geo:alt 12.75 ;
   sosa:isSampleOf <earth> .
 
-<VCAB-DP1-BP-40#groundDisplacementSpeed>  rdf:type    sosa:ObservableProperty , sosa:Property ;
+<VCAB-DP1-BP-40#groundDisplacementSpeed>  rdf:type   sosa:Property ;
   rdfs:label "the ground displacement speed at location of VCAB-DP1-BP-40"@en ;
   sosa:isObservedBy <VCAB-DP1-BP-40> .
 
@@ -3691,7 +3691,7 @@ examples:st4
    rdfs:label "Vaisala HUMICAP H-chip"@en ;
    sosa:isHostedBy <COPR-HMP45C-L> .
 
- <RelativeHumidity> a sosa:ObservableProperty ;
+ <RelativeHumidity> a sosa:Property ;
    rdfs:comment "Humidity is a measure of the moisture content of air."@en ;
    rdfs:label "Relative Humidity"@en .
 

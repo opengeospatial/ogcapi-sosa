@@ -1,0 +1,19 @@
+@prefix ex: <http://example.org/sosa/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+
+<file:///github/workspace/Observation/1> a sosa:Observation ;
+    sosa:hasFeatureOfInterest <file:///github/workspace/office/1> ;
+    sosa:observedProperty ex:Temperature .
+
+<file:///github/workspace/Observation/2> a sosa:Observation ;
+    sosa:hasFeatureOfInterest <file:///github/workspace/office/2> ;
+    sosa:observedProperty ex:Temperature .
+
+<file:///github/workspace/office/1> a sosa:FeatureOfInterest ;
+    sosa:hasProperty ex:Temperature .
+
+<file:///github/workspace/office/2> a sosa:FeatureOfInterest ;
+    sosa:hasProperty ex:Temperature .
+
+ex:Temperature a sosa:Property .
+

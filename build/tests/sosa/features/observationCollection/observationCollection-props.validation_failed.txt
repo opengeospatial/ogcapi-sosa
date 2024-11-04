@@ -1,0 +1,47 @@
+Validation report for ogc.sosa.features.observationCollection - SOSA ObservationCollection Feature
+Generated 2024-11-04T16:07:15.768543+00:00
+=== Files ===
+Using observationCollection-props.json from test resources
+JSON-LD context is present - uplifting
+Output JSON-LD observationCollection-props.jsonld created
+Output Turtle observationCollection-props.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+
+=== SHACL ===
+
+** Validation error **
+Validation result for _sources/properties/observation/rules.shacl:
+  Validation Report
+  Conforms: False
+  Results (2):
+  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ]
+  	Focus Node: <file:///github/workspace/c1>
+  	Result Path: [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]
+  	Message: Less than 1 values on <file:///github/workspace/c1>->[ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]
+  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] ) ]
+  	Focus Node: <file:///github/workspace/c1>
+  	Result Path: ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] )
+  	Message: Less than 1 values on <file:///github/workspace/c1>->( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] )
+  
+Focus nodes for _sources/properties/observation/rules.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: <file:///github/workspace/pop1999>,<file:///github/workspace/c1>,<file:///github/workspace/something>
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <file:///github/workspace/pop1999>,<file:///github/workspace/c1>,<file:///github/workspace/something>
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <file:///github/workspace/pop1999>/sosa:hasSimpleResult
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <file:///github/workspace/pop1999>,<file:///github/workspace/c1>,<file:///github/workspace/something>
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: <file:///github/workspace/pop1999>,<file:///github/workspace/c1>,<file:///github/workspace/something>
+
+=== End SHACL ===
+
+=== Semantic Uplift ===
+Running post-uplift shacl transform step from ../observation/semantic-uplift/featureType.shacl
+=== End Semantic Uplift ===
+

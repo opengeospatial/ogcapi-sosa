@@ -1,0 +1,209 @@
+@prefix cdt: <http://w3id.org/lindt/custom_datatypes#> .
+@prefix geo1: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix qudt: <http://qudt.org/1.1/schema/qudt> .
+@prefix rdfp: <https://w3id.org/rdfp/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sampling: <http://www.w3.org/ns/sosa/sampling/> .
+@prefix schema1: <http://schema.org/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn-system: <http://www.w3.org/ns/ssn/systems/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/floralCouch> a sosa:FeatureOfInterest ;
+    rdfs:comment "The lumpy 2-seater couch with the floral pattern."@en .
+
+<http://example.org/house/134/deployment> a sosa:Deployment ;
+    rdfs:comment "Deployment of PCB Board 1 and 2 in the kitchen for the purpose of observing the temperature."@en ;
+    sosa:deployedOnPlatform <http://example.org/house/134/kitchen> ;
+    sosa:deployedSystem <http://example.org/PCBBoard1>,
+        <http://example.org/PCBBoard2> ;
+    sosa:forProperty <http://example.org/airTemperature> .
+
+<http://example.org/nest/D1AA22A8211> a sosa:Platform ;
+    rdfs:label "3rd gen Nest Learning Thermostat D1AA22A8211"@en ;
+    rdfs:comment "Nest Thermostat in bedroom of house #134"@en ;
+    sosa:hosts <http://example.org/sensor/926> .
+
+<http://example.org/observation/235727> a sosa:Observation ;
+    sosa:hasFeatureOfInterest <http://example.org/house/134/kitchen> ;
+    sosa:hasResult <http://example.org/observation/235727/result> ;
+    sosa:hasSimpleResult "22.4 kWh"^^cdt:ucum ;
+    sosa:madeBySensor <http://example.org/sensor/927> ;
+    sosa:observedProperty <http://example.org/electricConsumption> .
+
+<http://example.org/observation/235728> a sosa:Observation ;
+    sosa:hasFeatureOfInterest <http://example.org/house/134/kitchen> ;
+    sosa:madeBySensor <http://example.org/DHT22/4578#TemperatureSensor> ;
+    sosa:observedProperty <http://example.org/airTemperature> .
+
+<http://example.org/observation/s1/5> a sosa:Observation ;
+    sosa:hasFeatureOfInterest <http://example.org/sample/134g1> ;
+    sosa:hasSimpleResult "6.1"^^cdt:pH ;
+    sosa:observedProperty <http://example.org/soil-pH> ;
+    sosa:phenomenonTime [ a time:Instant ;
+            time:inXSDDateTimeStamp "2017-12-04T08:14:00:00+10:00"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2017-12-12T10:24:00"^^xsd:dateTime .
+
+<http://example.org/poolWaterTemperature> a qudt:QuantityKind,
+        sosa:Property ;
+    qudt:generalization <http://example.org/waterTemperature> .
+
+<http://example.org/roofInsulation> a sosa:FeatureOfInterest ;
+    rdfs:comment "The insulation material in the roof of house #134."@en .
+
+<http://example.org/sample/134g1/organics> a sosa:Sample ;
+    rdfs:label "Soil sample 134g1 organic fraction" ;
+    sosa:isResultOf <http://example.org/sampling/4650> ;
+    sampling:hasSampleRelationship [ a sampling:SampleRelationship ;
+            sampling:natureOfRelationship <http://soil.example.org/rel/organic-fraction> ;
+            sampling:relatedSample <http://example.org/sample/134g1> ] .
+
+<http://example.org/soilTemperature> a qudt:QuantityKind,
+        sosa:Property ;
+    qudt:generalization <http://example.org/temperature> .
+
+<http://example.org/tapWaterTemperature> a qudt:QuantityKind,
+        sosa:Property ;
+    qudt:generalization <http://example.org/waterTemperature> .
+
+<http://example.org/window> a sosa:FeatureOfInterest ;
+    sosa:hasProperty <http://example.org/window/104#state> .
+
+<http://example.org/AmbientTemperature> rdfs:subClassOf <http://example.org/AtmosphericTemperature> .
+
+<http://example.org/AtmosphericTemperature> rdfs:subClassOf sosa:Property .
+
+<http://example.org/DHT22/4578#TemperatureSensor> a sosa:Sensor,
+        sosa:System ;
+    rdfs:comment "The DHT22 #4578 embedded temperature sensor."@en ;
+    ssn-system:hasSystemCapability <http://example.org/DHT22TempCapability> .
+
+<http://example.org/DHT22TempCapability> a sosa:Property,
+        ssn-system:SystemCapability ;
+    rdfs:comment "The capabilities of the temperature sensor in normal temperature conditions."@en ;
+    ssn-system:hasSystemProperty <http://example.org/DHT22TempSensitivity> ;
+    ssn-system:inCondition <http://example.org/normalTemp> .
+
+<http://example.org/DHT22TempSensitivity> a schema1:PropertyValue,
+        sosa:Property,
+        ssn-system:Resolution,
+        ssn-system:Sensitivity ;
+    schema1:unitCode unit:DegreeCelsius ;
+    schema1:value 0.1 ;
+    rdfs:comment "The sensitivity and resolution of the temperature sensor is 0.1 °C in normal temperature and humidity conditions."@en .
+
+<http://example.org/normalTemp> a schema1:PropertyValue ;
+    schema1:maxValue 80.0 ;
+    schema1:minValue -40.0 ;
+    schema1:unitCode unit:DegreeCelsius ;
+    rdfs:comment "A temperature range of -40 to 80 Celsius."@en .
+
+<http://example.org/observation/235714> a sosa:Observation ;
+    sosa:hasFeatureOfInterest <http://example.org/house/134/bedroom> ;
+    sosa:madeBySensor <http://example.org/sensor/926> ;
+    sosa:observedProperty <http://example.org/airTemperature> ;
+    sosa:phenomenonTime [ a time:Interval ;
+            time:hasBeginning [ a time:Instant ;
+                    time:inXSDDateTimeStamp "2017-04-15T00:00:00+00:00"^^xsd:dateTimeStamp ] ;
+            time:hasEnd [ a time:Instant ;
+                    time:inXSDDateTimeStamp "2017-04-16T00:00:00+00:00"^^xsd:dateTimeStamp ] ] ;
+    sosa:resultTime "2017-04-16T00:00:12+00:00"^^xsd:dateTimeStamp .
+
+<http://example.org/observation/235715> a sosa:Observation ;
+    sosa:hasSimpleResult "23.9 DEG"^^cdt:temperature ;
+    sosa:resultTime "2017-11-15T14:35:13+00:00"^^xsd:dateTime .
+
+<http://example.org/observation/235716> a sosa:Observation ;
+    sosa:hasResult [ a qudt:QuantityValue ;
+            qudt:hasUnit unit:DegreeCelsius ;
+            qudt:numericValue 2.29e+01 ] .
+
+<http://example.org/procedure/soil-organic-fraction/78> a sosa:Procedure ;
+    rdfs:comment "... details of procedure to separate the organic fraction of a soil sample ..." .
+
+<http://example.org/sampling/4578> a sosa:Sampling ;
+    geo1:lat -37.9076 ;
+    geo1:long 145.0294 ;
+    sosa:hasFeatureOfInterest <http://example.org/house/134/garden> ;
+    sosa:hasResult <http://example.org/sample/134g1> ;
+    sosa:madeBySampler <http://example.org/trowel> ;
+    sosa:resultTime "2017-12-04T08:14:00"^^xsd:dateTime .
+
+<http://example.org/sampling/4650> a sosa:Sampling ;
+    sosa:featureOfInterest <http://example.org/sample/134g1> ;
+    sosa:usedProcedure <http://example.org/procedure/soil-organic-fraction/78> .
+
+<http://example.org/sensor/927> a sosa:Sensor ;
+    sosa:implements <http://example.org/summingHourlyConsumptionProcedure> .
+
+<http://example.org/summingHourlyConsumptionProcedure> a sosa:Procedure ;
+    sosa:hasOutput [ rdfp:presentedBy [ rdfp:liftingRule <http://example.org/lifting-rule.rqg> ;
+                    rdfp:validationRule <http://example.org/consumption.schema.json> ] ],
+        <http://example.org/electricityConsumption> .
+
+<http://example.org/windowCloser/987> a sosa:Actuator ;
+    sosa:forProperty <http://example.org/window/104#state> ;
+    sosa:madeActuation <http://example.org/actuation/188> .
+
+<http://example.org/PCBBoard1> a sosa:System ;
+    rdfs:label "PCB Board 1"@en ;
+    rdfs:comment "PCB Board 1 hosts DHT22 temperature sensor #1."@en ;
+    sosa:hosts <http://example.org/DHT22/1> .
+
+<http://example.org/PCBBoard2> a sosa:System ;
+    rdfs:label "PCB Board 2"@en ;
+    rdfs:comment "PCB Board 2 hosts DHT22 temperature sensor #2."@en ;
+    sosa:hosts <http://example.org/DHT22/2> .
+
+<http://example.org/actuation/188> a sosa:Actuation ;
+    sosa:actsOnProperty <http://example.org/window/104#state> ;
+    sosa:actuationMadeBy <http://example.org/windowCloser/987> ;
+    sosa:hasFeatureOfInterest <http://example.org/window/104> ;
+    sosa:hasSimpleResult true ;
+    sosa:resultTime "2017-04-18T17:24:00+02:00"^^xsd:dateTimeStamp .
+
+<http://example.org/house/134> a sosa:FeatureOfInterest ;
+    rdfs:comment "House #134."@en .
+
+<http://example.org/house/134/bedroom> a sosa:Sample ;
+    sosa:isSampleOf <http://example.org/house/134> .
+
+<http://example.org/sensor/926> a sosa:Sensor ;
+    rdfs:label "Nest temperature sensor #1"@en ;
+    sosa:madeObservation <http://example.org/observation/235714>,
+        <http://example.org/observation/235715>,
+        <http://example.org/observation/235716> ;
+    sosa:observes <http://example.org/airTemperature> .
+
+<http://example.org/waterTemperature> a qudt:QuantityKind,
+        sosa:Property ;
+    qudt:generalization <http://example.org/temperature> .
+
+<http://example.org/temperature> a qudt:QuantityKind,
+        sosa:Property ;
+    rdfs:label "Thermodynamic Temperature"@en .
+
+<http://example.org/window/104#state> a sosa:Property ;
+    sosa:isActedOnBy <http://example.org/actuation/188> .
+
+<http://example.org/airTemperature> a <http://example.org/AmbientTemperature>,
+        qudt:QuantityKind,
+        sosa:Property ;
+    qudt:generalization <http://example.org/temperature> ;
+    sosa:isPropertyOf <http://example.org/house/134/bedroom>,
+        <http://example.org/house/134/kitchen> .
+
+<http://example.org/house/134/kitchen> a sosa:Platform,
+        sosa:Sample ;
+    rdfs:label "House #134 Kitchen."@en ;
+    rdfs:comment "House #134 Kitchen that hosts PCBoard1 and PCBoard2."@en ;
+    sosa:hosts <http://example.org/PCBBoard1>,
+        <http://example.org/PCBBoard2> ;
+    sosa:isSampleOf <http://example.org/house/134> .
+
+<http://example.org/sample/134g1> a sosa:Sample ;
+    sosa:isResultOf <http://example.org/sampling/4578> ;
+    sosa:isSampleOf <http://example.org/house/134/garden> .
+

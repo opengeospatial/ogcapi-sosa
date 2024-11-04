@@ -1,0 +1,119 @@
+@prefix cdt: <http://w3id.org/lindt/custom_datatypes#> .
+@prefix geo1: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix gr: <http://purl.org/goodrelations/v1#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema1: <http://schema.org/> .
+@prefix seas: <https://w3id.org/seas/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn-system: <http://www.w3.org/ns/ssn/systems/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://data.grandlyon.com/Deployment/SL-T-P1/2017-06-06> a sosa:Deployment ;
+    prov:startedAtTime "2017-06-06"^^xsd:date ;
+    prov:wasAssociatedWith <https://data.grandlyon.com/Organization/1> ;
+    sosa:deployedOnPlatform <https://data.grandlyon.com/Tree/1> ;
+    sosa:deployedSystem <https://data.grandlyon.com/Sensor/SL-T-P1> .
+
+<https://data.grandlyon.com/Observation/5872357#battery> a sosa:Observation ;
+    sosa:hasFeatureOfInterest <https://data.grandlyon.com/Sensor/SL-T-P1> ;
+    sosa:hasSimpleResult "73.2 %"^^cdt:ucum ;
+    sosa:madeBySensor <https://data.grandlyon.com/Sensor/SL-T-P1> ;
+    sosa:observedProperty <https://data.grandlyon.com/Sensor/SL-T-P1#battery> ;
+    sosa:resultTime "2017-06-20T21:49:18+00:00"^^xsd:dateTime .
+
+<https://data.grandlyon.com/Observation/5872357#temperature> a sosa:Observation ;
+    sosa:hasFeatureOfInterest <https://data.grandlyon.com/Air?lat=45.75&long=4.85> ;
+    sosa:hasSimpleResult "64.5244681928429 Cel"^^cdt:ucum ;
+    sosa:madeBySensor <https://data.grandlyon.com/Sensor/SL-T-P1> ;
+    sosa:observedProperty <https://data.grandlyon.com/Air?lat=45.75&long=4.85#temperature> ;
+    sosa:resultTime "2017-06-20T21:49:18+00:00"^^xsd:dateTime .
+
+<https://data.grandlyon.com/Air> a sosa:FeatureOfInterest ;
+    rdfs:label "The air."@en .
+
+<https://data.grandlyon.com/IP68_Outdoor_Temperature_Sensor> a gr:ProductOrServiceModel,
+        owl:Class ;
+    rdfs:label "IP68 Outdoor Temperature Sensor"@en ;
+    gr:name "IP68 Outdoor Temperature Sensor"@en ;
+    rdfs:subClassOf [ owl:hasValue <https://data.grandlyon.com/IP68_Outdoor_Temperature_Sensor#operatingRange> ;
+            owl:onProperty ssn-system:hasOperatingRange ],
+        [ owl:hasValue <https://data.grandlyon.com/IP68_Outdoor_Temperature_Sensor#systemCapability> ;
+            owl:onProperty ssn-system:hasSystemCapability ] .
+
+<https://data.grandlyon.com/IP68_Outdoor_Temperature_Sensor#BatteryResolution> a schema1:PropertyValue,
+        sosa:Property,
+        ssn-system:Resolution ;
+    schema1:unitCode unit:PERCENT ;
+    schema1:value 3.937e-03 ;
+    sosa:forProperty <https://data.grandlyon.com/Sensor/SL-T-P1#battery> .
+
+<https://data.grandlyon.com/IP68_Outdoor_Temperature_Sensor#RFSensitivity> a schema1:PropertyValue,
+        sosa:Property,
+        ssn-system:Sensitivity ;
+    schema1:unitCode unit:DecibelReferredToOneMilliwatt ;
+    schema1:value -137 .
+
+<https://data.grandlyon.com/IP68_Outdoor_Temperature_Sensor#TemperatureAccuracy> a schema1:PropertyValue,
+        sosa:Property,
+        ssn-system:Accuracy ;
+    schema1:maxValue 0.2 ;
+    schema1:minValue -0.2 ;
+    schema1:unitCode unit:DegreeCelsius ;
+    sosa:forProperty <https://data.grandlyon.com/Air?lat=45.75&long=4.85#temperature> .
+
+<https://data.grandlyon.com/IP68_Outdoor_Temperature_Sensor#TemperatureResolution> a schema1:PropertyValue,
+        sosa:Property,
+        ssn-system:Resolution ;
+    schema1:unitCode unit:DegreeCelsius ;
+    schema1:value 0.0625 ;
+    sosa:forProperty <https://data.grandlyon.com/Air?lat=45.75&long=4.85#temperature> .
+
+<https://data.grandlyon.com/IP68_Outdoor_Temperature_Sensor#operatingRange> a sosa:Property,
+        ssn-system:OperatingRange ;
+    ssn-system:inCondition <https://data.grandlyon.com/IP68_Outdoor_Temperature_Sensor#normalOperatingCondition> .
+
+<https://data.grandlyon.com/IP68_Outdoor_Temperature_Sensor#systemCapability> a sosa:Property,
+        ssn-system:SystemCapability ;
+    rdfs:comment "The sensor capability in normal operating conditions."@en ;
+    ssn-system:hasSystemProperty <https://data.grandlyon.com/IP68_Outdoor_Temperature_Sensor#BatteryAccuracy>,
+        <https://data.grandlyon.com/IP68_Outdoor_Temperature_Sensor#BatteryResolution>,
+        <https://data.grandlyon.com/IP68_Outdoor_Temperature_Sensor#RFSensitivity>,
+        <https://data.grandlyon.com/IP68_Outdoor_Temperature_Sensor#TemperatureAccuracy>,
+        <https://data.grandlyon.com/IP68_Outdoor_Temperature_Sensor#TemperatureResolution> ;
+    ssn-system:inCondition <https://data.grandlyon.com/IP68_Outdoor_Temperature_Sensor#normalOperatingCondition> .
+
+<https://data.grandlyon.com/Organization/1> a org:Organization ;
+    owl:sameAs <http://dbpedia.org/page/Metropolis_of_Lyon> .
+
+<https://data.grandlyon.com/Air?lat=45.75&long=4.85> a sosa:Sample ;
+    rdfs:label "The air at lat 45.75 and long 4.85."@en ;
+    sosa:hasProperty <https://data.grandlyon.com/Air?lat=45.75&long=4.85#temperature> ;
+    sosa:isSampleOf <https://data.grandlyon.com/Air> .
+
+<https://data.grandlyon.com/IP68_Outdoor_Temperature_Sensor#normalOperatingCondition> a schema1:PropertyValue ;
+    schema1:maxValue 70.0 ;
+    schema1:minValue -20.0 ;
+    schema1:unitCode unit:DegreeCelsius ;
+    rdfs:comment "A temperature range of -20 to 70 Celsius."@en .
+
+<https://data.grandlyon.com/Sensor/SL-T-P1> a gr:ProductOrService,
+        sosa:Sensor,
+        <https://data.grandlyon.com/IP68_Outdoor_Temperature_Sensor>,
+        seas:LoRaCommunicationDevice ;
+    gr:hasBrand [ a gr:Brand ;
+            gr:name "Sensing Labs"@en ] ;
+    geo1:alt 100.0 ;
+    geo1:lat 45.75 ;
+    geo1:lon 4.85 ;
+    sosa:implements <https://data.grandlyon.com/IP68_Outdoor_Temperature_Sensor#batterySensingProcedure>,
+        <https://data.grandlyon.com/IP68_Outdoor_Temperature_Sensor#temperatureSensingProcedure> ;
+    sosa:observes <https://data.grandlyon.com/Air?lat=45.75&long=4.85#temperature>,
+        <https://data.grandlyon.com/Sensor/SL-T-P1#battery> .
+
+<https://data.grandlyon.com/Air?lat=45.75&long=4.85#temperature> a sosa:Property ;
+    sosa:isPropertyOf <https://data.grandlyon.com/Air?lat=45.75&long=4.85> .
+

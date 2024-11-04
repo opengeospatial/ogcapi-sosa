@@ -36,6 +36,7 @@ Collection of one or more observations, whose members share a common value for o
 #### jsonld
 ```jsonld
 {
+  "@context": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/context.jsonld",
   "observedProperty": "p1",
   "resultTime": "2022-05-01T22:33:44Z",
   "hasMember": [
@@ -47,8 +48,7 @@ Collection of one or more observations, whose members share a common value for o
       "hasSimpleResult": 1995.2,
       "phenomenonTime": "2022-05-01T22:33:40Z"
     }
-  ],
-  "@context": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/context.jsonld"
+  ]
 }
 ```
 

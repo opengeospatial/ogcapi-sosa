@@ -43,6 +43,7 @@ _:a1 a geojson:Feature, sosa:Observation ;
 #### jsonld
 ```jsonld
 {
+  "@context": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/context.jsonld",
   "id": "pop1999",
   "type": "Feature",
   "featureType": "sosa:Observation",
@@ -53,8 +54,7 @@ _:a1 a geojson:Feature, sosa:Observation ;
     "comment": "Example of an inline membership - would entail hasMember relations",
     "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork",
     "hasSimpleResult": 15555.0
-  },
-  "@context": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/context.jsonld"
+  }
 }
 ```
 

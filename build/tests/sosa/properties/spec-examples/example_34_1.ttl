@@ -1,0 +1,17 @@
+@prefix ex: <http://example.org/sosa/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn-system: <http://www.w3.org/ns/ssn/systems/> .
+
+<file:///github/workspace/Observation/1> a sosa:Observation ;
+    sosa:madeBySensor ex:TemperatureSensor .
+
+<file:///github/workspace/Observation/2> a sosa:Observation ;
+    sosa:madeBySensor ex:TemperatureSensor .
+
+ex:TemperatureSensorOperatingRange a ssn-system:OperatingRange ;
+    ssn-system:inCondition ex:NormalHumidityCondition,
+        ex:NormalTemperatureCondition .
+
+ex:TemperatureSensor a sosa:System ;
+    ssn-system:hasOperatingRange ex:TemperatureSensorOperatingRange .
+

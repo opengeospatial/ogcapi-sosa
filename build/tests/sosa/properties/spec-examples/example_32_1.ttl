@@ -1,0 +1,28 @@
+@prefix geo1: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/data/iceCore/12#observation> a sosa:Observation ;
+    sosa:hasSimpleResult 240 ;
+    sosa:observedProperty <http://example.org/data/iceCore/12#CO2> .
+
+<http://example.org/data/WellDrilling/4578> a sosa:Sampling ;
+    geo1:lat -73.35 ;
+    geo1:long 9.32 ;
+    sosa:hasFeatureOfInterest <http://dbpedia.org/resource/Antarctic_ice_sheet> ;
+    sosa:hasResult <http://example.org/data/iceCore/12> ;
+    sosa:madeBySampler <http://example.org/data/thermalDrill/2> ;
+    sosa:resultTime "2017-04-03T11:12:00+00:00"^^xsd:dateTime .
+
+<http://example.org/data/iceCore/12#CO2> sosa:isPropertyOf <http://example.org/data/iceCore/12> .
+
+<http://dbpedia.org/resource/Antarctic_ice_sheet> a sosa:FeatureOfInterest ;
+    sosa:hasSample <http://example.org/data/iceCore/12>,
+        <http://example.org/data/iceCore/13>,
+        <http://example.org/data/iceCore/14> .
+
+<http://example.org/data/iceCore/12> a sosa:Sample ;
+    sosa:isResultOf <http://example.org/data/WellDrilling/4578> ;
+    sosa:isSampleOf <http://dbpedia.org/resource/Antarctic_ice_sheet> ;
+    sosa:madeBySampler <http://example.org/data/thermalDrill/2> .
+

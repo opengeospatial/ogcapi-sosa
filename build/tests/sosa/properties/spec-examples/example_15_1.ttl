@@ -1,0 +1,29 @@
+@prefix ex: <http://example.org/sosa/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn-system: <http://www.w3.org/ns/ssn/systems/> .
+
+<file:///github/workspace/Observation/1> a sosa:Observation ;
+    sosa:madeBySensor <file:///github/workspace/TemperatureSensor/1> .
+
+<file:///github/workspace/Observation/2> a sosa:Observation ;
+    sosa:madeBySensor <file:///github/workspace/TemperatureSensor/2> .
+
+<file:///github/workspace/TemperatureSensor/1> a ex:TemperatureSensor,
+        sosa:System ;
+    ssn-system:hasOperatingRange <file:///github/workspace/moreSpecificTemperatureSensorOperatingRange>,
+        ex:TemperatureSensorOperatingRange .
+
+<file:///github/workspace/TemperatureSensor/2> a ex:TemperatureSensor,
+        sosa:System .
+
+<file:///github/workspace/moreSpecificTemperatureSensorOperatingRange> a ssn-system:OperatingRange ;
+    ssn-system:inCondition <file:///github/workspace/modeSpecificHumidityCondition>,
+        <file:///github/workspace/modeSpecificTemperatureCondition> .
+
+ex:TemperatureSensor a owl:Class ;
+    rdfs:subClassOf [ owl:hasValue ex:TemperatureSensorOperatingRange ;
+            owl:onProperty ssn-system:hasOperatingRange ],
+        sosa:System .
+
