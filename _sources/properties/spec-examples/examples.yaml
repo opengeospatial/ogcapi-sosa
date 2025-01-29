@@ -1,232 +1,174 @@
 prefixes:
-  ex: http://example.org/sosa/
-  qudt: http://qudt.org/
-  qudt-1-1: http://qudt.org/
-  qunit: http://qudt.org/vocab/unit/
-  rdfs: http://www.w3.org/2000/01/rdf-schema#
-  xsd: http://www.w3.org/2001/XMLSchema#
+  cdt: <http://w3id.org/lindt/custom_datatypes#>.
+  equipment: <https://rdf.ag/o/equipment/> .
+  ex: <https://example.org/data/> .
+  geo: <http://www.opengis.net/ont/geosparql#> .
+  gr: <http://purl.org/goodrelations/v1#> .
+  gs1: <https://gs1.org/voc/> .
+  om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+  owl: <http://www.w3.org/2002/07/owl#> .
+  prov: <http://www.w3.org/ns/prov#> .
+  qk: <http://qudt.org/vocab/quantitykind/> .
+  qudt: <http://qudt.org/schema/qudt/> .
+  rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+  rdfp: <https://w3id.org/rdfp/>.
+  rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+  schema: <http://schema.org/>.
+  seas: <https://w3id.org/seas/>.
+  sensor: <https://example.org/sensor/> .
   sh: http://www.w3.org/ns/shacl#
-  owl: http://www.w3.org/2002/07/owl#
-  sosa: http://www.w3.org/ns/sosa/
-  ssn-system: http://www.w3.org/ns/ssn/systems/
+  skos: <http://www.w3.org/2004/02/skos/core#> .
+  sosa: <http://www.w3.org/ns/sosa/> .
+  system: <http://www.w3.org/ns/ssn/systems/> .
+  time: <http://www.w3.org/2006/time#>.
+  unit: <http://qudt.org/vocab/unit/> .
+  xsd: <http://www.w3.org/2001/XMLSchema#> .
 examples:
-  - title: Example ice-core.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/ice-core.ttl
-  - title: Example 2017ex15.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex15.ttl
-  - title: Example 2017ex23.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex23.ttl
-  - title: Example 2017ex25.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex25.ttl
-  - title: Example sample-relations.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/sample-relations.ttl
-  - title: Example dht22-sosa.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/dht22-sosa.ttl
-  - title: Example 2017ex14.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex14.ttl
-  - title: Example 2017ex18.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex18.ttl
-  - title: Example 2017ex24.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex24.ttl
-  - title: Example vistavital-a-sdo.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/vistavital-a-sdo.ttl
-  - title: Example observation.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/complex-sensors/observation.ttl
-  - title: Example sensor-catalog.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/complex-sensors/sensor-catalog.ttl
-  - title: Example entailments.shacl.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/complex-sensors/entailments.shacl.ttl
-  - title: Example observation-inferred.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/complex-sensors/observation-inferred.ttl
-  - title: Example 2017ex7.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex7.ttl
-  - title: Example tree-height-sosa.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/tree-height-sosa.ttl
-  - title: Example ice-core-sosa.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/ice-core-sosa.ttl
-  - title: Example 2017ex22.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex22.ttl
-  - title: Example 02-homo-vs-summar-collection.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/02-homo-vs-summar-collection.ttl
-  - title: Example ip68.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/ip68.ttl
-  - title: Example dht22-deployment-sosa.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/dht22-deployment-sosa.ttl
-  - title: Example 2017ex12.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex12.ttl
-  - title: Example sunspots.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/sunspots.ttl
-  - title: Example 2017ex20.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex20.ttl
-  - title: Example spinning-cups.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/spinning-cups.ttl
-  - title: Example house134.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/house134.ttl
-  - title: Example seismograph.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/seismograph.ttl
-  - title: Example 2017ex16.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex16.ttl
   - title: Example apartment-134.ttl
     snippets:
       - language: ttl
         ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/apartment-134.ttl
-  - title: Example 2017ex10.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex10.ttl
-  - title: Example 2017ex5.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex5.ttl
-  - title: Example 2017ex19.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex19.ttl
-  - title: Example spinning-cups-sosa.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/spinning-cups-sosa.ttl
-  - title: Example 2017ex6.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex6.ttl
-  - title: Example 2017ex9.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex9.ttl
-  - title: Example 2017ex21.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex21.ttl
-  - title: Example 01-observation-collection.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/01-observation-collection.ttl
-  - title: Example 2017ex11.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex11.ttl
-  - title: Example 2017ex13.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex13.ttl
-  - title: Example sosa-core_examples.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/sosa-core_examples.ttl
-  - title: Example 2017ex17.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex17.ttl
-  - title: Example tree-height.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/tree-height.ttl
-  - title: Example apartment-134-sosa.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/apartment-134-sosa.ttl
-  - title: Example 2017ex3.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex3.ttl
-  - title: Example iphone_barometer-sosa.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/iphone_barometer-sosa.ttl
-  - title: Example 2017ex8.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex8.ttl
   - title: Example dht22-deployment.ttl
     snippets:
       - language: ttl
         ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/dht22-deployment.ttl
-  - title: Example 2017ex1.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex1.ttl
-  - title: Example 2017ex4.ttl
-    snippets:
-      - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex4.ttl
   - title: Example dht22.ttl
     snippets:
       - language: ttl
         ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/dht22.ttl
-  - title: Example om-20.ttl
+  - title: Example diet.ttl
     snippets:
       - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/om-20.ttl
-  - title: Example 2017ex2.ttl
+        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/diet.ttl
+  - title: Example forecast.ttl
     snippets:
       - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2017ex2.ttl
-  - title: Example seismograph-sosa.ttl
+        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/forecast.ttl
+  - title: Example GeometryResult.ttl
     snippets:
       - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/seismograph-sosa.ttl
+        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/GeometryResult.ttl
+  - title: Example GeometryResultSimple.ttl
+    snippets:
+      - language: ttl
+        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/GeometryResultSimple.ttl
+  - title: Example historical-airtemp.ttl
+    snippets:
+      - language: ttl
+        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/historical-airtemp.ttl
+  - title: Example IBS-TH2-PLUS-brief.ttl
+    snippets:
+      - language: ttl
+        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/IBS-TH2-PLUS-brief.ttl
+  - title: Example IBS-TH2-PLUS.ttl
+    snippets:
+      - language: ttl
+        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/IBS-TH2-PLUS.ttl
   - title: Example IDEAS.ttl
     snippets:
       - language: ttl
         ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/IDEAS.ttl
-  - title: Example 2023ex1.ttl
+  - title: Example InkBird-IBS-TH2-Range.ttl
     snippets:
       - language: ttl
-        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/2023ex1.ttl
+        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/InkBird-IBS-TH2-Range.ttl
+  - title: Example InkBird.ttl
+    snippets:
+      - language: ttl
+        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/InkBird.ttl
+  - title: Example ip68.ttl
+    snippets:
+      - language: ttl
+        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/ip68.ttl
+  - title: Example iphone_barometer-sosa.ttl
+    snippets:
+      - language: ttl
+        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/iphone_barometer-sosa.ttl
+  - title: Example LocatedDeployment.ttl
+    snippets:
+      - language: ttl
+        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/LocatedDeployment.ttl
+  - title: Example LocatedPlatform.ttl
+    snippets:
+      - language: ttl
+        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/LocatedPlatform.ttl
+  - title: Example LocatedSample.ttl
+    snippets:
+      - language: ttl
+        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/LocatedSample.ttl
+  - title: Example LocatedSampling.ttl
+    snippets:
+      - language: ttl
+        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/LocatedSampling.ttl
+  - title: Example LocatedSensor.ttl
+    snippets:
+      - language: ttl
+        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/LocatedSensor.ttl
+  - title: Example open-window.ttl
+    snippets:
+      - language: ttl
+        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/open-window.ttl
+  - title: Example paleo-atmosphere.ttl
+    snippets:
+      - language: ttl
+        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/paleo-atmosphere.ttl
+  - title: Example Sample-ice-core-bubble.ttl
+    snippets:
+      - language: ttl
+        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Sample-ice-core-bubble.ttl
+  - title: Example sample-relations.ttl
+    snippets:
+      - language: ttl
+        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/sample-relations.ttl
+  - title: Example SC1.ttl
+    snippets:
+      - language: ttl
+        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/SC1.ttl
+  - title: Example seismograph.ttl
+    snippets:
+      - language: ttl
+        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/seismograph.ttl
+  - title: Example smiley.ttl
+    snippets:
+      - language: ttl
+        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/smiley.ttl
+  - title: Example spinning-cups.ttl
+    snippets:
+      - language: ttl
+        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/spinning-cups.ttl
+  - title: Example sunspots.ttl
+    snippets:
+      - language: ttl
+        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/sunspots.ttl
+  - title: Example Temperature-of-interest-specialization.ttl
+    snippets:
+      - language: ttl
+        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Temperature-of-interest-specialization.ttl
+  - title: Example Temperature-of-interest-subclass.ttl
+    snippets:
+      - language: ttl
+        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Temperature-of-interest-subclass.ttl
+  - title: Example Thermometer.ttl
+    snippets:
+      - language: ttl
+        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Thermometer.ttl
+  - title: Example tree-height.ttl
+    snippets:
+      - language: ttl
+        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/tree-height.ttl
+  - title: Example UOM-cdt.ttl
+    snippets:
+      - language: ttl
+        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/UOM-cdt.ttl
+  - title: Example UOM-OM2.ttl
+    snippets:
+      - language: ttl
+        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/UOM-OM2.ttl
+  - title: Example UOM-qudt-datatype.ttl
+    snippets:
+      - language: ttl
+        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/UOM-qudt-datatype.ttl
+  - title: Example UOM-qudt-object.ttl
+    snippets:
+      - language: ttl
+        ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/UOM-qudt-object.ttl
