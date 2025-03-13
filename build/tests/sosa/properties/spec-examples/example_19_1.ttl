@@ -1,80 +1,20 @@
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ex: <http://example.org/> .
+@prefix ex: <https://example.org/data/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix time: <http://www.w3.org/2006/time#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ex:OC1 a sosa:ObservationCollection ;
-    skos:note "homogeneous collection - member observations have a common FoI, oP and Procedure" ;
-    sosa:hasFeatureOfInterest ex:Sample_1 ;
-    sosa:hasMember ex:O2,
-        ex:O3,
-        ex:O4,
-        ex:O5 ;
-    sosa:observedProperty ex:op2 ;
-    sosa:usedProcedure ex:p3 .
-
-ex:OC2 a sosa:ObservationCollection ;
-    skos:note """general collection - member observations have a common FoI, oP and Procedure
-  `madeBySensor` is repeated to enumerate the sensors used in the member observations
-  `phenomenonTime` is a time interval that encompasses the times of the member observations""" ;
-    sosa:hasFeatureOfInterest ex:Sample_1 ;
-    sosa:hasMember ex:O2,
-        ex:O3,
-        ex:O4,
-        ex:O5 ;
-    sosa:madeBySensor ex:s4,
-        ex:s5 ;
-    sosa:observedProperty ex:op2 ;
-    sosa:phenomenonTime [ time:hasBeginning [ time:inXSDDateTime "2018-03-10T15:09:00+10:00"^^xsd:dateTime ] ;
-            time:hasEnd [ time:inXSDDateTime "2018-03-10T15:12:00+10:00"^^xsd:dateTime ] ] ;
-    sosa:usedProcedure ex:p3 .
-
-ex:examples-collection-obs a owl:Ontology ;
-    dcterms:created "2023-11-04"^^xsd:date ;
-    dcterms:creator <http://orcid.org/0000-0002-3884-3420> ;
-    rdfs:comment "Small dataset to test rules in SOSA Collections" ;
-    owl:imports dc:,
-        <http://www.w3.org/2006/time>,
-        <http://www.w3.org/ns/sosa-collections/> .
-
-ex:foia a sosa:FeatureOfInterest ;
-    sosa:hasProperty ex:op2 .
-
-ex:O2 a sosa:Observation ;
-    sosa:hasResult ex:r96 ;
-    sosa:madeBySensor ex:s4 ;
-    sosa:phenomenonTime [ time:inXSDDateTime "2018-03-10T15:09:00+10:00"^^xsd:dateTime ] .
-
-ex:O3 a sosa:Observation ;
-    sosa:hasResult ex:r97 ;
-    sosa:madeBySensor ex:s4 ;
-    sosa:phenomenonTime [ time:inXSDDateTime "2018-03-10T15:10:00+10:00"^^xsd:dateTime ] .
-
-ex:O4 a sosa:Observation ;
-    sosa:hasResult ex:r98 ;
-    sosa:madeBySensor ex:s5 ;
-    sosa:phenomenonTime [ time:inXSDDateTime "2018-03-10T15:11:00+10:00"^^xsd:dateTime ] .
-
-ex:O5 a sosa:Observation ;
-    sosa:hasResult ex:r99 ;
-    sosa:madeBySensor ex:s5 ;
-    sosa:phenomenonTime [ time:inXSDDateTime "2018-03-10T15:12:00+10:00"^^xsd:dateTime ] .
-
-ex:Sample_1 a sosa:Sample ;
-    sosa:isSampleOf ex:foia .
-
-ex:op2 a sosa:Property .
-
-ex:s4 a sosa:Sensor ;
-    sosa:implements ex:p3 .
-
-ex:s5 a sosa:Sensor ;
-    sosa:implements ex:p3 .
-
-ex:p3 a sosa:Procedure .
-
+ex:EarthAtmosphere_StE a sosa:Sample ;
+  sosa:isSampleOf ex:EarthAtmosphere ;
+  sosa:isResultOf ex:AirSampling_StE ; 
+.
+ex:AirSampling_StE a sosa:Sampling ;
+  sosa:hasFeatureOfInterest ex:EarthAtmosphere ;
+  sosa:hasInputValue [ 
+    a geo:Point ;
+    geo:asWKT "POINT (4.387611 45.437772)"^^geo:WktLiteral ;
+  ] ;
+.
+ex:EarthAtmosphere a sosa:FeatureOfInterest ;
+  owl:sameAs <https://www.wikidata.org/wiki/Q3230> ;
+. 

@@ -1,30 +1,26 @@
+@prefix ex: <https://example.org/data/> .
+@prefix qk: <http://qudt.org/vocab/quantitykind/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
 
-<http://example.org/data/observation/147> a sosa:Observation ;
-    sosa:hasSimpleResult "47 km/h"^^<http://example.org/data/speed> ;
-    sosa:madeBySensor <http://example.org/data/windSensor/14> ;
-    sosa:observedProperty <http://example.org/data/location/4687#windSpeed> ;
-    sosa:resultTime "2017-04-12T12:00:00+00:00"^^xsd:dateTime ;
-    sosa:wasOriginatedBy <http://example.org/data/observation/147#spinningCupsMovement> .
-
-<http://example.org/data/observation/148> a sosa:Observation ;
-    sosa:hasSimpleResult "43 km/h"^^<http://example.org/data/speed> ;
-    sosa:madeBySensor <http://example.org/data/windSensor/14> ;
-    sosa:observedProperty <http://example.org/data/location/4687#windSpeed> ;
-    sosa:resultTime "2017-04-12T12:01:00+00:00"^^xsd:dateTime ;
-    sosa:wasOriginatedBy <http://example.org/data/observation/148#spinningCupsMovement> .
-
-<http://example.org/data/observation/147#spinningCupsMovement> a sosa:Stimulus ;
-    sosa:isProxyFor <http://example.org/data/location/4687#windSpeed> .
-
-<http://example.org/data/observation/148#spinningCupsMovement> a sosa:Stimulus ;
-    sosa:isProxyFor <http://example.org/data/location/4687#windSpeed> .
-
-<http://example.org/data/windSensor/14> a sosa:Sensor ;
-    sosa:detects <http://example.org/data/observation/147#spinningCupsMovement>,
-        <http://example.org/data/observation/148#spinningCupsMovement> ;
-    sosa:madeObservation <http://example.org/data/observation/147>,
-        <http://example.org/data/observation/148> ;
-    sosa:observes <http://example.org/data/location/4687#windSpeed> .
-
+ex:Obs234534
+  a sosa:Observation ;
+  sosa:hasFeatureOfInterest ex:apt134 ;
+  sosa:observedProperty qk:Temperature ;
+  sosa:hasResult [
+      a qudt:QuantityValue ;
+      qudt:hasUnit unit:DEG_C ;
+      qudt:value 24.9 ;
+    ] ;
+.
+unit:DEG_C 
+  a qudt:Unit ;
+.
+ex:apt134
+  a sosa:FeatureOfInterest ;
+.
+qk:Temperature
+  a sosa:Property ;
+.

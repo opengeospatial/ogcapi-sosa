@@ -1,112 +1,101 @@
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ex: <http://example.org/> .
+@prefix ex: <https://example.org/data/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qk: <http://qudt.org/vocab/quantitykind/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema1: <http://schema.org/> .
+@prefix sensor: <https://example.org/sensor/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix ssn: <http://www.w3.org/ns/ssn/> .
-@prefix time: <http://www.w3.org/2006/time#> .
-@prefix vistavital-a: <http://example.org/vistavital-a#> .
+@prefix system: <http://www.w3.org/ns/ssn/systems/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@base <https://example.org/data/TH2-PLUS/> .
 
-ex:entered-by a owl:ObjectProperty ;
-    rdfs:label "Data entered by" ;
-    rdfs:comment "This simple property is defined to be equivalent to prov:qualifiedAssociation with the value of prov:hadRole fixed to \"Entered by\"" ;
-    rdfs:subPropertyOf prov:wasAssociatedWith ;
-    owl:propertyChainAxiom ( [ a owl:ObjectProperty ;
-                rdfs:range [ a owl:Class ;
-                        rdfs:subClassOf [ a owl:Restriction ;
-                                owl:hasValue [ a prov:Role ;
-                                        rdfs:label "Entered by" ] ;
-                                owl:onProperty prov:hadRole ],
-                            prov:Association ] ;
-                rdfs:subPropertyOf prov:qualifiedAssociation ] prov:agent ) .
-
-ex:error-entered-by a owl:ObjectProperty ;
-    rdfs:label "Error entered by" ;
-    rdfs:comment "This simple property is defined to be equivalent to prov:qualifiedAssociation with the value of prov:hadRole fixed to \"Error entered by\"" ;
-    rdfs:subPropertyOf prov:wasAssociatedWith ;
-    owl:propertyChainAxiom ( [ a owl:ObjectProperty ;
-                rdfs:range [ a owl:Class ;
-                        rdfs:subClassOf [ a owl:Restriction ;
-                                owl:hasValue [ a prov:Role ;
-                                        rdfs:label "Error entered by" ] ;
-                                owl:onProperty prov:hadRole ],
-                            prov:Association ] ;
-                rdfs:subPropertyOf prov:qualifiedAssociation ] prov:agent ) .
-
-ex:vistavital-a a owl:Ontology ;
-    dcterms:created "2017-10-18" ;
-    dcterms:creator "Simon Cox" ;
-    rdfs:comment """This document shows how a vital-signs observation can be represented using SOSA. 
-Three variants are included:
-1. SOSA + schema.org
-2. SOSA + prov-o
-3. SOSA + prov-o + customized properties derived from prov-o but which make the serialization more compact 
-
-The example data comes from the Vista example developed by Rafael Richards - see <https://github.com/vistadataproject/documents/blob/master/Background/presentations/pdf/2014-Linked_Vitals-Linked_Data_Linked_FHIR.pdf> """ ;
-    rdfs:seeAlso <https://github.com/vistadataproject/documents/blob/master/Background/presentations/pdf/2014-Linked_Vitals-Linked_Data_Linked_FHIR.pdf> ;
-    owl:imports <http://www.w3.org/2006/time>,
-        <http://www.w3.org/ns/prov-o#>,
-        ssn:,
-        <https://raw.githubusercontent.com/schemaorg/schemaorg/master/data/releases/3.3/all-layers.ttl> .
-
-vistavital-a:Observation_1_ex a sosa:Observation ;
-    rdfs:label "Example BP measurement" ;
-    ex:entered-by <http://example.org/NEW-PERSON/NOTHER,NADA> ;
-    ex:error-entered-by <http://example.org/NEW-PERSON/MANAGER,SYSTEM> ;
-    schema1:status "error" ;
-    rdfs:comment "Example of how to encode a Vital Signs measurement comparable to Vista example",
-        "This version uses schema.org and prov for elements not available in SOSA, with some locally defined specializations of prov Associations to formally bind roles to simple properties" ;
-    rdfs:seeAlso <https://github.com/vistadataproject/documents/blob/master/Background/presentations/pdf/2014-Linked_Vitals-Linked_Data_Linked_FHIR.pdf> ;
-    prov:atLocation <http://example.org/HOSPITAL-LOCATION/4-SOUTH-MED> ;
-    sosa:hasFeatureOfInterest <http://example.org/patient/jones-christopher> ;
-    sosa:hasResult "150/10" ;
-    sosa:observedProperty <VA:4500634>,
-        <http://example.org/GMRV-VITAL-TYPE/BLOOD-PRESSURE> ;
-    sosa:phenomenonTime [ a time:Instant ;
-            time:inXSDDateTime "2005-09-01T13:00:00+00:00"^^xsd:dateTime ] ;
-    sosa:resultTime "2005-12-28T13:48:44+00:00"^^xsd:dateTime .
-
-vistavital-a:Observation_1_prov a sosa:Observation ;
-    rdfs:label "Example BP measurement" ;
-    schema1:status "error" ;
-    rdfs:comment "Example of how to encode a Vital Signs measurement comparable to Vista example",
-        "This version uses prov for elements not included in SOSA" ;
-    rdfs:seeAlso <https://github.com/vistadataproject/documents/blob/master/Background/presentations/pdf/2014-Linked_Vitals-Linked_Data_Linked_FHIR.pdf> ;
-    prov:atLocation <http://example.org/HOSPITAL-LOCATION/4-SOUTH-MED> ;
-    prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent <http://example.org/NEW-PERSON/MANAGER,SYSTEM> ;
-            prov:hadRole [ a prov:Role ;
-                    rdfs:label "Error entered by" ] ],
-        [ a prov:Association ;
-            prov:agent <http://example.org/NEW-PERSON/NOTHER,NADA> ;
-            prov:hadRole [ a prov:Role ;
-                    rdfs:label "Entered by" ] ] ;
-    sosa:hasFeatureOfInterest <http://example.org/patient/jones-christopher> ;
-    sosa:hasResult "150/10" ;
-    sosa:observedProperty <VA:4500634>,
-        <http://example.org/GMRV-VITAL-TYPE/BLOOD-PRESSURE> ;
-    sosa:phenomenonTime [ a time:Instant ;
-            time:inXSDDateTime "2005-09-01T13:00:00+00:00"^^xsd:dateTime ] ;
-    sosa:resultTime "2005-12-28T13:48:44+00:00"^^xsd:dateTime .
-
-vistavital-a:Observation_1_sdo a sosa:Observation ;
-    rdfs:label "Example BP measurement" ;
-    schema1:agent <http://example.org/NEW-PERSON/NOTHER,NADA> ;
-    schema1:location <http://example.org/HOSPITAL-LOCATION/4-SOUTH-MED> ;
-    schema1:participant <http://example.org/NEW-PERSON/MANAGER,SYSTEM> ;
-    schema1:status "error" ;
-    rdfs:comment "Example of how to encode a Vital Signs measurement comparable to Vista example",
-        "This version uses schema.org elements for elements not part of SOSA" ;
-    rdfs:seeAlso <https://github.com/vistadataproject/documents/blob/master/Background/presentations/pdf/2014-Linked_Vitals-Linked_Data_Linked_FHIR.pdf> ;
-    sosa:hasFeatureOfInterest <http://example.org/patient/jones-christopher> ;
-    sosa:hasResult "150/10" ;
-    sosa:observedProperty <VA:4500634>,
-        <http://example.org/GMRV-VITAL-TYPE/BLOOD-PRESSURE> ;
-    sosa:phenomenonTime [ a time:Instant ;
-            time:inXSDDateTime "2005-09-01T13:00:00+00:00"^^xsd:dateTime ] ;
-    sosa:resultTime "2005-12-28T13:48:44+00:00"^^xsd:dateTime .
-
+sensor:IBS-TH2-Plus
+  a owl:Class ;
+  rdfs:label "IBS-TH2 PLUS Temperature and Humidity Sensor System" ;
+  rdfs:subClassOf sosa:System ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:hasValue sensor:IBS-TH2-Plus-systemCapability ;
+      owl:onProperty system:hasSystemCapability ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "2"^^xsd:nonNegativeInteger ;
+      owl:onProperty sosa:hasSubSystem ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:onProperty sosa:hasSubSystem ;
+      owl:someValuesFrom sensor:IBS-TH2-Plus-H ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:onProperty sosa:hasSubSystem ;
+      owl:someValuesFrom sensor:IBS-TH2-Plus-T ;
+    ] ;
+  prov:wasDerivedFrom <https://inkbird.com/products/ibs-th2-plus> ;
+.
+sensor:IBS-TH2-Plus-systemCapability
+  a system:SystemCapability ;
+  system:hasSystemProperty [
+      a system:Frequency ;
+      xsd:maxInclusive "0.1"^^unit:HZ ;
+      xsd:minInclusive "5.556e-4"^^unit:HZ ;
+    ] ;
+.
+sensor:IBS-TH2-Plus-H
+  a owl:Class ;
+  rdfs:label "IBS-TH2 PLUS Humidity Sensor type" ;
+  rdfs:subClassOf sosa:Sensor ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:hasValue qk:RelativeHumidity ;
+      owl:onProperty sosa:observes ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:hasValue sensor:IBS-TH2-Plus-H-systemCapability ;
+      owl:onProperty system:hasSystemCapability ;
+    ] ;
+.
+sensor:IBS-TH2-Plus-T
+  a owl:Class ;
+  rdfs:label "IBS-TH2 PLUS Temperature Sensor type" ;
+  rdfs:subClassOf sosa:Sensor ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:hasValue qk:Temperature ;
+      owl:onProperty sosa:observes ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:hasValue sensor:IBS-TH2-Plus-T-systemCapability ;
+      owl:onProperty system:hasSystemCapability ;
+    ] ;
+.
+sensor:IBS-TH2-Plus-H-systemCapability
+  a system:SystemCapability ;
+  system:hasSystemProperty [
+      a system:Accuracy ;
+      rdf:value "4.5"^^unit:PERCENT_RH ;
+    ] ;
+  system:hasSystemProperty [
+      a system:MeasurementRange ;
+      xsd:maxInclusive "99.0"^^unit:PERCENT_RH ;
+      xsd:minInclusive "0.0"^^unit:PERCENT_RH ;
+    ] ;
+.
+sensor:IBS-TH2-Plus-T-systemCapability
+  a system:SystemCapability ;
+  system:hasSystemProperty [
+      a system:Accuracy ;
+      rdf:value "0.5"^^unit:DEG_C ;
+    ] ;
+  system:hasSystemProperty [
+      a system:MeasurementRange ;
+      xsd:maxInclusive "60.0"^^unit:DEG_C ;
+      xsd:minInclusive "-40.0"^^unit:DEG_C ;
+    ] ;
+.

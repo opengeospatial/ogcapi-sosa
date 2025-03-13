@@ -1,61 +1,37 @@
+@prefix ex: <https://example.org/data/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qk: <http://qudt.org/vocab/quantitykind/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sensor: <https://example.org/sensor/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix system: <http://www.w3.org/ns/ssn/systems/> .
+@base <https://example.org/data/TH2-PLUS-b/> .
 
-<http://example.org/data/DHT22/4579> a sosa:Platform ;
-    rdfs:label "DHT22 sensor #4579."@en ;
-    sosa:isHostedBy <http://example.org/data/PCBBoard2> .
-
-<http://example.org/data/DHT22/4580> a sosa:Platform ;
-    rdfs:label "DHT22 sensor #4580."@en ;
-    sosa:isHostedBy <http://example.org/data/PCBBoard3> .
-
-<http://example.org/data/Room145> a sosa:FeatureOfInterest ;
-    rdfs:label "Room #145"@en ;
-    sosa:hasSample <http://example.org/data/Room145/east>,
-        <http://example.org/data/Room145/south> .
-
-<http://example.org/data/Room245> a sosa:FeatureOfInterest ;
-    rdfs:label "Room #245"@en ;
-    sosa:hasProperty <http://example.org/data/Room245#humidity>,
-        <http://example.org/data/Room245#temperature> ;
-    sosa:hasSample <http://example.org/data/Room245/south> .
-
-<http://example.org/data/Room145/east> a sosa:FeatureOfInterest,
-        sosa:Platform,
-        sosa:Sample ;
-    rdfs:label "East wall of room #145."@en ;
-    rdfs:comment "This wall hosts PCB Board 1 with DHT22 temperature and humidity sensor #4578."@en ;
-    sosa:hosts <http://example.org/data/PCBBoard1> .
-
-<http://example.org/data/Room145/south> a sosa:FeatureOfInterest,
-        sosa:Platform,
-        sosa:Sample ;
-    rdfs:label "South wall of room #145."@en ;
-    rdfs:comment "This wall hosts PCB Board 2 with DHT22 temperature and humidity sensor #4579."@en ;
-    sosa:hosts <http://example.org/data/PCBBoard2> .
-
-<http://example.org/data/Room245/south> a sosa:FeatureOfInterest,
-        sosa:Platform,
-        sosa:Sample ;
-    rdfs:label "South wall of room #245."@en ;
-    sosa:hosts <http://example.org/data/PCBBoard3> .
-
-<http://example.org/data/PCBBoard1> a sosa:Platform ;
-    rdfs:label "PCB Board 1"@en ;
-    rdfs:comment "PCB Board 1 hosts DHT22 temperature and humidity sensor #4578 permanently."@en ;
-    sosa:hosts <http://example.org/data/DHT22/4578> .
-
-<http://example.org/data/PCBBoard2> a sosa:Platform ;
-    rdfs:label "PCB Board 2"@en ;
-    rdfs:comment "PCB Board 2 hosts DHT22 temperature and humidity sensor #4579 permanentlys."@en ;
-    sosa:hosts <http://example.org/data/DHT22/4578> .
-
-<http://example.org/data/PCBBoard3> a sosa:Platform ;
-    rdfs:label "PCB Board 3"@en ;
-    rdfs:comment "PCB Board 3 hosts DHT22 temperature and humidity sensor #4580 permanently."@en ;
-    sosa:hosts <http://example.org/data/DHT22/4578> .
-
-<http://example.org/data/DHT22/4578> a sosa:Platform ;
-    rdfs:label "DHT22 sensor #4578"@en ;
-    sosa:isHostedBy <http://example.org/data/PCBBoard1> .
-
+sensor:IBS-TH2-Plus a owl:Class ;
+  rdfs:subClassOf sosa:System ;
+  prov:wasDerivedFrom <https://inkbird.com/products/ibs-th2-plus> ;
+  rdfs:label "IBS-TH2 PLUS Temperature and Humidity Sensor System" ;
+.
+sensor:IBS-TH2-Plus-H a owl:Class ;
+  rdfs:subClassOf sosa:Sensor ;
+  rdfs:label "IBS-TH2 PLUS Humidity Sensor type" ;
+.
+sensor:IBS-TH2-Plus-T a owl:Class ;
+  rdfs:subClassOf sosa:Sensor ;
+  rdfs:label "IBS-TH2 PLUS Temperature Sensor type" ;
+.
+ex:12gth456a-23190 a sensor:IBS-TH2-Plus ; 
+  sosa:hasSubSystem ex:12gth456a-23190-H ;
+  sosa:hasSubSystem ex:12gth456a-23190-T ;
+  system:hasSystemCapability sensor:IBS-TH2-Plus-systemCapability ;
+. 
+ex:12gth456a-23190-H a sensor:IBS-TH2-Plus-H ; 
+  sosa:observes qk:RelativeHumidity ;
+  system:hasSystemCapability sensor:IBS-TH2-Plus-H-systemCapability ;
+. 
+ex:12gth456a-23190-T a sensor:IBS-TH2-Plus-T ; 
+  sosa:observes qk:Temperature ;
+  system:hasSystemCapability sensor:IBS-TH2-Plus-T-systemCapability ;
+. 

@@ -1,83 +1,144 @@
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: <https://example.org/data/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix qk: <http://qudt.org/vocab/quantitykind/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix schema: <http://schema.org/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix time: <http://www.w3.org/2006/time#>.
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix system: <http://www.w3.org/ns/ssn/systems/> .
+@prefix rdfp: <https://w3id.org/rdfp/>.
+@base <https://example.org/data/dht22/> .
 
-<http://example.org/data/DHT22/4579> a sosa:System ;
-    rdfs:label "DHT22 sensor #4579."@en ;
-    sosa:isHostedBy <http://example.org/data/PCBBoard2> .
+ex:DHT22_Procedure a sosa:Procedure ;
+  sosa:hasOutput ex:DHT22_output ;
+.
+ex:DHT22_output a rdfp:GraphDescription ;
+  rdfs:comment "The output is a RDF Graph that describes both the temperature and the humidity. It can be validated by a SHACL shapes graph."@en ;
+  rdfp:presentedBy [
+    a rdfp:GraphDescription ;
+    rdfp:validationRule ex:shacl_shapes_graph ;
+  ] ;
+.
+ex:DHT22_4578 a sosa:System ;
+  rdfs:comment "DHT22 sensor #4578 contains a humidity and a temperature sensor."@en ;
+  rdfs:seeAlso <https://www.sparkfun.com/datasheets/Sensors/Temperature/DHT22.pdf> ;
+  sosa:hasSubSystem ex:DHT22_4578_TemperatureSensor, ex:DHT22_4578_HumiditySensor ;
+  system:hasOperatingRange ex:DHT22_4578_SystemOperatingRange ;
+.
+ex:DHT22_4578_SystemOperatingRange a system:OperatingRange ;
+  rdfs:comment "The conditions in which the DHT22 system is expected to operate."@en ;
+  system:inCondition ex:NormalTemperatureCondition , ex:NormalHumidityCondition ;
+  system:hasOperatingProperty ex:DHT22_4578_SystemOperatingPowerRange ;
+.
+ex:NormalTemperatureCondition a schema:PropertyValue ;
+  rdfs:comment "A temperature range of -40 to 80 Celsius."@en ;
+  sosa:forProperty qk:Temperature ;
+  xsd:minInclusive -40.0 ;
+  xsd:maxInclusive 80.0 ;
+  qudt:unit unit:DEG_C ;
+.
+ex:NormalHumidityCondition a schema:PropertyValue ;
+  rdfs:comment "A relative humidity range of 0 to 100 %."@en ;
+  sosa:forProperty qk:RelativeHumidity ;
+  xsd:minInclusive 0.0 ;
+  xsd:maxInclusive 100.0 ;
+  qudt:unit unit:PERCENT ;
+.
+ex:DHT22_4578_SystemOperatingPowerRange a system:OperatingPowerRange , schema:PropertyValue ;
+  rdfs:comment "DC power of 3.3 to 6 volts."@en ;
+  xsd:minInclusive 3.3 ;
+  xsd:maxInclusive 6.0 ;
+  qudt:unit unit:V ;
+.
+ex:DHT22_4578_TemperatureSensor a sosa:Sensor , sosa:System ;
+  rdfs:comment "The embedded temperature sensor, a specific instance of temperature sensor."@en ;
+  system:hasSystemCapability ex:DHT22_4578_TemperatureSensorCapability ;
+  sosa:implements ex:DHT22_Procedure ;
+.
+ex:DHT22_4578_HumiditySensor a sosa:Sensor , sosa:System ;
+  rdfs:comment "The embedded humidity sensor, a specific instance of humidity sensor."@en ;
+  sosa:implements ex:DHT22_Procedure ;
+.
+ex:DHT22_4578_TemperatureSensorOperatingRange a system:OperatingRange ;
+  rdfs:comment "The conditions in which the DHT22 temperature sensor is expected to operate."@en ;
+  system:inCondition ex:NormalTemperatureCondition , ex:NormalHumidityCondition ;
+.
+ex:DHT22_4578_HumiditySensorOperatingRange a system:OperatingRange ;
+  rdfs:comment "The conditions in which the DHT22 humidity sensor is expected to operate."@en ;
+  system:inCondition ex:NormalTemperatureCondition , ex:NormalHumidityCondition ;
+.
+ex:NormalOperatingCondition a schema:PropertyValue ;
+  rdfs:comment "A temperature range of -40 to 80 Celsius."@en ;
+  sosa:forProperty qk:Temperature ;
+  xsd:minInclusive -40.0 ;
+  xsd:maxInclusive 80.0 ;
+  qudt:unit unit:DEG_C ;
+.
+ex:NormalHumidityCondition a schema:PropertyValue ;
+  rdfs:comment "A relative humidity range of 5 to 85 %."@en ;
+  sosa:forProperty qk:RelativeHumidity ;
+  xsd:minInclusive 5.0 ;
+  xsd:maxInclusive 85.0 ;
+  qudt:unit unit:PERCENT ;
+.
+ex:DHT22_4578_TemperatureSensorCapability a sosa:Property , system:SystemCapability , schema:PropertyValue ;
+  rdfs:comment "The capabilities of the temperature sensor in normal temperature and humidity conditions." ;
+  system:inCondition ex:NormalTemperatureCondition , ex:NormalHumidityCondition ;
+  system:hasSystemProperty ex:DHT22_4578_TemperatureSensorAccuracy , ex:DHT22_4578_TemperatureSensorSensitivity , ex:DHT22_4578_TemperatureSensorRepeatability , ex:DHT22_4578_TemperatureSensorFrequency ;
+.
+ex:DHT22_4578_TemperatureSensorAccuracy a system:Accuracy , schema:PropertyValue ;
+  rdfs:comment "The accuracy of the temperature sensor is +-0.5 °C in normal temperature and humidity conditions."@en ;
+  sosa:forProperty qk:Temperature ;
+  xsd:minInclusive -0.5 ;
+  xsd:maxInclusive 0.5 ;
+  qudt:unit unit:DegreeCelsius ;
+.
+ex:DHT22_4578_TemperatureSensorSensitivity a system:Sensitivity , system:Resolution , schema:PropertyValue ;
+  rdfs:comment "The sensitivity and resolution of the temperature sensor is 0.1 °C in normal temperature and humidity conditions."@en ;
+  sosa:forProperty qk:Temperature ;
+  qudt:value 0.1 ;
+  qudt:unit unit:DegreeCelsius ;
+.
+ex:DHT22_4578_TemperatureSensorRepeatability a system:Repeatability , schema:PropertyValue ;
+  rdfs:comment "The precision (= repeatability) of the temperature sensor is +-0.2 °C in normal temperature and humidity conditions."@en ;
+  sosa:forProperty qk:Temperature ;
+  xsd:minInclusive 0.2 ;
+  xsd:maxInclusive 0.2 ;
+  qudt:unit unit:DegreeCelsius ;
+.
+ex:DHT22_4578_TemperatureSensorFrequency a system:Frequency , schema:PropertyValue ;
+  rdfs:comment "The smallest possible time between one observation and the next is 2 s on average."@en ;
+  sosa:forProperty qk:Period ;
+  qudt:value 2 ;
+  qudt:unit unit:Second ;
+.
+ex:observation_1087 rdf:type sosa:Observation ;
+  sosa:observedProperty <http://qudt.org/vocab/quantitykind/Temperature> ;
+  sosa:madeBySensor ex:DHT22_4578_TemperatureSensor ;
+  sosa:usedProcedure ex:DHT22_Procedure ;
+  sosa:resultQuality ex:observation_1087_quality ;
+  sosa:hasSimpleResult "21.4"^^unit:DEG_C ;
+.
 
-<http://example.org/data/DHT22/4580> a sosa:System ;
-    rdfs:label "DHT22 sensor #4580."@en ;
-    sosa:isHostedBy <http://example.org/data/PCBBoard3> .
+# one may use some other ontology to further qualify this quality
 
-<http://example.org/data/Room145> a sosa:FeatureOfInterest ;
-    rdfs:label "Room #145"@en ;
-    sosa:hasSample <http://example.org/data/Room145/east>,
-        <http://example.org/data/Room145/south> .
+ex:observation_1087_quality 
+  ex:evaluatedBy ex:Tom ;
+  ex:confidenceValue "6"^^xsd:integer ;
+  rdfs:comment """Tom gave a confidence value of 6 out of 10 on this observation."""@en ;
+.
+# one may use some quantity ontology
 
-<http://example.org/data/Room145Deployment> a sosa:Deployment ;
-    rdfs:comment "Deployment of PCB Board 1 and 2 on the east and south wall of room #145, respectively, for the purpose of observing the temperature and humidity of room #145."@en ;
-    sosa:deployedOnPlatform <http://example.org/data/Room245/east>,
-        <http://example.org/data/Room245/south> ;
-    sosa:deployedSystem <http://example.org/data/PCBBoard1>,
-        <http://example.org/data/PCBBoard2> ;
-    sosa:forProperty <http://example.org/data/Room145#humidity>,
-        <http://example.org/data/Room145#temperature> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
 
-<http://example.org/data/Room245> a sosa:FeatureOfInterest ;
-    rdfs:label "Room #245"@en ;
-    sosa:hasProperty <http://example.org/data/Room245#humidity>,
-        <http://example.org/data/Room245#temperature> ;
-    sosa:hasSample <http://example.org/data/Room245/south> .
-
-<http://example.org/data/Room245Deployment> a sosa:Deployment ;
-    rdfs:comment "Deployment of PCB Board 3 on the south wall of room #245 for the purpose of observing the temperature and humidity of room #245."@en ;
-    sosa:deployedOnPlatform <http://example.org/data/Room245/south> ;
-    sosa:deployedSystem <http://example.org/data/PCBBoard3> ;
-    sosa:forProperty <http://example.org/data/Room245#humidity>,
-        <http://example.org/data/Room245#temperature> .
-
-<http://example.org/data/Room145/east> a sosa:FeatureOfInterest,
-        sosa:Platform,
-        sosa:Sample ;
-    rdfs:label "East wall of room #145."@en ;
-    rdfs:comment "This wall hosts PCB Board 1 with DHT22 temperature and humidity sensor #4578."@en ;
-    sosa:hosts <http://example.org/data/PCBBoard1> .
-
-<http://example.org/data/Room145/south> a sosa:FeatureOfInterest,
-        sosa:Platform,
-        sosa:Sample ;
-    rdfs:label "South wall of room #145."@en ;
-    rdfs:comment "This wall hosts PCB Board 2 with DHT22 temperature and humidity sensor #4579."@en ;
-    sosa:hosts <http://example.org/data/PCBBoard2> .
-
-<http://example.org/data/PCBBoard1> a sosa:Platform,
-        sosa:System ;
-    rdfs:label "PCB Board 1"@en ;
-    rdfs:comment "PCB Board 1 hosts DHT22 temperature and humidity sensor #4578 permanently, one can say it has it as one of its subsystems."@en ;
-    sosa:hasSubSystem <http://example.org/data/DHT22/4578> ;
-    sosa:hosts <http://example.org/data/DHT22/4578> .
-
-<http://example.org/data/PCBBoard2> a sosa:Platform,
-        sosa:System ;
-    rdfs:label "PCB Board 2"@en ;
-    rdfs:comment "PCB Board 2 hosts DHT22 temperature and humidity sensor #4579 permanently, one can say it has it as one of its subsystems."@en ;
-    sosa:hasSubSystem <http://example.org/data/DHT22/4578> ;
-    sosa:hosts <http://example.org/data/DHT22/4578> .
-
-<http://example.org/data/PCBBoard3> a sosa:Platform,
-        sosa:System ;
-    rdfs:label "PCB Board 3"@en ;
-    rdfs:comment "PCB Board 3 hosts DHT22 temperature and humidity sensor #4580 permanently, one can say it has it as one of its subsystems."@en ;
-    sosa:hasSubSystem <http://example.org/data/DHT22/4578> ;
-    sosa:hosts <http://example.org/data/DHT22/4578> .
-
-<http://example.org/data/Room245/south> a sosa:FeatureOfInterest,
-        sosa:Platform,
-        sosa:Sample ;
-    rdfs:label "South wall of room #245."@en ;
-    sosa:hosts <http://example.org/data/PCBBoard3> .
-
-<http://example.org/data/DHT22/4578> a sosa:System ;
-    rdfs:label "DHT22 sensor #4578"@en ;
-    sosa:isHostedBy <http://example.org/data/PCBBoard1> .
-
+ex:observation_1087_quality rdf:type qudt:Quantity ;
+  qudt:quantityValue [
+    rdf:type qudt:QuantityValue ;
+    qudt:numericValue "98.4"^^xsd:double ;
+    qudt:hasUnit unit:PERCENT ] .

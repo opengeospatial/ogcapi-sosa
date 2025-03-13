@@ -1,63 +1,24 @@
-@prefix ex: <http://www.w3.org/ns/sosa/examples#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ex: <https://example.org/data/> .
+@prefix qk: <http://qudt.org/vocab/quantitykind/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix sosa1: <http://www.w3.org/ns/sosa#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-sosa:examples a owl:Ontology ;
-    owl:imports <http://www.w3.org/ns/sosa> .
-
-ex:TempObservation1 a sosa1:Observation ;
-    rdfs:label "Temperature observation 1."^^xsd:string ;
-    rdfs:comment "A temperature observation created using the SamsungGalaxyS4_23."^^xsd:string,
-        "Not yet linked through to the platform or sensor. ---> (kj). Yes, this will be 'linked' via SPARQL queries and possible via future axioms outside of SOSA-core. There is no need to habve explicit relations between anything and everything. Also, keep in mind that this is all under the OWA."^^xsd:string ;
-    sosa1:hasFeatureOfInterest ex:4830EH_UCSB ;
-    sosa1:hasResult ex:TempObservationResult1 ;
-    sosa1:madeBySensor ex:TempSensorS4_23 ;
-    sosa1:resultTime "2016-08-10T08:30:00"^^xsd:dateTime ;
-    sosa1:usedProcedure ex:RoomTemperature .
-
-ex:TempObservation2 a sosa1:Observation ;
-    rdfs:label "Temperature observation 2. We usue this here to demonstrate that all room temperature observations use the same procedure."^^xsd:string ;
-    rdfs:comment "A temperature observation created using the SamsungGalaxyS4_23."^^xsd:string ;
-    sosa1:hasFeatureOfInterest ex:4830EH_UCSB ;
-    sosa1:hasResult [ rdf:value 23.8 ] ;
-    sosa1:madeBySensor ex:TempSensorS4_23 ;
-    sosa1:resultTime "2016-08-10T09:33:00"^^xsd:dateTime ;
-    sosa1:usedProcedure ex:RoomTemperature .
-
-ex:TempObservationResult2 a sosa1:Result ;
-    rdfs:label "Result of temperature observation 2."^^xsd:string ;
-    rdfs:comment "The observed temperature for observation 2."^^xsd:string ;
-    sosa1:hasValue 2.43e+01 .
-
-ex:SamsungGalaxyS4_23 a sosa1:Platform ;
-    rdfs:label "Samsung Galaxy S4"^^xsd:string ;
-    rdfs:comment "A Samsung Galaxy S4 smartphone that carries multiple sensors. The S4 remains popular as it contains more sensors than later editions. For example, it can sense temperature."^^xsd:string ;
-    sosa1:hosts ex:TempSensorS4_23 .
-
-ex:TempObservationResult1 a sosa1:Result ;
-    rdfs:label "Result of temperature observation 1."^^xsd:string ;
-    rdfs:comment "The observed temperature for observation 1."^^xsd:string ;
-    sosa1:hasValue 2.38e+01 .
-
-ex:UCSB a sosa1:FeatureOfInterest ;
-    rdfs:label "University of California, Santa Barbara"^^xsd:string ;
-    rdfs:comment "In our example we would like to study the average room temperature of offices at UCSB. Hence, UCSB is the feature of interest. We will only observe the temperature at some offices that will act as samples."^^xsd:string ;
-    sosa1:hasSample ex:4830EH_UCSB .
-
-ex:RoomTemperature a sosa1:Procedure ;
-    rdfs:comment "How is this linked to platform & sensor?--> It s not explicitly linked (see also the comment for ex:TempObservation1) One could add a back-pointing relation to the observation here but in reality one would not do so as this would crate millions of triples as part of each procedure, thereby cluttering a procedure repository. This is/can be handled via UNION queries in SPARQL pr simply an inverse property (path) in your query."^^xsd:string,
-        "This is a procedure for measuring room temperatures. To ensure a meaningful interpretation of results and interoperability, all room temperature observations need to follow the same procedure. (1) The sensor should be put at least 1m above ground. (2) The sensor should be shielded from direct sun light and circulating air, e.g., via an open window. Other heat sources such as computers should be avoided as well. (3) The sensor should not be moved during observations. (4) Room temperature observations are only comparable if they were taken during comparable outside conditions and with closed windows and doors. (5)...."^^xsd:string .
-
-ex:4830EH_UCSB a sosa1:Sample ;
-    rdfs:label "4830 Ellison Hall"^^xsd:string ;
-    rdfs:comment "Instead of measuring temperature at every single office, we select room 4830 Ellison Hall, UCSB as a sample and thereby assume that the temperature observed there is a good proxy for the temperatures in other offices."^^xsd:string ;
-    sosa1:isSampleOf ex:UCSB .
-
-ex:TempSensorS4_23 a sosa1:Sensor ;
-    rdfs:label "The temperature sensor mounted on the S4 platform with the ID 23."^^xsd:string ;
-    sosa1:hostedBy ex:SamsungGalaxyS4_23 .
-
+ex:Obs234534
+  a sosa:Observation ;
+  sosa:hasFeatureOfInterest ex:apt134 ;
+  sosa:observedProperty qk:Temperature ;
+  sosa:hasSimpleResult "24.9"^^unit:DEG_C ;
+.
+unit:DEG_C 
+  a rdfs:Datatype ;
+.
+ex:apt134
+  a sosa:FeatureOfInterest ;
+.
+qk:Temperature
+  a sosa:Property ;
+.

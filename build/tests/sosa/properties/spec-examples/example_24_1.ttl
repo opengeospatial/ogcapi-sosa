@@ -1,26 +1,34 @@
-@prefix geo1: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix relex: <https://example.org/data/sample-relations#> .
+@prefix sampling: <http://www.w3.org/ns/sosa/sampling/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@base <https://example.org/data/sample-relations> .
 
-<http://example.org/data/iceCore/12#observation> a sosa:Observation ;
-    sosa:hasSimpleResult 240 ;
-    sosa:observedProperty <http://example.org/data/iceCore/12#CO2> .
-
-<http://example.org/data/WellDrilling/4578> a sosa:Sampling ;
-    geo1:lat -73.35 ;
-    geo1:long 9.32 ;
-    sosa:hasFeatureOfInterest <http://dbpedia.org/resource/Antarctic_ice_sheet> ;
-    sosa:hasResult <http://example.org/data/iceCore/12> ;
-    sosa:madeBySampler <http://example.org/data/thermalDrill/2> ;
-    sosa:resultTime "2017-04-03T11:12:00+00:00"^^xsd:dateTime .
-
-<http://dbpedia.org/resource/Antarctic_ice_sheet> a sosa:FeatureOfInterest ;
-    sosa:hasSample <http://example.org/data/iceCore/12>,
-        <http://example.org/data/iceCore/13>,
-        <http://example.org/data/iceCore/14> .
-
-<http://example.org/data/iceCore/12> a sosa:Sample ;
-    sosa:isResultOf <http://example.org/data/WellDrilling/4578> ;
-    sosa:isSampleOf <http://dbpedia.org/resource/Antarctic_ice_sheet> ;
-    sosa:madeBySampler <http://example.org/data/thermalDrill/2> .
-
+<https://example.org/data/sample-relations>
+  rdf:type owl:Ontology ;
+  owl:imports sosa:sampling ;
+.
+relex:CSRWA25569
+  rdf:type sosa:Sample ;
+  rdfs:label "Specimen CSRWA25569" ;
+.
+relex:CSRWA25569-mount7
+  rdf:type sosa:Sample ;
+  rdfs:label "CSRWA25569 mount 7" ;
+  sosa:isSampleOf relex:CSRWA25569 ;
+.
+relex:CSRWA25569-mount7-spot1
+  rdf:type sosa:Sample ;
+  rdfs:label "spot 1" ;
+  sampling:hasSampleRelationship [
+      rdf:type sampling:SampleRelationship ;
+      sampling:natureOfRelationship [
+          rdf:type sampling:RelationshipNature ;
+          rdfs:comment "probe spot on polished mount" ;
+        ] ;
+      sampling:relatedSample relex:CSRWA25569-mount7 ;
+    ] ;
+.

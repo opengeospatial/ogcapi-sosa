@@ -2,7 +2,7 @@
   "title": "Validation report for ogc.sosa.features.observationCollection - SOSA ObservationCollection Feature",
   "bblockName": "SOSA ObservationCollection Feature",
   "bblockId": "ogc.sosa.features.observationCollection",
-  "generated": "2024-11-04T16:07:15.814102+00:00",
+  "generated": "2025-03-13T14:48:10.003481+00:00",
   "result": false,
   "items": [
     {
@@ -74,9 +74,9 @@
             {
               "op": "shacl-report",
               "shaclFile": "_sources/properties/observation/rules.shacl",
-              "graph": "@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <file:///github/workspace/pop1999> ;\n            sh:resultMessage \"Less than 1 values on <file:///github/workspace/pop1999>->( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty )\" ;\n            sh:resultPath _:n5a0fe0d432cd42e4999defbc8b412ab4b37 ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape _:n5a0fe0d432cd42e4999defbc8b412ab4b29 ],\n        [ a sh:ValidationResult ;\n            sh:focusNode <file:///github/workspace/c1> ;\n            sh:resultMessage \"Less than 1 values on <file:///github/workspace/c1>->( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty )\" ;\n            sh:resultPath _:n5a0fe0d432cd42e4999defbc8b412ab4b37 ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape _:n5a0fe0d432cd42e4999defbc8b412ab4b29 ],\n        [ a sh:ValidationResult ;\n            sh:focusNode <file:///github/workspace/c1> ;\n            sh:resultMessage \"Less than 1 values on <file:///github/workspace/c1>->[ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]\" ;\n            sh:resultPath [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:maxCount 1 ;\n                    sh:minCount 1 ;\n                    sh:path [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ] ],\n        [ a sh:ValidationResult ;\n            sh:focusNode <file:///github/workspace/c1> ;\n            sh:resultMessage \"Less than 1 values on <file:///github/workspace/c1>->( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] )\" ;\n            sh:resultPath ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath ( [ ] [ ] ) ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] ) ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:maxCount 1 ;\n                    sh:minCount 1 ;\n                    sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath [ ] ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] ) ] ] .\n\n_:N0fb3c8ee57774111b9d970ca0218eeee rdf:first [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath [ ] ] ] ] ;\n    rdf:rest ( sosa:observedProperty ) .\n\n_:N35cc808fe7454edf8f900e01ec772fd5 sh:alternativePath ( [ ] [ ] ) .\n\n_:N6ba6a0b347aa43a2a8b43b1c25d13430 rdf:first sosa:observedProperty ;\n    rdf:rest () .\n\n_:N9fc265b7f31642d287dbb5b1c682b789 sh:oneOrMorePath _:N35cc808fe7454edf8f900e01ec772fd5 .\n\n_:Nf4fccdf67325434fb02b4772ea7fff85 sh:zeroOrMorePath _:N9fc265b7f31642d287dbb5b1c682b789 .\n\n_:n5a0fe0d432cd42e4999defbc8b412ab4b29 sh:maxCount 1 ;\n    sh:minCount 1 ;\n    sh:path _:N0fb3c8ee57774111b9d970ca0218eeee .\n\n_:n5a0fe0d432cd42e4999defbc8b412ab4b37 rdf:first _:Nf4fccdf67325434fb02b4772ea7fff85 ;\n    rdf:rest _:N6ba6a0b347aa43a2a8b43b1c25d13430 .\n\n",
+              "graph": "@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <file:///github/workspace/c1> ;\n            sh:resultMessage \"Exactly one feature of interest (sosa:hasFeatureOfInterest/sosa:isFeatureOfInterestOf) is required\" ;\n            sh:resultPath ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath ( [ ] [ ] ) ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] ) ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:maxCount 1 ;\n                    sh:message \"Exactly one feature of interest (sosa:hasFeatureOfInterest/sosa:isFeatureOfInterestOf) is required\" ;\n                    sh:minCount 1 ;\n                    sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath [ ] ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] ) ] ],\n        [ a sh:ValidationResult ;\n            sh:focusNode <file:///github/workspace/c1> ;\n            sh:resultMessage \"Exactly one of sosa:hasResult or sosa:hasSimpleResult is required per observation\" ;\n            sh:resultPath [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:maxCount 1 ;\n                    sh:message \"Exactly one of sosa:hasResult or sosa:hasSimpleResult is required per observation\" ;\n                    sh:minCount 1 ;\n                    sh:path [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ] ] .\n\n",
               "isError": true,
-              "message": "Validation result for _sources/properties/observation/rules.shacl:\n  Validation Report\n  Conforms: False\n  Results (4):\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ]\n  \tFocus Node: <file:///github/workspace/c1>\n  \tResult Path: [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]\n  \tMessage: Less than 1 values on <file:///github/workspace/c1>->[ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] ) ]\n  \tFocus Node: <file:///github/workspace/c1>\n  \tResult Path: ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] )\n  \tMessage: Less than 1 values on <file:///github/workspace/c1>->( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] )\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty ) ]\n  \tFocus Node: <file:///github/workspace/c1>\n  \tResult Path: ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty )\n  \tMessage: Less than 1 values on <file:///github/workspace/c1>->( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty )\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty ) ]\n  \tFocus Node: <file:///github/workspace/pop1999>\n  \tResult Path: ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty )\n  \tMessage: Less than 1 values on <file:///github/workspace/pop1999>->( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty )\n  "
+              "message": "Validation result for _sources/properties/observation/rules.shacl:\n  Validation Report\n  Conforms: False\n  Results (2):\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:message Literal(\"Exactly one of sosa:hasResult or sosa:hasSimpleResult is required per observation\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ]\n  \tFocus Node: <file:///github/workspace/c1>\n  \tResult Path: [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]\n  \tMessage: Exactly one of sosa:hasResult or sosa:hasSimpleResult is required per observation\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:message Literal(\"Exactly one feature of interest (sosa:hasFeatureOfInterest/sosa:isFeatureOfInterestOf) is required\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath <http://recursion.too.deep> ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest <http://recursion.too.deep> ) ] ) ]\n  \tFocus Node: <file:///github/workspace/c1>\n  \tResult Path: ( [ sh:zeroOrMorePath [ sh:oneOrMorePath <http://recursion.too.deep> ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest <http://recursion.too.deep> ) ] )\n  \tMessage: Exactly one feature of interest (sosa:hasFeatureOfInterest/sosa:isFeatureOfInterestOf) is required\n  "
             },
             {
               "shaclFile": "_sources/properties/observation/rules.shacl",
@@ -87,10 +87,7 @@
                     "<file:///github/workspace/pop1999>"
                   ]
                 },
-                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
+                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
                   "nodes": [
                     "<file:///github/workspace/c1>",
                     "<file:///github/workspace/pop1999>"
@@ -101,21 +98,24 @@
                     "<file:///github/workspace/pop1999>/sosa:hasSimpleResult"
                   ]
                 },
-                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
-                  "nodes": [
-                    "<file:///github/workspace/c1>",
-                    "<file:///github/workspace/pop1999>"
-                  ]
-                },
                 "<https://www.ogc.org/rules/sosa/#testObservedProperty>": {
                   "nodes": [
                     "<file:///github/workspace/c1>",
                     "<file:///github/workspace/pop1999>"
                   ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
+                  "nodes": [
+                    "<file:///github/workspace/c1>",
+                    "<file:///github/workspace/pop1999>"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
+                  "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: <file:///github/workspace/c1>,<file:///github/workspace/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <file:///github/workspace/c1>,<file:///github/workspace/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <file:///github/workspace/pop1999>/sosa:hasSimpleResult\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <file:///github/workspace/c1>,<file:///github/workspace/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: <file:///github/workspace/c1>,<file:///github/workspace/pop1999>\n"
+              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: <file:///github/workspace/c1>,<file:///github/workspace/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <file:///github/workspace/c1>,<file:///github/workspace/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <file:///github/workspace/pop1999>/sosa:hasSimpleResult\n - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: <file:///github/workspace/c1>,<file:///github/workspace/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <file:///github/workspace/c1>,<file:///github/workspace/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n"
             }
           ]
         },
@@ -189,28 +189,25 @@
             {
               "op": "shacl-report",
               "shaclFile": "_sources/properties/observation/rules.shacl",
-              "graph": "@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <file:///github/workspace/c1> ;\n            sh:resultMessage \"Less than 1 values on <file:///github/workspace/c1>->[ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]\" ;\n            sh:resultPath [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:maxCount 1 ;\n                    sh:minCount 1 ;\n                    sh:path [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ] ],\n        [ a sh:ValidationResult ;\n            sh:focusNode <file:///github/workspace/c1> ;\n            sh:resultMessage \"Less than 1 values on <file:///github/workspace/c1>->( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] )\" ;\n            sh:resultPath ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath ( [ ] [ ] ) ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] ) ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:maxCount 1 ;\n                    sh:minCount 1 ;\n                    sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath [ ] ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] ) ] ] .\n\n",
+              "graph": "@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <file:///github/workspace/c1> ;\n            sh:resultMessage \"Exactly one feature of interest (sosa:hasFeatureOfInterest/sosa:isFeatureOfInterestOf) is required\" ;\n            sh:resultPath ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath ( [ ] [ ] ) ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] ) ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:maxCount 1 ;\n                    sh:message \"Exactly one feature of interest (sosa:hasFeatureOfInterest/sosa:isFeatureOfInterestOf) is required\" ;\n                    sh:minCount 1 ;\n                    sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath [ ] ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] ) ] ],\n        [ a sh:ValidationResult ;\n            sh:focusNode <file:///github/workspace/c1> ;\n            sh:resultMessage \"Exactly one of sosa:hasResult or sosa:hasSimpleResult is required per observation\" ;\n            sh:resultPath [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:maxCount 1 ;\n                    sh:message \"Exactly one of sosa:hasResult or sosa:hasSimpleResult is required per observation\" ;\n                    sh:minCount 1 ;\n                    sh:path [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ] ] .\n\n",
               "isError": true,
-              "message": "Validation result for _sources/properties/observation/rules.shacl:\n  Validation Report\n  Conforms: False\n  Results (2):\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ]\n  \tFocus Node: <file:///github/workspace/c1>\n  \tResult Path: [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]\n  \tMessage: Less than 1 values on <file:///github/workspace/c1>->[ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] ) ]\n  \tFocus Node: <file:///github/workspace/c1>\n  \tResult Path: ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] )\n  \tMessage: Less than 1 values on <file:///github/workspace/c1>->( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] )\n  "
+              "message": "Validation result for _sources/properties/observation/rules.shacl:\n  Validation Report\n  Conforms: False\n  Results (2):\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:message Literal(\"Exactly one of sosa:hasResult or sosa:hasSimpleResult is required per observation\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ]\n  \tFocus Node: <file:///github/workspace/c1>\n  \tResult Path: [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]\n  \tMessage: Exactly one of sosa:hasResult or sosa:hasSimpleResult is required per observation\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:message Literal(\"Exactly one feature of interest (sosa:hasFeatureOfInterest/sosa:isFeatureOfInterestOf) is required\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath <http://recursion.too.deep> ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest <http://recursion.too.deep> ) ] ) ]\n  \tFocus Node: <file:///github/workspace/c1>\n  \tResult Path: ( [ sh:zeroOrMorePath [ sh:oneOrMorePath <http://recursion.too.deep> ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest <http://recursion.too.deep> ) ] )\n  \tMessage: Exactly one feature of interest (sosa:hasFeatureOfInterest/sosa:isFeatureOfInterestOf) is required\n  "
             },
             {
               "shaclFile": "_sources/properties/observation/rules.shacl",
               "focusNodes": {
                 "<https://www.ogc.org/rules/sosa/#testResult>": {
                   "nodes": [
-                    "<file:///github/workspace/pop1999>",
+                    "<file:///github/workspace/something>",
                     "<file:///github/workspace/c1>",
-                    "<file:///github/workspace/something>"
+                    "<file:///github/workspace/pop1999>"
                   ]
                 },
-                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
+                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
                   "nodes": [
-                    "<file:///github/workspace/pop1999>",
+                    "<file:///github/workspace/something>",
                     "<file:///github/workspace/c1>",
-                    "<file:///github/workspace/something>"
+                    "<file:///github/workspace/pop1999>"
                   ]
                 },
                 "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
@@ -218,23 +215,26 @@
                     "<file:///github/workspace/pop1999>/sosa:hasSimpleResult"
                   ]
                 },
-                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
-                  "nodes": [
-                    "<file:///github/workspace/pop1999>",
-                    "<file:///github/workspace/c1>",
-                    "<file:///github/workspace/something>"
-                  ]
-                },
                 "<https://www.ogc.org/rules/sosa/#testObservedProperty>": {
                   "nodes": [
-                    "<file:///github/workspace/pop1999>",
+                    "<file:///github/workspace/something>",
                     "<file:///github/workspace/c1>",
-                    "<file:///github/workspace/something>"
+                    "<file:///github/workspace/pop1999>"
                   ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
+                  "nodes": [
+                    "<file:///github/workspace/something>",
+                    "<file:///github/workspace/c1>",
+                    "<file:///github/workspace/pop1999>"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
+                  "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: <file:///github/workspace/pop1999>,<file:///github/workspace/c1>,<file:///github/workspace/something>\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <file:///github/workspace/pop1999>,<file:///github/workspace/c1>,<file:///github/workspace/something>\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <file:///github/workspace/pop1999>/sosa:hasSimpleResult\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <file:///github/workspace/pop1999>,<file:///github/workspace/c1>,<file:///github/workspace/something>\n - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: <file:///github/workspace/pop1999>,<file:///github/workspace/c1>,<file:///github/workspace/something>\n"
+              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: <file:///github/workspace/something>,<file:///github/workspace/c1>,<file:///github/workspace/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <file:///github/workspace/something>,<file:///github/workspace/c1>,<file:///github/workspace/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <file:///github/workspace/pop1999>/sosa:hasSimpleResult\n - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: <file:///github/workspace/something>,<file:///github/workspace/c1>,<file:///github/workspace/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <file:///github/workspace/something>,<file:///github/workspace/c1>,<file:///github/workspace/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n"
             }
           ]
         },
@@ -258,7 +258,7 @@
         "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/features/observationCollection/example_1_1.json",
         "exampleIndex": 1,
         "snippetIndex": 1,
-        "language": "json"
+        "language": "application/json"
       },
       "result": false,
       "sections": [
@@ -310,28 +310,25 @@
             {
               "op": "shacl-report",
               "shaclFile": "_sources/properties/observation/rules.shacl",
-              "graph": "@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <http://www.example.com/sosa/c1> ;\n            sh:resultMessage \"Less than 1 values on <http://www.example.com/sosa/c1>->( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] )\" ;\n            sh:resultPath ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath ( [ ] [ ] ) ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] ) ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:maxCount 1 ;\n                    sh:minCount 1 ;\n                    sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath [ ] ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] ) ] ],\n        [ a sh:ValidationResult ;\n            sh:focusNode <http://www.example.com/sosa/c1> ;\n            sh:resultMessage \"Less than 1 values on <http://www.example.com/sosa/c1>->[ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]\" ;\n            sh:resultPath [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:maxCount 1 ;\n                    sh:minCount 1 ;\n                    sh:path [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ] ],\n        [ a sh:ValidationResult ;\n            sh:focusNode <http://www.example.com/sosa/c1> ;\n            sh:resultMessage \"Less than 1 values on <http://www.example.com/sosa/c1>->( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty )\" ;\n            sh:resultPath ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath ( [ ] [ ] ) ] ] ] sosa:observedProperty ) ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:maxCount 1 ;\n                    sh:minCount 1 ;\n                    sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath [ ] ] ] ] sosa:observedProperty ) ] ] .\n\n",
+              "graph": "@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <http://www.example.com/sosa/c1> ;\n            sh:resultMessage \"Exactly one feature of interest (sosa:hasFeatureOfInterest/sosa:isFeatureOfInterestOf) is required\" ;\n            sh:resultPath ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath ( [ ] [ ] ) ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] ) ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:maxCount 1 ;\n                    sh:message \"Exactly one feature of interest (sosa:hasFeatureOfInterest/sosa:isFeatureOfInterestOf) is required\" ;\n                    sh:minCount 1 ;\n                    sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath [ ] ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] ) ] ],\n        [ a sh:ValidationResult ;\n            sh:focusNode <http://www.example.com/sosa/c1> ;\n            sh:resultMessage \"Exactly one of sosa:hasResult or sosa:hasSimpleResult is required per observation\" ;\n            sh:resultPath [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:maxCount 1 ;\n                    sh:message \"Exactly one of sosa:hasResult or sosa:hasSimpleResult is required per observation\" ;\n                    sh:minCount 1 ;\n                    sh:path [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ] ] .\n\n",
               "isError": true,
-              "message": "Validation result for _sources/properties/observation/rules.shacl:\n  Validation Report\n  Conforms: False\n  Results (3):\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ]\n  \tFocus Node: <http://www.example.com/sosa/c1>\n  \tResult Path: [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]\n  \tMessage: Less than 1 values on <http://www.example.com/sosa/c1>->[ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] ) ]\n  \tFocus Node: <http://www.example.com/sosa/c1>\n  \tResult Path: ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] )\n  \tMessage: Less than 1 values on <http://www.example.com/sosa/c1>->( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath sosa:isFeatureOfInterestOf ] ) ] )\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty ) ]\n  \tFocus Node: <http://www.example.com/sosa/c1>\n  \tResult Path: ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty )\n  \tMessage: Less than 1 values on <http://www.example.com/sosa/c1>->( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty )\n  "
+              "message": "Validation result for _sources/properties/observation/rules.shacl:\n  Validation Report\n  Conforms: False\n  Results (2):\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:message Literal(\"Exactly one of sosa:hasResult or sosa:hasSimpleResult is required per observation\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ]\n  \tFocus Node: <http://www.example.com/sosa/c1>\n  \tResult Path: [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ]\n  \tMessage: Exactly one of sosa:hasResult or sosa:hasSimpleResult is required per observation\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:message Literal(\"Exactly one feature of interest (sosa:hasFeatureOfInterest/sosa:isFeatureOfInterestOf) is required\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath <http://recursion.too.deep> ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest <http://recursion.too.deep> ) ] ) ]\n  \tFocus Node: <http://www.example.com/sosa/c1>\n  \tResult Path: ( [ sh:zeroOrMorePath [ sh:oneOrMorePath <http://recursion.too.deep> ] ] [ sh:alternativePath ( sosa:hasFeatureOfInterest <http://recursion.too.deep> ) ] )\n  \tMessage: Exactly one feature of interest (sosa:hasFeatureOfInterest/sosa:isFeatureOfInterestOf) is required\n  "
             },
             {
               "shaclFile": "_sources/properties/observation/rules.shacl",
               "focusNodes": {
                 "<https://www.ogc.org/rules/sosa/#testResult>": {
                   "nodes": [
+                    "<http://www.example.com/sosa/c1>",
                     "<http://www.example.com/sosa/something>",
-                    "<http://www.example.com/sosa/pop1999>",
-                    "<http://www.example.com/sosa/c1>"
+                    "<http://www.example.com/sosa/pop1999>"
                   ]
                 },
-                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
+                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
                   "nodes": [
+                    "<http://www.example.com/sosa/c1>",
                     "<http://www.example.com/sosa/something>",
-                    "<http://www.example.com/sosa/pop1999>",
-                    "<http://www.example.com/sosa/c1>"
+                    "<http://www.example.com/sosa/pop1999>"
                   ]
                 },
                 "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
@@ -339,23 +336,26 @@
                     "<http://www.example.com/sosa/pop1999>/sosa:hasSimpleResult"
                   ]
                 },
-                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
-                  "nodes": [
-                    "<http://www.example.com/sosa/something>",
-                    "<http://www.example.com/sosa/pop1999>",
-                    "<http://www.example.com/sosa/c1>"
-                  ]
-                },
                 "<https://www.ogc.org/rules/sosa/#testObservedProperty>": {
                   "nodes": [
+                    "<http://www.example.com/sosa/c1>",
                     "<http://www.example.com/sosa/something>",
-                    "<http://www.example.com/sosa/pop1999>",
-                    "<http://www.example.com/sosa/c1>"
+                    "<http://www.example.com/sosa/pop1999>"
                   ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
+                  "nodes": [
+                    "<http://www.example.com/sosa/c1>",
+                    "<http://www.example.com/sosa/something>",
+                    "<http://www.example.com/sosa/pop1999>"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
+                  "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: <http://www.example.com/sosa/something>,<http://www.example.com/sosa/pop1999>,<http://www.example.com/sosa/c1>\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <http://www.example.com/sosa/something>,<http://www.example.com/sosa/pop1999>,<http://www.example.com/sosa/c1>\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <http://www.example.com/sosa/pop1999>/sosa:hasSimpleResult\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <http://www.example.com/sosa/something>,<http://www.example.com/sosa/pop1999>,<http://www.example.com/sosa/c1>\n - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: <http://www.example.com/sosa/something>,<http://www.example.com/sosa/pop1999>,<http://www.example.com/sosa/c1>\n"
+              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: <http://www.example.com/sosa/c1>,<http://www.example.com/sosa/something>,<http://www.example.com/sosa/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <http://www.example.com/sosa/c1>,<http://www.example.com/sosa/something>,<http://www.example.com/sosa/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <http://www.example.com/sosa/pop1999>/sosa:hasSimpleResult\n - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: <http://www.example.com/sosa/c1>,<http://www.example.com/sosa/something>,<http://www.example.com/sosa/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <http://www.example.com/sosa/c1>,<http://www.example.com/sosa/something>,<http://www.example.com/sosa/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n"
             }
           ]
         },
@@ -379,7 +379,7 @@
         "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/features/observationCollection/example_1_2.ttl",
         "exampleIndex": 1,
         "snippetIndex": 2,
-        "language": "ttl"
+        "language": "text/turtle"
       },
       "result": true,
       "sections": [
@@ -417,40 +417,40 @@
               "focusNodes": {
                 "<https://www.ogc.org/rules/sosa/#testResult>": {
                   "nodes": [
-                    "eg:pop2000",
-                    "eg:pop1999"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
-                  "nodes": [
-                    "eg:pop2000",
-                    "eg:pop1999"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
-                  "nodes": [
-                    "eg:pop1999/sosa:hasSimpleResult",
-                    "eg:pop2000/sosa:hasSimpleResult"
+                    "eg:pop1999",
+                    "eg:pop2000"
                   ]
                 },
                 "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
                   "nodes": [
-                    "eg:pop2000",
-                    "eg:pop1999"
+                    "eg:pop1999",
+                    "eg:pop2000"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
+                  "nodes": [
+                    "eg:pop2000/sosa:hasSimpleResult",
+                    "eg:pop1999/sosa:hasSimpleResult"
                   ]
                 },
                 "<https://www.ogc.org/rules/sosa/#testObservedProperty>": {
                   "nodes": [
-                    "eg:pop2000",
-                    "eg:pop1999"
+                    "eg:pop1999",
+                    "eg:pop2000"
                   ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
+                  "nodes": [
+                    "eg:pop1999",
+                    "eg:pop2000"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
+                  "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: eg:pop2000,eg:pop1999\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: eg:pop2000,eg:pop1999\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: eg:pop1999/sosa:hasSimpleResult,eg:pop2000/sosa:hasSimpleResult\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: eg:pop2000,eg:pop1999\n - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: eg:pop2000,eg:pop1999\n"
+              "message": "Focus nodes for _sources/properties/observation/rules.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: eg:pop1999,eg:pop2000\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: eg:pop1999,eg:pop2000\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: eg:pop2000/sosa:hasSimpleResult,eg:pop1999/sosa:hasSimpleResult\n - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: eg:pop1999,eg:pop2000\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: eg:pop1999,eg:pop2000\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n"
             }
           ]
         }

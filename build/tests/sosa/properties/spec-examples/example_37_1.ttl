@@ -1,26 +1,30 @@
-@prefix eg: <http://example.org/my-feature/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ex: <https://example.org/data/> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix qk: <http://qudt.org/vocab/quantitykind/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@base <https://example.org/data/tree/> .
 
-<file:///C:/dev/W3C/sdw-sosa-ssn/ssn/examples/01-observation-collection.ttl> a owl:Ontology ;
-    owl:imports <http://www.w3.org/ns/sosa-collections/> .
+# rangefinder #30 is a laser range finder sensor that was used 
+# to observe the height of tree #124 and #125
 
-eg:HomoCollection_1 a sosa:ObservationCollection ;
-    rdfs:label "Homogeneous Observation Collection #1" .
-
-eg:c1 a sosa:ObservationCollection ;
-    sosa:hasMember eg:a1 ;
-    sosa:observedProperty eg:p1 ;
-    sosa:phenomenonTime "2022-05-01T22:33:40+00:00"^^xsd:dateTime ;
-    sosa:resultTime "2022-05-01T22:33:44+00:00"^^xsd:dateTime .
-
-eg:a1 a sosa:Observation ;
-    sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
-    sosa:hasSimpleResult 33 .
-
-eg:p1 a skos:Concept ;
-    skos:prefLabel "Some Observable Property" .
-
+ex:rangefinder_30 a sosa:Sensor ;
+  rdfs:label "rangefinder #30"@en ;
+  rdfs:comment "rangefinder #30 is a laser range finder sensor."@en ;
+.
+ex:observation_1087 a sosa:Observation ;
+  rdfs:label "observation #1087"@en ;
+  sosa:hasFeatureOfInterest ex:tree_124 ;
+  sosa:observedProperty qk:Height ;
+  sosa:madeBySensor ex:rangefinder_30 ;
+  sosa:hasResult [ 
+    qudt:hasUnit unit:M ; 
+    qudt:numericValue "15.3"^^xsd:double ] ;
+.
+ex:tree_124 a sosa:FeatureOfInterest ;
+  rdfs:label "tree #124"@en ;
+  sosa:hasProperty qk:Height ;
+.

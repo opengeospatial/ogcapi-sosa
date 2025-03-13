@@ -1,36 +1,79 @@
-@prefix geo1: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
-@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix ex: <https://example.org/data/> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix unit: <http://qudt.org/vocab/unit/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix time: <http://www.w3.org/2006/time#>.
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@base <https://example.org/data/smiley/> .
 
-<http://example.org/data/VCAB-DP1-BP-40?t=2017-04-18T08%3A23%3A00-07%3A00> a sosa:Observation ;
-    sosa:hasFeatureOfInterest <http://example.org/data/VCAB-DP1-BP-40#location> ;
-    sosa:hasResult [ a qudt:QuantityValue ;
-            qudt:hasUnit unit:CentiM-PER-SEC ;
-            qudt:numericValue 5e-04 ] ;
-    sosa:madeBySensor <http://example.org/data/VCAB-DP1-BP-40> ;
-    sosa:observedProperty <http://example.org/data/VCAB-DP1-BP-40#groundDisplacementSpeed> ;
-    sosa:resultTime "2017-04-18T08:23:00-07:00"^^xsd:dateTimeStamp .
+# Determing the color of a smiley face sticker, including sampling from a population of smiley stickers
 
-<http://example.org/data/VCAB-DP1-BP-40#location> a sosa:FeatureOfInterest ;
-    rdfs:label "location of VCAB-DP1-BP-40"@en ;
-    geo1:alt 12.75 ;
-    geo1:lat 35.8648067 ;
-    geo1:long -120.6195831 ;
-    sosa:hasProperty <http://example.org/data/VCAB-DP1-BP-40#groundDisplacementSpeed> ;
-    sosa:isSampleOf <http://example.org/data/earth> .
+# First setting up all the basics: FeatureOfInterest, Property, Procedure, Sensor, Platform
 
-<http://example.org/data/earth> a sosa:FeatureOfInterest ;
-    rdfs:label "earth"@en .
+ex:SmileySticker  
+  rdf:type	sosa:FeatureOfInterest ;
+  rdfs:label "Smiley face sticker"@en ;
+  sosa:hasProperty ex:stickerColor ;
+.
+ex:StickerColor  
+  rdf:type	sosa:Property;
+  rdfs:label "The color of a sticker"@en ;
+.
+ex:ColorDetermination 
+  rdf:type	sosa:Procedure ;
+  rdfs:label "Procedure for determining the color of a sticker"@en ;
+  sosa:forProperty ex:StickerColor ;
+.
+ex:ColorDeterminer 
+  rdf:type	sosa:Sensor;
+  rdfs:label "Sensor for determining the color of a sticker"@en ;
+  sosa:observes ex:StickerColor ;
+.
+ex:StickerAssayOffice 
+  rdf:type	sosa:Platform;  
+  rdfs:label "Assay office for determining the color of a sticker"@en ;
+  sosa:hosts ex:ColorDeterminer ;
+.
+# Adding an Observation
 
-<http://example.org/data/VCAB-DP1-BP-40> a sosa:Sensor ;
-    rdfs:label "seismograph VCAB DP1 BP 40 (Vineyard Canyon, Parkfield, Ca)"@en ;
-    rdfs:seeAlso <https://earthquake.usgs.gov/monitoring/seismograms/153> ;
-    sosa:observes <http://example.org/data/VCAB-DP1-BP-40#groundDisplacementSpeed> .
+ex:Observation-Smiley-Color 
+  rdf:type sosa:Observation ;
+  sosa:hasFeatureOfInterest  ex:SmileySticker ;
+  sosa:observedProperty  ex:StickerColor ;
+  sosa:madeBySensor ex:ColorDeterminer ;
+  sosa:usedProcedure ex:ColorDetermination ;
+  sosa:hasSimpleResult "Yellow"^^xsd:string ;
+  sosa:phenomenonTime [
+	  rdf:type time:Instant ;
+	  time:inXSDDateTimeStamp "2017-04-15T00:00:00+00:00"^^xsd:dateTimeStamp 
+    ] ;
+  sosa:resultTime "2017-04-16T00:00:12+00:00"^^xsd:dateTimeStamp ;
+.
+# Sampling of the SmileySticker from a wider population of smiley face stickers
 
-<http://example.org/data/VCAB-DP1-BP-40#groundDisplacementSpeed> a sosa:Property ;
-    rdfs:label "the ground displacement speed at location of VCAB-DP1-BP-40"@en ;
-    sosa:isObservedBy <http://example.org/data/VCAB-DP1-BP-40> .
+# First setting up all the basics: FeatureOfInterest, Sampler, Procedure
 
+ex:SmileyPopulation  
+  rdf:type	sosa:FeatureOfInterest ;
+  rdfs:label "A population of smiley face stickers"@en ;
+  sosa:hasProperty ex:stickerColor ;
+.
+ex:SmileySamplingProcedure 
+  rdf:type sosa:Procedure ;
+  rdfs:label "Procedure for sampling smiley stickers"@en ;
+.
+ex:SmileySampler 
+  rdf:type sosa:Sampler ;
+  rdfs:label "Smiley sticker sampler"@en ;
+  sosa:implements ex:SmileySamplingProcedure ;
+.
+# Adding a Sampling act
+
+ex:SmileySampling 
+  rdf:type sosa:Sampling ;
+  rdfs:label "Sampling of a representative Smiley Sticker from a Collection of Smiley Stickers"@en ;
+  sosa:hasFeatureOfInterest ex:SmileyPopulation ;
+  sosa:usedProcedure ex:SmileySamplingProcedure ;
+  sosa:madeBySampler ex:SmileySampler ;
+  sosa:hasResult ex:SmileySticker ;
+.

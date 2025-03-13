@@ -1,36 +1,13 @@
-@prefix geo1: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
-@prefix qudt: <http://qudt.org/schema/qudt/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: <https://example.org/data/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://example.org/data/VCAB-DP1-BP-40?t=2017-04-18T08%3A23%3A00-07%3A00> a sosa:Observation ;
-    sosa:hasFeatureOfInterest <http://example.org/data/VCAB-DP1-BP-40#location> ;
-    sosa:hasResult [ a qudt:QuantityValue ;
-            qudt:hasUnit unit:CentiM-PER-SEC ;
-            qudt:numericValue 5e-04 ] ;
-    sosa:madeBySensor <http://example.org/data/VCAB-DP1-BP-40> ;
-    sosa:observedProperty <http://example.org/data/VCAB-DP1-BP-40#groundDisplacementSpeed> ;
-    sosa:resultTime "2017-04-18T08:23:00-07:00"^^xsd:dateTimeStamp .
-
-<http://example.org/data/VCAB-DP1-BP-40#location> a sosa:FeatureOfInterest ;
-    rdfs:label "location of VCAB-DP1-BP-40"@en ;
-    geo1:alt 12.75 ;
-    geo1:lat 35.8648067 ;
-    geo1:long -120.6195831 ;
-    sosa:hasProperty <http://example.org/data/VCAB-DP1-BP-40#groundDisplacementSpeed> ;
-    sosa:isSampleOf <http://example.org/data/earth> .
-
-<http://example.org/data/earth> a sosa:FeatureOfInterest ;
-    rdfs:label "earth"@en .
-
-<http://example.org/data/VCAB-DP1-BP-40> a sosa:Sensor ;
-    rdfs:label "seismograph VCAB DP1 BP 40 (Vineyard Canyon, Parkfield, Ca)"@en ;
-    rdfs:seeAlso <https://earthquake.usgs.gov/monitoring/seismograms/153> ;
-    sosa:observes <http://example.org/data/VCAB-DP1-BP-40#groundDisplacementSpeed> .
-
-<http://example.org/data/VCAB-DP1-BP-40#groundDisplacementSpeed> a sosa:Property ;
-    rdfs:label "the ground displacement speed at location of VCAB-DP1-BP-40"@en ;
-    sosa:isObservedBy <http://example.org/data/VCAB-DP1-BP-40> .
-
+ex:ObsGeo1 a sosa:Observation ;
+    sosa:madeBySensor ex:MyGPS736   ;
+    sosa:hasFeatureOfInterest ex:AbbysCar ;
+    sosa:resultTime "2023-06-20T21:49:18+00:00"^^xsd:dateTime ;
+    sosa:observedProperty <https://vocab.nerc.ac.uk/collection/S06/current/S0600255/>  ;
+    sosa:hasSimpleResult  "Point (145.042316 -37.919134)"^^geo:wktLiteral ;
+.

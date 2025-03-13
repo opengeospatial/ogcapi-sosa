@@ -1,28 +1,17 @@
-@prefix ex: <http://example.org/sosa/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ex: <https://example.org/data/> .
+@prefix qk: <http://qudt.org/vocab/quantitykind/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix saref: <https://saref.etsi.org/core/> .
 
-<file:///github/workspace/Observation/1> a sosa:Observation ;
-    sosa:hasFeatureOfInterest <file:///github/workspace/office/1> ;
-    sosa:observedProperty <file:///github/workspace/office/1/temperature> .
-
-<file:///github/workspace/Observation/2> a sosa:Observation ;
-    sosa:hasFeatureOfInterest <file:///github/workspace/office/2> ;
-    sosa:observedProperty <file:///github/workspace/office/2/temperature> .
-
-<file:///github/workspace/office/1> a sosa:FeatureOfInterest ;
-    sosa:hasProperty <file:///github/workspace/office/1/temperature> .
-
-<file:///github/workspace/office/2> a sosa:FeatureOfInterest ;
-    sosa:hasProperty <file:///github/workspace/office/2/temperature> .
-
-<file:///github/workspace/office/1/temperature> a ex:Temperature,
-        sosa:Property .
-
-<file:///github/workspace/office/2/temperature> a ex:Temperature,
-        sosa:Property .
-
-ex:Temperature a owl:Class ;
-    rdfs:subClassOf sosa:Property .
-
+qk:Temperature
+  a saref:Property ;
+.
+ex:SickChildA
+  a saref:FeatureOfInterest ;
+.
+ex:SickChildATemperature
+  a saref:PropertyOfInterest ;
+  saref:hasPropertyKind qk:Temperature ;
+  saref:isPropertyOfInterestOf ex:SickChildA ;
+.

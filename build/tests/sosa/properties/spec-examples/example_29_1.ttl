@@ -1,53 +1,28 @@
-@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix ex: <https://example.org/data/> .
+@prefix qk: <http://qudt.org/vocab/quantitykind/> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix time: <http://www.w3.org/2006/time#> .
-@prefix unit: <http://qudt.org/vocab/unit/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix time: <http://www.w3.org/2006/time#>.
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@base <https://example.org/data/sunspot/> .
 
-<http://example.org/data/Observation/235754> a sosa:Observation ;
-    sosa:madeBySensor <http://example.org/data/sensor/926> .
+# The result of an observation of the sunspot number is available a few minutes 
+# after the phenomenon time, due to the light travel duration
 
-<http://example.org/data/tempSensor/23> a sosa:Sensor ;
-    sosa:madeObservation <http://example.org/data/tempSensor/23/4572>,
-        <http://example.org/data/tempSensor/23/4573>,
-        <http://example.org/data/tempSensor/23/4574> ;
-    sosa:observes <http://example.org/data/tempSensor/23#temperature> .
-
-<http://example.org/data/window> a sosa:FeatureOfInterest ;
-    sosa:hasProperty <http://example.org/data/window/104#state> .
-
-<http://example.org/data/Observation/235714> a sosa:Observation ;
-    sosa:hasResult [ a qudt:QuantityValue ;
-            qudt:hasUnit unit:Kilowatthour ;
-            qudt:numericValue 2.24e+01 ] ;
-    sosa:madeBySensor <http://example.org/data/sensor/926> ;
-    sosa:observedProperty <http://example.org/data/Appartment/134/electricConsumption> ;
-    sosa:phenomenonTime [ a time:Interval ;
-            time:hasBeginning [ a time:Instant ;
-                    time:inXSDDateTimeStamp "2017-04-15T00:00:00+00:00"^^xsd:dateTimeStamp ] ;
-            time:hasEnd [ a time:Instant ;
-                    time:inXSDDateTimeStamp "2017-04-16T00:00:00+00:00"^^xsd:dateTimeStamp ] ] ;
-    sosa:resultTime "2017-04-16T00:00:12+00:00"^^xsd:dateTimeStamp .
-
-<http://example.org/data/windowCloser/987> a sosa:Actuator ;
-    sosa:forProperty <http://example.org/data/window/104#state> ;
-    sosa:madeActuation <http://example.org/data/actuation/188> .
-
-<http://example.org/data/Appartment/134/electricConsumption> a sosa:Property ;
-    sosa:isObservedBy <http://example.org/data/sensor/926> .
-
-<http://example.org/data/actuation/188> a sosa:Actuation ;
-    sosa:actsOnProperty <http://example.org/data/window/104#state> ;
-    sosa:actuationMadeBy <http://example.org/data/windowCloser/987> ;
-    sosa:hasSimpleResult true ;
-    sosa:resultTime "2017-04-18T17:24:00+02:00"^^xsd:dateTimeStamp .
-
-<http://example.org/data/sensor/926> a sosa:Sensor ;
-    sosa:madeObservation <http://example.org/data/Observation/235714>,
-        <http://example.org/data/Observation/235715>,
-        <http://example.org/data/Observation/235716> ;
-    sosa:observes <http://example.org/data/Appartment/134/electricConsumption> .
-
-<http://example.org/data/window/104#state> a sosa:Property ;
-    sosa:isActedOnBy <http://example.org/data/actuation/188> .
-
+<Observation/7536> rdf:type sosa:Observation ;
+  sosa:observedProperty  ex:sunspotCount ;
+  sosa:hasFeatureOfInterest <https://www.wikidata.org/wiki/Q525> ;
+  sosa:hasSimpleResult 66 ;
+  sosa:phenomenonTime [
+    rdf:type time:Instant ;
+    time:inXSDDateTimeStamp "2017-03-31T11:51:42+00:00"^^xsd:dateTimeStamp ] ;
+  sosa:resultTime "2017-03-31T12:00:00+00:00"^^xsd:dateTimeStamp ;
+.
+ex:sunspotCount rdf:type sosa:Property ;
+  skos:broader qk:Count ;
+.
+<https://www.wikidata.org/wiki/Q525> a sosa:FeatureOfInterest ;
+  rdfs:label "Sun" ;
+.

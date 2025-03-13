@@ -1,53 +1,24 @@
-@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix ex: <https://example.org/data/> .
+@prefix iop: <https://w3id.org/iadopt/ont/> .
+@prefix qk: <http://qudt.org/vocab/quantitykind/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix time: <http://www.w3.org/2006/time#> .
-@prefix unit: <http://qudt.org/vocab/unit/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://example.org/data/Observation/235754> a sosa:Observation ;
-    sosa:madeBySensor <http://example.org/data/sensor/926> .
-
-<http://example.org/data/tempSensor/23> a sosa:Sensor ;
-    sosa:madeObservation <http://example.org/data/tempSensor/23/4572>,
-        <http://example.org/data/tempSensor/23/4573>,
-        <http://example.org/data/tempSensor/23/4574> ;
-    sosa:observes <http://example.org/data/tempSensor/23#temperature> .
-
-<http://example.org/data/window> a sosa:FeatureOfInterest ;
-    sosa:hasProperty <http://example.org/data/window/104#state> .
-
-<http://example.org/data/Observation/235714> a sosa:Observation ;
-    sosa:hasResult [ a qudt:QuantityValue ;
-            qudt:hasUnit unit:KiloW-HR ;
-            qudt:numericValue 2.24e+01 ] ;
-    sosa:madeBySensor <http://example.org/data/sensor/926> ;
-    sosa:observedProperty <http://example.org/data/apartment/134/electricConsumption> ;
-    sosa:phenomenonTime [ a time:Interval ;
-            time:hasBeginning [ a time:Instant ;
-                    time:inXSDDateTimeStamp "2017-04-15T00:00:00+00:00"^^xsd:dateTimeStamp ] ;
-            time:hasEnd [ a time:Instant ;
-                    time:inXSDDateTimeStamp "2017-04-16T00:00:00+00:00"^^xsd:dateTimeStamp ] ] ;
-    sosa:resultTime "2017-04-16T00:00:12+00:00"^^xsd:dateTimeStamp .
-
-<http://example.org/data/windowCloser/987> a sosa:Actuator ;
-    sosa:forProperty <http://example.org/data/window/104#state> ;
-    sosa:madeActuation <http://example.org/data/actuation/188> .
-
-<http://example.org/data/actuation/188> a sosa:Actuation ;
-    sosa:actsOnProperty <http://example.org/data/window/104#state> ;
-    sosa:actuationMadeBy <http://example.org/data/windowCloser/987> ;
-    sosa:hasSimplResult true ;
-    sosa:resultTime "2017-04-18T17:24:00+02:00"^^xsd:dateTimeStamp .
-
-<http://example.org/data/apartment/134/electricConsumption> a sosa:Property ;
-    sosa:isObservedBy <http://example.org/data/sensor/926> .
-
-<http://example.org/data/sensor/926> a sosa:Sensor ;
-    sosa:madeObservation <http://example.org/data/Observation/235714>,
-        <http://example.org/data/Observation/235715>,
-        <http://example.org/data/Observation/235716> ;
-    sosa:observes <http://example.org/data/apartment/134/electricConsumption> .
-
-<http://example.org/data/window/104#state> a sosa:Property ;
-    sosa:isActedOnBy <http://example.org/data/actuation/188> .
-
+ex:SickChildTemperature 
+  a iop:Variable , sosa:Property;
+  iop:hasProperty qk:Temperature ;
+  iop:hasObjectOfInterest ex:Child ;
+  iop:hasConstraint iop:SickChild ;
+.
+qk:Temperature 
+  a iop:Property , sosa:Property ;
+.
+ex:Child
+  a iop:Entity ;
+.
+ex:SickChild 
+  a iop:Constraint ;
+  skos:definition "Sick Child"@en ;
+  iop:Constrains ex:Child ;
+.

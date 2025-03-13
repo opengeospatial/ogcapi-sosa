@@ -1,61 +1,23 @@
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: <https://example.org/data/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
 
-<http://example.org/data/DHT22/4579> a sosa:Platform ;
-    rdfs:label "DHT22 sensor #4579."@en ;
-    sosa:isHostedBy <http://example.org/data/PCBBoard2> .
-
-<http://example.org/data/DHT22/4580> a sosa:Platform ;
-    rdfs:label "DHT22 sensor #4580."@en ;
-    sosa:isHostedBy <http://example.org/data/PCBBoard3> .
-
-<http://example.org/data/Room145> a sosa:FeatureOfInterest ;
-    rdfs:label "Room #145"@en ;
-    sosa:hasSample <http://example.org/data/Room145/east>,
-        <http://example.org/data/Room145/south> .
-
-<http://example.org/data/Room245> a sosa:FeatureOfInterest ;
-    rdfs:label "Room #245"@en ;
-    sosa:hasProperty <http://example.org/data/Room245#humidity>,
-        <http://example.org/data/Room245#temperature> ;
-    sosa:hasSample <http://example.org/data/Room245/south> .
-
-<http://example.org/data/Room145/east> a sosa:FeatureOfInterest,
-        sosa:Platform,
-        sosa:Sample ;
-    rdfs:label "East wall of room #145."@en ;
-    rdfs:comment "This wall hosts PCB Board 1 with DHT22 temperature and humidity sensor #4578."@en ;
-    sosa:hosts <http://example.org/data/PCBBoard1> .
-
-<http://example.org/data/Room145/south> a sosa:FeatureOfInterest,
-        sosa:Platform,
-        sosa:Sample ;
-    rdfs:label "South wall of room #145."@en ;
-    rdfs:comment "This wall hosts PCB Board 2 with DHT22 temperature and humidity sensor #4579."@en ;
-    sosa:hosts <http://example.org/data/PCBBoard2> .
-
-<http://example.org/data/Room245/south> a sosa:FeatureOfInterest,
-        sosa:Platform,
-        sosa:Sample ;
-    rdfs:label "South wall of room #245."@en ;
-    sosa:hosts <http://example.org/data/PCBBoard3> .
-
-<http://example.org/data/PCBBoard1> a sosa:Platform ;
-    rdfs:label "PCB Board 1"@en ;
-    rdfs:comment "PCB Board 1 hosts DHT22 temperature and humidity sensor #4578 permanently."@en ;
-    sosa:hosts <http://example.org/data/DHT22/4578> .
-
-<http://example.org/data/PCBBoard2> a sosa:Platform ;
-    rdfs:label "PCB Board 2"@en ;
-    rdfs:comment "PCB Board 2 hosts DHT22 temperature and humidity sensor #4579 permanentlys."@en ;
-    sosa:hosts <http://example.org/data/DHT22/4578> .
-
-<http://example.org/data/PCBBoard3> a sosa:Platform ;
-    rdfs:label "PCB Board 3"@en ;
-    rdfs:comment "PCB Board 3 hosts DHT22 temperature and humidity sensor #4580 permanently."@en ;
-    sosa:hosts <http://example.org/data/DHT22/4578> .
-
-<http://example.org/data/DHT22/4578> a sosa:Platform ;
-    rdfs:label "DHT22 sensor #4578"@en ;
-    sosa:isHostedBy <http://example.org/data/PCBBoard1> .
-
+ex:Bubble873 a sosa:Sample ;
+  sosa:isSampleOf ex:EarthAtmosphere;
+.
+ex:Ob873c4 a sosa:Observation ;
+  sosa:observedProperty ex:CO2-Concentration ;
+  sosa:hasFeatureOfInterest ex:Bubble873 ;
+  sosa:hasUltimateFeatureOfInterest ex:EarthAtmosphere ;
+  sosa:hasResult "240"^^unit:PPM ;
+.
+ex:EarthAtmosphere a sosa:FeatureOfInterest ;
+  owl:sameAs <https://www.wikidata.org/wiki/Q3230> ;
+  . 
+ex:CO2-Concentration a sosa:Property ;
+  owl:sameAs <http://purl.obolibrary.org/obo/ENVO_04000004> ;
+  skos:prefLabel "concentration of carbon dioxide in air" ;
+. 
