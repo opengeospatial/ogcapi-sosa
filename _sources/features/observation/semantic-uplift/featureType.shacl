@@ -4,20 +4,41 @@
 @prefix sosa: <http://www.w3.org/ns/sosa/>.
 @prefix : <urn:ogc-bblocks:ogcapi-sosa#> .
 
-:RectangleRulesShape
+:FeatureAsObservation
   a sh:NodeShape ;
-  sh:targetSubjectsOf sosa:hasFeatureOfInterest,
-    sosa:hasResult,
-    sosa:hasSimpleResult,
-    sosa:observedProperty,
-    sosa:resultTime,
-    sosa:madeBySensor,
-    sosa:phenomenonType
+  sh:targetSubjectsOf
+    sosa:hasResult
   ;
+  # Need to add logic that has no member or inverse memberOf relationships
   sh:rule [
     a sh:TripleRule ;
     sh:subject sh:this ;
     sh:predicate rdf:type ;
     sh:object sosa:Observation ;
+  ] ;
+.
+
+:MemberOfObservationCollection
+  a sh:NodeShape ;
+  sh:targetObjectsOf
+    sosa:isMemberOf
+  ;
+  sh:rule [
+    a sh:TripleRule ;
+    sh:subject sh:this ;
+    sh:predicate rdf:type ;
+    sh:object sosa:ObservationCollection ;
+  ] ;
+.
+
+:FeatureCollectionAsObsCollection
+  a sh:NodeShape ;
+  sh:targetSubjectsOf sosa:hasMember
+  ;
+  sh:rule [
+    a sh:TripleRule ;
+    sh:subject sh:this ;
+    sh:predicate rdf:type ;
+    sh:object sosa:ObservationCollection ;
   ] ;
 .
