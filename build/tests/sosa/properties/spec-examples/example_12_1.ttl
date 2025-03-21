@@ -4,50 +4,45 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix qk: <http://qudt.org/vocab/quantitykind/> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
-@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix seas: <https://w3id.org/seas/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix system: <http://www.w3.org/ns/ssn/systems/> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
-@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
-@base <https://rdf.ag/o/equipment/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-# This example is a partial specification for a common over-the-shelf temperature and humidity sensor.  Different instantions can
-# be derived for each specific physical the product. 
-
-ex:InkBird-IBS-TH2 a owl:Class;
+ex:InkBird-IBS-TH2 a owl:Class ;
     rdfs:label "Inkbird IBS-TH2"@en ;
-    rdfs:subClassOf gs1:Product, sosa:Platform, equipment:Equipment, <https://w3id.org/seas/BluetoothCommunicationDevice>;
-    gs1:pip <https://inkbird.com/products/hygrometer-ibs-th2> ;
     rdfs:subClassOf [ a owl:Restriction ;
-                      owl:onProperty sosa:hosts ;
-                      owl:allValuesFrom ex:IBSTH2TemperatureSensor 
-                    ] ;
-.
-ex:IBSTH2TemperatureSensor rdfs:subClassOf sosa:Sensor ;
-    rdfs:label "Inkbird IBS-TH2 built-in Temperature Sensor"@en ;
-    sosa:observes ex:airTemperature ;
-    rdfs:subClassOf [ a owl:Restriction ;
-                      owl:onProperty system:hasOperatingRange ;
-                      owl:allValuesFrom ex:IBSTH2TemperatureSensorLimits 
-                    ] ;
-    rdfs:subClassOf [ a owl:Restriction ;
-                      owl:onProperty system:hasSurvivalRange ;
-                      owl:allValuesFrom ex:IBSTH2SurvivalRange 
-                    ] ;
-.
-ex:IBSTH2TemperatureSensorLimits a system:OperatingRange ;
-    sosa:forProperty qk:Temperature ;
-    qudt:unit unit:DEG_C ;
-    xsd:maxInclusive "60" ;
-    xsd:minInclusive "-40" ;
-    rdfs:label "Inkbird IBS-TH2 Temperature Sensor Limits"@en ;
-.
-# Physical limits of the sensor (and platform) where structural failure occurs.
+            owl:allValuesFrom ex:IBSTH2TemperatureSensor ;
+            owl:onProperty sosa:hosts ],
+        sosa:Platform,
+        gs1:Product,
+        equipment:Equipment,
+        seas:BluetoothCommunicationDevice ;
+    gs1:pip <https://inkbird.com/products/hygrometer-ibs-th2> .
+
 ex:IBSTH2SurvivalRange a system:SurvivalRange ;
-    sosa:forProperty qk:Temperature ;
+    rdfs:label "Inkbird IBS-TH2 Failiure limits"@en ;
     qudt:unit unit:DEG_C ;
     xsd:maxInclusive "80" ;
     xsd:minInclusive "-273" ;
-    rdfs:label "Inkbird IBS-TH2 Failiure limits"@en ;
-.
+    sosa:forProperty qk:Temperature .
+
+ex:IBSTH2TemperatureSensor rdfs:label "Inkbird IBS-TH2 built-in Temperature Sensor"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom ex:IBSTH2TemperatureSensorLimits ;
+            owl:onProperty system:hasOperatingRange ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ex:IBSTH2SurvivalRange ;
+            owl:onProperty system:hasSurvivalRange ],
+        sosa:Sensor ;
+    sosa:observes ex:airTemperature .
+
+ex:IBSTH2TemperatureSensorLimits a system:OperatingRange ;
+    rdfs:label "Inkbird IBS-TH2 Temperature Sensor Limits"@en ;
+    qudt:unit unit:DEG_C ;
+    xsd:maxInclusive "60" ;
+    xsd:minInclusive "-40" ;
+    sosa:forProperty qk:Temperature .
+
