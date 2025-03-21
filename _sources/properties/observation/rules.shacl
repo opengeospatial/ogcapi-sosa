@@ -39,12 +39,11 @@
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             PREFIX geojson: <https://purl.org/geojson/vocab#>
             SELECT $this (sosa:observedProperty as ?path) (GROUP_CONCAT(?prop; separator=';') AS ?value) WHERE {
-                { $this sosa:observedProperty ?prop }
-                UNION
-                { ?collection sosa:hasMember+|geojson:features+ $this ; sosa:observedProperty ?prop }
+                OPTIONAL { $this sosa:observedProperty ?prop }
+                OPTIONAL { ?collection sosa:hasMember+|geojson:features+ $this ; sosa:observedProperty ?prop }
             }
             GROUP BY ?prop
-            HAVING (count(?prop) > 1)
+            HAVING (count(?prop) != 1)
         """ ;
     ] ;
 .
