@@ -16,13 +16,14 @@
             PREFIX sh: <http://www.w3.org/ns/shacl#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             PREFIX geojson: <https://purl.org/geojson/vocab#>
-            SELECT $this (GROUP_CONCAT(?time; separator=';') AS ?value) WHERE {
-                { $this sosa:phenomenonTime|sosa:resultTime ?time }
-                UNION
-                { ?collection sosa:hasMember+|geojson:features+ $this ; sosa:phenomenonTime|sosa:resultTime ?time }
+            SELECT $this (CONCAT(COALESCE(COUNT(?resultTime), 0), ' x sosa:resultTime, ', COALESCE(COUNT(?phenomenonTime), 0), ' x sosa:phenomenonTime') AS ?value) WHERE {
+                OPTIONAL { $this sosa:phenomenonTime ?phenomenonTime }
+                OPTIONAL { $this sosa:resultTime ?resultTime}
+                OPTIONAL { ?collection sosa:hasMember+|geojson:features+ $this ; sosa:phenomenonTime ?phenomenonTime }
+                OPTIONAL { ?collection sosa:hasMember+|geojson:features+ $this ; sosa:resultTime ?resultTime }
             }
-            GROUP BY ?time
-            HAVING (count(?time) > 1)
+            GROUP BY $this
+            HAVING (count(?resultTime) > 1 || count(?phenomenonTime) > 1 || count(?resultTime) + count(?phenomenonTime) < 1)
         """ ;
     ] ;
 .
