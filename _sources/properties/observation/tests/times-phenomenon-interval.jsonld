@@ -1,0 +1,35 @@
+{
+  "@context": {
+    "hasResult": "http://www.w3.org/ns/sosa/hasResult",
+    "hasSimpleResult": "http://www.w3.org/ns/sosa/hasSimpleResult",
+    "resultTime": "http://www.w3.org/ns/sosa/resultTime",
+    "phenomenonTime": "http://www.w3.org/ns/sosa/phenomenonTime",
+    "hasFeatureOfInterest": "http://www.w3.org/ns/sosa/hasFeatureOfInterest",
+    "observedProperty": "http://www.w3.org/ns/sosa/observedProperty",
+    "usedProcedure": "http://www.w3.org/ns/sosa/usedProcedure",
+    "madeBySensor": "http://www.w3.org/ns/sosa/madeBySensor"
+  },
+  "hasFeatureOfInterest": {
+    "id": "http://something.org/1"
+  },
+  "observedProperty": "something",
+  "resultTime": "2016-05-04T02:27:02.0Z",
+  "phenomenonTime": { "start": "2016-05-04T02:27:02.0Z", "end": "2016-05-04T03:33:33.0Z" },
+   "hasResult": {
+    "@context": {
+      "resultschema": "http//example.org/resultschema/",
+      "a": "resultschema:a",
+      "b": {
+        "@id": "resultschema:b",
+        "@context": {
+          "b1": "resultschema:b1",
+          "b2": "resultschema:b2"
+        }
+      }
+    },
+    "a": -8150858,
+    "b": false
+  },
+  "hasSimpleResult": "frogginess",
+  "madeBySensor": "ea est culpa esse"
+}
