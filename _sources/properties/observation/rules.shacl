@@ -8,8 +8,7 @@
 
 <#testRequiredTime>
     a                   sh:NodeShape ;
-    sh:targetClass      sosa:Observation ;
-    sh:targetSubjectsOf sosa:hasResult, sosa:hasSimpleResult ;
+    sh:targetClass      sosa:Observation, sosa:Actuation, sosa:Sampling ;
     sh:sparql [
         sh:message          "sosa:resultTime or sosa:phenomenonTime is required, and no more than 1 of each is allowed" ;
         sh:select """
@@ -19,8 +18,8 @@
             SELECT $this (CONCAT(COALESCE(COUNT(?resultTime), 0), ' x sosa:resultTime, ', COALESCE(COUNT(?phenomenonTime), 0), ' x sosa:phenomenonTime') AS ?value) WHERE {
                 OPTIONAL { $this sosa:phenomenonTime ?phenomenonTime }
                 OPTIONAL { $this sosa:resultTime ?resultTime}
-                OPTIONAL { ?collection sosa:hasMember+|geojson:features+ $this ; sosa:phenomenonTime ?phenomenonTime }
-                OPTIONAL { ?collection sosa:hasMember+|geojson:features+ $this ; sosa:resultTime ?resultTime }
+                OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:phenomenonTime ?phenomenonTime }
+                OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:resultTime ?resultTime }
             }
             GROUP BY $this
             HAVING (count(?resultTime) > 1 || count(?phenomenonTime) > 1 || count(?resultTime) + count(?phenomenonTime) < 1)
@@ -31,7 +30,6 @@
 <#testObservedProperty>
     a                   sh:NodeShape ;
     sh:targetClass      sosa:Observation ;
-    sh:targetSubjectsOf sosa:hasResult, sosa:hasSimpleResult ;
     sh:sparql [
         sh:message          "Exactly 1 of sosa:observedProperty is required" ;
         sh:select """
@@ -40,7 +38,7 @@
             PREFIX geojson: <https://purl.org/geojson/vocab#>
             SELECT $this (sosa:observedProperty as ?path) (GROUP_CONCAT(?prop; separator=';') AS ?value) WHERE {
                 OPTIONAL { $this sosa:observedProperty ?prop }
-                OPTIONAL { ?collection sosa:hasMember+|geojson:features+ $this ; sosa:observedProperty ?prop }
+                OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:observedProperty ?prop }
             }
             GROUP BY ?prop
             HAVING (count(?prop) != 1)
@@ -48,11 +46,9 @@
     ] ;
 .
 
-
 <#testFeatureOfInterest>
     a                   sh:NodeShape ;
-    sh:targetClass      sosa:Observation ;
-    sh:targetSubjectsOf sosa:hasResult, sosa:hasSimpleResult ;
+    sh:targetClass      sosa:Observation, sosa:Actuation, sosa:Sampling ;
     sh:property         [
         sh:message          "Exactly one feature of interest (sosa:hasFeatureOfInterest/sosa:isFeatureOfInterestOf) is required" ;
         sh:path     ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath ( [ sh:inversePath
@@ -67,8 +63,7 @@
 
 <#testResult>
     a                   sh:NodeShape ;
-    sh:targetClass      sosa:Observation ;
-    sh:targetSubjectsOf sosa:hasResult, sosa:hasSimpleResult ;
+    sh:targetClass      sosa:Observation, sosa:Actuation, sosa:Sampling ;
     sh:property         [
         sh:message          "Exactly one of sosa:hasResult or sosa:hasSimpleResult is required per observation" ;
         sh:path     [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ;
@@ -97,4 +92,69 @@
         FILTER NOT EXISTS { ?value ?p ?o }
       }
     """ ; ]
+.
+
+## Shapes for collection requirements - maybe move to observationCollection?
+<#testCollectionPropertyValues>
+    a sh:NodeShape ;
+    sh:targetClass sosa:ObservationCollection, sosa:ActuationCollection, sosa:SamplingCollection ;
+    sh:targetSubjectsOf sosa:hasMember ;
+    sh:targetObjectsOf sosa:memberOf ;
+    sh:message "Collection member values do not match those of the collections ({?path} property in {?value}: {?failedValue})";
+    sh:sparql [ sh:select """
+        PREFIX sosa: <http://www.w3.org/ns/sosa/>
+        PREFIX geojson: <https://purl.org/geojson/vocab#>
+        PREFIX time: <http://www.w3.org/2006/time#>
+        SELECT $this ?path (?member AS ?value) ?failedValue WHERE {
+            $this (sosa:hasMember|^sosa:memberOf)+ ?member ;
+                ?path ?collectionValue .
+            ?member ?path ?memberValue .
+            FILTER(?path in ( sosa:resultTime, sosa:phenomenonTime, sosa:hasResult, sosa:hasSimpleResult,
+                sosa:hasFeatureOfInterest, sosa:hasUltimateFeatureOfInterest, sosa:observedProperty, sosa:madeBySystem,
+                sosa:usedProcedure, sosa:madeBySensor, sosa:madeBySampler, sosa:isSampleOf, sosa:madeByActuator,
+                sosa:actsOn, sosa:actsOnProperty, sosa:hasInputValue, sosa:observationRelatedTo,
+                sosa:relatedObservation, sosa:resultQuality, sosa:isOriginalSampleOf, sosa:isResultOfMadeBySampler,
+                sosa:isResultOfUsedProcedure ))
+            FILTER((isLiteral(?collectionValue) || isIRI(?collectionValue)) && ?collectionValue != ?memberValue)
+            FILTER NOT EXISTS { ?collectionValue a time:Interval }
+            BIND(CONCAT(STR(?memberValue), " != ", STR(?collectionValue)) as ?failedValue)
+        }
+    """ ]
+.
+
+<#testCollectionPropertyValuesInterval>
+    a sh:NodeShape ;
+    sh:targetClass sosa:ObservationCollection, sosa:ActuationCollection, sosa:SamplingCollection ;
+    sh:targetSubjectsOf sosa:hasMember ;
+    sh:targetObjectsOf sosa:memberOf ;
+    sh:message "Collection member values do not match those of the collections ({?path} property in {?value}: {?failedValue})";
+    sh:sparql [ sh:select """
+        PREFIX sosa: <http://www.w3.org/ns/sosa/>
+        PREFIX geojson: <https://purl.org/geojson/vocab#>
+        PREFIX time: <http://www.w3.org/2006/time#>
+        SELECT $this ?path (?member AS ?value) ?failedValue WHERE {
+            $this (sosa:hasMember|^sosa:memberOf)+ ?member ;
+                ?path ?collectionValue .
+            ?collectionValue a time:Interval .
+            ?member ?path ?memberValue .
+            FILTER(?path in ( sosa:resultTime, sosa:phenomenonTime, sosa:hasResult, sosa:hasSimpleResult,
+                sosa:hasFeatureOfInterest, sosa:hasUltimateFeatureOfInterest, sosa:observedProperty, sosa:madeBySystem,
+                sosa:usedProcedure, sosa:madeBySensor, sosa:madeBySampler, sosa:isSampleOf, sosa:madeByActuator,
+                sosa:actsOn, sosa:actsOnProperty, sosa:hasInputValue, sosa:observationRelatedTo,
+                sosa:relatedObservation, sosa:resultQuality, sosa:isOriginalSampleOf, sosa:isResultOfMadeBySampler,
+                sosa:isResultOfUsedProcedure ))
+
+            {
+                ?collectionValue time:hasBeginning/(time:inXSDDateTime|time:inXSDDate) ?colBeginning .
+                OPTIONAL { ?memberValue time:hasBeginning?/(time:inXSDDateTime|time:inXSDDate) ?memberBeginning }
+                FILTER((isLiteral(?memberValue) && ?memberValue < ?colBeginning) || (BOUND(?memberBeginning) && ?memberBeginning < ?colBeginning))
+                BIND(CONCAT(STR(COALESCE(?memberBeginning, ?memberValue)), " < ", STR(?colBeginning)) as ?failedValue)
+            } UNION {
+                ?collectionValue time:hasEnd?/(time:inXSDDateTime|time:inXSDDate) ?colEnd .
+                OPTIONAL { ?memberValue time:hasEnd?/(time:inXSDDateTime|time:inXSDDate) ?memberEnd }
+                FILTER((isLiteral(?memberValue) && ?memberValue > ?colEnd) || (BOUND(?memberEnd) && ?memberEnd > ?colEnd))
+                BIND(CONCAT(STR(COALESCE(?memberEnd, ?memberValue)), " > ", STR(?colEnd)) as ?failedValue)
+            }
+        }
+    """ ]
 .
