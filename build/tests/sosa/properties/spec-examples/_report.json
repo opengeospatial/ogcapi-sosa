@@ -2,8 +2,8 @@
   "title": "Validation report for ogc.sosa.properties.spec-examples - Tests for SOSA specification",
   "bblockName": "Tests for SOSA specification",
   "bblockId": "ogc.sosa.properties.spec-examples",
-  "generated": "2025-03-21T19:52:25.904219+00:00",
-  "result": true,
+  "generated": "2025-06-04T08:02:56.570423+00:00",
+  "result": false,
   "items": [
     {
       "source": {
@@ -589,7 +589,7 @@
               "op": "ttl-create",
               "empty": false,
               "filename": "example_14_1.ttl",
-              "size": 96,
+              "size": 98,
               "isError": false,
               "message": "Output Turtle example_14_1.ttl created"
             }
@@ -1105,7 +1105,7 @@
               "op": "ttl-create",
               "empty": false,
               "filename": "example_26_1.ttl",
-              "size": 24,
+              "size": 25,
               "isError": false,
               "message": "Output Turtle example_26_1.ttl created"
             }
@@ -1220,26 +1220,8 @@
         "language": "text/turtle",
         "sourceUrl": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/sunspots.ttl"
       },
-      "result": true,
+      "result": false,
       "sections": [
-        {
-          "name": "FILES",
-          "title": "Files",
-          "entries": [
-            {
-              "isError": false,
-              "message": "Using example_29_1.ttl from examples"
-            },
-            {
-              "op": "ttl-create",
-              "empty": false,
-              "filename": "example_29_1.ttl",
-              "size": 12,
-              "isError": false,
-              "message": "Output Turtle example_29_1.ttl created"
-            }
-          ]
-        },
         {
           "name": "TURTLE",
           "title": "Turtle",
@@ -1247,6 +1229,11 @@
             {
               "isError": false,
               "message": "Prefixes are defined for cdt, equipment, ex, geo, gr, gs1, om, owl, prov, qk, qudt, rdf, rdfp, rdfs, schema, seas, sensor, sh, skos, sosa, system, time, unit, xsd"
+            },
+            {
+              "exception": "BadSyntax",
+              "isError": true,
+              "message": "at line 52 of <>:\nBad syntax (objectList expected) at ^ in:\n\"...b'As <https://www.wikidata.org/wiki/Q525> .\\n  rdfs:label \"Sun\"'^b' ;\\n.'\""
             }
           ]
         }
@@ -1772,7 +1759,7 @@
   "globalErrors": {},
   "counts": {
     "total": 41,
-    "passed": 41,
-    "failed": 0
+    "passed": 40,
+    "failed": 1
   }
 }

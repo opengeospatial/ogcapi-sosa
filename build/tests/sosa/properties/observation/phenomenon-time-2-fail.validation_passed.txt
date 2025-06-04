@@ -1,5 +1,5 @@
 Validation report for ogc.sosa.properties.observation - Observation Properties
-Generated 2025-03-21T19:52:26.266087+00:00
+Generated 2025-06-04T08:02:58.045606+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -27,8 +27,8 @@ Validation result for _sources/properties/observation/rules.shacl:
               SELECT $this (CONCAT(COALESCE(COUNT(?resultTime), 0), ' x sosa:resultTime, ', COALESCE(COUNT(?phenomenonTime), 0), ' x sosa:phenomenonTime') AS ?value) WHERE {
                   OPTIONAL { $this sosa:phenomenonTime ?phenomenonTime }
                   OPTIONAL { $this sosa:resultTime ?resultTime}
-                  OPTIONAL { ?collection sosa:hasMember+|geojson:features+ $this ; sosa:phenomenonTime ?phenomenonTime }
-                  OPTIONAL { ?collection sosa:hasMember+|geojson:features+ $this ; sosa:resultTime ?resultTime }
+                  OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:phenomenonTime ?phenomenonTime }
+                  OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:resultTime ?resultTime }
               }
               GROUP BY $this
               HAVING (count(?resultTime) > 1 || count(?phenomenonTime) > 1 || count(?resultTime) + count(?phenomenonTime) < 1)
@@ -36,12 +36,14 @@ Validation result for _sources/properties/observation/rules.shacl:
   	Message: sosa:resultTime or sosa:phenomenonTime is required, and no more than 1 of each is allowed
   
 Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: _:nc764e8cb615849119056f141a3b7c7ceb1
- - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: _:nc764e8cb615849119056f141a3b7c7ceb1
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: _:n6d65ba211fa940e1b6de3b0ac1951c8eb1
  - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testResult>: _:nc764e8cb615849119056f141a3b7c7ceb1
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: _:n6d65ba211fa940e1b6de3b0ac1951c8eb1
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: _:n6d65ba211fa940e1b6de3b0ac1951c8eb1
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: _:n6d65ba211fa940e1b6de3b0ac1951c8eb1
  - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: 
- - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: _:nc764e8cb615849119056f141a3b7c7ceb1
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: *none*
 
 === End SHACL ===
 

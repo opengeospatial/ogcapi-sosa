@@ -10,6 +10,7 @@
 @prefix schema1: <http://schema.org/> .
 @prefix seas: <https://w3id.org/seas/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn-system: <http://www.w3.org/ns/ssn-system/> .
 @prefix system: <http://www.w3.org/ns/ssn/systems/> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -106,6 +107,9 @@ ex:IP68_Outdoor_Temperature_Sensor_normalOperatingCondition a schema1:PropertyVa
 ex:Air a sosa:FeatureOfInterest ;
     rdfs:label "The air."@en ;
     owl:sameAs <https://www.wikidata.org/wiki/Q3230> .
+
+ex:Sensor_SL-T-P1_battery a ssn-system:Battery ;
+    rdfs:label "The battery powering the IP68 Outdoor Temperature Sensor"@en .
 
 ex:Sensor_SL-T-P1 a gr:ProductOrService,
         sosa:Sensor,

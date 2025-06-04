@@ -217,7 +217,7 @@ ex:Room145Deployment a sosa:Deployment ;
 @prefix rdfp: <https://w3id.org/rdfp/>.
 @base <https://example.org/data/dht22/> .
 
-ex:DHT22_Procedure a sosa:Procedure ;
+ex:DHT22_Procedure a sosa:ObservingProcedure ;
   sosa:hasOutput ex:DHT22_output ;
 .
 ex:DHT22_output a rdfp:GraphDescription ;
@@ -732,7 +732,7 @@ ex:RelativeHumidity a sosa:Property ;
    rdfs:comment "Humidity is a measure of the moisture content of air."@en ;
    rdfs:label "Relative Humidity"@en ;
 .
-ex:MeasuringRelativeHumidity a sosa:Procedure ;
+ex:MeasuringRelativeHumidity a sosa:ObservingProcedure ;
    rdfs:comment "Instructions for measuring relative humidity"@en ;
 .
 ex:RH_avg_1_COPR_15min_201706020300PM a sosa:Observation ;
@@ -906,6 +906,7 @@ ex:serialNumber a rdfs:Datatype ;
 @prefix time: <http://www.w3.org/2006/time#>.
 @prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix ssn-system: <http://www.w3.org/ns/ssn-system/> .
 @prefix system: <http://www.w3.org/ns/ssn/systems/> .
 @prefix rdfp: <https://w3id.org/rdfp/>.
 @prefix gr: <http://purl.org/goodrelations/v1#> .
@@ -920,7 +921,6 @@ ex:Organization_1 a prov:Organization ;
 ex:Air a sosa:FeatureOfInterest ;
   rdfs:label "The air."@en ;
   owl:sameAs <https://www.wikidata.org/wiki/Q3230> . 
-
 ex:IP68_Outdoor_Temperature_Sensor a owl:Class , gr:ProductOrServiceModel ;
   rdfs:label "IP68 Outdoor Temperature Sensor"@en ;
   rdfs:subClassOf [
@@ -930,6 +930,8 @@ ex:IP68_Outdoor_Temperature_Sensor a owl:Class , gr:ProductOrServiceModel ;
     owl:onProperty system:hasSystemCapability ;
     owl:hasValue ex:IP68_Outdoor_Temperature_Sensor_systemCapability ] ;
 .
+ex:Sensor_SL-T-P1_battery a ssn-system:Battery;
+ rdfs:label "The battery powering the IP68 Outdoor Temperature Sensor"@en .
 ex:IP68_Outdoor_Temperature_Sensor_operatingRange a system:OperatingRange , sosa:Property ;
   system:inCondition ex:IP68_Outdoor_Temperature_Sensor_normalOperatingCondition ;
 .
@@ -1437,10 +1439,10 @@ orcid:0000-0002-7815-2472
   a sosa:Sampler , dcterms:Agent ;
 .
 ex:p5
-  a sosa:Procedure ;
+  a sosa:SamplingProcedure ;
 .
 ex:p6
-  a sosa:Procedure ;
+  a sosa:SamplingProcedure ;
 .
 ex:examples-collection-sam
   a owl:Ontology ;
@@ -1485,9 +1487,10 @@ ex:VCAB-DP1-BP-40_location a sosa:Sample ;
     a geo:Point ;
     geo:asWKT "POINT (-120.6195831 35.8648067)"^^geo:WktLiteral ;
   ] ;
-  sosa:isSampleOf <https://www.wikidata.org/wiki/Q2> ;
+  sosa:isSampleOf ex:Earth ;
 .
-<https://www.wikidata.org/wiki/Q2> a sosa:FeatureOfInterest ;
+ex:Earth a sosa:FeatureOfInterest ;
+  owl:sameAs <https://www.wikidata.org/wiki/Q2> ;
   rdfs:label "Earth" ;
 .
 ex:groundDisplacementSpeed a sosa:Property ;
@@ -1532,7 +1535,7 @@ ex:StickerColor
   rdfs:label "The color of a sticker"@en ;
 .
 ex:ColorDetermination 
-  rdf:type	sosa:Procedure ;
+  rdf:type	sosa:ObservingProcedure ;
   rdfs:label "Procedure for determining the color of a sticker"@en ;
   sosa:forProperty ex:StickerColor ;
 .
@@ -1571,7 +1574,7 @@ ex:SmileyPopulation
   sosa:hasProperty ex:stickerColor ;
 .
 ex:SmileySamplingProcedure 
-  rdf:type sosa:Procedure ;
+  rdf:type sosa:SamplingProcedure ;
   rdfs:label "Procedure for sampling smiley stickers"@en ;
 .
 ex:SmileySampler 
@@ -1671,7 +1674,7 @@ ex:observation_148_spinningCupsMovement rdf:type sosa:Stimulus ;
 
 <Observation/7536> rdf:type sosa:Observation ;
   sosa:observedProperty  ex:sunspotCount ;
-  sosa:hasFeatureOfInterest <https://www.wikidata.org/wiki/Q525> ;
+  sosa:hasFeatureOfInterest ex:Sun ;
   sosa:hasSimpleResult 66 ;
   sosa:phenomenonTime [
     rdf:type time:Instant ;
@@ -1681,7 +1684,8 @@ ex:observation_148_spinningCupsMovement rdf:type sosa:Stimulus ;
 ex:sunspotCount rdf:type sosa:Property ;
   skos:broader qk:Count ;
 .
-<https://www.wikidata.org/wiki/Q525> a sosa:FeatureOfInterest ;
+ex:Sun a sosa:FeatureOfInterest ;
+  owl:sameAs <https://www.wikidata.org/wiki/Q525> .
   rdfs:label "Sun" ;
 .
 ```
