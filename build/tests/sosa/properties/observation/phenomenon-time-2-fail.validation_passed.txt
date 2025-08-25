@@ -1,0 +1,49 @@
+Validation report for ogc.sosa.properties.observation - Observation Properties
+Generated 2025-08-25T09:57:29.160154+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using phenomenon-time-2-fail.ttl from test resources
+=== End Files ===
+
+=== SHACL ===
+
+** Validation error **
+Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: <https://www.ogc.org/rules/sosa/#testRequiredTime>
+  	Focus Node: [ rdf:type sosa:Observation ; sosa:hasFeatureOfInterest [ ] ; sosa:hasSimpleResult Literal("") ; sosa:observedProperty [ ] ; sosa:phenomenonTime Literal("2025-01-01T00:00:00+00:00" = 2025-01-01 00:00:00+00:00, datatype=xsd:dateTime), Literal("2025-01-02T00:00:00+00:00" = 2025-01-02 00:00:00+00:00, datatype=xsd:dateTime) ]
+  	Value Node: [ rdf:type sosa:Observation ; sosa:hasFeatureOfInterest [ ] ; sosa:hasSimpleResult Literal("") ; sosa:observedProperty [ ] ; sosa:phenomenonTime Literal("2025-01-01T00:00:00+00:00" = 2025-01-01 00:00:00+00:00, datatype=xsd:dateTime), Literal("2025-01-02T00:00:00+00:00" = 2025-01-02 00:00:00+00:00, datatype=xsd:dateTime) ]
+  	Source Constraint: [ sh:message Literal("sosa:resultTime or sosa:phenomenonTime is required, and no more than 1 of each is allowed") ; sh:select Literal("
+              PREFIX sh: <http://www.w3.org/ns/shacl#>
+              PREFIX sosa: <http://www.w3.org/ns/sosa/>
+              PREFIX geojson: <https://purl.org/geojson/vocab#>
+              SELECT $this (CONCAT(COALESCE(COUNT(?resultTime), 0), ' x sosa:resultTime, ', COALESCE(COUNT(?phenomenonTime), 0), ' x sosa:phenomenonTime') AS ?value) WHERE {
+                  OPTIONAL { $this sosa:phenomenonTime ?phenomenonTime }
+                  OPTIONAL { $this sosa:resultTime ?resultTime}
+                  OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:phenomenonTime ?phenomenonTime }
+                  OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:resultTime ?resultTime }
+              }
+              GROUP BY $this
+              HAVING (count(?resultTime) > 1 || count(?phenomenonTime) > 1 || count(?resultTime) + count(?phenomenonTime) < 1)
+          ") ]
+  	Message: sosa:resultTime or sosa:phenomenonTime is required, and no more than 1 of each is allowed
+  
+Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: _:nbf33250726aa42f8a86be50e8b333c10b1
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: _:nbf33250726aa42f8a86be50e8b333c10b1
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: _:nbf33250726aa42f8a86be50e8b333c10b1
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: _:nbf33250726aa42f8a86be50e8b333c10b1
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: 
+
+=== End SHACL ===
+

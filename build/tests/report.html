@@ -51,7 +51,7 @@
     <body>
         <div class="container">
             <h1 class="title">Building blocks validation report</h1>
-            <small class="datetime">Generated at 2025-08-25T09:52:59.362349+00:00</small>
+            <small class="datetime">Generated at 2025-08-25T09:57:34.883781+00:00</small>
                 <p class="summary fw-semibold text-danger">
                     Number of passing building blocks: 7 / 9 (77.78%)
                 </p>
@@ -1279,14 +1279,14 @@
 
                                     <span class="badge text-bg-danger me-2">
                                             Tests Failed
-                                            (40% passed)
+                                            (86.67% passed)
                                     </span>
                                 </button>
                             </h2>
                             <div class="accordion-collapse collapse show" id="bblock-collapse-ogc.sosa.properties.observation">
                                 <div class="accordion-body">
                                         <p class="summary fw-semibold text-danger">
-                                            Test passed: 6 / 15
+                                            Test passed: 13 / 15
                                         </p>
                                         <div class="card mb-2 validation-item require-fail">
                                             <div class="card-body">
@@ -1302,15 +1302,57 @@
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
                                                         <span class="badge text-bg-info">Requires fail</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-danger me-2">Failed</span>
+                                                            <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-42">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">General</div>
-                                                                    <div class="font-monospace entry-message section-general text-danger">Test was expected to fail but it did not.</div>
+                                                                    <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                     <div class="font-monospace entry-message section-files ">Using collection-different-rq-fail.ttl from test resources</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                    <div class="font-monospace entry-message section-shacl text-danger">Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;
+  	Focus Node: ex:ts159c
+  	Value Node: ex:t3
+  	Result Path: sosa:resultQuality
+  	Source Constraint: [ sh:select Literal(&quot;
+          PREFIX sosa: &lt;http://www.w3.org/ns/sosa/&gt;
+          PREFIX geojson: &lt;https://purl.org/geojson/vocab#&gt;
+          PREFIX time: &lt;http://www.w3.org/2006/time#&gt;
+          SELECT $this ?path (?member AS ?value) ?failedValue WHERE {
+              $this (sosa:hasMember|^sosa:memberOf)+ ?member ;
+                  ?path ?collectionValue .
+              ?member ?path ?memberValue .
+              FILTER(?path in ( sosa:resultTime, sosa:phenomenonTime, sosa:hasResult, sosa:hasSimpleResult,
+                  sosa:hasFeatureOfInterest, sosa:hasUltimateFeatureOfInterest, sosa:observedProperty, sosa:madeBySystem,
+                  sosa:usedProcedure, sosa:madeBySensor, sosa:madeBySampler, sosa:isSampleOf, sosa:madeByActuator,
+                  sosa:actsOn, sosa:actsOnProperty, sosa:hasInputValue, sosa:observationRelatedTo,
+                  sosa:relatedObservation, sosa:resultQuality, sosa:isOriginalSampleOf, sosa:isResultOfMadeBySampler,
+                  sosa:isResultOfUsedProcedure ))
+              FILTER((isLiteral(?collectionValue) || isIRI(?collectionValue)) &amp;&amp; ?collectionValue != ?memberValue)
+              FILTER NOT EXISTS { ?collectionValue a time:Interval }
+              BIND(CONCAT(STR(?memberValue), &quot; != &quot;, STR(?collectionValue)) as ?failedValue)
+          }
+      &quot;) ]
+  	Message: Collection member values do not match those of the collections (http://www.w3.org/ns/sosa/resultQuality property in https://example.org/data/t3: https://example.org/data/lowQuality != https://example.org/data/highQuality)
+  </div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: ex:t1,ex:t4,ex:t2,ex:t3
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: ex:ts159c
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: ex:t1,ex:t4,ex:t2,ex:t3
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: ex:t1,ex:t4,ex:t2,ex:t3
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: ex:t1,ex:t4,ex:t2,ex:t3
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: ex:ts159c
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: ex:t1/sosa:hasSimpleResult,ex:t3/sosa:hasSimpleResult,ex:t2/sosa:hasSimpleResult
+</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1329,15 +1371,67 @@
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
                                                         <span class="badge text-bg-info">Requires fail</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-danger me-2">Failed</span>
+                                                            <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-43">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">General</div>
-                                                                    <div class="font-monospace entry-message section-general text-danger">Test was expected to fail but it did not.</div>
+                                                                    <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                     <div class="font-monospace entry-message section-files ">Using collection-time-after-end-fail.ttl from test resources</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                    <div class="font-monospace entry-message section-shacl text-danger">Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;
+  	Focus Node: ex:ts159c
+  	Value Node: ex:t1
+  	Result Path: sosa:phenomenonTime
+  	Source Constraint: [ sh:select Literal(&quot;
+          PREFIX sosa: &lt;http://www.w3.org/ns/sosa/&gt;
+          PREFIX geojson: &lt;https://purl.org/geojson/vocab#&gt;
+          PREFIX time: &lt;http://www.w3.org/2006/time#&gt;
+          SELECT $this ?path (?member AS ?value) ?failedValue WHERE {
+              $this (sosa:hasMember|^sosa:memberOf)+ ?member ;
+                  ?path ?collectionValue .
+              ?collectionValue a time:Interval .
+              ?member ?path ?memberValue .
+              FILTER(?path in ( sosa:resultTime, sosa:phenomenonTime, sosa:hasResult, sosa:hasSimpleResult,
+                  sosa:hasFeatureOfInterest, sosa:hasUltimateFeatureOfInterest, sosa:observedProperty, sosa:madeBySystem,
+                  sosa:usedProcedure, sosa:madeBySensor, sosa:madeBySampler, sosa:isSampleOf, sosa:madeByActuator,
+                  sosa:actsOn, sosa:actsOnProperty, sosa:hasInputValue, sosa:observationRelatedTo,
+                  sosa:relatedObservation, sosa:resultQuality, sosa:isOriginalSampleOf, sosa:isResultOfMadeBySampler,
+                  sosa:isResultOfUsedProcedure ))
+  
+              {
+                  ?collectionValue time:hasBeginning/(time:inXSDDateTime|time:inXSDDate) ?colBeginning .
+                  OPTIONAL { ?memberValue time:hasBeginning?/(time:inXSDDateTime|time:inXSDDate) ?memberBeginning }
+                  FILTER((isLiteral(?memberValue) &amp;&amp; ?memberValue &lt; ?colBeginning) || (BOUND(?memberBeginning) &amp;&amp; ?memberBeginning &lt; ?colBeginning))
+                  BIND(CONCAT(STR(COALESCE(?memberBeginning, ?memberValue)), &quot; &lt; &quot;, STR(?colBeginning)) as ?failedValue)
+              } UNION {
+                  ?collectionValue time:hasEnd?/(time:inXSDDateTime|time:inXSDDate) ?colEnd .
+                  OPTIONAL { ?memberValue time:hasEnd?/(time:inXSDDateTime|time:inXSDDate) ?memberEnd }
+                  FILTER((isLiteral(?memberValue) &amp;&amp; ?memberValue &gt; ?colEnd) || (BOUND(?memberEnd) &amp;&amp; ?memberEnd &gt; ?colEnd))
+                  BIND(CONCAT(STR(COALESCE(?memberEnd, ?memberValue)), &quot; &gt; &quot;, STR(?colEnd)) as ?failedValue)
+              }
+          }
+      &quot;) ]
+  	Message: Collection member values do not match those of the collections (http://www.w3.org/ns/sosa/phenomenonTime property in https://example.org/data/t1: 2017-04-16T20:00:00+00:00 &gt; 2017-04-15T20:03:00+00:00)
+  </div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: ex:t1,ex:t4,ex:t2,ex:t3
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: ex:ts159c
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: ex:t1,ex:t4,ex:t2,ex:t3
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: ex:t1,ex:t4,ex:t2,ex:t3
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: ex:t1,ex:t4,ex:t2,ex:t3
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: ex:ts159c
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: ex:t1/sosa:hasSimpleResult,ex:t3/sosa:hasSimpleResult,ex:t2/sosa:hasSimpleResult
+</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1356,15 +1450,67 @@
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
                                                         <span class="badge text-bg-info">Requires fail</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-danger me-2">Failed</span>
+                                                            <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-44">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">General</div>
-                                                                    <div class="font-monospace entry-message section-general text-danger">Test was expected to fail but it did not.</div>
+                                                                    <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                     <div class="font-monospace entry-message section-files ">Using collection-time-before-beginning-fail.ttl from test resources</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                    <div class="font-monospace entry-message section-shacl text-danger">Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;
+  	Focus Node: ex:ts159c
+  	Value Node: ex:t1
+  	Result Path: sosa:phenomenonTime
+  	Source Constraint: [ sh:select Literal(&quot;
+          PREFIX sosa: &lt;http://www.w3.org/ns/sosa/&gt;
+          PREFIX geojson: &lt;https://purl.org/geojson/vocab#&gt;
+          PREFIX time: &lt;http://www.w3.org/2006/time#&gt;
+          SELECT $this ?path (?member AS ?value) ?failedValue WHERE {
+              $this (sosa:hasMember|^sosa:memberOf)+ ?member ;
+                  ?path ?collectionValue .
+              ?collectionValue a time:Interval .
+              ?member ?path ?memberValue .
+              FILTER(?path in ( sosa:resultTime, sosa:phenomenonTime, sosa:hasResult, sosa:hasSimpleResult,
+                  sosa:hasFeatureOfInterest, sosa:hasUltimateFeatureOfInterest, sosa:observedProperty, sosa:madeBySystem,
+                  sosa:usedProcedure, sosa:madeBySensor, sosa:madeBySampler, sosa:isSampleOf, sosa:madeByActuator,
+                  sosa:actsOn, sosa:actsOnProperty, sosa:hasInputValue, sosa:observationRelatedTo,
+                  sosa:relatedObservation, sosa:resultQuality, sosa:isOriginalSampleOf, sosa:isResultOfMadeBySampler,
+                  sosa:isResultOfUsedProcedure ))
+  
+              {
+                  ?collectionValue time:hasBeginning/(time:inXSDDateTime|time:inXSDDate) ?colBeginning .
+                  OPTIONAL { ?memberValue time:hasBeginning?/(time:inXSDDateTime|time:inXSDDate) ?memberBeginning }
+                  FILTER((isLiteral(?memberValue) &amp;&amp; ?memberValue &lt; ?colBeginning) || (BOUND(?memberBeginning) &amp;&amp; ?memberBeginning &lt; ?colBeginning))
+                  BIND(CONCAT(STR(COALESCE(?memberBeginning, ?memberValue)), &quot; &lt; &quot;, STR(?colBeginning)) as ?failedValue)
+              } UNION {
+                  ?collectionValue time:hasEnd?/(time:inXSDDateTime|time:inXSDDate) ?colEnd .
+                  OPTIONAL { ?memberValue time:hasEnd?/(time:inXSDDateTime|time:inXSDDate) ?memberEnd }
+                  FILTER((isLiteral(?memberValue) &amp;&amp; ?memberValue &gt; ?colEnd) || (BOUND(?memberEnd) &amp;&amp; ?memberEnd &gt; ?colEnd))
+                  BIND(CONCAT(STR(COALESCE(?memberEnd, ?memberValue)), &quot; &gt; &quot;, STR(?colEnd)) as ?failedValue)
+              }
+          }
+      &quot;) ]
+  	Message: Collection member values do not match those of the collections (http://www.w3.org/ns/sosa/phenomenonTime property in https://example.org/data/t1: 2017-04-14T20:00:00+00:00 &lt; 2017-04-15T20:00:00+00:00)
+  </div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: ex:t1,ex:t4,ex:t2,ex:t3
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: ex:ts159c
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: ex:t1,ex:t4,ex:t2,ex:t3
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: ex:t1,ex:t4,ex:t2,ex:t3
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: ex:t1,ex:t4,ex:t2,ex:t3
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: ex:ts159c
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: ex:t1/sosa:hasSimpleResult,ex:t3/sosa:hasSimpleResult,ex:t2/sosa:hasSimpleResult
+</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1389,6 +1535,21 @@
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                     <div class="font-monospace entry-message section-files ">Using collection-times-in-interval.ttl from test resources</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: ex:t1,ex:t4,ex:t2,ex:t3
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: ex:ts159c
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: ex:t1,ex:t4,ex:t2,ex:t3
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: ex:t1,ex:t4,ex:t2,ex:t3
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: ex:t1,ex:t4,ex:t2,ex:t3
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: ex:ts159c
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: ex:t1/sosa:hasSimpleResult,ex:t3/sosa:hasSimpleResult,ex:t2/sosa:hasSimpleResult
+</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1407,15 +1568,50 @@
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
                                                         <span class="badge text-bg-info">Requires fail</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-danger me-2">Failed</span>
+                                                            <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-46">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">General</div>
-                                                                    <div class="font-monospace entry-message section-general text-danger">Test was expected to fail but it did not.</div>
+                                                                    <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                     <div class="font-monospace entry-message section-files ">Using no-time-fail.ttl from test resources</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                    <div class="font-monospace entry-message section-shacl text-danger">Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;
+  	Focus Node: [ rdf:type sosa:Observation ; sosa:hasFeatureOfInterest [ ] ; sosa:hasSimpleResult Literal(&quot;&quot;) ; sosa:observedProperty [ ] ]
+  	Value Node: [ rdf:type sosa:Observation ; sosa:hasFeatureOfInterest [ ] ; sosa:hasSimpleResult Literal(&quot;&quot;) ; sosa:observedProperty [ ] ]
+  	Source Constraint: [ sh:message Literal(&quot;sosa:resultTime or sosa:phenomenonTime is required, and no more than 1 of each is allowed&quot;) ; sh:select Literal(&quot;
+              PREFIX sh: &lt;http://www.w3.org/ns/shacl#&gt;
+              PREFIX sosa: &lt;http://www.w3.org/ns/sosa/&gt;
+              PREFIX geojson: &lt;https://purl.org/geojson/vocab#&gt;
+              SELECT $this (CONCAT(COALESCE(COUNT(?resultTime), 0), &#x27; x sosa:resultTime, &#x27;, COALESCE(COUNT(?phenomenonTime), 0), &#x27; x sosa:phenomenonTime&#x27;) AS ?value) WHERE {
+                  OPTIONAL { $this sosa:phenomenonTime ?phenomenonTime }
+                  OPTIONAL { $this sosa:resultTime ?resultTime}
+                  OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:phenomenonTime ?phenomenonTime }
+                  OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:resultTime ?resultTime }
+              }
+              GROUP BY $this
+              HAVING (count(?resultTime) &gt; 1 || count(?phenomenonTime) &gt; 1 || count(?resultTime) + count(?phenomenonTime) &lt; 1)
+          &quot;) ]
+  	Message: sosa:resultTime or sosa:phenomenonTime is required, and no more than 1 of each is allowed
+  </div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:n8352ca8770874787a2f69990cc28f3e5b1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:n8352ca8770874787a2f69990cc28f3e5b1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:n8352ca8770874787a2f69990cc28f3e5b1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:n8352ca8770874787a2f69990cc28f3e5b1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: 
+</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1434,18 +1630,40 @@
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
                                                         <span class="badge text-bg-info">Requires fail</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-danger me-2">Failed</span>
+                                                            <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-47">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">General</div>
-                                                                    <div class="font-monospace entry-message section-general text-danger">Test was expected to fail but it did not.</div>
+                                                                    <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                     <div class="font-monospace entry-message section-files ">Using non-simpleresult-fail.jsonld from test resources</div>
                                                                     <div class="font-monospace entry-message section-files ">Output Turtle non-simpleresult-fail.ttl created</div>
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
                                                                     <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                    <div class="font-monospace entry-message section-shacl text-danger">Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Constraint Violation in NodeKindConstraintComponent (http://www.w3.org/ns/shacl#NodeKindConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;
+  	Focus Node: [ ]
+  	Value Node: [ ]
+  	Message: sosa:hasSimpleResult is a simple Literal
+  </div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: _:N4a9e841d6f6348e5991abcd6af67d23a
+</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1476,6 +1694,21 @@
                                                                     <div class="font-monospace entry-message section-files ">Output Turtle observedprop-fail.ttl created</div>
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
                                                                     <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: *none*
+</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1494,15 +1727,50 @@
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
                                                         <span class="badge text-bg-info">Requires fail</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-danger me-2">Failed</span>
+                                                            <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-49">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">General</div>
-                                                                    <div class="font-monospace entry-message section-general text-danger">Test was expected to fail but it did not.</div>
+                                                                    <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                     <div class="font-monospace entry-message section-files ">Using phenomenon-time-2-fail.ttl from test resources</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                    <div class="font-monospace entry-message section-shacl text-danger">Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;
+  	Focus Node: [ rdf:type sosa:Observation ; sosa:hasFeatureOfInterest [ ] ; sosa:hasSimpleResult Literal(&quot;&quot;) ; sosa:observedProperty [ ] ; sosa:phenomenonTime Literal(&quot;2025-01-01T00:00:00+00:00&quot; = 2025-01-01 00:00:00+00:00, datatype=xsd:dateTime), Literal(&quot;2025-01-02T00:00:00+00:00&quot; = 2025-01-02 00:00:00+00:00, datatype=xsd:dateTime) ]
+  	Value Node: [ rdf:type sosa:Observation ; sosa:hasFeatureOfInterest [ ] ; sosa:hasSimpleResult Literal(&quot;&quot;) ; sosa:observedProperty [ ] ; sosa:phenomenonTime Literal(&quot;2025-01-01T00:00:00+00:00&quot; = 2025-01-01 00:00:00+00:00, datatype=xsd:dateTime), Literal(&quot;2025-01-02T00:00:00+00:00&quot; = 2025-01-02 00:00:00+00:00, datatype=xsd:dateTime) ]
+  	Source Constraint: [ sh:message Literal(&quot;sosa:resultTime or sosa:phenomenonTime is required, and no more than 1 of each is allowed&quot;) ; sh:select Literal(&quot;
+              PREFIX sh: &lt;http://www.w3.org/ns/shacl#&gt;
+              PREFIX sosa: &lt;http://www.w3.org/ns/sosa/&gt;
+              PREFIX geojson: &lt;https://purl.org/geojson/vocab#&gt;
+              SELECT $this (CONCAT(COALESCE(COUNT(?resultTime), 0), &#x27; x sosa:resultTime, &#x27;, COALESCE(COUNT(?phenomenonTime), 0), &#x27; x sosa:phenomenonTime&#x27;) AS ?value) WHERE {
+                  OPTIONAL { $this sosa:phenomenonTime ?phenomenonTime }
+                  OPTIONAL { $this sosa:resultTime ?resultTime}
+                  OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:phenomenonTime ?phenomenonTime }
+                  OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:resultTime ?resultTime }
+              }
+              GROUP BY $this
+              HAVING (count(?resultTime) &gt; 1 || count(?phenomenonTime) &gt; 1 || count(?resultTime) + count(?phenomenonTime) &lt; 1)
+          &quot;) ]
+  	Message: sosa:resultTime or sosa:phenomenonTime is required, and no more than 1 of each is allowed
+  </div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:nbf33250726aa42f8a86be50e8b333c10b1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:nbf33250726aa42f8a86be50e8b333c10b1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:nbf33250726aa42f8a86be50e8b333c10b1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:nbf33250726aa42f8a86be50e8b333c10b1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: 
+</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1527,6 +1795,21 @@
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                     <div class="font-monospace entry-message section-files ">Using result-phenomenon-time.ttl from test resources</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:ncd295a7f71cf4d2a9e867ba3373731ddb1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:ncd295a7f71cf4d2a9e867ba3373731ddb1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:ncd295a7f71cf4d2a9e867ba3373731ddb1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:ncd295a7f71cf4d2a9e867ba3373731ddb1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: 
+</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1545,15 +1828,50 @@
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
                                                         <span class="badge text-bg-info">Requires fail</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-danger me-2">Failed</span>
+                                                            <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-51">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">General</div>
-                                                                    <div class="font-monospace entry-message section-general text-danger">Test was expected to fail but it did not.</div>
+                                                                    <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                     <div class="font-monospace entry-message section-files ">Using result-time-2-fail.ttl from test resources</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                    <div class="font-monospace entry-message section-shacl text-danger">Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;
+  	Focus Node: [ rdf:type sosa:Observation ; sosa:hasFeatureOfInterest [ ] ; sosa:hasSimpleResult Literal(&quot;&quot;) ; sosa:observedProperty [ ] ; sosa:phenomenonTime Literal(&quot;2024-12-31T00:00:00+00:00&quot; = 2024-12-31 00:00:00+00:00, datatype=xsd:dateTime) ; sosa:resultTime Literal(&quot;2025-01-01T00:00:00+00:00&quot; = 2025-01-01 00:00:00+00:00, datatype=xsd:dateTime), Literal(&quot;2025-01-02T00:00:00+00:00&quot; = 2025-01-02 00:00:00+00:00, datatype=xsd:dateTime) ]
+  	Value Node: [ rdf:type sosa:Observation ; sosa:hasFeatureOfInterest [ ] ; sosa:hasSimpleResult Literal(&quot;&quot;) ; sosa:observedProperty [ ] ; sosa:phenomenonTime Literal(&quot;2024-12-31T00:00:00+00:00&quot; = 2024-12-31 00:00:00+00:00, datatype=xsd:dateTime) ; sosa:resultTime Literal(&quot;2025-01-01T00:00:00+00:00&quot; = 2025-01-01 00:00:00+00:00, datatype=xsd:dateTime), Literal(&quot;2025-01-02T00:00:00+00:00&quot; = 2025-01-02 00:00:00+00:00, datatype=xsd:dateTime) ]
+  	Source Constraint: [ sh:message Literal(&quot;sosa:resultTime or sosa:phenomenonTime is required, and no more than 1 of each is allowed&quot;) ; sh:select Literal(&quot;
+              PREFIX sh: &lt;http://www.w3.org/ns/shacl#&gt;
+              PREFIX sosa: &lt;http://www.w3.org/ns/sosa/&gt;
+              PREFIX geojson: &lt;https://purl.org/geojson/vocab#&gt;
+              SELECT $this (CONCAT(COALESCE(COUNT(?resultTime), 0), &#x27; x sosa:resultTime, &#x27;, COALESCE(COUNT(?phenomenonTime), 0), &#x27; x sosa:phenomenonTime&#x27;) AS ?value) WHERE {
+                  OPTIONAL { $this sosa:phenomenonTime ?phenomenonTime }
+                  OPTIONAL { $this sosa:resultTime ?resultTime}
+                  OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:phenomenonTime ?phenomenonTime }
+                  OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:resultTime ?resultTime }
+              }
+              GROUP BY $this
+              HAVING (count(?resultTime) &gt; 1 || count(?phenomenonTime) &gt; 1 || count(?resultTime) + count(?phenomenonTime) &lt; 1)
+          &quot;) ]
+  	Message: sosa:resultTime or sosa:phenomenonTime is required, and no more than 1 of each is allowed
+  </div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:n11d50742ccf44f99a0e1d706b0771a0cb1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:n11d50742ccf44f99a0e1d706b0771a0cb1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:n11d50742ccf44f99a0e1d706b0771a0cb1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:n11d50742ccf44f99a0e1d706b0771a0cb1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: 
+</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1578,6 +1896,21 @@
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                     <div class="font-monospace entry-message section-files ">Using result-time.ttl from test resources</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:nf2eaee06080d452f8ce451cc6fc330f9b1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:nf2eaee06080d452f8ce451cc6fc330f9b1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:nf2eaee06080d452f8ce451cc6fc330f9b1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:nf2eaee06080d452f8ce451cc6fc330f9b1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: 
+</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1608,6 +1941,21 @@
                                                                     <div class="font-monospace entry-message section-files ">Output Turtle tworesults-fail.ttl created</div>
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
                                                                     <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: frogginess
+</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1637,6 +1985,21 @@
                                                                     <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
                                                                     <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: 33
+</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1662,6 +2025,21 @@
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                     <div class="font-monospace entry-message section-files ">Using example_1_2.ttl from examples</div>
                                                                     <div class="font-monospace entry-message section-files ">Output Turtle example_1_2.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:n868e89f8235d49c18fc6aee97a5f1db9b1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:n868e89f8235d49c18fc6aee97a5f1db9b1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:n868e89f8235d49c18fc6aee97a5f1db9b1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:n868e89f8235d49c18fc6aee97a5f1db9b1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: 33
+</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1691,6 +2069,21 @@
                                                                     <div class="font-monospace entry-message section-files ">Output Turtle example_2_1.ttl created</div>
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
                                                                     <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: *none*
+</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1797,6 +2190,21 @@
                                                                     <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
                                                                     <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;http://example.com/a1&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: _:N198355eb0a0049aeb5a03ef5c68d5da9
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;http://example.com/a1&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://example.com/a1&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;http://example.com/a1&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: _:N198355eb0a0049aeb5a03ef5c68d5da9
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: &lt;http://example.com/a1&gt;/sosa:hasSimpleResult
+</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1822,6 +2230,21 @@
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                     <div class="font-monospace entry-message section-files ">Using example_2_1.ttl from examples</div>
                                                                     <div class="font-monospace entry-message section-files ">Output Turtle example_2_1.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: eg:a1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: eg:c1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: eg:a1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: eg:a1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: eg:a1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: eg:c1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: eg:a1/sosa:hasSimpleResult
+</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1875,6 +2298,21 @@
                                                                     <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
                                                                     <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: &lt;http://example.com/pop1999&gt;/sosa:hasSimpleResult
+</div>
                                                                     <div class="font-monospace subsection-title mt-2">Semantic Uplift</div>
                                                                     <div class="font-monospace entry-message section-semantic_uplift ">Running post-uplift shacl transform step from semantic-uplift/featureType.shacl</div>
                                                     </div>
@@ -1902,6 +2340,21 @@
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                     <div class="font-monospace entry-message section-files ">Using example_1_2.ttl from examples</div>
                                                                     <div class="font-monospace entry-message section-files ">Output Turtle example_1_2.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:n54e1f51c272047ac8fe2ddc9d52cb6bcb1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:n54e1f51c272047ac8fe2ddc9d52cb6bcb1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:n54e1f51c272047ac8fe2ddc9d52cb6bcb1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:n54e1f51c272047ac8fe2ddc9d52cb6bcb1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: 33
+</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1931,6 +2384,21 @@
                                                                     <div class="font-monospace entry-message section-files ">Output Turtle example_2_1.ttl created</div>
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
                                                                     <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: *none*
+</div>
                                                                     <div class="font-monospace subsection-title mt-2">Semantic Uplift</div>
                                                                     <div class="font-monospace entry-message section-semantic_uplift ">Running post-uplift shacl transform step from semantic-uplift/featureType.shacl</div>
                                                     </div>
@@ -1989,6 +2457,21 @@
                                                                     <div class="font-monospace entry-message section-files ">Output Turtle observationCollection-props-fail.ttl created</div>
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
                                                                     <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: &lt;file:///github/workspace/c1&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: &lt;file:///github/workspace/c1&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: &lt;file:///github/workspace/pop1999&gt;/sosa:hasSimpleResult
+</div>
                                                                     <div class="font-monospace subsection-title mt-2">Semantic Uplift</div>
                                                                     <div class="font-monospace entry-message section-semantic_uplift ">Running post-uplift shacl transform step from ../observation/semantic-uplift/featureType.shacl</div>
                                                     </div>
@@ -2020,6 +2503,21 @@
                                                                     <div class="font-monospace entry-message section-files ">Output Turtle observationCollection-props.ttl created</div>
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
                                                                     <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;file:///github/workspace/something&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: &lt;file:///github/workspace/c1&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;file:///github/workspace/something&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;file:///github/workspace/something&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;file:///github/workspace/something&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: &lt;file:///github/workspace/c1&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: &lt;file:///github/workspace/pop1999&gt;/sosa:hasSimpleResult
+</div>
                                                                     <div class="font-monospace subsection-title mt-2">Semantic Uplift</div>
                                                                     <div class="font-monospace entry-message section-semantic_uplift ">Running post-uplift shacl transform step from ../observation/semantic-uplift/featureType.shacl</div>
                                                     </div>
@@ -2051,6 +2549,21 @@
                                                                     <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
                                                                     <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;http://www.example.com/sosa/something&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: &lt;http://www.example.com/sosa/c1&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;http://www.example.com/sosa/something&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://www.example.com/sosa/something&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;http://www.example.com/sosa/something&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: &lt;http://www.example.com/sosa/c1&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: &lt;http://www.example.com/sosa/pop1999&gt;/sosa:hasSimpleResult
+</div>
                                                                     <div class="font-monospace subsection-title mt-2">Semantic Uplift</div>
                                                                     <div class="font-monospace entry-message section-semantic_uplift ">Running post-uplift shacl transform step from ../observation/semantic-uplift/featureType.shacl</div>
                                                     </div>
@@ -2078,6 +2591,21 @@
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                     <div class="font-monospace entry-message section-files ">Using example_1_2.ttl from examples</div>
                                                                     <div class="font-monospace entry-message section-files ">Output Turtle example_1_2.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: eg:pop2000,eg:pop1999
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: eg:c1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: eg:pop2000,eg:pop1999
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: eg:pop2000,eg:pop1999
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: eg:pop2000,eg:pop1999
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: eg:c1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: eg:pop1999/sosa:hasSimpleResult,eg:pop2000/sosa:hasSimpleResult
+</div>
                                                     </div>
                                                 </div>
                                             </div>

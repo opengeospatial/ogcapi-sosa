@@ -1,14 +1,12 @@
 Validation report for ogc.sosa.properties.observation - Observation Properties
-Generated 2025-08-25T09:57:29.115482+00:00
+Generated 2025-08-25T09:57:29.110829+00:00
 === General ===
-
-** Validation error **
-Test was expected to fail but it did not.
+Test was expected to fail and it did.
 === End General ===
 
 === Files ===
-Using observedprop-fail.jsonld from test resources
-Output Turtle observedprop-fail.ttl created
+Using non-simpleresult-fail.jsonld from test resources
+Output Turtle non-simpleresult-fail.ttl created
 === End Files ===
 
 === JSON Schema ===
@@ -16,9 +14,18 @@ Validation passed
 === End JSON Schema ===
 
 === SHACL ===
+
+** Validation error **
 Validation result for _sources/properties/observation/shapes.shacl:
   Validation Report
-  Conforms: True
+  Conforms: False
+  Results (1):
+  Constraint Violation in NodeKindConstraintComponent (http://www.w3.org/ns/shacl#NodeKindConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>
+  	Focus Node: [ ]
+  	Value Node: [ ]
+  	Message: sosa:hasSimpleResult is a simple Literal
   
 Focus nodes for _sources/properties/observation/shapes.shacl:
  - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: *none*
@@ -28,7 +35,7 @@ Focus nodes for _sources/properties/observation/shapes.shacl:
  - Shape <https://www.ogc.org/rules/sosa/#testResult>: *none*
  - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
  - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: _:N4a9e841d6f6348e5991abcd6af67d23a
 
 === End SHACL ===
 
