@@ -1,53 +1,23 @@
 @prefix ex: <https://example.org/data/> .
+@prefix qk: <http://qudt.org/vocab/quantitykind/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ex:Observation-Smiley-Color a sosa:Observation ;
-    sosa:hasFeatureOfInterest ex:SmileySticker ;
-    sosa:hasSimpleResult "Yellow"^^xsd:string ;
-    sosa:madeBySensor ex:ColorDeterminer ;
-    sosa:observedProperty ex:StickerColor ;
+<https://example.org/data/sunspot/Observation/7536> a sosa:Observation ;
+    sosa:hasFeatureOfInterest ex:Sun ;
+    sosa:hasSimpleResult 66 ;
+    sosa:observedProperty ex:sunspotCount ;
     sosa:phenomenonTime [ a time:Instant ;
-            time:inXSDDateTimeStamp "2017-04-15T00:00:00+00:00"^^xsd:dateTimeStamp ] ;
-    sosa:resultTime "2017-04-16T00:00:12+00:00"^^xsd:dateTimeStamp ;
-    sosa:usedProcedure ex:ColorDetermination .
+            time:inXSDDateTimeStamp "2017-03-31T11:51:42+00:00"^^xsd:dateTime ] ;
+    sosa:resultTime "2017-03-31T12:00:00+00:00"^^xsd:dateTime .
 
-ex:SmileySampling a sosa:Sampling ;
-    rdfs:label "Sampling of a representative Smiley Sticker from a Collection of Smiley Stickers"@en ;
-    sosa:hasFeatureOfInterest ex:SmileyPopulation ;
-    sosa:hasResult ex:SmileySticker ;
-    sosa:madeBySampler ex:SmileySampler ;
-    sosa:usedProcedure ex:SmileySamplingProcedure .
+ex:Sun a sosa:FeatureOfInterest ;
+    rdfs:label "Sun" ;
+    skos:exactMatch <https://www.wikidata.org/wiki/Q525> .
 
-ex:StickerAssayOffice a sosa:Platform ;
-    rdfs:label "Assay office for determining the color of a sticker"@en ;
-    sosa:hosts ex:ColorDeterminer .
-
-ex:ColorDetermination a sosa:ObservingProcedure ;
-    rdfs:label "Procedure for determining the color of a sticker"@en ;
-    sosa:forProperty ex:StickerColor .
-
-ex:SmileyPopulation a sosa:FeatureOfInterest ;
-    rdfs:label "A population of smiley face stickers"@en ;
-    sosa:hasProperty ex:stickerColor .
-
-ex:SmileySampler a sosa:Sampler ;
-    rdfs:label "Smiley sticker sampler"@en ;
-    sosa:implements ex:SmileySamplingProcedure .
-
-ex:ColorDeterminer a sosa:Sensor ;
-    rdfs:label "Sensor for determining the color of a sticker"@en ;
-    sosa:observes ex:StickerColor .
-
-ex:SmileySamplingProcedure a sosa:SamplingProcedure ;
-    rdfs:label "Procedure for sampling smiley stickers"@en .
-
-ex:SmileySticker a sosa:FeatureOfInterest ;
-    rdfs:label "Smiley face sticker"@en ;
-    sosa:hasProperty ex:stickerColor .
-
-ex:StickerColor a sosa:Property ;
-    rdfs:label "The color of a sticker"@en .
+ex:sunspotCount a sosa:Property ;
+    skos:broader qk:Count .
 

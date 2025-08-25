@@ -10,7 +10,7 @@
   "itemClass": "schema",
   "register": "ogc-building-block-register",
   "version": "1.0",
-  "dateOfLastChange": "2025-06-04",
+  "dateOfLastChange": "2025-08-25",
   "sources": [
     {
       "title": "Semantic Sensor Network Ontology",
@@ -20,8 +20,8 @@
   "maturity": "development",
   "scope": "development",
   "dependsOn": [
-    "ogc.sosa.properties.observation",
-    "ogc.geo.json-fg.feature-lenient"
+    "ogc.geo.json-fg.feature-lenient",
+    "ogc.sosa.properties.observation"
   ],
   "tags": [
     "sosa",
@@ -31,11 +31,7 @@
     "o&m&s"
   ],
   "group": "SOSA",
-  "shaclRules": {
-    "ogc.sosa.properties.observation": [
-      "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl"
-    ]
-  },
+  "shaclRules": {},
   "schema": {
     "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.yaml",
     "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.json"

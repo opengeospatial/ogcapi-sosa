@@ -1,22 +1,17 @@
+@prefix cdt: <http://w3id.org/lindt/custom_datatypes#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix qk: <http://qudt.org/vocab/quantitykind/> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sensor: <https://example.org/sensor/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix system: <http://www.w3.org/ns/ssn/systems/> .
-@prefix unit: <http://qudt.org/vocab/unit/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sosa-cap: <http://www.w3.org/ns/sosa/system-capability-properties#> .
 
 sensor:IBS-TH2-Plus a owl:Class ;
     rdfs:label "IBS-TH2 PLUS Temperature and Humidity Sensor System" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:hasValue sensor:IBS-TH2-Plus-systemCapability ;
-            owl:onProperty system:hasSystemCapability ],
-        [ a owl:Restriction ;
-            owl:cardinality "2"^^xsd:nonNegativeInteger ;
-            owl:onProperty sosa:hasSubSystem ],
+            owl:onProperty sosa:hasSystemCapability ],
         [ a owl:Restriction ;
             owl:onProperty sosa:hasSubSystem ;
             owl:someValuesFrom sensor:IBS-TH2-Plus-H ],
@@ -33,15 +28,19 @@ sensor:IBS-TH2-Plus-H a owl:Class ;
             owl:onProperty sosa:observes ],
         [ a owl:Restriction ;
             owl:hasValue sensor:IBS-TH2-Plus-H-systemCapability ;
-            owl:onProperty system:hasSystemCapability ],
+            owl:onProperty sosa:hasSystemCapability ],
         sosa:Sensor .
 
-sensor:IBS-TH2-Plus-H-systemCapability a system:SystemCapability ;
-    system:hasSystemProperty [ a system:Accuracy ;
-            rdf:value "4.5"^^unit:PERCENT_RH ],
-        [ a system:MeasurementRange ;
-            xsd:maxInclusive "99.0"^^unit:PERCENT_RH ;
-            xsd:minInclusive "0.0"^^unit:PERCENT_RH ] .
+sensor:IBS-TH2-Plus-H-systemCapability a sosa:ObservationCollection ;
+    sosa:hasMember [ a sosa:Observation ;
+            sosa:hasSimpleResult "4.5 %"^^cdt:ucum ;
+            sosa:observedProperty sosa-cap:HumidityAccuracy ],
+        [ a sosa:Observation ;
+            sosa:hasSimpleResult "99.0 %"^^cdt:ucum ;
+            sosa:observedProperty sosa-cap:MaxMeasurableHumidity ],
+        [ a sosa:Observation ;
+            sosa:hasSimpleResult "0.0 %"^^cdt:ucum ;
+            sosa:observedProperty sosa-cap:MinMeasurableHumidity ] .
 
 sensor:IBS-TH2-Plus-T a owl:Class ;
     rdfs:label "IBS-TH2 PLUS Temperature Sensor type" ;
@@ -50,18 +49,25 @@ sensor:IBS-TH2-Plus-T a owl:Class ;
             owl:onProperty sosa:observes ],
         [ a owl:Restriction ;
             owl:hasValue sensor:IBS-TH2-Plus-T-systemCapability ;
-            owl:onProperty system:hasSystemCapability ],
+            owl:onProperty sosa:hasSystemCapability ],
         sosa:Sensor .
 
-sensor:IBS-TH2-Plus-T-systemCapability a system:SystemCapability ;
-    system:hasSystemProperty [ a system:Accuracy ;
-            rdf:value "0.5"^^unit:DEG_C ],
-        [ a system:MeasurementRange ;
-            xsd:maxInclusive "60.0"^^unit:DEG_C ;
-            xsd:minInclusive "-40.0"^^unit:DEG_C ] .
+sensor:IBS-TH2-Plus-T-systemCapability a sosa:ObservationCollection ;
+    sosa:hasMember [ a sosa:Observation ;
+            sosa:hasSimpleResult "0.5 Cel"^^cdt:ucum ;
+            sosa:observedProperty sosa-cap:TemperatureAccuracy ],
+        [ a sosa:Observation ;
+            sosa:hasSimpleResult "60.0 Cel"^^cdt:ucum ;
+            sosa:observedProperty sosa-cap:MaxMeasurableTemperature ],
+        [ a sosa:Observation ;
+            sosa:hasSimpleResult "-40.0 Cel"^^cdt:ucum ;
+            sosa:observedProperty sosa-cap:MinMeasurableTemperature ] .
 
-sensor:IBS-TH2-Plus-systemCapability a system:SystemCapability ;
-    system:hasSystemProperty [ a system:Frequency ;
-            xsd:maxInclusive "0.1"^^unit:HZ ;
-            xsd:minInclusive "5.556e-4"^^unit:HZ ] .
+sensor:IBS-TH2-Plus-systemCapability a sosa:ObservationCollection ;
+    sosa:hasMember [ a sosa:Observation ;
+            sosa:hasSimpleResult "0.1 Hz"^^cdt:ucum ;
+            sosa:observedProperty sosa-cap:MaxFrequency ],
+        [ a sosa:Observation ;
+            sosa:hasSimpleResult "5.556e-4 Hz"^^cdt:ucum ;
+            sosa:observedProperty sosa-cap:MinFrequency ] .
 

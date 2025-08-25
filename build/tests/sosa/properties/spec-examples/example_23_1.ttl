@@ -1,57 +1,24 @@
 @prefix ex: <https://example.org/data/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix relex: <https://example.org/data/sample-relations#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix time: <http://www.w3.org/2006/time#> .
-@prefix unit: <http://qudt.org/vocab/unit/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sosa-rel: <http://www.w3.org/ns/sosa/sampling/> .
 
-ex:Oatc349 a sosa:Observation ;
-    sosa:hasFeatureOfInterest ex:EarthAtmosphere ;
-    sosa:hasInputValue ex:Ob873c4,
-        ex:Ob873t2 ;
-    sosa:hasResult "240"^^unit:PPM ;
-    sosa:observedProperty ex:CO2-Concentration ;
-    sosa:phenomenonTime [ time:inTimePosition [ time:hasTRS ex:BP ;
-                    time:numericPosition 7530 ] ] ;
-    sosa:resultTime "2018-01-09T14:16:00+00:00"^^xsd:dateTime .
+ex:sample-relations a owl:Ontology ;
+    owl:imports <http://www.w3.org/ns/sosa/sam/> .
 
-ex:Antarctic_ice_sheet a sosa:FeatureOfInterest ;
-    owl:sameAs <https://www.wikidata.org/wiki/Q571430> .
+relex:CSRWA25569-mount7-spot1 a sosa:Sample ;
+    rdfs:label "spot 1" ;
+    sosa-rel:hasSampleRelationship [ a sosa-rel:SampleRelationship ;
+            sosa-rel:natureOfRelationship [ a sosa-rel:RelationshipNature ;
+                    rdfs:comment "probe spot on polished mount" ] ;
+            sosa-rel:relatedSample relex:CSRWA25569-mount7 ] .
 
-ex:BP a time:TRS ;
-    skos:definition "Years before 1950, positive backwards" .
+relex:CSRWA25569 a sosa:Sample ;
+    rdfs:label "Specimen CSRWA25569" .
 
-ex:C14-Age a sosa:Property ;
-    owl:sameAs <http://vocab.nerc.ac.uk/collection/S06/current/S0600001/> ;
-    skos:definition "The age of an object, determined by radiocarbon dating, expressed relative to a datum of AD 1950." ;
-    skos:prefLabel "14C age" .
-
-ex:Ob873c4 a sosa:Observation ;
-    sosa:hasFeatureOfInterest ex:Bubble873 ;
-    sosa:hasResult "240"^^unit:PPM ;
-    sosa:hasUltimateFeatureOfInterest ex:EarthAtmosphere ;
-    sosa:observedProperty ex:CO2-Concentration ;
-    sosa:resultTime "2018-01-09T14:16:00+00:00"^^xsd:dateTime .
-
-ex:Ob873t2 a sosa:Observation ;
-    sosa:hasFeatureOfInterest ex:Bubble873 ;
-    sosa:hasResult "7530"^^unit:YR ;
-    sosa:hasUltimateFeatureOfInterest ex:EarthAtmosphere ;
-    sosa:observedProperty ex:C14-Age ;
-    sosa:resultTime "2018-01-09T14:15:00+00:00"^^xsd:dateTime .
-
-ex:Bubble873 a sosa:MaterialSample,
-        sosa:Sample ;
-    sosa:hasSampledFeature ex:Antarctic_ice_sheet ;
-    sosa:isResultOf ex:CoreEx1923 ;
-    sosa:isSampleOf ex:EarthAtmosphere,
-        ex:IceCore12 .
-
-ex:CO2-Concentration a sosa:Property ;
-    owl:sameAs <http://purl.obolibrary.org/obo/ENVO_04000004> ;
-    skos:prefLabel "concentration of carbon dioxide in air" .
-
-ex:EarthAtmosphere a sosa:FeatureOfInterest ;
-    owl:sameAs <https://www.wikidata.org/wiki/Q3230> .
+relex:CSRWA25569-mount7 a sosa:Sample ;
+    rdfs:label "CSRWA25569 mount 7" ;
+    sosa:isSampleOf relex:CSRWA25569 .
 

@@ -1,22 +1,23 @@
 @prefix ex: <https://example.org/data/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ex:Ob873c4 a sosa:Observation ;
-    sosa:hasFeatureOfInterest ex:Bubble873 ;
-    sosa:hasResult "240"^^unit:PPM ;
-    sosa:hasUltimateFeatureOfInterest ex:EarthAtmosphere ;
-    sosa:observedProperty ex:CO2-Concentration .
+ex:A188 a sosa:Actuation ;
+    sosa:actsOnProperty ex:openState ;
+    sosa:endTime "2017-04-18T17:24:00+02:00"^^xsd:dateTime ;
+    sosa:hasFeatureOfInterest ex:window98 ;
+    sosa:hasSimpleResult true ;
+    sosa:madeByActuator ex:closer-987 ;
+    sosa:startTime "2017-04-18T17:23:00+02:00"^^xsd:dateTime .
 
-ex:Bubble873 a sosa:Sample ;
-    sosa:isSampleOf ex:EarthAtmosphere .
+ex:WindowCloser rdfs:subClassOf sosa:Actuator .
 
-ex:CO2-Concentration a sosa:Property ;
-    owl:sameAs <http://purl.obolibrary.org/obo/ENVO_04000004> ;
-    skos:prefLabel "concentration of carbon dioxide in air" .
+ex:closer-987 a sosa:Actuator,
+        ex:WindowCloser .
 
-ex:EarthAtmosphere a sosa:FeatureOfInterest ;
-    owl:sameAs <https://www.wikidata.org/wiki/Q3230> .
+ex:window98 a sosa:FeatureOfInterest ;
+    sosa:hasProperty ex:openState .
+
+ex:openState a sosa:Property .
 

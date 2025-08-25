@@ -1,67 +1,53 @@
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ex: <https://example.org/data/> .
-@prefix orcid: <http://orcid.org/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix time: <http://www.w3.org/2006/time#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ex:SC1 a sosa:SampleCollection ;
-    skos:note """member samples have a common isSampleOf
-  `isResultOfMadeBySampler` is repeated to enumerate the samplers used for the member samples
-  `isResultOfUsedProcedure` is repeated to enumerate the procedures used for the member samples""" ;
-    sosa:hasMember ex:SC2,
-        ex:SC3 ;
-    sosa:isResultOfMadeBySampler orcid:0000-0002-3884-3420,
-        orcid:0000-0002-7815-2472 ;
-    sosa:isResultOfUsedProcedure ex:p5,
-        ex:p6 ;
-    sosa:isSampleOf ex:foia .
+ex:Observation-Smiley-Color a sosa:Observation ;
+    sosa:hasFeatureOfInterest ex:SmileySticker ;
+    sosa:hasSimpleResult "Yellow"^^xsd:string ;
+    sosa:madeBySensor ex:ColorDeterminer ;
+    sosa:observedProperty ex:StickerColor ;
+    sosa:phenomenonTime [ a time:Instant ;
+            time:inXSDDateTimeStamp "2017-04-15T00:00:00+00:00"^^xsd:dateTime ] ;
+    sosa:resultTime "2017-04-16T00:00:12+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure ex:ColorDetermination .
 
-ex:examples-collection-sam a owl:Ontology ;
-    dcterms:created "2023-11-04"^^xsd:date ;
-    dcterms:creator orcid:0000-0002-3884-3420 ;
-    dcterms:modified "2024-01-22"^^xsd:date ;
-    rdfs:comment "Small dataset to test rules in SOSA Collections" ;
-    owl:imports dc:,
-        <http://www.w3.org/2006/time>,
-        sosa: .
+ex:SmileySampling a sosa:Sampling ;
+    rdfs:label "Sampling of a representative Smiley Sticker from a Collection of Smiley Stickers"@en ;
+    sosa:hasFeatureOfInterest ex:SmileyPopulation ;
+    sosa:hasResult ex:SmileySticker ;
+    sosa:madeBySampler ex:SmileySampler ;
+    sosa:usedProcedure ex:SmileySamplingProcedure .
 
-ex:S2 a sosa:Sample ;
-    sosa:isResultOfUsedProcedure ex:p5 .
+ex:StickerAssayOffice a sosa:Platform ;
+    rdfs:label "Assay office for determining the color of a sticker"@en ;
+    sosa:hosts ex:ColorDeterminer .
 
-ex:S3 a sosa:Sample ;
-    sosa:isResultOfUsedProcedure ex:p6 .
+ex:ColorDetermination a sosa:ObservingProcedure ;
+    rdfs:label "Procedure for determining the color of a sticker"@en ;
+    sosa:forProperty ex:StickerColor .
 
-ex:S4 a sosa:Sample ;
-    sosa:isResultOfUsedProcedure ex:p5 .
+ex:SmileyPopulation a sosa:FeatureOfInterest ;
+    rdfs:label "A population of smiley face stickers"@en ;
+    sosa:hasProperty ex:stickerColor .
 
-ex:S5 a sosa:Sample ;
-    sosa:isResultOfUsedProcedure ex:p6 .
+ex:SmileySampler a sosa:Sampler ;
+    rdfs:label "Smiley sticker sampler"@en ;
+    sosa:implements ex:SmileySamplingProcedure .
 
-ex:SC2 a sosa:SampleCollection ;
-    skos:note "member samples have a common Sampler" ;
-    sosa:hasMember ex:S2,
-        ex:S3 ;
-    sosa:isResultOfMadeBySampler orcid:0000-0002-3884-3420 .
+ex:ColorDeterminer a sosa:Sensor ;
+    rdfs:label "Sensor for determining the color of a sticker"@en ;
+    sosa:observes ex:StickerColor .
 
-ex:SC3 a sosa:SampleCollection ;
-    skos:note "member samples have a common Sampler" ;
-    sosa:hasMember ex:S4,
-        ex:S5 ;
-    sosa:isResultOfMadeBySampler orcid:0000-0002-7815-2472 .
+ex:SmileySamplingProcedure a sosa:SamplingProcedure ;
+    rdfs:label "Procedure for sampling smiley stickers"@en .
 
-ex:foia a sosa:FeatureOfInterest .
+ex:SmileySticker a sosa:FeatureOfInterest ;
+    rdfs:label "Smiley face sticker"@en ;
+    sosa:hasProperty ex:stickerColor .
 
-orcid:0000-0002-7815-2472 a dcterms:Agent,
-        sosa:Sampler .
-
-orcid:0000-0002-3884-3420 a dcterms:Agent,
-        sosa:Sampler .
-
-ex:p5 a sosa:SamplingProcedure .
-
-ex:p6 a sosa:SamplingProcedure .
+ex:StickerColor a sosa:Property ;
+    rdfs:label "The color of a sticker"@en .
 

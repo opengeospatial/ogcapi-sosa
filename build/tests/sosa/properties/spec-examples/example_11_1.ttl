@@ -1,21 +1,18 @@
 @prefix cdt: <http://w3id.org/lindt/custom_datatypes#> .
 @prefix ex: <https://example.org/data/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix qk: <http://qudt.org/vocab/quantitykind/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa1: <http://www.w3.org/ns/sosa#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ex:IDEA a owl:Ontology ;
-    owl:imports <http://www.w3.org/ns/sosa> .
-
 ex:RH_avg_1_COPR_15min_201706020300PM a sosa1:Observation ;
     rdfs:label "Relative humidity, AVG, 15min, COPR, 06.02.2017, 3:00 PM"@en ;
-    rdfs:comment "Relative humidity as averaged over 15min at COPR."@en ;
     sosa1:hasFeatureOfInterest ex:COPR_SL ;
     sosa1:hasSimpleResult "92.5 %"^^cdt:ucum ;
     sosa1:madeBySensor ex:HUMICAP-H ;
     sosa1:observedProperty ex:RelativeHumidity ;
-    sosa1:resultTime "2017-06-02T03:00:00-07:00"^^xsd:dateTime ;
+    sosa1:resultTime "2017-06-02T15:00:00-07:00"^^xsd:dateTime ;
     sosa1:usedProcedure ex:MeasuringRelativeHumidity .
 
 ex:COPR a sosa1:FeatureOfInterest ;
@@ -30,11 +27,8 @@ ex:COPR_Station a sosa1:Platform ;
     sosa1:hosts ex:COPR-HMP45C-L .
 
 ex:MeasuringRelativeHumidity a sosa1:ObservingProcedure ;
-    rdfs:comment "Instructions for measuring relative humidity"@en .
-
-ex:RelativeHumidity a sosa1:Property ;
-    rdfs:label "Relative Humidity"@en ;
-    rdfs:comment "Humidity is a measure of the moisture content of air."@en .
+    rdfs:comment "Instructions for measuring relative humidity"@en,
+        "Relative humidity as averaged over 15min."@en .
 
 ex:COPR-HMP45C-L a sosa1:Platform ;
     rdfs:label "HMP45C-L Temperature and Relative Humidity Probe at Coal Oil Point, UCSB, CA"@en ;
@@ -43,10 +37,15 @@ ex:COPR-HMP45C-L a sosa1:Platform ;
 
 ex:COPR_SL a sosa1:Sample ;
     rdfs:label "Air around COPR Station"@en ;
-    rdfs:comment "."@en ;
     sosa1:isSampleOf ex:COPR .
 
 ex:HUMICAP-H a sosa1:Sensor ;
     rdfs:label "Vaisala HUMICAP H-chip"@en ;
-    sosa1:isHostedBy ex:COPR-HMP45C-L .
+    sosa1:isHostedBy ex:COPR-HMP45C-L ;
+    sosa1:observes ex:RelativeHumidity .
+
+ex:RelativeHumidity a sosa1:Property ;
+    rdfs:label "Relative Humidity"@en ;
+    rdfs:comment "Humidity is a measure of the moisture content of air."@en ;
+    skos:exactMatch qk:RelativeHumidity .
 

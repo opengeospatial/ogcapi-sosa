@@ -19,16 +19,13 @@ ex:window a sosa:FeatureOfInterest ;
 
 ex:Observation_235714 a sosa:Observation ;
     sosa:hasResult [ a qudt:QuantityValue ;
-            qudt:hasUnit unit:Kilowatthour ;
-            qudt:numericValue 2.24e+01 ] ;
+            qudt:hasUnit unit:KiloW-HR ;
+            qudt:value 22.4 ] ;
     sosa:madeBySensor ex:sensor_926 ;
     sosa:observedProperty ex:Apartment_134_electricConsumption ;
-    sosa:phenomenonTime [ a time:Interval ;
-            time:hasBeginning [ a time:Instant ;
-                    time:inXSDDateTimeStamp "2017-04-15T23:59:30+00:00"^^xsd:dateTimeStamp ] ;
-            time:hasEnd [ a time:Instant ;
-                    time:inXSDDateTimeStamp "2017-04-16T00:00:00+00:00"^^xsd:dateTimeStamp ] ] ;
-    sosa:resultTime "2017-04-16T00:00:12+00:00"^^xsd:dateTimeStamp .
+    sosa:phenomenonTime [ time:hasBeginning [ time:inXSDDateTimeStamp "2017-04-15T23:59:30+00:00"^^xsd:dateTime ] ;
+            time:hasEnd [ time:inXSDDateTimeStamp "2017-04-16T00:00:00+00:00"^^xsd:dateTime ] ] ;
+    sosa:resultTime "2017-04-16T00:00:12+00:00"^^xsd:dateTime .
 
 ex:windowCloser_987 a sosa:Actuator ;
     sosa:actsOn ex:window_104_state ;
@@ -41,7 +38,7 @@ ex:actuation_188 a sosa:Actuation ;
     sosa:actsOnProperty ex:window_104_state ;
     sosa:hasSimpleResult true ;
     sosa:madeByActuator ex:windowCloser_987 ;
-    sosa:resultTime "2017-04-18T17:24:00+02:00"^^xsd:dateTimeStamp .
+    sosa:resultTime "2017-04-18T17:24:00+02:00"^^xsd:dateTime .
 
 ex:sensor_926 a sosa:Sensor ;
     sosa:madeObservation ex:Observation_235714,

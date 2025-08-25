@@ -1,51 +1,102 @@
+@prefix cdt: <http://w3id.org/lindt/custom_datatypes#> .
 @prefix ex: <https://example.org/data/> .
-@prefix gs1: <https://ref.gs1.org/voc/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix gr: <http://purl.org/goodrelations/v1#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix qk: <http://qudt.org/vocab/quantitykind/> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix seas: <https://w3id.org/seas/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix system: <http://www.w3.org/ns/ssn/systems/> .
+@prefix sosa-cap: <http://www.w3.org/ns/sosa/system-capability-properties#> .
+@prefix sosa-env: <http://www.w3.org/ns/sosa/system-environment-properties#> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ex:IBS-TH2-56 a ex:IBS-TH2 ;
-    rdfs:label "12gth456a-23190"^^ex:serialNumber .
+ex:Deployment_SL-T-P1_2017-06-06 a sosa:Deployment ;
+    prov:wasAssociatedWith ex:Organization_1 ;
+    sosa:deployedOnPlatform ex:Tree_1 ;
+    sosa:deployedSystem ex:Sensor_SL-T-P1 ;
+    sosa:startTime "2017-06-06"^^xsd:date .
 
-ex:serialNumber a rdfs:Datatype ;
-    rdfs:subClassOf xsd:string .
+ex:Observation_5872357_battery a sosa:Observation ;
+    sosa:hasFeatureOfInterest ex:Sensor_SL-T-P1 ;
+    sosa:hasSimpleResult "73.2 %"^^cdt:ucum ;
+    sosa:madeBySensor ex:Sensor_SL-T-P1 ;
+    sosa:observedProperty ex:Sensor_SL-T-P1_battery ;
+    sosa:resultTime "2017-06-20T21:49:18+00:00"^^xsd:dateTime .
 
-ex:IBS-TH2 rdfs:label "Bluetooth Temperature and Humidity Sensor IBS-TH2" ;
-    rdfs:comment "The class of IBS-TH2 sensors is a subclass of the general class of sensors" ;
-    rdfs:subClassOf sosa:Sensor ;
-    skos:notation "IBS-TH2" ;
-    sosa:observes qk:RelativeHumidity,
-        qk:Temperature ;
-    system:hasOperatingRange [ a system:OperatingRange ;
-            system:hasOperatingProperty <file:///github/workspace/IJKL> ] ;
-    system:hasSurvivalRange [ a system:SurvivalRange ;
-            system:hasSurvivalProperty <file:///github/workspace/EFGH> ] ;
-    system:hasSystemCapability [ a system:SystemCapability ;
-            sosa:observes qk:Temperature ;
-            system:hasSystemProperty [ a system:MeasurementRange ;
-                    xsd:maxInclusive "60"^^unit:DEG_C ;
-                    xsd:minInclusive "-40"^^unit:DEG_C ],
-                [ a system:Accuracy ;
-                    qudt:value "0.5"^^unit:DEG_C ] ],
-        [ a system:SystemCapability ;
-            sosa:observes qk:RelativeHumidity ;
-            system:hasSystemProperty [ a system:MeasurementRange ;
-                    xsd:maxInclusive "100"^^unit:PERCENT ;
-                    xsd:minInclusive "0"^^unit:PERCENT ],
-                [ a system:Resolution ;
-                    qudt:value "2"^^unit:PERCENT ] ] ;
-    gs1:pip <https://inkbird.com/products/hygrometer-ibs-th2> .
+ex:Observation_5872357_temperature a sosa:Observation ;
+    sosa:hasFeatureOfInterest ex:Air_4575_485 ;
+    sosa:hasSimpleResult "64.5244681928429 Cel"^^cdt:ucum ;
+    sosa:madeBySensor ex:Sensor_SL-T-P1 ;
+    sosa:observedProperty qk:Temperature ;
+    sosa:resultTime "2017-06-20T21:49:18+00:00"^^xsd:dateTime .
 
-qudt:QuantityKind rdfs:subClassOf sosa:Property .
+ex:Air a sosa:FeatureOfInterest ;
+    rdfs:label "The air."@en ;
+    skos:exactMatch <https://www.wikidata.org/wiki/Q3230> .
 
-qk:RelativeHumidity a qudt:QuantityKind,
-        sosa:Property .
+ex:Air_4575_485 a sosa:Sample ;
+    rdfs:label "The air at lat 45.75 and long 4.85."@en ;
+    geo:hasGeometry [ a geo:Point ;
+            geo:asWKT "POINT (4.85 45.75)"^^geo:WktLiteral ] ;
+    sosa:hasProperty qk:Temperature ;
+    sosa:isSampleOf ex:Air .
 
-qk:Temperature a qudt:QuantityKind,
-        sosa:Property .
+ex:IP68_Outdoor_Temperature_Sensor a gr:ProductOrServiceModel,
+        owl:Class ;
+    rdfs:label "IP68 Outdoor Temperature Sensor"@en ;
+    rdfs:subClassOf [ owl:hasValue ex:IP68_Outdoor_Temperature_Sensor_operatingRange ;
+            owl:onProperty sosa:hasOperatingConditions ],
+        [ owl:hasValue ex:IP68_Outdoor_Temperature_Sensor_systemCapability ;
+            owl:onProperty sosa:hasSystemCapability ] .
+
+ex:IP68_Outdoor_Temperature_Sensor_systemCapability a sosa:ObservationCollection ;
+    rdfs:comment "The sensor capability in normal operating conditions."@en ;
+    sosa:hasMember [ sosa:hasResult [ qudt:hasUnit unit:DEG_C ;
+                    qudt:value 0.0625 ] ;
+            sosa:observedProperty sosa-cap:TemperatureResolution ],
+        [ sosa:hasResult [ qudt:hasUnit unit:PERCENT ;
+                    qudt:value 3.937e-03 ] ;
+            sosa:observedProperty sosa-cap:BatteryResolution ],
+        [ sosa:hasResult [ qudt:hasUnit unit:DeciB-MilliW ;
+                    qudt:value -137.0 ] ;
+            sosa:observedProperty sosa-cap:RFSensitivity ],
+        [ sosa:hasResult [ qudt:hasUnit unit:DEG_C ;
+                    qudt:value 0.2 ] ;
+            sosa:observedProperty sosa-cap:TemperatureAccuracy ] ;
+    sosa:hasValidityContext ex:IP68_Outdoor_Temperature_Sensor_operatingRange .
+
+ex:Organization_1 a prov:Organization ;
+    skos:exactMatch <http://dbpedia.org/page/Metropolis_of_Lyon> .
+
+ex:IP68_Outdoor_Temperature_Sensor_operatingRange a sosa:NormalOperatingConditions,
+        sosa:ObservationCollection ;
+    rdfs:comment "An environment temperature range of -20 to 70 Celsius."@en ;
+    sosa:hasMember [ sosa:hasResult [ qudt:hasUnit unit:DEG_C ;
+                    qudt:value -20.0 ] ;
+            sosa:observedProperty sosa-env:MinAmbientTemperature ],
+        [ sosa:hasResult [ qudt:hasUnit unit:DEG_C ;
+                    qudt:value 70.0 ] ;
+            sosa:observedProperty sosa-env:MaxAmbientTemperature ] .
+
+ex:Sensor_SL-T-P1_battery a sosa:Battery ;
+    rdfs:label "The battery powering the IP68 Outdoor Temperature Sensor"@en .
+
+ex:Sensor_SL-T-P1 a gr:ProductOrService,
+        sosa:Sensor,
+        ex:IP68_Outdoor_Temperature_Sensor,
+        seas:LoRaCommunicationDevice ;
+    gr:hasBrand [ a gr:Brand ;
+            gr:name "Sensing Labs"@en ] ;
+    geo:alt 100.0 ;
+    geo:lat 45.75 ;
+    geo:lon 4.85 ;
+    sosa:implements ex:IP68_Outdoor_Temperature_Sensor_batterySensingProcedure,
+        ex:IP68_Outdoor_Temperature_Sensor_temperatureSensingProcedure ;
+    sosa:observes qk:Temperature,
+        ex:Sensor_SL-T-P1_battery .
 

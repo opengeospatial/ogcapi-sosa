@@ -1,50 +1,24 @@
 @prefix ex: <https://example.org/data/> .
+@prefix qk: <http://qudt.org/vocab/quantitykind/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix time: <http://www.w3.org/2006/time#> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-unit:M-PER-SEC a rdfs:Datatype .
+ex:observation_1087 a sosa:Observation ;
+    rdfs:label "observation #1087"@en ;
+    sosa:hasFeatureOfInterest ex:tree_124 ;
+    sosa:hasResult [ qudt:hasUnit unit:M ;
+            qudt:value 15.3 ] ;
+    sosa:madeBySensor ex:rangefinder_30 ;
+    sosa:observedProperty qk:Height .
 
-ex:ts159c a sosa:ObservationCollection ;
-    sosa:hasFeatureOfInterest ex:station223 ;
-    sosa:hasMember ex:t1,
-        ex:t2,
-        ex:t3,
-        ex:t4 ;
-    sosa:madeBySensor ex:fooglemeter39 ;
-    sosa:observedProperty ex:p1 ;
-    sosa:phenomenonTime [ a time:Interval ;
-            time:hasBeginning [ a time:Instant ;
-                    time:inXSDDateTime "2017-04-15T20:00:00+00:00"^^xsd:dateTime ] ;
-            time:hasEnd [ a time:Instant ;
-                    time:inXSDDateTime "2017-04-15T20:03:00+00:00"^^xsd:dateTime ] ] ;
-    sosa:resultTime "2017-04-15T20:03:30+00:00"^^xsd:dateTime .
+ex:rangefinder_30 a sosa:Sensor ;
+    rdfs:label "rangefinder #30"@en ;
+    rdfs:comment "rangefinder #30 is a laser range finder sensor."@en .
 
-ex:fooglemeter39 a sosa:Sensor .
-
-ex:p1 a sosa:Property .
-
-ex:station223 a sosa:FeatureOfInterest .
-
-ex:t1 a sosa:Observation ;
-    sosa:hasSimpleResult "3.24"^^unit:M-PER-SEC ;
-    sosa:phenomenonTime [ a time:Instant ;
-            time:inXSDDateTime "2017-04-15T20:00:00+00:00"^^xsd:dateTime ] .
-
-ex:t2 a sosa:Observation ;
-    sosa:hasSimpleResult "3.21"^^unit:M-PER-SEC ;
-    sosa:phenomenonTime [ a time:Instant ;
-            time:inXSDDateTime "2017-04-15T20:01:00+00:00"^^xsd:dateTime ] .
-
-ex:t3 a sosa:Observation ;
-    sosa:hasSimpleResult "3.15"^^unit:M-PER-SEC ;
-    sosa:phenomenonTime [ a time:Instant ;
-            time:inXSDDateTime "2017-04-15T20:02:00+00:00"^^xsd:dateTime ] .
-
-ex:t4 a sosa:Observation ;
-    sosa:hasSimpleResult "3.15"^^unit:M-PER-SEC ;
-    sosa:phenomenonTime [ a time:Instant ;
-            time:inXSDDateTime "2017-04-15T20:03:00+00:00"^^xsd:dateTime ] .
+ex:tree_124 a sosa:FeatureOfInterest ;
+    rdfs:label "tree #124"@en ;
+    sosa:hasProperty qk:Height .
 
