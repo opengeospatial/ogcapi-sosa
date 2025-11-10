@@ -51,9 +51,9 @@
     <body>
         <div class="container">
             <h1 class="title">Building blocks validation report</h1>
-            <small class="datetime">Generated at 2025-08-25T09:57:34.883781+00:00</small>
+            <small class="datetime">Generated at 2025-11-10T11:55:47.242213+00:00</small>
                 <p class="summary fw-semibold text-danger">
-                    Number of passing building blocks: 7 / 9 (77.78%)
+                    Number of passing building blocks: 8 / 9 (88.89%)
                 </p>
             <div class="text-end small" id="expand-collapse">
                 <a href="#" class="expand-all">Expand all</a>
@@ -1269,7 +1269,7 @@
                         </div>
                         <div class="accordion-item bblock-report" data-bblock-id="ogc.sosa.properties.observation" id="bblock-ogc.sosa.properties.observation">
                             <h2 class="accordion-header bblock-title">
-                                <button class="accordion-button " type="button"
+                                <button class="accordion-button collapsed" type="button"
                                     data-bs-toggle="collapse"
                                     data-bs-target="#bblock-collapse-ogc\.sosa\.properties\.observation">
                                     <div class="flex-fill">
@@ -1277,18 +1277,18 @@
                                         <small class="ms-2 bblock-id">ogc.sosa.properties.observation</small>
                                     </div>
 
-                                    <span class="badge text-bg-danger me-2">
-                                            Tests Failed
-                                            (86.67% passed)
+                                    <span class="badge text-bg-success me-2">
+                                            Passed
+                                            (100% passed)
                                     </span>
                                 </button>
                             </h2>
-                            <div class="accordion-collapse collapse show" id="bblock-collapse-ogc.sosa.properties.observation">
+                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.sosa.properties.observation">
                                 <div class="accordion-body">
-                                        <p class="summary fw-semibold text-danger">
-                                            Test passed: 13 / 15
+                                        <p class="summary fw-semibold text-success">
+                                            Test passed: 9 / 9
                                         </p>
-                                        <div class="card mb-2 validation-item require-fail">
+                                        <div class="card mb-2 validation-item ">
                                             <div class="card-body">
                                                 <div class="card-title mb-0">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
@@ -1298,60 +1298,30 @@
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
                                                     </button>
-                                                    <a href="../../_sources/properties/observation/tests/collection-different-rq-fail.ttl" target="_blank">collection-different-rq-fail.ttl</a>
+                                                    <a href="../../_sources/properties/observation/tests/collection-times-in-interval.ttl" target="_blank">collection-times-in-interval.ttl</a>
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
-                                                        <span class="badge text-bg-info">Requires fail</span>
                                                     <div class="float-end">
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-42">
                                                     <div class="validation-text-inner">
-                                                                    <div class="font-monospace subsection-title mt-2">General</div>
-                                                                    <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
-                                                                    <div class="font-monospace entry-message section-files ">Using collection-different-rq-fail.ttl from test resources</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using collection-times-in-interval.ttl from test resources</div>
                                                                     <div class="font-monospace subsection-title mt-2">SHACL</div>
-                                                                    <div class="font-monospace entry-message section-shacl text-danger">Validation result for _sources/properties/observation/shapes.shacl:
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/properties/observation/shapes.shacl:
   Validation Report
-  Conforms: False
-  Results (1):
-  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;
-  	Focus Node: ex:ts159c
-  	Value Node: ex:t3
-  	Result Path: sosa:resultQuality
-  	Source Constraint: [ sh:select Literal(&quot;
-          PREFIX sosa: &lt;http://www.w3.org/ns/sosa/&gt;
-          PREFIX geojson: &lt;https://purl.org/geojson/vocab#&gt;
-          PREFIX time: &lt;http://www.w3.org/2006/time#&gt;
-          SELECT $this ?path (?member AS ?value) ?failedValue WHERE {
-              $this (sosa:hasMember|^sosa:memberOf)+ ?member ;
-                  ?path ?collectionValue .
-              ?member ?path ?memberValue .
-              FILTER(?path in ( sosa:resultTime, sosa:phenomenonTime, sosa:hasResult, sosa:hasSimpleResult,
-                  sosa:hasFeatureOfInterest, sosa:hasUltimateFeatureOfInterest, sosa:observedProperty, sosa:madeBySystem,
-                  sosa:usedProcedure, sosa:madeBySensor, sosa:madeBySampler, sosa:isSampleOf, sosa:madeByActuator,
-                  sosa:actsOn, sosa:actsOnProperty, sosa:hasInputValue, sosa:observationRelatedTo,
-                  sosa:relatedObservation, sosa:resultQuality, sosa:isOriginalSampleOf, sosa:isResultOfMadeBySampler,
-                  sosa:isResultOfUsedProcedure ))
-              FILTER((isLiteral(?collectionValue) || isIRI(?collectionValue)) &amp;&amp; ?collectionValue != ?memberValue)
-              FILTER NOT EXISTS { ?collectionValue a time:Interval }
-              BIND(CONCAT(STR(?memberValue), &quot; != &quot;, STR(?collectionValue)) as ?failedValue)
-          }
-      &quot;) ]
-  	Message: Collection member values do not match those of the collections (http://www.w3.org/ns/sosa/resultQuality property in https://example.org/data/t3: https://example.org/data/lowQuality != https://example.org/data/highQuality)
+  Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: ex:t1,ex:t4,ex:t2,ex:t3
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: ex:ts159c
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: ex:t1,ex:t4,ex:t2,ex:t3
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: ex:t1,ex:t4,ex:t2,ex:t3
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: ex:t1,ex:t4,ex:t2,ex:t3
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: ex:ts159c
- - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: ex:t1/sosa:hasSimpleResult,ex:t3/sosa:hasSimpleResult,ex:t2/sosa:hasSimpleResult
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: ex:t4,ex:t1,ex:t3,ex:t2
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: ex:t4,ex:t1,ex:t3,ex:t2
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: ex:ts159c
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: ex:t2/sosa:hasSimpleResult,ex:t3/sosa:hasSimpleResult,ex:t1/sosa:hasSimpleResult
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: ex:t1,ex:ts159c,ex:t4,ex:t3,ex:t2
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: ex:t4,ex:t1,ex:t3,ex:t2
 </div>
                                                     </div>
                                                 </div>
@@ -1367,7 +1337,7 @@
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
                                                     </button>
-                                                    <a href="../../_sources/properties/observation/tests/collection-time-after-end-fail.ttl" target="_blank">collection-time-after-end-fail.ttl</a>
+                                                    <a href="../../_sources/properties/observation/tests/non-simpleresult-fail.jsonld" target="_blank">non-simpleresult-fail.jsonld</a>
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
                                                         <span class="badge text-bg-info">Requires fail</span>
                                                     <div class="float-end">
@@ -1379,59 +1349,10 @@
                                                                     <div class="font-monospace subsection-title mt-2">General</div>
                                                                     <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
-                                                                    <div class="font-monospace entry-message section-files ">Using collection-time-after-end-fail.ttl from test resources</div>
-                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
-                                                                    <div class="font-monospace entry-message section-shacl text-danger">Validation result for _sources/properties/observation/shapes.shacl:
-  Validation Report
-  Conforms: False
-  Results (1):
-  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;
-  	Focus Node: ex:ts159c
-  	Value Node: ex:t1
-  	Result Path: sosa:phenomenonTime
-  	Source Constraint: [ sh:select Literal(&quot;
-          PREFIX sosa: &lt;http://www.w3.org/ns/sosa/&gt;
-          PREFIX geojson: &lt;https://purl.org/geojson/vocab#&gt;
-          PREFIX time: &lt;http://www.w3.org/2006/time#&gt;
-          SELECT $this ?path (?member AS ?value) ?failedValue WHERE {
-              $this (sosa:hasMember|^sosa:memberOf)+ ?member ;
-                  ?path ?collectionValue .
-              ?collectionValue a time:Interval .
-              ?member ?path ?memberValue .
-              FILTER(?path in ( sosa:resultTime, sosa:phenomenonTime, sosa:hasResult, sosa:hasSimpleResult,
-                  sosa:hasFeatureOfInterest, sosa:hasUltimateFeatureOfInterest, sosa:observedProperty, sosa:madeBySystem,
-                  sosa:usedProcedure, sosa:madeBySensor, sosa:madeBySampler, sosa:isSampleOf, sosa:madeByActuator,
-                  sosa:actsOn, sosa:actsOnProperty, sosa:hasInputValue, sosa:observationRelatedTo,
-                  sosa:relatedObservation, sosa:resultQuality, sosa:isOriginalSampleOf, sosa:isResultOfMadeBySampler,
-                  sosa:isResultOfUsedProcedure ))
-  
-              {
-                  ?collectionValue time:hasBeginning/(time:inXSDDateTime|time:inXSDDate) ?colBeginning .
-                  OPTIONAL { ?memberValue time:hasBeginning?/(time:inXSDDateTime|time:inXSDDate) ?memberBeginning }
-                  FILTER((isLiteral(?memberValue) &amp;&amp; ?memberValue &lt; ?colBeginning) || (BOUND(?memberBeginning) &amp;&amp; ?memberBeginning &lt; ?colBeginning))
-                  BIND(CONCAT(STR(COALESCE(?memberBeginning, ?memberValue)), &quot; &lt; &quot;, STR(?colBeginning)) as ?failedValue)
-              } UNION {
-                  ?collectionValue time:hasEnd?/(time:inXSDDateTime|time:inXSDDate) ?colEnd .
-                  OPTIONAL { ?memberValue time:hasEnd?/(time:inXSDDateTime|time:inXSDDate) ?memberEnd }
-                  FILTER((isLiteral(?memberValue) &amp;&amp; ?memberValue &gt; ?colEnd) || (BOUND(?memberEnd) &amp;&amp; ?memberEnd &gt; ?colEnd))
-                  BIND(CONCAT(STR(COALESCE(?memberEnd, ?memberValue)), &quot; &gt; &quot;, STR(?colEnd)) as ?failedValue)
-              }
-          }
-      &quot;) ]
-  	Message: Collection member values do not match those of the collections (http://www.w3.org/ns/sosa/phenomenonTime property in https://example.org/data/t1: 2017-04-16T20:00:00+00:00 &gt; 2017-04-15T20:03:00+00:00)
-  </div>
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: ex:t1,ex:t4,ex:t2,ex:t3
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: ex:ts159c
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: ex:t1,ex:t4,ex:t2,ex:t3
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: ex:t1,ex:t4,ex:t2,ex:t3
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: ex:t1,ex:t4,ex:t2,ex:t3
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: ex:ts159c
- - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: ex:t1/sosa:hasSimpleResult,ex:t3/sosa:hasSimpleResult,ex:t2/sosa:hasSimpleResult
-</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using non-simpleresult-fail.jsonld from test resources</div>
+                                                                    <div class="font-monospace entry-message section-files text-danger">**Empty** output Turtle non-simpleresult-fail.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1446,7 +1367,7 @@
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
                                                     </button>
-                                                    <a href="../../_sources/properties/observation/tests/collection-time-before-beginning-fail.ttl" target="_blank">collection-time-before-beginning-fail.ttl</a>
+                                                    <a href="../../_sources/properties/observation/tests/observedprop-fail.jsonld" target="_blank">observedprop-fail.jsonld</a>
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
                                                         <span class="badge text-bg-info">Requires fail</span>
                                                     <div class="float-end">
@@ -1458,59 +1379,10 @@
                                                                     <div class="font-monospace subsection-title mt-2">General</div>
                                                                     <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
-                                                                    <div class="font-monospace entry-message section-files ">Using collection-time-before-beginning-fail.ttl from test resources</div>
-                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
-                                                                    <div class="font-monospace entry-message section-shacl text-danger">Validation result for _sources/properties/observation/shapes.shacl:
-  Validation Report
-  Conforms: False
-  Results (1):
-  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;
-  	Focus Node: ex:ts159c
-  	Value Node: ex:t1
-  	Result Path: sosa:phenomenonTime
-  	Source Constraint: [ sh:select Literal(&quot;
-          PREFIX sosa: &lt;http://www.w3.org/ns/sosa/&gt;
-          PREFIX geojson: &lt;https://purl.org/geojson/vocab#&gt;
-          PREFIX time: &lt;http://www.w3.org/2006/time#&gt;
-          SELECT $this ?path (?member AS ?value) ?failedValue WHERE {
-              $this (sosa:hasMember|^sosa:memberOf)+ ?member ;
-                  ?path ?collectionValue .
-              ?collectionValue a time:Interval .
-              ?member ?path ?memberValue .
-              FILTER(?path in ( sosa:resultTime, sosa:phenomenonTime, sosa:hasResult, sosa:hasSimpleResult,
-                  sosa:hasFeatureOfInterest, sosa:hasUltimateFeatureOfInterest, sosa:observedProperty, sosa:madeBySystem,
-                  sosa:usedProcedure, sosa:madeBySensor, sosa:madeBySampler, sosa:isSampleOf, sosa:madeByActuator,
-                  sosa:actsOn, sosa:actsOnProperty, sosa:hasInputValue, sosa:observationRelatedTo,
-                  sosa:relatedObservation, sosa:resultQuality, sosa:isOriginalSampleOf, sosa:isResultOfMadeBySampler,
-                  sosa:isResultOfUsedProcedure ))
-  
-              {
-                  ?collectionValue time:hasBeginning/(time:inXSDDateTime|time:inXSDDate) ?colBeginning .
-                  OPTIONAL { ?memberValue time:hasBeginning?/(time:inXSDDateTime|time:inXSDDate) ?memberBeginning }
-                  FILTER((isLiteral(?memberValue) &amp;&amp; ?memberValue &lt; ?colBeginning) || (BOUND(?memberBeginning) &amp;&amp; ?memberBeginning &lt; ?colBeginning))
-                  BIND(CONCAT(STR(COALESCE(?memberBeginning, ?memberValue)), &quot; &lt; &quot;, STR(?colBeginning)) as ?failedValue)
-              } UNION {
-                  ?collectionValue time:hasEnd?/(time:inXSDDateTime|time:inXSDDate) ?colEnd .
-                  OPTIONAL { ?memberValue time:hasEnd?/(time:inXSDDateTime|time:inXSDDate) ?memberEnd }
-                  FILTER((isLiteral(?memberValue) &amp;&amp; ?memberValue &gt; ?colEnd) || (BOUND(?memberEnd) &amp;&amp; ?memberEnd &gt; ?colEnd))
-                  BIND(CONCAT(STR(COALESCE(?memberEnd, ?memberValue)), &quot; &gt; &quot;, STR(?colEnd)) as ?failedValue)
-              }
-          }
-      &quot;) ]
-  	Message: Collection member values do not match those of the collections (http://www.w3.org/ns/sosa/phenomenonTime property in https://example.org/data/t1: 2017-04-14T20:00:00+00:00 &lt; 2017-04-15T20:00:00+00:00)
-  </div>
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: ex:t1,ex:t4,ex:t2,ex:t3
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: ex:ts159c
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: ex:t1,ex:t4,ex:t2,ex:t3
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: ex:t1,ex:t4,ex:t2,ex:t3
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: ex:t1,ex:t4,ex:t2,ex:t3
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: ex:ts159c
- - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: ex:t1/sosa:hasSimpleResult,ex:t3/sosa:hasSimpleResult,ex:t2/sosa:hasSimpleResult
-</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using observedprop-fail.jsonld from test resources</div>
+                                                                    <div class="font-monospace entry-message section-files text-danger">**Empty** output Turtle observedprop-fail.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1525,7 +1397,7 @@
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
                                                     </button>
-                                                    <a href="../../_sources/properties/observation/tests/collection-times-in-interval.ttl" target="_blank">collection-times-in-interval.ttl</a>
+                                                    <a href="../../_sources/properties/observation/tests/result-phenomenon-time.ttl" target="_blank">result-phenomenon-time.ttl</a>
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
                                                     <div class="float-end">
                                                             <span class="badge text-bg-success me-2">Passed</span>
@@ -1534,27 +1406,27 @@
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-45">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
-                                                                    <div class="font-monospace entry-message section-files ">Using collection-times-in-interval.ttl from test resources</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using result-phenomenon-time.ttl from test resources</div>
                                                                     <div class="font-monospace subsection-title mt-2">SHACL</div>
                                                                     <div class="font-monospace entry-message section-shacl ">Validation result for _sources/properties/observation/shapes.shacl:
   Validation Report
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: ex:t1,ex:t4,ex:t2,ex:t3
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: ex:ts159c
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: ex:t1,ex:t4,ex:t2,ex:t3
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: ex:t1,ex:t4,ex:t2,ex:t3
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: ex:t1,ex:t4,ex:t2,ex:t3
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: ex:ts159c
- - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: ex:t1/sosa:hasSimpleResult,ex:t3/sosa:hasSimpleResult,ex:t2/sosa:hasSimpleResult
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:nb5c072b21264441985581fb4a1180071b1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:nb5c072b21264441985581fb4a1180071b1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: 
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:nb5c072b21264441985581fb4a1180071b1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:nb5c072b21264441985581fb4a1180071b1
 </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card mb-2 validation-item require-fail">
+                                        <div class="card mb-2 validation-item ">
                                             <div class="card-body">
                                                 <div class="card-title mb-0">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
@@ -1564,53 +1436,30 @@
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
                                                     </button>
-                                                    <a href="../../_sources/properties/observation/tests/no-time-fail.ttl" target="_blank">no-time-fail.ttl</a>
+                                                    <a href="../../_sources/properties/observation/tests/result-time.ttl" target="_blank">result-time.ttl</a>
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
-                                                        <span class="badge text-bg-info">Requires fail</span>
                                                     <div class="float-end">
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-46">
                                                     <div class="validation-text-inner">
-                                                                    <div class="font-monospace subsection-title mt-2">General</div>
-                                                                    <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
-                                                                    <div class="font-monospace entry-message section-files ">Using no-time-fail.ttl from test resources</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using result-time.ttl from test resources</div>
                                                                     <div class="font-monospace subsection-title mt-2">SHACL</div>
-                                                                    <div class="font-monospace entry-message section-shacl text-danger">Validation result for _sources/properties/observation/shapes.shacl:
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/properties/observation/shapes.shacl:
   Validation Report
-  Conforms: False
-  Results (1):
-  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;
-  	Focus Node: [ rdf:type sosa:Observation ; sosa:hasFeatureOfInterest [ ] ; sosa:hasSimpleResult Literal(&quot;&quot;) ; sosa:observedProperty [ ] ]
-  	Value Node: [ rdf:type sosa:Observation ; sosa:hasFeatureOfInterest [ ] ; sosa:hasSimpleResult Literal(&quot;&quot;) ; sosa:observedProperty [ ] ]
-  	Source Constraint: [ sh:message Literal(&quot;sosa:resultTime or sosa:phenomenonTime is required, and no more than 1 of each is allowed&quot;) ; sh:select Literal(&quot;
-              PREFIX sh: &lt;http://www.w3.org/ns/shacl#&gt;
-              PREFIX sosa: &lt;http://www.w3.org/ns/sosa/&gt;
-              PREFIX geojson: &lt;https://purl.org/geojson/vocab#&gt;
-              SELECT $this (CONCAT(COALESCE(COUNT(?resultTime), 0), &#x27; x sosa:resultTime, &#x27;, COALESCE(COUNT(?phenomenonTime), 0), &#x27; x sosa:phenomenonTime&#x27;) AS ?value) WHERE {
-                  OPTIONAL { $this sosa:phenomenonTime ?phenomenonTime }
-                  OPTIONAL { $this sosa:resultTime ?resultTime}
-                  OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:phenomenonTime ?phenomenonTime }
-                  OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:resultTime ?resultTime }
-              }
-              GROUP BY $this
-              HAVING (count(?resultTime) &gt; 1 || count(?phenomenonTime) &gt; 1 || count(?resultTime) + count(?phenomenonTime) &lt; 1)
-          &quot;) ]
-  	Message: sosa:resultTime or sosa:phenomenonTime is required, and no more than 1 of each is allowed
+  Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:n8352ca8770874787a2f69990cc28f3e5b1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:n8352ca8770874787a2f69990cc28f3e5b1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:n8352ca8770874787a2f69990cc28f3e5b1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:n8352ca8770874787a2f69990cc28f3e5b1
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:n8940b13ee8c641fd9ca9afbabe6cc66eb1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:n8940b13ee8c641fd9ca9afbabe6cc66eb1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: 
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:n8940b13ee8c641fd9ca9afbabe6cc66eb1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:n8940b13ee8c641fd9ca9afbabe6cc66eb1
 </div>
                                                     </div>
                                                 </div>
@@ -1626,7 +1475,7 @@
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
                                                     </button>
-                                                    <a href="../../_sources/properties/observation/tests/non-simpleresult-fail.jsonld" target="_blank">non-simpleresult-fail.jsonld</a>
+                                                    <a href="../../_sources/properties/observation/tests/tworesults-fail.jsonld" target="_blank">tworesults-fail.jsonld</a>
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
                                                         <span class="badge text-bg-info">Requires fail</span>
                                                     <div class="float-end">
@@ -1638,37 +1487,15 @@
                                                                     <div class="font-monospace subsection-title mt-2">General</div>
                                                                     <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
-                                                                    <div class="font-monospace entry-message section-files ">Using non-simpleresult-fail.jsonld from test resources</div>
-                                                                    <div class="font-monospace entry-message section-files ">Output Turtle non-simpleresult-fail.ttl created</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using tworesults-fail.jsonld from test resources</div>
+                                                                    <div class="font-monospace entry-message section-files text-danger">**Empty** output Turtle tworesults-fail.ttl created</div>
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
                                                                     <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
-                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
-                                                                    <div class="font-monospace entry-message section-shacl text-danger">Validation result for _sources/properties/observation/shapes.shacl:
-  Validation Report
-  Conforms: False
-  Results (1):
-  Constraint Violation in NodeKindConstraintComponent (http://www.w3.org/ns/shacl#NodeKindConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;
-  	Focus Node: [ ]
-  	Value Node: [ ]
-  	Message: sosa:hasSimpleResult is a simple Literal
-  </div>
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: _:N4a9e841d6f6348e5991abcd6af67d23a
-</div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card mb-2 validation-item require-fail">
+                                        <div class="card mb-2 validation-item ">
                                             <div class="card-body">
                                                 <div class="card-title mb-0">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
@@ -1678,20 +1505,19 @@
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
                                                     </button>
-                                                    <a href="../../_sources/properties/observation/tests/observedprop-fail.jsonld" target="_blank">observedprop-fail.jsonld</a>
-                                                    <span class="badge bg-secondary test_resource">Test resource</span>
-                                                        <span class="badge text-bg-info">Requires fail</span>
+                                                    <a href="sosa/properties/observation/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-danger me-2">Failed</span>
+                                                            <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-48">
                                                     <div class="validation-text-inner">
-                                                                    <div class="font-monospace subsection-title mt-2">General</div>
-                                                                    <div class="font-monospace entry-message section-general text-danger">Test was expected to fail but it did not.</div>
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
-                                                                    <div class="font-monospace entry-message section-files ">Using observedprop-fail.jsonld from test resources</div>
-                                                                    <div class="font-monospace entry-message section-files ">Output Turtle observedprop-fail.ttl created</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using example_1_1.json from examples</div>
+                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
                                                                     <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
                                                                     <div class="font-monospace subsection-title mt-2">SHACL</div>
@@ -1700,20 +1526,20 @@
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: 33
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:Naca32ab909d1410bbdfd2b8d572570b4
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: *none*
 </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card mb-2 validation-item require-fail">
+                                        <div class="card mb-2 validation-item ">
                                             <div class="card-body">
                                                 <div class="card-title mb-0">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
@@ -1723,53 +1549,31 @@
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
                                                     </button>
-                                                    <a href="../../_sources/properties/observation/tests/phenomenon-time-2-fail.ttl" target="_blank">phenomenon-time-2-fail.ttl</a>
-                                                    <span class="badge bg-secondary test_resource">Test resource</span>
-                                                        <span class="badge text-bg-info">Requires fail</span>
+                                                    <a href="sosa/properties/observation/example_1_2.ttl" target="_blank">example_1_2.ttl</a>
+                                                    <span class="badge bg-secondary example">Example</span>
                                                     <div class="float-end">
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-49">
                                                     <div class="validation-text-inner">
-                                                                    <div class="font-monospace subsection-title mt-2">General</div>
-                                                                    <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
-                                                                    <div class="font-monospace entry-message section-files ">Using phenomenon-time-2-fail.ttl from test resources</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using example_1_2.ttl from examples</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_2.ttl created</div>
                                                                     <div class="font-monospace subsection-title mt-2">SHACL</div>
-                                                                    <div class="font-monospace entry-message section-shacl text-danger">Validation result for _sources/properties/observation/shapes.shacl:
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/properties/observation/shapes.shacl:
   Validation Report
-  Conforms: False
-  Results (1):
-  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;
-  	Focus Node: [ rdf:type sosa:Observation ; sosa:hasFeatureOfInterest [ ] ; sosa:hasSimpleResult Literal(&quot;&quot;) ; sosa:observedProperty [ ] ; sosa:phenomenonTime Literal(&quot;2025-01-01T00:00:00+00:00&quot; = 2025-01-01 00:00:00+00:00, datatype=xsd:dateTime), Literal(&quot;2025-01-02T00:00:00+00:00&quot; = 2025-01-02 00:00:00+00:00, datatype=xsd:dateTime) ]
-  	Value Node: [ rdf:type sosa:Observation ; sosa:hasFeatureOfInterest [ ] ; sosa:hasSimpleResult Literal(&quot;&quot;) ; sosa:observedProperty [ ] ; sosa:phenomenonTime Literal(&quot;2025-01-01T00:00:00+00:00&quot; = 2025-01-01 00:00:00+00:00, datatype=xsd:dateTime), Literal(&quot;2025-01-02T00:00:00+00:00&quot; = 2025-01-02 00:00:00+00:00, datatype=xsd:dateTime) ]
-  	Source Constraint: [ sh:message Literal(&quot;sosa:resultTime or sosa:phenomenonTime is required, and no more than 1 of each is allowed&quot;) ; sh:select Literal(&quot;
-              PREFIX sh: &lt;http://www.w3.org/ns/shacl#&gt;
-              PREFIX sosa: &lt;http://www.w3.org/ns/sosa/&gt;
-              PREFIX geojson: &lt;https://purl.org/geojson/vocab#&gt;
-              SELECT $this (CONCAT(COALESCE(COUNT(?resultTime), 0), &#x27; x sosa:resultTime, &#x27;, COALESCE(COUNT(?phenomenonTime), 0), &#x27; x sosa:phenomenonTime&#x27;) AS ?value) WHERE {
-                  OPTIONAL { $this sosa:phenomenonTime ?phenomenonTime }
-                  OPTIONAL { $this sosa:resultTime ?resultTime}
-                  OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:phenomenonTime ?phenomenonTime }
-                  OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:resultTime ?resultTime }
-              }
-              GROUP BY $this
-              HAVING (count(?resultTime) &gt; 1 || count(?phenomenonTime) &gt; 1 || count(?resultTime) + count(?phenomenonTime) &lt; 1)
-          &quot;) ]
-  	Message: sosa:resultTime or sosa:phenomenonTime is required, and no more than 1 of each is allowed
+  Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:nbf33250726aa42f8a86be50e8b333c10b1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:nbf33250726aa42f8a86be50e8b333c10b1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:nbf33250726aa42f8a86be50e8b333c10b1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:nbf33250726aa42f8a86be50e8b333c10b1
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: 
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:n58a1429fd6864c07a47af31342e43c0db1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:n58a1429fd6864c07a47af31342e43c0db1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: 33
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:n58a1429fd6864c07a47af31342e43c0db1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:n58a1429fd6864c07a47af31342e43c0db1
 </div>
                                                     </div>
                                                 </div>
@@ -1785,282 +1589,13 @@
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
                                                     </button>
-                                                    <a href="../../_sources/properties/observation/tests/result-phenomenon-time.ttl" target="_blank">result-phenomenon-time.ttl</a>
-                                                    <span class="badge bg-secondary test_resource">Test resource</span>
-                                                    <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
-                                                    </div>
-                                                </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-50">
-                                                    <div class="validation-text-inner">
-                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
-                                                                    <div class="font-monospace entry-message section-files ">Using result-phenomenon-time.ttl from test resources</div>
-                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/properties/observation/shapes.shacl:
-  Validation Report
-  Conforms: True
-  </div>
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:ncd295a7f71cf4d2a9e867ba3373731ddb1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:ncd295a7f71cf4d2a9e867ba3373731ddb1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:ncd295a7f71cf4d2a9e867ba3373731ddb1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:ncd295a7f71cf4d2a9e867ba3373731ddb1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: 
-</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card mb-2 validation-item require-fail">
-                                            <div class="card-body">
-                                                <div class="card-title mb-0">
-                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-51"
-                                                            aria-expanded="false" aria-controls="uid-51"
-                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-                                                        <i class="bi bi-caret-right-fill caret"></i>
-                                                        Details
-                                                    </button>
-                                                    <a href="../../_sources/properties/observation/tests/result-time-2-fail.ttl" target="_blank">result-time-2-fail.ttl</a>
-                                                    <span class="badge bg-secondary test_resource">Test resource</span>
-                                                        <span class="badge text-bg-info">Requires fail</span>
-                                                    <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
-                                                    </div>
-                                                </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-51">
-                                                    <div class="validation-text-inner">
-                                                                    <div class="font-monospace subsection-title mt-2">General</div>
-                                                                    <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
-                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
-                                                                    <div class="font-monospace entry-message section-files ">Using result-time-2-fail.ttl from test resources</div>
-                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
-                                                                    <div class="font-monospace entry-message section-shacl text-danger">Validation result for _sources/properties/observation/shapes.shacl:
-  Validation Report
-  Conforms: False
-  Results (1):
-  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;
-  	Focus Node: [ rdf:type sosa:Observation ; sosa:hasFeatureOfInterest [ ] ; sosa:hasSimpleResult Literal(&quot;&quot;) ; sosa:observedProperty [ ] ; sosa:phenomenonTime Literal(&quot;2024-12-31T00:00:00+00:00&quot; = 2024-12-31 00:00:00+00:00, datatype=xsd:dateTime) ; sosa:resultTime Literal(&quot;2025-01-01T00:00:00+00:00&quot; = 2025-01-01 00:00:00+00:00, datatype=xsd:dateTime), Literal(&quot;2025-01-02T00:00:00+00:00&quot; = 2025-01-02 00:00:00+00:00, datatype=xsd:dateTime) ]
-  	Value Node: [ rdf:type sosa:Observation ; sosa:hasFeatureOfInterest [ ] ; sosa:hasSimpleResult Literal(&quot;&quot;) ; sosa:observedProperty [ ] ; sosa:phenomenonTime Literal(&quot;2024-12-31T00:00:00+00:00&quot; = 2024-12-31 00:00:00+00:00, datatype=xsd:dateTime) ; sosa:resultTime Literal(&quot;2025-01-01T00:00:00+00:00&quot; = 2025-01-01 00:00:00+00:00, datatype=xsd:dateTime), Literal(&quot;2025-01-02T00:00:00+00:00&quot; = 2025-01-02 00:00:00+00:00, datatype=xsd:dateTime) ]
-  	Source Constraint: [ sh:message Literal(&quot;sosa:resultTime or sosa:phenomenonTime is required, and no more than 1 of each is allowed&quot;) ; sh:select Literal(&quot;
-              PREFIX sh: &lt;http://www.w3.org/ns/shacl#&gt;
-              PREFIX sosa: &lt;http://www.w3.org/ns/sosa/&gt;
-              PREFIX geojson: &lt;https://purl.org/geojson/vocab#&gt;
-              SELECT $this (CONCAT(COALESCE(COUNT(?resultTime), 0), &#x27; x sosa:resultTime, &#x27;, COALESCE(COUNT(?phenomenonTime), 0), &#x27; x sosa:phenomenonTime&#x27;) AS ?value) WHERE {
-                  OPTIONAL { $this sosa:phenomenonTime ?phenomenonTime }
-                  OPTIONAL { $this sosa:resultTime ?resultTime}
-                  OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:phenomenonTime ?phenomenonTime }
-                  OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:resultTime ?resultTime }
-              }
-              GROUP BY $this
-              HAVING (count(?resultTime) &gt; 1 || count(?phenomenonTime) &gt; 1 || count(?resultTime) + count(?phenomenonTime) &lt; 1)
-          &quot;) ]
-  	Message: sosa:resultTime or sosa:phenomenonTime is required, and no more than 1 of each is allowed
-  </div>
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:n11d50742ccf44f99a0e1d706b0771a0cb1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:n11d50742ccf44f99a0e1d706b0771a0cb1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:n11d50742ccf44f99a0e1d706b0771a0cb1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:n11d50742ccf44f99a0e1d706b0771a0cb1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: 
-</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card mb-2 validation-item ">
-                                            <div class="card-body">
-                                                <div class="card-title mb-0">
-                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-52"
-                                                            aria-expanded="false" aria-controls="uid-52"
-                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-                                                        <i class="bi bi-caret-right-fill caret"></i>
-                                                        Details
-                                                    </button>
-                                                    <a href="../../_sources/properties/observation/tests/result-time.ttl" target="_blank">result-time.ttl</a>
-                                                    <span class="badge bg-secondary test_resource">Test resource</span>
-                                                    <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
-                                                    </div>
-                                                </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-52">
-                                                    <div class="validation-text-inner">
-                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
-                                                                    <div class="font-monospace entry-message section-files ">Using result-time.ttl from test resources</div>
-                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/properties/observation/shapes.shacl:
-  Validation Report
-  Conforms: True
-  </div>
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:nf2eaee06080d452f8ce451cc6fc330f9b1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:nf2eaee06080d452f8ce451cc6fc330f9b1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:nf2eaee06080d452f8ce451cc6fc330f9b1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:nf2eaee06080d452f8ce451cc6fc330f9b1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: 
-</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card mb-2 validation-item require-fail">
-                                            <div class="card-body">
-                                                <div class="card-title mb-0">
-                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-53"
-                                                            aria-expanded="false" aria-controls="uid-53"
-                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-                                                        <i class="bi bi-caret-right-fill caret"></i>
-                                                        Details
-                                                    </button>
-                                                    <a href="../../_sources/properties/observation/tests/tworesults-fail.jsonld" target="_blank">tworesults-fail.jsonld</a>
-                                                    <span class="badge bg-secondary test_resource">Test resource</span>
-                                                        <span class="badge text-bg-info">Requires fail</span>
-                                                    <div class="float-end">
-                                                            <span class="badge text-bg-danger me-2">Failed</span>
-                                                    </div>
-                                                </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-53">
-                                                    <div class="validation-text-inner">
-                                                                    <div class="font-monospace subsection-title mt-2">General</div>
-                                                                    <div class="font-monospace entry-message section-general text-danger">Test was expected to fail but it did not.</div>
-                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
-                                                                    <div class="font-monospace entry-message section-files ">Using tworesults-fail.jsonld from test resources</div>
-                                                                    <div class="font-monospace entry-message section-files ">Output Turtle tworesults-fail.ttl created</div>
-                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
-                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
-                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/properties/observation/shapes.shacl:
-  Validation Report
-  Conforms: True
-  </div>
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: frogginess
-</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card mb-2 validation-item ">
-                                            <div class="card-body">
-                                                <div class="card-title mb-0">
-                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-54"
-                                                            aria-expanded="false" aria-controls="uid-54"
-                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-                                                        <i class="bi bi-caret-right-fill caret"></i>
-                                                        Details
-                                                    </button>
-                                                    <a href="sosa/properties/observation/example_1_1.json" target="_blank">example_1_1.json</a>
-                                                    <span class="badge bg-secondary example">Example</span>
-                                                    <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
-                                                    </div>
-                                                </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-54">
-                                                    <div class="validation-text-inner">
-                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
-                                                                    <div class="font-monospace entry-message section-files ">Using example_1_1.json from examples</div>
-                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
-                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
-                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
-                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
-                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
-                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/properties/observation/shapes.shacl:
-  Validation Report
-  Conforms: True
-  </div>
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: 33
-</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card mb-2 validation-item ">
-                                            <div class="card-body">
-                                                <div class="card-title mb-0">
-                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-55"
-                                                            aria-expanded="false" aria-controls="uid-55"
-                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-                                                        <i class="bi bi-caret-right-fill caret"></i>
-                                                        Details
-                                                    </button>
-                                                    <a href="sosa/properties/observation/example_1_2.ttl" target="_blank">example_1_2.ttl</a>
-                                                    <span class="badge bg-secondary example">Example</span>
-                                                    <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
-                                                    </div>
-                                                </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-55">
-                                                    <div class="validation-text-inner">
-                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
-                                                                    <div class="font-monospace entry-message section-files ">Using example_1_2.ttl from examples</div>
-                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_2.ttl created</div>
-                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/properties/observation/shapes.shacl:
-  Validation Report
-  Conforms: True
-  </div>
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:n868e89f8235d49c18fc6aee97a5f1db9b1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:n868e89f8235d49c18fc6aee97a5f1db9b1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:n868e89f8235d49c18fc6aee97a5f1db9b1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:n868e89f8235d49c18fc6aee97a5f1db9b1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: 33
-</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card mb-2 validation-item ">
-                                            <div class="card-body">
-                                                <div class="card-title mb-0">
-                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-56"
-                                                            aria-expanded="false" aria-controls="uid-56"
-                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-                                                        <i class="bi bi-caret-right-fill caret"></i>
-                                                        Details
-                                                    </button>
                                                     <a href="sosa/properties/observation/example_2_1.json" target="_blank">example_2_1.json</a>
                                                     <span class="badge bg-secondary example">Example</span>
                                                     <div class="float-end">
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-56">
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-50">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                     <div class="font-monospace entry-message section-files ">Using example_2_1.json from examples</div>
@@ -2075,14 +1610,14 @@
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:Ndd68c29921c14667ae270063f51d82fb
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: *none*
 </div>
                                                     </div>
                                                 </div>
@@ -2116,8 +1651,8 @@
                                             <div class="card-body">
                                                 <div class="card-title mb-0">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-57"
-                                                            aria-expanded="false" aria-controls="uid-57"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-51"
+                                                            aria-expanded="false" aria-controls="uid-51"
                                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
@@ -2128,7 +1663,7 @@
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-57">
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-51">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                     <div class="font-monospace entry-message section-files ">Using example_1_1.json from examples</div>
@@ -2169,8 +1704,8 @@
                                             <div class="card-body">
                                                 <div class="card-title mb-0">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-58"
-                                                            aria-expanded="false" aria-controls="uid-58"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-52"
+                                                            aria-expanded="false" aria-controls="uid-52"
                                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
@@ -2181,7 +1716,7 @@
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-58">
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-52">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                     <div class="font-monospace entry-message section-files ">Using example_1_1.json from examples</div>
@@ -2196,14 +1731,14 @@
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: _:Nda257812190d43cba3276621027b7020
  - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;http://example.com/a1&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: _:N198355eb0a0049aeb5a03ef5c68d5da9
  - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;http://example.com/a1&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: _:Nda257812190d43cba3276621027b7020
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: &lt;http://example.com/a1&gt;/sosa:hasSimpleResult
  - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://example.com/a1&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;http://example.com/a1&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: _:N198355eb0a0049aeb5a03ef5c68d5da9
- - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: &lt;http://example.com/a1&gt;/sosa:hasSimpleResult
 </div>
                                                     </div>
                                                 </div>
@@ -2213,8 +1748,8 @@
                                             <div class="card-body">
                                                 <div class="card-title mb-0">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-59"
-                                                            aria-expanded="false" aria-controls="uid-59"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-53"
+                                                            aria-expanded="false" aria-controls="uid-53"
                                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
@@ -2225,7 +1760,7 @@
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-59">
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-53">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                     <div class="font-monospace entry-message section-files ">Using example_2_1.ttl from examples</div>
@@ -2236,14 +1771,14 @@
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: eg:a1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: eg:c1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: eg:a1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: eg:a1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: eg:a1
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: eg:c1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: eg:a1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: eg:a1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: eg:c1
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: eg:a1/sosa:hasSimpleResult
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: eg:c1,eg:a1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: eg:a1
 </div>
                                                     </div>
                                                 </div>
@@ -2277,8 +1812,8 @@
                                             <div class="card-body">
                                                 <div class="card-title mb-0">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-60"
-                                                            aria-expanded="false" aria-controls="uid-60"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-54"
+                                                            aria-expanded="false" aria-controls="uid-54"
                                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
@@ -2289,7 +1824,7 @@
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-60">
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-54">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                     <div class="font-monospace entry-message section-files ">Using example_1_1.json from examples</div>
@@ -2304,14 +1839,14 @@
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;http://example.com/pop1999&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;http://example.com/pop1999&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://example.com/pop1999&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;http://example.com/pop1999&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: &lt;http://example.com/pop1999&gt;/sosa:hasSimpleResult
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;http://example.com/pop1999&gt;
 </div>
                                                                     <div class="font-monospace subsection-title mt-2">Semantic Uplift</div>
                                                                     <div class="font-monospace entry-message section-semantic_uplift ">Running post-uplift shacl transform step from semantic-uplift/featureType.shacl</div>
@@ -2323,8 +1858,8 @@
                                             <div class="card-body">
                                                 <div class="card-title mb-0">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-61"
-                                                            aria-expanded="false" aria-controls="uid-61"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-55"
+                                                            aria-expanded="false" aria-controls="uid-55"
                                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
@@ -2335,7 +1870,7 @@
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-61">
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-55">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                     <div class="font-monospace entry-message section-files ">Using example_1_2.ttl from examples</div>
@@ -2346,14 +1881,14 @@
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:n54e1f51c272047ac8fe2ddc9d52cb6bcb1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:n54e1f51c272047ac8fe2ddc9d52cb6bcb1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:n54e1f51c272047ac8fe2ddc9d52cb6bcb1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:n54e1f51c272047ac8fe2ddc9d52cb6bcb1
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: _:n8ded036c2ddb46baa85d2d1fd5bb9f89b1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: _:n8ded036c2ddb46baa85d2d1fd5bb9f89b1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: 33
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: _:n8ded036c2ddb46baa85d2d1fd5bb9f89b1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: _:n8ded036c2ddb46baa85d2d1fd5bb9f89b1
 </div>
                                                     </div>
                                                 </div>
@@ -2363,8 +1898,8 @@
                                             <div class="card-body">
                                                 <div class="card-title mb-0">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-62"
-                                                            aria-expanded="false" aria-controls="uid-62"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-56"
+                                                            aria-expanded="false" aria-controls="uid-56"
                                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
@@ -2375,7 +1910,7 @@
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-62">
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-56">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                     <div class="font-monospace entry-message section-files ">Using example_2_1.json from examples</div>
@@ -2390,14 +1925,14 @@
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;http://example.com/pop1999&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;http://example.com/pop1999&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://example.com/pop1999&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;http://example.com/pop1999&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://example.com/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;http://example.com/pop1999&gt;
 </div>
                                                                     <div class="font-monospace subsection-title mt-2">Semantic Uplift</div>
                                                                     <div class="font-monospace entry-message section-semantic_uplift ">Running post-uplift shacl transform step from semantic-uplift/featureType.shacl</div>
@@ -2433,8 +1968,8 @@
                                             <div class="card-body">
                                                 <div class="card-title mb-0">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-63"
-                                                            aria-expanded="false" aria-controls="uid-63"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-57"
+                                                            aria-expanded="false" aria-controls="uid-57"
                                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
@@ -2443,13 +1978,13 @@
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
                                                         <span class="badge text-bg-info">Requires fail</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-danger me-2">Failed</span>
+                                                            <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-63">
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-57">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">General</div>
-                                                                    <div class="font-monospace entry-message section-general text-danger">Test was expected to fail but it did not.</div>
+                                                                    <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                     <div class="font-monospace entry-message section-files ">Using observationCollection-props-fail.json from test resources</div>
                                                                     <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
@@ -2458,19 +1993,56 @@
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
                                                                     <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
                                                                     <div class="font-monospace subsection-title mt-2">SHACL</div>
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/properties/observation/shapes.shacl:
+                                                                    <div class="font-monospace entry-message section-shacl text-danger">Validation result for _sources/properties/observation/shapes.shacl:
   Validation Report
-  Conforms: True
+  Conforms: False
+  Results (2):
+  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;
+  	Focus Node: &lt;file:///github/workspace/c1&gt;
+  	Value Node: Literal(&quot;&quot;)
+  	Result Path: sosa:observedProperty
+  	Source Constraint: [ sh:message Literal(&quot;Exactly 1 of sosa:observedProperty is required&quot;) ; sh:select Literal(&quot;
+              PREFIX sh: &lt;http://www.w3.org/ns/shacl#&gt;
+              PREFIX sosa: &lt;http://www.w3.org/ns/sosa/&gt;
+              PREFIX geojson: &lt;https://purl.org/geojson/vocab#&gt;
+              SELECT $this (sosa:observedProperty as ?path) (GROUP_CONCAT(?prop; separator=&#x27;;&#x27;) AS ?value) WHERE {
+                  OPTIONAL { $this sosa:observedProperty ?prop }
+                  OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:observedProperty ?prop }
+              }
+              GROUP BY ?prop
+              HAVING (count(?prop) != 1)
+          &quot;) ]
+  	Message: Exactly 1 of sosa:observedProperty is required
+  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;
+  	Focus Node: &lt;file:///github/workspace/pop1999&gt;
+  	Value Node: Literal(&quot;&quot;)
+  	Result Path: sosa:observedProperty
+  	Source Constraint: [ sh:message Literal(&quot;Exactly 1 of sosa:observedProperty is required&quot;) ; sh:select Literal(&quot;
+              PREFIX sh: &lt;http://www.w3.org/ns/shacl#&gt;
+              PREFIX sosa: &lt;http://www.w3.org/ns/sosa/&gt;
+              PREFIX geojson: &lt;https://purl.org/geojson/vocab#&gt;
+              SELECT $this (sosa:observedProperty as ?path) (GROUP_CONCAT(?prop; separator=&#x27;;&#x27;) AS ?value) WHERE {
+                  OPTIONAL { $this sosa:observedProperty ?prop }
+                  OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:observedProperty ?prop }
+              }
+              GROUP BY ?prop
+              HAVING (count(?prop) != 1)
+          &quot;) ]
+  	Message: Exactly 1 of sosa:observedProperty is required
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: &lt;file:///github/workspace/c1&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: &lt;file:///github/workspace/c1&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: &lt;file:///github/workspace/c1&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: &lt;file:///github/workspace/pop1999&gt;/sosa:hasSimpleResult
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;file:///github/workspace/c1&gt;,&lt;file:///github/workspace/pop1999&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: *none*
 </div>
                                                                     <div class="font-monospace subsection-title mt-2">Semantic Uplift</div>
                                                                     <div class="font-monospace entry-message section-semantic_uplift ">Running post-uplift shacl transform step from ../observation/semantic-uplift/featureType.shacl</div>
@@ -2482,8 +2054,8 @@
                                             <div class="card-body">
                                                 <div class="card-title mb-0">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-64"
-                                                            aria-expanded="false" aria-controls="uid-64"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-58"
+                                                            aria-expanded="false" aria-controls="uid-58"
                                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
@@ -2494,7 +2066,7 @@
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-64">
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-58">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                     <div class="font-monospace entry-message section-files ">Using observationCollection-props.json from test resources</div>
@@ -2509,14 +2081,14 @@
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;file:///github/workspace/something&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: &lt;file:///github/workspace/c1&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;file:///github/workspace/something&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;file:///github/workspace/something&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;file:///github/workspace/something&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: &lt;file:///github/workspace/c1&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;file:///github/workspace/something&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;file:///github/workspace/something&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: &lt;file:///github/workspace/c1&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: &lt;file:///github/workspace/pop1999&gt;/sosa:hasSimpleResult
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;file:///github/workspace/c1&gt;,&lt;file:///github/workspace/pop1999&gt;,&lt;file:///github/workspace/something&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;file:///github/workspace/something&gt;
 </div>
                                                                     <div class="font-monospace subsection-title mt-2">Semantic Uplift</div>
                                                                     <div class="font-monospace entry-message section-semantic_uplift ">Running post-uplift shacl transform step from ../observation/semantic-uplift/featureType.shacl</div>
@@ -2528,8 +2100,8 @@
                                             <div class="card-body">
                                                 <div class="card-title mb-0">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-65"
-                                                            aria-expanded="false" aria-controls="uid-65"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-59"
+                                                            aria-expanded="false" aria-controls="uid-59"
                                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
@@ -2537,10 +2109,10 @@
                                                     <a href="sosa/features/observationCollection/example_1_1.json" target="_blank">example_1_1.json</a>
                                                     <span class="badge bg-secondary example">Example</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
                                                     </div>
                                                 </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-65">
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-59">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                     <div class="font-monospace entry-message section-files ">Using example_1_1.json from examples</div>
@@ -2550,19 +2122,38 @@
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
                                                                     <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
                                                                     <div class="font-monospace subsection-title mt-2">SHACL</div>
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/properties/observation/shapes.shacl:
+                                                                    <div class="font-monospace entry-message section-shacl text-danger">Validation result for _sources/properties/observation/shapes.shacl:
   Validation Report
-  Conforms: True
+  Conforms: False
+  Results (1):
+  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;
+  	Focus Node: &lt;http://www.example.com/sosa/c1&gt;
+  	Value Node: Literal(&quot;&quot;)
+  	Result Path: sosa:observedProperty
+  	Source Constraint: [ sh:message Literal(&quot;Exactly 1 of sosa:observedProperty is required&quot;) ; sh:select Literal(&quot;
+              PREFIX sh: &lt;http://www.w3.org/ns/shacl#&gt;
+              PREFIX sosa: &lt;http://www.w3.org/ns/sosa/&gt;
+              PREFIX geojson: &lt;https://purl.org/geojson/vocab#&gt;
+              SELECT $this (sosa:observedProperty as ?path) (GROUP_CONCAT(?prop; separator=&#x27;;&#x27;) AS ?value) WHERE {
+                  OPTIONAL { $this sosa:observedProperty ?prop }
+                  OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:observedProperty ?prop }
+              }
+              GROUP BY ?prop
+              HAVING (count(?prop) != 1)
+          &quot;) ]
+  	Message: Exactly 1 of sosa:observedProperty is required
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;http://www.example.com/sosa/something&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: &lt;http://www.example.com/sosa/c1&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;http://www.example.com/sosa/something&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://www.example.com/sosa/something&gt;
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;http://www.example.com/sosa/something&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: &lt;http://www.example.com/sosa/c1&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: &lt;http://www.example.com/sosa/something&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: &lt;http://www.example.com/sosa/something&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: &lt;http://www.example.com/sosa/c1&gt;
  - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: &lt;http://www.example.com/sosa/pop1999&gt;/sosa:hasSimpleResult
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: &lt;http://www.example.com/sosa/c1&gt;,&lt;http://www.example.com/sosa/pop1999&gt;,&lt;http://www.example.com/sosa/something&gt;
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: &lt;http://www.example.com/sosa/something&gt;
 </div>
                                                                     <div class="font-monospace subsection-title mt-2">Semantic Uplift</div>
                                                                     <div class="font-monospace entry-message section-semantic_uplift ">Running post-uplift shacl transform step from ../observation/semantic-uplift/featureType.shacl</div>
@@ -2574,8 +2165,8 @@
                                             <div class="card-body">
                                                 <div class="card-title mb-0">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-66"
-                                                            aria-expanded="false" aria-controls="uid-66"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-60"
+                                                            aria-expanded="false" aria-controls="uid-60"
                                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
@@ -2586,7 +2177,7 @@
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-66">
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-60">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                     <div class="font-monospace entry-message section-files ">Using example_1_2.ttl from examples</div>
@@ -2597,14 +2188,14 @@
   Conforms: True
   </div>
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/properties/observation/shapes.shacl:
- - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: eg:pop2000,eg:pop1999
- - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: eg:c1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: eg:pop2000,eg:pop1999
- - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: eg:pop2000,eg:pop1999
- - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: eg:pop2000,eg:pop1999
  - Shape &lt;https://www.ogc.org/rules/sosa/#testResultNotEmptyNode&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval&gt;: eg:c1
- - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: eg:pop1999/sosa:hasSimpleResult,eg:pop2000/sosa:hasSimpleResult
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testRequiredTime&gt;: eg:pop2000,eg:pop1999
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testFeatureOfInterest&gt;: eg:pop2000,eg:pop1999
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testCollectionPropertyValues&gt;: eg:c1
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testSimpleResultLiteral&gt;: eg:pop2000/sosa:hasSimpleResult,eg:pop1999/sosa:hasSimpleResult
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testObservedProperty&gt;: eg:c1,eg:pop2000,eg:pop1999
+ - Shape &lt;https://www.ogc.org/rules/sosa/#testResult&gt;: eg:pop2000,eg:pop1999
 </div>
                                                     </div>
                                                 </div>
