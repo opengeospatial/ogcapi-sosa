@@ -29,7 +29,8 @@
 
 <#testObservedProperty>
     a                   sh:NodeShape ;
-    sh:targetClass      sosa:Observation ;
+    sh:targetClass      sosa:Observation , sosa:ObservationCollection;
+    sh:targetSubjectsOf sosa:hasResult, sosa:hasSimpleResult, sosa:usedProcedure ;
     sh:sparql [
         sh:message          "Exactly 1 of sosa:observedProperty is required" ;
         sh:select """
