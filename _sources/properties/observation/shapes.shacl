@@ -51,7 +51,7 @@
     a                   sh:NodeShape ;
     sh:targetClass      sosa:Observation, sosa:Actuation, sosa:Sampling ;
     sh:property         [
-        sh:message          "Exactly one feature of interest (sosa:hasFeatureOfInterest/sosa:isFeatureOfInterestOf) is required" ;
+        sh:message          "Feature of interest (sosa:hasFeatureOfInterest/sosa:isFeatureOfInterestOf) is required in Collection or Execution(Observation/Actuation/Sampling)" ;
         sh:path     ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath ( [ sh:inversePath
                                                                                                                 geojson:features ]
                                                                                                       [ sh:inversePath
@@ -59,7 +59,7 @@
                                         [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath
                                                                                                    sosa:isFeatureOfInterestOf ] ) ] ) ;
                           sh:minCount 1 ;
-                          sh:maxCount 1 ; ] ;
+                       ] ;
 .
 
 <#testResult>
