@@ -23,7 +23,11 @@
       "@id": "rdfs:seeAlso"
     },
     "features": {
+      "@id": "sosa:hasMember",
+      "@type": "@id",
       "@context": {
+        "geometry": "geojson:geometry",
+        "bbox": "geojson:bbox",
         "time": {
           "@context": {
             "date": {
@@ -43,27 +47,9 @@
         },
         "coordRefSys": "http://www.opengis.net/def/glossary/term/CoordinateReferenceSystemCRS",
         "place": "dct:spatial"
-      },
-      "@container": "@set",
-      "@id": "sosa:hasMember",
-      "@type": "@id"
+      }
     },
-    "Feature": "geojson:Feature",
-    "FeatureCollection": "geojson:FeatureCollection",
-    "GeometryCollection": "geojson:GeometryCollection",
-    "LineString": "geojson:LineString",
-    "MultiLineString": "geojson:MultiLineString",
-    "MultiPoint": "geojson:MultiPoint",
-    "MultiPolygon": "geojson:MultiPolygon",
-    "Point": "geojson:Point",
-    "Polygon": "geojson:Polygon",
-    "id": "@id",
     "properties": "@nest",
-    "geometry": "geojson:geometry",
-    "bbox": {
-      "@container": "@list",
-      "@id": "geojson:bbox"
-    },
     "resultTime": "sosa:resultTime",
     "phenomenonTime": {
       "@id": "sosa:phenomenonTime",
@@ -89,6 +75,7 @@
       "@id": "sosa:hasMember",
       "@type": "@id"
     },
+    "id": "@id",
     "ActuatableProperty": {
       "@id": "sosa:ActuatableProperty",
       "@type": "@id"
@@ -443,6 +430,15 @@
       "@id": "ssn-system:qualityOfObservation",
       "@type": "@id"
     },
+    "Feature": "geojson:Feature",
+    "FeatureCollection": "geojson:FeatureCollection",
+    "GeometryCollection": "geojson:GeometryCollection",
+    "LineString": "geojson:LineString",
+    "MultiLineString": "geojson:MultiLineString",
+    "MultiPoint": "geojson:MultiPoint",
+    "MultiPolygon": "geojson:MultiPolygon",
+    "Point": "geojson:Point",
+    "Polygon": "geojson:Polygon",
     "Polyhedron": "geojson:Polyhedron",
     "MultiPolyhedron": "geojson:MultiPolyhedron",
     "Prism": {

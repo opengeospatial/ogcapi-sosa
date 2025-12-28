@@ -9,7 +9,7 @@
   "itemClass": "schema",
   "register": "ogc-building-block-register",
   "version": "1.0",
-  "dateOfLastChange": "2025-11-11",
+  "dateOfLastChange": "2025-12-28",
   "sources": [
     {
       "title": "Semantic Sensor Network Ontology",
@@ -32,8 +32,8 @@
     ]
   },
   "dependsOn": [
-    "ogc.ogc-utils.iri-or-curie",
-    "ogc.sosa.properties.observation"
+    "ogc.sosa.properties.observation",
+    "ogc.ogc-utils.iri-or-curie"
   ],
   "schema": {
     "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.yaml",
@@ -52,22 +52,23 @@
       "snippets": [
         {
           "language": "json",
-          "code": "{ \n  \"observedProperty\": \"p1\",\n  \"resultTime\": \"2022-05-01T22:33:44Z\",\n  \"hasMember\": [\n    { \n      \"@id\": \"a1\",\n      \"@type\": \"sosa:Observation\",\n      \"comment\": \"Example of an inline membership - would entail hasMember relations\",\n      \"hasFeatureOfInterest\": \"https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem\",\n      \"hasSimpleResult\": 1995.2,\n      \"phenomenonTime\": \"2022-05-01T22:33:40Z\"\n    }\n  ]\n}",
+          "ref": "examples/collection.json",
           "base-uri": "http://example.com/",
           "shacl-closure": [
             "closure.ttl"
           ],
-          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observationCollection/example_1_1.json"
+          "code": "{\n  \"id\": \"myObsCollection\",\n  \"observedProperty\": \"p1\",\n  \"resultTime\": \"2022-05-01T22:33:44Z\",\n  \"hasMember\": [\n    {\n      \"@id\": \"a1\",\n      \"@type\": \"sosa:Observation\",\n      \"comment\": \"Example of an inline membership - would entail hasMember relations\",\n      \"hasFeatureOfInterest\": \"https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem\",\n      \"hasSimpleResult\": 1995.2,\n      \"phenomenonTime\": \"2022-05-01T22:33:40Z\"\n    }\n  ]\n}",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observationCollection/example_1_1-1.json"
         },
         {
           "language": "jsonld",
-          "code": "{\n  \"@context\": \"https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/context.jsonld\",\n  \"observedProperty\": \"p1\",\n  \"resultTime\": \"2022-05-01T22:33:44Z\",\n  \"hasMember\": [\n    {\n      \"@id\": \"a1\",\n      \"@type\": \"sosa:Observation\",\n      \"comment\": \"Example of an inline membership - would entail hasMember relations\",\n      \"hasFeatureOfInterest\": \"https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem\",\n      \"hasSimpleResult\": 1995.2,\n      \"phenomenonTime\": \"2022-05-01T22:33:40Z\"\n    }\n  ]\n}",
-          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observationCollection/example_1_1.jsonld"
+          "code": "{\n  \"@context\": \"https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/context.jsonld\",\n  \"id\": \"myObsCollection\",\n  \"observedProperty\": \"p1\",\n  \"resultTime\": \"2022-05-01T22:33:44Z\",\n  \"hasMember\": [\n    {\n      \"@id\": \"a1\",\n      \"@type\": \"sosa:Observation\",\n      \"comment\": \"Example of an inline membership - would entail hasMember relations\",\n      \"hasFeatureOfInterest\": \"https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem\",\n      \"hasSimpleResult\": 1995.2,\n      \"phenomenonTime\": \"2022-05-01T22:33:40Z\"\n    }\n  ]\n}",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observationCollection/example_1_1-1.jsonld"
         },
         {
           "language": "ttl",
-          "code": "@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<http://example.com/a1> a sosa:Observation ;\n    sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;\n    sosa:hasSimpleResult 1.9952e+03 ;\n    sosa:phenomenonTime <2022-05-01T22:33:40Z> .\n\n[] sosa:hasMember <http://example.com/a1> ;\n    sosa:observedProperty <http://example.com/p1> ;\n    sosa:resultTime \"2022-05-01T22:33:44Z\" .\n\n",
-          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observationCollection/example_1_1.ttl"
+          "code": "@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<http://example.com/myObsCollection> sosa:hasMember <http://example.com/a1> ;\n    sosa:observedProperty <http://example.com/p1> ;\n    sosa:resultTime \"2022-05-01T22:33:44Z\" .\n\n<http://example.com/a1> a sosa:Observation ;\n    sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;\n    sosa:hasSimpleResult 1.9952e+03 ;\n    sosa:phenomenonTime <2022-05-01T22:33:40Z> .\n\n",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observationCollection/example_1_1-1.ttl"
         }
       ]
     },
@@ -76,7 +77,8 @@
       "snippets": [
         {
           "language": "ttl",
-          "code": "@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix eg: <http://example.org/my-feature/> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n\neg:c1 a sosa:ObservationCollection ;\n  sosa:hasMember eg:a1 ;\n  sosa:observedProperty eg:p1 ;\n  sosa:resultTime \"2022-05-01T22:33:44Z\"^^xsd:dateTime ;\n  sosa:phenomenonTime \"2022-05-01T22:33:40Z\"^^xsd:dateTime ;\n.\n\neg:a1 a sosa:Observation ;\n  sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;\n  sosa:hasSimpleResult 33 ;\n.\neg:p1 a skos:Concept;\n  skos:prefLabel \"Some Observable Property\";\n.",
+          "ref": "examples/collection.ttl",
+          "code": "@prefix sosa: <http://www.w3.org/ns/sosa/> .\n        @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n        @prefix eg: <http://example.org/my-feature/> .\n        @prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n\n        eg:c1 a sosa:ObservationCollection ;\n          sosa:hasMember eg:a1 ;\n          sosa:observedProperty eg:p1 ;\n          sosa:resultTime \"2022-05-01T22:33:44Z\"^^xsd:dateTime ;\n          sosa:phenomenonTime \"2022-05-01T22:33:40Z\"^^xsd:dateTime ;\n        .\n\n        eg:a1 a sosa:Observation ;\n          sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;\n          sosa:hasSimpleResult 33 ;\n        .\n        eg:p1 a skos:Concept;\n          skos:prefLabel \"Some Observable Property\";\n        .",
           "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/observationCollection/example_2_1.ttl"
         }
       ]

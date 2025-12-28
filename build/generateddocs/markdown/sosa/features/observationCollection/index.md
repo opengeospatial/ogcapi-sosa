@@ -62,35 +62,6 @@ This building blocks defines an ObservationCollection Feature according to the S
 }
 ```
 
-#### turtle
-```turtle
-@prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix eg: <http://example.org/my-feature/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-
-eg:c1 a sosa:ObservationCollection ;
-  sosa:hasMember eg:pop1999, eg:pop2000 ;
-  sosa:observedProperty <http://dbpedia.org/ontology/population> ;
-.
-
-eg:pop1999 a sosa:Observation ;
-  sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
-  sosa:hasSimpleResult 3275.0 ;
-  sosa:resultTime "1999-01-01"^^xsd:date
-.
-
- eg:pop2000 a sosa:Observation ;
-  sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
-  sosa:hasSimpleResult 4372.0 ;
-  sosa:resultTime "2000"^^xsd:gYear
-.
-
-<http://dbpedia.org/ontology/population> a skos:Concept;
-  skos:prefLabel "Population";
-.
-```
-
 #### jsonld
 ```jsonld
 {
@@ -148,30 +119,62 @@ eg:pop1999 a sosa:Observation ;
 
 #### ttl
 ```ttl
-@prefix eg: <http://example.org/my-feature/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix geojson: <https://purl.org/geojson/vocab#> .
+@prefix resultschema: <http//example.org/resultchema/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-eg:c1 a sosa:ObservationCollection ;
-    sosa:hasMember eg:pop1999,
-        eg:pop2000 ;
-    sosa:observedProperty <http://dbpedia.org/ontology/population> .
+<http://www.example.com/sosa/c1> a sosa:ObservationCollection,
+        geojson:FeatureCollection ;
+    sosa:hasMember <http://www.example.com/sosa/pop1999>,
+        <http://www.example.com/sosa/something> ;
+    sosa:resultTime "1999" .
 
-<http://dbpedia.org/ontology/population> a skos:Concept ;
-    skos:prefLabel "Population" .
+<http://www.example.com/sosa/pop1999> a geojson:Feature ;
+    sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork> ;
+    sosa:hasSimpleResult 1.5555e+04 ;
+    sosa:observedProperty <https://dbpedia.org/ontology/population> .
+
+<http://www.example.com/sosa/something> a sosa:Observation,
+        geojson:Feature ;
+    sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
+    sosa:hasResult [ resultschema:a 1 ;
+            resultschema:b [ resultschema:b1 "rb1" ;
+                    resultschema:b2 "rb2" ] ] ;
+    sosa:observedProperty <https://example.org/someproperty> .
+
+
+```
+
+
+### Example of SOSA ObservationCollection
+#### turtle
+```turtle
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix eg: <http://example.org/my-feature/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+eg:c1 a sosa:ObservationCollection ;
+  sosa:hasMember eg:pop1999, eg:pop2000 ;
+  sosa:observedProperty <http://dbpedia.org/ontology/population> ;
+.
 
 eg:pop1999 a sosa:Observation ;
-    sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
-    sosa:hasSimpleResult 3275.0 ;
-    sosa:resultTime "1999-01-01"^^xsd:date .
+  sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
+  sosa:hasSimpleResult 3275.0 ;
+  sosa:resultTime "1999-01-01"^^xsd:date
+.
 
-eg:pop2000 a sosa:Observation ;
-    sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
-    sosa:hasSimpleResult 4372.0 ;
-    sosa:resultTime "2000"^^xsd:gYear .
+ eg:pop2000 a sosa:Observation ;
+  sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
+  sosa:hasSimpleResult 4372.0 ;
+  sosa:resultTime "2000"^^xsd:gYear
+.
 
-
+<http://dbpedia.org/ontology/population> a skos:Concept;
+  skos:prefLabel "Population";
+.
 ```
 
 ## Schema
@@ -523,7 +526,11 @@ Links to the schema:
       "@id": "rdfs:seeAlso"
     },
     "features": {
+      "@id": "sosa:hasMember",
+      "@type": "@id",
       "@context": {
+        "geometry": "geojson:geometry",
+        "bbox": "geojson:bbox",
         "time": {
           "@context": {
             "date": {
@@ -543,27 +550,9 @@ Links to the schema:
         },
         "coordRefSys": "http://www.opengis.net/def/glossary/term/CoordinateReferenceSystemCRS",
         "place": "dct:spatial"
-      },
-      "@container": "@set",
-      "@id": "sosa:hasMember",
-      "@type": "@id"
+      }
     },
-    "Feature": "geojson:Feature",
-    "FeatureCollection": "geojson:FeatureCollection",
-    "GeometryCollection": "geojson:GeometryCollection",
-    "LineString": "geojson:LineString",
-    "MultiLineString": "geojson:MultiLineString",
-    "MultiPoint": "geojson:MultiPoint",
-    "MultiPolygon": "geojson:MultiPolygon",
-    "Point": "geojson:Point",
-    "Polygon": "geojson:Polygon",
-    "id": "@id",
     "properties": "@nest",
-    "geometry": "geojson:geometry",
-    "bbox": {
-      "@container": "@list",
-      "@id": "geojson:bbox"
-    },
     "resultTime": "sosa:resultTime",
     "phenomenonTime": {
       "@id": "sosa:phenomenonTime",
@@ -589,6 +578,7 @@ Links to the schema:
       "@id": "sosa:hasMember",
       "@type": "@id"
     },
+    "id": "@id",
     "ActuatableProperty": {
       "@id": "sosa:ActuatableProperty",
       "@type": "@id"
@@ -943,6 +933,15 @@ Links to the schema:
       "@id": "ssn-system:qualityOfObservation",
       "@type": "@id"
     },
+    "Feature": "geojson:Feature",
+    "FeatureCollection": "geojson:FeatureCollection",
+    "GeometryCollection": "geojson:GeometryCollection",
+    "LineString": "geojson:LineString",
+    "MultiLineString": "geojson:MultiLineString",
+    "MultiPoint": "geojson:MultiPoint",
+    "MultiPolygon": "geojson:MultiPolygon",
+    "Point": "geojson:Point",
+    "Polygon": "geojson:Polygon",
     "Polyhedron": "geojson:Polyhedron",
     "MultiPolyhedron": "geojson:MultiPolyhedron",
     "Prism": {

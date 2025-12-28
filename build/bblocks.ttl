@@ -1,112 +1,165 @@
 @prefix bblocks: <https://www.opengis.net/def/bblocks/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix role: <http://www.w3.org/ns/dx/prof/role/> .
 @prefix schema: <https://schema.org/> .
+@prefix shacl: <https://www.w3.org/TR/shacl/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://opengeospatial.github.io/ogc.sosa> a skos:Concept,
+<https://opengeospatial.github.io/ogcapi-sosa/build/bblocks.ttl> a prov:Entity ;
+    dct:format "text/turtle" ;
+    prov:wasAttributedTo _:Nd9cdee7f90a049d9aabb8ae70ee79d2d ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            prov:endedAtTime "2025-12-28T08:51:46.130976"^^xsd:dateTime ;
+            prov:startedAtTime "2025-12-28T08:51:46.045562"^^xsd:dateTime ;
+            prov:used [ a prov:Entity ;
+                    dct:format "application/json" ;
+                    dct:hasVersion "git:38fc3716d30c5cab3aca9f5a8937d97c6df2023f" ;
+                    rdfs:seeAlso <https://opengeospatial.github.io/ogcapi-sosa/build/register.json> ],
+                [ a prov:Entity ;
+                    dct:format "application/yaml" ;
+                    rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ] ;
+            prov:wasAssociatedWith _:Nd9cdee7f90a049d9aabb8ae70ee79d2d ] .
+
+<bblocks://ogc.sosa> a skos:Concept,
         dcat:Dataset,
         bblocks:Api ;
     rdfs:label "Sensor, Observation, Sample, and Actuator (SOSA)" ;
     dct:abstract "The SOSA (Sensor, Observation, Sample, and Actuator) ontology  is a realisation of the Observations, Measurements and Sampling (OMS) Conceptual model"^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2023-04-13T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/index.json" ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa" ],
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa> ],
         [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/index.md" ] ;
+            rdfs:isDefinedBy <https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/index.md> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/index.json> ] ;
     dct:hasVersion "1.0" ;
-    dct:modified "2025-11-11"^^xsd:date ;
+    dct:modified "2025-12-28"^^xsd:date ;
     dct:source <https://www.w3.org/TR/vocab-ssn/> ;
     skos:inScheme <https://opengeospatial.github.io/ogcapi-sosa/> ;
+    skos:prefLabel "Sensor, Observation, Sample, and Actuator (SOSA)" ;
+    skos:topConceptOf <https://opengeospatial.github.io/ogcapi-sosa/> ;
     dcat:keyword "o&m",
         "o&m&s",
         "sosa",
         "ssn" ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/development> ;
-    bblocks:status <http://www.opengis.net/def/status/under-development> .
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
 
-<https://opengeospatial.github.io/ogc.sosa.features.observationCollection> a skos:Concept,
+<bblocks://ogc.sosa.features.observationCollection> a skos:Concept,
         dcat:Dataset,
         bblocks:Schema ;
     rdfs:label "SOSA ObservationCollection Feature" ;
     dct:abstract "This building blocks defines an ObservationCollection Feature according to the SOSA/SSN v1.1 specification."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2023-04-13T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/features/observationCollection/index.md" ],
-        [ dct:format "application/json" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/features/observationCollection/index.json" ],
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/features/observationCollection/index.json> ],
         [ dct:format "text/html" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.features.observationCollection" ] ;
+            rdfs:isDefinedBy <https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.features.observationCollection> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/features/observationCollection/index.md> ] ;
     dct:hasVersion "1.0" ;
-    dct:modified "2025-11-11"^^xsd:date ;
+    dct:modified "2025-12-28"^^xsd:date ;
     dct:source <https://www.w3.org/TR/vocab-ssn-ext/>,
         <https://www.w3.org/TR/vocab-ssn/> ;
     skos:inScheme <https://opengeospatial.github.io/ogcapi-sosa/> ;
+    skos:prefLabel "SOSA ObservationCollection Feature" ;
+    skos:topConceptOf <https://opengeospatial.github.io/ogcapi-sosa/> ;
     dcat:keyword "o&m",
         "o&m&s",
         "observations",
         "sosa",
         "ssn" ;
-    bblocks:dependsOn <https://opengeospatial.github.io/ogc.geo.json-fg.featureCollection-lenient>,
-        <https://opengeospatial.github.io/ogc.sosa.features.observation>,
-        <https://opengeospatial.github.io/ogc.sosa.properties.observationCollection> ;
-    bblocks:hasJsonLdContext <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observationCollection/context.jsonld> ;
-    bblocks:hasSchema <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observationCollection/schema.json>,
-        <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observationCollection/schema.yaml> ;
-    bblocks:hasShaclRule <https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl> ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observationCollection/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.sosa.properties.observation> ;
+            prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observationCollection/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observationCollection/context.jsonld> ;
+            prof:hasRole role:mapping ] ;
+    bblocks:dependsOn <bblocks://ogc.geo.json-fg.featureCollection-lenient>,
+        <bblocks://ogc.sosa.features.observation>,
+        <bblocks://ogc.sosa.properties.observationCollection> ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/development> ;
-    bblocks:status <http://www.opengis.net/def/status/under-development> .
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
 
-<https://opengeospatial.github.io/ogc.sosa.properties.platform> a skos:Concept,
+<bblocks://ogc.sosa.properties.platform> a skos:Concept,
         dcat:Dataset,
         bblocks:Schema ;
     rdfs:label "SOSA Platform" ;
     dct:abstract "This building block defines the set of properties for an observation Platform according to the SOSA/SSN specification. These properties may be directly included into a root element of a JSON object or used in the properties container of a GeoJSON feature."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2023-12-05T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/properties/platform/index.json" ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/properties/platform/index.md" ],
+            rdfs:isDefinedBy <https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/properties/platform/index.json> ],
         [ dct:format "text/html" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.properties.platform" ] ;
+            rdfs:isDefinedBy <https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.properties.platform> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/properties/platform/index.md> ] ;
     dct:hasVersion "1.0" ;
-    dct:modified "2025-11-11"^^xsd:date ;
+    dct:modified "2025-12-28"^^xsd:date ;
     dct:source <https://www.w3.org/TR/vocab-ssn/> ;
     skos:inScheme <https://opengeospatial.github.io/ogcapi-sosa/> ;
+    skos:prefLabel "SOSA Platform" ;
+    skos:topConceptOf <https://opengeospatial.github.io/ogcapi-sosa/> ;
     dcat:keyword "o&m",
         "o&m&s",
         "observations",
         "sosa",
         "ssn" ;
-    bblocks:dependsOn <https://opengeospatial.github.io/ogc.ogc-utils.iri-or-curie>,
-        <https://opengeospatial.github.io/ogc.sosa.properties.sensor> ;
-    bblocks:hasJsonLdContext <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/context.jsonld> ;
-    bblocks:hasSchema <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/schema.json>,
-        <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/schema.yaml> ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/context.jsonld> ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/schema.json> ;
+            prof:hasRole role:schema ] ;
+    bblocks:dependsOn <bblocks://ogc.ogc-utils.iri-or-curie>,
+        <bblocks://ogc.sosa.properties.sensor> ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/development> ;
-    bblocks:status <http://www.opengis.net/def/status/under-development> .
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
 
-<https://opengeospatial.github.io/ogc.sosa.properties.spec-examples> a skos:Concept,
+<bblocks://ogc.sosa.properties.spec-examples> a skos:Concept,
         dcat:Dataset,
         bblocks:Schema ;
     rdfs:label "Tests for SOSA specification" ;
     dct:abstract "This BuildingBlock adds test cases from the SOSA specification to the base Observation properties model"^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2023-04-13T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/properties/spec-examples/index.md" ],
+            rdfs:isDefinedBy <https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/properties/spec-examples/index.md> ],
         [ dct:format "text/html" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.properties.spec-examples" ],
+            rdfs:isDefinedBy <https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.properties.spec-examples> ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/properties/spec-examples/index.json" ] ;
+            rdfs:isDefinedBy <https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/properties/spec-examples/index.json> ] ;
     dct:hasVersion "1.0" ;
-    dct:modified "2025-11-11"^^xsd:date ;
+    dct:modified "2025-12-28"^^xsd:date ;
     dct:source <https://www.w3.org/TR/vocab-ssn/> ;
     skos:inScheme <https://opengeospatial.github.io/ogcapi-sosa/> ;
+    skos:prefLabel "Tests for SOSA specification" ;
+    skos:topConceptOf <https://opengeospatial.github.io/ogcapi-sosa/> ;
     dcat:keyword "OMS",
         "OWA",
         "o&m",
@@ -114,169 +167,229 @@
         "sosa",
         "ssn" ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/development> ;
-    bblocks:status <http://www.opengis.net/def/status/under-development> .
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
 
-<https://opengeospatial.github.io/ogcapi-sosa/build/bblocks.ttl> a prov:Entity ;
-    dct:format "text/turtle" ;
-    prov:wasAttributedTo _:N86a467f680e44e6b8a2d76a3613924b8 ;
-    prov:wasGeneratedBy [ a prov:Activity ;
-            prov:endedAtTime "2025-11-11T07:49:43.487772"^^xsd:dateTime ;
-            prov:startedAtTime "2025-11-11T07:49:43.423301"^^xsd:dateTime ;
-            prov:used [ a prov:Entity ;
-                    dct:format "application/yaml" ;
-                    rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ],
-                [ a prov:Entity ;
-                    dct:format "application/json" ;
-                    dct:hasVersion "git:1cb0f241dc84a4a8aec50425c998eeb47dfd848d" ;
-                    rdfs:seeAlso <https://opengeospatial.github.io/ogcapi-sosa/build/register.json> ] ;
-            prov:wasAssociatedWith _:N86a467f680e44e6b8a2d76a3613924b8 ] .
+<https://www.w3.org/TR/vocab-ssn-ext/> rdfs:label "Extensions to the Semantic Sensor Network Ontology" .
 
-<https://opengeospatial.github.io/ogc.sosa.features.observation> a skos:Concept,
+<bblocks://ogc.sosa.features.observation> a skos:Concept,
         dcat:Dataset,
         bblocks:Schema ;
     rdfs:label "SOSA Observation Feature" ;
     dct:abstract "This building blocks defines a GeoJSON feature containing a SOSA Observation, using the properties defined in the Observation Properties schema"^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2023-05-18T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/features/observation/index.json" ],
+    dct:description [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/features/observation/index.md> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/features/observation/index.json> ],
         [ dct:format "text/html" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.features.observation" ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/features/observation/index.md" ] ;
+            rdfs:isDefinedBy <https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.features.observation> ] ;
     dct:hasVersion "1.0" ;
-    dct:modified "2025-11-11"^^xsd:date ;
+    dct:modified "2025-12-28"^^xsd:date ;
     dct:source <https://www.w3.org/TR/vocab-ssn/> ;
     skos:inScheme <https://opengeospatial.github.io/ogcapi-sosa/> ;
+    skos:prefLabel "SOSA Observation Feature" ;
+    skos:topConceptOf <https://opengeospatial.github.io/ogcapi-sosa/> ;
     dcat:keyword "o&m",
         "o&m&s",
         "observations",
         "sosa",
         "ssn" ;
-    bblocks:dependsOn <https://opengeospatial.github.io/ogc.geo.json-fg.feature-lenient>,
-        <https://opengeospatial.github.io/ogc.sosa.properties.observation> ;
-    bblocks:hasJsonLdContext <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/context.jsonld> ;
-    bblocks:hasSchema <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.json>,
-        <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.yaml> ;
-    bblocks:hasShaclRule <https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl> ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/context.jsonld> ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.sosa.properties.observation> ;
+            prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl> ;
+            prof:hasRole role:validation ] ;
+    bblocks:dependsOn <bblocks://ogc.geo.json-fg.feature-lenient>,
+        <bblocks://ogc.sosa.properties.observation> ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/development> ;
-    bblocks:status <http://www.opengis.net/def/status/under-development> .
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
 
-<https://opengeospatial.github.io/ogc.sosa.properties.observation-owa> a skos:Concept,
+<bblocks://ogc.sosa.properties.observation-owa> a skos:Concept,
         dcat:Dataset,
         bblocks:Schema ;
     rdfs:label "Observation Properties (SOSA OWA)" ;
     dct:abstract "This is set of properties defined by the SOSA ontology, assuming a \"Open World Assumption\" where mandatory properties may be provided by other related objects."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2023-04-13T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/properties/observation-owa/index.json" ],
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.properties.observation-owa> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/properties/observation-owa/index.json> ],
         [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/properties/observation-owa/index.md" ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.properties.observation-owa" ] ;
+            rdfs:isDefinedBy <https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/properties/observation-owa/index.md> ] ;
     dct:hasVersion "1.0" ;
-    dct:modified "2025-11-11"^^xsd:date ;
+    dct:modified "2025-12-28"^^xsd:date ;
     dct:source <https://www.w3.org/TR/vocab-ssn/> ;
     skos:inScheme <https://opengeospatial.github.io/ogcapi-sosa/> ;
+    skos:prefLabel "Observation Properties (SOSA OWA)" ;
+    skos:topConceptOf <https://opengeospatial.github.io/ogcapi-sosa/> ;
     dcat:keyword "OMS",
         "OWA",
         "o&m",
         "observations",
         "sosa",
         "ssn" ;
-    bblocks:hasJsonLdContext <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation-owa/context.jsonld> ;
-    bblocks:hasSchema <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation-owa/schema.json>,
-        <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation-owa/schema.yaml> ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation-owa/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation-owa/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation-owa/context.jsonld> ;
+            prof:hasRole role:mapping ] ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/development> ;
-    bblocks:status <http://www.opengis.net/def/status/under-development> .
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
 
-<https://opengeospatial.github.io/ogc.sosa.properties.observationCollection> a skos:Concept,
+<bblocks://ogc.sosa.properties.observationCollection> a skos:Concept,
         dcat:Dataset,
         bblocks:Schema ;
     rdfs:label "ObservationCollection Properties" ;
     dct:abstract "This building block defines an ObservationCollection according to the SOSA/SSN v1.1 specification. It defines a set of logical rules regarding presence of mandatory properties anywhere within a potentially nested collection hierarchy. (implemented in SHACL, exploiting the semantic mapping to SOSA)"^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2023-04-13T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/properties/observationCollection/index.md" ],
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.properties.observationCollection> ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/properties/observationCollection/index.json" ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.properties.observationCollection" ] ;
+            rdfs:isDefinedBy <https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/properties/observationCollection/index.json> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/properties/observationCollection/index.md> ] ;
     dct:hasVersion "1.0" ;
-    dct:modified "2025-11-11"^^xsd:date ;
+    dct:modified "2025-12-28"^^xsd:date ;
     dct:source <https://www.w3.org/TR/vocab-ssn/> ;
     skos:inScheme <https://opengeospatial.github.io/ogcapi-sosa/> ;
+    skos:prefLabel "ObservationCollection Properties" ;
+    skos:topConceptOf <https://opengeospatial.github.io/ogcapi-sosa/> ;
     dcat:keyword "ISO19156",
         "OMS",
         "o&m",
         "observations",
         "sosa" ;
-    bblocks:dependsOn <https://opengeospatial.github.io/ogc.ogc-utils.iri-or-curie>,
-        <https://opengeospatial.github.io/ogc.sosa.properties.observation> ;
-    bblocks:hasJsonLdContext <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/context.jsonld> ;
-    bblocks:hasSchema <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.json>,
-        <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.yaml> ;
-    bblocks:hasShaclRule <https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl> ;
+    prof:hasResource [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.sosa.properties.observation> ;
+            prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/context.jsonld> ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.yaml> ;
+            prof:hasRole role:schema ] ;
+    bblocks:dependsOn <bblocks://ogc.ogc-utils.iri-or-curie>,
+        <bblocks://ogc.sosa.properties.observation> ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/development> ;
-    bblocks:status <http://www.opengis.net/def/status/under-development> .
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
 
-<https://opengeospatial.github.io/ogc.sosa.properties.sensor> a skos:Concept,
+<bblocks://ogc.sosa.properties.sensor> a skos:Concept,
         dcat:Dataset,
         bblocks:Schema ;
     rdfs:label "SOSA Sensor" ;
     dct:abstract "An identifiable entity that can generate Observations pertaining to an ObservableProperty by implementing an ObservingProcedure. Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2023-12-05T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/properties/sensor/index.json" ],
+            rdfs:isDefinedBy <https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/properties/sensor/index.json> ],
         [ dct:format "text/html" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.properties.sensor" ],
+            rdfs:isDefinedBy <https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.properties.sensor> ],
         [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/properties/sensor/index.md" ] ;
+            rdfs:isDefinedBy <https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/properties/sensor/index.md> ] ;
     dct:hasVersion "1.0" ;
-    dct:modified "2025-11-11"^^xsd:date ;
+    dct:modified "2025-12-28"^^xsd:date ;
     dct:source <https://www.w3.org/TR/vocab-ssn/> ;
     skos:inScheme <https://opengeospatial.github.io/ogcapi-sosa/> ;
+    skos:prefLabel "SOSA Sensor" ;
+    skos:topConceptOf <https://opengeospatial.github.io/ogcapi-sosa/> ;
     dcat:keyword "o&m",
         "o&m&s",
         "observations",
         "sosa",
         "ssn" ;
-    bblocks:dependsOn <https://opengeospatial.github.io/ogc.ogc-utils.iri-or-curie> ;
-    bblocks:hasJsonLdContext <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sensor/context.jsonld> ;
-    bblocks:hasSchema <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sensor/schema.json>,
-        <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sensor/schema.yaml> ;
+    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sensor/context.jsonld> ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sensor/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sensor/schema.json> ;
+            prof:hasRole role:schema ] ;
+    bblocks:dependsOn <bblocks://ogc.ogc-utils.iri-or-curie> ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/development> ;
-    bblocks:status <http://www.opengis.net/def/status/under-development> .
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
 
-<https://www.w3.org/TR/vocab-ssn-ext/> rdfs:label "Extensions to the Semantic Sensor Network Ontology" .
-
-<https://opengeospatial.github.io/ogc.sosa.properties.observation> a skos:Concept,
+<bblocks://ogc.sosa.properties.observation> a skos:Concept,
         dcat:Dataset,
         bblocks:Schema ;
     rdfs:label "Observation Properties" ;
     dct:abstract "This building block defines the set of properties for an observation according to the SOSA/SSN specification. These properties may be directly included into a root element of a JSON object or used in the properties container of a GeoJSON feature."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2023-04-13T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/properties/observation/index.json" ],
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.properties.observation> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/properties/observation/index.json> ],
         [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/properties/observation/index.md" ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.properties.observation" ] ;
+            rdfs:isDefinedBy <https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/properties/observation/index.md> ] ;
     dct:hasVersion "1.0" ;
-    dct:modified "2025-11-11"^^xsd:date ;
+    dct:modified "2025-12-28"^^xsd:date ;
     dct:source <https://www.w3.org/TR/vocab-ssn/> ;
     skos:inScheme <https://opengeospatial.github.io/ogcapi-sosa/> ;
+    skos:prefLabel "Observation Properties" ;
+    skos:topConceptOf <https://opengeospatial.github.io/ogcapi-sosa/> ;
     dcat:keyword "o&m",
         "o&m&s",
         "observations",
         "sosa",
         "ssn" ;
-    bblocks:dependsOn <https://opengeospatial.github.io/ogc.sosa.properties.observation-owa> ;
-    bblocks:hasJsonLdContext <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/context.jsonld> ;
-    bblocks:hasSchema <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.json>,
-        <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.yaml> ;
-    bblocks:hasShaclRule <https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl> ;
+    prof:hasResource [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.sosa.properties.observation> ;
+            prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/context.jsonld> ;
+            prof:hasRole role:mapping ] ;
+    bblocks:dependsOn <bblocks://ogc.sosa.properties.observation-owa> ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/development> ;
-    bblocks:status <http://www.opengis.net/def/status/under-development> .
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
+
+<https://www.w3.org/TR/vocab-ssn/> rdfs:label "Semantic Sensor Network Ontology" .
 
 <https://opengeospatial.github.io/ogcapi-sosa/> a skos:ConceptScheme,
         dcat:Catalog ;
@@ -290,15 +403,24 @@ Each fragment allows for transparent and validatable use of JSON-LD contexts to 
 
  Each building block allows for examples transformed to RDF, which in turn allows for the use of SHACL rules to enforce the semantics of the SOSA and OMS specifications.
 """^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:modified "2025-12-28T08:51:32.278961"^^xsd:dateTime ;
+    owl:imports <https://opengeospatial.github.io/bblocks/register.json> ;
+    skos:hasTopConcept <bblocks://ogc.sosa>,
+        <bblocks://ogc.sosa.features.observation>,
+        <bblocks://ogc.sosa.features.observationCollection>,
+        <bblocks://ogc.sosa.properties.observation>,
+        <bblocks://ogc.sosa.properties.observation-owa>,
+        <bblocks://ogc.sosa.properties.observationCollection>,
+        <bblocks://ogc.sosa.properties.platform>,
+        <bblocks://ogc.sosa.properties.sensor>,
+        <bblocks://ogc.sosa.properties.spec-examples> ;
     skos:prefLabel "Building Blocks - Observations (ISO 19156, OGC/W3C SOSA)" ;
-    bblocks:hasValidationReport <https://opengeospatial.github.io/ogcapi-sosa/build/tests/report.html> ;
-    bblocks:imports <https://opengeospatial.github.io/bblocks/register.json> .
+    foaf:homepage <https://opengeospatial.github.io/ogcapi-sosa/> ;
+    bblocks:hasValidationReport <https://opengeospatial.github.io/ogcapi-sosa/build/tests/report.html> .
 
-<https://www.w3.org/TR/vocab-ssn/> rdfs:label "Semantic Sensor Network Ontology" .
-
-_:N86a467f680e44e6b8a2d76a3613924b8 a prov:Agent,
+_:Nd9cdee7f90a049d9aabb8ae70ee79d2d a prov:Agent,
         schema:SoftwareApplication ;
     rdfs:label "OGC-NA tools" ;
-    dct:hasVersion "0.4.9" ;
+    dct:hasVersion "0.5.10" ;
     rdfs:seeAlso <https://github.com/opengeospatial/ogc-na-tools> .
 

@@ -9,7 +9,7 @@
   "itemClass": "schema",
   "register": "ogc-building-block-register",
   "version": "1.0",
-  "dateOfLastChange": "2025-11-11",
+  "dateOfLastChange": "2025-12-28",
   "sources": [
     {
       "title": "Semantic Sensor Network Ontology",
@@ -36,9 +36,9 @@
     ]
   },
   "dependsOn": [
-    "ogc.geo.json-fg.featureCollection-lenient",
+    "ogc.sosa.features.observation",
     "ogc.sosa.properties.observationCollection",
-    "ogc.sosa.features.observation"
+    "ogc.geo.json-fg.featureCollection-lenient"
   ],
   "schema": {
     "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observationCollection/schema.yaml",
@@ -48,7 +48,7 @@
   "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observationCollection/context.jsonld",
   "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/observationCollection/",
   "rdfData": [],
-  "validationPassed": false,
+  "validationPassed": true,
   "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/features/observationCollection/",
   "examples": [
     {
@@ -63,19 +63,25 @@
           "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/features/observationCollection/example_1_1.json"
         },
         {
-          "language": "turtle",
-          "code": "@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix eg: <http://example.org/my-feature/> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n\neg:c1 a sosa:ObservationCollection ;\n  sosa:hasMember eg:pop1999, eg:pop2000 ;\n  sosa:observedProperty <http://dbpedia.org/ontology/population> ;\n.\n\neg:pop1999 a sosa:Observation ;\n  sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;\n  sosa:hasSimpleResult 3275.0 ;\n  sosa:resultTime \"1999-01-01\"^^xsd:date\n.\n\n eg:pop2000 a sosa:Observation ;\n  sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;\n  sosa:hasSimpleResult 4372.0 ;\n  sosa:resultTime \"2000\"^^xsd:gYear\n.\n\n<http://dbpedia.org/ontology/population> a skos:Concept;\n  skos:prefLabel \"Population\";\n.",
-          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/features/observationCollection/example_1_2.ttl"
-        },
-        {
           "language": "jsonld",
           "code": "{\n  \"@context\": [\n    \"https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observationCollection/context.jsonld\",\n    {\n      \"resultschema\": \"http//example.org/resultchema/\",\n      \"a\": \"resultschema:a\",\n      \"b\": {\n        \"@id\": \"resultschema:b\",\n        \"@context\": {\n          \"b1\": \"resultschema:b1\",\n          \"b2\": \"resultschema:b2\"\n        }\n      }\n    }\n  ],\n  \"@id\": \"c1\",\n  \"type\": \"FeatureCollection\",\n  \"featureType\": \"sosa:ObservationCollection\",\n  \"properties\": {\n    \"resultTime\": \"1999\"\n  },\n  \"features\": [\n    {\n      \"@id\": \"pop1999\",\n      \"type\": \"Feature\",\n      \"geometry\": null,\n      \"properties\": {\n        \"comment\": \"Simple result case\",\n        \"observedProperty\": \"https://dbpedia.org/ontology/population\",\n        \"hasFeatureOfInterest\": \"https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork\",\n        \"hasSimpleResult\": 15555.0\n      }\n    },\n    {\n      \"@id\": \"something\",\n      \"type\": \"Feature\",\n      \"geometry\": null,\n      \"properties\": {\n        \"observedProperty\": \"https://example.org/someproperty\",\n        \"hasFeatureOfInterest\": \"https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem\",\n        \"hasResult\": {\n          \"a\": 1,\n          \"b\": {\n            \"b1\": \"rb1\",\n            \"b2\": \"rb2\"\n          }\n        }\n      }\n    }\n  ]\n}",
           "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/features/observationCollection/example_1_1.jsonld"
         },
         {
           "language": "ttl",
-          "code": "@prefix eg: <http://example.org/my-feature/> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\neg:c1 a sosa:ObservationCollection ;\n    sosa:hasMember eg:pop1999,\n        eg:pop2000 ;\n    sosa:observedProperty <http://dbpedia.org/ontology/population> .\n\n<http://dbpedia.org/ontology/population> a skos:Concept ;\n    skos:prefLabel \"Population\" .\n\neg:pop1999 a sosa:Observation ;\n    sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;\n    sosa:hasSimpleResult 3275.0 ;\n    sosa:resultTime \"1999-01-01\"^^xsd:date .\n\neg:pop2000 a sosa:Observation ;\n    sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;\n    sosa:hasSimpleResult 4372.0 ;\n    sosa:resultTime \"2000\"^^xsd:gYear .\n\n",
-          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/features/observationCollection/example_1_2.ttl"
+          "code": "@prefix geojson: <https://purl.org/geojson/vocab#> .\n@prefix resultschema: <http//example.org/resultchema/> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<http://www.example.com/sosa/c1> a sosa:ObservationCollection,\n        geojson:FeatureCollection ;\n    sosa:hasMember <http://www.example.com/sosa/pop1999>,\n        <http://www.example.com/sosa/something> ;\n    sosa:resultTime \"1999\" .\n\n<http://www.example.com/sosa/pop1999> a geojson:Feature ;\n    sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork> ;\n    sosa:hasSimpleResult 1.5555e+04 ;\n    sosa:observedProperty <https://dbpedia.org/ontology/population> .\n\n<http://www.example.com/sosa/something> a sosa:Observation,\n        geojson:Feature ;\n    sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;\n    sosa:hasResult [ resultschema:a 1 ;\n            resultschema:b [ resultschema:b1 \"rb1\" ;\n                    resultschema:b2 \"rb2\" ] ] ;\n    sosa:observedProperty <https://example.org/someproperty> .\n\n",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/features/observationCollection/example_1_1.ttl"
+        }
+      ]
+    },
+    {
+      "title": "Example of SOSA ObservationCollection",
+      "comment": "Pure TTL version",
+      "snippets": [
+        {
+          "language": "turtle",
+          "code": "@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix eg: <http://example.org/my-feature/> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n\neg:c1 a sosa:ObservationCollection ;\n  sosa:hasMember eg:pop1999, eg:pop2000 ;\n  sosa:observedProperty <http://dbpedia.org/ontology/population> ;\n.\n\neg:pop1999 a sosa:Observation ;\n  sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;\n  sosa:hasSimpleResult 3275.0 ;\n  sosa:resultTime \"1999-01-01\"^^xsd:date\n.\n\n eg:pop2000 a sosa:Observation ;\n  sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;\n  sosa:hasSimpleResult 4372.0 ;\n  sosa:resultTime \"2000\"^^xsd:gYear\n.\n\n<http://dbpedia.org/ontology/population> a skos:Concept;\n  skos:prefLabel \"Population\";\n.",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/features/observationCollection/example_2_1.ttl"
         }
       ]
     }
