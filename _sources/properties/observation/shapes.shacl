@@ -27,22 +27,45 @@
     ] ;
 .
 
-<#testObservedProperty>
+<#testObservedPropertyPresent>
     a                   sh:NodeShape ;
-    sh:targetClass      sosa:Observation , sosa:ObservationCollection;
-    sh:targetSubjectsOf sosa:hasResult, sosa:hasSimpleResult, sosa:usedProcedure ;
+    sh:targetClass      sosa:Observation ;
+    sh:targetSubjectsOf sosa:hasResult, sosa:hasSimpleResult ;
     sh:sparql [
-        sh:message          "Exactly 1 of sosa:observedProperty is required" ;
+        sh:message          "sosa:observedProperty is required" ;
         sh:select """
             PREFIX sh: <http://www.w3.org/ns/shacl#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             PREFIX geojson: <https://purl.org/geojson/vocab#>
-            SELECT $this (sosa:observedProperty as ?path) (GROUP_CONCAT(?prop; separator=';') AS ?value) WHERE {
-                OPTIONAL { $this sosa:observedProperty ?prop }
+            SELECT $this (sosa:observedProperty as ?path) (GROUP_CONCAT(?prop; separator=';') AS ?value)
+            WHERE {
+                OPTIONAL { $this sosa:observedProperty ?prop .
+                 $this (sosa:hasResult|sosa:hasSimpleResult) ?result_so_observation }
                 OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:observedProperty ?prop }
             }
             GROUP BY ?prop
-            HAVING (count(?prop) != 1)
+            HAVING (count(?prop) < 1)
+        """ ;
+    ] ;
+.
+
+<#testObservedPropertyConsistent>
+    a                   sh:NodeShape ;
+    sh:targetClass      sosa:ObservationCollection;
+    sh:sparql [
+        sh:message          "Collection members must match sosa:observedProperty if present" ;
+        sh:select """
+            PREFIX sh: <http://www.w3.org/ns/shacl#>
+            PREFIX sosa: <http://www.w3.org/ns/sosa/>
+            PREFIX geojson: <https://purl.org/geojson/vocab#>
+            SELECT $this (sosa:observedProperty as ?path) (GROUP_CONCAT(?prop; separator=';') AS ?value)
+             WHERE {
+                OPTIONAL { $this sosa:observedProperty ?prop }
+                OPTIONAL { $this (sosa:hasMember|geojson:features)+ ?obs .
+                    ?obs  sosa:observedProperty ?prop }
+            }
+            GROUP BY ?prop
+            HAVING (count(?prop) < 1)
         """ ;
     ] ;
 .
@@ -117,6 +140,7 @@
                 sosa:relatedObservation, sosa:resultQuality, sosa:isOriginalSampleOf, sosa:isResultOfMadeBySampler,
                 sosa:isResultOfUsedProcedure ))
             FILTER((isLiteral(?collectionValue) || isIRI(?collectionValue)) && ?collectionValue != ?memberValue)
+            FILTER NOT EXISTS { $this ?path ?memberValue }
             FILTER NOT EXISTS { ?collectionValue a time:Interval }
             BIND(CONCAT(STR(?memberValue), " != ", STR(?collectionValue)) as ?failedValue)
         }
