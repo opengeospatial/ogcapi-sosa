@@ -508,8 +508,8 @@ Links to the schema:
     "links": {
       "@context": {
         "href": {
-          "@type": "@id",
-          "@id": "oa:hasTarget"
+          "@id": "oa:hasTarget",
+          "@type": "@id"
         },
         "rel": {
           "@context": {
@@ -526,11 +526,12 @@ Links to the schema:
       "@id": "rdfs:seeAlso"
     },
     "features": {
-      "@id": "sosa:hasMember",
-      "@type": "@id",
       "@context": {
         "geometry": "geojson:geometry",
-        "bbox": "geojson:bbox",
+        "bbox": {
+          "@container": "@list",
+          "@id": "geojson:bbox"
+        },
         "time": {
           "@context": {
             "date": {
@@ -550,7 +551,10 @@ Links to the schema:
         },
         "coordRefSys": "http://www.opengis.net/def/glossary/term/CoordinateReferenceSystemCRS",
         "place": "dct:spatial"
-      }
+      },
+      "@container": "@set",
+      "@id": "sosa:hasMember",
+      "@type": "@id"
     },
     "properties": "@nest",
     "resultTime": "sosa:resultTime",

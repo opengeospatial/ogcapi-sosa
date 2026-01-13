@@ -462,6 +462,7 @@ Links to the schema:
     "Point": "geojson:Point",
     "Polygon": "geojson:Polygon",
     "features": {
+      "@container": "@set",
       "@id": "sosa:hasMember",
       "@type": "@id"
     },
@@ -469,7 +470,10 @@ Links to the schema:
     "id": "@id",
     "properties": "@nest",
     "geometry": "geojson:geometry",
-    "bbox": "geojson:bbox",
+    "bbox": {
+      "@container": "@list",
+      "@id": "geojson:bbox"
+    },
     "links": {
       "@context": {
         "href": {
