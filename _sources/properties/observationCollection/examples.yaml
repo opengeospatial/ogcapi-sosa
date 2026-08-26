@@ -60,3 +60,61 @@
         eg:p1 a skos:Concept;
           skos:prefLabel "Some Observable Property";
         .
+
+- title: Nested SOSA ObservationCollection with differing observed properties per sub-collection
+  content: |-
+    An ObservationCollection member can itself be another ObservationCollection.
+    Here the outer collection shares a common `resultTime` and `hasFeatureOfInterest`
+    across all descendants, while each inner sub-collection declares its own
+    `observedProperty`, applied to its own member observations.
+  snippets:
+    - language: json
+      code: |-
+        {
+          "resultTime": "2022-05-01T22:33:44Z",
+          "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
+          "hasMember": [
+            {
+              "@id": "temperature-collection",
+              "@type": "sosa:ObservationCollection",
+              "comment": "Sub-collection of temperature observations",
+              "observedProperty": "temperature",
+              "hasMember": [
+                {
+                  "@id": "obs-temp-1",
+                  "@type": "sosa:Observation",
+                  "phenomenonTime": "2022-05-01T22:33:40Z",
+                  "hasSimpleResult": 21.4
+                },
+                {
+                  "@id": "obs-temp-2",
+                  "@type": "sosa:Observation",
+                  "phenomenonTime": "2022-05-01T22:34:10Z",
+                  "hasSimpleResult": 21.6
+                }
+              ]
+            },
+            {
+              "@id": "humidity-collection",
+              "@type": "sosa:ObservationCollection",
+              "comment": "Sub-collection of humidity observations",
+              "observedProperty": "humidity",
+              "hasMember": [
+                {
+                  "@id": "obs-hum-1",
+                  "@type": "sosa:Observation",
+                  "phenomenonTime": "2022-05-01T22:33:40Z",
+                  "hasSimpleResult": 58.2
+                },
+                {
+                  "@id": "obs-hum-2",
+                  "@type": "sosa:Observation",
+                  "phenomenonTime": "2022-05-01T22:34:10Z",
+                  "hasSimpleResult": 57.9
+                }
+              ]
+            }
+          ]
+        }
+      base-uri: http://example.com/
+      shacl-closure: ['closure.ttl']

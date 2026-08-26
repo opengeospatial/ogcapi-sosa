@@ -1,0 +1,19 @@
+transforms:
+  - id: flatten-observations
+    description: |
+      Flattens a (possibly nested) SOSA ObservationCollection GeoJSON document into a
+      plain GeoJSON FeatureCollection of Observation Features. Each output Feature's
+      `properties` merges in every property inherited from its containing
+      ObservationCollection(s) - the nearest collection wins on conflicting keys. If a
+      Feature has no geometry of its own, one is taken from the `geometry` of its own
+      `hasFeatureOfInterest`, or - failing that - from the nearest ancestor collection's
+      `hasFeatureOfInterest` that carries a geometry.
+    type: python
+    inputs:
+      mediaTypes:
+        - application/json
+    outputs:
+      mediaTypes:
+        - mimeType: application/geo+json
+          defaultExtension: geojson
+    ref: transformers/flatten-observations.py
