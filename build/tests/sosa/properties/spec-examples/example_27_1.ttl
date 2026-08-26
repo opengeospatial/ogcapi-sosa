@@ -1,36 +1,53 @@
-@prefix geo1: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
-@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix ex: <https://example.org/data/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix time: <http://www.w3.org/2006/time#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://example.org/data/VCAB-DP1-BP-40?t=2017-04-18T08%3A23%3A00-07%3A00> a sosa:Observation ;
-    sosa:hasFeatureOfInterest <http://example.org/data/VCAB-DP1-BP-40#location> ;
-    sosa:hasResult [ a qudt:QuantityValue ;
-            qudt:hasUnit unit:CentiM-PER-SEC ;
-            qudt:numericValue 5e-04 ] ;
-    sosa:madeBySensor <http://example.org/data/VCAB-DP1-BP-40> ;
-    sosa:observedProperty <http://example.org/data/VCAB-DP1-BP-40#groundDisplacementSpeed> ;
-    sosa:resultTime "2017-04-18T08:23:00-07:00"^^xsd:dateTimeStamp .
+ex:Observation-Smiley-Color a sosa:Observation ;
+    sosa:hasFeatureOfInterest ex:SmileySticker ;
+    sosa:hasSimpleResult "Yellow"^^xsd:string ;
+    sosa:madeBySensor ex:ColorDeterminer ;
+    sosa:observedProperty ex:StickerColor ;
+    sosa:phenomenonTime [ a time:Instant ;
+            time:inXSDDateTimeStamp "2017-04-15T00:00:00+00:00"^^xsd:dateTimeStamp ] ;
+    sosa:resultTime "2017-04-16T00:00:12+00:00"^^xsd:dateTimeStamp ;
+    sosa:usedProcedure ex:ColorDetermination .
 
-<http://example.org/data/VCAB-DP1-BP-40#location> a sosa:FeatureOfInterest ;
-    rdfs:label "location of VCAB-DP1-BP-40"@en ;
-    geo1:alt 12.75 ;
-    geo1:lat 35.8648067 ;
-    geo1:long -120.6195831 ;
-    sosa:hasProperty <http://example.org/data/VCAB-DP1-BP-40#groundDisplacementSpeed> ;
-    sosa:isSampleOf <http://example.org/data/earth> .
+ex:SmileySampling a sosa:Sampling ;
+    rdfs:label "Sampling of a representative Smiley Sticker from a Collection of Smiley Stickers"@en ;
+    sosa:hasFeatureOfInterest ex:SmileyPopulation ;
+    sosa:hasResult ex:SmileySticker ;
+    sosa:madeBySampler ex:SmileySampler ;
+    sosa:usedProcedure ex:SmileySamplingProcedure .
 
-<http://example.org/data/earth> a sosa:FeatureOfInterest ;
-    rdfs:label "earth"@en .
+ex:StickerAssayOffice a sosa:Platform ;
+    rdfs:label "Assay office for determining the color of a sticker"@en ;
+    sosa:hosts ex:ColorDeterminer .
 
-<http://example.org/data/VCAB-DP1-BP-40> a sosa:Sensor ;
-    rdfs:label "seismograph VCAB DP1 BP 40 (Vineyard Canyon, Parkfield, Ca)"@en ;
-    rdfs:seeAlso <https://earthquake.usgs.gov/monitoring/seismograms/153> ;
-    sosa:observes <http://example.org/data/VCAB-DP1-BP-40#groundDisplacementSpeed> .
+ex:ColorDetermination a sosa:Procedure ;
+    rdfs:label "Procedure for determining the color of a sticker"@en ;
+    sosa:forProperty ex:StickerColor .
 
-<http://example.org/data/VCAB-DP1-BP-40#groundDisplacementSpeed> a sosa:Property ;
-    rdfs:label "the ground displacement speed at location of VCAB-DP1-BP-40"@en ;
-    sosa:isObservedBy <http://example.org/data/VCAB-DP1-BP-40> .
+ex:SmileyPopulation a sosa:FeatureOfInterest ;
+    rdfs:label "A population of smiley face stickers"@en ;
+    sosa:hasProperty ex:stickerColor .
+
+ex:SmileySampler a sosa:Sampler ;
+    rdfs:label "Smiley sticker sampler"@en ;
+    sosa:implements ex:SmileySamplingProcedure .
+
+ex:ColorDeterminer a sosa:Sensor ;
+    rdfs:label "Sensor for determining the color of a sticker"@en ;
+    sosa:observes ex:StickerColor .
+
+ex:SmileySamplingProcedure a sosa:Procedure ;
+    rdfs:label "Procedure for sampling smiley stickers"@en .
+
+ex:SmileySticker a sosa:FeatureOfInterest ;
+    rdfs:label "Smiley face sticker"@en ;
+    sosa:hasProperty ex:stickerColor .
+
+ex:StickerColor a sosa:Property ;
+    rdfs:label "The color of a sticker"@en .
 

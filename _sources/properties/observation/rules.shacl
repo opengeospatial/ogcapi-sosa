@@ -53,7 +53,9 @@
     a                   sh:NodeShape ;
     sh:targetClass      sosa:Observation ;
     sh:targetSubjectsOf sosa:hasResult, sosa:hasSimpleResult ;
-    sh:property         [ sh:path     ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath ( [ sh:inversePath
+    sh:property         [
+        sh:message          "Exactly one feature of interest (sosa:hasFeatureOfInterest/sosa:isFeatureOfInterestOf) is required" ;
+        sh:path     ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath ( [ sh:inversePath
                                                                                                                 geojson:features ]
                                                                                                       [ sh:inversePath
                                                                                                                 sosa:hasMember ] ) ] ] ]
@@ -72,11 +74,29 @@
     sh:message          "SOSA-testFeatureOfInterest: Only one feature of interest (sosa:hasFeatureOfInterest/sosa:isFeatureOfInterestOf) is allowed for an Observation" ;
 .
 
+<#SOSA-testPhenomenonTimeSingular>
+    a                   sh:NodeShape ;
+    sh:targetSubjectsOf sosa:phenomenonTime ;
+    sh:property         [ sh:path sosa:phenomenonTime ;
+                          sh:maxCount 1 ; ] ;
+    sh:message          "SOSA-testPhenomenonTimeSingular: Only one sosa:phenomenonTime is allowed directly on a single Observation or ObservationCollection" ;
+.
+
+<#SOSA-testResultTimeSingular>
+    a                   sh:NodeShape ;
+    sh:targetSubjectsOf sosa:resultTime ;
+    sh:property         [ sh:path sosa:resultTime ;
+                          sh:maxCount 1 ; ] ;
+    sh:message          "SOSA-testResultTimeSingular: Only one sosa:resultTime is allowed directly on a single Observation or ObservationCollection" ;
+.
+
 <#SOSA-testResult>
     a                   sh:NodeShape ;
     sh:targetClass      sosa:Observation ;
     sh:targetSubjectsOf sosa:hasResult, sosa:hasSimpleResult ;
-    sh:property         [ sh:path     [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ;
+    sh:property         [
+        sh:message          "Exactly one of sosa:hasResult or sosa:hasSimpleResult is required per observation" ;
+        sh:path     [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ;
                           sh:minCount 1 ;
                           sh:maxCount 1 ; ] ;
     sh:message          "SOSA-testResult: Exactly one of sosa:hasResult or sosa:hasSimpleResult is required per observation" ;

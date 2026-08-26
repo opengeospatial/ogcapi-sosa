@@ -1,37 +1,48 @@
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix equipment: <https://rdf.ag/o/equipment/> .
+@prefix ex: <https://example.org/data/> .
+@prefix gs1: <https://gs1.org/voc/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix procedure: <https://example.com/procedures/> .
-@prefix property: <https://example.com/properties/> .
-@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix qk: <http://qudt.org/vocab/quantitykind/> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix sensor: <https://example.com/sensors/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix seas: <https://w3id.org/seas/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix system: <http://www.w3.org/ns/ssn/systems/> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-sensor:BME280 a owl:Class ;
-    dct:description """This sensor measures:
-     - temperature in degrees celsius
-     - PM10
-    """ ;
-    rdfs:subClassOf sosa:Sensor ;
-    skos:prefLabel "BME280" ;
-    sosa:observes [ qudt:hasUnit unit:DEG_C ;
-            skos:broader property:temperature ],
-        [ qudt:hasUnit unit:MicroGM-PER-M3 ;
-            skos:broader property:pm10 ;
-            ssn:implements [ qb:order 1 ;
-                    skos:broader procedure:pm-humidity-correction ] ] .
+ex:InkBird-IBS-TH2 a owl:Class ;
+    rdfs:label "Inkbird IBS-TH2"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom ex:IBSTH2TemperatureSensor ;
+            owl:onProperty sosa:hosts ],
+        sosa:Platform,
+        gs1:Product,
+        equipment:Equipment,
+        seas:BluetoothCommunicationDevice ;
+    gs1:pip <https://inkbird.com/products/hygrometer-ibs-th2> .
 
-procedure:pm-humidity-correction a sosa:Procedure ;
-    rdfs:label "Humidity correction for Particulate Matter" .
+ex:IBSTH2SurvivalRange a system:SurvivalRange ;
+    rdfs:label "Inkbird IBS-TH2 Failiure limits"@en ;
+    qudt:unit unit:DEG_C ;
+    xsd:maxInclusive "80" ;
+    xsd:minInclusive "-273" ;
+    sosa:forProperty qk:Temperature .
 
-property:pm10 a sosa:Property ;
-    rdfs:label "Particulate matter < 10 µm" .
+ex:IBSTH2TemperatureSensor rdfs:label "Inkbird IBS-TH2 built-in Temperature Sensor"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom ex:IBSTH2TemperatureSensorLimits ;
+            owl:onProperty system:hasOperatingRange ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ex:IBSTH2SurvivalRange ;
+            owl:onProperty system:hasSurvivalRange ],
+        sosa:Sensor ;
+    sosa:observes ex:airTemperature .
 
-property:temperature a sosa:Property ;
-    rdfs:label "Air temperature" .
+ex:IBSTH2TemperatureSensorLimits a system:OperatingRange ;
+    rdfs:label "Inkbird IBS-TH2 Temperature Sensor Limits"@en ;
+    qudt:unit unit:DEG_C ;
+    xsd:maxInclusive "60" ;
+    xsd:minInclusive "-40" ;
+    sosa:forProperty qk:Temperature .
 

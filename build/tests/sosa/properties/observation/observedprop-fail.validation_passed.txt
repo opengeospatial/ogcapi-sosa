@@ -1,5 +1,5 @@
 Validation report for ogc.sosa.properties.observation - Observation Properties
-Generated 2024-11-04T16:07:13.209646+00:00
+Generated 2025-03-21T19:52:26.224092+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -20,20 +20,32 @@ Validation result for _sources/properties/observation/rules.shacl:
   Validation Report
   Conforms: False
   Results (1):
-  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
   	Severity: sh:Violation
-  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty ) ]
+  	Source Shape: <https://www.ogc.org/rules/sosa/#testObservedProperty>
   	Focus Node: [ sosa:hasFeatureOfInterest [ ] ; sosa:hasResult [ ] ; sosa:madeBySensor Literal("ea est culpa esse") ; sosa:resultTime Literal("2016-05-04T02:27:02.0Z") ]
-  	Result Path: ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty )
-  	Message: Less than 1 values on [ sosa:hasFeatureOfInterest [ ] ; sosa:hasResult [ ] ; sosa:madeBySensor Literal("ea est culpa esse") ; sosa:resultTime Literal("2016-05-04T02:27:02.0Z") ]->( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath <http://recursion.too.deep> ] ] ] sosa:observedProperty )
+  	Value Node: Literal("")
+  	Result Path: sosa:observedProperty
+  	Source Constraint: [ sh:message Literal("Exactly 1 of sosa:observedProperty is required") ; sh:select Literal("
+              PREFIX sh: <http://www.w3.org/ns/shacl#>
+              PREFIX sosa: <http://www.w3.org/ns/sosa/>
+              PREFIX geojson: <https://purl.org/geojson/vocab#>
+              SELECT $this (sosa:observedProperty as ?path) (GROUP_CONCAT(?prop; separator=';') AS ?value) WHERE {
+                  OPTIONAL { $this sosa:observedProperty ?prop }
+                  OPTIONAL { ?collection sosa:hasMember+|geojson:features+ $this ; sosa:observedProperty ?prop }
+              }
+              GROUP BY ?prop
+              HAVING (count(?prop) != 1)
+          ") ]
+  	Message: Exactly 1 of sosa:observedProperty is required
   
 Focus nodes for _sources/properties/observation/rules.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testResult>: _:N3a12e897a8744d799151aded0555cdd9
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: _:Nc74c693b4b85422f8f849a30602cbc93
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: _:Nc74c693b4b85422f8f849a30602cbc93
  - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: _:N3a12e897a8744d799151aded0555cdd9
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: _:Nc74c693b4b85422f8f849a30602cbc93
  - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: _:N3a12e897a8744d799151aded0555cdd9
- - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: _:N3a12e897a8744d799151aded0555cdd9
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: _:Nc74c693b4b85422f8f849a30602cbc93
 
 === End SHACL ===
 
