@@ -9,6 +9,7 @@
 <#testRequiredTime>
     a                   sh:NodeShape ;
     sh:targetClass      sosa:Observation, sosa:Actuation, sosa:Sampling ;
+    sh:targetSubjectsOf sosa:hasResult, sosa:hasSimpleResult ;
     sh:sparql [
         sh:message          "sosa:resultTime or sosa:phenomenonTime is required, and no more than 1 of each is allowed" ;
         sh:select """

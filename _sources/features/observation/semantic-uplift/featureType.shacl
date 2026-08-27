@@ -9,12 +9,22 @@
   sh:targetSubjectsOf
     sosa:hasResult
   ;
-  # Need to add logic that has no member or inverse memberOf relationships
+  # These properties may also be held in common at the ObservationCollection level
+  # (sosa:hasMember / geojson:features), so only infer sosa:Observation when the
+  # subject is not itself acting as a collection.
   sh:rule [
-    a sh:TripleRule ;
-    sh:subject sh:this ;
-    sh:predicate rdf:type ;
-    sh:object sosa:Observation ;
+    a sh:SPARQLRule ;
+    sh:prefixes [
+      sh:declare [ sh:prefix "sosa" ; sh:namespace "http://www.w3.org/ns/sosa/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ] ;
+      sh:declare [ sh:prefix "geojson" ; sh:namespace "https://purl.org/geojson/vocab#"^^<http://www.w3.org/2001/XMLSchema#anyURI> ] ;
+    ] ;
+    sh:construct """
+      CONSTRUCT { $this a sosa:Observation . }
+      WHERE {
+        FILTER NOT EXISTS { $this sosa:hasMember ?member . }
+        FILTER NOT EXISTS { $this geojson:features ?feature . }
+      }
+    """ ;
   ] ;
 .
 

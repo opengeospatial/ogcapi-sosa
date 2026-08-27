@@ -14,5 +14,17 @@ allOf:
           oneOf:
             # Embedded observations
             - $ref: ../observation/schema.yaml
+            # Embedded nested ObservationCollection. A FeatureCollection cannot itself
+            # be a `features` member (json-fg.featureCollection-lenient constrains
+            # `features` to Features only), so a nested collection is still a plain
+            # Feature - any further nesting continues via `properties.hasMember`
+            # (see properties/observationCollection/schema.yaml), not another
+            # `features` array.
+            - allOf:
+                - $ref: bblocks://ogc.geo.json-fg.feature-lenient
+                - type: object
+                  properties:
+                    properties:
+                      $ref: ../../properties/observationCollection/schema.yaml
             # Ids/URIs
             - type: string

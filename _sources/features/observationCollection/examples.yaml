@@ -42,4 +42,23 @@
         <http://dbpedia.org/ontology/population> a skos:Concept;
           skos:prefLabel "Population";
         .
-      
+
+
+- title: Example of nested SOSA ObservationCollections with an inline Feature of Interest geometry
+  comment: |-
+    An ObservationCollection Feature's `features` array can itself contain nested
+    ObservationCollection Features, not just individual Observations - a
+    FeatureCollection cannot appear as a `features` member, so each nested
+    collection is a `Feature` whose members are held in `properties.hasMember`
+    rather than a further `features` array. Common properties are held at the
+    level of the collection that shares them, rather than repeated on every
+    member: the outer collection declares `resultTime` and an inline
+    `hasFeatureOfInterest` (with a sample `Point` geometry) shared by every
+    observation in the whole tree; each inner sub-collection declares its own
+    `observedProperty`, shared only by its own member observations, which in
+    turn carry nothing but their individual `phenomenonTime` and result.
+
+  snippets:
+    - language: json
+      ref: examples/observationCollection-foi-geometry.json
+      base-uri: http://example.com/

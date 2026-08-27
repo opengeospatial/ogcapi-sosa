@@ -2,32 +2,33 @@
 description: 'SOSA ObservationCollection'
 x-jsonld-context: ../../../sosa-ssn.jsonld
 $defs:
+  oneOrMany:
+    oneOf:
+      - type:
+        - object
+        - string
+      - type: array
+        items:
+          type:
+            - object
+            - string
   collection:
     type: object
     properties:
       resultTime:
-        type: string
-        format: date-time
+        type:
+          - object
+          - string
       phenomenonTime:
-        type:
-          - object
-          - string
+        $ref: "#/$defs/oneOrMany"
       hasFeatureOfInterest:
-        type:
-          - object
-          - string
+        $ref: "#/$defs/oneOrMany"
       observedProperty:
-        type:
-          - object
-          - string
+        $ref: "#/$defs/oneOrMany"
       usedProcedure:
-        type:
-          - object
-          - string
+        $ref: "#/$defs/oneOrMany"
       madeBySensor:
-        type:
-          - object
-          - string
+        $ref: "#/$defs/oneOrMany"
       hasMember:
         type: array
         items:

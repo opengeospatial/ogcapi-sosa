@@ -1,0 +1,16 @@
+name: Validate Building Blocks PR
+on:
+  pull_request:
+
+# Read-only validation: runs postprocessing against the PR to catch things
+# like broken bblock dependencies before merge, but never commits, deploys,
+# or pushes anything - see process-bblocks.yml for the workflow that does.
+#
+# NOTE: if this repo overrides items_dir/register_file/generated_docs_path/
+# annotated_path/test_outputs_path/config_file in process-bblocks.yml below,
+# pass the same overrides here, or this check will run against the wrong
+# paths.
+jobs:
+  pr-check:
+    name: Validate PR
+    uses: opengeospatial/bblocks-postprocess/.github/workflows/pr-check.yml@master
