@@ -1,41 +1,42 @@
 $schema: https://json-schema.org/draft/2020-12/schema
 description: SOSA ObservationCollection
 $defs:
+  oneOrMany:
+    oneOf:
+    - type:
+      - object
+      - string
+    - type: array
+      items:
+        type:
+        - object
+        - string
   collection:
     type: object
     properties:
       resultTime:
-        type: string
-        format: date-time
-        x-jsonld-id: http://www.w3.org/ns/sosa/resultTime
-      phenomenonTime:
         type:
         - object
         - string
+        x-jsonld-id: http://www.w3.org/ns/sosa/resultTime
+      phenomenonTime:
+        $ref: '#/$defs/oneOrMany'
         x-jsonld-id: http://www.w3.org/ns/sosa/phenomenonTime
         x-jsonld-type: '@id'
       hasFeatureOfInterest:
-        type:
-        - object
-        - string
+        $ref: '#/$defs/oneOrMany'
         x-jsonld-id: http://www.w3.org/ns/sosa/hasFeatureOfInterest
         x-jsonld-type: '@id'
       observedProperty:
-        type:
-        - object
-        - string
+        $ref: '#/$defs/oneOrMany'
         x-jsonld-id: http://www.w3.org/ns/sosa/observedProperty
         x-jsonld-type: '@id'
       usedProcedure:
-        type:
-        - object
-        - string
+        $ref: '#/$defs/oneOrMany'
         x-jsonld-id: http://www.w3.org/ns/sosa/usedProcedure
         x-jsonld-type: '@id'
       madeBySensor:
-        type:
-        - object
-        - string
+        $ref: '#/$defs/oneOrMany'
         x-jsonld-id: http://www.w3.org/ns/sosa/madeBySensor
         x-jsonld-type: '@id'
       hasMember:

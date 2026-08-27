@@ -1,0 +1,78 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qk: <http://qudt.org/vocab/quantitykind/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sensor: <https://example.org/sensor/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sosa-cap: <http://www.w3.org/ns/sosa/system-capability-properties#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+sensor:IBS-TH2-Plus a owl:Class ;
+    rdfs:label "IBS-TH2 PLUS Temperature and Humidity Sensor System" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue sensor:IBS-TH2-Plus-systemCapability ;
+            owl:onProperty sosa:hasSystemCapability ],
+        [ a owl:Restriction ;
+            owl:onProperty sosa:hasSubSystem ;
+            owl:someValuesFrom sensor:IBS-TH2-Plus-H ],
+        [ a owl:Restriction ;
+            owl:onProperty sosa:hasSubSystem ;
+            owl:someValuesFrom sensor:IBS-TH2-Plus-T ],
+        sosa:System ;
+    prov:wasDerivedFrom <https://inkbird.com/products/ibs-th2-plus> .
+
+sensor:IBS-TH2-Plus-H a owl:Class ;
+    rdfs:label "IBS-TH2 PLUS Humidity Sensor type" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue qk:RelativeHumidity ;
+            owl:onProperty sosa:observes ],
+        [ a owl:Restriction ;
+            owl:hasValue sensor:IBS-TH2-Plus-H-systemCapability ;
+            owl:onProperty sosa:hasSystemCapability ],
+        sosa:Sensor .
+
+sensor:IBS-TH2-Plus-H-systemCapability a sosa:ObservationCollection ;
+    qudt:hasUnit unit:PERCENT ;
+    sosa:hasMember [ a sosa:Observation ;
+            sosa:hasSimpleResult 4.5 ;
+            sosa:observedProperty sosa-cap:HumidityAccuracy ],
+        [ a sosa:Observation ;
+            sosa:hasSimpleResult 99.0 ;
+            sosa:observedProperty sosa-cap:MaxMeasurableHumidity ],
+        [ a sosa:Observation ;
+            sosa:hasSimpleResult 0.0 ;
+            sosa:observedProperty sosa-cap:MinMeasurableHumidity ] .
+
+sensor:IBS-TH2-Plus-T a owl:Class ;
+    rdfs:label "IBS-TH2 PLUS Temperature Sensor type" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue qk:Temperature ;
+            owl:onProperty sosa:observes ],
+        [ a owl:Restriction ;
+            owl:hasValue sensor:IBS-TH2-Plus-T-systemCapability ;
+            owl:onProperty sosa:hasSystemCapability ],
+        sosa:Sensor .
+
+sensor:IBS-TH2-Plus-T-systemCapability a sosa:ObservationCollection ;
+    qudt:hasUnit unit:DEG_C ;
+    sosa:hasMember [ a sosa:Observation ;
+            sosa:hasSimpleResult 0.5 ;
+            sosa:observedProperty sosa-cap:TemperatureAccuracy ],
+        [ a sosa:Observation ;
+            sosa:hasSimpleResult 60.0 ;
+            sosa:observedProperty sosa-cap:MaxMeasurableTemperature ],
+        [ a sosa:Observation ;
+            sosa:hasSimpleResult -40.0 ;
+            sosa:observedProperty sosa-cap:MinMeasurableTemperature ] .
+
+sensor:IBS-TH2-Plus-systemCapability a sosa:ObservationCollection ;
+    qudt:hasUnit unit:HZ ;
+    sosa:hasMember [ a sosa:Observation ;
+            sosa:hasSimpleResult 0.1 ;
+            sosa:observedProperty sosa-cap:MaxFrequency ],
+        [ a sosa:Observation ;
+            sosa:hasSimpleResult 0.0005556 ;
+            sosa:observedProperty sosa-cap:MinFrequency ] .
+

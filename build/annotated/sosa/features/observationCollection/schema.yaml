@@ -12,6 +12,13 @@ allOf:
       items:
         oneOf:
         - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.yaml
+        - allOf:
+          - $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/json-fg/feature-lenient/schema.yaml
+          - type: object
+            properties:
+              properties:
+                $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.yaml
+                x-jsonld-id: '@nest'
         - type: string
       x-jsonld-id: http://www.w3.org/ns/sosa/hasMember
       x-jsonld-type: '@id'

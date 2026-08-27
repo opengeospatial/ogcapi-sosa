@@ -1,0 +1,24 @@
+@prefix ex: <https://example.org/data/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:SamDepG a sosa:Deployment ;
+    sosa:deployedOnPlatform ex:LOIRE_A_JARGEAU_WQ_Station ;
+    sosa:deployedSystem ex:SA56 ;
+    sosa:endTime "2028-04-30T23:59:00"^^xsd:dateTime ;
+    sosa:hasFeatureOfInterest ex:Loire_River ;
+    sosa:startTime "2026-05-01T00:00:00"^^xsd:dateTime .
+
+ex:Loire_River a sosa:FeatureOfInterest .
+
+ex:SA56 a sosa:Sampler ;
+    sosa:implements ex:Sp-A56 ;
+    sosa:isHostedBy ex:LOIRE_A_JARGEAU_WQ_Station ;
+    sosa:madeSamplingHasResult ex:SC-LaJ1 .
+
+ex:SC-LaJ1 a sosa:SampleCollection .
+
+ex:Sp-A56 a sosa:SamplingProcedure .
+
+ex:LOIRE_A_JARGEAU_WQ_Station a sosa:Platform .
+

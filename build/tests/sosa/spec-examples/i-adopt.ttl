@@ -1,0 +1,20 @@
+@prefix ex: <http://example.org/> .
+@prefix iop: <https://w3id.org/iadopt/ont/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix sosa1: <https://www.w3.org/TR/vocab-ssn/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix uom: <http://www.opengis.net/def/uom/OGC/1.0/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:SensorCapabilityObservation a sosa1:Observation ;
+    sosa1:hasFeatureOfInterest ex:Sensor ;
+    sosa1:hasResult [ qudt:hasUnit unit:DEG_C ;
+            qudt:value -40.0 ] ;
+    sosa1:observedProperty ex:SensorMinimumLimit .
+
+ex:SensorMinimumLimit a iop:Variable,
+        sosa1:Property ;
+    iop:hasObjectOfInterest ex:air ;
+    iop:hasProperty qudt:Temperature ;
+    iop:hasStatisticalModifier uom:minimum .
+

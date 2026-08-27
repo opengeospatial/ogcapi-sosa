@@ -20,6 +20,22 @@
                 "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.json"
               },
               {
+                "allOf": [
+                  {
+                    "$ref": "https://opengeospatial.github.io/bblocks/annotated-schemas/geo/json-fg/feature-lenient/schema.json"
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "properties": {
+                        "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.json",
+                        "x-jsonld-id": "@nest"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
                 "type": "string"
               }
             ]

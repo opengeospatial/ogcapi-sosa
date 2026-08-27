@@ -1,0 +1,71 @@
+Validation report for ogc.sosa.properties.observationCollection - ObservationCollection Properties
+Generated 2026-08-27T08:26:58.238547+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using collection-noprops-fail.ttl from test resources
+=== End Files ===
+
+=== SHACL ===
+
+** Validation error **
+Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: False
+  Results (2):
+  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>
+  	Focus Node: eg:a1
+  	Value Node: Literal("")
+  	Result Path: sosa:observedProperty
+  	Source Constraint: [ sh:message Literal("sosa:observedProperty is required") ; sh:select Literal("
+              PREFIX sh: <http://www.w3.org/ns/shacl#>
+              PREFIX sosa: <http://www.w3.org/ns/sosa/>
+              PREFIX geojson: <https://purl.org/geojson/vocab#>
+              SELECT $this (sosa:observedProperty as ?path) (GROUP_CONCAT(?prop; separator=';') AS ?value)
+              WHERE {
+                  OPTIONAL { $this sosa:observedProperty ?prop .
+                   $this (sosa:hasResult|sosa:hasSimpleResult) ?result_so_observation }
+                  OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:observedProperty ?prop }
+              }
+              GROUP BY ?prop
+              HAVING (count(?prop) < 1)
+          ") ]
+  	Message: sosa:observedProperty is required
+  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>
+  	Focus Node: eg:c1
+  	Value Node: Literal("")
+  	Result Path: sosa:observedProperty
+  	Source Constraint: [ sh:message Literal("Collection members must match sosa:observedProperty if present") ; sh:select Literal("
+              PREFIX sh: <http://www.w3.org/ns/shacl#>
+              PREFIX sosa: <http://www.w3.org/ns/sosa/>
+              PREFIX geojson: <https://purl.org/geojson/vocab#>
+              SELECT $this (sosa:observedProperty as ?path) (GROUP_CONCAT(?prop; separator=';') AS ?value)
+               WHERE {
+                  OPTIONAL { $this sosa:observedProperty ?prop }
+                  OPTIONAL { $this (sosa:hasMember|geojson:features)+ ?obs .
+                      ?obs  sosa:observedProperty ?prop }
+              }
+              GROUP BY ?prop
+              HAVING (count(?prop) < 1)
+          ") ]
+  	Message: Collection members must match sosa:observedProperty if present
+  
+Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: eg:a1
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: eg:a1/sosa:hasSimpleResult
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: eg:a1
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: eg:c1
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: eg:a1
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: eg:c1
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: eg:a1
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: eg:c1
+
+=== End SHACL ===
+

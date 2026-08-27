@@ -1,0 +1,19 @@
+@prefix ex: <http://example.org/data/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Observation299876 a sosa:Observation ;
+    sosa:hasFeatureOfInterest ex:EarthAtmosphere ;
+    sosa:hasResult <http://example.org/data/forecast/grid/299876> ;
+    sosa:observedProperty <https://si-digital-framework.org/quantities/TEMC> ;
+    sosa:phenomenonTime [ time:hasBeginnning [ time:inXSDDateTime "2024-03-09T11:00:00+10:00"^^xsd:dateTime ] ;
+            time:hasEnd [ time:inXSDDateTime "2024-03-09T12:00:00+10:00"^^xsd:dateTime ] ] ;
+    sosa:resultTime "2024-03-06T12:00:00+10:00"^^xsd:dateTime .
+
+<http://example.org/data/forecast/> a owl:Ontology .
+
+ex:EarthAtmosphere a sosa:FeatureOfInterest ;
+    owl:sameAs <https://www.wikidata.org/wiki/Q3230> .
+

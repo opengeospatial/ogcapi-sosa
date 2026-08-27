@@ -96,6 +96,52 @@ _:a1 a sosa:Observation ;
 
 ```
 
+
+### Example of SOSA observation with FoI inline
+#### json
+```json
+{ 
+  "hasFeatureOfInterest": {
+      "id": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {}
+      },
+  "observedProperty": "p1",
+  "hasSimpleResult": 33,
+  "resultTime": "2022-05-01T22:33:44Z"
+}
+```
+
+#### jsonld
+```jsonld
+{
+  "@context": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation-owa/context.jsonld",
+  "hasFeatureOfInterest": {
+    "id": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork",
+    "type": "Feature",
+    "geometry": null,
+    "properties": {}
+  },
+  "observedProperty": "p1",
+  "hasSimpleResult": 33,
+  "resultTime": "2022-05-01T22:33:44Z"
+}
+```
+
+#### ttl
+```ttl
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork> ;
+    sosa:hasSimpleResult 33 ;
+    sosa:observedProperty <file:///github/workspace/p1> ;
+    sosa:resultTime "2022-05-01T22:33:44Z" .
+
+
+```
+
 ## Schema
 
 ```yaml
@@ -137,10 +183,14 @@ properties:
     - string
     x-jsonld-id: http://www.w3.org/ns/sosa/madeBySensor
     x-jsonld-type: '@id'
-  hasResult: true
-  result: true
-  result@links: true
-  hasSimpleResult: true
+  hasResult:
+    x-jsonld-id: http://www.w3.org/ns/sosa/hasResult
+    x-jsonld-type: '@id'
+  result: {}
+  result@links: {}
+  hasSimpleResult:
+    x-jsonld-id: http://www.w3.org/ns/sosa/hasSimpleResult
+    x-jsonld-type: '@id'
 x-jsonld-extra-terms:
   id: '@id'
   properties: '@nest'
@@ -241,9 +291,6 @@ x-jsonld-extra-terms:
   hasProperty:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasProperty
     x-jsonld-type: '@id'
-  hasResult:
-    x-jsonld-id: http://www.w3.org/ns/sosa/hasResult
-    x-jsonld-type: '@id'
   hasResultQuality:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasResultQuality
     x-jsonld-type: '@id'
@@ -252,9 +299,6 @@ x-jsonld-extra-terms:
     x-jsonld-type: '@id'
   hasSampledFeature:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasSampledFeature
-    x-jsonld-type: '@id'
-  hasSimpleResult:
-    x-jsonld-id: http://www.w3.org/ns/sosa/hasSimpleResult
     x-jsonld-type: '@id'
   hasSubSystem:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasSubSystem
@@ -566,10 +610,6 @@ Links to the schema:
       "@id": "sosa:hasProperty",
       "@type": "@id"
     },
-    "hasResult": {
-      "@id": "sosa:hasResult",
-      "@type": "@id"
-    },
     "hasResultQuality": {
       "@id": "sosa:hasResultQuality",
       "@type": "@id"
@@ -580,10 +620,6 @@ Links to the schema:
     },
     "hasSampledFeature": {
       "@id": "sosa:hasSampledFeature",
-      "@type": "@id"
-    },
-    "hasSimpleResult": {
-      "@id": "sosa:hasSimpleResult",
       "@type": "@id"
     },
     "hasSubSystem": {
@@ -819,6 +855,14 @@ Links to the schema:
     },
     "madeBySensor": {
       "@id": "sosa:madeBySensor",
+      "@type": "@id"
+    },
+    "hasResult": {
+      "@id": "sosa:hasResult",
+      "@type": "@id"
+    },
+    "hasSimpleResult": {
+      "@id": "sosa:hasSimpleResult",
       "@type": "@id"
     },
     "sosa": "http://www.w3.org/ns/sosa/",

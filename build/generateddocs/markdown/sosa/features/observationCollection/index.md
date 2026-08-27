@@ -177,6 +177,187 @@ eg:pop1999 a sosa:Observation ;
 .
 ```
 
+
+### Example of nested SOSA ObservationCollections with an inline Feature of Interest geometry
+#### json
+```json
+{
+  "type": "FeatureCollection",
+  "featureType": "sosa:ObservationCollection",
+  "properties": {
+    "resultTime": "2022-05-01T22:33:44Z",
+    "hasFeatureOfInterest": {
+      "@id": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-111.6738, 40.0518]
+      },
+      "properties": {
+        "name": "Salem, Utah"
+      }
+    }
+  },
+  "features": [
+    {
+      "@id": "temperature-collection",
+      "type": "Feature",
+      "featureType": "sosa:ObservationCollection",
+      "geometry": null,
+      "properties": {
+        "observedProperty": "https://example.org/properties/temperature",
+        "hasMember": [
+          {
+            "@id": "obs-temp-1",
+            "phenomenonTime": "2022-05-01T22:33:40Z",
+            "hasSimpleResult": 21.4
+          },
+          {
+            "@id": "obs-temp-2",
+            "phenomenonTime": "2022-05-01T22:34:10Z",
+            "hasSimpleResult": 21.6
+          }
+        ]
+      }
+    },
+    {
+      "@id": "humidity-collection",
+      "type": "Feature",
+      "featureType": "sosa:ObservationCollection",
+      "geometry": null,
+      "properties": {
+        "observedProperty": "https://example.org/properties/humidity",
+        "hasMember": [
+          {
+            "@id": "obs-hum-1",
+            "phenomenonTime": "2022-05-01T22:33:40Z",
+            "hasSimpleResult": 58.2
+          },
+          {
+            "@id": "obs-hum-2",
+            "phenomenonTime": "2022-05-01T22:34:10Z",
+            "hasSimpleResult": 57.9
+          }
+        ]
+      }
+    }
+  ]
+}
+
+```
+
+#### jsonld
+```jsonld
+{
+  "@context": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observationCollection/context.jsonld",
+  "type": "FeatureCollection",
+  "featureType": "sosa:ObservationCollection",
+  "properties": {
+    "resultTime": "2022-05-01T22:33:44Z",
+    "hasFeatureOfInterest": {
+      "@id": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.6738,
+          40.0518
+        ]
+      },
+      "properties": {
+        "name": "Salem, Utah"
+      }
+    }
+  },
+  "features": [
+    {
+      "@id": "temperature-collection",
+      "type": "Feature",
+      "featureType": "sosa:ObservationCollection",
+      "geometry": null,
+      "properties": {
+        "observedProperty": "https://example.org/properties/temperature",
+        "hasMember": [
+          {
+            "@id": "obs-temp-1",
+            "phenomenonTime": "2022-05-01T22:33:40Z",
+            "hasSimpleResult": 21.4
+          },
+          {
+            "@id": "obs-temp-2",
+            "phenomenonTime": "2022-05-01T22:34:10Z",
+            "hasSimpleResult": 21.6
+          }
+        ]
+      }
+    },
+    {
+      "@id": "humidity-collection",
+      "type": "Feature",
+      "featureType": "sosa:ObservationCollection",
+      "geometry": null,
+      "properties": {
+        "observedProperty": "https://example.org/properties/humidity",
+        "hasMember": [
+          {
+            "@id": "obs-hum-1",
+            "phenomenonTime": "2022-05-01T22:33:40Z",
+            "hasSimpleResult": 58.2
+          },
+          {
+            "@id": "obs-hum-2",
+            "phenomenonTime": "2022-05-01T22:34:10Z",
+            "hasSimpleResult": 57.9
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+
+#### ttl
+```ttl
+@prefix geojson: <https://purl.org/geojson/vocab#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.com/humidity-collection> a sosa:ObservationCollection,
+        geojson:Feature ;
+    sosa:hasMember <http://example.com/obs-hum-1>,
+        <http://example.com/obs-hum-2> ;
+    sosa:observedProperty <https://example.org/properties/humidity> .
+
+<http://example.com/obs-hum-1> sosa:hasSimpleResult 5.82e+01 ;
+    sosa:phenomenonTime <2022-05-01T22:33:40Z> .
+
+<http://example.com/obs-hum-2> sosa:hasSimpleResult 5.79e+01 ;
+    sosa:phenomenonTime <2022-05-01T22:34:10Z> .
+
+<http://example.com/obs-temp-1> sosa:hasSimpleResult 2.14e+01 ;
+    sosa:phenomenonTime <2022-05-01T22:33:40Z> .
+
+<http://example.com/obs-temp-2> sosa:hasSimpleResult 2.16e+01 ;
+    sosa:phenomenonTime <2022-05-01T22:34:10Z> .
+
+<http://example.com/temperature-collection> a sosa:ObservationCollection,
+        geojson:Feature ;
+    sosa:hasMember <http://example.com/obs-temp-1>,
+        <http://example.com/obs-temp-2> ;
+    sosa:observedProperty <https://example.org/properties/temperature> .
+
+<https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> a geojson:Feature .
+
+[] a sosa:ObservationCollection,
+        geojson:FeatureCollection ;
+    sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
+    sosa:hasMember <http://example.com/humidity-collection>,
+        <http://example.com/temperature-collection> ;
+    sosa:resultTime "2022-05-01T22:33:44Z" .
+
+
+```
+
 ## Schema
 
 ```yaml
@@ -194,6 +375,13 @@ allOf:
       items:
         oneOf:
         - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.yaml
+        - allOf:
+          - $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/json-fg/feature-lenient/schema.yaml
+          - type: object
+            properties:
+              properties:
+                $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.yaml
+                x-jsonld-id: '@nest'
         - type: string
       x-jsonld-id: http://www.w3.org/ns/sosa/hasMember
       x-jsonld-type: '@id'

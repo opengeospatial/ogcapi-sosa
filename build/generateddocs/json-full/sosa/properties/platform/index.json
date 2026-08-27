@@ -9,7 +9,7 @@
   "itemClass": "schema",
   "register": "ogc-building-block-register",
   "version": "1.0",
-  "dateOfLastChange": "2026-01-13",
+  "dateOfLastChange": "2026-08-27",
   "sources": [
     {
       "title": "Semantic Sensor Network Ontology",
@@ -28,8 +28,8 @@
   "group": "SOSA",
   "shaclShapes": {},
   "dependsOn": [
-    "ogc.ogc-utils.iri-or-curie",
-    "ogc.sosa.properties.sensor"
+    "ogc.sosa.properties.sensor",
+    "ogc.ogc-utils.iri-or-curie"
   ],
   "schema": {
     "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/schema.yaml",
@@ -37,8 +37,8 @@
   },
   "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/platform/schema.yaml",
   "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/context.jsonld",
+  "resolvedSchemaProperties": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/resolvedProperties.json",
   "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/platform/",
-  "rdfData": [],
   "validationPassed": true,
   "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/properties/platform/",
   "description": "## SOSA Platform Properties\n\nThis building block describes the canonical set of properties for an Platform object.\n\nThese properties are independent of the feature model implementation - for example may be included in the \"properties\" component of a GeoJSON object, or used in any other schema.\n\n\n\n",
@@ -48,19 +48,22 @@
       "snippets": [
         {
           "language": "json",
-          "ref": "examples/platform.json",
-          "code": "{\n  \"@context\": {\n    \"eg\": \"http://example.org/sensors\",\n    \"resolution\": \"http://camera-specs.org/params/imageResolution\"\n  },\n  \"id\": \"eg:myPhone\",\n  \"sensorType\": \"eg:phone\",\n  \"hosts\": [\n    {\n      \"sensorType\": \"eg:camera\",\n      \"id\": \"eg:123\",\n      \"resolution\": 20000\n    },\n    {\n      \"sensorType\": \"eg:compass\",\n      \"id\": \"eg:mkV\"\n    }\n  ]\n}",
-          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/platform/example_1_1.json"
+          "ref": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/platform/examples/platform.json",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/platform/example_1_1.json",
+          "sizeBytes": 359,
+          "code": "{\n  \"@context\": {\n    \"eg\": \"http://example.org/sensors\",\n    \"resolution\": \"http://camera-specs.org/params/imageResolution\"\n  },\n  \"id\": \"eg:myPhone\",\n  \"sensorType\": \"eg:phone\",\n  \"hosts\": [\n    {\n      \"sensorType\": \"eg:camera\",\n      \"id\": \"eg:123\",\n      \"resolution\": 20000\n    },\n    {\n      \"sensorType\": \"eg:compass\",\n      \"id\": \"eg:mkV\"\n    }\n  ]\n}"
         },
         {
           "language": "jsonld",
-          "code": "{\n  \"@context\": [\n    \"https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/context.jsonld\",\n    {\n      \"eg\": \"http://example.org/sensors\",\n      \"resolution\": \"http://camera-specs.org/params/imageResolution\"\n    }\n  ],\n  \"id\": \"eg:myPhone\",\n  \"sensorType\": \"eg:phone\",\n  \"hosts\": [\n    {\n      \"sensorType\": \"eg:camera\",\n      \"id\": \"eg:123\",\n      \"resolution\": 20000\n    },\n    {\n      \"sensorType\": \"eg:compass\",\n      \"id\": \"eg:mkV\"\n    }\n  ]\n}",
-          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/platform/example_1_1.jsonld"
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/platform/example_1_1.jsonld",
+          "sizeBytes": 483,
+          "code": "{\n  \"@context\": [\n    \"https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/context.jsonld\",\n    {\n      \"eg\": \"http://example.org/sensors\",\n      \"resolution\": \"http://camera-specs.org/params/imageResolution\"\n    }\n  ],\n  \"id\": \"eg:myPhone\",\n  \"sensorType\": \"eg:phone\",\n  \"hosts\": [\n    {\n      \"sensorType\": \"eg:camera\",\n      \"id\": \"eg:123\",\n      \"resolution\": 20000\n    },\n    {\n      \"sensorType\": \"eg:compass\",\n      \"id\": \"eg:mkV\"\n    }\n  ]\n}"
         },
         {
           "language": "ttl",
-          "code": "@prefix ns1: <http://camera-specs.org/params/> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<eg:myPhone> sosa:hosts <eg:123>,\n        <eg:mkV> .\n\n<eg:123> ns1:imageResolution 20000 .\n\n",
-          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/platform/example_1_1.ttl"
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/platform/example_1_1.ttl",
+          "sizeBytes": 238,
+          "code": "@prefix ns1: <http://camera-specs.org/params/> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<eg:myPhone> sosa:hosts <eg:123>,\n        <eg:mkV> .\n\n<eg:123> ns1:imageResolution 20000 .\n\n"
         }
       ]
     }

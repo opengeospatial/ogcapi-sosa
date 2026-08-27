@@ -1,0 +1,1913 @@
+
+
+{
+  "itemIdentifier": "ogc.sosa.spec-examples",
+  "name": "Tests for SOSA specification",
+  "abstract": "This BuildingBlock adds test cases from the SOSA specification to the base Observation properties model",
+  "status": "under-development",
+  "dateTimeAddition": "2023-04-13T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ogc-building-block-register",
+  "version": "1.0",
+  "dateOfLastChange": "2026-08-27",
+  "sources": [
+    {
+      "title": "Semantic Sensor Network Ontology",
+      "link": "https://www.w3.org/TR/vocab-ssn/"
+    }
+  ],
+  "maturity": "development",
+  "scope": "development",
+  "tags": [
+    "sosa",
+    "ssn",
+    "observations",
+    "o&m",
+    "OMS",
+    "OWA"
+  ],
+  "group": "SOSA",
+  "highlighted": false,
+  "shaclShapes": {},
+  "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/spec-examples/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/spec-examples/",
+  "description": "## SOSA Specification Examples\n\nThis building block runs tests against the SOSA specification examples.\n\nAs TTL files these examples are validated against the SHACL rules inherited from the building blocks for elements of the specification\n",
+  "examples": [
+    {
+      "title": "Example sample-relations.ttl",
+      "base-output-filename": "sample-relations",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/sample-relations.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/sample-relations.ttl",
+          "sizeBytes": 1139,
+          "code": "@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix relex: <https://example.org/data/sample-relations#> .\n@prefix sosa-rel: <http://www.w3.org/ns/sosa/sampling/> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@base <https://example.org/data/sample-relations> .\n\n<https://example.org/data/sample-relations>\n  rdf:type owl:Ontology ;\n  owl:imports <http://www.w3.org/ns/sosa/sam/> ;\n.\nrelex:CSRWA25569\n  rdf:type sosa:Sample ;\n  rdfs:label \"Specimen CSRWA25569\" ;\n.\nrelex:CSRWA25569-mount7\n  rdf:type sosa:Sample ;\n  rdfs:label \"CSRWA25569 mount 7\" ;\n  sosa:isSampleOf relex:CSRWA25569 ;\n.\nrelex:CSRWA25569-mount7-spot1\n  rdf:type sosa:Sample ;\n  rdfs:label \"spot 1\" ;\n  sosa-rel:hasSampleRelationship [\n      rdf:type sosa-rel:SampleRelationship ;\n      sosa-rel:natureOfRelationship [\n          rdf:type sosa-rel:RelationshipNature ;\n          rdfs:comment \"probe spot on polished mount\" ;\n        ] ;\n      sosa-rel:relatedSample relex:CSRWA25569-mount7 ;\n    ] ;\n.\n"
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example ip68.ttl",
+      "base-output-filename": "ip68",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/ip68.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/ip68.ttl",
+          "sizeBytes": 4932,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix geo: <http://www.opengis.net/ont/geosparql#> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix qk: <http://qudt.org/vocab/quantitykind/> .\n@prefix qudt: <http://qudt.org/schema/qudt/> .\n@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.\n@prefix schema: <http://schema.org/>.\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix time: <http://www.w3.org/2006/time#>.\n@prefix unit: <http://qudt.org/vocab/unit/> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n@prefix gr: <http://purl.org/goodrelations/v1#> .\n@prefix prov: <http://www.w3.org/ns/prov#>.\n@prefix seas: <https://w3id.org/seas/>.\n@prefix sosa-cap: <http://www.w3.org/ns/sosa/system-capability-properties#> .\n@prefix sosa-env: <http://www.w3.org/ns/sosa/system-environment-properties#> .\n@base <https://data.grandlyon.com/> .\n\n# This example describes the IP68 Smart Sensor that and some of its capabilities and operating ranges.\n# A specific IP68 Smart Sensor observes the air temperature, and its own battery state.\n\nex:Organization_1 a prov:Organization ;\n    skos:exactMatch <http://dbpedia.org/page/Metropolis_of_Lyon> ;\n.\nex:Air a sosa:FeatureOfInterest ;\n  rdfs:label \"The air.\"@en ;\n  skos:exactMatch <https://www.wikidata.org/wiki/Q3230> ;\n. \nex:IP68_Outdoor_Temperature_Sensor a owl:Class , gr:ProductOrServiceModel ;\n  rdfs:label \"IP68 Outdoor Temperature Sensor\"@en ;\n  rdfs:subClassOf [\n    owl:onProperty sosa:hasOperatingConditions ;\n    owl:hasValue ex:IP68_Outdoor_Temperature_Sensor_operatingRange ] ;\n  rdfs:subClassOf [\n    owl:onProperty sosa:hasSystemCapability ;\n    owl:hasValue ex:IP68_Outdoor_Temperature_Sensor_systemCapability ] ;\n.\nex:Sensor_SL-T-P1_battery a sosa:Battery;\n rdfs:label \"The battery powering the IP68 Outdoor Temperature Sensor\"@en .\n\nex:IP68_Outdoor_Temperature_Sensor_operatingRange a sosa:ObservationCollection , sosa:NormalOperatingConditions ;\n    rdfs:comment \"An environment temperature range of -20 to 70 Celsius.\"@en ;\n    sosa:hasMember [\n      sosa:observedProperty sosa-env:MinAmbientTemperature ;\n      sosa:hasResult [ \n        qudt:value -20.0 ;\n        qudt:hasUnit unit:DEG_C ;\n      ] ;\n    ] , [\n      sosa:observedProperty sosa-env:MaxAmbientTemperature ;\n      sosa:hasResult [ \n        qudt:value 70.0 ;\n        qudt:hasUnit unit:DEG_C ;\n      ] ;\n    ]\n.\nex:IP68_Outdoor_Temperature_Sensor_systemCapability a sosa:ObservationCollection ;\n  rdfs:comment \"The sensor capability in normal operating conditions.\"@en ;\n  sosa:hasMember [\n    sosa:observedProperty sosa-cap:RFSensitivity ;\n    sosa:hasResult [ qudt:value -137.0 ; qudt:hasUnit unit:DeciB-MilliW ] ;\n  ] , [\n    sosa:observedProperty sosa-cap:TemperatureAccuracy ;\n    sosa:hasResult [ qudt:value 0.2 ; qudt:hasUnit unit:DEG_C ] ;\n  ] , [ \n    sosa:observedProperty sosa-cap:TemperatureResolution ;\n    sosa:hasResult [ qudt:value 0.0625 ; qudt:hasUnit unit:DEG_C ] ;\n  ] , [ \n    sosa:observedProperty sosa-cap:BatteryResolution ;\n    sosa:hasResult [ qudt:value 3.937e-3 ; qudt:hasUnit unit:PERCENT ] ;\n  ] ;\n  sosa:hasValidityContext ex:IP68_Outdoor_Temperature_Sensor_operatingRange ;\n.\nex:Air_4575_485 a sosa:Sample ;\n  rdfs:label \"The air at lat 45.75 and long 4.85.\"@en ;\n  sosa:isSampleOf ex:Air ;\n  geo:hasGeometry [ \n    a geo:Point ;\n    geo:asWKT \"POINT (4.85 45.75)\"^^geo:WktLiteral ;\n  ] ;\n  sosa:hasProperty qk:Temperature ;\n.\nex:Sensor_SL-T-P1 a gr:ProductOrService, sosa:Sensor , seas:LoRaCommunicationDevice , ex:IP68_Outdoor_Temperature_Sensor ;\n    gr:hasBrand [ a gr:Brand ; gr:name \"Sensing Labs\"@en ] ;\n    geo:alt 100.0 ;\n    geo:lat 45.75 ;\n    geo:lon 4.85 ;\n    sosa:implements ex:IP68_Outdoor_Temperature_Sensor_temperatureSensingProcedure ;\n    sosa:implements ex:IP68_Outdoor_Temperature_Sensor_batterySensingProcedure ;\n    sosa:observes ex:Sensor_SL-T-P1_battery ;\n    sosa:observes qk:Temperature ;\n.\nex:Deployment_SL-T-P1_2017-06-06 a sosa:Deployment ;\n  sosa:deployedSystem ex:Sensor_SL-T-P1 ;\n  sosa:startTime \"2017-06-06\"^^xsd:date ;\n  prov:wasAssociatedWith ex:Organization_1 ;\n  sosa:deployedOnPlatform ex:Tree_1 ;\n.\nex:Observation_5872357_temperature a sosa:Observation ;\n    sosa:hasResult [\n      qudt:hasUnit unit:DEG_C ;\n      qudt:value 64.5244681928429 ;\n    ] ;\n    sosa:madeBySensor ex:Sensor_SL-T-P1 ;\n    sosa:hasFeatureOfInterest ex:Air_4575_485 ;\n    sosa:observedProperty qk:Temperature ;\n    sosa:resultTime \"2017-06-20T21:49:18+00:00\"^^xsd:dateTime ;\n.\nex:Observation_5872357_battery a sosa:Observation ;\n    sosa:hasResult [\n      qudt:hasUnit unit:PERCENT ;\n      qudt:value 73.2 ;\n    ] ;\n    sosa:madeBySensor ex:Sensor_SL-T-P1 ;\n    sosa:hasFeatureOfInterest ex:Sensor_SL-T-P1 ;\n    sosa:observedProperty ex:Sensor_SL-T-P1_battery ;\n    sosa:resultTime \"2017-06-20T21:49:18+00:00\"^^xsd:dateTime ;\n."
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example sunspots.ttl",
+      "base-output-filename": "sunspots",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/sunspots.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/sunspots.ttl",
+          "sizeBytes": 1146,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix qk: <http://qudt.org/vocab/quantitykind/> .\n@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix time: <http://www.w3.org/2006/time#>.\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n@base <https://example.org/data/sunspot/> .\n\n# Number of sunspots\n# The result of an observation of the sunspot number is available a few minutes \n# after the phenomenon time, due to the light travel duration\n\n<Observation/7536> rdf:type sosa:Observation ;\n  sosa:observedProperty  ex:sunspotCount ;\n  sosa:hasFeatureOfInterest ex:Sun ;\n  sosa:hasSimpleResult 66 ;\n  sosa:phenomenonTime [\n    rdf:type time:Instant ;\n    time:inXSDDateTimeStamp \"2017-03-31T11:51:42+00:00\"^^xsd:dateTime ] ;\n  sosa:resultTime \"2017-03-31T12:00:00+00:00\"^^xsd:dateTime ;\n.\nex:sunspotCount rdf:type sosa:Property ;\n  skos:broader qk:Count ;\n.\nex:Sun a sosa:FeatureOfInterest ;\n  skos:exactMatch <https://www.wikidata.org/wiki/Q525> ;\n  rdfs:label \"Sun\" ;\n."
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example spinning-cups.ttl",
+      "base-output-filename": "spinning-cups",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/spinning-cups.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/spinning-cups.ttl",
+          "sizeBytes": 2363,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix qk: <http://qudt.org/vocab/quantitykind/> .\n@prefix qudt: <http://qudt.org/schema/qudt/>.\n@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix time: <http://www.w3.org/2006/time#>.\n@prefix unit: <http://qudt.org/vocab/unit/>.\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n@base <https://example.org/data/wind/> .\n\n# Wind sensor spinning cups\n#\n# movements of spinning cups on wind sensor #14 serves as proxies for the wind speed\n# at the location of the wind sensor\n\nex:windSensor_14 rdf:type sosa:Sensor ;\n  sosa:observes ex:windSpeed ;\n.\nex:windSpeed a sosa:Property ;\n  rdfs:label \"wind speed\"@en ;\n  skos:broader qk:Speed ;\n.\nex:location_4687 a sosa:Platform ;\n  sosa:hosts ex:windSensor_14 ;\n.\n# observation #147 was originated by the movement of the spinning cups of sensor #14\n\nex:observation_147 rdf:type sosa:Observation ;\n  sosa:observedProperty ex:windSpeed ;\n  sosa:madeBySensor ex:windSensor_14 ;\n  sosa:wasOriginatedBy ex:observation_147_spinningCupsMovement ;\n  sosa:resultTime \"2017-04-12T12:00:00+00:00\"^^xsd:dateTime ;\n  sosa:hasResult [\n      a qudt:QuantityValue ;\n      qudt:hasUnit unit:KiloM-PER-HR ;\n      qudt:value 47.0 ;\n  ] ;\n.\n# wind sensor #14 detected some movement of spinning cups, from which originated the\n# observations #147 and #148\n\nex:windSensor_14 rdf:type sosa:Sensor ;\n  sosa:madeObservation ex:observation_147 , ex:observation_148 ; \n  sosa:detects ex:observation_147_spinningCupsMovement , ex:observation_148_spinningCupsMovement ;\n.\n# observation #147 was originated by the movement of the spinning cups of sensor #14\n\nex:observation_147_spinningCupsMovement rdf:type sosa:Stimulus ;\n  sosa:isProxyFor ex:windSpeed ;\n.\nex:observation_148 rdf:type sosa:Observation ;\n  sosa:observedProperty ex:windSpeed ;\n  sosa:madeBySensor ex:windSensor_14 ;\n  sosa:wasOriginatedBy ex:observation_148_spinningCupsMovement ;\n  sosa:resultTime \"2017-04-12T12:01:00+00:00\"^^xsd:dateTime ;\n  sosa:hasResult [\n      a qudt:QuantityValue ;\n      qudt:hasUnit unit:KiloM-PER-HR ;\n      qudt:value 47.0 ;\n  ] ;\n.\nex:observation_148_spinningCupsMovement rdf:type sosa:Stimulus ;\n  sosa:isProxyFor ex:windSpeed ;\n.\n"
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example seismograph.ttl",
+      "base-output-filename": "seismograph",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/seismograph.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/seismograph.ttl",
+          "sizeBytes": 1920,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix geo: <http://www.opengis.net/ont/geosparql#> .\n@prefix qk: <http://qudt.org/vocab/quantitykind/> .\n@prefix qudt: <http://qudt.org/schema/qudt/> .\n@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix unit: <http://qudt.org/vocab/unit/> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n@base <https://example.org/data/seis/> .\n\n# Seismograph measuring ground displacement speed\n#\n# Observation #358 of seismograph VCAB DP1 BP 40 (Vineyard Canyon, Parkfield, Ca) measured\n# a earth displacement speed of 0.000500 cm/sec at 8:23 am on April 18, 2017, Pacific\n# Daylight Time\n\nex:VCAB-DP1-BP-40 a sosa:Sensor ;\n  rdfs:label \"seismograph VCAB DP1 BP 40 (Vineyard Canyon, Parkfield, Ca)\"@en ;\n  rdfs:seeAlso <https://earthquake.usgs.gov/monitoring/seismograms/153> ;\n  sosa:observes ex:groundDisplacementSpeed ;\n.\nex:VCAB-DP1-BP-40_location a sosa:Sample ;\n  rdfs:label \"location of VCAB-DP1-BP-40\"@en ;\n  geo:hasGeometry [ \n    a geo:Point ;\n    geo:asWKT \"POINT (-120.6195831 35.8648067)\"^^geo:WktLiteral ;\n  ] ;\n  sosa:isSampleOf ex:Earth ;\n.\nex:Earth a sosa:FeatureOfInterest ;\n  skos:exactMatch <https://www.wikidata.org/wiki/Q2> ;\n  rdfs:label \"Earth\" ;\n.\nex:groundDisplacementSpeed a sosa:Property ;\n  rdfs:label \"ground displacement speed\"@en ;\n  skos:broader qk:Speed ;\n.\nex:VCAB-DP1-BP-40_t2017-04-18T08%3A23%3A00-07%3A00 a sosa:Observation ;\n  sosa:madeBySensor ex:VCAB-DP1-BP-40 ; \n  sosa:hasFeatureOfInterest ex:VCAB-DP1-BP-40_location ;\n  sosa:observedProperty ex:groundDisplacementSpeed ;\n  sosa:hasResult [\n     rdf:type qudt:QuantityValue ;\n     qudt:value \"5e-4\"^^xsd:double ;\n     qudt:hasUnit unit:CentiM-PER-SEC ] ;\n  sosa:resultTime \"2017-04-18T08:23:00-07:00\"^^xsd:dateTime ;\n."
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example apartment-134.ttl",
+      "base-output-filename": "apartment-134",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/apartment-134.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/apartment-134.ttl",
+          "sizeBytes": 3275,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix time: <http://www.w3.org/2006/time#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n@prefix qudt: <http://qudt.org/schema/qudt/> .\n@prefix unit: <http://qudt.org/vocab/unit/> .\n@base <https://example.org/data/apt134/> .\n\n# Electricity consumption of apartment #134\n\n# The electric consumption of apartment #134 on April 15 2017 was 22.4 kWh as \n# observed by sensor #926. The result was available 12 seconds later\n\nex:Observation_235714 rdf:type sosa:Observation ;\n  sosa:observedProperty  ex:Apartment_134_electricConsumption ;\n  sosa:madeBySensor ex:sensor_926 ; \n  sosa:hasResult [\n     rdf:type qudt:QuantityValue ;\n     qudt:value \"22.4\"^^xsd:decimal ;\n     qudt:hasUnit unit:KiloW-HR ] ;\n  sosa:phenomenonTime [\n    time:hasBeginning [ \n      time:inXSDDateTimeStamp \"2017-04-15T23:59:30+00:00\"^^xsd:dateTime ] ;\n    time:hasEnd [ \n      time:inXSDDateTimeStamp \"2017-04-16T00:00:00+00:00\"^^xsd:dateTime ] ] ;\n  sosa:resultTime \"2017-04-16T00:00:12+00:00\"^^xsd:dateTime ;\n.\n# Sensor #926 observes the electric consumption of apartment #134, and we know that \n# it made some observations\n\nex:sensor_926 rdf:type sosa:Sensor ;\n  sosa:observes  ex:Apartment_134_electricConsumption ;\n  sosa:madeObservation ex:Observation_235714, ex:Observation_235715, ex:Observation_235716 ;\n.\n# mobile sensor tempSensor #23 observes the temperature in its surroundings, and we know \n# that it made some observations. \n\nex:tempSensor_23 rdf:type sosa:Sensor ;\n  sosa:observes  ex:tempSensor_23_temperature ;\n  sosa:madeObservation ex:tempSensor_23_4572, ex:tempSensor_23_4573, ex:tempSensor_23_4574 ;\n.\n# Sensor #926 observes the electric consumption of apartment #134\n\nex:sensor_926 rdf:type sosa:Sensor ;\n  sosa:observes  ex:Apartment_134_electricConsumption ;\n.\n# This is equivalent to saying that the electric consumption of apartment #134 is \n# observed by Sensor #926\n\nex:Apartment_134_electricConsumption rdf:type sosa:Property ;\n  sosa:isObservedBy ex:sensor_926  ;\n.\n# This is equivalent to saying that these observations have been made by sensor #926\n\nex:Observation_235714 rdf:type sosa:Observation ;\n  sosa:madeBySensor ex:sensor_926 ;\n.\nex:Observation_235754 rdf:type sosa:Observation ;\n  sosa:madeBySensor ex:sensor_926 ;\n.\n# Actuation\n# the window opening state is a Property\n# SSN allows to explicitly say that ex:window_104#state is a property of ex:window\n\nex:window rdf:type sosa:FeatureOfInterest ;\n  sosa:hasProperty ex:window_104_state ;\n.\nex:window_104_state rdf:type sosa:Property ;\n  sosa:wasActedOnBy ex:actuation_188 ;\n.\n# WindowCloser #987 made actuation #188\n# SSN allows to explicitly say that ex:windowCloser_987 is designed to automatically open and close window #104\n\nex:windowCloser_987 rdf:type sosa:Actuator ;\n  sosa:madeActuation ex:actuation_188 ;\n  sosa:actsOn ex:window_104_state ;\n.\n# Actuation #188 acted on the state of window #104 and returned 'true'\n\nex:actuation_188 rdf:type sosa:Actuation ;\n  sosa:actsOnProperty ex:window_104_state ;\n  sosa:madeByActuator ex:windowCloser_987 ; \n  sosa:hasSimpleResult true ;\n  sosa:resultTime \"2017-04-18T17:24:00+02:00\"^^xsd:dateTime ;\n.  "
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example dht22-deployment.ttl",
+      "base-output-filename": "dht22-deployment",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/dht22-deployment.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/dht22-deployment.ttl",
+          "sizeBytes": 4159,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix qk: <http://qudt.org/vocab/quantitykind/> .\n@prefix qudt: <http://qudt.org/schema/qudt/> .\n@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix schema: <http://schema.org/> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix time: <http://www.w3.org/2006/time#> .\n@prefix unit: <http://qudt.org/vocab/unit/> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n@base <https://example.org/data/dht22d/> .\n\n#     This example shows how the conditions (temperature and humidity) in a room can be measured using one or\n#     more sensors.\n#     Each sensor observes the conditions in its immediate vicinity, and the values are then used to characterize\n#     the room. \n#\n# In Room 145, one of the walls is external in the building, so there is expected to be a temperature gradient\n#     across the room, and there are two sensors on different walls.\n#     In Room 245, there is one sensor on the south wall.\n#     Each of these locations corresponds to a sosa:Sample of the entire room.\n#     The wall also serves as a sosa:Platform on which the sensors are mounted. \n\n\nex:Room145 a sosa:FeatureOfInterest ;\n  rdfs:label \"Room #145\"@en ;\n  sosa:hasSample ex:Room145_east ;\n  sosa:hasSample ex:Room145_south ;\n.\nex:Room145_east a sosa:Sample , sosa:FeatureOfInterest , sosa:Platform ;\n  rdfs:label \"East wall of room #145.\"@en ;\n  rdfs:comment \"This wall hosts PCB Board 1 with DHT22 temperature and humidity sensor #4578.\"@en ;\n  sosa:hosts ex:PCBBoard1 ;\n.\nex:Room145_south a sosa:Sample , sosa:FeatureOfInterest , sosa:Platform ;\n  rdfs:label \"South wall of room #145.\"@en ;\n  rdfs:comment \"This wall hosts PCB Board 2 with DHT22 temperature and humidity sensor #4579.\"@en ;\n  sosa:hosts ex:PCBBoard2 ;\n.\nex:Room245 a sosa:FeatureOfInterest ;\n  rdfs:label \"Room #245\"@en ;\n  sosa:hasProperty qk:Temperature , qk:RelativeHumidity ;\n  sosa:hasSample ex:Room245_south ;\n.\nex:Room245_south a sosa:Sample , sosa:FeatureOfInterest , sosa:Platform ;\n  rdfs:label \"South wall of room #245.\"@en ;\n  sosa:hosts ex:PCBBoard3 ;\n.\nex:PCBBoard1 a sosa:System , sosa:Platform ;\n  rdfs:label \"PCB Board 1\"@en ;\n  rdfs:comment \"PCB Board 1 hosts DHT22 temperature and humidity sensor #4578 permanently, one can say it has it as one of its subsystems.\"@en ;\n  sosa:hosts ex:DHT22_4578 ;\n  sosa:hasSubSystem ex:DHT22_4578 ;\n.\nex:DHT22_4578 a sosa:System ;\n  rdfs:label \"DHT22 sensor #4578\"@en ;\n  sosa:isHostedBy ex:PCBBoard1 ;\n.\nex:PCBBoard2 a sosa:System , sosa:Platform ;\n  rdfs:label \"PCB Board 2\"@en ;\n  rdfs:comment \"PCB Board 2 hosts DHT22 temperature and humidity sensor #4579 permanently, one can say it has it as one of its subsystems.\"@en ;\n  sosa:hosts ex:DHT22_4578 ;\n  sosa:hasSubSystem ex:DHT22_4578 ;\n.\nex:DHT22_4579 a sosa:System ;\n  rdfs:label \"DHT22 sensor #4579.\"@en ;\n  sosa:isHostedBy ex:PCBBoard2 ;\n.\nex:PCBBoard3 a sosa:System , sosa:Platform ;\n  rdfs:label \"PCB Board 3\"@en ;\n  rdfs:comment \"PCB Board 3 hosts DHT22 temperature and humidity sensor #4580 permanently, one can say it has it as one of its subsystems.\"@en ;\n  sosa:hosts ex:DHT22_4578 ;\n  sosa:hasSubSystem ex:DHT22_4578 ;\n.\nex:DHT22_4580 a sosa:System ;\n  rdfs:label \"DHT22 sensor #4580.\"@en ;\n  sosa:isHostedBy ex:PCBBoard3 ;\n.\nex:Room245Deployment a sosa:Deployment ;\n  rdfs:comment \"Deployment of PCB Board 3 on the south wall of room #245 for the purpose of observing the temperature and humidity of room #245.\"@en ;\n  sosa:deployedOnPlatform ex:Room245_south ;\n  sosa:deployedSystem ex:PCBBoard3 ;\n  sosa:forProperty qk:Temperature , qk:RelativeHumidity ;\n.\nex:Room145Deployment a sosa:Deployment ;\n  rdfs:comment \"Deployment of PCB Board 1 and 2 on the east and south wall of room #145, respectively, for the purpose of observing the temperature and humidity of room #145.\"@en ;\n  sosa:deployedOnPlatform ex:Room245_east , ex:Room245_south ;\n  sosa:deployedSystem ex:PCBBoard1 , ex:PCBBoard2 ;\n  sosa:forProperty qk:Temperature , qk:RelativeHumidity ;\n."
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example dht22.ttl",
+      "base-output-filename": "dht22",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/dht22.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/dht22.ttl",
+          "sizeBytes": 15599,
+          "code": "@prefix ex:     <https://example.org/data/> .\n@prefix et:     <http://vocabs.lter-europe.net/EnvThes/> .\n@prefix owl:    <http://www.w3.org/2002/07/owl#> .\n@prefix iop:    <https://w3id.org/iadopt/ont/1.1.0> .\n@prefix uom:    <http://www.ontology-of-units-of-measure.org/resource/om-2/> .\n@prefix qudt:   <http://qudt.org/schema/qudt/> .\n@prefix qk:     <http://qudt.org/vocab/quantitykind/> .\n@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>.\n@prefix schema: <http://schema.org/>.\n@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .\n@prefix sosa:   <http://www.w3.org/ns/sosa/> .\n@prefix time:   <http://www.w3.org/2006/time#>.\n@prefix unit:   <http://qudt.org/vocab/unit/> .\n@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .\n@prefix dct:    <http://purl.org/dc/terms/> .\n@prefix prof:   <http://www.w3.org/ns/dx/prof/> .\n@prefix role:   <http://www.w3.org/ns/dx/prof/role/> .\n@base <https://example.org/data/dht22/> .\n\n# Complex sensor capabilities -- DHT22\n\nex:DHT22_Procedure\n    a              sosa:ObservingProcedure ;\n    sosa:hasOutput ex:DHT22_output ;\n.\n\nex:DHT22_output\n    # specify the encoding format - which is not necessary constrained by the model for the content\n    dct:format     <https://w3id.org/mediatype/text/turtle> ;\n    rdfs:comment   \"The output is a RDF Graph that describes both the temperature and the humidity. It can be validated by a SHACL shapes graph.\"@en ;\n    dct:conformsTo ex:myProfile\n.\n\n\n\nex:myProfile\n    a                prof:Profile ;\n    prof:hasResource [ a                prof:ResourceDescriptor ;\n                       # it's in Turtle format\n                       dct:format       <https://w3id.org/mediatype/text/turtle> ;\n                       # it conforms to SHACL, here refered to by its namespace URI as a Profile\n                       dct:conformsTo   <https://www.w3.org/TR/shacl/> ;\n                       # this profile resource plays the role of \"Validation\" as well as defining a \"schema\"\n                       prof:hasRole     role:validation , role:schema ;\n                       # this profile resource's actual file\n                       prof:hasArtifact <http://example.org/profile/x/resource/validator.ttl> ] ;\n.\n\n\n# System objects; a DHT22 sensor instance, serial number 4578\nex:DHT22_4578\n    a                           sosa:System ;\n    rdfs:comment                \"DHT22 sensor #4578 contains a humidity and a temperature sensor.\"@en ;\n    rdfs:seeAlso                <https://www.sparkfun.com/datasheets/Sensors/Temperature/DHT22.pdf> ;\n    sosa:hasSubSystem           ex:DHT22_4578_TemperatureSensor, ex:DHT22_4578_HumiditySensor ;\n    sosa:hasOperatingConditions ex:DHT22_4578_TemperatureSensorNormalOperatingConditions,\n                                ex:DHT22_4578_HumiditySensorNormalOperatingConditions ;\n    ex:serialNumber             \"4578\" ;\n.\n\nex:DHT22_4578_TemperatureSensor\n    a                           sosa:Sensor, sosa:System ;\n    rdfs:comment                \"The embedded temperature sensor, a specific instance of temperature sensor.\"@en ;\n    sosa:hasSystemCapability    ex:DHT22_4578_TemperatureSensorCapabilities ;\n    sosa:hasOperatingConditions ex:DHT22_4578_TemperatureSensorNormalOperatingConditions ;\n    sosa:implements             ex:DHT22_Procedure ;\n.\n\nex:DHT22_4578_HumiditySensor\n    a                           sosa:Sensor, sosa:System ;\n    rdfs:comment                \"The embedded humidity sensor, a specific instance of humidity sensor.\"@en ;\n    sosa:hasSystemCapability    ex:DHT22_4578_HumiditySensorCapabilities ;\n    sosa:hasOperatingConditions ex:DHT22_4578_HumiditySensorNormalOperatingConditions ;\n    sosa:implements             ex:DHT22_Procedure ;\n.\n\n# These are operating conditions under which the sensor can properly function. These are seperate from capabilites in that not\n# all of the condition observations may be sensed by the sensor itself, e.g., supply voltage. \n\nex:DHT22_4578_HumiditySensorNormalOperatingConditions\n    a              sosa:ObservationCollection ;\n    rdf:type       sosa:NormalOperatingConditions ;\n    rdfs:comment   \"The conditions in which the DHT22 system is expected to operate.\"@en ;\n    sosa:hasMember ex:minimumOperatingTemperature, ex:maximumOperatingTemperature, ex:minimumOperatingHumidity,\n                   ex:maximumOperatingHumidity, ex:mimimalOperatingInputVoltage, ex:maximumOperatingInputVoltage,\n                   ex:nominalOperatingInputVoltage .\n\nex:DHT22_4578_TemperatureSensorNormalOperatingConditions\n    a              sosa:ObservationCollection ;\n    rdf:type       sosa:NormalOperatingConditions ;\n    rdfs:comment   \"The conditions in which the DHT22 system is expected to operate.\"@en ;\n    sosa:hasMember ex:minimumOperatingTemperature, ex:maximumOperatingTemperature, ex:mimimalOperatingInputVoltage,\n                   ex:maximumOperatingInputVoltage, ex:nominalOperatingInputVoltage .\n\n# The minimum / maxinum operating temperatures in this case are the temperature of the System itself\n# as heat transfer from the mechanical mounting will directly impact the sensor rather than the\n# ambient air. \n\nex:minimumOperatingTemperature\n    a                         sosa:Observation ;\n    sosa:hasFeatureOfInterest ex:DHT22_4578 ;\n    sosa:observedProperty     ex:minimumSensorTemperatureLimit ;\n    sosa:hasSimpleResult      \"-40.0\"^^xsd:decimal ;\n    qudt:hasUnit              unit:DEG_C .\n\nex:minimumSensorTemperatureLimit\n    a                          iop:Variable, sosa:Property ;\n    iop:hasStatisticalModifier uom:minimum ;\n    iop:hasObjectOfInterest    ex:DHT22_4578 ;\n    iop:hasProperty            qk:Temperature .\n\nex:maximumOperatingTemperature\n    a                         sosa:Observation ;\n    sosa:hasFeatureOfInterest ex:DHT22_4578 ;\n    sosa:observedProperty     ex:maximumSensorTemperatureLimit ;\n    sosa:hasResult            [ qudt:value   80.0 ;\n                                qudt:hasUnit unit:DEG_C ] .\n\nex:maximumSensorTemperatureLimit\n    a                          iop:Variable, sosa:Property ;\n    iop:hasStatisticalModifier uom:maximum ;\n    iop:hasObjectOfInterest    ex:DHT22_4578 ;\n    iop:hasProperty            qk:Temperature .\n\n# Unlike temperature, the operating condition of the System are affected by the relative humidity of the air around the sensor. \n# Percentage is not a unit, however this is present in QUDT and used here as a convinience for display purposes.\n\n\nex:minimumOperatingHumidity\n    a                         sosa:Observation ;\n    sosa:hasFeatureOfInterest ex:DHT22_4578 ;\n    sosa:observedProperty     ex:minSensorEnvironmentHumidityLimit ;\n    sosa:hasResult            [ qudt:value   0.0 ;\n                                qudt:hasUnit unit:PERCENT ] .\n\nex:minSensorEnvironmentHumidityLimit\n    a                          iop:Variable, sosa:Property ;\n    iop:hasStatisticalModifier uom:minimum ;\n    iop:hasObjectOfInterest    ex:airAround_DHT22_4578 ;\n    iop:hasProperty            qk:RelativeHumidity .\n\nex:maximumOperatingHumidity\n    a                         sosa:Observation ;\n    sosa:hasFeatureOfInterest ex:DHT22_4578 ;\n    sosa:observedProperty     ex:maxSensorEnvironmentHumidityLimit ;\n    sosa:hasResult            [ qudt:value   100.0 ;\n                                qudt:hasUnit unit:PERCENT ] .\n\nex:maxSensorEnvironmentHumidityLimit\n    a                          iop:Variable, sosa:Property ;\n    iop:hasStatisticalModifier uom:maximum ;\n    iop:hasObjectOfInterest    ex:airAround_DHT22_4578 ;\n    iop:hasProperty            qk:RelativeHumidity .\n\nex:airAround_DHT22_4578\n    skos:broader et:23 ;\n    rdfs:label   \"The air immediatly around the DHT22 sensor.\"\n.\n\net:23\n    rdfs:label \"air\" .\n\n#\n#\nex:DHT22_4578_inputVoltage\n    a            sosa:FeatureOfInterest ;\n    rdfs:comment \"The DC voltage being supplied to the sensor\"@en ; .\n\nex:mimimalOperatingInputVoltage\n    a                         sosa:Observation ;\n    sosa:hasFeatureOfInterest ex:DHT22_4578_inputVoltage ;\n    sosa:observedProperty     ex:mimOperatingInputVoltageRestriction ;\n    sosa:hasSimpleResult      3.3 ;\n    qudt:hasUnit              unit:V .\n\nex:mimOperatingInputVoltageRestriction\n    a                          iop:Variable, sosa:Property ;\n    iop:hasStatisticalModifier uom:minimum ;\n    iop:hasObjectOfInterest    ex:DHT22_4578 ;\n    iop:hasProperty            qk:Voltage .\n\nex:maximumOperatingInputVoltage\n    a                         sosa:Observation ;\n    sosa:hasFeatureOfInterest ex:DHT22_4578_inputVoltage ;\n    sosa:observedProperty     ex:maxOperatingInputVoltageRestriction ;\n    sosa:hasSimpleResult      6.0 ;\n    qudt:hasUnit              unit:V .\n\nex:maxOperatingInputVoltageRestriction\n    a                          iop:Variable, sosa:Property ;\n    iop:hasStatisticalModifier uom:maximum ;\n    iop:hasObjectOfInterest    ex:DHT22_4578 ;\n    iop:hasProperty            qk:Voltage .\n\nex:nominalOperatingInputVoltage\n    a                         sosa:Observation ;\n    sosa:hasFeatureOfInterest ex:DHT22_4578_inputVoltage ;\n    sosa:observedProperty     ex:nominalOperatingInputVoltageRestriction ;\n    sosa:hasSimpleResult      5.0 ;\n    qudt:hasUnit              unit:V .\n\n# A complaint may be that the time period of the averaging period is unspecified; \nex:nominalOperatingInputVoltageRestriction\n    a                          iop:Variable, sosa:Property ;\n    iop:hasStatisticalModifier uom:average ;\n    iop:hasObjectOfInterest    ex:DHT22_4578 ;\n    iop:hasProperty            qk:Voltage .\n\n#\n# These are the system capabilities\n#\n\nex:DHT22_4578_TemperatureSensorCapabilities\n    a                       sosa:ObservationCollection ;\n    sosa:hasValidityContext ex:DHT22_4578_TemperatureSensorNormalOperatingConditions ;\n    sosa:hasMember          ex:DHT22_4578_minimumMeasureableTemperature, ex:DHT22_4578_maximumMeasureableTemperature,\n                            ex:DHT22_4578_TemperatureMeasurementAccuracy,\n                            ex:DHT22_4578_TemperatureMeasurementSensitivity,\n                            ex:DHT22_4578_TemperatureMeasurementFrequency .\n\nex:DHT22_4578_HumiditySensorCapabilities\n    a                       sosa:ObservationCollection ;\n    sosa:hasValidityContext ex:DHT22_4578_HumiditySensorNormalOperatingConditions ;\n    sosa:hasMember          ex:DHT22_4578_minimumMeasureableRelativeHumidity,\n                            ex:DHT22_4578_maximumMeasureableRelativeHumidity, ex:DHT22_4578_RelativeHumidityFrequency .\n\nex:DHT22_4578_minimumMeasureableTemperature\n    a                         sosa:Observation ;\n    sosa:hasFeatureOfInterest ex:DHT22_4578_TemperatureSensor ;\n    sosa:observedProperty     ex:DHT22_4578_minimumMeasureableTemperatureLimit ;\n    sosa:hasSimpleResult      \"-40.0\"^^xsd:decimal ;\n    qudt:hasUnit              unit:DEG_C .\n\nex:DHT22_4578_minimumMeasureableTemperatureLimit\n    a                          iop:Variable, sosa:Property ;\n    iop:hasStatisticalModifier uom:minimum ;\n    iop:hasObjectOfInterest    ex:airAround_DHT22_4578 ;\n    iop:hasProperty            qk:Temperature .\n\nex:DHT22_4578_maximumMeasureableTemperature\n    a                         sosa:Observation ;\n    sosa:hasFeatureOfInterest ex:DHT22_4578_TemperatureSensor ;\n    sosa:observedProperty     ex:DHT22_4578_maximumMeasureableTemperatureLimit ;\n    sosa:hasResult            [ qudt:value   80.0 ;\n                                qudt:hasUnit unit:DEG_C ] .\n\nex:DHT22_4578_maximumMeasureableTemperatureLimit\n    a                          iop:Variable, sosa:Property ;\n    iop:hasStatisticalModifier uom:maximum ;\n    iop:hasObjectOfInterest    ex:airAround_DHT22_4578 ;\n    iop:hasProperty            qk:Temperature .\n\nex:DHT22_4578_TemperatureMeasurementAccuracy\n    a                         sosa:Observation ;\n    sosa:hasFeatureOfInterest ex:DHT22_4578_TemperatureSensor ;\n    sosa:observedProperty     ex:Accuracy ;\n    sosa:hasResult            [ qudt:value   0.5 ;\n                                qudt:hasUnit unit:DEG_C ] .\n\n\nex:DHT22_4578_TemperatureMeasurementSensitivity\n    a                         sosa:Observation ;\n    sosa:hasFeatureOfInterest ex:DHT22_4578_TemperatureSensor ;\n    sosa:observedProperty     ex:Sensitivity, ex:Resolution ;\n    sosa:hasResult            [ qudt:value   0.1 ;\n                                qudt:hasUnit unit:DEG_C ] .\n\nex:DHT22_4578_TemperatureMeasurementFrequency\n    a                         sosa:Observation ;\n    rdfs:comment              \"The smallest possible time between one observation and the next is 2 s on average.\"@en ;\n    sosa:hasFeatureOfInterest ex:DHT22_4578_TemperatureSensor ;\n    sosa:observedProperty     ex:DHT22_4578_TemperatureMeasurementFrequencyLimit ;\n    sosa:hasResult            [ qudt:value   2.0 ;\n                                qudt:hasUnit unit:SEC ] .\n\n# TODO Likely wrong\n\nex:DHT22_4578_TemperatureMeasurementFrequencyLimit\n    a                          iop:Variable, sosa:Property ;\n    iop:hasStatisticalModifier uom:average ;\n    iop:hasObjectOfInterest    ex:airAround_DHT22_4578 ;\n    iop:hasProperty            qk:Period .\n\n# These are very close to the system conditions and the same limits can be reused.\nex:DHT22_4578_minimumMeasureableRelativeHumidity\n    a                         sosa:Observation ;\n    sosa:hasFeatureOfInterest ex:DHT22_4578_HumiditySensor ;\n    sosa:observedProperty     ex:minSensorEnvironmentHumidityLimit ;\n    sosa:hasResult            [ qudt:value   0.0 ;\n                                qudt:hasUnit unit:PERCENT ] .\n\nex:DHT22_4578_maximumMeasureableRelativeHumidity\n    a                         sosa:Observation ;\n    sosa:hasFeatureOfInterest ex:DHT22_4578_HumiditySensor ;\n    sosa:observedProperty     ex:maxSensorEnvironmentHumidityLimit ;\n    sosa:hasResult            [ qudt:value   100.0 ;\n                                qudt:hasUnit unit:PERCENT ] .\n\nex:DHT22_4578_RelativeHumidityFrequency\n    a                         sosa:Observation ;\n    rdfs:comment              \"The smallest possible time between one observation and the next is 2 s on average.\"@en ;\n    sosa:hasFeatureOfInterest ex:DHT22_4578_HumiditySensor ;\n    sosa:observedProperty     ex:DHT22_4578_RelativeHumidityFrequencyLimit ;\n    sosa:hasResult            [ qudt:value   2.0 ;\n                                qudt:hasUnit unit:SEC ] .\n\nex:DHT22_4578_RelativeHumidityFrequencyLimit\n    a                          iop:Variable, sosa:Property ;\n    iop:hasStatisticalModifier uom:average ;\n    iop:hasObjectOfInterest    ex:DHT22_4578_HumiditySensor ;\n    iop:hasProperty            qk:Period .\n\n# Some results\nex:observation_1087\n    rdf:type              sosa:Observation ;\n    sosa:observedProperty et:23 ;\n    sosa:madeBySensor     ex:DHT22_4578_TemperatureSensor ;\n    sosa:usedProcedure    ex:DHT22_Procedure ;\n    sosa:resultQuality    ex:observation_1087_quality ;\n    sosa:hasResult        [ qudt:hasUnit unit:DEG_C ;\n                            qudt:value   21.4 ] ;\n.\n\n# use some other ontology to further qualify this quality\n\nex:observation_1087_quality\n    ex:evaluatedBy     ex:Tom ;\n    ex:confidenceValue \"6\"^^xsd:integer ;\n    rdfs:comment       \"\"\"Tom gave a confidence value of 6 out of 10 on this observation.\"\"\"@en ;\n.\n# use some quantity ontology\n\n@prefix qudt: <http://qudt.org/schema/qudt/> .\n@prefix unit: <http://qudt.org/vocab/unit/> .\n\nex:observation_1087_quality\n    rdf:type           qudt:Quantity ;\n    qudt:quantityValue [ rdf:type     qudt:QuantityValue ;\n                         qudt:value   98.4 ;\n                         qudt:hasUnit unit:PERCENT ] .\n"
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example diet.ttl",
+      "base-output-filename": "diet",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/diet.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/diet.ttl",
+          "sizeBytes": 1012,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix time: <http://www.w3.org/2006/time#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:O299877\n  a sosa:Observation ;\n  sosa:hasFeatureOfInterest ex:Community2998 ;\n  sosa:hasResult ex:d77 ;\n  sosa:observedProperty ex:diet ;\n  sosa:phenomenonTime [\n      time:hasBeginning [\n          time:inTimePosition [\n              time:hasTRS ex:BP ;\n              time:numericPosition 12000 ;\n            ] ;\n        ] ;\n      time:hasDuration [\n          time:numericDuration 500 ;\n          time:unitType time:unitYear ;\n        ] ;\n    ] ;\n  sosa:resultTime \"2015-06-06T12:00:00+10:00\"^^xsd:dateTime ;\n.\nex:d77 \n  a ex:diet ;\n  rdfs:comment \"mainly seafood\" ;\n.\nex:BP\n  a time:TRS ;\n  skos:definition \"Years before 1950, positive backwards\" ;\n."
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example forecast.ttl",
+      "base-output-filename": "forecast",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/forecast.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/forecast.ttl",
+          "sizeBytes": 1137,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix siq: <https://si-digital-framework.org/quantities/> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#>.\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix time: <http://www.w3.org/2006/time#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@base <https://example.org/data/forecast/> .\n\nex:Observation299876\n  a sosa:Observation ;\n  sosa:hasFeatureOfInterest ex:EarthAtmosphere ;\n  sosa:hasResult <grid/299876> ;\n  sosa:observedProperty siq:TEMC ;\n  sosa:phenomenonTime [\n    time:hasBeginnning [ \n      time:inXSDDateTime \"2024-03-09T11:00:00+10:00\"^^xsd:dateTime ;\n    ];\n    time:hasEnd [  \n      time:inXSDDateTime \"2024-03-09T12:00:00+10:00\"^^xsd:dateTime ;\n    ];\n  ];\n  sosa:resultTime \"2024-03-06T12:00:00+10:00\"^^xsd:dateTime ;\n.\n\nex:EarthAtmosphere a sosa:FeatureOfInterest ;\n  skos:exactMatch <https://www.wikidata.org/wiki/Q3230> ;\n. \nsiq:TEMC a sosa:Property ;\n  rdfs:label \"Celsius temperature\" ;\n."
+        },
+        {
+          "language": "json",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/forecast.jsonld",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/forecast.json",
+          "sizeBytes": 2191,
+          "code": "{\n  \"@graph\" : [ {\n    \"@id\" : \"_:b0\",\n    \"hasBeginnning\" : \"_:b2\",\n    \"hasEnd\" : \"_:b1\"\n  }, {\n    \"@id\" : \"_:b1\",\n    \"inXSDDateTime\" : \"2024-03-09T12:00:00+10:00\"\n  }, {\n    \"@id\" : \"_:b2\",\n    \"inXSDDateTime\" : \"2024-03-09T11:00:00+10:00\"\n  }, {\n    \"@id\" : \"ex:EarthAtmosphere\",\n    \"@type\" : \"sosa:FeatureOfInterest\",\n    \"sameAs\" : \"https://www.wikidata.org/wiki/Q3230\"\n  }, {\n    \"@id\" : \"ex:Observation299876\",\n    \"@type\" : \"sosa:Observation\",\n    \"hasFeatureOfInterest\" : \"ex:EarthAtmosphere\",\n    \"hasResult\" : \"ex:forecast/grid/299876\",\n    \"observedProperty\" : \"https://si-digital-framework.org/quantities/TEMC\",\n    \"phenomenonTime\" : \"_:b0\",\n    \"resultTime\" : \"2024-03-06T12:00:00+10:00\"\n  }, {\n    \"@id\" : \"ex:forecast/\",\n    \"@type\" : \"owl:Ontology\"\n  } ],\n  \"@context\" : {\n    \"resultTime\" : {\n      \"@id\" : \"http://www.w3.org/ns/sosa/resultTime\",\n      \"@type\" : \"http://www.w3.org/2001/XMLSchema#dateTime\"\n    },\n    \"phenomenonTime\" : {\n      \"@id\" : \"http://www.w3.org/ns/sosa/phenomenonTime\",\n      \"@type\" : \"@id\"\n    },\n    \"observedProperty\" : {\n      \"@id\" : \"http://www.w3.org/ns/sosa/observedProperty\",\n      \"@type\" : \"@id\"\n    },\n    \"hasResult\" : {\n      \"@id\" : \"http://www.w3.org/ns/sosa/hasResult\",\n      \"@type\" : \"@id\"\n    },\n    \"hasFeatureOfInterest\" : {\n      \"@id\" : \"http://www.w3.org/ns/sosa/hasFeatureOfInterest\",\n      \"@type\" : \"@id\"\n    },\n    \"hasEnd\" : {\n      \"@id\" : \"http://www.w3.org/2006/time#hasEnd\",\n      \"@type\" : \"@id\"\n    },\n    \"hasBeginnning\" : {\n      \"@id\" : \"http://www.w3.org/2006/time#hasBeginnning\",\n      \"@type\" : \"@id\"\n    },\n    \"inXSDDateTime\" : {\n      \"@id\" : \"http://www.w3.org/2006/time#inXSDDateTime\",\n      \"@type\" : \"http://www.w3.org/2001/XMLSchema#dateTime\"\n    },\n    \"sameAs\" : {\n      \"@id\" : \"http://www.w3.org/2002/07/owl#sameAs\",\n      \"@type\" : \"@id\"\n    },\n    \"ex\" : \"http://example.org/data/\",\n    \"rdf\" : \"http://www.w3.org/1999/02/22-rdf-syntax-ns#\",\n    \"owl\" : \"http://www.w3.org/2002/07/owl#\",\n    \"xsd\" : \"http://www.w3.org/2001/XMLSchema#\",\n    \"rdfs\" : \"http://www.w3.org/2000/01/rdf-schema#\",\n    \"time\" : \"http://www.w3.org/2006/time#\",\n    \"sosa\" : \"http://www.w3.org/ns/sosa/\"\n  }\n}\n"
+        },
+        {
+          "language": "jsonld",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/forecast.jsonld",
+          "sizeBytes": 3492,
+          "code": "{\n  \"@context\": [\n    {\n      \"cdt\": \"http://w3id.org/lindt/custom_datatypes#\",\n      \"equipment\": \"https://rdf.ag/o/equipment/\",\n      \"ex\": \"https://example.org/data/\",\n      \"geo\": \"http://www.opengis.net/ont/geosparql#\",\n      \"gr\": \"http://purl.org/goodrelations/v1#\",\n      \"gs1\": \"https://gs1.org/voc/\",\n      \"om\": \"http://www.ontology-of-units-of-measure.org/resource/om-2/\",\n      \"owl\": \"http://www.w3.org/2002/07/owl#\",\n      \"prov\": \"http://www.w3.org/ns/prov#\",\n      \"qk\": \"http://qudt.org/vocab/quantitykind/\",\n      \"qudt\": \"http://qudt.org/schema/qudt/\",\n      \"rdf\": \"http://www.w3.org/1999/02/22-rdf-syntax-ns#\",\n      \"rdfp\": \"https://w3id.org/rdfp/\",\n      \"rdfs\": \"http://www.w3.org/2000/01/rdf-schema#\",\n      \"schema\": \"http://schema.org/\",\n      \"seas\": \"https://w3id.org/seas/\",\n      \"sensor\": \"https://example.org/sensor/\",\n      \"sh\": \"http://www.w3.org/ns/shacl\",\n      \"skos\": \"http://www.w3.org/2004/02/skos/core#\",\n      \"sosa\": \"http://www.w3.org/ns/sosa/\",\n      \"system\": \"http://www.w3.org/ns/ssn/systems/\",\n      \"time\": \"http://www.w3.org/2006/time#\",\n      \"unit\": \"http://qudt.org/vocab/unit/\",\n      \"xsd\": \"http://www.w3.org/2001/XMLSchema#\"\n    },\n    {},\n    {\n      \"resultTime\": {\n        \"@id\": \"http://www.w3.org/ns/sosa/resultTime\",\n        \"@type\": \"http://www.w3.org/2001/XMLSchema#dateTime\"\n      },\n      \"phenomenonTime\": {\n        \"@id\": \"http://www.w3.org/ns/sosa/phenomenonTime\",\n        \"@type\": \"@id\"\n      },\n      \"observedProperty\": {\n        \"@id\": \"http://www.w3.org/ns/sosa/observedProperty\",\n        \"@type\": \"@id\"\n      },\n      \"hasResult\": {\n        \"@id\": \"http://www.w3.org/ns/sosa/hasResult\",\n        \"@type\": \"@id\"\n      },\n      \"hasFeatureOfInterest\": {\n        \"@id\": \"http://www.w3.org/ns/sosa/hasFeatureOfInterest\",\n        \"@type\": \"@id\"\n      },\n      \"hasEnd\": {\n        \"@id\": \"http://www.w3.org/2006/time#hasEnd\",\n        \"@type\": \"@id\"\n      },\n      \"hasBeginnning\": {\n        \"@id\": \"http://www.w3.org/2006/time#hasBeginnning\",\n        \"@type\": \"@id\"\n      },\n      \"inXSDDateTime\": {\n        \"@id\": \"http://www.w3.org/2006/time#inXSDDateTime\",\n        \"@type\": \"http://www.w3.org/2001/XMLSchema#dateTime\"\n      },\n      \"sameAs\": {\n        \"@id\": \"http://www.w3.org/2002/07/owl#sameAs\",\n        \"@type\": \"@id\"\n      },\n      \"ex\": \"http://example.org/data/\",\n      \"rdf\": \"http://www.w3.org/1999/02/22-rdf-syntax-ns#\",\n      \"owl\": \"http://www.w3.org/2002/07/owl#\",\n      \"xsd\": \"http://www.w3.org/2001/XMLSchema#\",\n      \"rdfs\": \"http://www.w3.org/2000/01/rdf-schema#\",\n      \"time\": \"http://www.w3.org/2006/time#\",\n      \"sosa\": \"http://www.w3.org/ns/sosa/\"\n    }\n  ],\n  \"@graph\": [\n    {\n      \"@id\": \"_:b0\",\n      \"hasBeginnning\": \"_:b2\",\n      \"hasEnd\": \"_:b1\"\n    },\n    {\n      \"@id\": \"_:b1\",\n      \"inXSDDateTime\": \"2024-03-09T12:00:00+10:00\"\n    },\n    {\n      \"@id\": \"_:b2\",\n      \"inXSDDateTime\": \"2024-03-09T11:00:00+10:00\"\n    },\n    {\n      \"@id\": \"ex:EarthAtmosphere\",\n      \"@type\": \"sosa:FeatureOfInterest\",\n      \"sameAs\": \"https://www.wikidata.org/wiki/Q3230\"\n    },\n    {\n      \"@id\": \"ex:Observation299876\",\n      \"@type\": \"sosa:Observation\",\n      \"hasFeatureOfInterest\": \"ex:EarthAtmosphere\",\n      \"hasResult\": \"ex:forecast/grid/299876\",\n      \"observedProperty\": \"https://si-digital-framework.org/quantities/TEMC\",\n      \"phenomenonTime\": \"_:b0\",\n      \"resultTime\": \"2024-03-06T12:00:00+10:00\"\n    },\n    {\n      \"@id\": \"ex:forecast/\",\n      \"@type\": \"owl:Ontology\"\n    }\n  ]\n}"
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example GeometryResult.ttl",
+      "base-output-filename": "GeometryResult",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/GeometryResult.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/GeometryResult.ttl",
+          "sizeBytes": 1151,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix geo: <http://www.opengis.net/ont/geosparql#> .\n@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix time: <http://www.w3.org/2006/time#>.\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@base <https://example.org/data/geor/> .\n\nex:ObsGeo1 a sosa:Observation ;\n    sosa:madeBySensor ex:MyGPS736   ;\n    sosa:hasFeatureOfInterest ex:AbbysCar ;\n    sosa:phenomenonTime [\n        a time:Instant ;\n        time:inXSDDateTimeStamp \"2023-06-20T21:49:18+00:00\"^^xsd:dateTime ;\n    ] ;\n    sosa:resultTime \"2023-06-20T21:49:18+00:00\"^^xsd:dateTime ;\n    sosa:observedProperty <https://vocab.nerc.ac.uk/collection/S06/current/S0600255/>  ;\n    sosa:hasResult [\n        a geo:Geometry ;\n        geo:asWKT \"Point (145.042316 -37.919134)\"^^geo:wktLiteral ;\n     ] .\n     \nex:MyGPS736 \n    a sosa:Sensor ;\n.\nex:AbbysCar \n    a sosa:FeatureOfInterest ;\n.\n<https://vocab.nerc.ac.uk/collection/S06/current/S0600255/> \n    a sosa:Property ;\n    rdfs:label \"Location (geographic coordinates)\"@en ;\n."
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example GeometryResultSimple.ttl",
+      "base-output-filename": "GeometryResultSimple",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/GeometryResultSimple.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/GeometryResultSimple.ttl",
+          "sizeBytes": 600,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix geo: <http://www.opengis.net/ont/geosparql#> .\n@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:ObsGeo1 a sosa:Observation ;\n    sosa:madeBySensor ex:MyGPS736   ;\n    sosa:hasFeatureOfInterest ex:AbbysCar ;\n    sosa:resultTime \"2023-06-20T21:49:18+00:00\"^^xsd:dateTime ;\n    sosa:observedProperty <https://vocab.nerc.ac.uk/collection/S06/current/S0600255/>  ;\n    sosa:hasSimpleResult  \"Point (145.042316 -37.919134)\"^^geo:wktLiteral ;\n."
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example historical-airtemp.ttl",
+      "base-output-filename": "historical-airtemp",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/historical-airtemp.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/historical-airtemp.ttl",
+          "sizeBytes": 1728,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix geo: <http://www.opengis.net/ont/geosparql#> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix qk: <http://qudt.org/vocab/quantitykind/> .\n@prefix qudt: <http://qudt.org/schema/qudt/> .\n@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix time: <http://www.w3.org/2006/time#> .\n@prefix unit: <http://qudt.org/vocab/unit/> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n@base <https://example.org/data/htemp/> .\n\nex:T99 a sosa:Sensor , ex:Mercury-in-glass-thermometer ;\n  rdfs:label \"Mercury in glass thermometer #99\"@en ;\n  sosa:observes ex:airTemperature ;\n.\nex:SHW a sosa:Platform , sosa:FeatureOfInterest;\n  rdfs:label \"Station Hohe Warte\"@en ;\n  geo:hasGeometry [ \n    a geo:Point ;\n    geo:asWKT \"POINT (16.355804145468635 48.248491274780754)\"^^geo:WktLiteral ;\n  ] ;\n  sosa:hosts ex:T99 ;\n.\nex:airTemperature a sosa:Property ;\n  rdfs:label \"air temperature\"@en ;\n  sosa:isPropertyOf ex:EarthAtmosphere ;\n  skos:broader qk:Temperature ;\n.\nex:EarthAtmosphere a sosa:FeatureOfInterest ;\n  skos:exactMatch <https://www.wikidata.org/wiki/Q3230> ;\n. \nex:SHW_T_1872-04-04T15 a sosa:Observation ;\n  sosa:madeBySensor ex:T99 ; \n  sosa:hasFeatureOfInterest ex:SHW ;\n  sosa:observedProperty ex:airTemperature ;\n  sosa:phenomenonTime [\n    time:inXSDDateTime \"1872-04-04T15:00:00+01:00\"^^xsd:dateTime ;\n  ] ;\n  sosa:hasResult [\n     rdf:type qudt:QuantityValue ;\n     qudt:value \"22.5\"^^xsd:decimal ;\n     qudt:hasUnit unit:DEG_C ] ;\n  sosa:resultTime \"1872-04-04T15:00:00+01:00\"^^xsd:dateTime ;\n."
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example IBS-TH2-PLUS-brief.ttl",
+      "base-output-filename": "IBS-TH2-PLUS-brief",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/IBS-TH2-PLUS-brief.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/IBS-TH2-PLUS-brief.ttl",
+          "sizeBytes": 1201,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix prov: <http://www.w3.org/ns/prov#> .\n@prefix qk: <http://qudt.org/vocab/quantitykind/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sensor: <https://example.org/sensor/> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@base <https://example.org/data/TH2-PLUS-b/> .\n\nsensor:IBS-TH2-Plus a owl:Class ;\n  rdfs:subClassOf sosa:System ;\n  prov:wasDerivedFrom <https://inkbird.com/products/ibs-th2-plus> ;\n  rdfs:label \"IBS-TH2 PLUS Temperature and Humidity Sensor System\" ;\n.\nsensor:IBS-TH2-Plus-H a owl:Class ;\n  rdfs:subClassOf sosa:Sensor ;\n  rdfs:label \"IBS-TH2 PLUS Humidity Sensor type\" ;\n.\nsensor:IBS-TH2-Plus-T a owl:Class ;\n  rdfs:subClassOf sosa:Sensor ;\n  rdfs:label \"IBS-TH2 PLUS Temperature Sensor type\" ;\n.\nex:12gth456a-23190 a sensor:IBS-TH2-Plus ; \n  sosa:hasSubSystem ex:12gth456a-23190-H ;\n  sosa:hasSubSystem ex:12gth456a-23190-T ;\n. \nex:12gth456a-23190-H a sensor:IBS-TH2-Plus-H ; \n  sosa:observes qk:RelativeHumidity ;\n. \nex:12gth456a-23190-T a sensor:IBS-TH2-Plus-T ; \n  sosa:observes qk:Temperature ;\n. \n"
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example IBS-TH2-PLUS.ttl",
+      "base-output-filename": "IBS-TH2-PLUS",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/IBS-TH2-PLUS.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/IBS-TH2-PLUS.ttl",
+          "sizeBytes": 3540,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix prov: <http://www.w3.org/ns/prov#> .\n@prefix qk: <http://qudt.org/vocab/quantitykind/> .\n@prefix qudt: <http://qudt.org/schema/qudt/>.\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sensor: <https://example.org/sensor/> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix unit: <http://qudt.org/vocab/unit/>.\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix sosa-cap: <http://www.w3.org/ns/sosa/system-capability-properties#> .\n@base <https://example.org/data/TH2-PLUS/> .\n\nsensor:IBS-TH2-Plus\n  a owl:Class ;\n  rdfs:label \"IBS-TH2 PLUS Temperature and Humidity Sensor System\" ;\n  rdfs:subClassOf sosa:System ;\n  rdfs:subClassOf [\n      a owl:Restriction ;\n      owl:hasValue sensor:IBS-TH2-Plus-systemCapability ;\n      owl:onProperty sosa:hasSystemCapability ;\n    ] ;\n  rdfs:subClassOf [\n      a owl:Restriction ;\n      owl:onProperty sosa:hasSubSystem ;\n      owl:someValuesFrom sensor:IBS-TH2-Plus-H ;\n    ] ;\n  rdfs:subClassOf [\n      a owl:Restriction ;\n      owl:onProperty sosa:hasSubSystem ;\n      owl:someValuesFrom sensor:IBS-TH2-Plus-T ;\n    ] ;\n  prov:wasDerivedFrom <https://inkbird.com/products/ibs-th2-plus> ;\n.\nsensor:IBS-TH2-Plus-systemCapability a sosa:ObservationCollection ;\n  qudt:hasUnit unit:HZ ;\n  sosa:hasMember [\n      a sosa:Observation ;\n      sosa:observedProperty sosa-cap:MaxFrequency ;\n      sosa:hasSimpleResult 0.1 ;\n  ] ,\n  [\n      a sosa:Observation ;\n      sosa:observedProperty sosa-cap:MinFrequency ;\n      sosa:hasSimpleResult \".0005556\"^^xsd:decimal ;\n  ]\n.\nsensor:IBS-TH2-Plus-H\n  a owl:Class ;\n  rdfs:label \"IBS-TH2 PLUS Humidity Sensor type\" ;\n  rdfs:subClassOf sosa:Sensor ;\n  rdfs:subClassOf [\n      a owl:Restriction ;\n      owl:hasValue qk:RelativeHumidity ;\n      owl:onProperty sosa:observes ;\n    ] ;\n  rdfs:subClassOf [\n      a owl:Restriction ;\n      owl:hasValue sensor:IBS-TH2-Plus-H-systemCapability ;\n      owl:onProperty sosa:hasSystemCapability ;\n    ] ;\n.\nsensor:IBS-TH2-Plus-T\n  a owl:Class ;\n  rdfs:label \"IBS-TH2 PLUS Temperature Sensor type\" ;\n  rdfs:subClassOf sosa:Sensor ;\n  rdfs:subClassOf [\n      a owl:Restriction ;\n      owl:hasValue qk:Temperature ;\n      owl:onProperty sosa:observes ;\n    ] ;\n  rdfs:subClassOf [\n      a owl:Restriction ;\n      owl:hasValue sensor:IBS-TH2-Plus-T-systemCapability ;\n      owl:onProperty sosa:hasSystemCapability ;\n    ] ;\n.\nsensor:IBS-TH2-Plus-H-systemCapability a sosa:ObservationCollection ;\n  qudt:hasUnit unit:PERCENT ;\n  sosa:hasMember [\n      a sosa:Observation ;\n      sosa:observedProperty sosa-cap:HumidityAccuracy ;\n      sosa:hasSimpleResult 4.5 ;\n  ] ,\n  [\n      a sosa:Observation ;\n      sosa:observedProperty sosa-cap:MaxMeasurableHumidity ;\n      sosa:hasSimpleResult 99.0 ;\n  ] ,\n  [\n      a sosa:Observation ;\n      sosa:observedProperty sosa-cap:MinMeasurableHumidity ;\n      sosa:hasSimpleResult 0.0 ;\n  ]\n.\nsensor:IBS-TH2-Plus-T-systemCapability a sosa:ObservationCollection ;\n  qudt:hasUnit unit:DEG_C ;\n  sosa:hasMember [\n      a sosa:Observation ;\n      sosa:observedProperty sosa-cap:TemperatureAccuracy ;\n      sosa:hasSimpleResult 0.5 ;\n  ] ,\n  [\n      a sosa:Observation ;\n      sosa:observedProperty sosa-cap:MaxMeasurableTemperature ;\n      sosa:hasSimpleResult 60.0 ;\n  ] ,\n  [\n      a sosa:Observation ;\n      sosa:observedProperty sosa-cap:MinMeasurableTemperature ;\n      sosa:hasSimpleResult -40.0 ;\n  ]\n.\n\n"
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example IDEAS.ttl",
+      "base-output-filename": "IDEAS",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/IDEAS.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/IDEAS.ttl",
+          "sizeBytes": 2439,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix qk: <http://qudt.org/vocab/quantitykind/> .\n@prefix qudt: <http://qudt.org/schema/qudt/>.\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#>.\n@prefix sosa: <http://www.w3.org/ns/sosa#> .\n@prefix unit: <http://qudt.org/vocab/unit/>.\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@base <https://example.org/data/IDEA/> .\n\n# Temperature and Humidity at Coal Oil Point Reserve\n\n ex:COPR a sosa:FeatureOfInterest ;\n   sosa:hasSample ex:COPR_SL ;\n   rdfs:comment \"Coal Oil Point Reserve: UC Santa Barbara Natural Reserve System\"@en ;\n   rdfs:label \"Coal Oil Point Reserve\"@en ;\n.\nex:COPR_SL a sosa:Sample ;\n   rdfs:label \"Air around COPR Station\"@en ;\n   sosa:isSampleOf ex:COPR ;\n.\nex:COPR_Station a sosa:Platform ;\n   rdfs:comment \"Station at Coal Oil Point Reserve, CA (see http://www.geog.ucsb.edu/ideas/COPR.html for details)\"@en ;\n   rdfs:label \"Coal Oil Point Reserve Wx Station\"@en ;\n   rdfs:seeAlso <http://www.geog.ucsb.edu/ideas/COPR.html> ;\n   sosa:hosts ex:COPR-HMP45C-L ;\n.\nex:COPR-HMP45C-L a sosa:Platform ;\n   rdfs:label \"HMP45C-L Temperature and Relative Humidity Probe at Coal Oil Point, UCSB, CA\"@en ;\n   sosa:hosts ex:HUMICAP-H ;\n   sosa:isHostedBy ex:COPR_Station ;\n.\nex:HUMICAP-H a sosa:Sensor ;\n   rdfs:label \"Vaisala HUMICAP H-chip\"@en ;\n   sosa:observes ex:RelativeHumidity ;\n   sosa:isHostedBy ex:COPR-HMP45C-L ;\n.\nex:RelativeHumidity a sosa:Property ;\n   rdfs:comment \"Humidity is a measure of the moisture content of air.\"@en ;\n   rdfs:label \"Relative Humidity\"@en ;\n   skos:exactMatch qk:RelativeHumidity ;\n.\nex:MeasuringRelativeHumidity a sosa:ObservingProcedure ;\n   rdfs:comment \"Instructions for measuring relative humidity\"@en ;\n   rdfs:comment \"Relative humidity as averaged over 15min.\"@en ;\n.\nex:RH_avg_1_COPR_15min_201706020300PM a sosa:Observation ;\n   rdfs:label \"Relative humidity, AVG, 15min, COPR, 06.02.2017, 3:00 PM\"@en ;\n   sosa:madeBySensor ex:HUMICAP-H ;\n   sosa:hasFeatureOfInterest ex:COPR_SL ;\n   sosa:hasResult [\n      a qudt:QuantityValue ;\n      qudt:hasUnit unit:PERCENT ;\n      qudt:value 92.5 ;\n   ] ;\n   sosa:resultTime \"2017-06-02T15:00:00-07:00\"^^xsd:dateTime ;\n   sosa:observedProperty ex:RelativeHumidity ;\n   sosa:usedProcedure ex:MeasuringRelativeHumidity ;\n."
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example InkBird-IBS-TH2-Range.ttl",
+      "base-output-filename": "InkBird-IBS-TH2-Range",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/InkBird-IBS-TH2-Range.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/InkBird-IBS-TH2-Range.ttl",
+          "sizeBytes": 2928,
+          "code": "@prefix equipment: <https://rdf.ag/o/equipment/> .\n@prefix ex: <https://example.org/data/> .\n@prefix gs1: <https://gs1.org/voc/> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix qk: <http://qudt.org/vocab/quantitykind/> .\n@prefix qudt: <http://qudt.org/schema/qudt/> .\n@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix unit: <http://qudt.org/vocab/unit/> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n@prefix sosa-env: <http://www.w3.org/ns/sosa/system-environment-properties#> .\n@base <https://rdf.ag/o/equipment/> .\n\n# This example is a partial specification for a common over-the-shelf temperature and humidity sensor.  Different instantions can\n# be derived for each specific physical the product. \n\nex:InkBird-IBS-TH2 a owl:Class;\n    rdfs:label \"Inkbird IBS-TH2\"@en ;\n    rdfs:subClassOf gs1:Product, sosa:Platform, equipment:Equipment, <https://w3id.org/seas/BluetoothCommunicationDevice>;\n    gs1:pip <https://inkbird.com/products/hygrometer-ibs-th2> ;\n    rdfs:subClassOf [ a owl:Restriction ;\n                      owl:onProperty sosa:hosts ;\n                      owl:allValuesFrom ex:IBSTH2TemperatureSensor \n                    ] ;\n.\nex:IBSTH2TemperatureSensor rdfs:subClassOf sosa:Sensor ;\n    rdfs:label \"Inkbird IBS-TH2 built-in Temperature Sensor\"@en ;\n    sosa:observes ex:airTemperature ;\n    rdfs:subClassOf [ a owl:Restriction ;\n                      owl:onProperty sosa:hasOperatingConditions ;\n                      owl:allValuesFrom ex:IBSTH2TemperatureSensorLimits \n                    ] ;\n    rdfs:subClassOf [ a owl:Restriction ;\n                      owl:onProperty sosa:hasOperatingConditions ;\n                      owl:allValuesFrom ex:IBSTH2SurvivalRange \n                    ] ;\n.\nex:IBSTH2TemperatureSensorLimits a sosa:ObservationCollection , sosa:NormalOperatingConditions ;\n    rdfs:label \"Inkbird IBS-TH2 Temperature Sensor Limits\"@en ;\n    sosa:hasMember [\n      sosa:observedProperty sosa-env:MinAmbientTemperature ;\n      sosa:hasResult [ \n        qudt:value -40.0 ;\n        qudt:hasUnit unit:DEG_C ;\n      ] ;\n    ] , [\n      sosa:observedProperty sosa-env:MaxAmbientTemperature ;\n      sosa:hasResult [ \n        qudt:value 60.0 ;\n        qudt:hasUnit unit:DEG_C ;\n      ] ;\n    ]\n.\n# Physical limits of the sensor (and platform) where structural failure occurs.\nex:IBSTH2SurvivalRange a sosa:ObservationCollection , sosa:SurvivableConditions ;\n    rdfs:label \"Inkbird IBS-TH2 Failiure limits\"@en ;\n    sosa:hasMember [\n      sosa:observedProperty sosa-env:MinAmbientTemperature ;\n      sosa:hasResult [ \n        qudt:value -273.0 ;\n        qudt:hasUnit unit:DEG_C ;\n      ] ;\n    ] , [\n      sosa:observedProperty sosa-env:MaxAmbientTemperature ;\n      sosa:hasResult [ \n        qudt:value 80.0 ;\n        qudt:hasUnit unit:DEG_C ;\n      ] ;\n    ]\n."
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example iphone_barometer-sosa.ttl",
+      "base-output-filename": "iphone_barometer-sosa",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/iphone_barometer-sosa.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/iphone_barometer-sosa.ttl",
+          "sizeBytes": 2390,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix qudt: <http://qudt.org/schema/qudt/> .\n@prefix qk: <http://qudt.org/vocab/quantitykind/> .\n@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix unit: <http://qudt.org/vocab/unit/> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n@base <https://example.org/data/iphone_barometer/> .\n\n# iPhone Barometer\n\nex:iphone_barometer-sosa \n  a owl:Ontology ;\n  rdfs:comment \"The barometric readings from a Bosch Sensortec BMP282 sensor in an Apple IPhone 7 observed on June 6 2017 using only the SOSA core.\"@en ;\n.\n# The barometric readings from a Bosch Sensortec BMP282 sensor in an Apple IPhone 7 observed on June 6 2017\n# using only the SOSA core\n\nex:EarthAtmosphere \n  a sosa:FeatureOfInterest ;\n  rdfs:label \"Atmosphere of Earth\"@en ;\n.\n# An iPhone 7 as the Platform that hosts several sensors, among others the Bosch Sensortec BMP282 atmospheric pressure sensor\n\nex:iphone7_35-207306-844818-0 \n  a sosa:Platform ;\n  rdfs:label \"IPhone 7 - IMEI 35-207306-844818-0\"@en ;\n  rdfs:comment \"IPhone 7 - IMEI 35-207306-844818-0 - John Doe\"@en ;\n  sosa:hosts ex:sensor_35-207306-844818-0_BMP282 ;\n.\nex:sensor_35-207306-844818-0_BMP282 \n  a sosa:Sensor ;\n  rdfs:label \"Bosch Sensortec BMP282\"@en ;\n  sosa:observes qk:AtmosphericPressure ;\n.\n# An observation made by the Bosch Sensortec BMP282 atmospheric pressure sensor\n\nex:Observation_346344 \n  a sosa:Observation ;\n  sosa:observedProperty qk:AtmosphericPressure ;\n  sosa:hasFeatureOfInterest ex:EarthAtmosphere ;\n  sosa:madeBySensor ex:sensor_35-207306-844818-0_BMP282 ;\n  sosa:hasResult [\n      a qudt:QuantityValue ;\n      qudt:hasUnit unit:HectoPA ;\n      qudt:value 1021.45 ;\n  ] ;\n  sosa:resultTime \"2017-06-06T12:36:12+00:00\"^^xsd:dateTime ;\n.\n# Another observation made a second later by the Bosch Sensortec BMP282 atmospheric pressure sensor\n\n<Observation/346345> \n  a sosa:Observation ;\n  sosa:observedProperty qk:AtmosphericPressure ;\n  sosa:hasFeatureOfInterest ex:EarthAtmosphere ;\n  sosa:madeBySensor ex:sensor_35-207306-844818-0_BMP282 ;\n  sosa:hasResult [\n    a qudt:QuantityValue ;\n    qudt:value \"101936\"^^xsd:decimal ;\n    qudt:hasUnit unit:PA \n  ] ;\n  sosa:resultTime \"2017-06-06T12:36:13+00:00\"^^xsd:dateTime ;\n."
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example LocatedDeployment.ttl",
+      "base-output-filename": "LocatedDeployment",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/LocatedDeployment.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/LocatedDeployment.ttl",
+          "sizeBytes": 844,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix geo: <http://www.opengis.net/ont/geosparql#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:TH2-56-2024 a sosa:Deployment ;\n  sosa:deployedSystem ex:IBS-TH2-56 ;\n  sosa:deployedOnPlatform ex:Room31C ;\n  sosa:startTime \"2024-01-01T00:00:00+00:00\"^^xsd:dateTime ;\n  sosa:endTime \"2024-12-31T23:59:59+00:00\"^^xsd:dateTime ;\n.\nex:Room31C a sosa:Platform ;\n  geo:hasGeometry [ \n    a geo:Point ;\n    geo:asWKT \"POINT (-73.877244 45.511672)\"^^geo:WktLiteral ;\n  ] ;\n.\nex:IBS-TH2-56 \n    a sosa:Sensor ;\n    rdfs:label \"12gth456a-23190\"^^ex:serialNumber ;\n  . \nex:serialNumber a rdfs:Datatype ;\n    rdfs:subClassOf xsd:string ;\n."
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example LocatedPlatform.ttl",
+      "base-output-filename": "LocatedPlatform",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/LocatedPlatform.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/LocatedPlatform.ttl",
+          "sizeBytes": 639,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix geo: <http://www.opengis.net/ont/geosparql#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Room31C a sosa:Platform ;\n  geo:hasGeometry [ \n    a geo:Point ;\n    geo:asWKT \"POINT (-73.877244 45.511672)\"^^geo:WktLiteral ;\n  ] ;\n  sosa:hosts ex:IBS-TH2-56 ;\n.\nex:IBS-TH2-56 \n    a sosa:Sensor ;\n    rdfs:label \"12gth456a-23190\"^^ex:serialNumber ;\n  . \nex:serialNumber a rdfs:Datatype ;\n    rdfs:subClassOf xsd:string ;\n."
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example LocatedSample.ttl",
+      "base-output-filename": "LocatedSample",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/LocatedSample.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/LocatedSample.ttl",
+          "sizeBytes": 715,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix geo: <http://www.opengis.net/ont/geosparql#> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix sf: <http://www.opengis.net/ont/sf#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix sosa-oms: <http://www.w3.org/ns/sosa/oms/> .\n\nex:EarthAtmosphere_StE a sosa:MaterialSample ;\n  sosa:isSampleOf ex:EarthAtmosphere ;\n  sosa-oms:sourceLocation [ \n    a sf:Point ;\n    geo:asWKT \"POINT (4.387611 45.437772)\"^^geo:WktLiteral ;\n  ] ;\n.\nex:EarthAtmosphere a sosa:FeatureOfInterest ;\n  skos:exactMatch <https://www.wikidata.org/wiki/Q3230> ;\n. "
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example LocatedSampling.ttl",
+      "base-output-filename": "LocatedSampling",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/LocatedSampling.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/LocatedSampling.ttl",
+          "sizeBytes": 845,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix geo: <http://www.opengis.net/ont/geosparql#> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix sf: <http://www.opengis.net/ont/sf#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix sosa-oms: <http://www.w3.org/ns/sosa/oms/> .\n\nex:EarthAtmosphere_StE a sosa:MaterialSample ;\n  sosa:isSampleOf ex:EarthAtmosphere ;\n  sosa:isResultOf ex:AirSampling_StE ; \n.\nex:AirSampling_StE a sosa:Sampling ;\n  sosa:hasFeatureOfInterest ex:EarthAtmosphere ;\n  sosa-oms:samplingLocation [ \n    a sf:Point ;\n    geo:asWKT \"POINT (4.387611 45.437772)\"^^geo:WktLiteral ;\n  ] ;\n.\nex:EarthAtmosphere a sosa:FeatureOfInterest ;\n  skos:exactMatch <https://www.wikidata.org/wiki/Q3230> ;\n. "
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example LocatedSensor.ttl",
+      "base-output-filename": "LocatedSensor",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/LocatedSensor.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/LocatedSensor.ttl",
+          "sizeBytes": 590,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix geo: <http://www.opengis.net/ont/geosparql#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:IBS-TH2-56 \n    a sosa:Sensor ;\n    rdfs:label \"12gth456a-23190\"^^ex:serialNumber ;\n    geo:hasGeometry [ \n        a geo:Point ;\n        geo:asWKT \"POINT (-73.877244 45.511672)\"^^geo:WktLiteral ;\n    ] ;\n. \nex:serialNumber a rdfs:Datatype ;\n    rdfs:subClassOf xsd:string ;\n.\n"
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example obs-sample-foi.ttl",
+      "base-output-filename": "obs-sample-foi",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/obs-sample-foi.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/obs-sample-foi.ttl",
+          "sizeBytes": 981,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix qudt: <http://qudt.org/schema/qudt/>.\n@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix unit: <http://qudt.org/vocab/unit/>.\n\nex:Bubble873 a sosa:Sample ;\n  sosa:isSampleOf ex:EarthAtmosphere;\n.\nex:Ob873c4 a sosa:Observation ;\n  sosa:observedProperty ex:CO2-Concentration ;\n  sosa:hasFeatureOfInterest ex:Bubble873 ;\n  sosa:hasUltimateFeatureOfInterest ex:EarthAtmosphere ;\n  sosa:hasResult [\n      a qudt:QuantityValue ;\n      qudt:hasUnit unit:PPM ;\n      qudt:value 240.0 ;\n  ] ;\n.\nex:EarthAtmosphere a sosa:FeatureOfInterest ;\n  skos:exactMatch <https://www.wikidata.org/wiki/Q3230> ;\n  . \nex:CO2-Concentration a sosa:Property ;\n  skos:exactMatch <http://purl.obolibrary.org/obo/ENVO_04000004> ;\n  skos:prefLabel \"concentration of carbon dioxide in air\" ;\n. \n"
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example open-window.ttl",
+      "base-output-filename": "open-window",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/open-window.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/open-window.ttl",
+          "sizeBytes": 844,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n@base <https://example.org/data/open-window/> .\n\nex:window98 rdf:type sosa:FeatureOfInterest ;\n    sosa:hasProperty ex:openState ;\n.\nex:openState rdf:type sosa:Property ;\n.\nex:closer-987 rdf:type ex:WindowCloser , sosa:Actuator ;\n.\nex:WindowCloser rdfs:subClassOf sosa:Actuator ;\n.\nex:A188 rdf:type sosa:Actuation ;\n  sosa:hasFeatureOfInterest ex:window98 ;\n  sosa:actsOnProperty  ex:openState ;\n  sosa:madeByActuator ex:closer-987 ; \n  sosa:hasSimpleResult true ;\n  sosa:startTime \"2017-04-18T17:23:00+02:00\"^^xsd:dateTime ;\n  sosa:endTime \"2017-04-18T17:24:00+02:00\"^^xsd:dateTime ;\n.\n"
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example paleo-atmosphere.ttl",
+      "base-output-filename": "paleo-atmosphere",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/paleo-atmosphere.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/paleo-atmosphere.ttl",
+          "sizeBytes": 2595,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix qudt: <http://qudt.org/schema/qudt/>.\n@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix time: <http://www.w3.org/2006/time#>.\n@prefix unit: <http://qudt.org/vocab/unit/>.\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n\nex:Bubble873 a sosa:Sample , sosa:MaterialSample ;\n  sosa:isSampleOf ex:IceCore12 , ex:EarthAtmosphere;\n  sosa:isSampleOfUltimateFOI ex:Antarctic_ice_sheet ;\n  sosa:isResultOf ex:CoreEx1923 ;\n.\nex:Ob873t2 a sosa:Observation ;\n  sosa:observedProperty ex:C14-Age ;\n  sosa:hasFeatureOfInterest ex:Bubble873 ;\n  sosa:hasUltimateFeatureOfInterest ex:EarthAtmosphere ;\n  sosa:hasResult [\n      a qudt:QuantityValue ;\n      qudt:hasUnit unit:YR ;\n      qudt:value 7530.0 ;\n  ] ;\n  sosa:resultTime \"2018-01-09T14:15:00+00:00\"^^xsd:dateTime ;\n.\nex:Ob873c4 a sosa:Observation ;\n  sosa:observedProperty ex:CO2-Concentration ;\n  sosa:hasFeatureOfInterest ex:Bubble873 ;\n  sosa:hasUltimateFeatureOfInterest ex:EarthAtmosphere ;\n  sosa:hasResult [\n      a qudt:QuantityValue ;\n      qudt:hasUnit unit:PPM ;\n      qudt:value 240.0 ;\n  ] ;\n  sosa:resultTime \"2018-01-09T14:16:00+00:00\"^^xsd:dateTime ;\n.\nex:Oatc349 a sosa:Observation ;\n  sosa:observedProperty ex:CO2-Concentration ;\n  sosa:hasFeatureOfInterest ex:EarthAtmosphere ;\n  sosa:hasResult [\n      a qudt:QuantityValue ;\n      qudt:hasUnit unit:PPM ;\n      qudt:value 240.0 ;\n  ] ;\n  sosa:phenomenonTime [ \n    time:inTimePosition [\n      time:hasTRS ex:BP ;\n      time:numericPosition 7530 ;\n    ] ;\n  ] ;   \n  sosa:resultTime \"2018-01-09T14:16:00+00:00\"^^xsd:dateTime ;\n  sosa:hasInputValue ex:Ob873t2 , ex:Ob873c4 ;\n.\nex:BP\n  a time:TRS ;\n  skos:definition \"Years before 1950, positive backwards\" ;\n.\nex:Antarctic_ice_sheet a sosa:FeatureOfInterest ;\n  skos:exactMatch <https://www.wikidata.org/wiki/Q571430> ;\n. \nex:EarthAtmosphere a sosa:FeatureOfInterest ;\n  skos:exactMatch <https://www.wikidata.org/wiki/Q3230> ;\n  . \nex:C14-Age a sosa:Property ;\n  skos:exactMatch <http://vocab.nerc.ac.uk/collection/S06/current/S0600001/> ;\n  skos:definition \"The age of an object, determined by radiocarbon dating, expressed relative to a datum of AD 1950.\" ;\n  skos:prefLabel \"14C age\" ;\n.\nex:CO2-Concentration a sosa:Property ;\n  skos:exactMatch <http://purl.obolibrary.org/obo/ENVO_04000004> ;\n  skos:prefLabel \"concentration of carbon dioxide in air\" ;\n. \n"
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example smiley.ttl",
+      "base-output-filename": "smiley",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/smiley.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/smiley.ttl",
+          "sizeBytes": 2660,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix time: <http://www.w3.org/2006/time#>.\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n@base <https://example.org/data/smiley/> .\n\n# Determing the color of a smiley face sticker, including sampling from a population of smiley stickers\n\n# First setting up all the basics: FeatureOfInterest, Property, Procedure, Sensor, Platform\n\nex:SmileySticker  \n  rdf:type\tsosa:FeatureOfInterest ;\n  rdfs:label \"Smiley face sticker\"@en ;\n  sosa:hasProperty ex:stickerColor ;\n.\nex:StickerColor  \n  rdf:type\tsosa:Property;\n  rdfs:label \"The color of a sticker\"@en ;\n.\nex:ColorDetermination \n  rdf:type\tsosa:ObservingProcedure ;\n  rdfs:label \"Procedure for determining the color of a sticker\"@en ;\n  sosa:forProperty ex:StickerColor ;\n.\nex:ColorDeterminer \n  rdf:type\tsosa:Sensor;\n  rdfs:label \"Sensor for determining the color of a sticker\"@en ;\n  sosa:observes ex:StickerColor ;\n.\nex:StickerAssayOffice \n  rdf:type\tsosa:Platform;  \n  rdfs:label \"Assay office for determining the color of a sticker\"@en ;\n  sosa:hosts ex:ColorDeterminer ;\n.\n# Adding an Observation\n\nex:Observation-Smiley-Color \n  rdf:type sosa:Observation ;\n  sosa:hasFeatureOfInterest  ex:SmileySticker ;\n  sosa:observedProperty  ex:StickerColor ;\n  sosa:madeBySensor ex:ColorDeterminer ;\n  sosa:usedProcedure ex:ColorDetermination ;\n  sosa:hasSimpleResult \"Yellow\"^^xsd:string ;\n  sosa:phenomenonTime [\n\t  rdf:type time:Instant ;\n\t  time:inXSDDateTimeStamp \"2017-04-15T00:00:00+00:00\"^^xsd:dateTime \n    ] ;\n  sosa:resultTime \"2017-04-16T00:00:12+00:00\"^^xsd:dateTime ;\n.\n# Sampling of the SmileySticker from a wider population of smiley face stickers\n\n# First setting up all the basics: FeatureOfInterest, Sampler, Procedure\n\nex:SmileyPopulation  \n  rdf:type\tsosa:FeatureOfInterest ;\n  rdfs:label \"A population of smiley face stickers\"@en ;\n  sosa:hasProperty ex:stickerColor ;\n.\nex:SmileySamplingProcedure \n  rdf:type sosa:SamplingProcedure ;\n  rdfs:label \"Procedure for sampling smiley stickers\"@en ;\n.\nex:SmileySampler \n  rdf:type sosa:Sampler ;\n  rdfs:label \"Smiley sticker sampler\"@en ;\n  sosa:implements ex:SmileySamplingProcedure ;\n.\n# Adding a Sampling act\n\nex:SmileySampling \n  rdf:type sosa:Sampling ;\n  rdfs:label \"Sampling of a representative Smiley Sticker from a Collection of Smiley Stickers\"@en ;\n  sosa:hasFeatureOfInterest ex:SmileyPopulation ;\n  sosa:usedProcedure ex:SmileySamplingProcedure ;\n  sosa:madeBySampler ex:SmileySampler ;\n  sosa:hasResult ex:SmileySticker ;\n."
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example Temperature-i-adopt.ttl",
+      "base-output-filename": "Temperature-i-adopt",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Temperature-i-adopt.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/Temperature-i-adopt.ttl",
+          "sizeBytes": 1008,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix iop: <https://w3id.org/iadopt/ont/> .\n@prefix qk: <http://qudt.org/vocab/quantitykind/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n\nex:SickChildTemperature \n  a iop:Variable , sosa:Property;\n  iop:hasProperty qk:Temperature ;\n  iop:hasObjectOfInterest ex:Child ;\n  iop:hasConstraint [ \n    a iop:Constraint, ex:Sick ;\n    iop:constrains ex:Child ] ;\n    skos:prefLabel \"sick child\" ;\n.\nqk:Temperature\n  a iop:Property , sosa:Property ;\n  skos:prefLabel \"Temperature\"@en ;\n.\nex:Child skos:exactMatch <http://hadatac.org/ont/chear#Child> .\nex:Sick skos:exactMatch <http://semanticscience.org/resource/SIO_000954> .\n\n<http://hadatac.org/ont/chear#Child>\n  a iop:Entity ;\n  skos:prefLabel \"Child\"@en ;\n.\n<http://semanticscience.org/resource/SIO_000954>\n  skos:prefLabel \"Sick\"@en , \"Krank\"@de ; \n  skos:altLabel \"Unwell\"@en , \"Poorly\"@en ;\n.\n"
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example Temperature-of-interest-specialization.ttl",
+      "base-output-filename": "Temperature-of-interest-specialization",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Temperature-of-interest-specialization.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/Temperature-of-interest-specialization.ttl",
+          "sizeBytes": 488,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix qk: <http://qudt.org/vocab/quantitykind/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix saref: <https://saref.etsi.org/core/> .\n\nqk:Temperature\n  a saref:Property ;\n.\nex:SickChildA\n  a saref:FeatureOfInterest ;\n.\nex:SickChildATemperature\n  a saref:PropertyOfInterest ;\n  saref:hasPropertyKind qk:Temperature ;\n  saref:isPropertyOfInterestOf ex:SickChildA ;\n."
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example Thermometer.ttl",
+      "base-output-filename": "Thermometer",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Thermometer.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/Thermometer.ttl",
+          "sizeBytes": 1437,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix qk: <http://qudt.org/vocab/quantitykind/> .\n@prefix qudt: <http://qudt.org/schema/qudt/>.\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sensor: <https://example.org/sensor/> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix unit: <http://qudt.org/vocab/unit/>.\n\nqk:Temperature\n  a sosa:Property ;\n.\nsensor:TemperatureSensor\n  a owl:Class ;\n  rdfs:label \"A generic temperature sensor\" ;\n  rdfs:subClassOf sosa:Sensor ;\n  rdfs:subClassOf [\n      a owl:Restriction ;\n      owl:hasValue qk:Temperature ;\n      owl:onProperty sosa:observes ;\n    ] ;\n.\nsensor:Mercury-in-glass-thermometer\n  a owl:Class ;\n  rdfs:label \"Mercury in glass thermometer\" ;\n  rdfs:comment \"Temperature sensor based on the expansion of a column of mercury inside a glass tube\" ;\n  rdfs:subClassOf sensor:TemperatureSensor ;\n.\nex:Mums-clinical-thermometer\n  a sosa:Sensor ;\n  a sensor:TemperatureSensor ;\n  a sensor:Mercury-in-glass-thermometer ;\n.\nex:SickChildA\n  a sosa:FeatureOfInterest ;\n.\nex:SickChildATempObs\n  a sosa:Observation ;\n  sosa:hasFeatureOfInterest ex:SickChildA ;\n  sosa:hasResult [\n      a qudt:QuantityValue ;\n      qudt:hasUnit unit:DEG_C ;\n      qudt:value 38.2 ;\n  ] ;\n  sosa:madeBySensor ex:Mums-clinical-thermometer ;\n  sosa:observedProperty qk:Temperature ;\n.\n"
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example timeseries-oc.ttl",
+      "base-output-filename": "timeseries-oc",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/timeseries-oc.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/timeseries-oc.ttl",
+          "sizeBytes": 1896,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix qudt: <http://qudt.org/schema/qudt/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix time: <http://www.w3.org/2006/time#>.\n@prefix unit: <http://qudt.org/vocab/unit/>.\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@base <https://example.org/data/tsoc/> .\n\nex:ts159c\n  a sosa:ObservationCollection ;\n  sosa:hasFeatureOfInterest ex:station223 ;\n  sosa:observedProperty ex:p1 ;\n  sosa:madeBySensor ex:fooglemeter39 ;\n  sosa:phenomenonTime [\n    a time:Interval ;\n    time:hasBeginning [ \n      a time:Instant ;\n      time:inXSDDateTime \"2017-04-15T20:00:00+00:00\"^^xsd:dateTime\n    ] ;\n    time:hasEnd [ \n      a time:Instant ;\n      time:inXSDDateTime \"2017-04-15T20:03:00+00:00\"^^xsd:dateTime \n    ] ;\n  ] ;\n  sosa:resultTime \"2017-04-15T20:03:30+00:00\"^^xsd:dateTime ;\n  sosa:hasMember ex:t1 ;\n  sosa:hasMember ex:t2 ;\n  sosa:hasMember ex:t3 ;\n  sosa:hasMember ex:t4 ;\n  qudt:hasUnit unit:M-PER-SEC ;\n.\nex:t1\n  a sosa:Observation ;\n  sosa:phenomenonTime [\n    a time:Instant ;\n    time:inXSDDateTime \"2017-04-15T20:00:00+00:00\"^^xsd:dateTime ;\n  ] ;\n  sosa:hasSimpleResult 3.24 ;\n.\nex:t2\n  a sosa:Observation ;\n  sosa:phenomenonTime [\n    a time:Instant ;\n    time:inXSDDateTime \"2017-04-15T20:01:00+00:00\"^^xsd:dateTime ;\n  ] ;\n  sosa:hasSimpleResult 3.21 ;\n.\nex:t3\n  a sosa:Observation ;\n  sosa:phenomenonTime [\n    a time:Instant ;\n    time:inXSDDateTime \"2017-04-15T20:02:00+00:00\"^^xsd:dateTime ;\n  ] ;\n  sosa:hasSimpleResult 3.15 ;\n.\nex:t4\n  a sosa:Observation ;\n  sosa:phenomenonTime [\n    a time:Instant ;\n    time:inXSDDateTime \"2017-04-15T20:03:00+00:00\"^^xsd:dateTime ;\n  ] ;\n  sosa:hasSimpleResult 3.15 ;\n.\nex:station223 a sosa:FeatureOfInterest .\nex:p1 a sosa:Property .\nex:fooglemeter39 a sosa:Sensor .\n"
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example timeseries-result-inline.ttl",
+      "base-output-filename": "timeseries-result-inline",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/timeseries-result-inline.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/timeseries-result-inline.ttl",
+          "sizeBytes": 2661,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix time: <http://www.w3.org/2006/time#>.\n@prefix unit: <http://qudt.org/vocab/unit/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@base <https://example.org/data/tsoi/> .\n\nex:ts159i\n  a sosa:Observation ;\n  sosa:hasFeatureOfInterest ex:station223 ;\n  sosa:observedProperty ex:p1 ;\n  sosa:madeBySensor ex:fooglemeter39 ;\n  sosa:phenomenonTime [\n    a time:Interval ;\n    time:hasBeginning [ \n      a time:Instant ;\n      time:inXSDDateTime \"2017-04-15T20:00:00+00:00\"^^xsd:dateTime\n    ] ;\n    time:hasEnd [ \n      a time:Instant ;\n      time:inXSDDateTime \"2017-04-15T20:03:00+00:00\"^^xsd:dateTime \n    ] ;\n  ] ;\n  sosa:resultTime \"2017-04-15T20:03:30+00:00\"^^xsd:dateTime ;\n  sosa:hasSimpleResult \"\"\"2017-04-15T20:00:00+00:00,3.24\n  2017-04-15T20:01:00+00:00,3.21\n  2017-04-15T20:02:00+00:00,3.15\n  2017-04-15T20:03:00+00:00,3.15\"\"\"^^ex:SpeedObservationCSVRecord ;\n  rdfs:comment \"\"\"The result of this observation is encoded as a CSV literal.  \n  The CSV has four rows each representing a member of the time-series.  \n  The CSV structure is defined in the datatype definition.\"\"\"@en ;\n.\nex:station223 a sosa:FeatureOfInterest .\nex:p1 a sosa:Property .\nex:fooglemeter39 a sosa:Sensor .\n\nex:SpeedObservationCSVRecord a rdfs:Datatype ;\n  rdfs:comment \"\"\"Datatype definition for CSV-encoded data records conforming to the speed observation data model.\n  The speed observation data model is defined using the OGC SWE Data Model given as the object of ex:asSWEDataModel.\n  The formal definition of this datatype (a lexical space, value space, lexical-to-value mapping) is left unspecified in this example.\"\"\" ;\n  ex:asSWEDataModel \"\"\"{\n  \"type\": \"DataRecord\",\n  \"label\": \"Speed Observation\",\n  \"fields\": [\n      {\n          \"name\": \"time\",\n          \"type\": \"Time\",\n          \"definition\": \"http://www.opengis.net/def/property/OGC/0/SamplingTime\",\n          \"referenceFrame\": \"http://www.opengis.net/def/trs/BIPM/0/UTC\",\n          \"label\": \"Sampling Time\",\n          \"uom\": {\n              \"href\": \"http://www.opengis.net/def/uom/ISO-8601/0/Gregorian\"\n          }\n      },\n      {\n          \"name\": \"speed\",\n          \"type\": \"Quantity\",\n          \"definition\": \"http://qudt.org/vocab/quantitykind/Speed\",\n          \"label\": \"Vehicle Speed\",\n          \"uom\": {\n              \"code\": \"m/s\",\n              \"href\": \"https://qudt.org/vocab/unit/M-PER-SEC\"\n          }\n      }\n  ]\n}\"\"\"^^rdf:JSON ;\n."
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example timeseries-result-link.ttl",
+      "base-output-filename": "timeseries-result-link",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/timeseries-result-link.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/timeseries-result-link.ttl",
+          "sizeBytes": 1185,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix time: <http://www.w3.org/2006/time#>.\n@prefix unit: <http://qudt.org/vocab/unit/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@base <https://example.org/data/tsol/> .\n\nex:ts159l\n  a sosa:Observation ;\n  sosa:hasFeatureOfInterest ex:station223 ;\n  sosa:observedProperty ex:p1 ;\n  sosa:madeBySensor ex:fooglemeter39 ;\n  sosa:phenomenonTime [\n    a time:Interval ;\n    time:hasBeginning [ \n      a time:Instant ;\n      time:inXSDDateTime \"2017-04-15T20:00:00+00:00\"^^xsd:dateTime\n    ] ;\n    time:hasEnd [ \n      a time:Instant ;\n      time:inXSDDateTime \"2017-04-15T20:03:00+00:00\"^^xsd:dateTime \n    ] ;\n  ] ;\n  sosa:resultTime \"2017-04-15T20:03:30+00:00\"^^xsd:dateTime ;\n  sosa:hasResult <https://example.org/data/tso/netcdf/ts159> ;\n  rdfs:comment \"The result of the observation is accessed using the URI https://example.org/data/tso/netcdf/ts159 (notional).\"@en ;\n.\nex:station223 a sosa:FeatureOfInterest .\nex:p1 a sosa:Property .\nex:fooglemeter39 a sosa:Sensor ."
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example tree-height.ttl",
+      "base-output-filename": "tree-height",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/tree-height.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/tree-height.ttl",
+          "sizeBytes": 987,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n@prefix qk: <http://qudt.org/vocab/quantitykind/> .\n@prefix qudt: <http://qudt.org/schema/qudt/> .\n@prefix unit: <http://qudt.org/vocab/unit/> .\n@base <https://example.org/data/tree/> .\n\n# Tree height measurement\n\nex:rangefinder_30 a sosa:Sensor ;\n  rdfs:label \"rangefinder #30\"@en ;\n  rdfs:comment \"rangefinder #30 is a laser range finder sensor.\"@en ;\n.\nex:observation_1087 a sosa:Observation ;\n  rdfs:label \"observation #1087\"@en ;\n  sosa:hasFeatureOfInterest ex:tree_124 ;\n  sosa:observedProperty qk:Height ;\n  sosa:madeBySensor ex:rangefinder_30 ;\n  sosa:hasResult [ \n    qudt:hasUnit unit:M ; \n    qudt:value 15.3 ;\n  ] ;\n.\nex:tree_124 a sosa:FeatureOfInterest ;\n  rdfs:label \"tree #124\"@en ;\n  sosa:hasProperty qk:Height ;\n."
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example UOM-cdt.ttl",
+      "base-output-filename": "UOM-cdt",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/UOM-cdt.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/UOM-cdt.ttl",
+          "sizeBytes": 588,
+          "code": "@prefix cdt: <http://w3id.org/lindt/custom_datatypes#> .\n@prefix ex: <https://example.org/data/> .\n@prefix qk: <http://qudt.org/vocab/quantitykind/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n\nex:Obs234534\n  a sosa:Observation ;\n  sosa:hasFeatureOfInterest ex:apt134 ;\n  sosa:observedProperty qk:Temperature ;\n  sosa:hasSimpleResult \"24.9 Cel\"^^cdt:ucum ;\n.\ncdt:ucum \n  a rdfs:Datatype ;\n.\nex:apt134\n  a sosa:FeatureOfInterest ;\n.\nqk:Temperature\n  a sosa:Property ;\n."
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example UOM-qudt-object.ttl",
+      "base-output-filename": "UOM-qudt-object",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/UOM-qudt-object.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/UOM-qudt-object.ttl",
+          "sizeBytes": 657,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix qk: <http://qudt.org/vocab/quantitykind/> .\n@prefix qudt: <http://qudt.org/schema/qudt/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix unit: <http://qudt.org/vocab/unit/> .\n\nex:Obs234534\n  a sosa:Observation ;\n  sosa:hasFeatureOfInterest ex:apt134 ;\n  sosa:observedProperty qk:Temperature ;\n  sosa:hasResult [\n      a qudt:QuantityValue ;\n      qudt:hasUnit unit:DEG_C ;\n      qudt:value 24.9 ;\n    ] ;\n.\nex:apt134\n  a sosa:FeatureOfInterest ;\n.\nqk:Temperature\n  a sosa:Property ;\n."
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example IBS-TH2-PLUS-capabilities.ttl",
+      "base-output-filename": "IBS-TH2-PLUS-capabilities",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/IBS-TH2-PLUS-capabilities.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/IBS-TH2-PLUS-capabilities.ttl",
+          "sizeBytes": 2307,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix prov: <http://www.w3.org/ns/prov#> .\n@prefix qudt: <http://qudt.org/schema/qudt/>.\n@prefix unit: <http://qudt.org/vocab/unit/>.\n@prefix qk: <http://qudt.org/vocab/quantitykind/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sensor: <https://example.org/sensor/> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix sosa-cap: <http://www.w3.org/ns/sosa/system-capability-properties#> .\n@prefix sosa-env: <http://www.w3.org/ns/sosa/system-environment-properties#> .\n@base <https://example.org/data/TH2-PLUS/> .\n\nsensor:IBS-TH2-Plus-T a owl:Class ;\n  rdfs:label \"IBS-TH2 PLUS Temperature Sensor type\" ;\n  rdfs:subClassOf sosa:Sensor ;\n.\nex:IBS-TH2-Plus-T-687343 a sensor:IBS-TH2-Plus-T ;\n  rdfs:label \"IBS-TH2 PLUS Temperature Sensor instance 687343\" ;\n  sosa:observes qk:Temperature ;\n  sosa:hasSystemCapability sensor:IBS-TH2-Plus-T-systemCapability ;\n.\nsensor:IBS-TH2-Plus-T-systemCapability a sosa:ObservationCollection ;\n  sosa:hasMember [\n      a sosa:Observation ;\n      sosa:observedProperty sosa-cap:TemperatureAccuracy ;\n      sosa:hasResult [ \n        qudt:value 0.5 ;\n        qudt:hasUnit unit:DEG_C ;\n      ] ;\n  ] ,\n  [\n      a sosa:Observation ;\n      sosa:observedProperty sosa-cap:MaxMeasurableTemperature ;\n      sosa:hasResult [ \n        qudt:value 60.0 ;\n        qudt:hasUnit unit:DEG_C ;\n      ] ;\n  ] ,\n  [\n      a sosa:Observation ;\n      sosa:observedProperty sosa-cap:MinMeasurableTemperature ;\n      sosa:hasResult [ \n        qudt:value -40.0 ;\n        qudt:hasUnit unit:DEG_C ;\n      ] ;\n  ] ;\n  sosa:hasValidityContext sensor:IBS-TH2-Plus-T-normalHumidityConditions ;\n.\nsensor:IBS-TH2-Plus-T-normalHumidityConditions a sosa:Observation ;\n  sosa:hasMember [\n      a sosa:Observation ;\n      sosa:observedProperty sosa-env:MinAmbientRelativeHumidity ;\n      sosa:hasResult [ \n        qudt:value 0.0 ;\n        qudt:hasUnit unit:PERCENT ;\n      ] ;\n  ] ,\n  [\n      a sosa:Observation ;\n      sosa:observedProperty sosa-env:MaxAmbientRelativeHumidity ;\n      sosa:hasResult [ \n        qudt:value 99.0 ;\n        qudt:hasUnit unit:PERCENT ;\n      ] ;\n  ] .\n"
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example InkBird-IBS-TH2-properties.ttl",
+      "base-output-filename": "InkBird-IBS-TH2-properties",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/InkBird-IBS-TH2-properties.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/InkBird-IBS-TH2-properties.ttl",
+          "sizeBytes": 1061,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix qudt: <http://qudt.org/schema/qudt/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix unit: <http://qudt.org/vocab/unit/> .\n@prefix sosa-env: <http://www.w3.org/ns/sosa/system-environment-properties#> .\n\nex:IBSTH2HumidityAccuracy a sosa:Property ;\n    rdfs:label \"Humidity Accuracy (25\u00b0C/77\u00b0C, 20%~80%RH)\"@en ;\n    sosa:hasValidityContext [ \n      a sosa:ObservationCollection ;\n      sosa:hasMember [\n        sosa:observedProperty sosa-env:AmbientTemperature ;\n        sosa:hasResult [ \n          qudt:value 25.0 ;\n          qudt:hasUnit unit:DEG_C ;\n        ] ;\n      ] , [\n        sosa:observedProperty sosa-env:MinAmbientRelativeHumidity ;\n        sosa:hasResult [ \n          qudt:value 20.0 ;\n          qudt:hasUnit unit:PERCENT ;\n        ] ;\n      ] , [\n        sosa:observedProperty sosa-env:MaxAmbientRelativeHumidity ;\n        sosa:hasResult [ \n          qudt:value 80.0 ;\n          qudt:hasUnit unit:PERCENT ;\n        ] ;\n      ]\n    ]\n.\n"
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example InkBird-IBS-TH2-survivable-conditions.ttl",
+      "base-output-filename": "InkBird-IBS-TH2-survivable-conditions",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/InkBird-IBS-TH2-survivable-conditions.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/InkBird-IBS-TH2-survivable-conditions.ttl",
+          "sizeBytes": 1093,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix qudt: <http://qudt.org/schema/qudt/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix unit: <http://qudt.org/vocab/unit/> .\n@prefix sosa-env: <http://www.w3.org/ns/sosa/system-environment-properties#> .\n\nex:InkBird-IBS-TH2 a owl:Class;\n    rdfs:label \"Inkbird IBS-TH2\"@en ;\n.\n\nex:InkBird-IBS-TH2-0354313547 a ex:InkBird-IBS-TH2 ;\n    rdfs:label \"Inkbird IBS-TH2 instance 0354313547\"@en ;\n    sosa:hasOperatingConditions ex:IBSTH2SurvivalRange ;\n.\n\nex:IBSTH2SurvivalRange a sosa:ObservationCollection , sosa:SurvivableConditions ;\n    rdfs:label \"Inkbird IBS-TH2 Failiure limits\"@en ;\n    sosa:hasMember [\n      sosa:observedProperty sosa-env:MinAmbientTemperature ;\n      sosa:hasResult [ \n        qudt:value -273.0 ;\n        qudt:hasUnit unit:DEG_C ;\n      ] ;\n    ] , [\n      sosa:observedProperty sosa-env:MaxAmbientTemperature ;\n      sosa:hasResult [ \n        qudt:value 80.0 ;\n        qudt:hasUnit unit:DEG_C ;\n      ] ;\n    ]\n."
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example battery-lifetime.ttl",
+      "base-output-filename": "battery-lifetime",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/battery-lifetime.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/battery-lifetime.ttl",
+          "sizeBytes": 963,
+          "code": "@prefix ex:   <http://example.org/>.\n@prefix sosa: <https://www.w3.org/TR/vocab-ssn/>.\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.\n@prefix qudt: <http://qudt.org/schema/qudt/>.\n@prefix unit: <http://qudt.org/vocab/unit/>.\n@prefix iop:  <https://w3id.org/iadopt/ont/>.\n@prefix uom: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .\n@prefix sosa-cap: <http://www.w3.org/ns/sosa/system-capability-properties#> .\n\nex:AABattery a sosa:Battery ;\n  rdfs:label \"An AA battery.\" .\n\nex:sensor a sosa:Sensor;\n  sosa:hasSubSystem ex:AABattery .\n\nex:nominalLifetimeRestriction a iop:Variable, sosa:Property;\n  iop:hasStatisticalModifier uom:average ;\n  iop:hasObjectOfInterest ex:AABattery ;\n  iop:hasProperty sosa-cap:BatteryLifetime .\n  \nex:nominalLifetime a sosa:Observation ;\n  sosa:hasFeatureOfInterest ex:sensor ;\n  sosa:observedProperty ex:nominalLifetimeRestriction ;\n  sosa:hasResult [ \n    qudt:value 1.0 ;\n    qudt:hasUnit unit:YR ;\n  ] ;\n.\n"
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example dqv.ttl",
+      "base-output-filename": "dqv",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/dqv.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/dqv.ttl",
+          "sizeBytes": 951,
+          "code": "@prefix ex:   <http://example.org/>.\n@prefix sosa: <https://www.w3.org/TR/vocab-ssn/>.\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#>.\n@prefix qudt: <http://qudt.org/schema/qudt/>.\n@prefix unit: <http://qudt.org/vocab/unit/>.\n@prefix sosa-cap: <http://www.w3.org/ns/sosa/system-capability-properties#> .\n@prefix sosa-env: <http://www.w3.org/ns/sosa/system-environment-properties#> .\n\nex:observation_233 a sosa:Observation ;\n  sosa:hasFeatureOfInterest ex:TheAir;\n  sosa:observedProperty sosa-env:AmbientTemperature;\n  sosa:madeBySensor ex:TemperatureSensor ;\n  sosa:resultQuality ex:observation_233_MeasurementAccuracy ;\n  sosa:hasResult [ \n    qudt:value 21.4 ;\n    qudt:hasUnit unit:DEG_C ;\n  ] ;\n.\n   \nex:observation_233_MeasurementAccuracy a sosa:Observation ;\n  sosa:hasFeatureOfInterest ex:observation_233 ;\n  sosa:observedProperty sosa-cap:TemperatureAccuracy ;\n  sosa:hasResult [ \n    qudt:value 1.5 ;\n    qudt:hasUnit unit:DEG_C ;\n  ] ;\n.\n"
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example i-adopt.ttl",
+      "base-output-filename": "i-adopt",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/i-adopt.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/i-adopt.ttl",
+          "sizeBytes": 724,
+          "code": "@prefix ex:   <http://example.org/>.\n@prefix sosa: <https://www.w3.org/TR/vocab-ssn/>.\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#>.\n@prefix qudt: <http://qudt.org/schema/qudt/>.\n@prefix unit: <http://qudt.org/vocab/unit/>.\n@prefix iop:  <https://w3id.org/iadopt/ont/>.\n@prefix uom:  <http://www.opengis.net/def/uom/OGC/1.0/>.\n\nex:SensorCapabilityObservation a sosa:Observation ;\n  sosa:hasFeatureOfInterest ex:Sensor ;\n  sosa:observedProperty ex:SensorMinimumLimit;\n  sosa:hasResult [ \n    qudt:value -40.0 ;\n    qudt:hasUnit unit:DEG_C ;\n  ] ;\n.\n\nex:SensorMinimumLimit a iop:Variable, sosa:Property;\n  iop:hasStatisticalModifier uom:minimum ;\n  iop:hasObjectOfInterest ex:air ;\n  iop:hasProperty qudt:Temperature ;\n.\n"
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example PlannedDeployment.ttl",
+      "base-output-filename": "PlannedDeployment",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/PlannedDeployment.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/PlannedDeployment.ttl",
+          "sizeBytes": 843,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n\nex:SamDepG a sosa:Deployment ;\n    sosa:hasFeatureOfInterest ex:Loire_River ;\n    sosa:deployedOnPlatform ex:LOIRE_A_JARGEAU_WQ_Station ; \n    sosa:deployedSystem ex:SA56 ;\n    sosa:startTime \"2026-05-01T00:00:00\"^^xsd:dateTime ; \n    sosa:endTime \"2028-04-30T23:59:00\"^^xsd:dateTime ;\n.\nex:Loire_River\n    a sosa:FeatureOfInterest ;  \n.\nex:LOIRE_A_JARGEAU_WQ_Station \n    a sosa:Platform ;  \n. \nex:SA56 \n    a sosa:Sampler ;\n    sosa:implements ex:Sp-A56 ;\n    sosa:isHostedBy ex:LOIRE_A_JARGEAU_WQ_Station ;\n    sosa:madeSamplingHasResult ex:SC-LaJ1 ;\n.\nex:Sp-A56 \n    a sosa:SamplingProcedure ;\n. \nex:SC-LaJ1\n    a sosa:SampleCollection ;\n.\n"
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example PlannedObservationCollection.ttl",
+      "base-output-filename": "PlannedObservationCollection",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/PlannedObservationCollection.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/PlannedObservationCollection.ttl",
+          "sizeBytes": 680,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix qk: <http://qudt.org/vocab/quantitykind/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n\nex:ObsColpH a sosa:ObservationCollection ;\n    sosa:hasUltimateFeatureOfInterest ex:Loire_River ; \n    sosa:observedProperty qk:PH ;\n    sosa:usedProcedure ex:pH-A56 ;\n    sosa:hasFeatureOfInterest ex:SC-LaJ2 ;\n.\nex:Loire_River\n    a sosa:FeatureOfInterest ;  \n.\nqk:PH \n    a sosa:Property ;\n. \nex:pH-A56 \n    a sosa:ObservingProcedure ;\n.\nex:SC-LaJ2 \n    a sosa:SampleCollection ;\n    rdfs:comment \"described above\" ;    \n."
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example PlannedSampleCollection.ttl",
+      "base-output-filename": "PlannedSampleCollection",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/PlannedSampleCollection.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/PlannedSampleCollection.ttl",
+          "sizeBytes": 588,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n\nex:SC-LaJ2 a sosa:SampleCollection ;\n    sosa:isSampleOf ex:Loire_River ;  \n    sosa:isResultOfMadeBySampler [\n        a sosa:Sampler ;  \n        sosa:implements ex:Sp-A56 ; \n        sosa:isHostedBy ex:LOIRE_A_JARGEAU_WQ_Station ;\n    ] ;\n    sosa:isResultOfUsedProcedure ex:Sp-A56 ;\n.\nex:Loire_River\n    a sosa:FeatureOfInterest ;  \n.\nex:Sp-A56 \n    a sosa:SamplingProcedure ;\n. \nex:LOIRE_A_JARGEAU_WQ_Station \n    a sosa:Platform ;  \n. \n"
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example UOM-qudt-collection.ttl",
+      "base-output-filename": "UOM-qudt-collection",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/UOM-qudt-collection.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/UOM-qudt-collection.ttl",
+          "sizeBytes": 1188,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix qk: <http://qudt.org/vocab/quantitykind/> .\n@prefix qudt: <http://qudt.org/schema/qudt/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix time: <http://www.w3.org/2006/time#> .\n@prefix unit: <http://qudt.org/vocab/unit/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:OCa134\n  a sosa:ObservationCollection ;\n  sosa:hasFeatureOfInterest ex:apt134 ;\n  sosa:observedProperty qk:Temperature ;\n  qudt:hasUnit unit:DEG_C ;\n  sosa:hasMember ex:OCa134t1 , ex:OCa134t2 , ex:OCa134t3 ;\n.\n\nex:OCa134t1\n  a sosa:Observation ;\n  sosa:phenomenonTime  [ time:inXSDDateTime \"2017-04-15T09:00:00+00:00\"^^xsd:dateTime ] ;\n  sosa:hasSimpleResult 22.5 ;\n.\nex:OCa134t2\n  a sosa:Observation ;\n  sosa:phenomenonTime  [ time:inXSDDateTime \"2017-04-15T09:15:00+00:00\"^^xsd:dateTime ] ;\n  sosa:hasSimpleResult 24.9 ;\n.\nex:OCa134t3\n  a sosa:Observation ;\n  sosa:phenomenonTime  [ time:inXSDDateTime \"2017-04-15T09:30:00+00:00\"^^xsd:dateTime ] ;\n  sosa:hasSimpleResult 21.3 ;\n.\n\nunit:DEG_C \n  a qudt:hasUnit ;\n.\nex:apt134\n  a sosa:FeatureOfInterest ;\n.\nqk:Temperature\n  a sosa:Property ;\n."
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example bubble-provenance.ttl",
+      "base-output-filename": "bubble-provenance",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/bubble-provenance.ttl",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/bubble-provenance.ttl",
+          "sizeBytes": 1839,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix geo: <http://www.opengis.net/ont/geosparql#> .\n@prefix orcid: <https://orcid.org/> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix qudt: <http://qudt.org/schema/qudt/> .\n@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix unit: <http://qudt.org/vocab/unit/>.\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n\nex:IceCore12 a sosa:Sample , sosa:MaterialSample ;\n  sosa:isSampleOf ex:Antarctic_ice_sheet ;\n  sosa:isResultOf ex:WellDrilling4578 ;\n.\nex:Bubble873 a sosa:Sample , sosa:MaterialSample ;\n  sosa:isSampleOf ex:IceCore12 , ex:EarthAtmosphere;\n  sosa:isSampleOfUltimateFOI ex:Antarctic_ice_sheet ;\n  sosa:isResultOf ex:CoreEx1923 ;\n.\nex:WellDrilling4578 a sosa:Sampling ;\n  geo:hasGeometry [ \n    a geo:Point ;\n    geo:asWKT \"POINT (9.32 -73.35)\"^^geo:WktLiteral ;\n  ] ;\n  sosa:hasResult ex:IceCore12 ;\n  sosa:madeBySampler ex:ThermalDrill2 ;\n  sosa:resultTime \"2017-04-03T11:12:00+00:00\"^^xsd:dateTime ;\n  sosa:hasFeatureOfInterest ex:Antarctic_ice_sheet ;\n.\nex:CoreEx1923 a sosa:Sampling ;\n  sosa:hasInputValue [\n    ex:offset [\n      a qudt:QuantityValue ;\n      qudt:hasUnit unit:M ;\n      qudt:value 15.202 ;\n    ] ;\n  ] ;\n  sosa:hasResult ex:Bubble873 ;\n  sosa:madeBySampler orcid:0000-0002-3884-3420 ;\n  sosa:resultTime \"2018-01-09T14:12:00+00:00\"^^xsd:dateTime ;\n  sosa:hasFeatureOfInterest ex:IceCore12 ;\n  sosa:hasUltimateFeatureOfInterest ex:Antarctic_ice_sheet ;\n.\nex:Antarctic_ice_sheet a sosa:FeatureOfInterest ;\n  skos:exactMatch <https://www.wikidata.org/wiki/Q571430> ;\n. \nex:EarthAtmosphere a sosa:FeatureOfInterest ;\n  skos:exactMatch <https://www.wikidata.org/wiki/Q3230> ;\n. \n"
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    }
+  ],
+  "examplePrefixes": {
+    "cdt": "http://w3id.org/lindt/custom_datatypes#",
+    "equipment": "https://rdf.ag/o/equipment/",
+    "ex": "https://example.org/data/",
+    "geo": "http://www.opengis.net/ont/geosparql#",
+    "gr": "http://purl.org/goodrelations/v1#",
+    "gs1": "https://gs1.org/voc/",
+    "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "qk": "http://qudt.org/vocab/quantitykind/",
+    "qudt": "http://qudt.org/schema/qudt/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfp": "https://w3id.org/rdfp/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "seas": "https://w3id.org/seas/",
+    "sensor": "https://example.org/sensor/",
+    "sh": "http://www.w3.org/ns/shacl",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "sosa": "http://www.w3.org/ns/sosa/",
+    "system": "http://www.w3.org/ns/ssn/systems/",
+    "time": "http://www.w3.org/2006/time#",
+    "unit": "http://qudt.org/vocab/unit/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "annotatedSchema": null,
+  "gitRepository": "https://github.com/opengeospatial/ogcapi-sosa",
+  "gitPath": "_sources/spec-examples"
+}

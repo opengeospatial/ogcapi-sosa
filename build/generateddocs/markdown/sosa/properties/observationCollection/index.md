@@ -96,47 +96,194 @@ Collection of one or more observations, whose members share a common value for o
         .
 ```
 
+
+### Nested SOSA ObservationCollection with differing observed properties per sub-collection
+An ObservationCollection member can itself be another ObservationCollection.
+Here the outer collection shares a common `resultTime` and `hasFeatureOfInterest`
+across all descendants, while each inner sub-collection declares its own
+`observedProperty`, applied to its own member observations.
+#### json
+```json
+{
+  "resultTime": "2022-05-01T22:33:44Z",
+  "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
+  "hasMember": [
+    {
+      "@id": "temperature-collection",
+      "@type": "sosa:ObservationCollection",
+      "comment": "Sub-collection of temperature observations",
+      "observedProperty": "temperature",
+      "hasMember": [
+        {
+          "@id": "obs-temp-1",
+          "@type": "sosa:Observation",
+          "phenomenonTime": "2022-05-01T22:33:40Z",
+          "hasSimpleResult": 21.4
+        },
+        {
+          "@id": "obs-temp-2",
+          "@type": "sosa:Observation",
+          "phenomenonTime": "2022-05-01T22:34:10Z",
+          "hasSimpleResult": 21.6
+        }
+      ]
+    },
+    {
+      "@id": "humidity-collection",
+      "@type": "sosa:ObservationCollection",
+      "comment": "Sub-collection of humidity observations",
+      "observedProperty": "humidity",
+      "hasMember": [
+        {
+          "@id": "obs-hum-1",
+          "@type": "sosa:Observation",
+          "phenomenonTime": "2022-05-01T22:33:40Z",
+          "hasSimpleResult": 58.2
+        },
+        {
+          "@id": "obs-hum-2",
+          "@type": "sosa:Observation",
+          "phenomenonTime": "2022-05-01T22:34:10Z",
+          "hasSimpleResult": 57.9
+        }
+      ]
+    }
+  ]
+}
+```
+
+#### jsonld
+```jsonld
+{
+  "@context": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/context.jsonld",
+  "resultTime": "2022-05-01T22:33:44Z",
+  "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
+  "hasMember": [
+    {
+      "@id": "temperature-collection",
+      "@type": "sosa:ObservationCollection",
+      "comment": "Sub-collection of temperature observations",
+      "observedProperty": "temperature",
+      "hasMember": [
+        {
+          "@id": "obs-temp-1",
+          "@type": "sosa:Observation",
+          "phenomenonTime": "2022-05-01T22:33:40Z",
+          "hasSimpleResult": 21.4
+        },
+        {
+          "@id": "obs-temp-2",
+          "@type": "sosa:Observation",
+          "phenomenonTime": "2022-05-01T22:34:10Z",
+          "hasSimpleResult": 21.6
+        }
+      ]
+    },
+    {
+      "@id": "humidity-collection",
+      "@type": "sosa:ObservationCollection",
+      "comment": "Sub-collection of humidity observations",
+      "observedProperty": "humidity",
+      "hasMember": [
+        {
+          "@id": "obs-hum-1",
+          "@type": "sosa:Observation",
+          "phenomenonTime": "2022-05-01T22:33:40Z",
+          "hasSimpleResult": 58.2
+        },
+        {
+          "@id": "obs-hum-2",
+          "@type": "sosa:Observation",
+          "phenomenonTime": "2022-05-01T22:34:10Z",
+          "hasSimpleResult": 57.9
+        }
+      ]
+    }
+  ]
+}
+```
+
+#### ttl
+```ttl
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.com/humidity-collection> a sosa:ObservationCollection ;
+    sosa:hasMember <http://example.com/obs-hum-1>,
+        <http://example.com/obs-hum-2> ;
+    sosa:observedProperty <http://example.com/humidity> .
+
+<http://example.com/obs-hum-1> a sosa:Observation ;
+    sosa:hasSimpleResult 5.82e+01 ;
+    sosa:phenomenonTime <2022-05-01T22:33:40Z> .
+
+<http://example.com/obs-hum-2> a sosa:Observation ;
+    sosa:hasSimpleResult 5.79e+01 ;
+    sosa:phenomenonTime <2022-05-01T22:34:10Z> .
+
+<http://example.com/obs-temp-1> a sosa:Observation ;
+    sosa:hasSimpleResult 2.14e+01 ;
+    sosa:phenomenonTime <2022-05-01T22:33:40Z> .
+
+<http://example.com/obs-temp-2> a sosa:Observation ;
+    sosa:hasSimpleResult 2.16e+01 ;
+    sosa:phenomenonTime <2022-05-01T22:34:10Z> .
+
+<http://example.com/temperature-collection> a sosa:ObservationCollection ;
+    sosa:hasMember <http://example.com/obs-temp-1>,
+        <http://example.com/obs-temp-2> ;
+    sosa:observedProperty <http://example.com/temperature> .
+
+[] sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
+    sosa:hasMember <http://example.com/humidity-collection>,
+        <http://example.com/temperature-collection> ;
+    sosa:resultTime "2022-05-01T22:33:44Z" .
+
+
+```
+
 ## Schema
 
 ```yaml
 $schema: https://json-schema.org/draft/2020-12/schema
 description: SOSA ObservationCollection
 $defs:
+  oneOrMany:
+    oneOf:
+    - type:
+      - object
+      - string
+    - type: array
+      items:
+        type:
+        - object
+        - string
   collection:
     type: object
     properties:
       resultTime:
-        type: string
-        format: date-time
-        x-jsonld-id: http://www.w3.org/ns/sosa/resultTime
-      phenomenonTime:
         type:
         - object
         - string
+        x-jsonld-id: http://www.w3.org/ns/sosa/resultTime
+      phenomenonTime:
+        $ref: '#/$defs/oneOrMany'
         x-jsonld-id: http://www.w3.org/ns/sosa/phenomenonTime
         x-jsonld-type: '@id'
       hasFeatureOfInterest:
-        type:
-        - object
-        - string
+        $ref: '#/$defs/oneOrMany'
         x-jsonld-id: http://www.w3.org/ns/sosa/hasFeatureOfInterest
         x-jsonld-type: '@id'
       observedProperty:
-        type:
-        - object
-        - string
+        $ref: '#/$defs/oneOrMany'
         x-jsonld-id: http://www.w3.org/ns/sosa/observedProperty
         x-jsonld-type: '@id'
       usedProcedure:
-        type:
-        - object
-        - string
+        $ref: '#/$defs/oneOrMany'
         x-jsonld-id: http://www.w3.org/ns/sosa/usedProcedure
         x-jsonld-type: '@id'
       madeBySensor:
-        type:
-        - object
-        - string
+        $ref: '#/$defs/oneOrMany'
         x-jsonld-id: http://www.w3.org/ns/sosa/madeBySensor
         x-jsonld-type: '@id'
       hasMember:

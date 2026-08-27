@@ -1,0 +1,20 @@
+@prefix ex: <https://example.org/data/> .
+@prefix qk: <http://qudt.org/vocab/quantitykind/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+
+ex:ObsColpH a sosa:ObservationCollection ;
+    sosa:hasFeatureOfInterest ex:SC-LaJ2 ;
+    sosa:hasUltimateFeatureOfInterest ex:Loire_River ;
+    sosa:observedProperty qk:PH ;
+    sosa:usedProcedure ex:pH-A56 .
+
+qk:PH a sosa:Property .
+
+ex:Loire_River a sosa:FeatureOfInterest .
+
+ex:SC-LaJ2 a sosa:SampleCollection ;
+    rdfs:comment "described above" .
+
+ex:pH-A56 a sosa:ObservingProcedure .
+
