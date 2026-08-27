@@ -1,37 +1,17 @@
+@prefix cdt: <http://w3id.org/lindt/custom_datatypes#> .
 @prefix ex: <https://example.org/data/> .
+@prefix qk: <http://qudt.org/vocab/quantitykind/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix time: <http://www.w3.org/2006/time#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ex:CSV a rdfs:DataType ;
-    rdfs:comment """This datatype is an informative example only, 
-  and is not part of the SSN Ontology."""@en ;
-    skos:definition """An N-D vector, each row representing a 
-  member composed of N comma-separated values."""@en .
+cdt:ucum a rdfs:Datatype .
 
-ex:ts159i a sosa:Observation ;
-    rdfs:comment """The result of the observation is encoded as a CSV literal.  
-  In this example, the CSV has four rows each representing a member of the time-series.  
-  Each member value is composed of a timestamp, and a quantity in metres per second."""@en ;
-    sosa:hasFeatureOfInterest ex:station223 ;
-    sosa:hasSimpleResult """2017-04-15T20:00:00+00:00,3.24
-  2017-04-15T20:01:00+00:00,3.21
-  2017-04-15T20:02:00+00:00,3.15
-  2017-04-15T20:03:00+00:00,3.15"""^^ex:CSV ;
-    sosa:madeBySensor ex:fooglemeter39 ;
-    sosa:observedProperty ex:p1 ;
-    sosa:phenomenonTime [ a time:Interval ;
-            time:hasBeginning [ a time:Instant ;
-                    time:inXSDDateTime "2017-04-15T20:00:00+00:00"^^xsd:dateTime ] ;
-            time:hasEnd [ a time:Instant ;
-                    time:inXSDDateTime "2017-04-15T20:03:00+00:00"^^xsd:dateTime ] ] ;
-    sosa:resultTime "2017-04-15T20:03:30+00:00"^^xsd:dateTime .
+ex:Obs234534 a sosa:Observation ;
+    sosa:hasFeatureOfInterest ex:apt134 ;
+    sosa:hasSimpleResult "24.9 Cel"^^cdt:ucum ;
+    sosa:observedProperty qk:Temperature .
 
-ex:fooglemeter39 a sosa:Sensor .
+qk:Temperature a sosa:Property .
 
-ex:p1 a sosa:Property .
-
-ex:station223 a sosa:FeatureOfInterest .
+ex:apt134 a sosa:FeatureOfInterest .
 

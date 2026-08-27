@@ -50,20 +50,6 @@ _:a1 a sosa:Observation ;
 }
 ```
 
-#### ttl
-```ttl
-@prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-[] a sosa:Observation ;
-    sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
-    sosa:hasSimpleResult 33 ;
-    sosa:observedProperty <http://example.com/p1> ;
-    sosa:resultTime "2022-05-01T22:33:44+00:00"^^xsd:dateTime .
-
-
-```
-
 
 ### Example of SOSA observation with object result
 #### json
@@ -449,27 +435,6 @@ Links to the schema:
 ```jsonld
 {
   "@context": {
-    "resultTime": "sosa:resultTime",
-    "phenomenonTime": {
-      "@id": "sosa:phenomenonTime",
-      "@type": "@id"
-    },
-    "hasFeatureOfInterest": {
-      "@id": "sosa:hasFeatureOfInterest",
-      "@type": "@id"
-    },
-    "observedProperty": {
-      "@id": "sosa:observedProperty",
-      "@type": "@id"
-    },
-    "usedProcedure": {
-      "@id": "sosa:usedProcedure",
-      "@type": "@id"
-    },
-    "madeBySensor": {
-      "@id": "sosa:madeBySensor",
-      "@type": "@id"
-    },
     "id": "@id",
     "properties": "@nest",
     "featureType": "@type",
@@ -833,6 +798,27 @@ Links to the schema:
     },
     "qualityOfObservation": {
       "@id": "ssn-system:qualityOfObservation",
+      "@type": "@id"
+    },
+    "resultTime": "sosa:resultTime",
+    "phenomenonTime": {
+      "@id": "sosa:phenomenonTime",
+      "@type": "@id"
+    },
+    "hasFeatureOfInterest": {
+      "@id": "sosa:hasFeatureOfInterest",
+      "@type": "@id"
+    },
+    "observedProperty": {
+      "@id": "sosa:observedProperty",
+      "@type": "@id"
+    },
+    "usedProcedure": {
+      "@id": "sosa:usedProcedure",
+      "@type": "@id"
+    },
+    "madeBySensor": {
+      "@id": "sosa:madeBySensor",
       "@type": "@id"
     },
     "sosa": "http://www.w3.org/ns/sosa/",

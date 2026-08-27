@@ -17,11 +17,12 @@ Collection of one or more observations, whose members share a common value for o
 ### Example of SOSA ObservationCollection
 #### json
 ```json
-{ 
+{
+  "id": "myObsCollection",
   "observedProperty": "p1",
   "resultTime": "2022-05-01T22:33:44Z",
   "hasMember": [
-    { 
+    {
       "@id": "a1",
       "@type": "sosa:Observation",
       "comment": "Example of an inline membership - would entail hasMember relations",
@@ -37,6 +38,7 @@ Collection of one or more observations, whose members share a common value for o
 ```jsonld
 {
   "@context": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/context.jsonld",
+  "id": "myObsCollection",
   "observedProperty": "p1",
   "resultTime": "2022-05-01T22:33:44Z",
   "hasMember": [
@@ -57,14 +59,14 @@ Collection of one or more observations, whose members share a common value for o
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<http://example.com/myObsCollection> sosa:hasMember <http://example.com/a1> ;
+    sosa:observedProperty <http://example.com/p1> ;
+    sosa:resultTime "2022-05-01T22:33:44Z" .
+
 <http://example.com/a1> a sosa:Observation ;
     sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
     sosa:hasSimpleResult 1.9952e+03 ;
     sosa:phenomenonTime <2022-05-01T22:33:40Z> .
-
-[] sosa:hasMember <http://example.com/a1> ;
-    sosa:observedProperty <http://example.com/p1> ;
-    sosa:resultTime "2022-05-01T22:33:44Z" .
 
 
 ```
@@ -74,24 +76,24 @@ Collection of one or more observations, whose members share a common value for o
 #### ttl
 ```ttl
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix eg: <http://example.org/my-feature/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+        @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+        @prefix eg: <http://example.org/my-feature/> .
+        @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-eg:c1 a sosa:ObservationCollection ;
-  sosa:hasMember eg:a1 ;
-  sosa:observedProperty eg:p1 ;
-  sosa:resultTime "2022-05-01T22:33:44Z"^^xsd:dateTime ;
-  sosa:phenomenonTime "2022-05-01T22:33:40Z"^^xsd:dateTime ;
-.
+        eg:c1 a sosa:ObservationCollection ;
+          sosa:hasMember eg:a1 ;
+          sosa:observedProperty eg:p1 ;
+          sosa:resultTime "2022-05-01T22:33:44Z"^^xsd:dateTime ;
+          sosa:phenomenonTime "2022-05-01T22:33:40Z"^^xsd:dateTime ;
+        .
 
-eg:a1 a sosa:Observation ;
-  sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
-  sosa:hasSimpleResult 33 ;
-.
-eg:p1 a skos:Concept;
-  skos:prefLabel "Some Observable Property";
-.
+        eg:a1 a sosa:Observation ;
+          sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
+          sosa:hasSimpleResult 33 ;
+        .
+        eg:p1 a skos:Concept;
+          skos:prefLabel "Some Observable Property";
+        .
 ```
 
 ## Schema

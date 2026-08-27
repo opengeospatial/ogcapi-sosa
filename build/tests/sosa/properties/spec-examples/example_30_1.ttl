@@ -1,21 +1,34 @@
+@prefix cdt: <http://w3id.org/lindt/custom_datatypes#> .
 @prefix ex: <https://example.org/data/> .
-@prefix iop: <https://w3id.org/iadopt/ont/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix qk: <http://qudt.org/vocab/quantitykind/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sensor: <https://example.org/sensor/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 
-ex:SickChild a iop:Constraint ;
-    skos:definition "Sick Child"@en ;
-    iop:Constrains ex:Child .
+ex:SickChildATempObs a sosa:Observation ;
+    sosa:hasFeatureOfInterest ex:SickChildA ;
+    sosa:hasSimpleResult "38.2 Cel"^^cdt:ucum ;
+    sosa:madeBySensor ex:Mums-clinical-thermometer ;
+    sosa:observedProperty qk:Temperature .
 
-ex:SickChildTemperature a sosa:Property,
-        iop:Variable ;
-    iop:hasConstraint iop:SickChild ;
-    iop:hasObjectOfInterest ex:Child ;
-    iop:hasProperty qk:Temperature .
+ex:Mums-clinical-thermometer a sosa:Sensor,
+        sensor:Mercury-in-glass-thermometer,
+        sensor:TemperatureSensor .
 
-qk:Temperature a sosa:Property,
-        iop:Property .
+ex:SickChildA a sosa:FeatureOfInterest .
 
-ex:Child a iop:Entity .
+sensor:Mercury-in-glass-thermometer a owl:Class ;
+    rdfs:label "Mercury in glass thermometer" ;
+    rdfs:comment "Temperature sensor based on the expansion of a column of mercury inside a glass tube" ;
+    rdfs:subClassOf sensor:TemperatureSensor .
+
+qk:Temperature a sosa:Property .
+
+sensor:TemperatureSensor a owl:Class ;
+    rdfs:label "A generic temperature sensor" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:hasValue qk:Temperature ;
+            owl:onProperty sosa:observes ],
+        sosa:Sensor .
 

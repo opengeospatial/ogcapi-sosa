@@ -1,25 +1,18 @@
 @prefix ex: <https://example.org/data/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qk: <http://qudt.org/vocab/quantitykind/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix time: <http://www.w3.org/2006/time#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ex:ts159l a sosa:Observation ;
-    rdfs:comment "The result of the observation is accessed using the URI https://example.org/data/tso/netcdf/ts159 (notional)."@en ;
-    sosa:hasFeatureOfInterest ex:station223 ;
-    sosa:hasResult <https://example.org/data/tso/netcdf/ts159> ;
-    sosa:madeBySensor ex:fooglemeter39 ;
-    sosa:observedProperty ex:p1 ;
-    sosa:phenomenonTime [ a time:Interval ;
-            time:hasBeginning [ a time:Instant ;
-                    time:inXSDDateTime "2017-04-15T20:00:00+00:00"^^xsd:dateTime ] ;
-            time:hasEnd [ a time:Instant ;
-                    time:inXSDDateTime "2017-04-15T20:03:00+00:00"^^xsd:dateTime ] ] ;
-    sosa:resultTime "2017-04-15T20:03:30+00:00"^^xsd:dateTime .
+ex:Obs234534 a sosa:Observation ;
+    sosa:hasFeatureOfInterest ex:apt134 ;
+    sosa:hasResult [ a qudt:QuantityValue ;
+            qudt:hasUnit unit:DEG_C ;
+            qudt:value 24.9 ] ;
+    sosa:observedProperty qk:Temperature .
 
-ex:fooglemeter39 a sosa:Sensor .
+qk:Temperature a sosa:Property .
 
-ex:p1 a sosa:Property .
-
-ex:station223 a sosa:FeatureOfInterest .
+ex:apt134 a sosa:FeatureOfInterest .
 

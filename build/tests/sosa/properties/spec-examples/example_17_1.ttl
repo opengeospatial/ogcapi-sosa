@@ -1,17 +1,13 @@
 @prefix ex: <https://example.org/data/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ex:Room31C a sosa:Platform ;
+ex:EarthAtmosphere_StE a sosa:Sample ;
     geo:hasGeometry [ a geo:Point ;
-            geo:asWKT "POINT (-73.877244 45.511672)"^^geo:WktLiteral ] ;
-    sosa:hosts ex:IBS-TH2-56 .
+            geo:asWKT "POINT (4.387611 45.437772)"^^geo:WktLiteral ] ;
+    sosa:isSampleOf ex:EarthAtmosphere .
 
-ex:serialNumber a rdfs:Datatype ;
-    rdfs:subClassOf xsd:string .
-
-ex:IBS-TH2-56 a sosa:Sensor ;
-    rdfs:label "12gth456a-23190"^^ex:serialNumber .
+ex:EarthAtmosphere a sosa:FeatureOfInterest ;
+    skos:exactMatch <https://www.wikidata.org/wiki/Q3230> .
 

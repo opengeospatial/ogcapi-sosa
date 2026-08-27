@@ -1,12 +1,47 @@
+@prefix cdt: <http://w3id.org/lindt/custom_datatypes#> .
 @prefix ex: <https://example.org/data/> .
-@prefix qk: <http://qudt.org/vocab/quantitykind/> .
-@prefix saref: <https://saref.etsi.org/core/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ex:SickChildATemperature a saref:PropertyOfInterest ;
-    saref:hasPropertyKind qk:Temperature ;
-    saref:isPropertyOfInterestOf ex:SickChildA .
+ex:ts159c a sosa:ObservationCollection ;
+    sosa:hasFeatureOfInterest ex:station223 ;
+    sosa:hasMember ex:t1,
+        ex:t2,
+        ex:t3,
+        ex:t4 ;
+    sosa:madeBySensor ex:fooglemeter39 ;
+    sosa:observedProperty ex:p1 ;
+    sosa:phenomenonTime [ a time:Interval ;
+            time:hasBeginning [ a time:Instant ;
+                    time:inXSDDateTime "2017-04-15T20:00:00+00:00"^^xsd:dateTime ] ;
+            time:hasEnd [ a time:Instant ;
+                    time:inXSDDateTime "2017-04-15T20:03:00+00:00"^^xsd:dateTime ] ] ;
+    sosa:resultTime "2017-04-15T20:03:30+00:00"^^xsd:dateTime .
 
-qk:Temperature a saref:Property .
+ex:fooglemeter39 a sosa:Sensor .
 
-ex:SickChildA a saref:FeatureOfInterest .
+ex:p1 a sosa:Property .
+
+ex:station223 a sosa:FeatureOfInterest .
+
+ex:t1 a sosa:Observation ;
+    sosa:hasSimpleResult "3.24 m/s"^^cdt:ucum ;
+    sosa:phenomenonTime [ a time:Instant ;
+            time:inXSDDateTime "2017-04-15T20:00:00+00:00"^^xsd:dateTime ] .
+
+ex:t2 a sosa:Observation ;
+    sosa:hasSimpleResult "3.21 m/s"^^cdt:ucum ;
+    sosa:phenomenonTime [ a time:Instant ;
+            time:inXSDDateTime "2017-04-15T20:01:00+00:00"^^xsd:dateTime ] .
+
+ex:t3 a sosa:Observation ;
+    sosa:hasSimpleResult "3.15 m/s"^^cdt:ucum ;
+    sosa:phenomenonTime [ a time:Instant ;
+            time:inXSDDateTime "2017-04-15T20:02:00+00:00"^^xsd:dateTime ] .
+
+ex:t4 a sosa:Observation ;
+    sosa:hasSimpleResult "3.15 m/s"^^cdt:ucum ;
+    sosa:phenomenonTime [ a time:Instant ;
+            time:inXSDDateTime "2017-04-15T20:03:00+00:00"^^xsd:dateTime ] .
 

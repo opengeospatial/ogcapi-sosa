@@ -2,12 +2,11 @@
 @prefix ex: <https://example.org/data/> .
 @prefix gs1: <https://gs1.org/voc/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix qk: <http://qudt.org/vocab/quantitykind/> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix seas: <https://w3id.org/seas/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix system: <http://www.w3.org/ns/ssn/systems/> .
+@prefix sosa-env: <http://www.w3.org/ns/sosa/system-environment-properties#> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -22,27 +21,33 @@ ex:InkBird-IBS-TH2 a owl:Class ;
         seas:BluetoothCommunicationDevice ;
     gs1:pip <https://inkbird.com/products/hygrometer-ibs-th2> .
 
-ex:IBSTH2SurvivalRange a system:SurvivalRange ;
+ex:IBSTH2SurvivalRange a sosa:ObservationCollection,
+        sosa:SurvivableConditions ;
     rdfs:label "Inkbird IBS-TH2 Failiure limits"@en ;
-    qudt:unit unit:DEG_C ;
-    xsd:maxInclusive "80" ;
-    xsd:minInclusive "-273" ;
-    sosa:forProperty qk:Temperature .
+    sosa:hasMember [ sosa:hasResult [ qudt:hasUnit unit:DEG_C ;
+                    qudt:value 80.0 ] ;
+            sosa:observedProperty sosa-env:MaxAmbientTemperature ],
+        [ sosa:hasResult [ qudt:hasUnit unit:DEG_C ;
+                    qudt:value -273.0 ] ;
+            sosa:observedProperty sosa-env:MinAmbientTemperature ] .
 
 ex:IBSTH2TemperatureSensor rdfs:label "Inkbird IBS-TH2 built-in Temperature Sensor"@en ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:allValuesFrom ex:IBSTH2TemperatureSensorLimits ;
-            owl:onProperty system:hasOperatingRange ],
+            owl:onProperty sosa:hasOperatingConditions ],
         [ a owl:Restriction ;
             owl:allValuesFrom ex:IBSTH2SurvivalRange ;
-            owl:onProperty system:hasSurvivalRange ],
+            owl:onProperty sosa:hasOperatingConditions ],
         sosa:Sensor ;
     sosa:observes ex:airTemperature .
 
-ex:IBSTH2TemperatureSensorLimits a system:OperatingRange ;
+ex:IBSTH2TemperatureSensorLimits a sosa:NormalOperatingConditions,
+        sosa:ObservationCollection ;
     rdfs:label "Inkbird IBS-TH2 Temperature Sensor Limits"@en ;
-    qudt:unit unit:DEG_C ;
-    xsd:maxInclusive "60" ;
-    xsd:minInclusive "-40" ;
-    sosa:forProperty qk:Temperature .
+    sosa:hasMember [ sosa:hasResult [ qudt:hasUnit unit:DEG_C ;
+                    qudt:value -40.0 ] ;
+            sosa:observedProperty sosa-env:MinAmbientTemperature ],
+        [ sosa:hasResult [ qudt:hasUnit unit:DEG_C ;
+                    qudt:value 60.0 ] ;
+            sosa:observedProperty sosa-env:MaxAmbientTemperature ] .
 

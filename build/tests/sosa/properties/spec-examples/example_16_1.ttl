@@ -4,19 +4,14 @@
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ex:TH2-56-2024 a sosa:Deployment ;
-    sosa:deployedOnPlatform ex:Room31C ;
-    sosa:deployedSystem ex:IBS-TH2-56 ;
-    sosa:endTime "2024-12-31T23:59:59+00:00"^^xsd:dateTime ;
-    sosa:startTime "2024-01-01T00:00:00+00:00"^^xsd:dateTime .
+ex:Room31C a sosa:Platform ;
+    geo:hasGeometry [ a geo:Point ;
+            geo:asWKT "POINT (-73.877244 45.511672)"^^geo:WktLiteral ] ;
+    sosa:hosts ex:IBS-TH2-56 .
 
 ex:serialNumber a rdfs:Datatype ;
     rdfs:subClassOf xsd:string .
 
 ex:IBS-TH2-56 a sosa:Sensor ;
     rdfs:label "12gth456a-23190"^^ex:serialNumber .
-
-ex:Room31C a sosa:Platform ;
-    geo:hasGeometry [ a geo:Point ;
-            geo:asWKT "POINT (-73.877244 45.511672)"^^geo:WktLiteral ] .
 
