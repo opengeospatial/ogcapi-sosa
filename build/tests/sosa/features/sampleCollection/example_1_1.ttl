@@ -1,0 +1,24 @@
+@prefix geojson: <https://purl.org/geojson/vocab#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+
+<https://example.org/data/S2> sosa:isResultOfUsedProcedure <https://example.org/data/p5> .
+
+<https://example.org/data/S3> sosa:isResultOfUsedProcedure <https://example.org/data/p6> .
+
+<https://example.org/data/S4> sosa:isResultOfUsedProcedure <https://example.org/data/p5> .
+
+<https://example.org/data/S5> sosa:isResultOfUsedProcedure <https://example.org/data/p6> .
+
+<https://example.org/data/SC2> sosa:hasMember <https://example.org/data/S2>,
+        <https://example.org/data/S3> ;
+    sosa:isResultOfMadeBySampler <http://orcid.org/0000-0002-3884-3420> .
+
+<https://example.org/data/SC3> sosa:hasMember <https://example.org/data/S4>,
+        <https://example.org/data/S5> ;
+    sosa:isResultOfMadeBySampler <http://orcid.org/0000-0002-7815-2472> .
+
+[] a geojson:FeatureCollection ;
+    sosa:hasMember <https://example.org/data/SC2>,
+        <https://example.org/data/SC3> ;
+    sosa:isSampleOf <https://example.org/data/foia> .
+

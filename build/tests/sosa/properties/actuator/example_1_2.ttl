@@ -1,0 +1,20 @@
+@prefix ex: <https://example.org/data/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:window a sosa:FeatureOfInterest ;
+    sosa:hasProperty ex:window_104_state .
+
+ex:windowCloser_987 a sosa:Actuator ;
+    sosa:actsOn ex:window_104_state ;
+    sosa:madeActuation ex:actuation_188 .
+
+ex:actuation_188 a sosa:Actuation ;
+    sosa:actsOnProperty ex:window_104_state ;
+    sosa:hasSimpleResult true ;
+    sosa:madeByActuator ex:windowCloser_987 ;
+    sosa:resultTime "2017-04-18T17:24:00+02:00"^^xsd:dateTime .
+
+ex:window_104_state a sosa:Property ;
+    sosa:wasActedOnBy ex:actuation_188 .
+

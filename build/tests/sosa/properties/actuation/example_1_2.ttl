@@ -1,0 +1,23 @@
+@prefix ex: <https://example.org/data/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:A188 a sosa:Actuation ;
+    sosa:actsOnProperty ex:openState ;
+    sosa:endTime "2017-04-18T17:24:00+02:00"^^xsd:dateTime ;
+    sosa:hasFeatureOfInterest ex:window98 ;
+    sosa:hasSimpleResult true ;
+    sosa:madeByActuator ex:closer-987 ;
+    sosa:startTime "2017-04-18T17:23:00+02:00"^^xsd:dateTime .
+
+ex:WindowCloser rdfs:subClassOf sosa:Actuator .
+
+ex:closer-987 a sosa:Actuator,
+        ex:WindowCloser .
+
+ex:window98 a sosa:FeatureOfInterest ;
+    sosa:hasProperty ex:openState .
+
+ex:openState a sosa:Property .
+

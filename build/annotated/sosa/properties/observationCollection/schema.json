@@ -22,59 +22,44 @@
       ]
     },
     "collection": {
-      "type": "object",
-      "properties": {
-        "resultTime": {
-          "type": [
-            "object",
-            "string"
-          ],
-          "x-jsonld-id": "http://www.w3.org/ns/sosa/resultTime"
+      "allOf": [
+        {
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/executionCollection/schema.json"
         },
-        "phenomenonTime": {
-          "$ref": "#/$defs/oneOrMany",
-          "x-jsonld-id": "http://www.w3.org/ns/sosa/phenomenonTime",
-          "x-jsonld-type": "@id"
-        },
-        "hasFeatureOfInterest": {
-          "$ref": "#/$defs/oneOrMany",
-          "x-jsonld-id": "http://www.w3.org/ns/sosa/hasFeatureOfInterest",
-          "x-jsonld-type": "@id"
-        },
-        "observedProperty": {
-          "$ref": "#/$defs/oneOrMany",
-          "x-jsonld-id": "http://www.w3.org/ns/sosa/observedProperty",
-          "x-jsonld-type": "@id"
-        },
-        "usedProcedure": {
-          "$ref": "#/$defs/oneOrMany",
-          "x-jsonld-id": "http://www.w3.org/ns/sosa/usedProcedure",
-          "x-jsonld-type": "@id"
-        },
-        "madeBySensor": {
-          "$ref": "#/$defs/oneOrMany",
-          "x-jsonld-id": "http://www.w3.org/ns/sosa/madeBySensor",
-          "x-jsonld-type": "@id"
-        },
-        "hasMember": {
-          "type": "array",
-          "items": {
-            "anyOf": [
-              {
-                "$ref": "#/$defs/collection"
+        {
+          "type": "object",
+          "properties": {
+            "observedProperty": {
+              "$ref": "#/$defs/oneOrMany",
+              "x-jsonld-id": "http://www.w3.org/ns/sosa/observedProperty",
+              "x-jsonld-type": "@id"
+            },
+            "madeBySensor": {
+              "$ref": "#/$defs/oneOrMany",
+              "x-jsonld-id": "http://www.w3.org/ns/sosa/madeBySensor",
+              "x-jsonld-type": "@id"
+            },
+            "hasMember": {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/collection"
+                  },
+                  {
+                    "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.json"
+                  },
+                  {
+                    "$ref": "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.json"
+                  }
+                ]
               },
-              {
-                "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.json"
-              },
-              {
-                "$ref": "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.json"
-              }
-            ]
-          },
-          "x-jsonld-id": "http://www.w3.org/ns/sosa/hasMember",
-          "x-jsonld-type": "@id"
+              "x-jsonld-id": "http://www.w3.org/ns/sosa/hasMember",
+              "x-jsonld-type": "@id"
+            }
+          }
         }
-      }
+      ]
     }
   },
   "allOf": [
@@ -182,8 +167,16 @@
       "x-jsonld-id": "http://www.w3.org/ns/sosa/System",
       "x-jsonld-type": "@id"
     },
+    "actsOn": {
+      "x-jsonld-id": "http://www.w3.org/ns/sosa/actsOn",
+      "x-jsonld-type": "@id"
+    },
     "actsOnProperty": {
       "x-jsonld-id": "http://www.w3.org/ns/sosa/actsOnProperty",
+      "x-jsonld-type": "@id"
+    },
+    "deployedAsset": {
+      "x-jsonld-id": "http://www.w3.org/ns/sosa/deployedAsset",
       "x-jsonld-type": "@id"
     },
     "deployedOnPlatform": {
@@ -198,6 +191,7 @@
       "x-jsonld-id": "http://www.w3.org/ns/sosa/detects",
       "x-jsonld-type": "@id"
     },
+    "endTime": "http://www.w3.org/ns/sosa/endTime",
     "features": {
       "x-jsonld-id": "http://www.w3.org/ns/sosa/hasMember",
       "x-jsonld-type": "@id"
@@ -210,8 +204,16 @@
       "x-jsonld-id": "http://www.w3.org/ns/sosa/hasDeployment",
       "x-jsonld-type": "@id"
     },
+    "hasFeatureOfInterest": {
+      "x-jsonld-id": "http://www.w3.org/ns/sosa/hasFeatureOfInterest",
+      "x-jsonld-type": "@id"
+    },
     "hasInput": {
       "x-jsonld-id": "http://www.w3.org/ns/sosa/hasInput",
+      "x-jsonld-type": "@id"
+    },
+    "hasInputValue": {
+      "x-jsonld-id": "http://www.w3.org/ns/sosa/hasInputValue",
       "x-jsonld-type": "@id"
     },
     "hasOriginalSample": {
@@ -288,6 +290,10 @@
       "x-jsonld-id": "http://www.w3.org/ns/sosa/isObservedBy",
       "x-jsonld-type": "@id"
     },
+    "isOriginalSampleOf": {
+      "x-jsonld-id": "http://www.w3.org/ns/sosa/isOriginalSampleOf",
+      "x-jsonld-type": "@id"
+    },
     "isPropertyOf": {
       "x-jsonld-id": "http://www.w3.org/ns/sosa/isPropertyOf",
       "x-jsonld-type": "@id"
@@ -312,6 +318,14 @@
       "x-jsonld-id": "http://www.w3.org/ns/sosa/isSampleOf",
       "x-jsonld-type": "@id"
     },
+    "isSampleOfUltimateFOI": {
+      "x-jsonld-id": "http://www.w3.org/ns/sosa/isSampleOfUltimateFOI",
+      "x-jsonld-type": "@id"
+    },
+    "isSubSystemOf": {
+      "x-jsonld-id": "http://www.w3.org/ns/sosa/isSubSystemOf",
+      "x-jsonld-type": "@id"
+    },
     "madeActuation": {
       "x-jsonld-id": "http://www.w3.org/ns/sosa/madeActuation",
       "x-jsonld-type": "@id"
@@ -324,6 +338,14 @@
       "x-jsonld-id": "http://www.w3.org/ns/sosa/madeBySampler",
       "x-jsonld-type": "@id"
     },
+    "madeBySystem": {
+      "x-jsonld-id": "http://www.w3.org/ns/sosa/madeBySystem",
+      "x-jsonld-type": "@id"
+    },
+    "madeExecution": {
+      "x-jsonld-id": "http://www.w3.org/ns/sosa/madeExecution",
+      "x-jsonld-type": "@id"
+    },
     "madeObservation": {
       "x-jsonld-id": "http://www.w3.org/ns/sosa/madeObservation",
       "x-jsonld-type": "@id"
@@ -334,6 +356,16 @@
     },
     "observes": {
       "x-jsonld-id": "http://www.w3.org/ns/sosa/observes",
+      "x-jsonld-type": "@id"
+    },
+    "phenomenonTime": {
+      "x-jsonld-id": "http://www.w3.org/ns/sosa/phenomenonTime",
+      "x-jsonld-type": "@id"
+    },
+    "resultTime": "http://www.w3.org/ns/sosa/resultTime",
+    "startTime": "http://www.w3.org/ns/sosa/startTime",
+    "usedProcedure": {
+      "x-jsonld-id": "http://www.w3.org/ns/sosa/usedProcedure",
       "x-jsonld-type": "@id"
     },
     "wasOriginatedBy": {

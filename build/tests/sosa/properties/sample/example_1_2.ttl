@@ -1,0 +1,11 @@
+@prefix ex: <https://example.org/data/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+
+ex:EarthAtmosphere_StE a sosa:Sample ;
+    sosa:isResultOf ex:AirSampling_StE ;
+    sosa:isSampleOf ex:EarthAtmosphere .
+
+ex:EarthAtmosphere a sosa:FeatureOfInterest ;
+    skos:exactMatch <https://www.wikidata.org/wiki/Q3230> .
+

@@ -2022,32 +2022,28 @@ ex:SmileySampling
 @prefix iop: <https://w3id.org/iadopt/ont/> .
 @prefix qk: <http://qudt.org/vocab/quantitykind/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 
-ex:SickChildTemperature 
-  a iop:Variable , sosa:Property;
-  iop:hasProperty qk:Temperature ;
-  iop:hasObjectOfInterest ex:Child ;
-  iop:hasConstraint [ 
-    a iop:Constraint, ex:Sick ;
-    iop:constrains ex:Child ] ;
-    skos:prefLabel "sick child" ;
+ex:SickChildTemperature
+    a iop:Variable, sosa:Property;
+    rdfs:label "Temperature of sick child" ;
+    rdfs:comment """Temperature of the body of a sick child""" ;
+    iop:hasObjectOfInterest <http://hadatac.org/ont/chear#Child> ;
+    iop:hasProperty qk:Temperature ;
+    iop:hasConstraint 
+        [ a iop:Constraint, <http://semanticscience.org/resource/SIO_000954> ;
+             rdfs:label "state: sick" ;
+             iop:constrains <http://hadatac.org/ont/chear#Child> ;
+        ] 
 .
-qk:Temperature
-  a iop:Property , sosa:Property ;
-  skos:prefLabel "Temperature"@en ;
-.
-ex:Child skos:exactMatch <http://hadatac.org/ont/chear#Child> .
-ex:Sick skos:exactMatch <http://semanticscience.org/resource/SIO_000954> .
-
 <http://hadatac.org/ont/chear#Child>
-  a iop:Entity ;
-  skos:prefLabel "Child"@en ;
+    a iop:Entity ;
+    rdfs:label "child" 
 .
-<http://semanticscience.org/resource/SIO_000954>
-  skos:prefLabel "Sick"@en , "Krank"@de ; 
-  skos:altLabel "Unwell"@en , "Poorly"@en ;
+qk:Temperature a iop:Property ;
+    rdfs:label "temperature" 
 .
 
 ```
@@ -2578,17 +2574,10 @@ ex:IBSTH2SurvivalRange a sosa:ObservationCollection , sosa:SurvivableConditions 
 @prefix iop:  <https://w3id.org/iadopt/ont/>.
 @prefix uom: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
 @prefix sosa-cap: <http://www.w3.org/ns/sosa/system-capability-properties#> .
-
-ex:AABattery a sosa:Battery ;
-  rdfs:label "An AA battery." .
+@prefix gemet: <https://www.eionet.europa.eu/gemet/concept/> .
 
 ex:sensor a sosa:Sensor;
   sosa:hasSubSystem ex:AABattery .
-
-ex:nominalLifetimeRestriction a iop:Variable, sosa:Property;
-  iop:hasStatisticalModifier uom:average ;
-  iop:hasObjectOfInterest ex:AABattery ;
-  iop:hasProperty sosa-cap:BatteryLifetime .
   
 ex:nominalLifetime a sosa:Observation ;
   sosa:hasFeatureOfInterest ex:sensor ;
@@ -2598,6 +2587,31 @@ ex:nominalLifetime a sosa:Observation ;
     qudt:hasUnit unit:YR ;
   ] ;
 .
+ex:nominalLifetimeRestriction
+    a iop:Variable, sosa:Property;
+    rdfs:label "Nominal Lifetime Restriction of a AA Battery" ;
+    rdfs:comment """Nominal lifetime restriction of a AA battery""" ;
+    iop:hasObjectOfInterest ex:AABattery ;
+    iop:hasStatisticalModifier uom:average ;
+    iop:hasContextObject gemet:1170 ;
+    iop:hasProperty sosa-cap:BatteryLifetime .
+	
+ex:AABattery
+    a iop:Entity ;
+    rdfs:label "AABattery" .
+	
+uom:average
+    a iop:StatisticalModifier ;
+    rdfs:label "average" .
+	
+sosa-cap:Lifetime
+    a iop:Property ;
+    rdfs:label "Battery Lifetime" .
+		
+gemet:1170
+    a iop:Entity ;
+	rdfs:label "sensor" .
+
 
 ```
 
@@ -2645,7 +2659,11 @@ ex:observation_233_MeasurementAccuracy a sosa:Observation ;
 @prefix qudt: <http://qudt.org/schema/qudt/>.
 @prefix unit: <http://qudt.org/vocab/unit/>.
 @prefix iop:  <https://w3id.org/iadopt/ont/>.
-@prefix uom:  <http://www.opengis.net/def/uom/OGC/1.0/>.
+@prefix uom: <http://www.ontology-of-units-of-measure.org/resource/om-2/>.
+@prefix qk: <http://qudt.org/vocab/quantitykind/>.
+@prefix et: <http://vocabs.lter-europe.net/EnvThes/>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+
 
 ex:SensorCapabilityObservation a sosa:Observation ;
   sosa:hasFeatureOfInterest ex:Sensor ;
@@ -2655,13 +2673,23 @@ ex:SensorCapabilityObservation a sosa:Observation ;
     qudt:hasUnit unit:DEG_C ;
   ] ;
 .
-
 ex:SensorMinimumLimit a iop:Variable, sosa:Property;
   iop:hasStatisticalModifier uom:minimum ;
-  iop:hasObjectOfInterest ex:air ;
-  iop:hasProperty qudt:Temperature ;
+  iop:hasObjectOfInterest et:23 ;
+  iop:hasProperty qk:ThermodynamicTemperature ;
 .
-
+qk:ThermodynamicTemperature
+    a iop:Property ;
+    rdfs:label "thermodynamic temperature" 
+.		
+et:23
+    a iop:Entity ;
+    rdfs:label "air" 
+.
+uom:minimum
+    a iop:StatisticalModifier ;
+    rdfs:label "minimum" 
+.
 ```
 
 

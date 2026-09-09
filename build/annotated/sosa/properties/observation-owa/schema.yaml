@@ -1,49 +1,21 @@
 $schema: https://json-schema.org/draft/2020-12/schema
 description: SOSA Observation
-type: object
-properties:
-  resultTime:
-    type: string
-    format: date-time
-    x-jsonld-id: http://www.w3.org/ns/sosa/resultTime
-  phenomenonTime:
-    type:
-    - object
-    - string
-    x-jsonld-id: http://www.w3.org/ns/sosa/phenomenonTime
-    x-jsonld-type: '@id'
-  hasFeatureOfInterest:
-    type:
-    - object
-    - string
-    x-jsonld-id: http://www.w3.org/ns/sosa/hasFeatureOfInterest
-    x-jsonld-type: '@id'
-  observedProperty:
-    type:
-    - object
-    - string
-    x-jsonld-id: http://www.w3.org/ns/sosa/observedProperty
-    x-jsonld-type: '@id'
-  usedProcedure:
-    type:
-    - object
-    - string
-    x-jsonld-id: http://www.w3.org/ns/sosa/usedProcedure
-    x-jsonld-type: '@id'
-  madeBySensor:
-    type:
-    - object
-    - string
-    x-jsonld-id: http://www.w3.org/ns/sosa/madeBySensor
-    x-jsonld-type: '@id'
-  hasResult:
-    x-jsonld-id: http://www.w3.org/ns/sosa/hasResult
-    x-jsonld-type: '@id'
-  result: {}
-  result@links: {}
-  hasSimpleResult:
-    x-jsonld-id: http://www.w3.org/ns/sosa/hasSimpleResult
-    x-jsonld-type: '@id'
+allOf:
+- $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
+- type: object
+  properties:
+    observedProperty:
+      type:
+      - object
+      - string
+      x-jsonld-id: http://www.w3.org/ns/sosa/observedProperty
+      x-jsonld-type: '@id'
+    madeBySensor:
+      type:
+      - object
+      - string
+      x-jsonld-id: http://www.w3.org/ns/sosa/madeBySensor
+      x-jsonld-type: '@id'
 x-jsonld-extra-terms:
   id: '@id'
   properties: '@nest'
@@ -108,8 +80,14 @@ x-jsonld-extra-terms:
   System:
     x-jsonld-id: http://www.w3.org/ns/sosa/System
     x-jsonld-type: '@id'
+  actsOn:
+    x-jsonld-id: http://www.w3.org/ns/sosa/actsOn
+    x-jsonld-type: '@id'
   actsOnProperty:
     x-jsonld-id: http://www.w3.org/ns/sosa/actsOnProperty
+    x-jsonld-type: '@id'
+  deployedAsset:
+    x-jsonld-id: http://www.w3.org/ns/sosa/deployedAsset
     x-jsonld-type: '@id'
   deployedOnPlatform:
     x-jsonld-id: http://www.w3.org/ns/sosa/deployedOnPlatform
@@ -120,6 +98,7 @@ x-jsonld-extra-terms:
   detects:
     x-jsonld-id: http://www.w3.org/ns/sosa/detects
     x-jsonld-type: '@id'
+  endTime: http://www.w3.org/ns/sosa/endTime
   features:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasMember
     x-jsonld-type: '@id'
@@ -129,8 +108,14 @@ x-jsonld-extra-terms:
   hasDeployment:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasDeployment
     x-jsonld-type: '@id'
+  hasFeatureOfInterest:
+    x-jsonld-id: http://www.w3.org/ns/sosa/hasFeatureOfInterest
+    x-jsonld-type: '@id'
   hasInput:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasInput
+    x-jsonld-type: '@id'
+  hasInputValue:
+    x-jsonld-id: http://www.w3.org/ns/sosa/hasInputValue
     x-jsonld-type: '@id'
   hasMember:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasMember
@@ -144,6 +129,9 @@ x-jsonld-extra-terms:
   hasProperty:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasProperty
     x-jsonld-type: '@id'
+  hasResult:
+    x-jsonld-id: http://www.w3.org/ns/sosa/hasResult
+    x-jsonld-type: '@id'
   hasResultQuality:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasResultQuality
     x-jsonld-type: '@id'
@@ -152,6 +140,9 @@ x-jsonld-extra-terms:
     x-jsonld-type: '@id'
   hasSampledFeature:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasSampledFeature
+    x-jsonld-type: '@id'
+  hasSimpleResult:
+    x-jsonld-id: http://www.w3.org/ns/sosa/hasSimpleResult
     x-jsonld-type: '@id'
   hasSubSystem:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasSubSystem
@@ -185,6 +176,9 @@ x-jsonld-extra-terms:
   isObservedBy:
     x-jsonld-id: http://www.w3.org/ns/sosa/isObservedBy
     x-jsonld-type: '@id'
+  isOriginalSampleOf:
+    x-jsonld-id: http://www.w3.org/ns/sosa/isOriginalSampleOf
+    x-jsonld-type: '@id'
   isPropertyOf:
     x-jsonld-id: http://www.w3.org/ns/sosa/isPropertyOf
     x-jsonld-type: '@id'
@@ -203,6 +197,12 @@ x-jsonld-extra-terms:
   isSampleOf:
     x-jsonld-id: http://www.w3.org/ns/sosa/isSampleOf
     x-jsonld-type: '@id'
+  isSampleOfUltimateFOI:
+    x-jsonld-id: http://www.w3.org/ns/sosa/isSampleOfUltimateFOI
+    x-jsonld-type: '@id'
+  isSubSystemOf:
+    x-jsonld-id: http://www.w3.org/ns/sosa/isSubSystemOf
+    x-jsonld-type: '@id'
   madeActuation:
     x-jsonld-id: http://www.w3.org/ns/sosa/madeActuation
     x-jsonld-type: '@id'
@@ -212,6 +212,12 @@ x-jsonld-extra-terms:
   madeBySampler:
     x-jsonld-id: http://www.w3.org/ns/sosa/madeBySampler
     x-jsonld-type: '@id'
+  madeBySystem:
+    x-jsonld-id: http://www.w3.org/ns/sosa/madeBySystem
+    x-jsonld-type: '@id'
+  madeExecution:
+    x-jsonld-id: http://www.w3.org/ns/sosa/madeExecution
+    x-jsonld-type: '@id'
   madeObservation:
     x-jsonld-id: http://www.w3.org/ns/sosa/madeObservation
     x-jsonld-type: '@id'
@@ -220,6 +226,14 @@ x-jsonld-extra-terms:
     x-jsonld-type: '@id'
   observes:
     x-jsonld-id: http://www.w3.org/ns/sosa/observes
+    x-jsonld-type: '@id'
+  phenomenonTime:
+    x-jsonld-id: http://www.w3.org/ns/sosa/phenomenonTime
+    x-jsonld-type: '@id'
+  resultTime: http://www.w3.org/ns/sosa/resultTime
+  startTime: http://www.w3.org/ns/sosa/startTime
+  usedProcedure:
+    x-jsonld-id: http://www.w3.org/ns/sosa/usedProcedure
     x-jsonld-type: '@id'
   wasOriginatedBy:
     x-jsonld-id: http://www.w3.org/ns/sosa/wasOriginatedBy

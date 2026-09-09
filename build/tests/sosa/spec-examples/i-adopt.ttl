@@ -1,9 +1,12 @@
+@prefix et: <http://vocabs.lter-europe.net/EnvThes/> .
 @prefix ex: <http://example.org/> .
 @prefix iop: <https://w3id.org/iadopt/ont/> .
+@prefix qk: <http://qudt.org/vocab/quantitykind/> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sosa1: <https://www.w3.org/TR/vocab-ssn/> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
-@prefix uom: <http://www.opengis.net/def/uom/OGC/1.0/> .
+@prefix uom: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 ex:SensorCapabilityObservation a sosa1:Observation ;
@@ -14,7 +17,16 @@ ex:SensorCapabilityObservation a sosa1:Observation ;
 
 ex:SensorMinimumLimit a iop:Variable,
         sosa1:Property ;
-    iop:hasObjectOfInterest ex:air ;
-    iop:hasProperty qudt:Temperature ;
+    iop:hasObjectOfInterest et:23 ;
+    iop:hasProperty qk:ThermodynamicTemperature ;
     iop:hasStatisticalModifier uom:minimum .
+
+qk:ThermodynamicTemperature a iop:Property ;
+    rdfs:label "thermodynamic temperature" .
+
+et:23 a iop:Entity ;
+    rdfs:label "air" .
+
+uom:minimum a iop:StatisticalModifier ;
+    rdfs:label "minimum" .
 

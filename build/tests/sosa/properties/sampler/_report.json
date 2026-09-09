@@ -1,0 +1,102 @@
+{
+  "title": "Validation report for ogc.sosa.properties.sampler - Sampler Properties",
+  "bblockName": "Sampler Properties",
+  "bblockId": "ogc.sosa.properties.sampler",
+  "generated": "2026-09-09T11:07:39.853269+00:00",
+  "result": true,
+  "items": [
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/sosa/properties/sampler/example_1_1.json",
+        "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/sampler/example_1_1.json",
+        "exampleIndex": 1,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_1_1.json from examples"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "example_1_1.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD example_1_1.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_1_1.ttl",
+              "size": 2,
+              "isError": false,
+              "message": "Output Turtle example_1_1.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/sosa/properties/sampler/example_1_2.ttl",
+        "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/properties/sampler/example_1_2.ttl",
+        "exampleIndex": 1,
+        "snippetIndex": 2,
+        "language": "text/turtle"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_1_2.ttl from examples"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_1_2.ttl",
+              "size": 7,
+              "isError": false,
+              "message": "Output Turtle example_1_2.ttl created"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "globalErrors": {},
+  "counts": {
+    "total": 2,
+    "passed": 2,
+    "failed": 0
+  }
+}

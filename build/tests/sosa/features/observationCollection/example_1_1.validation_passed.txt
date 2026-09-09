@@ -1,5 +1,5 @@
 Validation report for ogc.sosa.features.observationCollection - SOSA ObservationCollection Feature
-Generated 2026-08-27T08:27:04.523398+00:00
+Generated 2026-09-09T11:08:04.628136+00:00
 === Files ===
 Using examples/observationCollection.json from examples
 JSON-LD context is present - uplifting
@@ -12,43 +12,49 @@ Validation passed
 === End JSON Schema ===
 
 === SHACL ===
-Validation result for _sources/properties/observation/shapes.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for _sources/properties/observation/shapes.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testResult>: <http://www.example.com/sosa/something>
- - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <http://www.example.com/sosa/pop1999>/sosa:hasSimpleResult
- - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <http://www.example.com/sosa/something>
- - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <http://www.example.com/sosa/c1>
- - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: <http://www.example.com/sosa/pop1999>,<http://www.example.com/sosa/something>
- - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: <http://www.example.com/sosa/c1>
- - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <http://www.example.com/sosa/pop1999>,<http://www.example.com/sosa/something>
- - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <http://www.example.com/sosa/c1>
-
 Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
+ - Shape geojson:LinkShape: *none*
  - Shape geojson:GeometryShape: *none*
  - Shape geojson:FeatureShape: <http://www.example.com/sosa/pop1999>,<http://www.example.com/sosa/something>
- - Shape geojson:LinkShape: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
  - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+
+Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: <http://www.example.com/sosa/c1>
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: <http://www.example.com/sosa/pop1999>,<http://www.example.com/sosa/something>
+
+Validation result for _sources/properties/execution/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/execution/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <http://www.example.com/sosa/pop1999>/sosa:hasSimpleResult
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <http://www.example.com/sosa/c1>
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <http://www.example.com/sosa/c1>
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <http://www.example.com/sosa/something>
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: <http://www.example.com/sosa/something>
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <http://www.example.com/sosa/pop1999>,<http://www.example.com/sosa/something>
 
 Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:LinkShape: *none*
  - Shape geojson:GeometryShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
  - Shape geojson:FeatureShape: *none*
  - Shape geojson:FeatureCollectionShape: *none*
- - Shape geojson:LinkShape: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
 
 === End SHACL ===
 

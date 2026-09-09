@@ -1,5 +1,5 @@
 Validation report for ogc.sosa.features.observationCollection - SOSA ObservationCollection Feature
-Generated 2026-08-27T08:27:04.290749+00:00
+Generated 2026-09-09T11:08:04.369494+00:00
 === Files ===
 Using observationCollection-props.json from test resources
 JSON-LD context is present - uplifting
@@ -12,43 +12,49 @@ Validation passed
 === End JSON Schema ===
 
 === SHACL ===
-Validation result for _sources/properties/observation/shapes.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for _sources/properties/observation/shapes.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testResult>: <file:///github/workspace/something>
- - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <file:///github/workspace/pop1999>/sosa:hasSimpleResult
- - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <file:///github/workspace/something>
- - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <file:///github/workspace/c1>
- - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: <file:///github/workspace/something>,<file:///github/workspace/pop1999>
- - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: <file:///github/workspace/c1>
- - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <file:///github/workspace/something>,<file:///github/workspace/pop1999>
- - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <file:///github/workspace/c1>
-
 Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
+ - Shape geojson:LinkShape: *none*
  - Shape geojson:GeometryShape: *none*
  - Shape geojson:FeatureShape: <file:///github/workspace/something>,<file:///github/workspace/pop1999>
- - Shape geojson:LinkShape: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
  - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+
+Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: <file:///github/workspace/c1>
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: <file:///github/workspace/something>,<file:///github/workspace/pop1999>
+
+Validation result for _sources/properties/execution/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/execution/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <file:///github/workspace/pop1999>/sosa:hasSimpleResult
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <file:///github/workspace/c1>
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <file:///github/workspace/c1>
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <file:///github/workspace/something>
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: <file:///github/workspace/something>
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <file:///github/workspace/something>,<file:///github/workspace/pop1999>
 
 Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:LinkShape: *none*
  - Shape geojson:GeometryShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
  - Shape geojson:FeatureShape: *none*
  - Shape geojson:FeatureCollectionShape: *none*
- - Shape geojson:LinkShape: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
 
 === End SHACL ===
 

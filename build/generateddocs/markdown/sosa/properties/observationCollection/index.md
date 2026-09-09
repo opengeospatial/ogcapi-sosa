@@ -26,7 +26,7 @@ Collection of one or more observations, whose members share a common value for o
       "@id": "a1",
       "@type": "sosa:Observation",
       "comment": "Example of an inline membership - would entail hasMember relations",
-      "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
+      "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/dutch_windmills/items/Molens.1",
       "hasSimpleResult": 1995.2,
       "phenomenonTime": "2022-05-01T22:33:40Z"
     }
@@ -46,7 +46,7 @@ Collection of one or more observations, whose members share a common value for o
       "@id": "a1",
       "@type": "sosa:Observation",
       "comment": "Example of an inline membership - would entail hasMember relations",
-      "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
+      "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/dutch_windmills/items/Molens.1",
       "hasSimpleResult": 1995.2,
       "phenomenonTime": "2022-05-01T22:33:40Z"
     }
@@ -64,7 +64,7 @@ Collection of one or more observations, whose members share a common value for o
     sosa:resultTime "2022-05-01T22:33:44Z" .
 
 <http://example.com/a1> a sosa:Observation ;
-    sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
+    sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/dutch_windmills/items/Molens.1> ;
     sosa:hasSimpleResult 1.9952e+03 ;
     sosa:phenomenonTime <2022-05-01T22:33:40Z> .
 
@@ -88,7 +88,7 @@ Collection of one or more observations, whose members share a common value for o
         .
 
         eg:a1 a sosa:Observation ;
-          sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
+          sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/dutch_windmills/items/Molens.1> ;
           sosa:hasSimpleResult 33 ;
         .
         eg:p1 a skos:Concept;
@@ -106,7 +106,7 @@ across all descendants, while each inner sub-collection declares its own
 ```json
 {
   "resultTime": "2022-05-01T22:33:44Z",
-  "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
+  "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/dutch_windmills/items/Molens.1",
   "hasMember": [
     {
       "@id": "temperature-collection",
@@ -157,7 +157,7 @@ across all descendants, while each inner sub-collection declares its own
 {
   "@context": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/context.jsonld",
   "resultTime": "2022-05-01T22:33:44Z",
-  "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem",
+  "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/dutch_windmills/items/Molens.1",
   "hasMember": [
     {
       "@id": "temperature-collection",
@@ -234,7 +234,7 @@ across all descendants, while each inner sub-collection declares its own
         <http://example.com/obs-temp-2> ;
     sosa:observedProperty <http://example.com/temperature> .
 
-[] sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem> ;
+[] sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/dutch_windmills/items/Molens.1> ;
     sosa:hasMember <http://example.com/humidity-collection>,
         <http://example.com/temperature-collection> ;
     sosa:resultTime "2022-05-01T22:33:44Z" .
@@ -259,42 +259,27 @@ $defs:
         - object
         - string
   collection:
-    type: object
-    properties:
-      resultTime:
-        type:
-        - object
-        - string
-        x-jsonld-id: http://www.w3.org/ns/sosa/resultTime
-      phenomenonTime:
-        $ref: '#/$defs/oneOrMany'
-        x-jsonld-id: http://www.w3.org/ns/sosa/phenomenonTime
-        x-jsonld-type: '@id'
-      hasFeatureOfInterest:
-        $ref: '#/$defs/oneOrMany'
-        x-jsonld-id: http://www.w3.org/ns/sosa/hasFeatureOfInterest
-        x-jsonld-type: '@id'
-      observedProperty:
-        $ref: '#/$defs/oneOrMany'
-        x-jsonld-id: http://www.w3.org/ns/sosa/observedProperty
-        x-jsonld-type: '@id'
-      usedProcedure:
-        $ref: '#/$defs/oneOrMany'
-        x-jsonld-id: http://www.w3.org/ns/sosa/usedProcedure
-        x-jsonld-type: '@id'
-      madeBySensor:
-        $ref: '#/$defs/oneOrMany'
-        x-jsonld-id: http://www.w3.org/ns/sosa/madeBySensor
-        x-jsonld-type: '@id'
-      hasMember:
-        type: array
-        items:
-          anyOf:
-          - $ref: '#/$defs/collection'
-          - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.yaml
-          - $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml
-        x-jsonld-id: http://www.w3.org/ns/sosa/hasMember
-        x-jsonld-type: '@id'
+    allOf:
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/executionCollection/schema.yaml
+    - type: object
+      properties:
+        observedProperty:
+          $ref: '#/$defs/oneOrMany'
+          x-jsonld-id: http://www.w3.org/ns/sosa/observedProperty
+          x-jsonld-type: '@id'
+        madeBySensor:
+          $ref: '#/$defs/oneOrMany'
+          x-jsonld-id: http://www.w3.org/ns/sosa/madeBySensor
+          x-jsonld-type: '@id'
+        hasMember:
+          type: array
+          items:
+            anyOf:
+            - $ref: '#/$defs/collection'
+            - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.yaml
+            - $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml
+          x-jsonld-id: http://www.w3.org/ns/sosa/hasMember
+          x-jsonld-type: '@id'
 allOf:
 - $ref: '#/$defs/collection'
 - not:
@@ -367,8 +352,14 @@ x-jsonld-extra-terms:
   System:
     x-jsonld-id: http://www.w3.org/ns/sosa/System
     x-jsonld-type: '@id'
+  actsOn:
+    x-jsonld-id: http://www.w3.org/ns/sosa/actsOn
+    x-jsonld-type: '@id'
   actsOnProperty:
     x-jsonld-id: http://www.w3.org/ns/sosa/actsOnProperty
+    x-jsonld-type: '@id'
+  deployedAsset:
+    x-jsonld-id: http://www.w3.org/ns/sosa/deployedAsset
     x-jsonld-type: '@id'
   deployedOnPlatform:
     x-jsonld-id: http://www.w3.org/ns/sosa/deployedOnPlatform
@@ -379,6 +370,7 @@ x-jsonld-extra-terms:
   detects:
     x-jsonld-id: http://www.w3.org/ns/sosa/detects
     x-jsonld-type: '@id'
+  endTime: http://www.w3.org/ns/sosa/endTime
   features:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasMember
     x-jsonld-type: '@id'
@@ -388,8 +380,14 @@ x-jsonld-extra-terms:
   hasDeployment:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasDeployment
     x-jsonld-type: '@id'
+  hasFeatureOfInterest:
+    x-jsonld-id: http://www.w3.org/ns/sosa/hasFeatureOfInterest
+    x-jsonld-type: '@id'
   hasInput:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasInput
+    x-jsonld-type: '@id'
+  hasInputValue:
+    x-jsonld-id: http://www.w3.org/ns/sosa/hasInputValue
     x-jsonld-type: '@id'
   hasOriginalSample:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasOriginalSample
@@ -447,6 +445,9 @@ x-jsonld-extra-terms:
   isObservedBy:
     x-jsonld-id: http://www.w3.org/ns/sosa/isObservedBy
     x-jsonld-type: '@id'
+  isOriginalSampleOf:
+    x-jsonld-id: http://www.w3.org/ns/sosa/isOriginalSampleOf
+    x-jsonld-type: '@id'
   isPropertyOf:
     x-jsonld-id: http://www.w3.org/ns/sosa/isPropertyOf
     x-jsonld-type: '@id'
@@ -465,6 +466,12 @@ x-jsonld-extra-terms:
   isSampleOf:
     x-jsonld-id: http://www.w3.org/ns/sosa/isSampleOf
     x-jsonld-type: '@id'
+  isSampleOfUltimateFOI:
+    x-jsonld-id: http://www.w3.org/ns/sosa/isSampleOfUltimateFOI
+    x-jsonld-type: '@id'
+  isSubSystemOf:
+    x-jsonld-id: http://www.w3.org/ns/sosa/isSubSystemOf
+    x-jsonld-type: '@id'
   madeActuation:
     x-jsonld-id: http://www.w3.org/ns/sosa/madeActuation
     x-jsonld-type: '@id'
@@ -474,6 +481,12 @@ x-jsonld-extra-terms:
   madeBySampler:
     x-jsonld-id: http://www.w3.org/ns/sosa/madeBySampler
     x-jsonld-type: '@id'
+  madeBySystem:
+    x-jsonld-id: http://www.w3.org/ns/sosa/madeBySystem
+    x-jsonld-type: '@id'
+  madeExecution:
+    x-jsonld-id: http://www.w3.org/ns/sosa/madeExecution
+    x-jsonld-type: '@id'
   madeObservation:
     x-jsonld-id: http://www.w3.org/ns/sosa/madeObservation
     x-jsonld-type: '@id'
@@ -482,6 +495,14 @@ x-jsonld-extra-terms:
     x-jsonld-type: '@id'
   observes:
     x-jsonld-id: http://www.w3.org/ns/sosa/observes
+    x-jsonld-type: '@id'
+  phenomenonTime:
+    x-jsonld-id: http://www.w3.org/ns/sosa/phenomenonTime
+    x-jsonld-type: '@id'
+  resultTime: http://www.w3.org/ns/sosa/resultTime
+  startTime: http://www.w3.org/ns/sosa/startTime
+  usedProcedure:
+    x-jsonld-id: http://www.w3.org/ns/sosa/usedProcedure
     x-jsonld-type: '@id'
   wasOriginatedBy:
     x-jsonld-id: http://www.w3.org/ns/sosa/wasOriginatedBy
@@ -594,31 +615,6 @@ Links to the schema:
 ```jsonld
 {
   "@context": {
-    "resultTime": "sosa:resultTime",
-    "phenomenonTime": {
-      "@id": "sosa:phenomenonTime",
-      "@type": "@id"
-    },
-    "hasFeatureOfInterest": {
-      "@id": "sosa:hasFeatureOfInterest",
-      "@type": "@id"
-    },
-    "observedProperty": {
-      "@id": "sosa:observedProperty",
-      "@type": "@id"
-    },
-    "usedProcedure": {
-      "@id": "sosa:usedProcedure",
-      "@type": "@id"
-    },
-    "madeBySensor": {
-      "@id": "sosa:madeBySensor",
-      "@type": "@id"
-    },
-    "hasMember": {
-      "@id": "sosa:hasMember",
-      "@type": "@id"
-    },
     "id": "@id",
     "properties": "@nest",
     "featureType": "@type",
@@ -702,8 +698,16 @@ Links to the schema:
       "@id": "sosa:System",
       "@type": "@id"
     },
+    "actsOn": {
+      "@id": "sosa:actsOn",
+      "@type": "@id"
+    },
     "actsOnProperty": {
       "@id": "sosa:actsOnProperty",
+      "@type": "@id"
+    },
+    "deployedAsset": {
+      "@id": "sosa:deployedAsset",
       "@type": "@id"
     },
     "deployedOnPlatform": {
@@ -734,6 +738,10 @@ Links to the schema:
       "@id": "sosa:hasInput",
       "@type": "@id"
     },
+    "hasMember": {
+      "@id": "sosa:hasMember",
+      "@type": "@id"
+    },
     "hasOriginalSample": {
       "@id": "sosa:hasOriginalSample",
       "@type": "@id"
@@ -744,10 +752,6 @@ Links to the schema:
     },
     "hasProperty": {
       "@id": "sosa:hasProperty",
-      "@type": "@id"
-    },
-    "hasResult": {
-      "@id": "sosa:hasResult",
       "@type": "@id"
     },
     "hasResultQuality": {
@@ -762,18 +766,10 @@ Links to the schema:
       "@id": "sosa:hasSampledFeature",
       "@type": "@id"
     },
-    "hasSimpleResult": {
-      "@id": "sosa:hasSimpleResult",
-      "@type": "@id"
-    },
     "hasSubSystem": {
       "@id": "sosa:hasSubSystem",
       "@type": "@id",
       "@container": "@set"
-    },
-    "hasUltimateFeatureOfInterest": {
-      "@id": "sosa:hasUltimateFeatureOfInterest",
-      "@type": "@id"
     },
     "hosts": {
       "@id": "sosa:hosts",
@@ -808,6 +804,10 @@ Links to the schema:
       "@id": "sosa:isObservedBy",
       "@type": "@id"
     },
+    "isOriginalSampleOf": {
+      "@id": "sosa:isOriginalSampleOf",
+      "@type": "@id"
+    },
     "isPropertyOf": {
       "@id": "sosa:isPropertyOf",
       "@type": "@id"
@@ -832,6 +832,14 @@ Links to the schema:
       "@id": "sosa:isSampleOf",
       "@type": "@id"
     },
+    "isSampleOfUltimateFOI": {
+      "@id": "sosa:isSampleOfUltimateFOI",
+      "@type": "@id"
+    },
+    "isSubSystemOf": {
+      "@id": "sosa:isSubSystemOf",
+      "@type": "@id"
+    },
     "madeActuation": {
       "@id": "sosa:madeActuation",
       "@type": "@id"
@@ -844,12 +852,28 @@ Links to the schema:
       "@id": "sosa:madeBySampler",
       "@type": "@id"
     },
+    "madeBySensor": {
+      "@id": "sosa:madeBySensor",
+      "@type": "@id"
+    },
+    "madeBySystem": {
+      "@id": "sosa:madeBySystem",
+      "@type": "@id"
+    },
+    "madeExecution": {
+      "@id": "sosa:madeExecution",
+      "@type": "@id"
+    },
     "madeObservation": {
       "@id": "sosa:madeObservation",
       "@type": "@id"
     },
     "madeSampling": {
       "@id": "sosa:madeSampling",
+      "@type": "@id"
+    },
+    "observedProperty": {
+      "@id": "sosa:observedProperty",
       "@type": "@id"
     },
     "observes": {
@@ -978,6 +1002,37 @@ Links to the schema:
     },
     "qualityOfObservation": {
       "@id": "ssn-system:qualityOfObservation",
+      "@type": "@id"
+    },
+    "resultTime": "sosa:resultTime",
+    "phenomenonTime": {
+      "@id": "sosa:phenomenonTime",
+      "@type": "@id"
+    },
+    "hasFeatureOfInterest": {
+      "@id": "sosa:hasFeatureOfInterest",
+      "@type": "@id"
+    },
+    "hasUltimateFeatureOfInterest": {
+      "@id": "sosa:hasUltimateFeatureOfInterest",
+      "@type": "@id"
+    },
+    "usedProcedure": {
+      "@id": "sosa:usedProcedure",
+      "@type": "@id"
+    },
+    "startTime": "sosa:startTime",
+    "endTime": "sosa:endTime",
+    "hasResult": {
+      "@id": "sosa:hasResult",
+      "@type": "@id"
+    },
+    "hasSimpleResult": {
+      "@id": "sosa:hasSimpleResult",
+      "@type": "@id"
+    },
+    "hasInputValue": {
+      "@id": "sosa:hasInputValue",
       "@type": "@id"
     },
     "sosa": "http://www.w3.org/ns/sosa/",

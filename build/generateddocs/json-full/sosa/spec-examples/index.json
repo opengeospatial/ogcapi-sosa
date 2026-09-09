@@ -9,7 +9,7 @@
   "itemClass": "schema",
   "register": "ogc-building-block-register",
   "version": "1.0",
-  "dateOfLastChange": "2026-08-27",
+  "dateOfLastChange": "2026-09-09",
   "sources": [
     {
       "title": "Semantic Sensor Network Ontology",
@@ -1108,8 +1108,8 @@
           "language": "ttl",
           "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Temperature-i-adopt.ttl",
           "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/Temperature-i-adopt.ttl",
-          "sizeBytes": 1008,
-          "code": "@prefix ex: <https://example.org/data/> .\n@prefix iop: <https://w3id.org/iadopt/ont/> .\n@prefix qk: <http://qudt.org/vocab/quantitykind/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n\nex:SickChildTemperature \n  a iop:Variable , sosa:Property;\n  iop:hasProperty qk:Temperature ;\n  iop:hasObjectOfInterest ex:Child ;\n  iop:hasConstraint [ \n    a iop:Constraint, ex:Sick ;\n    iop:constrains ex:Child ] ;\n    skos:prefLabel \"sick child\" ;\n.\nqk:Temperature\n  a iop:Property , sosa:Property ;\n  skos:prefLabel \"Temperature\"@en ;\n.\nex:Child skos:exactMatch <http://hadatac.org/ont/chear#Child> .\nex:Sick skos:exactMatch <http://semanticscience.org/resource/SIO_000954> .\n\n<http://hadatac.org/ont/chear#Child>\n  a iop:Entity ;\n  skos:prefLabel \"Child\"@en ;\n.\n<http://semanticscience.org/resource/SIO_000954>\n  skos:prefLabel \"Sick\"@en , \"Krank\"@de ; \n  skos:altLabel \"Unwell\"@en , \"Poorly\"@en ;\n.\n"
+          "sizeBytes": 1026,
+          "code": "@prefix ex: <https://example.org/data/> .\r\n@prefix iop: <https://w3id.org/iadopt/ont/> .\r\n@prefix qk: <http://qudt.org/vocab/quantitykind/> .\r\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\r\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\r\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\r\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\r\n\r\nex:SickChildTemperature\r\n    a iop:Variable, sosa:Property;\r\n    rdfs:label \"Temperature of sick child\" ;\r\n    rdfs:comment \"\"\"Temperature of the body of a sick child\"\"\" ;\r\n    iop:hasObjectOfInterest <http://hadatac.org/ont/chear#Child> ;\r\n    iop:hasProperty qk:Temperature ;\r\n    iop:hasConstraint \r\n        [ a iop:Constraint, <http://semanticscience.org/resource/SIO_000954> ;\r\n             rdfs:label \"state: sick\" ;\r\n             iop:constrains <http://hadatac.org/ont/chear#Child> ;\r\n        ] \r\n.\r\n<http://hadatac.org/ont/chear#Child>\r\n    a iop:Entity ;\r\n    rdfs:label \"child\" \r\n.\r\nqk:Temperature a iop:Property ;\r\n    rdfs:label \"temperature\" \r\n.\r\n"
         }
       ],
       "prefixes": {
@@ -1576,8 +1576,8 @@
           "language": "ttl",
           "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/battery-lifetime.ttl",
           "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/battery-lifetime.ttl",
-          "sizeBytes": 963,
-          "code": "@prefix ex:   <http://example.org/>.\n@prefix sosa: <https://www.w3.org/TR/vocab-ssn/>.\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.\n@prefix qudt: <http://qudt.org/schema/qudt/>.\n@prefix unit: <http://qudt.org/vocab/unit/>.\n@prefix iop:  <https://w3id.org/iadopt/ont/>.\n@prefix uom: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .\n@prefix sosa-cap: <http://www.w3.org/ns/sosa/system-capability-properties#> .\n\nex:AABattery a sosa:Battery ;\n  rdfs:label \"An AA battery.\" .\n\nex:sensor a sosa:Sensor;\n  sosa:hasSubSystem ex:AABattery .\n\nex:nominalLifetimeRestriction a iop:Variable, sosa:Property;\n  iop:hasStatisticalModifier uom:average ;\n  iop:hasObjectOfInterest ex:AABattery ;\n  iop:hasProperty sosa-cap:BatteryLifetime .\n  \nex:nominalLifetime a sosa:Observation ;\n  sosa:hasFeatureOfInterest ex:sensor ;\n  sosa:observedProperty ex:nominalLifetimeRestriction ;\n  sosa:hasResult [ \n    qudt:value 1.0 ;\n    qudt:hasUnit unit:YR ;\n  ] ;\n.\n"
+          "sizeBytes": 1460,
+          "code": "@prefix ex:   <http://example.org/>.\r\n@prefix sosa: <https://www.w3.org/TR/vocab-ssn/>.\r\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.\r\n@prefix qudt: <http://qudt.org/schema/qudt/>.\r\n@prefix unit: <http://qudt.org/vocab/unit/>.\r\n@prefix iop:  <https://w3id.org/iadopt/ont/>.\r\n@prefix uom: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .\r\n@prefix sosa-cap: <http://www.w3.org/ns/sosa/system-capability-properties#> .\r\n@prefix gemet: <https://www.eionet.europa.eu/gemet/concept/> .\r\n\r\nex:sensor a sosa:Sensor;\r\n  sosa:hasSubSystem ex:AABattery .\r\n  \r\nex:nominalLifetime a sosa:Observation ;\r\n  sosa:hasFeatureOfInterest ex:sensor ;\r\n  sosa:observedProperty ex:nominalLifetimeRestriction ;\r\n  sosa:hasResult [ \r\n    qudt:value 1.0 ;\r\n    qudt:hasUnit unit:YR ;\r\n  ] ;\r\n.\r\nex:nominalLifetimeRestriction\r\n    a iop:Variable, sosa:Property;\r\n    rdfs:label \"Nominal Lifetime Restriction of a AA Battery\" ;\r\n    rdfs:comment \"\"\"Nominal lifetime restriction of a AA battery\"\"\" ;\r\n    iop:hasObjectOfInterest ex:AABattery ;\r\n    iop:hasStatisticalModifier uom:average ;\r\n    iop:hasContextObject gemet:1170 ;\r\n    iop:hasProperty sosa-cap:BatteryLifetime .\r\n\t\r\nex:AABattery\r\n    a iop:Entity ;\r\n    rdfs:label \"AABattery\" .\r\n\t\r\nuom:average\r\n    a iop:StatisticalModifier ;\r\n    rdfs:label \"average\" .\r\n\t\r\nsosa-cap:Lifetime\r\n    a iop:Property ;\r\n    rdfs:label \"Battery Lifetime\" .\r\n\t\t\r\ngemet:1170\r\n    a iop:Entity ;\r\n\trdfs:label \"sensor\" .\r\n\r\n"
         }
       ],
       "prefixes": {
@@ -1654,8 +1654,8 @@
           "language": "ttl",
           "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/i-adopt.ttl",
           "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/i-adopt.ttl",
-          "sizeBytes": 724,
-          "code": "@prefix ex:   <http://example.org/>.\n@prefix sosa: <https://www.w3.org/TR/vocab-ssn/>.\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#>.\n@prefix qudt: <http://qudt.org/schema/qudt/>.\n@prefix unit: <http://qudt.org/vocab/unit/>.\n@prefix iop:  <https://w3id.org/iadopt/ont/>.\n@prefix uom:  <http://www.opengis.net/def/uom/OGC/1.0/>.\n\nex:SensorCapabilityObservation a sosa:Observation ;\n  sosa:hasFeatureOfInterest ex:Sensor ;\n  sosa:observedProperty ex:SensorMinimumLimit;\n  sosa:hasResult [ \n    qudt:value -40.0 ;\n    qudt:hasUnit unit:DEG_C ;\n  ] ;\n.\n\nex:SensorMinimumLimit a iop:Variable, sosa:Property;\n  iop:hasStatisticalModifier uom:minimum ;\n  iop:hasObjectOfInterest ex:air ;\n  iop:hasProperty qudt:Temperature ;\n.\n"
+          "sizeBytes": 1165,
+          "code": "@prefix ex:   <http://example.org/>.\r\n@prefix sosa: <https://www.w3.org/TR/vocab-ssn/>.\r\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#>.\r\n@prefix qudt: <http://qudt.org/schema/qudt/>.\r\n@prefix unit: <http://qudt.org/vocab/unit/>.\r\n@prefix iop:  <https://w3id.org/iadopt/ont/>.\r\n@prefix uom: <http://www.ontology-of-units-of-measure.org/resource/om-2/>.\r\n@prefix qk: <http://qudt.org/vocab/quantitykind/>.\r\n@prefix et: <http://vocabs.lter-europe.net/EnvThes/>.\r\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.\r\n\r\n\r\nex:SensorCapabilityObservation a sosa:Observation ;\r\n  sosa:hasFeatureOfInterest ex:Sensor ;\r\n  sosa:observedProperty ex:SensorMinimumLimit;\r\n  sosa:hasResult [ \r\n    qudt:value -40.0 ;\r\n    qudt:hasUnit unit:DEG_C ;\r\n  ] ;\r\n.\r\nex:SensorMinimumLimit a iop:Variable, sosa:Property;\r\n  iop:hasStatisticalModifier uom:minimum ;\r\n  iop:hasObjectOfInterest et:23 ;\r\n  iop:hasProperty qk:ThermodynamicTemperature ;\r\n.\r\nqk:ThermodynamicTemperature\r\n    a iop:Property ;\r\n    rdfs:label \"thermodynamic temperature\" \r\n.\t\t\r\net:23\r\n    a iop:Entity ;\r\n    rdfs:label \"air\" \r\n.\r\nuom:minimum\r\n    a iop:StatisticalModifier ;\r\n    rdfs:label \"minimum\" \r\n."
         }
       ],
       "prefixes": {

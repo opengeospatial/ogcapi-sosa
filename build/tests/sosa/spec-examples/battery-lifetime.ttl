@@ -1,4 +1,5 @@
 @prefix ex: <http://example.org/> .
+@prefix gemet: <https://www.eionet.europa.eu/gemet/concept/> .
 @prefix iop: <https://w3id.org/iadopt/ont/> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -14,8 +15,14 @@ ex:nominalLifetime a sosa1:Observation ;
             qudt:value 1.0 ] ;
     sosa1:observedProperty ex:nominalLifetimeRestriction .
 
+sosa-cap:Lifetime a iop:Property ;
+    rdfs:label "Battery Lifetime" .
+
 ex:nominalLifetimeRestriction a iop:Variable,
         sosa1:Property ;
+    rdfs:label "Nominal Lifetime Restriction of a AA Battery" ;
+    rdfs:comment "Nominal lifetime restriction of a AA battery" ;
+    iop:hasContextObject gemet:1170 ;
     iop:hasObjectOfInterest ex:AABattery ;
     iop:hasProperty sosa-cap:BatteryLifetime ;
     iop:hasStatisticalModifier uom:average .
@@ -23,6 +30,12 @@ ex:nominalLifetimeRestriction a iop:Variable,
 ex:sensor a sosa1:Sensor ;
     sosa1:hasSubSystem ex:AABattery .
 
-ex:AABattery a sosa1:Battery ;
-    rdfs:label "An AA battery." .
+uom:average a iop:StatisticalModifier ;
+    rdfs:label "average" .
+
+gemet:1170 a iop:Entity ;
+    rdfs:label "sensor" .
+
+ex:AABattery a iop:Entity ;
+    rdfs:label "AABattery" .
 

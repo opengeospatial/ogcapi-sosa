@@ -167,20 +167,9 @@ The "id" property is assumed to be common and compatible with other mix-in aspec
 ```yaml
 $schema: https://json-schema.org/draft/2020-12/schema
 description: SOSA Sensor
-$definitions:
-  Sensor:
-    anyOf:
-    - $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml
-    - type: object
-      properties:
-        id:
-          $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml
-          x-jsonld-id: '@id'
-        name:
-          type: string
-allOf:
-- $ref: '#/$definitions/Sensor'
+$ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/system/schema.yaml
 x-jsonld-extra-terms:
+  id: '@id'
   properties: '@nest'
   featureType: '@type'
   ActuatableProperty:
@@ -243,8 +232,14 @@ x-jsonld-extra-terms:
   System:
     x-jsonld-id: http://www.w3.org/ns/sosa/System
     x-jsonld-type: '@id'
+  actsOn:
+    x-jsonld-id: http://www.w3.org/ns/sosa/actsOn
+    x-jsonld-type: '@id'
   actsOnProperty:
     x-jsonld-id: http://www.w3.org/ns/sosa/actsOnProperty
+    x-jsonld-type: '@id'
+  deployedAsset:
+    x-jsonld-id: http://www.w3.org/ns/sosa/deployedAsset
     x-jsonld-type: '@id'
   deployedOnPlatform:
     x-jsonld-id: http://www.w3.org/ns/sosa/deployedOnPlatform
@@ -255,6 +250,7 @@ x-jsonld-extra-terms:
   detects:
     x-jsonld-id: http://www.w3.org/ns/sosa/detects
     x-jsonld-type: '@id'
+  endTime: http://www.w3.org/ns/sosa/endTime
   features:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasMember
     x-jsonld-type: '@id'
@@ -269,6 +265,9 @@ x-jsonld-extra-terms:
     x-jsonld-type: '@id'
   hasInput:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasInput
+    x-jsonld-type: '@id'
+  hasInputValue:
+    x-jsonld-id: http://www.w3.org/ns/sosa/hasInputValue
     x-jsonld-type: '@id'
   hasMember:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasMember
@@ -329,6 +328,9 @@ x-jsonld-extra-terms:
   isObservedBy:
     x-jsonld-id: http://www.w3.org/ns/sosa/isObservedBy
     x-jsonld-type: '@id'
+  isOriginalSampleOf:
+    x-jsonld-id: http://www.w3.org/ns/sosa/isOriginalSampleOf
+    x-jsonld-type: '@id'
   isPropertyOf:
     x-jsonld-id: http://www.w3.org/ns/sosa/isPropertyOf
     x-jsonld-type: '@id'
@@ -347,6 +349,12 @@ x-jsonld-extra-terms:
   isSampleOf:
     x-jsonld-id: http://www.w3.org/ns/sosa/isSampleOf
     x-jsonld-type: '@id'
+  isSampleOfUltimateFOI:
+    x-jsonld-id: http://www.w3.org/ns/sosa/isSampleOfUltimateFOI
+    x-jsonld-type: '@id'
+  isSubSystemOf:
+    x-jsonld-id: http://www.w3.org/ns/sosa/isSubSystemOf
+    x-jsonld-type: '@id'
   madeActuation:
     x-jsonld-id: http://www.w3.org/ns/sosa/madeActuation
     x-jsonld-type: '@id'
@@ -358,6 +366,12 @@ x-jsonld-extra-terms:
     x-jsonld-type: '@id'
   madeBySensor:
     x-jsonld-id: http://www.w3.org/ns/sosa/madeBySensor
+    x-jsonld-type: '@id'
+  madeBySystem:
+    x-jsonld-id: http://www.w3.org/ns/sosa/madeBySystem
+    x-jsonld-type: '@id'
+  madeExecution:
+    x-jsonld-id: http://www.w3.org/ns/sosa/madeExecution
     x-jsonld-type: '@id'
   madeObservation:
     x-jsonld-id: http://www.w3.org/ns/sosa/madeObservation
@@ -375,6 +389,7 @@ x-jsonld-extra-terms:
     x-jsonld-id: http://www.w3.org/ns/sosa/phenomenonTime
     x-jsonld-type: '@id'
   resultTime: http://www.w3.org/ns/sosa/resultTime
+  startTime: http://www.w3.org/ns/sosa/startTime
   usedProcedure:
     x-jsonld-id: http://www.w3.org/ns/sosa/usedProcedure
     x-jsonld-type: '@id'
@@ -572,8 +587,16 @@ Links to the schema:
       "@id": "sosa:System",
       "@type": "@id"
     },
+    "actsOn": {
+      "@id": "sosa:actsOn",
+      "@type": "@id"
+    },
     "actsOnProperty": {
       "@id": "sosa:actsOnProperty",
+      "@type": "@id"
+    },
+    "deployedAsset": {
+      "@id": "sosa:deployedAsset",
       "@type": "@id"
     },
     "deployedOnPlatform": {
@@ -588,6 +611,7 @@ Links to the schema:
       "@id": "sosa:detects",
       "@type": "@id"
     },
+    "endTime": "sosa:endTime",
     "features": {
       "@id": "sosa:hasMember",
       "@type": "@id"
@@ -596,16 +620,16 @@ Links to the schema:
       "@id": "sosa:forProperty",
       "@type": "@id"
     },
-    "hasDeployment": {
-      "@id": "sosa:hasDeployment",
-      "@type": "@id"
-    },
     "hasFeatureOfInterest": {
       "@id": "sosa:hasFeatureOfInterest",
       "@type": "@id"
     },
     "hasInput": {
       "@id": "sosa:hasInput",
+      "@type": "@id"
+    },
+    "hasInputValue": {
+      "@id": "sosa:hasInputValue",
       "@type": "@id"
     },
     "hasMember": {
@@ -653,11 +677,6 @@ Links to the schema:
       "@id": "sosa:hasUltimateFeatureOfInterest",
       "@type": "@id"
     },
-    "hosts": {
-      "@id": "sosa:hosts",
-      "@type": "@id",
-      "@container": "@set"
-    },
     "implementedBy": {
       "@id": "sosa:implementedBy",
       "@type": "@id"
@@ -678,12 +697,12 @@ Links to the schema:
       "@id": "sosa:isFeatureOfInterestOf",
       "@type": "@id"
     },
-    "isHostedBy": {
-      "@id": "sosa:isHostedBy",
-      "@type": "@id"
-    },
     "isObservedBy": {
       "@id": "sosa:isObservedBy",
+      "@type": "@id"
+    },
+    "isOriginalSampleOf": {
+      "@id": "sosa:isOriginalSampleOf",
       "@type": "@id"
     },
     "isPropertyOf": {
@@ -710,6 +729,14 @@ Links to the schema:
       "@id": "sosa:isSampleOf",
       "@type": "@id"
     },
+    "isSampleOfUltimateFOI": {
+      "@id": "sosa:isSampleOfUltimateFOI",
+      "@type": "@id"
+    },
+    "isSubSystemOf": {
+      "@id": "sosa:isSubSystemOf",
+      "@type": "@id"
+    },
     "madeActuation": {
       "@id": "sosa:madeActuation",
       "@type": "@id"
@@ -724,6 +751,14 @@ Links to the schema:
     },
     "madeBySensor": {
       "@id": "sosa:madeBySensor",
+      "@type": "@id"
+    },
+    "madeBySystem": {
+      "@id": "sosa:madeBySystem",
+      "@type": "@id"
+    },
+    "madeExecution": {
+      "@id": "sosa:madeExecution",
       "@type": "@id"
     },
     "madeObservation": {
@@ -747,6 +782,7 @@ Links to the schema:
       "@type": "@id"
     },
     "resultTime": "sosa:resultTime",
+    "startTime": "sosa:startTime",
     "usedProcedure": {
       "@id": "sosa:usedProcedure",
       "@type": "@id"
@@ -873,6 +909,19 @@ Links to the schema:
     },
     "qualityOfObservation": {
       "@id": "ssn-system:qualityOfObservation",
+      "@type": "@id"
+    },
+    "hosts": {
+      "@id": "sosa:hosts",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "isHostedBy": {
+      "@id": "sosa:isHostedBy",
+      "@type": "@id"
+    },
+    "hasDeployment": {
+      "@id": "sosa:hasDeployment",
       "@type": "@id"
     },
     "sosa": "http://www.w3.org/ns/sosa/",

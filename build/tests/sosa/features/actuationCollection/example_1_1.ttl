@@ -1,0 +1,21 @@
+@prefix geojson: <https://purl.org/geojson/vocab#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://example.org/data/open-window/A188> a geojson:Feature ;
+    sosa:actsOnProperty <https://example.org/data/open-window/window98/openState> ;
+    sosa:endTime "2017-04-18T17:24:00+02:00" ;
+    sosa:hasSimpleResult true ;
+    sosa:startTime "2017-04-18T17:23:00+02:00" .
+
+<https://example.org/data/open-window/A189> a geojson:Feature ;
+    sosa:actsOnProperty <https://example.org/data/open-window/window99/openState> ;
+    sosa:endTime "2017-04-18T17:25:30+02:00" ;
+    sosa:hasSimpleResult false ;
+    sosa:startTime "2017-04-18T17:25:00+02:00" .
+
+[] a geojson:FeatureCollection ;
+    sosa:hasMember <https://example.org/data/open-window/A188>,
+        <https://example.org/data/open-window/A189> ;
+    sosa:madeByActuator <https://example.org/data/open-window/closer-987> .
+

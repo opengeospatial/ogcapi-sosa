@@ -3,12 +3,12 @@
   "abstract": "Building blocks for implementation of OGC Observations Measurements and Samples (ISO 19156 aka OMS) using the OGC API Features schema and the OGC/W3C SOSA ontology",
   "description": "Each building block defines a reusable JSON schema that is mapped to the equivalent SOSA concept (and transitively mapped to OMS requirements via SOSA).\n\nEach fragment allows for transparent and validatable use of JSON-LD contexts to map schema elements to equivalent terms from the SOSA ontology. \n\n _These components are under review by the OMS SWG as candidate canonical implementations._ \n\n Each building block allows for examples transformed to RDF, which in turn allows for the use of SHACL rules to enforce the semantics of the SOSA and OMS specifications.\n",
   "sparqlEndpoint": "https://defs-dev.opengis.net/fuseki/query",
-  "modified": "2026-08-27T08:26:49.537885",
+  "modified": "2026-09-09T11:07:18.886091",
   "tooling": {
     "bblocks-postprocess": {
-      "commitId": "\"447ae31f978ca3b124bfcbcf5473c7aadddb56af",
-      "shortCommitId": "\"447ae3",
-      "date": "2026-08-26T14:44:03+00:00\""
+      "commitId": "\"5f1ec548149bd0b447b0781f2ce00e5fbe4566e0",
+      "shortCommitId": "\"5f1ec5",
+      "date": "2026-09-08T21:44:17+00:00\""
     }
   },
   "gitRepository": "https://github.com/opengeospatial/ogcapi-sosa",
@@ -30,7 +30,7 @@
       "itemClass": "api",
       "register": "ogc-building-block-register",
       "version": "1.0",
-      "dateOfLastChange": "2026-08-27",
+      "dateOfLastChange": "2026-09-09",
       "sources": [
         {
           "title": "Semantic Sensor Network Ontology",
@@ -66,15 +66,15 @@
       }
     },
     {
-      "itemIdentifier": "ogc.sosa.properties.observation-owa",
-      "name": "Observation Properties (SOSA OWA)",
-      "abstract": "This is set of properties defined by the SOSA ontology, assuming a \"Open World Assumption\" where mandatory properties may be provided by other related objects.",
+      "itemIdentifier": "ogc.sosa.properties.asset",
+      "name": "Asset Properties",
+      "abstract": "This building block defines the set of properties common to any SOSA Asset - the abstract physical or virtual entity that can be hosted, deployed, or host/deploy other Assets. It generalizes the properties shared by System and Platform and is not intended to be used directly by itself.",
       "status": "under-development",
-      "dateTimeAddition": "2023-04-13T00:00:00Z",
+      "dateTimeAddition": "2026-08-29T00:00:00Z",
       "itemClass": "schema",
       "register": "ogc-building-block-register",
       "version": "1.0",
-      "dateOfLastChange": "2026-08-27",
+      "dateOfLastChange": "2026-09-09",
       "sources": [
         {
           "title": "Semantic Sensor Network Ontology",
@@ -86,36 +86,206 @@
       "tags": [
         "sosa",
         "ssn",
-        "observations",
-        "o&m",
-        "OMS",
-        "OWA"
+        "asset",
+        "o&m"
       ],
       "group": "SOSA",
       "highlighted": false,
+      "rdfType": [
+        "http://www.w3.org/ns/sosa/Asset"
+      ],
       "shaclShapes": {},
       "schema": {
-        "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation-owa/schema.yaml",
-        "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation-owa/schema.json"
+        "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/asset/schema.yaml",
+        "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/asset/schema.json"
       },
-      "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation-owa/schema.yaml",
-      "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation-owa/context.jsonld",
-      "resolvedSchemaProperties": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation-owa/resolvedProperties.json",
-      "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation-owa/",
+      "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/asset/schema.yaml",
+      "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/asset/context.jsonld",
+      "resolvedSchemaProperties": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/asset/resolvedProperties.json",
+      "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/asset/",
       "validationPassed": true,
-      "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/properties/observation-owa/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/properties/observation-owa/index.md"
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/properties/asset/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/properties/observation-owa/index.json"
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/properties/asset/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.properties.observation-owa"
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.properties.asset"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.sosa.properties.deployment",
+      "name": "Deployment Properties",
+      "abstract": "This building block defines the set of properties for a SOSA Deployment - the arrangement of one or more Assets to execute Procedures with respect to designated features of interest, typically for a period of time.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-29T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-building-block-register",
+      "version": "1.0",
+      "dateOfLastChange": "2026-09-09",
+      "sources": [
+        {
+          "title": "Semantic Sensor Network Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn/"
+        }
+      ],
+      "maturity": "development",
+      "scope": "development",
+      "tags": [
+        "sosa",
+        "ssn",
+        "deployment",
+        "asset",
+        "o&m"
+      ],
+      "group": "SOSA",
+      "highlighted": false,
+      "rdfType": [
+        "http://www.w3.org/ns/sosa/Deployment"
+      ],
+      "shaclShapes": {},
+      "schema": {
+        "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/deployment/schema.yaml",
+        "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/deployment/schema.json"
+      },
+      "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/deployment/schema.yaml",
+      "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/deployment/context.jsonld",
+      "resolvedSchemaProperties": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/deployment/resolvedProperties.json",
+      "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/deployment/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/properties/deployment/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/properties/deployment/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/properties/deployment/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.properties.deployment"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.sosa.properties.execution",
+      "name": "Execution Properties",
+      "abstract": "This building block defines the set of properties common to any SOSA Execution - the abstract act of carrying out a Procedure using a System. It generalizes the properties shared by Observation, Actuation and Sampling and is not intended to be used directly by itself.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-29T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-building-block-register",
+      "version": "1.0",
+      "dateOfLastChange": "2026-09-09",
+      "sources": [
+        {
+          "title": "Semantic Sensor Network Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn/"
+        }
+      ],
+      "maturity": "development",
+      "scope": "development",
+      "tags": [
+        "sosa",
+        "ssn",
+        "execution",
+        "o&m",
+        "OMS"
+      ],
+      "group": "SOSA",
+      "highlighted": false,
+      "rdfType": [
+        "http://www.w3.org/ns/sosa/Execution"
+      ],
+      "shaclShapes": {
+        "ogc.sosa.properties.execution": [
+          "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl"
+        ]
+      },
+      "schema": {
+        "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml",
+        "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.json"
+      },
+      "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/schema.yaml",
+      "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/context.jsonld",
+      "resolvedSchemaProperties": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/resolvedProperties.json",
+      "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/",
+      "validationPassed": true,
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/properties/execution/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/properties/execution/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.properties.execution"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.sosa.properties.sample",
+      "name": "Sample Properties",
+      "abstract": "This building block defines the set of properties for a SOSA Sample - a feature which is intended to be representative of a FeatureOfInterest on which Observations may be made, typically the result of a Sampling.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-29T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-building-block-register",
+      "version": "1.0",
+      "dateOfLastChange": "2026-09-09",
+      "sources": [
+        {
+          "title": "Semantic Sensor Network Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn/"
+        }
+      ],
+      "maturity": "development",
+      "scope": "development",
+      "tags": [
+        "sosa",
+        "ssn",
+        "sample",
+        "o&m"
+      ],
+      "group": "SOSA",
+      "highlighted": false,
+      "rdfType": [
+        "http://www.w3.org/ns/sosa/Sample"
+      ],
+      "shaclShapes": {},
+      "schema": {
+        "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sample/schema.yaml",
+        "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sample/schema.json"
+      },
+      "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/sample/schema.yaml",
+      "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sample/context.jsonld",
+      "resolvedSchemaProperties": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sample/resolvedProperties.json",
+      "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/sample/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/properties/sample/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/properties/sample/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/properties/sample/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.properties.sample"
         }
       }
     },
@@ -128,7 +298,7 @@
       "itemClass": "schema",
       "register": "ogc-building-block-register",
       "version": "1.0",
-      "dateOfLastChange": "2026-08-27",
+      "dateOfLastChange": "2026-09-09",
       "sources": [
         {
           "title": "Semantic Sensor Network Ontology",
@@ -167,15 +337,15 @@
       }
     },
     {
-      "itemIdentifier": "ogc.sosa.properties.sensor",
-      "name": "SOSA Sensor",
-      "abstract": "An identifiable entity that can generate Observations pertaining to an ObservableProperty by implementing an ObservingProcedure. Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms.",
+      "itemIdentifier": "ogc.sosa.properties.platform",
+      "name": "SOSA Platform",
+      "abstract": "This building block defines the set of properties for an observation Platform according to the SOSA/SSN specification. These properties may be directly included into a root element of a JSON object or used in the properties container of a GeoJSON feature.",
       "status": "under-development",
       "dateTimeAddition": "2023-12-05T00:00:00Z",
       "itemClass": "schema",
       "register": "ogc-building-block-register",
       "version": "1.0",
-      "dateOfLastChange": "2026-08-27",
+      "dateOfLastChange": "2026-09-09",
       "sources": [
         {
           "title": "Semantic Sensor Network Ontology",
@@ -192,9 +362,573 @@
         "o&m&s"
       ],
       "group": "SOSA",
+      "isProfileOf": [
+        "bblocks://ogc.sosa.properties.asset"
+      ],
       "shaclShapes": {},
       "dependsOn": [
+        "bblocks://ogc.sosa.properties.asset"
+      ],
+      "schema": {
+        "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/schema.yaml",
+        "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/schema.json"
+      },
+      "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/platform/schema.yaml",
+      "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/context.jsonld",
+      "resolvedSchemaProperties": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/resolvedProperties.json",
+      "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/platform/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/properties/platform/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/properties/platform/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/properties/platform/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.properties.platform"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.sosa.properties.system",
+      "name": "System Properties",
+      "abstract": "This building block defines the set of properties common to any SOSA System - the abstract Asset that carries out Procedures (Observations, Actuations, or Samplings). It generalizes the properties shared by Sensor, Actuator and Sampler and is not intended to be used directly by itself.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-29T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-building-block-register",
+      "version": "1.0",
+      "dateOfLastChange": "2026-09-09",
+      "sources": [
+        {
+          "title": "Semantic Sensor Network Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn/"
+        }
+      ],
+      "maturity": "development",
+      "scope": "development",
+      "tags": [
+        "sosa",
+        "ssn",
+        "system",
+        "o&m"
+      ],
+      "group": "SOSA",
+      "highlighted": false,
+      "isProfileOf": [
+        "bblocks://ogc.sosa.properties.asset"
+      ],
+      "rdfType": [
+        "http://www.w3.org/ns/sosa/System"
+      ],
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.sosa.properties.asset"
+      ],
+      "schema": {
+        "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/system/schema.yaml",
+        "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/system/schema.json"
+      },
+      "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/system/schema.yaml",
+      "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/system/context.jsonld",
+      "resolvedSchemaProperties": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/system/resolvedProperties.json",
+      "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/system/",
+      "validationPassed": true,
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/properties/system/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/properties/system/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.properties.system"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.sosa.properties.actuation",
+      "name": "Actuation Properties",
+      "abstract": "This building block defines the set of properties for a SOSA Actuation - the Act of carrying out an Actuating Procedure to change the state of the world via an Actuator.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-29T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-building-block-register",
+      "version": "1.0",
+      "dateOfLastChange": "2026-09-09",
+      "sources": [
+        {
+          "title": "Semantic Sensor Network Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn/"
+        }
+      ],
+      "maturity": "development",
+      "scope": "development",
+      "tags": [
+        "sosa",
+        "ssn",
+        "actuation",
+        "o&m"
+      ],
+      "group": "SOSA",
+      "highlighted": false,
+      "isProfileOf": [
+        "bblocks://ogc.sosa.properties.execution"
+      ],
+      "rdfType": [
+        "http://www.w3.org/ns/sosa/Actuation"
+      ],
+      "shaclShapes": {
+        "ogc.sosa.properties.execution": [
+          "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl"
+        ]
+      },
+      "dependsOn": [
+        "bblocks://ogc.sosa.properties.execution"
+      ],
+      "schema": {
+        "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/actuation/schema.yaml",
+        "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/actuation/schema.json"
+      },
+      "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/actuation/schema.yaml",
+      "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/actuation/context.jsonld",
+      "resolvedSchemaProperties": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/actuation/resolvedProperties.json",
+      "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/actuation/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/properties/actuation/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/properties/actuation/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/properties/actuation/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.properties.actuation"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.sosa.properties.executionCollection",
+      "name": "ExecutionCollection Properties",
+      "abstract": "This building block defines the set of properties common to any SOSA ExecutionCollection - the abstract collection of Executions (Observations, Actuations, or Samplings). It generalizes ObservationCollection, ActuationCollection and SamplingCollection and is not intended to be used directly by itself.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-29T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-building-block-register",
+      "version": "1.0",
+      "dateOfLastChange": "2026-09-09",
+      "sources": [
+        {
+          "title": "Semantic Sensor Network Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn/"
+        }
+      ],
+      "maturity": "development",
+      "scope": "development",
+      "tags": [
+        "sosa",
+        "ssn",
+        "execution",
+        "collection",
+        "o&m"
+      ],
+      "group": "SOSA",
+      "highlighted": false,
+      "isProfileOf": [
+        "bblocks://ogc.sosa.properties.execution"
+      ],
+      "rdfType": [
+        "http://www.w3.org/ns/sosa/ExecutionCollection"
+      ],
+      "shaclShapes": {
+        "ogc.sosa.properties.execution": [
+          "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl"
+        ]
+      },
+      "dependsOn": [
+        "bblocks://ogc.sosa.properties.execution"
+      ],
+      "schema": {
+        "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/executionCollection/schema.yaml",
+        "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/executionCollection/schema.json"
+      },
+      "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/executionCollection/schema.yaml",
+      "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/executionCollection/context.jsonld",
+      "resolvedSchemaProperties": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/executionCollection/resolvedProperties.json",
+      "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/executionCollection/",
+      "validationPassed": true,
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/properties/executionCollection/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/properties/executionCollection/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.properties.executionCollection"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.sosa.properties.observation-owa",
+      "name": "Observation Properties (SOSA OWA)",
+      "abstract": "This is set of properties defined by the SOSA ontology, assuming a \"Open World Assumption\" where mandatory properties may be provided by other related objects.",
+      "status": "under-development",
+      "dateTimeAddition": "2023-04-13T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-building-block-register",
+      "version": "1.0",
+      "dateOfLastChange": "2026-09-09",
+      "sources": [
+        {
+          "title": "Semantic Sensor Network Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn/"
+        }
+      ],
+      "maturity": "development",
+      "scope": "development",
+      "tags": [
+        "sosa",
+        "ssn",
+        "observations",
+        "o&m",
+        "OMS",
+        "OWA"
+      ],
+      "group": "SOSA",
+      "highlighted": false,
+      "isProfileOf": [
+        "bblocks://ogc.sosa.properties.execution"
+      ],
+      "shaclShapes": {
+        "ogc.sosa.properties.execution": [
+          "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl"
+        ]
+      },
+      "dependsOn": [
+        "bblocks://ogc.sosa.properties.execution"
+      ],
+      "schema": {
+        "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation-owa/schema.yaml",
+        "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation-owa/schema.json"
+      },
+      "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation-owa/schema.yaml",
+      "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation-owa/context.jsonld",
+      "resolvedSchemaProperties": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation-owa/resolvedProperties.json",
+      "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation-owa/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/properties/observation-owa/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/properties/observation-owa/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/properties/observation-owa/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.properties.observation-owa"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.sosa.properties.sampling",
+      "name": "Sampling Properties",
+      "abstract": "This building block defines the set of properties for a SOSA Sampling - the Act of carrying out a Sampling Procedure to create or transform one or more samples.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-29T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-building-block-register",
+      "version": "1.0",
+      "dateOfLastChange": "2026-09-09",
+      "sources": [
+        {
+          "title": "Semantic Sensor Network Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn/"
+        }
+      ],
+      "maturity": "development",
+      "scope": "development",
+      "tags": [
+        "sosa",
+        "ssn",
+        "sampling",
+        "o&m"
+      ],
+      "group": "SOSA",
+      "highlighted": false,
+      "isProfileOf": [
+        "bblocks://ogc.sosa.properties.execution"
+      ],
+      "rdfType": [
+        "http://www.w3.org/ns/sosa/Sampling"
+      ],
+      "shaclShapes": {
+        "ogc.sosa.properties.execution": [
+          "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl"
+        ]
+      },
+      "dependsOn": [
+        "bblocks://ogc.sosa.properties.execution"
+      ],
+      "schema": {
+        "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sampling/schema.yaml",
+        "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sampling/schema.json"
+      },
+      "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/sampling/schema.yaml",
+      "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sampling/context.jsonld",
+      "resolvedSchemaProperties": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sampling/resolvedProperties.json",
+      "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/sampling/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/properties/sampling/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/properties/sampling/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/properties/sampling/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.properties.sampling"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.sosa.properties.sampleCollection",
+      "name": "SampleCollection Properties",
+      "abstract": "This building block defines the set of properties for a SOSA SampleCollection - a collection of one or more Samples, whose members share a common value for one or more properties.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-29T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-building-block-register",
+      "version": "1.0",
+      "dateOfLastChange": "2026-09-09",
+      "sources": [
+        {
+          "title": "Semantic Sensor Network Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn/"
+        }
+      ],
+      "maturity": "development",
+      "scope": "development",
+      "tags": [
+        "sosa",
+        "ssn",
+        "sample",
+        "collection",
+        "o&m"
+      ],
+      "group": "SOSA",
+      "highlighted": false,
+      "rdfType": [
+        "http://www.w3.org/ns/sosa/SampleCollection"
+      ],
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.sosa.properties.sample",
         "bblocks://ogc.ogc-utils.iri-or-curie"
+      ],
+      "schema": {
+        "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sampleCollection/schema.yaml",
+        "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sampleCollection/schema.json"
+      },
+      "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/sampleCollection/schema.yaml",
+      "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sampleCollection/context.jsonld",
+      "resolvedSchemaProperties": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sampleCollection/resolvedProperties.json",
+      "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/sampleCollection/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/properties/sampleCollection/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/properties/sampleCollection/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/properties/sampleCollection/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.properties.sampleCollection"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.sosa.properties.actuator",
+      "name": "Actuator Properties",
+      "abstract": "This building block defines the set of properties for a SOSA Actuator - a System that is used by, or implements, an Actuating Procedure that changes the state of the world.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-29T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-building-block-register",
+      "version": "1.0",
+      "dateOfLastChange": "2026-09-09",
+      "sources": [
+        {
+          "title": "Semantic Sensor Network Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn/"
+        }
+      ],
+      "maturity": "development",
+      "scope": "development",
+      "tags": [
+        "sosa",
+        "ssn",
+        "actuator",
+        "system",
+        "o&m"
+      ],
+      "group": "SOSA",
+      "highlighted": false,
+      "isProfileOf": [
+        "bblocks://ogc.sosa.properties.system"
+      ],
+      "rdfType": [
+        "http://www.w3.org/ns/sosa/Actuator"
+      ],
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.sosa.properties.system"
+      ],
+      "schema": {
+        "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/actuator/schema.yaml",
+        "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/actuator/schema.json"
+      },
+      "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/actuator/schema.yaml",
+      "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/actuator/context.jsonld",
+      "resolvedSchemaProperties": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/actuator/resolvedProperties.json",
+      "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/actuator/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/properties/actuator/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/properties/actuator/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/properties/actuator/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.properties.actuator"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.sosa.properties.sampler",
+      "name": "Sampler Properties",
+      "abstract": "This building block defines the set of properties for a SOSA Sampler - a System that is used by, or implements, a Sampling Procedure to create or transform one or more samples.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-29T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-building-block-register",
+      "version": "1.0",
+      "dateOfLastChange": "2026-09-09",
+      "sources": [
+        {
+          "title": "Semantic Sensor Network Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn/"
+        }
+      ],
+      "maturity": "development",
+      "scope": "development",
+      "tags": [
+        "sosa",
+        "ssn",
+        "sampler",
+        "system",
+        "o&m"
+      ],
+      "group": "SOSA",
+      "highlighted": false,
+      "isProfileOf": [
+        "bblocks://ogc.sosa.properties.system"
+      ],
+      "rdfType": [
+        "http://www.w3.org/ns/sosa/Sampler"
+      ],
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.sosa.properties.system"
+      ],
+      "schema": {
+        "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sampler/schema.yaml",
+        "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sampler/schema.json"
+      },
+      "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/sampler/schema.yaml",
+      "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sampler/context.jsonld",
+      "resolvedSchemaProperties": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sampler/resolvedProperties.json",
+      "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/sampler/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/properties/sampler/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/properties/sampler/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/properties/sampler/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.properties.sampler"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.sosa.properties.sensor",
+      "name": "SOSA Sensor",
+      "abstract": "An identifiable entity that can generate Observations pertaining to an ObservableProperty by implementing an ObservingProcedure. Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms.",
+      "status": "under-development",
+      "dateTimeAddition": "2023-12-05T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-building-block-register",
+      "version": "1.0",
+      "dateOfLastChange": "2026-09-09",
+      "sources": [
+        {
+          "title": "Semantic Sensor Network Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn/"
+        }
+      ],
+      "maturity": "development",
+      "scope": "development",
+      "tags": [
+        "sosa",
+        "ssn",
+        "observations",
+        "o&m",
+        "o&m&s"
+      ],
+      "group": "SOSA",
+      "isProfileOf": [
+        "bblocks://ogc.sosa.properties.system"
+      ],
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.sosa.properties.system"
       ],
       "schema": {
         "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sensor/schema.yaml",
@@ -222,6 +956,74 @@
       }
     },
     {
+      "itemIdentifier": "ogc.sosa.properties.actuationCollection",
+      "name": "ActuationCollection Properties",
+      "abstract": "This building block defines the set of properties for a SOSA ActuationCollection - a collection of one or more Actuations, whose members share a common value for one or more properties.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-29T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-building-block-register",
+      "version": "1.0",
+      "dateOfLastChange": "2026-09-09",
+      "sources": [
+        {
+          "title": "Semantic Sensor Network Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn/"
+        }
+      ],
+      "maturity": "development",
+      "scope": "development",
+      "tags": [
+        "sosa",
+        "ssn",
+        "actuation",
+        "collection",
+        "o&m"
+      ],
+      "group": "SOSA",
+      "highlighted": false,
+      "isProfileOf": [
+        "bblocks://ogc.sosa.properties.executionCollection"
+      ],
+      "rdfType": [
+        "http://www.w3.org/ns/sosa/ActuationCollection"
+      ],
+      "shaclShapes": {
+        "ogc.sosa.properties.execution": [
+          "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl"
+        ]
+      },
+      "dependsOn": [
+        "bblocks://ogc.sosa.properties.actuation",
+        "bblocks://ogc.sosa.properties.executionCollection",
+        "bblocks://ogc.ogc-utils.iri-or-curie"
+      ],
+      "schema": {
+        "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/actuationCollection/schema.yaml",
+        "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/actuationCollection/schema.json"
+      },
+      "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/actuationCollection/schema.yaml",
+      "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/actuationCollection/context.jsonld",
+      "resolvedSchemaProperties": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/actuationCollection/resolvedProperties.json",
+      "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/actuationCollection/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/properties/actuationCollection/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/properties/actuationCollection/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/properties/actuationCollection/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.properties.actuationCollection"
+        }
+      }
+    },
+    {
       "itemIdentifier": "ogc.sosa.properties.observation",
       "name": "Observation Properties",
       "abstract": "This building block defines the set of properties for an observation according to the SOSA/SSN specification. These properties may be directly included into a root element of a JSON object or used in the properties container of a GeoJSON feature.",
@@ -230,7 +1032,7 @@
       "itemClass": "schema",
       "register": "ogc-building-block-register",
       "version": "1.0",
-      "dateOfLastChange": "2026-08-27",
+      "dateOfLastChange": "2026-09-09",
       "sources": [
         {
           "title": "Semantic Sensor Network Ontology",
@@ -251,6 +1053,9 @@
       "shaclShapes": {
         "ogc.sosa.properties.observation": [
           "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl"
+        ],
+        "ogc.sosa.properties.execution": [
+          "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl"
         ]
       },
       "dependsOn": [
@@ -282,15 +1087,15 @@
       }
     },
     {
-      "itemIdentifier": "ogc.sosa.properties.platform",
-      "name": "SOSA Platform",
-      "abstract": "This building block defines the set of properties for an observation Platform according to the SOSA/SSN specification. These properties may be directly included into a root element of a JSON object or used in the properties container of a GeoJSON feature.",
+      "itemIdentifier": "ogc.sosa.properties.samplingCollection",
+      "name": "SamplingCollection Properties",
+      "abstract": "This building block defines the set of properties for a SOSA SamplingCollection - a collection of one or more Samplings, whose members share a common value for one or more properties.",
       "status": "under-development",
-      "dateTimeAddition": "2023-12-05T00:00:00Z",
+      "dateTimeAddition": "2026-08-29T00:00:00Z",
       "itemClass": "schema",
       "register": "ogc-building-block-register",
       "version": "1.0",
-      "dateOfLastChange": "2026-08-27",
+      "dateOfLastChange": "2026-09-09",
       "sources": [
         {
           "title": "Semantic Sensor Network Ontology",
@@ -302,38 +1107,305 @@
       "tags": [
         "sosa",
         "ssn",
-        "observations",
-        "o&m",
-        "o&m&s"
+        "sampling",
+        "collection",
+        "o&m"
       ],
       "group": "SOSA",
-      "shaclShapes": {},
+      "highlighted": false,
+      "isProfileOf": [
+        "bblocks://ogc.sosa.properties.executionCollection"
+      ],
+      "rdfType": [
+        "http://www.w3.org/ns/sosa/SamplingCollection"
+      ],
+      "shaclShapes": {
+        "ogc.sosa.properties.execution": [
+          "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl"
+        ]
+      },
       "dependsOn": [
-        "bblocks://ogc.sosa.properties.sensor",
+        "bblocks://ogc.sosa.properties.sampling",
+        "bblocks://ogc.sosa.properties.executionCollection",
         "bblocks://ogc.ogc-utils.iri-or-curie"
       ],
       "schema": {
-        "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/schema.yaml",
-        "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/schema.json"
+        "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/samplingCollection/schema.yaml",
+        "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/samplingCollection/schema.json"
       },
-      "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/platform/schema.yaml",
-      "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/context.jsonld",
-      "resolvedSchemaProperties": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/platform/resolvedProperties.json",
-      "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/platform/",
+      "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/samplingCollection/schema.yaml",
+      "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/samplingCollection/context.jsonld",
+      "resolvedSchemaProperties": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/samplingCollection/resolvedProperties.json",
+      "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/samplingCollection/",
       "validationPassed": true,
-      "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/properties/platform/",
+      "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/properties/samplingCollection/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/properties/platform/index.md"
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/properties/samplingCollection/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/properties/platform/index.json"
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/properties/samplingCollection/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.properties.platform"
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.properties.samplingCollection"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.sosa.features.asset",
+      "name": "Asset Feature",
+      "abstract": "This building block defines a GeoJSON feature containing a SOSA Asset - the abstract physical or virtual entity that can be hosted, deployed, or host/deploy other Assets, using the properties defined in the Asset Properties schema. It generalizes the feature-level building blocks shared by System and Platform and is not intended to be used directly by itself.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-29T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-building-block-register",
+      "version": "1.0",
+      "dateOfLastChange": "2026-09-09",
+      "sources": [
+        {
+          "title": "Semantic Sensor Network Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn/"
+        }
+      ],
+      "maturity": "development",
+      "scope": "development",
+      "tags": [
+        "sosa",
+        "ssn",
+        "asset",
+        "o&m"
+      ],
+      "group": "SOSA",
+      "highlighted": false,
+      "rdfType": [
+        "http://www.w3.org/ns/sosa/Asset"
+      ],
+      "shaclShapes": {
+        "ogc.geo.features.feature": [
+          "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
+        ]
+      },
+      "dependsOn": [
+        "bblocks://ogc.geo.json-fg.feature-lenient",
+        "bblocks://ogc.sosa.properties.asset"
+      ],
+      "schema": {
+        "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/asset/schema.yaml",
+        "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/asset/schema.json"
+      },
+      "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/asset/schema.yaml",
+      "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/asset/context.jsonld",
+      "resolvedSchemaProperties": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/asset/resolvedProperties.json",
+      "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/asset/",
+      "validationPassed": true,
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/features/asset/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/features/asset/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.features.asset"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.sosa.features.deployment",
+      "name": "Deployment Feature",
+      "abstract": "This building block defines a GeoJSON feature containing a SOSA Deployment, using the properties defined in the Deployment Properties schema.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-29T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-building-block-register",
+      "version": "1.0",
+      "dateOfLastChange": "2026-09-09",
+      "sources": [
+        {
+          "title": "Semantic Sensor Network Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn/"
+        }
+      ],
+      "maturity": "development",
+      "scope": "development",
+      "tags": [
+        "sosa",
+        "ssn",
+        "deployment",
+        "asset",
+        "o&m"
+      ],
+      "group": "SOSA",
+      "highlighted": false,
+      "rdfType": [
+        "http://www.w3.org/ns/sosa/Deployment"
+      ],
+      "shaclShapes": {
+        "ogc.geo.features.feature": [
+          "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
+        ]
+      },
+      "dependsOn": [
+        "bblocks://ogc.geo.json-fg.feature-lenient",
+        "bblocks://ogc.sosa.properties.deployment"
+      ],
+      "schema": {
+        "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/deployment/schema.yaml",
+        "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/deployment/schema.json"
+      },
+      "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/deployment/schema.yaml",
+      "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/deployment/context.jsonld",
+      "resolvedSchemaProperties": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/deployment/resolvedProperties.json",
+      "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/deployment/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/features/deployment/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/features/deployment/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/features/deployment/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.features.deployment"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.sosa.features.execution",
+      "name": "Execution Feature",
+      "abstract": "This building block defines a GeoJSON feature containing a SOSA Execution - the abstract act of carrying out a Procedure using a System, using the properties defined in the Execution Properties schema. It generalizes the feature-level building blocks shared by Observation, Actuation and Sampling and is not intended to be used directly by itself.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-29T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-building-block-register",
+      "version": "1.0",
+      "dateOfLastChange": "2026-09-09",
+      "sources": [
+        {
+          "title": "Semantic Sensor Network Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn/"
+        }
+      ],
+      "maturity": "development",
+      "scope": "development",
+      "tags": [
+        "sosa",
+        "ssn",
+        "execution",
+        "o&m",
+        "OMS"
+      ],
+      "group": "SOSA",
+      "highlighted": false,
+      "rdfType": [
+        "http://www.w3.org/ns/sosa/Execution"
+      ],
+      "shaclShapes": {
+        "ogc.geo.features.feature": [
+          "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
+        ],
+        "ogc.sosa.properties.execution": [
+          "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl"
+        ]
+      },
+      "dependsOn": [
+        "bblocks://ogc.geo.json-fg.feature-lenient",
+        "bblocks://ogc.sosa.properties.execution"
+      ],
+      "schema": {
+        "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/execution/schema.yaml",
+        "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/execution/schema.json"
+      },
+      "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/execution/schema.yaml",
+      "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/execution/context.jsonld",
+      "resolvedSchemaProperties": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/execution/resolvedProperties.json",
+      "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/execution/",
+      "validationPassed": true,
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/features/execution/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/features/execution/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.features.execution"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.sosa.features.sample",
+      "name": "Sample Feature",
+      "abstract": "This building block defines a GeoJSON feature containing a SOSA Sample, using the properties defined in the Sample Properties schema.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-29T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-building-block-register",
+      "version": "1.0",
+      "dateOfLastChange": "2026-09-09",
+      "sources": [
+        {
+          "title": "Semantic Sensor Network Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn/"
+        }
+      ],
+      "maturity": "development",
+      "scope": "development",
+      "tags": [
+        "sosa",
+        "ssn",
+        "sample",
+        "o&m"
+      ],
+      "group": "SOSA",
+      "highlighted": false,
+      "rdfType": [
+        "http://www.w3.org/ns/sosa/Sample"
+      ],
+      "shaclShapes": {
+        "ogc.geo.features.feature": [
+          "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
+        ]
+      },
+      "dependsOn": [
+        "bblocks://ogc.geo.json-fg.feature-lenient",
+        "bblocks://ogc.sosa.properties.sample"
+      ],
+      "schema": {
+        "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/sample/schema.yaml",
+        "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/sample/schema.json"
+      },
+      "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/sample/schema.yaml",
+      "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/sample/context.jsonld",
+      "resolvedSchemaProperties": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/sample/resolvedProperties.json",
+      "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/sample/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/features/sample/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/features/sample/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/features/sample/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.features.sample"
         }
       }
     },
@@ -346,7 +1418,7 @@
       "itemClass": "schema",
       "register": "ogc-building-block-register",
       "version": "1.0",
-      "dateOfLastChange": "2026-08-27",
+      "dateOfLastChange": "2026-09-09",
       "sources": [
         {
           "title": "Semantic Sensor Network Ontology",
@@ -364,14 +1436,21 @@
       ],
       "group": "SOSA",
       "highlighted": true,
+      "isProfileOf": [
+        "bblocks://ogc.sosa.properties.executionCollection"
+      ],
       "shaclShapes": {
         "ogc.sosa.properties.observation": [
           "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl"
+        ],
+        "ogc.sosa.properties.execution": [
+          "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl"
         ]
       },
       "dependsOn": [
-        "bblocks://ogc.ogc-utils.iri-or-curie",
-        "bblocks://ogc.sosa.properties.observation"
+        "bblocks://ogc.sosa.properties.observation",
+        "bblocks://ogc.sosa.properties.executionCollection",
+        "bblocks://ogc.ogc-utils.iri-or-curie"
       ],
       "schema": {
         "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.yaml",
@@ -399,6 +1478,279 @@
       }
     },
     {
+      "itemIdentifier": "ogc.sosa.features.executionCollection",
+      "name": "ExecutionCollection Feature",
+      "abstract": "This building block defines a GeoJSON FeatureCollection containing a SOSA ExecutionCollection - the abstract collection of Executions, using the properties defined in the ExecutionCollection Properties schema. It generalizes the feature-level building blocks shared by ObservationCollection, ActuationCollection and SamplingCollection and is not intended to be used directly by itself.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-29T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-building-block-register",
+      "version": "1.0",
+      "dateOfLastChange": "2026-09-09",
+      "sources": [
+        {
+          "title": "Semantic Sensor Network Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn/"
+        }
+      ],
+      "maturity": "development",
+      "scope": "development",
+      "tags": [
+        "sosa",
+        "ssn",
+        "execution",
+        "collection",
+        "o&m"
+      ],
+      "group": "SOSA",
+      "highlighted": false,
+      "isProfileOf": [
+        "bblocks://ogc.sosa.features.execution"
+      ],
+      "rdfType": [
+        "http://www.w3.org/ns/sosa/ExecutionCollection"
+      ],
+      "shaclShapes": {
+        "ogc.geo.features.featureCollection": [
+          "https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl"
+        ],
+        "ogc.geo.features.feature": [
+          "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
+        ],
+        "ogc.sosa.properties.execution": [
+          "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl"
+        ]
+      },
+      "dependsOn": [
+        "bblocks://ogc.geo.json-fg.featureCollection-lenient",
+        "bblocks://ogc.sosa.properties.executionCollection"
+      ],
+      "schema": {
+        "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/executionCollection/schema.yaml",
+        "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/executionCollection/schema.json"
+      },
+      "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/executionCollection/schema.yaml",
+      "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/executionCollection/context.jsonld",
+      "resolvedSchemaProperties": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/executionCollection/resolvedProperties.json",
+      "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/executionCollection/",
+      "validationPassed": true,
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/features/executionCollection/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/features/executionCollection/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.features.executionCollection"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.sosa.features.platform",
+      "name": "Platform Feature",
+      "abstract": "This building block defines a GeoJSON feature containing a SOSA Platform - an Asset that hosts other Assets - using the properties defined in the Platform Properties schema.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-29T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-building-block-register",
+      "version": "1.0",
+      "dateOfLastChange": "2026-09-09",
+      "sources": [
+        {
+          "title": "Semantic Sensor Network Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn/"
+        }
+      ],
+      "maturity": "development",
+      "scope": "development",
+      "tags": [
+        "sosa",
+        "ssn",
+        "platform",
+        "asset",
+        "o&m"
+      ],
+      "group": "SOSA",
+      "highlighted": false,
+      "isProfileOf": [
+        "bblocks://ogc.sosa.features.asset"
+      ],
+      "rdfType": [
+        "http://www.w3.org/ns/sosa/Platform"
+      ],
+      "shaclShapes": {
+        "ogc.geo.features.feature": [
+          "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
+        ]
+      },
+      "dependsOn": [
+        "bblocks://ogc.sosa.properties.platform",
+        "bblocks://ogc.sosa.features.asset"
+      ],
+      "schema": {
+        "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/platform/schema.yaml",
+        "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/platform/schema.json"
+      },
+      "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/platform/schema.yaml",
+      "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/platform/context.jsonld",
+      "resolvedSchemaProperties": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/platform/resolvedProperties.json",
+      "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/platform/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/features/platform/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/features/platform/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/features/platform/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.features.platform"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.sosa.features.system",
+      "name": "System Feature",
+      "abstract": "This building block defines a GeoJSON feature containing a SOSA System - the abstract Asset that carries out Procedures, using the properties defined in the System Properties schema. It generalizes the feature-level building blocks shared by Sensor, Actuator and Sampler and is not intended to be used directly by itself.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-29T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-building-block-register",
+      "version": "1.0",
+      "dateOfLastChange": "2026-09-09",
+      "sources": [
+        {
+          "title": "Semantic Sensor Network Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn/"
+        }
+      ],
+      "maturity": "development",
+      "scope": "development",
+      "tags": [
+        "sosa",
+        "ssn",
+        "system",
+        "o&m"
+      ],
+      "group": "SOSA",
+      "highlighted": false,
+      "isProfileOf": [
+        "bblocks://ogc.sosa.features.asset"
+      ],
+      "rdfType": [
+        "http://www.w3.org/ns/sosa/System"
+      ],
+      "shaclShapes": {
+        "ogc.geo.features.feature": [
+          "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
+        ]
+      },
+      "dependsOn": [
+        "bblocks://ogc.sosa.properties.system",
+        "bblocks://ogc.sosa.features.asset"
+      ],
+      "schema": {
+        "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/system/schema.yaml",
+        "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/system/schema.json"
+      },
+      "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/system/schema.yaml",
+      "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/system/context.jsonld",
+      "resolvedSchemaProperties": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/system/resolvedProperties.json",
+      "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/system/",
+      "validationPassed": true,
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/features/system/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/features/system/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.features.system"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.sosa.features.actuation",
+      "name": "Actuation Feature",
+      "abstract": "This building block defines a GeoJSON feature for a SOSA Actuation - the Act of carrying out an Actuating Procedure to change the state of the world via an Actuator. Uses the properties defined in the Actuation Properties schema.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-29T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-building-block-register",
+      "version": "1.0",
+      "dateOfLastChange": "2026-09-09",
+      "sources": [
+        {
+          "title": "Semantic Sensor Network Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn/"
+        }
+      ],
+      "maturity": "development",
+      "scope": "development",
+      "tags": [
+        "sosa",
+        "ssn",
+        "actuation",
+        "o&m"
+      ],
+      "group": "SOSA",
+      "highlighted": false,
+      "isProfileOf": [
+        "bblocks://ogc.sosa.features.execution"
+      ],
+      "rdfType": [
+        "http://www.w3.org/ns/sosa/Actuation"
+      ],
+      "shaclShapes": {
+        "ogc.geo.features.feature": [
+          "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
+        ],
+        "ogc.sosa.properties.execution": [
+          "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl"
+        ]
+      },
+      "dependsOn": [
+        "bblocks://ogc.sosa.features.execution",
+        "bblocks://ogc.sosa.properties.actuation"
+      ],
+      "schema": {
+        "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/actuation/schema.yaml",
+        "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/actuation/schema.json"
+      },
+      "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/actuation/schema.yaml",
+      "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/actuation/context.jsonld",
+      "resolvedSchemaProperties": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/actuation/resolvedProperties.json",
+      "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/actuation/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/features/actuation/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/features/actuation/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/features/actuation/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.features.actuation"
+        }
+      }
+    },
+    {
       "itemIdentifier": "ogc.sosa.features.observation",
       "name": "SOSA Observation Feature",
       "abstract": "This building blocks defines a GeoJSON feature containing a SOSA Observation, using the properties defined in the Observation Properties schema",
@@ -408,7 +1760,7 @@
       "itemClass": "schema",
       "register": "ogc-building-block-register",
       "version": "1.0",
-      "dateOfLastChange": "2026-08-27",
+      "dateOfLastChange": "2026-09-09",
       "sources": [
         {
           "title": "Semantic Sensor Network Ontology",
@@ -419,7 +1771,10 @@
       "scope": "development",
       "dependsOn": [
         "bblocks://ogc.sosa.properties.observation",
-        "bblocks://ogc.geo.json-fg.feature-lenient"
+        "bblocks://ogc.sosa.features.execution"
+      ],
+      "isProfileOf": [
+        "bblocks://ogc.sosa.features.execution"
       ],
       "tags": [
         "sosa",
@@ -432,6 +1787,9 @@
       "shaclShapes": {
         "ogc.sosa.properties.observation": [
           "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl"
+        ],
+        "ogc.sosa.properties.execution": [
+          "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl"
         ],
         "ogc.geo.features.feature": [
           "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
@@ -463,6 +1821,420 @@
       }
     },
     {
+      "itemIdentifier": "ogc.sosa.features.sampling",
+      "name": "Sampling Feature",
+      "abstract": "This building block defines a GeoJSON feature for a SOSA Sampling - the Act of carrying out a Sampling Procedure to create or transform one or more samples. Uses the properties defined in the Sampling Properties schema.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-29T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-building-block-register",
+      "version": "1.0",
+      "dateOfLastChange": "2026-09-09",
+      "sources": [
+        {
+          "title": "Semantic Sensor Network Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn/"
+        }
+      ],
+      "maturity": "development",
+      "scope": "development",
+      "tags": [
+        "sosa",
+        "ssn",
+        "sampling",
+        "o&m"
+      ],
+      "group": "SOSA",
+      "highlighted": false,
+      "isProfileOf": [
+        "bblocks://ogc.sosa.features.execution"
+      ],
+      "rdfType": [
+        "http://www.w3.org/ns/sosa/Sampling"
+      ],
+      "shaclShapes": {
+        "ogc.sosa.properties.execution": [
+          "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl"
+        ],
+        "ogc.geo.features.feature": [
+          "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
+        ]
+      },
+      "dependsOn": [
+        "bblocks://ogc.sosa.properties.sampling",
+        "bblocks://ogc.sosa.features.execution"
+      ],
+      "schema": {
+        "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/sampling/schema.yaml",
+        "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/sampling/schema.json"
+      },
+      "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/sampling/schema.yaml",
+      "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/sampling/context.jsonld",
+      "resolvedSchemaProperties": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/sampling/resolvedProperties.json",
+      "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/sampling/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/features/sampling/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/features/sampling/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/features/sampling/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.features.sampling"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.sosa.features.sampleCollection",
+      "name": "SampleCollection Feature",
+      "abstract": "This building block defines a GeoJSON FeatureCollection containing a SOSA SampleCollection, using the properties defined in the SampleCollection Properties schema.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-29T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-building-block-register",
+      "version": "1.0",
+      "dateOfLastChange": "2026-09-09",
+      "sources": [
+        {
+          "title": "Semantic Sensor Network Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn/"
+        }
+      ],
+      "maturity": "development",
+      "scope": "development",
+      "tags": [
+        "sosa",
+        "ssn",
+        "sample",
+        "collection",
+        "o&m"
+      ],
+      "group": "SOSA",
+      "highlighted": false,
+      "rdfType": [
+        "http://www.w3.org/ns/sosa/SampleCollection"
+      ],
+      "shaclShapes": {
+        "ogc.geo.features.feature": [
+          "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
+        ],
+        "ogc.geo.features.featureCollection": [
+          "https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl"
+        ]
+      },
+      "dependsOn": [
+        "bblocks://ogc.geo.json-fg.feature-lenient",
+        "bblocks://ogc.sosa.properties.sampleCollection",
+        "bblocks://ogc.geo.json-fg.featureCollection-lenient",
+        "bblocks://ogc.sosa.features.sample"
+      ],
+      "schema": {
+        "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/sampleCollection/schema.yaml",
+        "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/sampleCollection/schema.json"
+      },
+      "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/sampleCollection/schema.yaml",
+      "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/sampleCollection/context.jsonld",
+      "resolvedSchemaProperties": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/sampleCollection/resolvedProperties.json",
+      "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/sampleCollection/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/features/sampleCollection/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/features/sampleCollection/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/features/sampleCollection/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.features.sampleCollection"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.sosa.features.actuator",
+      "name": "Actuator Feature",
+      "abstract": "This building block defines a GeoJSON feature for a SOSA Actuator - a System that is used by, or implements, an Actuating Procedure that changes the state of the world. Uses the properties defined in the Actuator Properties schema.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-29T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-building-block-register",
+      "version": "1.0",
+      "dateOfLastChange": "2026-09-09",
+      "sources": [
+        {
+          "title": "Semantic Sensor Network Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn/"
+        }
+      ],
+      "maturity": "development",
+      "scope": "development",
+      "tags": [
+        "sosa",
+        "ssn",
+        "actuator",
+        "system",
+        "o&m"
+      ],
+      "group": "SOSA",
+      "highlighted": false,
+      "isProfileOf": [
+        "bblocks://ogc.sosa.features.system"
+      ],
+      "rdfType": [
+        "http://www.w3.org/ns/sosa/Actuator"
+      ],
+      "shaclShapes": {
+        "ogc.geo.features.feature": [
+          "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
+        ]
+      },
+      "dependsOn": [
+        "bblocks://ogc.sosa.features.system",
+        "bblocks://ogc.sosa.properties.actuator"
+      ],
+      "schema": {
+        "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/actuator/schema.yaml",
+        "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/actuator/schema.json"
+      },
+      "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/actuator/schema.yaml",
+      "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/actuator/context.jsonld",
+      "resolvedSchemaProperties": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/actuator/resolvedProperties.json",
+      "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/actuator/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/features/actuator/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/features/actuator/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/features/actuator/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.features.actuator"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.sosa.features.sampler",
+      "name": "Sampler Feature",
+      "abstract": "This building block defines a GeoJSON feature for a SOSA Sampler - a System that is used by, or implements, a Sampling Procedure to create or transform one or more samples. Uses the properties defined in the Sampler Properties schema.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-29T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-building-block-register",
+      "version": "1.0",
+      "dateOfLastChange": "2026-09-09",
+      "sources": [
+        {
+          "title": "Semantic Sensor Network Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn/"
+        }
+      ],
+      "maturity": "development",
+      "scope": "development",
+      "tags": [
+        "sosa",
+        "ssn",
+        "sampler",
+        "system",
+        "o&m"
+      ],
+      "group": "SOSA",
+      "highlighted": false,
+      "isProfileOf": [
+        "bblocks://ogc.sosa.features.system"
+      ],
+      "rdfType": [
+        "http://www.w3.org/ns/sosa/Sampler"
+      ],
+      "shaclShapes": {
+        "ogc.geo.features.feature": [
+          "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
+        ]
+      },
+      "dependsOn": [
+        "bblocks://ogc.sosa.properties.sampler",
+        "bblocks://ogc.sosa.features.system"
+      ],
+      "schema": {
+        "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/sampler/schema.yaml",
+        "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/sampler/schema.json"
+      },
+      "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/sampler/schema.yaml",
+      "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/sampler/context.jsonld",
+      "resolvedSchemaProperties": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/sampler/resolvedProperties.json",
+      "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/sampler/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/features/sampler/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/features/sampler/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/features/sampler/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.features.sampler"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.sosa.features.sensor",
+      "name": "Sensor Feature",
+      "abstract": "This building block defines a GeoJSON feature containing a SOSA Sensor - a System that implements, or is used by, a Sensing/Observing Procedure - using the properties defined in the Sensor Properties schema.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-29T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-building-block-register",
+      "version": "1.0",
+      "dateOfLastChange": "2026-09-09",
+      "sources": [
+        {
+          "title": "Semantic Sensor Network Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn/"
+        }
+      ],
+      "maturity": "development",
+      "scope": "development",
+      "tags": [
+        "sosa",
+        "ssn",
+        "sensor",
+        "system",
+        "o&m"
+      ],
+      "group": "SOSA",
+      "highlighted": false,
+      "isProfileOf": [
+        "bblocks://ogc.sosa.features.system"
+      ],
+      "rdfType": [
+        "http://www.w3.org/ns/sosa/Sensor"
+      ],
+      "shaclShapes": {
+        "ogc.geo.features.feature": [
+          "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
+        ]
+      },
+      "dependsOn": [
+        "bblocks://ogc.sosa.properties.sensor",
+        "bblocks://ogc.sosa.features.system"
+      ],
+      "schema": {
+        "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/sensor/schema.yaml",
+        "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/sensor/schema.json"
+      },
+      "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/sensor/schema.yaml",
+      "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/sensor/context.jsonld",
+      "resolvedSchemaProperties": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/sensor/resolvedProperties.json",
+      "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/sensor/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/features/sensor/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/features/sensor/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/features/sensor/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.features.sensor"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.sosa.features.actuationCollection",
+      "name": "ActuationCollection Feature",
+      "abstract": "This building block defines the set of a GeoJSON FeatureCollection containing a SOSA ActuationCollection - a collection of one or more Actuations, whose members share a common value for one or more properties.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-29T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-building-block-register",
+      "version": "1.0",
+      "dateOfLastChange": "2026-09-09",
+      "sources": [
+        {
+          "title": "Semantic Sensor Network Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn/"
+        }
+      ],
+      "maturity": "development",
+      "scope": "development",
+      "tags": [
+        "sosa",
+        "ssn",
+        "actuation",
+        "collection",
+        "o&m"
+      ],
+      "group": "SOSA",
+      "highlighted": false,
+      "isProfileOf": [
+        "bblocks://ogc.sosa.features.executionCollection"
+      ],
+      "rdfType": [
+        "http://www.w3.org/ns/sosa/ActuationCollection"
+      ],
+      "shaclShapes": {
+        "ogc.geo.features.feature": [
+          "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
+        ],
+        "ogc.sosa.properties.execution": [
+          "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl"
+        ],
+        "ogc.geo.features.featureCollection": [
+          "https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl"
+        ]
+      },
+      "dependsOn": [
+        "bblocks://ogc.geo.json-fg.feature-lenient",
+        "bblocks://ogc.sosa.properties.actuationCollection",
+        "bblocks://ogc.geo.json-fg.featureCollection-lenient",
+        "bblocks://ogc.sosa.features.actuation"
+      ],
+      "schema": {
+        "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/actuationCollection/schema.yaml",
+        "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/actuationCollection/schema.json"
+      },
+      "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/actuationCollection/schema.yaml",
+      "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/actuationCollection/context.jsonld",
+      "resolvedSchemaProperties": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/actuationCollection/resolvedProperties.json",
+      "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/actuationCollection/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/features/actuationCollection/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/features/actuationCollection/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/features/actuationCollection/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.features.actuationCollection"
+        }
+      }
+    },
+    {
       "itemIdentifier": "ogc.sosa.features.observationCollection",
       "name": "SOSA ObservationCollection Feature",
       "abstract": "This building blocks defines an ObservationCollection Feature according to the SOSA/SSN v1.1 specification.",
@@ -471,7 +2243,7 @@
       "itemClass": "schema",
       "register": "ogc-building-block-register",
       "version": "1.0",
-      "dateOfLastChange": "2026-08-27",
+      "dateOfLastChange": "2026-09-09",
       "sources": [
         {
           "title": "Semantic Sensor Network Ontology",
@@ -493,22 +2265,28 @@
       ],
       "group": "SOSA",
       "highlighted": true,
+      "isProfileOf": [
+        "bblocks://ogc.sosa.features.executionCollection"
+      ],
       "shaclShapes": {
+        "ogc.geo.features.feature": [
+          "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
+        ],
         "ogc.sosa.properties.observation": [
           "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl"
         ],
-        "ogc.geo.features.feature": [
-          "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
+        "ogc.sosa.properties.execution": [
+          "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl"
         ],
         "ogc.geo.features.featureCollection": [
           "https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl"
         ]
       },
       "dependsOn": [
+        "bblocks://ogc.geo.json-fg.feature-lenient",
         "bblocks://ogc.sosa.features.observation",
-        "bblocks://ogc.sosa.properties.observationCollection",
-        "bblocks://ogc.geo.json-fg.featureCollection-lenient",
-        "bblocks://ogc.geo.json-fg.feature-lenient"
+        "bblocks://ogc.sosa.features.executionCollection",
+        "bblocks://ogc.sosa.properties.observationCollection"
       ],
       "schema": {
         "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observationCollection/schema.yaml",
@@ -559,6 +2337,81 @@
         "bblocks-viewer": {
           "mediatype": "text/html",
           "url": "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.features.observationCollection"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.sosa.features.samplingCollection",
+      "name": "SamplingCollection Feature",
+      "abstract": "This building block defines the set of a GeoJSON FeatureCollection containing a SOSA SamplingCollection - a collection of one or more Samplings, whose members share a common value for one or more properties.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-29T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-building-block-register",
+      "version": "1.0",
+      "dateOfLastChange": "2026-09-09",
+      "sources": [
+        {
+          "title": "Semantic Sensor Network Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn/"
+        }
+      ],
+      "maturity": "development",
+      "scope": "development",
+      "tags": [
+        "sosa",
+        "ssn",
+        "sampling",
+        "collection",
+        "o&m"
+      ],
+      "group": "SOSA",
+      "highlighted": false,
+      "isProfileOf": [
+        "bblocks://ogc.sosa.features.executionCollection"
+      ],
+      "rdfType": [
+        "http://www.w3.org/ns/sosa/SamplingCollection"
+      ],
+      "shaclShapes": {
+        "ogc.sosa.properties.execution": [
+          "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl"
+        ],
+        "ogc.geo.features.feature": [
+          "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
+        ],
+        "ogc.geo.features.featureCollection": [
+          "https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl"
+        ]
+      },
+      "dependsOn": [
+        "bblocks://ogc.sosa.properties.samplingCollection",
+        "bblocks://ogc.sosa.features.sampling",
+        "bblocks://ogc.geo.json-fg.featureCollection-lenient",
+        "bblocks://ogc.geo.json-fg.feature-lenient"
+      ],
+      "schema": {
+        "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/samplingCollection/schema.yaml",
+        "application/json": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/samplingCollection/schema.json"
+      },
+      "sourceSchema": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/samplingCollection/schema.yaml",
+      "ldContext": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/samplingCollection/context.jsonld",
+      "resolvedSchemaProperties": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/samplingCollection/resolvedProperties.json",
+      "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/features/samplingCollection/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/opengeospatial/ogcapi-sosa/blob/master/build/tests/sosa/features/samplingCollection/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/markdown/sosa/features/samplingCollection/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/build/generateddocs/json-full/sosa/features/samplingCollection/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://opengeospatial.github.io/ogcapi-sosa/bblock/ogc.sosa.features.samplingCollection"
         }
       }
     }

@@ -1,5 +1,5 @@
 Validation report for ogc.sosa.properties.observation - Observation Properties
-Generated 2026-08-27T08:26:57.646295+00:00
+Generated 2026-09-09T11:07:41.767143+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -9,9 +9,18 @@ Using result-time-2-fail.ttl from test resources
 === End Files ===
 
 === SHACL ===
+Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: _:n19ef6b67cda348928b40d5625f5f5bdcb1
+
 
 ** Validation error **
-Validation result for _sources/properties/observation/shapes.shacl:
+Validation result for _sources/properties/execution/shapes.shacl:
   Validation Report
   Conforms: False
   Results (1):
@@ -27,24 +36,25 @@ Validation result for _sources/properties/observation/shapes.shacl:
               SELECT $this (CONCAT(COALESCE(COUNT(?resultTime), 0), ' x sosa:resultTime, ', COALESCE(COUNT(?phenomenonTime), 0), ' x sosa:phenomenonTime') AS ?value) WHERE {
                   OPTIONAL { $this sosa:phenomenonTime ?phenomenonTime }
                   OPTIONAL { $this sosa:resultTime ?resultTime}
+                  OPTIONAL { $this sosa:startTime ?startTime }
+                  OPTIONAL { $this sosa:endTime ?endTime }
                   OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:phenomenonTime ?phenomenonTime }
                   OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:resultTime ?resultTime }
+                  OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:startTime ?startTime }
+                  OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:endTime ?endTime }
               }
               GROUP BY $this
-              HAVING (count(?resultTime) > 1 || count(?phenomenonTime) > 1 || count(?resultTime) + count(?phenomenonTime) < 1)
+              HAVING (count(?resultTime) > 1 || count(?phenomenonTime) > 1 || count(?resultTime) + count(?phenomenonTime) + count(?startTime) + count(?endTime) < 1)
           ") ]
   	Message: sosa:resultTime or sosa:phenomenonTime is required, and no more than 1 of each is allowed
   
-Focus nodes for _sources/properties/observation/shapes.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testResult>: _:nda734e7a31c7489188945b6a61541617b1
+Focus nodes for _sources/properties/execution/shapes.shacl:
  - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: 
- - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: _:nda734e7a31c7489188945b6a61541617b1
- - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
  - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: _:nda734e7a31c7489188945b6a61541617b1
- - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: _:nda734e7a31c7489188945b6a61541617b1
  - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: _:n19ef6b67cda348928b40d5625f5f5bdcb1
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: _:n19ef6b67cda348928b40d5625f5f5bdcb1
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: _:n19ef6b67cda348928b40d5625f5f5bdcb1
 
 === End SHACL ===
 

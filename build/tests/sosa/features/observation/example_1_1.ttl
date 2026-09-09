@@ -1,11 +1,14 @@
 @prefix geojson: <https://purl.org/geojson/vocab#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://example.com/pop1999> a sosa:Observation,
         geojson:Feature ;
-    sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Spanish%20Fork> ;
+    sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/dutch_windmills/items/Molens.2> ;
     sosa:hasSimpleResult 1.5555e+04 ;
     sosa:observedProperty <https://dbpedia.org/ontology/population> ;
-    sosa:resultTime "1999" .
+    sosa:resultTime "1999" ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 5.057483e+00 5.223651e+01 ) ] .
 

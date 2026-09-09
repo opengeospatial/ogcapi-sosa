@@ -1,0 +1,45 @@
+@prefix ex: <https://example.org/data/> .
+@prefix orcid: <http://orcid.org/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+
+ex:SC1 a sosa:SampleCollection ;
+    sosa:hasMember ex:SC2,
+        ex:SC3 ;
+    sosa:isResultOfMadeBySampler orcid:0000-0002-3884-3420,
+        orcid:0000-0002-7815-2472 ;
+    sosa:isResultOfUsedProcedure ex:p5,
+        ex:p6 ;
+    sosa:isSampleOf ex:foia .
+
+ex:S2 a sosa:Sample ;
+    sosa:isResultOfUsedProcedure ex:p5 .
+
+ex:S3 a sosa:Sample ;
+    sosa:isResultOfUsedProcedure ex:p6 .
+
+ex:S4 a sosa:Sample ;
+    sosa:isResultOfUsedProcedure ex:p5 .
+
+ex:S5 a sosa:Sample ;
+    sosa:isResultOfUsedProcedure ex:p6 .
+
+ex:SC2 a sosa:SampleCollection ;
+    sosa:hasMember ex:S2,
+        ex:S3 ;
+    sosa:isResultOfMadeBySampler orcid:0000-0002-3884-3420 .
+
+ex:SC3 a sosa:SampleCollection ;
+    sosa:hasMember ex:S4,
+        ex:S5 ;
+    sosa:isResultOfMadeBySampler orcid:0000-0002-7815-2472 .
+
+ex:foia a sosa:FeatureOfInterest .
+
+orcid:0000-0002-3884-3420 a sosa:Sampler .
+
+orcid:0000-0002-7815-2472 a sosa:Sampler .
+
+ex:p5 a sosa:SamplingProcedure .
+
+ex:p6 a sosa:SamplingProcedure .
+

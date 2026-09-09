@@ -1,5 +1,5 @@
 Validation report for ogc.sosa.properties.observation - Observation Properties
-Generated 2026-08-27T08:26:57.123801+00:00
+Generated 2026-09-09T11:07:41.153037+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -9,9 +9,18 @@ Using collection-time-before-beginning-fail.ttl from test resources
 === End Files ===
 
 === SHACL ===
+Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: ex:ts159c
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: ex:t3,ex:t4,ex:t2,ex:t1
+
 
 ** Validation error **
-Validation result for _sources/properties/observation/shapes.shacl:
+Validation result for _sources/properties/execution/shapes.shacl:
   Validation Report
   Conforms: False
   Results (1):
@@ -52,16 +61,13 @@ Validation result for _sources/properties/observation/shapes.shacl:
       ") ]
   	Message: Collection member values do not match those of the collections (http://www.w3.org/ns/sosa/phenomenonTime property in https://example.org/data/t1: 2017-04-14T20:00:00+00:00 < 2017-04-15T20:00:00+00:00)
   
-Focus nodes for _sources/properties/observation/shapes.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testResult>: ex:t4,ex:t2,ex:t1,ex:t3
- - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: ex:t3/sosa:hasSimpleResult,ex:t2/sosa:hasSimpleResult,ex:t1/sosa:hasSimpleResult
- - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: ex:t4,ex:t2,ex:t1,ex:t3
- - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+Focus nodes for _sources/properties/execution/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: ex:t2/sosa:hasSimpleResult,ex:t1/sosa:hasSimpleResult,ex:t3/sosa:hasSimpleResult
  - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: ex:ts159c
- - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: ex:t4,ex:t1,ex:t3,ex:t2
- - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: ex:ts159c
- - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: ex:t4,ex:t1,ex:t3,ex:t2
  - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: ex:ts159c
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: ex:t3,ex:t2,ex:t4,ex:t1
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: ex:t3,ex:t2,ex:t4,ex:t1
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: ex:t3,ex:t4,ex:t2,ex:t1
 
 === End SHACL ===
 

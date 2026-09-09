@@ -1,5 +1,5 @@
 Validation report for ogc.sosa.features.observationCollection - SOSA ObservationCollection Feature
-Generated 2026-08-27T08:27:05.328269+00:00
+Generated 2026-09-09T11:08:05.504048+00:00
 === Files ===
 Using examples/observationCollection-foi-geometry.json from examples
 JSON-LD context is present - uplifting
@@ -12,43 +12,49 @@ Validation passed
 === End JSON Schema ===
 
 === SHACL ===
-Validation result for _sources/properties/observation/shapes.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for _sources/properties/observation/shapes.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testResult>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <http://example.com/obs-hum-1>/sosa:hasSimpleResult,<http://example.com/obs-hum-2>/sosa:hasSimpleResult,<http://example.com/obs-temp-1>/sosa:hasSimpleResult,<http://example.com/obs-temp-2>/sosa:hasSimpleResult
- - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <http://example.com/humidity-collection>,<http://example.com/temperature-collection>,_:N19d9df6bc1e54556bba7f1b196cedb7f
- - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: <http://example.com/obs-hum-1>,<http://example.com/obs-temp-1>,<http://example.com/obs-temp-2>,<http://example.com/obs-hum-2>
- - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: <http://example.com/temperature-collection>,_:N19d9df6bc1e54556bba7f1b196cedb7f,<http://example.com/humidity-collection>
- - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <http://example.com/obs-hum-1>,<http://example.com/obs-temp-1>,<http://example.com/obs-temp-2>,<http://example.com/obs-hum-2>
- - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <http://example.com/humidity-collection>,<http://example.com/temperature-collection>,_:N19d9df6bc1e54556bba7f1b196cedb7f
-
 Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
- - Shape geojson:GeometryShape: *none*
- - Shape geojson:FeatureShape: <http://example.com/temperature-collection>,<https://demo.pygeoapi.io/master/collections/utah_city_locations/items/Salem>,<http://example.com/humidity-collection>
  - Shape geojson:LinkShape: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape geojson:GeometryShape: *none*
+ - Shape geojson:FeatureShape: <https://demo.pygeoapi.io/master/collections/dutch_windmills/items/Molens.1>,<http://example.com/temperature-collection>,<http://example.com/humidity-collection>
  - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+
+Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: <http://example.com/temperature-collection>,<http://example.com/humidity-collection>,_:N5e4d12dd68c04b9b912ddc6f87526c39
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: <http://example.com/obs-hum-1>,<http://example.com/obs-temp-2>,<http://example.com/obs-hum-2>,<http://example.com/obs-temp-1>
+
+Validation result for _sources/properties/execution/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/execution/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <http://example.com/obs-hum-2>/sosa:hasSimpleResult,<http://example.com/obs-hum-1>/sosa:hasSimpleResult,<http://example.com/obs-temp-1>/sosa:hasSimpleResult,<http://example.com/obs-temp-2>/sosa:hasSimpleResult
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <http://example.com/humidity-collection>,_:N5e4d12dd68c04b9b912ddc6f87526c39,<http://example.com/temperature-collection>
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <http://example.com/humidity-collection>,_:N5e4d12dd68c04b9b912ddc6f87526c39,<http://example.com/temperature-collection>
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <http://example.com/obs-hum-1>,<http://example.com/obs-temp-2>,<http://example.com/obs-hum-2>,<http://example.com/obs-temp-1>
 
 Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:LinkShape: *none*
  - Shape geojson:GeometryShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
  - Shape geojson:FeatureShape: *none*
  - Shape geojson:FeatureCollectionShape: *none*
- - Shape geojson:LinkShape: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
 
 === End SHACL ===
 

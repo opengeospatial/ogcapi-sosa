@@ -1,33 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "SOSA Sensor",
-  "$definitions": {
-    "Sensor": {
-      "anyOf": [
-        {
-          "$ref": "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.json"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "id": {
-              "$ref": "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.json",
-              "x-jsonld-id": "@id"
-            },
-            "name": {
-              "type": "string"
-            }
-          }
-        }
-      ]
-    }
-  },
-  "allOf": [
-    {
-      "$ref": "#/$definitions/Sensor"
-    }
-  ],
+  "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/system/schema.json",
   "x-jsonld-extra-terms": {
+    "id": "@id",
     "properties": "@nest",
     "featureType": "@type",
     "ActuatableProperty": {
@@ -110,8 +86,16 @@
       "x-jsonld-id": "http://www.w3.org/ns/sosa/System",
       "x-jsonld-type": "@id"
     },
+    "actsOn": {
+      "x-jsonld-id": "http://www.w3.org/ns/sosa/actsOn",
+      "x-jsonld-type": "@id"
+    },
     "actsOnProperty": {
       "x-jsonld-id": "http://www.w3.org/ns/sosa/actsOnProperty",
+      "x-jsonld-type": "@id"
+    },
+    "deployedAsset": {
+      "x-jsonld-id": "http://www.w3.org/ns/sosa/deployedAsset",
       "x-jsonld-type": "@id"
     },
     "deployedOnPlatform": {
@@ -126,6 +110,7 @@
       "x-jsonld-id": "http://www.w3.org/ns/sosa/detects",
       "x-jsonld-type": "@id"
     },
+    "endTime": "http://www.w3.org/ns/sosa/endTime",
     "features": {
       "x-jsonld-id": "http://www.w3.org/ns/sosa/hasMember",
       "x-jsonld-type": "@id"
@@ -144,6 +129,10 @@
     },
     "hasInput": {
       "x-jsonld-id": "http://www.w3.org/ns/sosa/hasInput",
+      "x-jsonld-type": "@id"
+    },
+    "hasInputValue": {
+      "x-jsonld-id": "http://www.w3.org/ns/sosa/hasInputValue",
       "x-jsonld-type": "@id"
     },
     "hasMember": {
@@ -224,6 +213,10 @@
       "x-jsonld-id": "http://www.w3.org/ns/sosa/isObservedBy",
       "x-jsonld-type": "@id"
     },
+    "isOriginalSampleOf": {
+      "x-jsonld-id": "http://www.w3.org/ns/sosa/isOriginalSampleOf",
+      "x-jsonld-type": "@id"
+    },
     "isPropertyOf": {
       "x-jsonld-id": "http://www.w3.org/ns/sosa/isPropertyOf",
       "x-jsonld-type": "@id"
@@ -248,6 +241,14 @@
       "x-jsonld-id": "http://www.w3.org/ns/sosa/isSampleOf",
       "x-jsonld-type": "@id"
     },
+    "isSampleOfUltimateFOI": {
+      "x-jsonld-id": "http://www.w3.org/ns/sosa/isSampleOfUltimateFOI",
+      "x-jsonld-type": "@id"
+    },
+    "isSubSystemOf": {
+      "x-jsonld-id": "http://www.w3.org/ns/sosa/isSubSystemOf",
+      "x-jsonld-type": "@id"
+    },
     "madeActuation": {
       "x-jsonld-id": "http://www.w3.org/ns/sosa/madeActuation",
       "x-jsonld-type": "@id"
@@ -262,6 +263,14 @@
     },
     "madeBySensor": {
       "x-jsonld-id": "http://www.w3.org/ns/sosa/madeBySensor",
+      "x-jsonld-type": "@id"
+    },
+    "madeBySystem": {
+      "x-jsonld-id": "http://www.w3.org/ns/sosa/madeBySystem",
+      "x-jsonld-type": "@id"
+    },
+    "madeExecution": {
+      "x-jsonld-id": "http://www.w3.org/ns/sosa/madeExecution",
       "x-jsonld-type": "@id"
     },
     "madeObservation": {
@@ -285,6 +294,7 @@
       "x-jsonld-type": "@id"
     },
     "resultTime": "http://www.w3.org/ns/sosa/resultTime",
+    "startTime": "http://www.w3.org/ns/sosa/startTime",
     "usedProcedure": {
       "x-jsonld-id": "http://www.w3.org/ns/sosa/usedProcedure",
       "x-jsonld-type": "@id"
