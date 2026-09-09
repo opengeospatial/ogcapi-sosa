@@ -1,0 +1,22 @@
+"$schema": https://json-schema.org/draft/2020-12/schema
+description: 'SOSA SampleCollection Feature'
+x-jsonld-context: ../../../sosa-ssn.jsonld
+type: object
+allOf:
+  - $ref: bblocks://ogc.geo.json-fg.featureCollection-lenient
+  - type: object
+    properties:
+      properties:
+        $ref: ../../properties/sampleCollection/schema.yaml
+      features:
+        type: array
+        items:
+          oneOf:
+            - $ref: ../sample/schema.yaml
+            - allOf:
+                - $ref: bblocks://ogc.geo.json-fg.feature-lenient
+                - type: object
+                  properties:
+                    properties:
+                      $ref: ../../properties/sampleCollection/schema.yaml
+            - type: string

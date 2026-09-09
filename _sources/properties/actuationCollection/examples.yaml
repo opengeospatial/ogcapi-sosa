@@ -1,0 +1,30 @@
+- title: Example of a SOSA ActuationCollection
+  content: |-
+    The specification has no dedicated ActuationCollection example instance (only the
+    class declaration in the ontology). This extends the "open-window" Actuation
+    example with a second sibling Actuation on another window, sharing the same
+    Actuator, to demonstrate collection-level property inheritance.
+  snippets:
+    - language: json
+      code: |-
+        {
+          "@id": "windowActuations",
+          "madeByActuator": "closer-987",
+          "hasMember": [
+            {
+              "@id": "A188",
+              "actsOnProperty": "window98/openState",
+              "hasSimpleResult": true,
+              "startTime": "2017-04-18T17:23:00+02:00",
+              "endTime": "2017-04-18T17:24:00+02:00"
+            },
+            {
+              "@id": "A189",
+              "actsOnProperty": "window99/openState",
+              "hasSimpleResult": false,
+              "startTime": "2017-04-18T17:25:00+02:00",
+              "endTime": "2017-04-18T17:25:30+02:00"
+            }
+          ]
+        }
+      base-uri: https://example.org/data/open-window/

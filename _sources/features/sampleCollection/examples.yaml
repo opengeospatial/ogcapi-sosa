@@ -1,0 +1,49 @@
+- title: Example of a nested SOSA SampleCollection Feature
+  content: |-
+    From the SOSA/SSN specification's SampleCollection test dataset (SC1), as a GeoJSON
+    FeatureCollection. Unlike ObservationCollection, Sample/Sampling have no property
+    that structurally distinguishes a leaf instance from a nested collection (no
+    equivalent of Observation's required `hasResult`/`hasSimpleResult`), so nesting
+    here is expressed entirely through `properties.hasMember` rather than the
+    `features` array, to avoid an ambiguous match.
+  snippets:
+    - language: json
+      code: |-
+        {
+          "type": "FeatureCollection",
+          "properties": {
+            "isSampleOf": "foia",
+            "hasMember": [
+              {
+                "@id": "SC2",
+                "isResultOfMadeBySampler": "http://orcid.org/0000-0002-3884-3420",
+                "hasMember": [
+                  {
+                    "@id": "S2",
+                    "isResultOfUsedProcedure": "p5"
+                  },
+                  {
+                    "@id": "S3",
+                    "isResultOfUsedProcedure": "p6"
+                  }
+                ]
+              },
+              {
+                "@id": "SC3",
+                "isResultOfMadeBySampler": "http://orcid.org/0000-0002-7815-2472",
+                "hasMember": [
+                  {
+                    "@id": "S4",
+                    "isResultOfUsedProcedure": "p5"
+                  },
+                  {
+                    "@id": "S5",
+                    "isResultOfUsedProcedure": "p6"
+                  }
+                ]
+              }
+            ]
+          },
+          "features": []
+        }
+      base-uri: https://example.org/data/

@@ -1,0 +1,34 @@
+- title: Example of a SOSA Sampler
+  content: |-
+    From the SOSA/SSN specification's "PlannedDeployment" example: Sampler SA56
+    implements a sampling Procedure and is hosted on a water-quality station.
+  snippets:
+    - language: json
+      code: |-
+        {
+          "@id": "SA56",
+          "implements": "Sp-A56",
+          "isHostedBy": "LOIRE_A_JARGEAU_WQ_Station"
+        }
+      base-uri: https://example.org/data/
+    - language: ttl
+      code: |-
+        @prefix ex: <https://example.org/data/> .
+        @prefix sosa: <http://www.w3.org/ns/sosa/> .
+
+        ex:SA56
+            a sosa:Sampler ;
+            sosa:implements ex:Sp-A56 ;
+            sosa:isHostedBy ex:LOIRE_A_JARGEAU_WQ_Station ;
+            sosa:madeSamplingHasResult ex:SC-LaJ1 ;
+        .
+        ex:Sp-A56
+            a sosa:SamplingProcedure ;
+        .
+        ex:LOIRE_A_JARGEAU_WQ_Station
+            a sosa:Platform ;
+        .
+        ex:SC-LaJ1
+            a sosa:SampleCollection ;
+        .
+      base-uri: https://example.org/data/

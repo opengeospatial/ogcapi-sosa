@@ -1,0 +1,15 @@
+"$schema": https://json-schema.org/draft/2020-12/schema
+description: 'SOSA Actuator'
+x-jsonld-context: ../../../sosa-ssn.jsonld
+allOf:
+  - $ref: bblocks://ogc.sosa.properties.system
+  - type: object
+    properties:
+      actsOn:
+        type:
+          - object
+          - string
+      isActedOnBy:
+        type:
+          - object
+          - string

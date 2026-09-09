@@ -1,0 +1,28 @@
+"$schema": https://json-schema.org/draft/2020-12/schema
+description: 'SOSA ActuationCollection Feature'
+x-jsonld-context: ../../../sosa-ssn.jsonld
+type: object
+allOf:
+  - $ref: bblocks://ogc.geo.json-fg.featureCollection-lenient
+  - type: object
+    properties:
+      properties:
+        $ref: ../../properties/actuationCollection/schema.yaml
+      features:
+        # this is a hasMember - but specified as features to fit the GeoJSON schema
+        type: array
+        items:
+          oneOf:
+            # Embedded Actuations
+            - $ref: ../actuation/schema.yaml
+            # Embedded nested ActuationCollection. A FeatureCollection cannot itself be a `features`
+            # member, so a nested collection is still a plain Feature - further nesting
+            # continues via `properties.hasMember`.
+            - allOf:
+                - $ref: bblocks://ogc.geo.json-fg.feature-lenient
+                - type: object
+                  properties:
+                    properties:
+                      $ref: ../../properties/actuationCollection/schema.yaml
+            # Ids/URIs
+            - type: string

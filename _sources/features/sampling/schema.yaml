@@ -1,0 +1,10 @@
+"$schema": https://json-schema.org/draft/2020-12/schema
+description: 'SOSA Sampling Feature'
+x-jsonld-context: ../../../sosa-ssn.jsonld
+type: object
+allOf:
+  - $ref: bblocks://ogc.sosa.features.execution
+  - type: object
+    properties:
+      properties:
+        $ref: ../../properties/sampling/schema.yaml

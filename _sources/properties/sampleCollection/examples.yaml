@@ -1,0 +1,83 @@
+- title: Example of a nested SOSA SampleCollection
+  content: |-
+    From the SOSA/SSN specification's SampleCollection test dataset (SC1): a top-level
+    collection of two sub-collections (one per Sampler used), each holding two Samples
+    that share a common Procedure. `isResultOfMadeBySampler`/`isResultOfUsedProcedure`
+    are held at the level of the (sub-)collection that shares them, per the same
+    property-inheritance pattern used by ObservationCollection.
+  snippets:
+    - language: json
+      code: |-
+        {
+          "@id": "SC1",
+          "isSampleOf": "foia",
+          "hasMember": [
+            {
+              "@id": "SC2",
+              "isResultOfMadeBySampler": "http://orcid.org/0000-0002-3884-3420",
+              "hasMember": [
+                {
+                  "@id": "S2",
+                  "isResultOfUsedProcedure": "p5"
+                },
+                {
+                  "@id": "S3",
+                  "isResultOfUsedProcedure": "p6"
+                }
+              ]
+            },
+            {
+              "@id": "SC3",
+              "isResultOfMadeBySampler": "http://orcid.org/0000-0002-7815-2472",
+              "hasMember": [
+                {
+                  "@id": "S4",
+                  "isResultOfUsedProcedure": "p5"
+                },
+                {
+                  "@id": "S5",
+                  "isResultOfUsedProcedure": "p6"
+                }
+              ]
+            }
+          ]
+        }
+      base-uri: https://example.org/data/
+    - language: ttl
+      code: |-
+        @prefix ex: <https://example.org/data/> .
+        @prefix orcid: <http://orcid.org/> .
+        @prefix sosa: <http://www.w3.org/ns/sosa/> .
+
+        ex:SC1
+          a sosa:SampleCollection ;
+          sosa:isSampleOf ex:foia ;
+          sosa:isResultOfMadeBySampler orcid:0000-0002-3884-3420 ;
+          sosa:isResultOfMadeBySampler orcid:0000-0002-7815-2472 ;
+          sosa:isResultOfUsedProcedure ex:p5 ;
+          sosa:isResultOfUsedProcedure ex:p6 ;
+          sosa:hasMember ex:SC2 ;
+          sosa:hasMember ex:SC3 ;
+        .
+        ex:SC2
+          a sosa:SampleCollection ;
+          sosa:isResultOfMadeBySampler orcid:0000-0002-3884-3420 ;
+          sosa:hasMember ex:S2 ;
+          sosa:hasMember ex:S3 ;
+        .
+        ex:SC3
+          a sosa:SampleCollection ;
+          sosa:isResultOfMadeBySampler orcid:0000-0002-7815-2472 ;
+          sosa:hasMember ex:S4 ;
+          sosa:hasMember ex:S5 ;
+        .
+        ex:S2 a sosa:Sample ; sosa:isResultOfUsedProcedure ex:p5 .
+        ex:S3 a sosa:Sample ; sosa:isResultOfUsedProcedure ex:p6 .
+        ex:S4 a sosa:Sample ; sosa:isResultOfUsedProcedure ex:p5 .
+        ex:S5 a sosa:Sample ; sosa:isResultOfUsedProcedure ex:p6 .
+        ex:foia a sosa:FeatureOfInterest .
+        orcid:0000-0002-3884-3420 a sosa:Sampler .
+        orcid:0000-0002-7815-2472 a sosa:Sampler .
+        ex:p5 a sosa:SamplingProcedure .
+        ex:p6 a sosa:SamplingProcedure .
+      base-uri: https://example.org/data/

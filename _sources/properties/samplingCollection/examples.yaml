@@ -1,0 +1,34 @@
+- title: Example of a SOSA SamplingCollection
+  content: |-
+    The specification has no dedicated SamplingCollection example instance (only the
+    class declaration in the ontology). This extends the "LocatedSampling" example
+    with a second sibling Sampling of the same Feature of Interest, to demonstrate
+    collection-level property inheritance.
+  snippets:
+    - language: json
+      code: |-
+        {
+          "@id": "atmosphereSamplings",
+          "hasFeatureOfInterest": "EarthAtmosphere",
+          "hasMember": [
+            {
+              "@id": "AirSampling_StE",
+              "hasInputValue": {
+                "type": "Point",
+                "coordinates": [4.387611, 45.437772]
+              },
+              "hasResult": "EarthAtmosphere_StE",
+              "resultTime": "2024-06-01T09:00:00Z"
+            },
+            {
+              "@id": "AirSampling_StE2",
+              "hasInputValue": {
+                "type": "Point",
+                "coordinates": [4.388, 45.438]
+              },
+              "hasResult": "EarthAtmosphere_StE2",
+              "resultTime": "2024-06-01T09:15:00Z"
+            }
+          ]
+        }
+      base-uri: https://example.org/data/

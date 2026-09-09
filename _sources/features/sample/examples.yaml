@@ -1,0 +1,19 @@
+- title: Example of a SOSA Sample Feature (air sample from Earth's atmosphere)
+  content: |-
+    From the SOSA/SSN specification's "LocatedSample" example, as a GeoJSON feature.
+  snippets:
+    - language: json
+      code: |-
+        {
+          "@id": "EarthAtmosphere_StE",
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [4.387611, 45.437772]
+          },
+          "properties": {
+            "isSampleOf": "EarthAtmosphere",
+            "isResultOf": "AirSampling_StE"
+          }
+        }
+      base-uri: https://example.org/data/

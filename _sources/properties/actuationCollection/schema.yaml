@@ -1,0 +1,32 @@
+"$schema": https://json-schema.org/draft/2020-12/schema
+description: 'SOSA ActuationCollection'
+x-jsonld-context: ../../../sosa-ssn.jsonld
+$defs:
+  collection:
+    allOf:
+      - $ref: bblocks://ogc.sosa.properties.executionCollection
+      - type: object
+        properties:
+          actsOnProperty:
+            type:
+              - object
+              - string
+          madeByActuator:
+            type:
+              - object
+              - string
+          hasMember:
+            type: array
+            items:
+              anyOf:
+                - $ref: '#/$defs/collection'
+                - $ref: '../actuation/schema.yaml'
+                - $ref: bblocks://ogc.ogc-utils.iri-or-curie
+allOf:
+  - $ref: '#/$defs/collection'
+  - not:
+      anyOf:
+        - required:
+            - hasResult
+        - required:
+            - hasSimpleResult

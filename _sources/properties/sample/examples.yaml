@@ -1,0 +1,27 @@
+- title: Example of a SOSA Sample (air sample from Earth's atmosphere)
+  content: |-
+    From the SOSA/SSN specification's "LocatedSampling" example - the Sample resulting
+    from a Sampling.
+  snippets:
+    - language: json
+      code: |-
+        {
+          "@id": "EarthAtmosphere_StE",
+          "isSampleOf": "EarthAtmosphere",
+          "isResultOf": "AirSampling_StE"
+        }
+      base-uri: https://example.org/data/
+    - language: ttl
+      code: |-
+        @prefix ex: <https://example.org/data/> .
+        @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+        @prefix sosa: <http://www.w3.org/ns/sosa/> .
+
+        ex:EarthAtmosphere_StE a sosa:Sample ;
+          sosa:isSampleOf ex:EarthAtmosphere ;
+          sosa:isResultOf ex:AirSampling_StE ;
+        .
+        ex:EarthAtmosphere a sosa:FeatureOfInterest ;
+          skos:exactMatch <https://www.wikidata.org/wiki/Q3230> ;
+        .
+      base-uri: https://example.org/data/

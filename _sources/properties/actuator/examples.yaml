@@ -1,0 +1,39 @@
+- title: Example of a SOSA Actuator (window closer)
+  content: |-
+    From the SOSA/SSN specification's "apartment-134" example: WindowCloser #987
+    acts on the open/closed state of window #104.
+  snippets:
+    - language: json
+      code: |-
+        {
+          "@id": "windowCloser_987",
+          "actsOn": "window_104_state"
+        }
+      base-uri: https://example.org/data/apt134/
+    - language: ttl
+      code: |-
+        @prefix ex: <https://example.org/data/> .
+        @prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+        @prefix sosa: <http://www.w3.org/ns/sosa/> .
+        @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+        @base <https://example.org/data/apt134/> .
+
+        # the window opening state is a Property
+        ex:window rdf:type sosa:FeatureOfInterest ;
+          sosa:hasProperty ex:window_104_state ;
+        .
+        ex:window_104_state rdf:type sosa:Property ;
+          sosa:wasActedOnBy ex:actuation_188 ;
+        .
+        # WindowCloser #987 made actuation #188 and directly acts on the window state
+        ex:windowCloser_987 rdf:type sosa:Actuator ;
+          sosa:madeActuation ex:actuation_188 ;
+          sosa:actsOn ex:window_104_state ;
+        .
+        ex:actuation_188 rdf:type sosa:Actuation ;
+          sosa:actsOnProperty ex:window_104_state ;
+          sosa:madeByActuator ex:windowCloser_987 ;
+          sosa:hasSimpleResult true ;
+          sosa:resultTime "2017-04-18T17:24:00+02:00"^^xsd:dateTime ;
+        .
+      base-uri: https://example.org/data/apt134/

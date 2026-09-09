@@ -1,0 +1,35 @@
+"$schema": https://json-schema.org/draft/2020-12/schema
+description: 'SOSA Execution'
+x-jsonld-context: ../../../sosa-ssn.jsonld
+type: object
+properties:
+  resultTime:
+    type: string
+    format: date-time
+  phenomenonTime:
+    type:
+      - object
+      - string
+  hasFeatureOfInterest:
+    type:
+      - object
+      - string
+  hasUltimateFeatureOfInterest:
+    type:
+      - object
+      - string
+  usedProcedure:
+    type:
+      - object
+      - string
+  startTime:
+    type: string
+    format: date-time
+  endTime:
+    type: string
+    format: date-time
+  hasResult: true
+  result: true
+  result@links: true
+  hasSimpleResult: true
+  hasInputValue: true

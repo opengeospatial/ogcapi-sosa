@@ -1,0 +1,28 @@
+"$schema": https://json-schema.org/draft/2020-12/schema
+description: 'SOSA SamplingCollection Feature'
+x-jsonld-context: ../../../sosa-ssn.jsonld
+type: object
+allOf:
+  - $ref: bblocks://ogc.geo.json-fg.featureCollection-lenient
+  - type: object
+    properties:
+      properties:
+        $ref: ../../properties/samplingCollection/schema.yaml
+      features:
+        # this is a hasMember - but specified as features to fit the GeoJSON schema
+        type: array
+        items:
+          oneOf:
+            # Embedded Samplings
+            - $ref: ../sampling/schema.yaml
+            # Embedded nested SamplingCollection. A FeatureCollection cannot itself be a `features`
+            # member, so a nested collection is still a plain Feature - further nesting
+            # continues via `properties.hasMember`.
+            - allOf:
+                - $ref: bblocks://ogc.geo.json-fg.feature-lenient
+                - type: object
+                  properties:
+                    properties:
+                      $ref: ../../properties/samplingCollection/schema.yaml
+            # Ids/URIs
+            - type: string

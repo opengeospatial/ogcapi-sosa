@@ -1,0 +1,40 @@
+"$schema": https://json-schema.org/draft/2020-12/schema
+description: 'SOSA SampleCollection'
+x-jsonld-context: ../../../sosa-ssn.jsonld
+$defs:
+  oneOrMany:
+    oneOf:
+      - type:
+        - object
+        - string
+      - type: array
+        items:
+          type:
+            - object
+            - string
+  collection:
+    type: object
+    properties:
+      isSampleOf:
+        $ref: "#/$defs/oneOrMany"
+      isSampleOfUltimateFOI:
+        $ref: "#/$defs/oneOrMany"
+      hasOriginalSample:
+        $ref: "#/$defs/oneOrMany"
+      isOriginalSampleOf:
+        $ref: "#/$defs/oneOrMany"
+      isResultOfMadeBySampler:
+        $ref: "#/$defs/oneOrMany"
+      isResultOfUsedProcedure:
+        $ref: "#/$defs/oneOrMany"
+      isResultOf:
+        $ref: "#/$defs/oneOrMany"
+      hasMember:
+        type: array
+        items:
+          anyOf:
+            - $ref: '#/$defs/collection'
+            - $ref: '../sample/schema.yaml'
+            - $ref: bblocks://ogc.ogc-utils.iri-or-curie
+allOf:
+  - $ref: '#/$defs/collection'

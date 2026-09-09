@@ -1,0 +1,133 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh:      <http://www.w3.org/ns/shacl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix geojson: <https://purl.org/geojson/vocab#> .
+@prefix sosa:    <http://www.w3.org/ns/sosa/> .
+@base <https://www.ogc.org/rules/sosa/> .
+
+<#testRequiredTime>
+    a                   sh:NodeShape ;
+    sh:targetClass      sosa:Observation, sosa:Actuation, sosa:Sampling ;
+    sh:targetSubjectsOf sosa:hasResult, sosa:hasSimpleResult ;
+    sh:sparql [
+        sh:message          "sosa:resultTime or sosa:phenomenonTime is required, and no more than 1 of each is allowed" ;
+        sh:select """
+            PREFIX sh: <http://www.w3.org/ns/shacl#>
+            PREFIX sosa: <http://www.w3.org/ns/sosa/>
+            PREFIX geojson: <https://purl.org/geojson/vocab#>
+            SELECT $this (CONCAT(COALESCE(COUNT(?resultTime), 0), ' x sosa:resultTime, ', COALESCE(COUNT(?phenomenonTime), 0), ' x sosa:phenomenonTime') AS ?value) WHERE {
+                OPTIONAL { $this sosa:phenomenonTime ?phenomenonTime }
+                OPTIONAL { $this sosa:resultTime ?resultTime}
+                OPTIONAL { $this sosa:startTime ?startTime }
+                OPTIONAL { $this sosa:endTime ?endTime }
+                OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:phenomenonTime ?phenomenonTime }
+                OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:resultTime ?resultTime }
+                OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:startTime ?startTime }
+                OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:endTime ?endTime }
+            }
+            GROUP BY $this
+            HAVING (count(?resultTime) > 1 || count(?phenomenonTime) > 1 || count(?resultTime) + count(?phenomenonTime) + count(?startTime) + count(?endTime) < 1)
+        """ ;
+    ] ;
+.
+
+<#testFeatureOfInterest>
+    a                   sh:NodeShape ;
+    sh:targetClass      sosa:Observation, sosa:Actuation, sosa:Sampling ;
+    sh:property         [
+        sh:message          "Feature of interest (sosa:hasFeatureOfInterest/sosa:isFeatureOfInterestOf) is required in Collection or Execution(Observation/Actuation/Sampling)" ;
+        sh:path     ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath ( [ sh:inversePath
+                                                                                                                geojson:features ]
+                                                                                                      [ sh:inversePath
+                                                                                                                sosa:hasMember ] ) ] ] ]
+                                        [ sh:alternativePath ( sosa:hasFeatureOfInterest [ sh:inversePath
+                                                                                                   sosa:isFeatureOfInterestOf ] ) ] ) ;
+                          sh:minCount 1 ;
+                       ] ;
+.
+
+<#testResult>
+    a                   sh:NodeShape ;
+    sh:targetClass      sosa:Observation, sosa:Actuation, sosa:Sampling ;
+    sh:property         [
+        sh:message          "Exactly one of sosa:hasResult or sosa:hasSimpleResult is required per observation" ;
+        sh:path     [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ;
+                          sh:minCount 1 ;
+                          sh:maxCount 1 ;
+                  ] ;
+.
+
+
+<#testSimpleResultLiteral>
+    a                  sh:NodeShape ;
+    sh:targetObjectsOf sosa:hasSimpleResult ;
+    sh:nodeKind        sh:IRIOrLiteral ;
+    sh:message         "sosa:hasSimpleResult is a simple Literal" ;
+.
+
+## Shapes for collection requirements
+<#testCollectionPropertyValues>
+    a sh:NodeShape ;
+    sh:targetClass sosa:ObservationCollection, sosa:ActuationCollection, sosa:SamplingCollection ;
+    sh:targetSubjectsOf sosa:hasMember ;
+    sh:targetObjectsOf sosa:memberOf ;
+    sh:message "Collection member values do not match those of the collections ({?path} property in {?value}: {?failedValue})";
+    sh:sparql [ sh:select """
+        PREFIX sosa: <http://www.w3.org/ns/sosa/>
+        PREFIX geojson: <https://purl.org/geojson/vocab#>
+        PREFIX time: <http://www.w3.org/2006/time#>
+        SELECT $this ?path (?member AS ?value) ?failedValue WHERE {
+            $this (sosa:hasMember|^sosa:memberOf)+ ?member ;
+                ?path ?collectionValue .
+            ?member ?path ?memberValue .
+            FILTER(?path in ( sosa:resultTime, sosa:phenomenonTime, sosa:hasResult, sosa:hasSimpleResult,
+                sosa:hasFeatureOfInterest, sosa:hasUltimateFeatureOfInterest, sosa:observedProperty, sosa:madeBySystem,
+                sosa:usedProcedure, sosa:madeBySensor, sosa:madeBySampler, sosa:isSampleOf, sosa:madeByActuator,
+                sosa:actsOn, sosa:actsOnProperty, sosa:hasInputValue, sosa:observationRelatedTo,
+                sosa:relatedObservation, sosa:resultQuality, sosa:isOriginalSampleOf, sosa:isResultOfMadeBySampler,
+                sosa:isResultOfUsedProcedure ))
+            FILTER((isLiteral(?collectionValue) || isIRI(?collectionValue)) && ?collectionValue != ?memberValue)
+            FILTER NOT EXISTS { $this ?path ?memberValue }
+            FILTER NOT EXISTS { ?collectionValue a time:Interval }
+            BIND(CONCAT(STR(?memberValue), " != ", STR(?collectionValue)) as ?failedValue)
+        }
+    """ ]
+.
+
+<#testCollectionPropertyValuesInterval>
+    a sh:NodeShape ;
+    sh:targetClass sosa:ObservationCollection, sosa:ActuationCollection, sosa:SamplingCollection ;
+    sh:targetSubjectsOf sosa:hasMember ;
+    sh:targetObjectsOf sosa:memberOf ;
+    sh:message "Collection member values do not match those of the collections ({?path} property in {?value}: {?failedValue})";
+    sh:sparql [ sh:select """
+        PREFIX sosa: <http://www.w3.org/ns/sosa/>
+        PREFIX geojson: <https://purl.org/geojson/vocab#>
+        PREFIX time: <http://www.w3.org/2006/time#>
+        SELECT $this ?path (?member AS ?value) ?failedValue WHERE {
+            $this (sosa:hasMember|^sosa:memberOf)+ ?member ;
+                ?path ?collectionValue .
+            ?collectionValue a time:Interval .
+            ?member ?path ?memberValue .
+            FILTER(?path in ( sosa:resultTime, sosa:phenomenonTime, sosa:hasResult, sosa:hasSimpleResult,
+                sosa:hasFeatureOfInterest, sosa:hasUltimateFeatureOfInterest, sosa:observedProperty, sosa:madeBySystem,
+                sosa:usedProcedure, sosa:madeBySensor, sosa:madeBySampler, sosa:isSampleOf, sosa:madeByActuator,
+                sosa:actsOn, sosa:actsOnProperty, sosa:hasInputValue, sosa:observationRelatedTo,
+                sosa:relatedObservation, sosa:resultQuality, sosa:isOriginalSampleOf, sosa:isResultOfMadeBySampler,
+                sosa:isResultOfUsedProcedure ))
+
+            {
+                ?collectionValue time:hasBeginning/(time:inXSDDateTime|time:inXSDDate) ?colBeginning .
+                OPTIONAL { ?memberValue time:hasBeginning?/(time:inXSDDateTime|time:inXSDDate) ?memberBeginning }
+                FILTER((isLiteral(?memberValue) && ?memberValue < ?colBeginning) || (BOUND(?memberBeginning) && ?memberBeginning < ?colBeginning))
+                BIND(CONCAT(STR(COALESCE(?memberBeginning, ?memberValue)), " < ", STR(?colBeginning)) as ?failedValue)
+            } UNION {
+                ?collectionValue time:hasEnd?/(time:inXSDDateTime|time:inXSDDate) ?colEnd .
+                OPTIONAL { ?memberValue time:hasEnd?/(time:inXSDDateTime|time:inXSDDate) ?memberEnd }
+                FILTER((isLiteral(?memberValue) && ?memberValue > ?colEnd) || (BOUND(?memberEnd) && ?memberEnd > ?colEnd))
+                BIND(CONCAT(STR(COALESCE(?memberEnd, ?memberValue)), " > ", STR(?colEnd)) as ?failedValue)
+            }
+        }
+    """ ]
+.

@@ -13,29 +13,21 @@ $defs:
             - object
             - string
   collection:
-    type: object
-    properties:
-      resultTime:
-        type:
-          - object
-          - string
-      phenomenonTime:
-        $ref: "#/$defs/oneOrMany"
-      hasFeatureOfInterest:
-        $ref: "#/$defs/oneOrMany"
-      observedProperty:
-        $ref: "#/$defs/oneOrMany"
-      usedProcedure:
-        $ref: "#/$defs/oneOrMany"
-      madeBySensor:
-        $ref: "#/$defs/oneOrMany"
-      hasMember:
-        type: array
-        items:
-          anyOf:
-            - $ref: '#/$defs/collection'
-            - $ref: '../observation/schema.yaml'
-            - $ref: bblocks://ogc.ogc-utils.iri-or-curie
+    allOf:
+      - $ref: bblocks://ogc.sosa.properties.executionCollection
+      - type: object
+        properties:
+          observedProperty:
+            $ref: "#/$defs/oneOrMany"
+          madeBySensor:
+            $ref: "#/$defs/oneOrMany"
+          hasMember:
+            type: array
+            items:
+              anyOf:
+                - $ref: '#/$defs/collection'
+                - $ref: '../observation/schema.yaml'
+                - $ref: bblocks://ogc.ogc-utils.iri-or-curie
 allOf:
   - $ref: '#/$defs/collection'
   - not:

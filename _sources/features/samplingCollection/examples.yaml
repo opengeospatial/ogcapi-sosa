@@ -1,0 +1,31 @@
+- title: Example of a SOSA SamplingCollection Feature
+  content: |-
+    The specification has no dedicated SamplingCollection example instance. This
+    extends the "LocatedSampling" example with a second sibling Sampling of the same
+    Feature of Interest, as a GeoJSON FeatureCollection. As with SampleCollection,
+    Sampling has no property that structurally distinguishes a leaf instance from a
+    nested collection, so members are expressed through `properties.hasMember`
+    rather than the `features` array, to avoid an ambiguous match.
+  snippets:
+    - language: json
+      code: |-
+        {
+          "type": "FeatureCollection",
+          "properties": {
+            "hasFeatureOfInterest": "EarthAtmosphere",
+            "hasMember": [
+              {
+                "@id": "AirSampling_StE",
+                "hasResult": "EarthAtmosphere_StE",
+                "resultTime": "2024-06-01T09:00:00Z"
+              },
+              {
+                "@id": "AirSampling_StE2",
+                "hasResult": "EarthAtmosphere_StE2",
+                "resultTime": "2024-06-01T09:15:00Z"
+              }
+            ]
+          },
+          "features": []
+        }
+      base-uri: https://example.org/data/

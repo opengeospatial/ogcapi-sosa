@@ -1,0 +1,29 @@
+"$schema": https://json-schema.org/draft/2020-12/schema
+description: 'SOSA System'
+x-jsonld-context: ../../../sosa-ssn.jsonld
+allOf:
+  - $ref: bblocks://ogc.sosa.properties.asset
+  - type: object
+    properties:
+      hasSubSystem:
+        type: array
+        items:
+          type:
+            - object
+            - string
+      isSubSystemOf:
+        type:
+          - object
+          - string
+      implements:
+        type:
+          - object
+          - string
+      madeBySystem:
+        type:
+          - object
+          - string
+      madeExecution:
+        type:
+          - object
+          - string

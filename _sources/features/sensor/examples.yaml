@@ -1,0 +1,32 @@
+- title: Example of a SOSA Sensor Feature (located sensor)
+  content: |-
+    From the SOSA/SSN specification's "LocatedSensor" example.
+  snippets:
+    - language: json
+      code: |-
+        {
+          "@id": "IBS-TH2-56",
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-73.877244, 45.511672]
+          },
+          "properties": {}
+        }
+      base-uri: https://example.org/data/
+    - language: ttl
+      code: |-
+        @prefix ex: <https://example.org/data/> .
+        @prefix geo: <http://www.opengis.net/ont/geosparql#> .
+        @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+        @prefix sosa: <http://www.w3.org/ns/sosa/> .
+
+        ex:IBS-TH2-56
+            a sosa:Sensor ;
+            rdfs:label "12gth456a-23190"^^ex:serialNumber ;
+            geo:hasGeometry [
+                a geo:Point ;
+                geo:asWKT "POINT (-73.877244 45.511672)"^^geo:WktLiteral ;
+            ] ;
+        .
+      base-uri: https://example.org/data/

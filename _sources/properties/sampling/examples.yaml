@@ -1,0 +1,46 @@
+- title: Example of a SOSA Sampling (air sample from Earth's atmosphere)
+  content: |-
+    From the SOSA/SSN specification's "LocatedSampling" example. The spec's own
+    illustration omits a `resultTime` (it focuses on geometry) and only asserts
+    `isResultOf` on the Sample, relying on inverse-property entailment for the
+    Sampling's own `hasResult` - both have been added explicitly here for a
+    complete, self-contained instance.
+  snippets:
+    - language: json
+      code: |-
+        {
+          "@id": "AirSampling_StE",
+          "hasFeatureOfInterest": "EarthAtmosphere",
+          "hasInputValue": {
+            "type": "Point",
+            "coordinates": [4.387611, 45.437772]
+          },
+          "hasResult": "EarthAtmosphere_StE",
+          "resultTime": "2024-06-01T09:00:00Z"
+        }
+      base-uri: https://example.org/data/
+    - language: ttl
+      code: |-
+        @prefix ex: <https://example.org/data/> .
+        @prefix geo: <http://www.opengis.net/ont/geosparql#> .
+        @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+        @prefix sosa: <http://www.w3.org/ns/sosa/> .
+        @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+        ex:EarthAtmosphere_StE a sosa:Sample ;
+          sosa:isSampleOf ex:EarthAtmosphere ;
+          sosa:isResultOf ex:AirSampling_StE ;
+        .
+        ex:AirSampling_StE a sosa:Sampling ;
+          sosa:hasFeatureOfInterest ex:EarthAtmosphere ;
+          sosa:hasInputValue [
+            a geo:Point ;
+            geo:asWKT "POINT (4.387611 45.437772)"^^geo:WktLiteral ;
+          ] ;
+          sosa:hasResult ex:EarthAtmosphere_StE ;
+          sosa:resultTime "2024-06-01T09:00:00Z"^^xsd:dateTime ;
+        .
+        ex:EarthAtmosphere a sosa:FeatureOfInterest ;
+          skos:exactMatch <https://www.wikidata.org/wiki/Q3230> ;
+        .
+      base-uri: https://example.org/data/
