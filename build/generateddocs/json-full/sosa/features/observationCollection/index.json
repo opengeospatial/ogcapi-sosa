@@ -38,21 +38,21 @@
     "ogc.geo.features.feature": [
       "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
     ],
-    "ogc.sosa.properties.observation": [
-      "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl"
-    ],
     "ogc.sosa.properties.execution": [
       "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl"
+    ],
+    "ogc.sosa.properties.observation": [
+      "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl"
     ],
     "ogc.geo.features.featureCollection": [
       "https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl"
     ]
   },
   "dependsOn": [
-    "ogc.geo.json-fg.feature-lenient",
     "ogc.sosa.features.observation",
-    "ogc.sosa.features.executionCollection",
-    "ogc.sosa.properties.observationCollection"
+    "ogc.sosa.properties.observationCollection",
+    "ogc.geo.json-fg.feature-lenient",
+    "ogc.sosa.features.executionCollection"
   ],
   "schema": {
     "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observationCollection/schema.yaml",

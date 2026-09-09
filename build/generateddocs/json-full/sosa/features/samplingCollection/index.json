@@ -34,21 +34,21 @@
     "http://www.w3.org/ns/sosa/SamplingCollection"
   ],
   "shaclShapes": {
-    "ogc.sosa.properties.execution": [
-      "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl"
+    "ogc.geo.features.featureCollection": [
+      "https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl"
     ],
     "ogc.geo.features.feature": [
       "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
     ],
-    "ogc.geo.features.featureCollection": [
-      "https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl"
+    "ogc.sosa.properties.execution": [
+      "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl"
     ]
   },
   "dependsOn": [
-    "ogc.sosa.properties.samplingCollection",
-    "ogc.sosa.features.sampling",
     "ogc.geo.json-fg.featureCollection-lenient",
-    "ogc.geo.json-fg.feature-lenient"
+    "ogc.sosa.properties.samplingCollection",
+    "ogc.geo.json-fg.feature-lenient",
+    "ogc.sosa.features.sampling"
   ],
   "schema": {
     "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/samplingCollection/schema.yaml",

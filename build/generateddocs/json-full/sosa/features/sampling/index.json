@@ -33,16 +33,16 @@
     "http://www.w3.org/ns/sosa/Sampling"
   ],
   "shaclShapes": {
-    "ogc.sosa.properties.execution": [
-      "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl"
-    ],
     "ogc.geo.features.feature": [
       "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
+    ],
+    "ogc.sosa.properties.execution": [
+      "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl"
     ]
   },
   "dependsOn": [
-    "ogc.sosa.properties.sampling",
-    "ogc.sosa.features.execution"
+    "ogc.sosa.features.execution",
+    "ogc.sosa.properties.sampling"
   ],
   "schema": {
     "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/sampling/schema.yaml",

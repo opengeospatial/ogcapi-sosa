@@ -15,9 +15,6 @@ ex:nominalLifetime a sosa1:Observation ;
             qudt:value 1.0 ] ;
     sosa1:observedProperty ex:nominalLifetimeRestriction .
 
-sosa-cap:Lifetime a iop:Property ;
-    rdfs:label "Battery Lifetime" .
-
 ex:nominalLifetimeRestriction a iop:Variable,
         sosa1:Property ;
     rdfs:label "Nominal Lifetime Restriction of a AA Battery" ;
@@ -32,6 +29,9 @@ ex:sensor a sosa1:Sensor ;
 
 uom:average a iop:StatisticalModifier ;
     rdfs:label "average" .
+
+sosa-cap:BatteryLifetime a iop:Property ;
+    rdfs:label "Battery Lifetime" .
 
 gemet:1170 a iop:Entity ;
     rdfs:label "sensor" .

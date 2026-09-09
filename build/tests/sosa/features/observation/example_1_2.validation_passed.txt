@@ -1,42 +1,42 @@
 Validation report for ogc.sosa.features.observation - SOSA Observation Feature
-Generated 2026-09-09T11:07:53.321688+00:00
+Generated 2026-09-09T13:28:11.993609+00:00
 === Files ===
 Using example_1_2.ttl from examples
 Output Turtle example_1_2.ttl created
 === End Files ===
 
 === SHACL ===
-Validation result for _sources/properties/observation/shapes.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for _sources/properties/observation/shapes.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: _:n71e68455a2644aa7b1649f2ef0b117ceb1
-
-Validation result for _sources/properties/execution/shapes.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for _sources/properties/execution/shapes.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: 33
- - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: _:n71e68455a2644aa7b1649f2ef0b117ceb1
- - Shape <https://www.ogc.org/rules/sosa/#testResult>: _:n71e68455a2644aa7b1649f2ef0b117ceb1
- - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: _:n71e68455a2644aa7b1649f2ef0b117ceb1
-
 Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
  - Shape geojson:LinkShape: *none*
- - Shape geojson:GeometryShape: *none*
  - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
- - Shape geojson:FeatureShape: _:n71e68455a2644aa7b1649f2ef0b117ceb1
+ - Shape geojson:GeometryShape: *none*
+ - Shape geojson:FeatureShape: _:n6ae5c3a344d546bc80b2ef602b698754b1
  - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+
+Validation result for _sources/properties/execution/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/execution/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: _:n6ae5c3a344d546bc80b2ef602b698754b1
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: _:n6ae5c3a344d546bc80b2ef602b698754b1
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: 33
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: _:n6ae5c3a344d546bc80b2ef602b698754b1
+
+Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: _:n6ae5c3a344d546bc80b2ef602b698754b1
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: *none*
 
 === End SHACL ===
 

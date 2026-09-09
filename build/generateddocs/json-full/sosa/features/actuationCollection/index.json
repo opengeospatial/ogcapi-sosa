@@ -34,21 +34,21 @@
     "http://www.w3.org/ns/sosa/ActuationCollection"
   ],
   "shaclShapes": {
-    "ogc.geo.features.feature": [
-      "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
-    ],
     "ogc.sosa.properties.execution": [
       "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl"
+    ],
+    "ogc.geo.features.feature": [
+      "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
     ],
     "ogc.geo.features.featureCollection": [
       "https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl"
     ]
   },
   "dependsOn": [
-    "ogc.geo.json-fg.feature-lenient",
     "ogc.sosa.properties.actuationCollection",
+    "ogc.sosa.features.actuation",
     "ogc.geo.json-fg.featureCollection-lenient",
-    "ogc.sosa.features.actuation"
+    "ogc.geo.json-fg.feature-lenient"
   ],
   "schema": {
     "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/actuationCollection/schema.yaml",
