@@ -3,7 +3,7 @@
 
 `ogc.sosa.properties.deployment` *v1.0*
 
-This building block defines the set of properties for a SOSA Deployment - the arrangement of one or more Assets to execute Procedures with respect to designated features of interest, typically for a period of time.
+OMS alignment: implements the ISO 19156:2023 (OGC Topic 20 / O&M 3.0) `obs-cpt/Deployment` requirement class for `sosa:Deployment`. This building block defines the set of properties for a SOSA Deployment - the arrangement of one or more Assets to execute Procedures with respect to designated features of interest, typically for a period of time.
 
 [*Status*](http://www.opengis.net/def/status): Under development
 

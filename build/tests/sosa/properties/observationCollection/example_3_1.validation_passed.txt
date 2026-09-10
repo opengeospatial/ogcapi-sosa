@@ -1,5 +1,5 @@
 Validation report for ogc.sosa.properties.observationCollection - ObservationCollection Properties
-Generated 2026-09-09T13:28:07.684744+00:00
+Generated 2026-09-10T07:08:07.579438+00:00
 === Files ===
 Using example_3_1.json from examples
 JSON-LD context is present - uplifting
@@ -14,26 +14,26 @@ Validation passed
 === SHACL ===
 Using snippet SHACL closures:
  - closure.ttl
+Validation result for _sources/properties/execution/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/execution/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: _:N9017b24a2910449a91a391f999ce1c70,<http://example.com/humidity-collection>,<http://example.com/temperature-collection>
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: <http://example.com/obs-temp-1>,<http://example.com/obs-temp-2>,<http://example.com/obs-hum-1>,<http://example.com/obs-hum-2>
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <http://example.com/obs-temp-1>,<http://example.com/obs-temp-2>,<http://example.com/obs-hum-1>,<http://example.com/obs-hum-2>
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <http://example.com/obs-temp-2>,<http://example.com/obs-temp-1>,<http://example.com/obs-hum-2>,<http://example.com/obs-hum-1>
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: _:N9017b24a2910449a91a391f999ce1c70,<http://example.com/humidity-collection>,<http://example.com/temperature-collection>
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <http://example.com/obs-hum-2>/sosa:hasSimpleResult,<http://example.com/obs-temp-1>/sosa:hasSimpleResult,<http://example.com/obs-hum-1>/sosa:hasSimpleResult,<http://example.com/obs-temp-2>/sosa:hasSimpleResult
+
 Validation result for _sources/properties/observation/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for _sources/properties/observation/shapes.shacl:
  - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: <http://example.com/obs-temp-1>,<http://example.com/obs-hum-1>,<http://example.com/obs-hum-2>,<http://example.com/obs-temp-2>
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: <http://example.com/obs-temp-2>,<http://example.com/obs-temp-1>,<http://example.com/obs-hum-2>,<http://example.com/obs-hum-1>
  - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: <http://example.com/humidity-collection>,<http://example.com/temperature-collection>
-
-Validation result for _sources/properties/execution/shapes.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for _sources/properties/execution/shapes.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testResult>: <http://example.com/obs-hum-1>,<http://example.com/obs-hum-2>,<http://example.com/obs-temp-2>,<http://example.com/obs-temp-1>
- - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <http://example.com/obs-temp-1>,<http://example.com/obs-hum-1>,<http://example.com/obs-hum-2>,<http://example.com/obs-temp-2>
- - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <http://example.com/temperature-collection>,_:Na64237637044417eac0c4cfbfe8d2337,<http://example.com/humidity-collection>
- - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <http://example.com/temperature-collection>,_:Na64237637044417eac0c4cfbfe8d2337,<http://example.com/humidity-collection>
- - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <http://example.com/obs-hum-1>/sosa:hasSimpleResult,<http://example.com/obs-temp-1>/sosa:hasSimpleResult,<http://example.com/obs-hum-2>/sosa:hasSimpleResult,<http://example.com/obs-temp-2>/sosa:hasSimpleResult
- - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <http://example.com/obs-hum-1>,<http://example.com/obs-hum-2>,<http://example.com/obs-temp-2>,<http://example.com/obs-temp-1>
 
 === End SHACL ===
 

@@ -3,7 +3,7 @@
 
 `ogc.sosa.features.sensor` *v1.0*
 
-This building block defines a GeoJSON feature containing a SOSA Sensor - a System that implements, or is used by, a Sensing/Observing Procedure - using the properties defined in the Sensor Properties schema.
+OMS alignment: implements the ISO 19156:2023 (OGC Topic 20 / O&M 3.0) `obs-cpt/Observer` requirement class for `sosa:Sensor` - the ISO 19156:2023 UML class is named `Observer`; SOSA keeps the name `Sensor` for backward compatibility. This building block defines a GeoJSON feature containing a SOSA Sensor - a System that implements, or is used by, a Sensing/Observing Procedure - using the properties defined in the Sensor Properties schema.
 
 [*Status*](http://www.opengis.net/def/status): Under development
 

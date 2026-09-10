@@ -3,13 +3,13 @@
 {
   "itemIdentifier": "ogc.sosa.features.actuationCollection",
   "name": "ActuationCollection Feature",
-  "abstract": "This building block defines the set of a GeoJSON FeatureCollection containing a SOSA ActuationCollection - a collection of one or more Actuations, whose members share a common value for one or more properties.",
+  "abstract": "OMS alignment: `sosa:ActuationCollection` is a SOSA/SSN generalization with no direct ISO 19156 (OMS) counterpart, since actuation is outside the scope of O&M/OMS, which standardizes observation and sampling only; see the OMS alignment building block (`ogc.sosa.oms-alignment`). This building block defines the set of a GeoJSON FeatureCollection containing a SOSA ActuationCollection - a collection of one or more Actuations, whose members share a common value for one or more properties.",
   "status": "under-development",
   "dateTimeAddition": "2026-08-29T00:00:00Z",
   "itemClass": "schema",
   "register": "ogc-building-block-register",
   "version": "1.0",
-  "dateOfLastChange": "2026-09-09",
+  "dateOfLastChange": "2026-09-10",
   "sources": [
     {
       "title": "Semantic Sensor Network Ontology",
@@ -34,21 +34,21 @@
     "http://www.w3.org/ns/sosa/ActuationCollection"
   ],
   "shaclShapes": {
-    "ogc.sosa.properties.execution": [
-      "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl"
+    "ogc.geo.features.featureCollection": [
+      "https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl"
     ],
     "ogc.geo.features.feature": [
       "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
     ],
-    "ogc.geo.features.featureCollection": [
-      "https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl"
+    "ogc.sosa.properties.execution": [
+      "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl"
     ]
   },
   "dependsOn": [
-    "ogc.sosa.properties.actuationCollection",
-    "ogc.sosa.features.actuation",
     "ogc.geo.json-fg.featureCollection-lenient",
-    "ogc.geo.json-fg.feature-lenient"
+    "ogc.sosa.properties.actuationCollection",
+    "ogc.geo.json-fg.feature-lenient",
+    "ogc.sosa.features.actuation"
   ],
   "schema": {
     "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/actuationCollection/schema.yaml",

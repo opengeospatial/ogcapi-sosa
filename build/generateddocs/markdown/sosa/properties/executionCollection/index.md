@@ -3,7 +3,7 @@
 
 `ogc.sosa.properties.executionCollection` *v1.0*
 
-This building block defines the set of properties common to any SOSA ExecutionCollection - the abstract collection of Executions (Observations, Actuations, or Samplings). It generalizes ObservationCollection, ActuationCollection and SamplingCollection and is not intended to be used directly by itself.
+OMS alignment: `sosa:ExecutionCollection` is a SOSA/SSN generalization with no direct ISO 19156 (OMS) counterpart, generalizing ObservationCollection, ActuationCollection and SamplingCollection, none of which OMS treats uniformly. See the OMS alignment building block (`ogc.sosa.oms-alignment`). This building block defines the set of properties common to any SOSA ExecutionCollection - the abstract collection of Executions (Observations, Actuations, or Samplings). It generalizes ObservationCollection, ActuationCollection and SamplingCollection and is not intended to be used directly by itself.
 
 [*Status*](http://www.opengis.net/def/status): Under development
 

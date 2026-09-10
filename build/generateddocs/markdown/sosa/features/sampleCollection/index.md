@@ -3,7 +3,7 @@
 
 `ogc.sosa.features.sampleCollection` *v1.0*
 
-This building block defines a GeoJSON FeatureCollection containing a SOSA SampleCollection, using the properties defined in the SampleCollection Properties schema.
+OMS alignment: implements the ISO 19156:2023 (OGC Topic 20 / O&M 3.0) `sam-basic/SampleCollection` requirement class for `sosa:SampleCollection`. This building block defines a GeoJSON FeatureCollection containing a SOSA SampleCollection, using the properties defined in the SampleCollection Properties schema.
 
 [*Status*](http://www.opengis.net/def/status): Under development
 

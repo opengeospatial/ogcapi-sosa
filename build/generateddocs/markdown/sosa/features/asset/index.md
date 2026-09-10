@@ -3,7 +3,7 @@
 
 `ogc.sosa.features.asset` *v1.0*
 
-This building block defines a GeoJSON feature containing a SOSA Asset - the abstract physical or virtual entity that can be hosted, deployed, or host/deploy other Assets, using the properties defined in the Asset Properties schema. It generalizes the feature-level building blocks shared by System and Platform and is not intended to be used directly by itself.
+OMS alignment: `sosa:Asset` is a SOSA/SSN generalization with no direct ISO 19156 (OMS) counterpart; the nearest OMS concept is `obs-cpt/Host`, but OMS does not generalize hosting this broadly. See the OMS alignment building block (`ogc.sosa.oms-alignment`). This building block defines a GeoJSON feature containing a SOSA Asset - the abstract physical or virtual entity that can be hosted, deployed, or host/deploy other Assets, using the properties defined in the Asset Properties schema. It generalizes the feature-level building blocks shared by System and Platform and is not intended to be used directly by itself.
 
 [*Status*](http://www.opengis.net/def/status): Under development
 

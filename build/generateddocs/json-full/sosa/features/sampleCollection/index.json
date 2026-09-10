@@ -3,13 +3,13 @@
 {
   "itemIdentifier": "ogc.sosa.features.sampleCollection",
   "name": "SampleCollection Feature",
-  "abstract": "This building block defines a GeoJSON FeatureCollection containing a SOSA SampleCollection, using the properties defined in the SampleCollection Properties schema.",
+  "abstract": "OMS alignment: implements the ISO 19156:2023 (OGC Topic 20 / O&M 3.0) `sam-basic/SampleCollection` requirement class for `sosa:SampleCollection`. This building block defines a GeoJSON FeatureCollection containing a SOSA SampleCollection, using the properties defined in the SampleCollection Properties schema.",
   "status": "under-development",
   "dateTimeAddition": "2026-08-29T00:00:00Z",
   "itemClass": "schema",
   "register": "ogc-building-block-register",
   "version": "1.0",
-  "dateOfLastChange": "2026-09-09",
+  "dateOfLastChange": "2026-09-10",
   "sources": [
     {
       "title": "Semantic Sensor Network Ontology",
@@ -40,9 +40,9 @@
   },
   "dependsOn": [
     "ogc.geo.json-fg.featureCollection-lenient",
-    "ogc.sosa.properties.sampleCollection",
     "ogc.geo.json-fg.feature-lenient",
-    "ogc.sosa.features.sample"
+    "ogc.sosa.features.sample",
+    "ogc.sosa.properties.sampleCollection"
   ],
   "schema": {
     "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/sampleCollection/schema.yaml",

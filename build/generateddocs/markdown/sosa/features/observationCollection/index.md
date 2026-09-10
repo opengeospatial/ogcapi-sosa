@@ -3,7 +3,7 @@
 
 `ogc.sosa.features.observationCollection` *v1.0*
 
-This building blocks defines an ObservationCollection Feature according to the SOSA/SSN v1.1 specification.
+OMS alignment: implements the ISO 19156:2023 (OGC Topic 20 / O&M 3.0) `obs-basic/ObservationCollection` requirement class for `sosa:ObservationCollection`. This building blocks defines an ObservationCollection Feature according to the SOSA/SSN v1.1 specification.
 
 [*Status*](http://www.opengis.net/def/status): Under development
 

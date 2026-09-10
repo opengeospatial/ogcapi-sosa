@@ -3,7 +3,7 @@
 
 `ogc.sosa.features.platform` *v1.0*
 
-This building block defines a GeoJSON feature containing a SOSA Platform - an Asset that hosts other Assets - using the properties defined in the Platform Properties schema.
+OMS alignment: implements the ISO 19156:2023 (OGC Topic 20 / O&M 3.0) `obs-cpt/Host` requirement class for `sosa:Platform`. This building block defines a GeoJSON feature containing a SOSA Platform - an Asset that hosts other Assets - using the properties defined in the Platform Properties schema.
 
 [*Status*](http://www.opengis.net/def/status): Under development
 

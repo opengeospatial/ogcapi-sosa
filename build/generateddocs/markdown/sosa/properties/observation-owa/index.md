@@ -3,7 +3,7 @@
 
 `ogc.sosa.properties.observation-owa` *v1.0*
 
-This is set of properties defined by the SOSA ontology, assuming a "Open World Assumption" where mandatory properties may be provided by other related objects.
+OMS alignment: implements the ISO 19156:2023 (OGC Topic 20 / O&M 3.0) `obs-cpt/Observation` requirement class for `sosa:Observation`, under an Open World Assumption profile. This is set of properties defined by the SOSA ontology, assuming a "Open World Assumption" where mandatory properties may be provided by other related objects.
 
 [*Status*](http://www.opengis.net/def/status): Under development
 

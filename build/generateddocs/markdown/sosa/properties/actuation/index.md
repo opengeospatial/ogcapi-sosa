@@ -3,7 +3,7 @@
 
 `ogc.sosa.properties.actuation` *v1.0*
 
-This building block defines the set of properties for a SOSA Actuation - the Act of carrying out an Actuating Procedure to change the state of the world via an Actuator.
+OMS alignment: `sosa:Actuation` is a SOSA/SSN generalization with no direct ISO 19156 (OMS) counterpart, since actuation is outside the scope of O&M/OMS, which standardizes observation and sampling only; see the OMS alignment building block (`ogc.sosa.oms-alignment`). This building block defines the set of properties for a SOSA Actuation - the Act of carrying out an Actuating Procedure to change the state of the world via an Actuator.
 
 [*Status*](http://www.opengis.net/def/status): Under development
 

@@ -1,5 +1,5 @@
 Validation report for ogc.sosa.properties.observationCollection - ObservationCollection Properties
-Generated 2026-09-09T13:28:06.455486+00:00
+Generated 2026-09-10T07:08:06.338299+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -9,15 +9,6 @@ Using collection-props-fail.ttl from test resources
 === End Files ===
 
 === SHACL ===
-Validation result for _sources/properties/observation/shapes.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for _sources/properties/observation/shapes.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: eg:a2,eg:a1
- - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: eg:c1
-
 
 ** Validation error **
 Validation result for _sources/properties/execution/shapes.shacl:
@@ -50,15 +41,24 @@ Validation result for _sources/properties/execution/shapes.shacl:
               BIND(CONCAT(STR(?memberValue), " != ", STR(?collectionValue)) as ?failedValue)
           }
       ") ]
-  	Message: Collection member values do not match those of the collections (http://www.w3.org/ns/sosa/observedProperty property in http://example.org/my-feature/a2: http://example.org/my-feature/p3 != http://example.org/my-feature/p2)
+  	Message: Collection member values do not match those of the collections (http://www.w3.org/ns/sosa/observedProperty property in http://example.org/my-feature/a2: http://example.org/my-feature/p3 != http://example.org/my-feature/p1)
   
 Focus nodes for _sources/properties/execution/shapes.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testResult>: eg:a2,eg:a1
- - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: eg:a2,eg:a1
  - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: eg:c1
- - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: eg:c1
- - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: eg:a1/sosa:hasSimpleResult,eg:a2/sosa:hasSimpleResult
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: eg:a2,eg:a1
  - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: eg:a2,eg:a1
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: eg:a2,eg:a1
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: eg:c1
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: eg:a2/sosa:hasSimpleResult,eg:a1/sosa:hasSimpleResult
+
+Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: eg:a2,eg:a1
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: eg:c1
 
 === End SHACL ===
 

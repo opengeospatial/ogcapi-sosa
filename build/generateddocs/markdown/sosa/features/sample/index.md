@@ -3,7 +3,7 @@
 
 `ogc.sosa.features.sample` *v1.0*
 
-This building block defines a GeoJSON feature containing a SOSA Sample, using the properties defined in the Sample Properties schema.
+OMS alignment: implements the ISO 19156:2023 (OGC Topic 20 / O&M 3.0) `sam-cpt/Sample` requirement class for `sosa:Sample`. This building block defines a GeoJSON feature containing a SOSA Sample, using the properties defined in the Sample Properties schema.
 
 [*Status*](http://www.opengis.net/def/status): Under development
 

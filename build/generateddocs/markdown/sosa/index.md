@@ -3,7 +3,7 @@
 
 `ogc.sosa` *v1.0*
 
-The SOSA (Sensor, Observation, Sample, and Actuator) ontology  is a realisation of the Observations, Measurements and Sampling (OMS) Conceptual model
+The SOSA (Sensor, Observation, Sample, and Actuator) ontology  is a realisation of the Observations, Measurements and Sampling (OMS) Conceptual model. See the `oms-alignment` building block for the class-by-class mapping to ISO 19156:2023.
 
 [*Status*](http://www.opengis.net/def/status): Under development
 

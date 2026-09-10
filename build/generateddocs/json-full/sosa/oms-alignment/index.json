@@ -1,0 +1,50 @@
+
+
+{
+  "itemIdentifier": "ogc.sosa.oms-alignment",
+  "name": "Alignment with ISO 19156 (OMS)",
+  "abstract": "Documents, class by class, how the SOSA-based building blocks in this register realize the ISO 19156:2023 Observations, Measurements and Samples (OMS) conceptual model, and identifies which building blocks are SOSA/SSN generalizations with no direct OMS counterpart.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-09-10T00:00:00Z",
+  "itemClass": "clause",
+  "register": "ogc-building-block-register",
+  "version": "1.0",
+  "dateOfLastChange": "2026-09-10",
+  "sources": [
+    {
+      "title": "ISO 19156:2023 - Geographic information - Observations, measurements and samples",
+      "link": "https://www.iso.org/standard/82463.html"
+    },
+    {
+      "title": "OGC Abstract Specification Topic 20 - Observations, Measurements and Samples (O&M 3.0)",
+      "link": "https://www.ogc.org/standards/om/"
+    },
+    {
+      "title": "Semantic Sensor Network Ontology - 2023 Edition (SOSA/SSN 2.0)",
+      "link": "https://www.w3.org/TR/vocab-ssn-2023/"
+    },
+    {
+      "title": "SOSA-OMS extension module (sosa-oms.ttl)",
+      "link": "https://github.com/w3c/sdw-sosa-ssn/blob/gh-pages/ssn/rdf/ontology/extensions/sosa-oms.ttl"
+    }
+  ],
+  "maturity": "development",
+  "scope": "development",
+  "tags": [
+    "sosa",
+    "ssn",
+    "oms",
+    "o&m",
+    "iso19156",
+    "alignment"
+  ],
+  "group": "Documentation",
+  "highlighted": true,
+  "shaclShapes": {},
+  "sourceFiles": "https://opengeospatial.github.io/ogcapi-sosa/_sources/oms-alignment/",
+  "validationPassed": true,
+  "description": "# Alignment with ISO 19156 (OMS)\n\n## Purpose and scope\n\nThis register uses SOSA (Sensor, Observation, Sample, and Actuator) as the RDF/OWL **formalism**\nthrough which its building blocks realize the ISO 19156:2023 *Observations, Measurements and\nSamples* (OMS) conceptual model \u2014 published jointly by ISO/TC 211 and OGC as OGC Abstract\nSpecification Topic 20, *Observations, Measurements and Samples* (O&M 3.0).\n\nEvery building block under `features/*` (a GeoJSON Feature) and `properties/*` (the bare property\nset used inside that Feature, or embeddable elsewhere) carries the `rdfType` of a single SOSA class.\nSOSA/SSN 2.0 in turn declares, in its\n[SOSA-OMS extension module](https://github.com/w3c/sdw-sosa-ssn/blob/gh-pages/ssn/rdf/ontology/extensions/sosa-oms.ttl),\nthat each such SOSA class `ogc-ms:implements` one or more specific ISO 19156:2023 requirement\nclasses. This page collects those declarations so a reader checking conformance to OMS can trace,\nclass by class, which OGC requirement class each building block instantiates \u2014 and which building\nblocks are SOSA/SSN-only generalizations that OMS does not define.\n\nNot every SOSA class used here has a direct OMS counterpart. O&M 3.0 formally standardizes only the\n*Observation* and *Sampling* branches of the model. *Actuation*, and the abstract generalizations\nSOSA/SSN 2.0 introduces to unify Observation, Actuation and Sampling under one pattern (`Execution`,\n`System`, `Asset`, and their `*Collection` counterparts), are SOSA/SSN extensions with no formal ISO\n19156 class. These are marked \"No OMS counterpart\" below, with the reason.\n\n## How to read the table\n\n- **SOSA class** \u2014 the `sosa:` class implemented by the building block (see its `rdfType`).\n- **Building blocks** \u2014 the Feature and Properties building blocks in this register that carry that\n  `rdfType`.\n- **OMS requirement class** \u2014 the ISO 19156:2023 / OGC Topic 20 (O&M 3.0) requirement class the SOSA\n  class `ogc-ms:implements`, given as its requirement-class path under\n  `http://www.opengis.net/spec/om/3.0/req/`.\n- **Note** \u2014 clarification, including the reason where there is no formal OMS counterpart.\n\nEach note below is also carried, as the opening clause, in the `abstract` of the corresponding\nbuilding block.\n\n## Class alignment table\n\n| SOSA class | Building blocks | OMS requirement class (O&M 3.0 / ISO 19156:2023) | Note |\n|---|---|---|---|\n| `sosa:Observation` | `features.observation`, `properties.observation`, `properties.observation-owa` | `obs-cpt/Observation` | Direct realization of `OM_Observation`. The `observation-owa` block is an Open World Assumption profile of the same requirement class. |\n| `sosa:ObservationCollection` | `features.observationCollection`, `properties.observationCollection` | `obs-basic/ObservationCollection` | |\n| `sosa:Sample` | `features.sample`, `properties.sample` | `sam-cpt/Sample` | |\n| `sosa:SampleCollection` | `features.sampleCollection`, `properties.sampleCollection` | `sam-basic/SampleCollection` | |\n| `sosa:Sampling` | `features.sampling`, `properties.sampling` | `sam-cpt/Sampling` | |\n| `sosa:SamplingCollection` | `features.samplingCollection`, `properties.samplingCollection` | *No OMS counterpart* | Generalizes the `sam-basic/SampleCollection` collection pattern to acts of sampling; OMS defines no dedicated sampling-collection requirement class. |\n| `sosa:Sensor` | `features.sensor`, `properties.sensor` | `obs-cpt/Observer` | The ISO 19156:2023 UML class is named `Observer`; SOSA keeps the name `Sensor` for backward compatibility with existing deployments. |\n| `sosa:Sampler` | `features.sampler`, `properties.sampler` | `sam-cpt/Sampler` | |\n| `sosa:Actuator` | `features.actuator`, `properties.actuator` | *No OMS counterpart* | Actuation is outside the scope of O&M/OMS, which standardizes observation and sampling only. |\n| `sosa:Platform` | `features.platform`, `properties.platform` | `obs-cpt/Host` | |\n| `sosa:Deployment` | `features.deployment`, `properties.deployment` | `obs-cpt/Deployment` | |\n| `sosa:Actuation` | `features.actuation`, `properties.actuation` | *No OMS counterpart* | See `sosa:Actuator`, above. |\n| `sosa:ActuationCollection` | `features.actuationCollection`, `properties.actuationCollection` | *No OMS counterpart* | See `sosa:Actuator`, above. |\n| `sosa:System` | `features.system`, `properties.system` | *No OMS counterpart* | SOSA/SSN 2.0 abstraction over `Sensor`/`Actuator`/`Sampler` introduced to unify their shared properties; OMS keeps `Observer` and `Sampler` as unrelated peers rather than subclasses of a common superclass. |\n| `sosa:Asset` | `features.asset`, `properties.asset` | *No OMS counterpart* | SOSA/SSN 2.0 abstraction over `System`/`Platform`. The nearest OMS concept is `obs-cpt/Host`, but OMS does not generalize hosting this broadly. |\n| `sosa:Execution` | `features.execution`, `properties.execution` | *No OMS counterpart* | SOSA/SSN 2.0 abstraction generalizing `Observation`, `Actuation` and `Sampling` as acts of carrying out a `Procedure`; OMS has no equivalent abstract superclass. |\n| `sosa:ExecutionCollection` | `features.executionCollection`, `properties.executionCollection` | *No OMS counterpart* | Generalizes `ObservationCollection`, `ActuationCollection` and `SamplingCollection`, none of which OMS treats uniformly. |\n\n## Normative sources\n\n- ISO 19156:2023, *Geographic information \u2014 Observations, measurements and samples*\n- OGC Abstract Specification Topic 20, *Observations, Measurements and Samples* (O&M 3.0)\n- W3C/OGC, *Semantic Sensor Network Ontology* \u2014 2023 Edition (SOSA/SSN 2.0)\n- The SOSA-OMS extension module (`sosa-oms.ttl`), which declares the `ogc-ms:implements` axioms this\n  page is derived from\n",
+  "annotatedSchema": null,
+  "gitRepository": "https://github.com/opengeospatial/ogcapi-sosa",
+  "gitPath": "_sources/oms-alignment"
+}

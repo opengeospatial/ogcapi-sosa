@@ -3,7 +3,7 @@
 
 `ogc.sosa.properties.asset` *v1.0*
 
-This building block defines the set of properties common to any SOSA Asset - the abstract physical or virtual entity that can be hosted, deployed, or host/deploy other Assets. It generalizes the properties shared by System and Platform and is not intended to be used directly by itself.
+OMS alignment: `sosa:Asset` is a SOSA/SSN generalization with no direct ISO 19156 (OMS) counterpart; the nearest OMS concept is `obs-cpt/Host`, but OMS does not generalize hosting this broadly. See the OMS alignment building block (`ogc.sosa.oms-alignment`). This building block defines the set of properties common to any SOSA Asset - the abstract physical or virtual entity that can be hosted, deployed, or host/deploy other Assets. It generalizes the properties shared by System and Platform and is not intended to be used directly by itself.
 
 [*Status*](http://www.opengis.net/def/status): Under development
 

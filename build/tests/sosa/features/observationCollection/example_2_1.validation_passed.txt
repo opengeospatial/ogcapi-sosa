@@ -1,33 +1,22 @@
 Validation report for ogc.sosa.features.observationCollection - SOSA ObservationCollection Feature
-Generated 2026-09-09T13:28:21.974884+00:00
+Generated 2026-09-10T07:08:25.912427+00:00
 === Files ===
 Using example_2_1.ttl from examples
 Output Turtle example_2_1.ttl created
 === End Files ===
 
 === SHACL ===
-Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
- - Shape geojson:LinkShape: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
- - Shape geojson:GeometryShape: *none*
- - Shape geojson:FeatureShape: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
-
 Validation result for _sources/properties/execution/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for _sources/properties/execution/shapes.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testResult>: eg:pop1999,eg:pop2000
- - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: eg:pop1999,eg:pop2000
  - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: eg:c1
- - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: eg:c1
- - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: eg:pop2000/sosa:hasSimpleResult,eg:pop1999/sosa:hasSimpleResult
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: eg:pop1999,eg:pop2000
  - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: eg:pop1999,eg:pop2000
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: eg:pop1999,eg:pop2000
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: eg:c1
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: eg:pop1999/sosa:hasSimpleResult,eg:pop2000/sosa:hasSimpleResult
 
 Validation result for _sources/properties/observation/shapes.shacl:
   Validation Report
@@ -38,17 +27,28 @@ Focus nodes for _sources/properties/observation/shapes.shacl:
  - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: eg:pop1999,eg:pop2000
  - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: eg:c1
 
+Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
+ - Shape geojson:FeatureShape: *none*
+ - Shape geojson:GeometryShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:LinkShape: *none*
+
 Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
- - Shape geojson:LinkShape: *none*
+ - Shape geojson:FeatureShape: *none*
  - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
  - Shape geojson:GeometryShape: *none*
- - Shape geojson:FeatureCollectionShape: *none*
- - Shape geojson:FeatureShape: *none*
  - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:FeatureCollectionShape: *none*
+ - Shape geojson:LinkShape: *none*
 
 === End SHACL ===
 

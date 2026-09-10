@@ -3,7 +3,7 @@
 
 `ogc.sosa.features.sampling` *v1.0*
 
-This building block defines a GeoJSON feature for a SOSA Sampling - the Act of carrying out a Sampling Procedure to create or transform one or more samples. Uses the properties defined in the Sampling Properties schema.
+OMS alignment: implements the ISO 19156:2023 (OGC Topic 20 / O&M 3.0) `sam-cpt/Sampling` requirement class for `sosa:Sampling`. This building block defines a GeoJSON feature for a SOSA Sampling - the Act of carrying out a Sampling Procedure to create or transform one or more samples. Uses the properties defined in the Sampling Properties schema.
 
 [*Status*](http://www.opengis.net/def/status): Under development
 

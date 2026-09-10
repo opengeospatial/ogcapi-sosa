@@ -3,7 +3,7 @@
 
 `ogc.sosa.properties.actuator` *v1.0*
 
-This building block defines the set of properties for a SOSA Actuator - a System that is used by, or implements, an Actuating Procedure that changes the state of the world.
+OMS alignment: `sosa:Actuator` is a SOSA/SSN generalization with no direct ISO 19156 (OMS) counterpart, since actuation is outside the scope of O&M/OMS, which standardizes observation and sampling only; see the OMS alignment building block (`ogc.sosa.oms-alignment`). This building block defines the set of properties for a SOSA Actuator - a System that is used by, or implements, an Actuating Procedure that changes the state of the world.
 
 [*Status*](http://www.opengis.net/def/status): Under development
 

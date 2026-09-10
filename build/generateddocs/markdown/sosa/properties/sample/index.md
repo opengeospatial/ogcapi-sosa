@@ -3,7 +3,7 @@
 
 `ogc.sosa.properties.sample` *v1.0*
 
-This building block defines the set of properties for a SOSA Sample - a feature which is intended to be representative of a FeatureOfInterest on which Observations may be made, typically the result of a Sampling.
+OMS alignment: implements the ISO 19156:2023 (OGC Topic 20 / O&M 3.0) `sam-cpt/Sample` requirement class for `sosa:Sample`. This building block defines the set of properties for a SOSA Sample - a feature which is intended to be representative of a FeatureOfInterest on which Observations may be made, typically the result of a Sampling.
 
 [*Status*](http://www.opengis.net/def/status): Under development
 

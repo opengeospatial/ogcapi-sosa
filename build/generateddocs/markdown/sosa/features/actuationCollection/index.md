@@ -3,7 +3,7 @@
 
 `ogc.sosa.features.actuationCollection` *v1.0*
 
-This building block defines the set of a GeoJSON FeatureCollection containing a SOSA ActuationCollection - a collection of one or more Actuations, whose members share a common value for one or more properties.
+OMS alignment: `sosa:ActuationCollection` is a SOSA/SSN generalization with no direct ISO 19156 (OMS) counterpart, since actuation is outside the scope of O&M/OMS, which standardizes observation and sampling only; see the OMS alignment building block (`ogc.sosa.oms-alignment`). This building block defines the set of a GeoJSON FeatureCollection containing a SOSA ActuationCollection - a collection of one or more Actuations, whose members share a common value for one or more properties.
 
 [*Status*](http://www.opengis.net/def/status): Under development
 

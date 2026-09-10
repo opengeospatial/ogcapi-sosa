@@ -3,7 +3,7 @@
 
 `ogc.sosa.features.samplingCollection` *v1.0*
 
-This building block defines the set of a GeoJSON FeatureCollection containing a SOSA SamplingCollection - a collection of one or more Samplings, whose members share a common value for one or more properties.
+OMS alignment: `sosa:SamplingCollection` is a SOSA/SSN generalization with no direct ISO 19156 (OMS) counterpart; OMS defines no dedicated sampling-collection requirement class. See the OMS alignment building block (`ogc.sosa.oms-alignment`). This building block defines the set of a GeoJSON FeatureCollection containing a SOSA SamplingCollection - a collection of one or more Samplings, whose members share a common value for one or more properties.
 
 [*Status*](http://www.opengis.net/def/status): Under development
 

@@ -3,7 +3,7 @@
 
 `ogc.sosa.features.executionCollection` *v1.0*
 
-This building block defines a GeoJSON FeatureCollection containing a SOSA ExecutionCollection - the abstract collection of Executions, using the properties defined in the ExecutionCollection Properties schema. It generalizes the feature-level building blocks shared by ObservationCollection, ActuationCollection and SamplingCollection and is not intended to be used directly by itself.
+OMS alignment: `sosa:ExecutionCollection` is a SOSA/SSN generalization with no direct ISO 19156 (OMS) counterpart, generalizing ObservationCollection, ActuationCollection and SamplingCollection, none of which OMS treats uniformly. See the OMS alignment building block (`ogc.sosa.oms-alignment`). This building block defines a GeoJSON FeatureCollection containing a SOSA ExecutionCollection - the abstract collection of Executions, using the properties defined in the ExecutionCollection Properties schema. It generalizes the feature-level building blocks shared by ObservationCollection, ActuationCollection and SamplingCollection and is not intended to be used directly by itself.
 
 [*Status*](http://www.opengis.net/def/status): Under development
 

@@ -3,7 +3,7 @@
 
 `ogc.sosa.properties.execution` *v1.0*
 
-This building block defines the set of properties common to any SOSA Execution - the abstract act of carrying out a Procedure using a System. It generalizes the properties shared by Observation, Actuation and Sampling and is not intended to be used directly by itself.
+OMS alignment: `sosa:Execution` is a SOSA/SSN generalization with no direct ISO 19156 (OMS) counterpart; OMS has no abstract superclass unifying Observation, Actuation and Sampling. See the OMS alignment building block (`ogc.sosa.oms-alignment`). This building block defines the set of properties common to any SOSA Execution - the abstract act of carrying out a Procedure using a System. It generalizes the properties shared by Observation, Actuation and Sampling and is not intended to be used directly by itself.
 
 [*Status*](http://www.opengis.net/def/status): Under development
 

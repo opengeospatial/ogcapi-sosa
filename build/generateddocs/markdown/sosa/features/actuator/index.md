@@ -3,7 +3,7 @@
 
 `ogc.sosa.features.actuator` *v1.0*
 
-This building block defines a GeoJSON feature for a SOSA Actuator - a System that is used by, or implements, an Actuating Procedure that changes the state of the world. Uses the properties defined in the Actuator Properties schema.
+OMS alignment: `sosa:Actuator` is a SOSA/SSN generalization with no direct ISO 19156 (OMS) counterpart, since actuation is outside the scope of O&M/OMS, which standardizes observation and sampling only; see the OMS alignment building block (`ogc.sosa.oms-alignment`). This building block defines a GeoJSON feature for a SOSA Actuator - a System that is used by, or implements, an Actuating Procedure that changes the state of the world. Uses the properties defined in the Actuator Properties schema.
 
 [*Status*](http://www.opengis.net/def/status): Under development
 

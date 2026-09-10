@@ -3,7 +3,7 @@
 
 `ogc.sosa.properties.observation` *v1.0*
 
-This building block defines the set of properties for an observation according to the SOSA/SSN specification. These properties may be directly included into a root element of a JSON object or used in the properties container of a GeoJSON feature.
+OMS alignment: implements the ISO 19156:2023 (OGC Topic 20 / O&M 3.0) `obs-cpt/Observation` requirement class for `sosa:Observation`. This building block defines the set of properties for an observation according to the SOSA/SSN specification. These properties may be directly included into a root element of a JSON object or used in the properties container of a GeoJSON feature.
 
 [*Status*](http://www.opengis.net/def/status): Under development
 

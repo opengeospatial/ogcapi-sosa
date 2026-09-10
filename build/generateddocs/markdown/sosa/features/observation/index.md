@@ -3,7 +3,7 @@
 
 `ogc.sosa.features.observation` *v1.0*
 
-This building blocks defines a GeoJSON feature containing a SOSA Observation, using the properties defined in the Observation Properties schema
+OMS alignment: implements the ISO 19156:2023 (OGC Topic 20 / O&M 3.0) `obs-cpt/Observation` requirement class for `sosa:Observation`. This building blocks defines a GeoJSON feature containing a SOSA Observation, using the properties defined in the Observation Properties schema
 
 [*Status*](http://www.opengis.net/def/status): Under development
 

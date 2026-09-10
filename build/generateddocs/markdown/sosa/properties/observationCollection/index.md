@@ -3,7 +3,7 @@
 
 `ogc.sosa.properties.observationCollection` *v1.0*
 
-This building block defines an ObservationCollection according to the SOSA/SSN v1.1 specification. It defines a set of logical rules regarding presence of mandatory properties anywhere within a potentially nested collection hierarchy. (implemented in SHACL, exploiting the semantic mapping to SOSA)
+OMS alignment: implements the ISO 19156:2023 (OGC Topic 20 / O&M 3.0) `obs-basic/ObservationCollection` requirement class for `sosa:ObservationCollection`. This building block defines an ObservationCollection according to the SOSA/SSN v1.1 specification. It defines a set of logical rules regarding presence of mandatory properties anywhere within a potentially nested collection hierarchy. (implemented in SHACL, exploiting the semantic mapping to SOSA)
 
 [*Status*](http://www.opengis.net/def/status): Under development
 

@@ -2,7 +2,7 @@
   "title": "Validation report for ogc.sosa.properties.samplingCollection - SamplingCollection Properties",
   "bblockName": "SamplingCollection Properties",
   "bblockId": "ogc.sosa.properties.samplingCollection",
-  "generated": "2026-09-09T13:28:03.077843+00:00",
+  "generated": "2026-09-10T07:08:02.559310+00:00",
   "result": true,
   "items": [
     {
@@ -72,18 +72,21 @@
             {
               "shaclFile": "_sources/properties/execution/shapes.shacl",
               "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
+                  "nodes": [
+                    "<https://example.org/data/atmosphereSamplings>"
+                  ]
+                },
                 "<https://www.ogc.org/rules/sosa/#testResult>": {
+                  "nodes": []
+                },
+                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
                   "nodes": []
                 },
                 "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
                   "nodes": [
                     "<https://example.org/data/AirSampling_StE2>",
                     "<https://example.org/data/AirSampling_StE>"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
-                  "nodes": [
-                    "<https://example.org/data/atmosphereSamplings>"
                   ]
                 },
                 "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
@@ -93,13 +96,10 @@
                 },
                 "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
                   "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
-                  "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/properties/execution/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <https://example.org/data/AirSampling_StE2>,<https://example.org/data/AirSampling_StE>\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <https://example.org/data/atmosphereSamplings>\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <https://example.org/data/atmosphereSamplings>\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: *none*\n"
+              "message": "Focus nodes for _sources/properties/execution/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <https://example.org/data/atmosphereSamplings>\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <https://example.org/data/AirSampling_StE2>,<https://example.org/data/AirSampling_StE>\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <https://example.org/data/atmosphereSamplings>\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*\n"
             }
           ]
         }

@@ -3,13 +3,13 @@
 {
   "itemIdentifier": "ogc.sosa.properties.samplingCollection",
   "name": "SamplingCollection Properties",
-  "abstract": "This building block defines the set of properties for a SOSA SamplingCollection - a collection of one or more Samplings, whose members share a common value for one or more properties.",
+  "abstract": "OMS alignment: `sosa:SamplingCollection` is a SOSA/SSN generalization with no direct ISO 19156 (OMS) counterpart; OMS defines no dedicated sampling-collection requirement class. See the OMS alignment building block (`ogc.sosa.oms-alignment`). This building block defines the set of properties for a SOSA SamplingCollection - a collection of one or more Samplings, whose members share a common value for one or more properties.",
   "status": "under-development",
   "dateTimeAddition": "2026-08-29T00:00:00Z",
   "itemClass": "schema",
   "register": "ogc-building-block-register",
   "version": "1.0",
-  "dateOfLastChange": "2026-09-09",
+  "dateOfLastChange": "2026-09-10",
   "sources": [
     {
       "title": "Semantic Sensor Network Ontology",
@@ -39,9 +39,9 @@
     ]
   },
   "dependsOn": [
-    "ogc.ogc-utils.iri-or-curie",
+    "ogc.sosa.properties.executionCollection",
     "ogc.sosa.properties.sampling",
-    "ogc.sosa.properties.executionCollection"
+    "ogc.ogc-utils.iri-or-curie"
   ],
   "schema": {
     "application/yaml": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/samplingCollection/schema.yaml",

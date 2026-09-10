@@ -3,7 +3,7 @@
 
 `ogc.sosa.features.system` *v1.0*
 
-This building block defines a GeoJSON feature containing a SOSA System - the abstract Asset that carries out Procedures, using the properties defined in the System Properties schema. It generalizes the feature-level building blocks shared by Sensor, Actuator and Sampler and is not intended to be used directly by itself.
+OMS alignment: `sosa:System` is a SOSA/SSN generalization with no direct ISO 19156 (OMS) counterpart; OMS keeps `Observer` and `Sampler` as unrelated peers rather than subclasses of a common superclass. See the OMS alignment building block (`ogc.sosa.oms-alignment`). This building block defines a GeoJSON feature containing a SOSA System - the abstract Asset that carries out Procedures, using the properties defined in the System Properties schema. It generalizes the feature-level building blocks shared by Sensor, Actuator and Sampler and is not intended to be used directly by itself.
 
 [*Status*](http://www.opengis.net/def/status): Under development
 

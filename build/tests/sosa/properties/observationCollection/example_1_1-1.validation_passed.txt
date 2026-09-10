@@ -1,5 +1,5 @@
 Validation report for ogc.sosa.properties.observationCollection - ObservationCollection Properties
-Generated 2026-09-09T13:28:06.901792+00:00
+Generated 2026-09-10T07:08:06.785506+00:00
 === Files ===
 Using examples/collection.json from examples
 JSON-LD context is present - uplifting
@@ -14,6 +14,18 @@ Validation passed
 === SHACL ===
 Using snippet SHACL closures:
  - closure.ttl
+Validation result for _sources/properties/execution/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/execution/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <http://example.com/myObsCollection>
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: <http://example.com/a1>
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <http://example.com/a1>
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <http://example.com/a1>
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <http://example.com/myObsCollection>
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <http://example.com/a1>/sosa:hasSimpleResult
+
 Validation result for _sources/properties/observation/shapes.shacl:
   Validation Report
   Conforms: True
@@ -22,18 +34,6 @@ Focus nodes for _sources/properties/observation/shapes.shacl:
  - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
  - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: <http://example.com/a1>
  - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: *none*
-
-Validation result for _sources/properties/execution/shapes.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for _sources/properties/execution/shapes.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testResult>: <http://example.com/a1>
- - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <http://example.com/a1>
- - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <http://example.com/myObsCollection>
- - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <http://example.com/myObsCollection>
- - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <http://example.com/a1>/sosa:hasSimpleResult
- - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <http://example.com/a1>
 
 === End SHACL ===
 

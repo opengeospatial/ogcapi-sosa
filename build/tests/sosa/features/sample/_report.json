@@ -2,7 +2,7 @@
   "title": "Validation report for ogc.sosa.features.sample - Sample Feature",
   "bblockName": "Sample Feature",
   "bblockId": "ogc.sosa.features.sample",
-  "generated": "2026-09-09T13:28:06.028149+00:00",
+  "generated": "2026-09-10T07:08:05.876754+00:00",
   "result": true,
   "items": [
     {
@@ -72,26 +72,26 @@
             {
               "shaclFile": "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl",
               "focusNodes": {
-                "geojson:LinkShape": {
-                  "nodes": []
+                "geojson:FeatureShape": {
+                  "nodes": [
+                    "<https://example.org/data/EarthAtmosphere_StE>"
+                  ]
                 },
-                "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
+                "geojson:GeometryShape": {
                   "nodes": []
                 },
                 "geojson:GeometryShape/sh:or/rdf:first": {
                   "nodes": []
                 },
-                "geojson:GeometryShape": {
+                "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
                   "nodes": []
                 },
-                "geojson:FeatureShape": {
-                  "nodes": [
-                    "<https://example.org/data/EarthAtmosphere_StE>"
-                  ]
+                "geojson:LinkShape": {
+                  "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:LinkShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:FeatureShape: <https://example.org/data/EarthAtmosphere_StE>\n"
+              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:FeatureShape: <https://example.org/data/EarthAtmosphere_StE>\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:LinkShape: *none*\n"
             }
           ]
         }

@@ -3,7 +3,7 @@
 
 `ogc.sosa.properties.sampler` *v1.0*
 
-This building block defines the set of properties for a SOSA Sampler - a System that is used by, or implements, a Sampling Procedure to create or transform one or more samples.
+OMS alignment: implements the ISO 19156:2023 (OGC Topic 20 / O&M 3.0) `sam-cpt/Sampler` requirement class for `sosa:Sampler`. This building block defines the set of properties for a SOSA Sampler - a System that is used by, or implements, a Sampling Procedure to create or transform one or more samples.
 
 [*Status*](http://www.opengis.net/def/status): Under development
 
