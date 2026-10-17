@@ -1,0 +1,26 @@
+transforms:
+- id: ttl-to-jsonld
+  description: Frames the root resource (Actuation) of a SOSA Turtle example and compacts it with the `ogc.sosa.properties.actuation`
+    JSON-LD context. The output is validated against `ogc.sosa.properties.actuation`.
+  type: python
+  ref: ../transforms/ttl_to_sosa_json.py
+  inputs:
+    mediaTypes:
+    - text/turtle
+  outputs:
+    mediaTypes:
+    - mimeType: application/json
+      defaultExtension: json
+    profiles:
+    - bblocks://ogc.sosa.properties.actuation
+  metadata:
+    rootClasses:
+    - http://www.w3.org/ns/sosa/Actuation
+    containerClasses:
+    - http://www.w3.org/ns/sosa/ObservationCollection
+    - http://www.w3.org/ns/sosa/SampleCollection
+    - http://www.w3.org/ns/sosa/Observation
+    - http://www.w3.org/ns/sosa/Sampling
+    - http://www.w3.org/ns/sosa/Actuation
+    suppressTerms:
+    - features

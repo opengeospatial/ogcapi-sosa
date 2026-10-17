@@ -1,0 +1,30 @@
+transforms:
+- id: ttl-to-jsonld
+  description: Frames the root resource (Platform) of a SOSA Turtle example and compacts it with the `ogc.sosa.properties.platform`
+    JSON-LD context. The output is validated against `ogc.sosa.properties.platform`.
+  type: python
+  ref: ../transforms/ttl_to_sosa_json.py
+  inputs:
+    mediaTypes:
+    - text/turtle
+  outputs:
+    mediaTypes:
+    - mimeType: application/json
+      defaultExtension: json
+    profiles:
+    - bblocks://ogc.sosa.properties.platform
+  metadata:
+    rootClasses:
+    - http://www.w3.org/ns/sosa/Platform
+    containerClasses:
+    - http://www.w3.org/ns/sosa/ObservationCollection
+    - http://www.w3.org/ns/sosa/SampleCollection
+    - http://www.w3.org/ns/sosa/Observation
+    - http://www.w3.org/ns/sosa/Sampling
+    - http://www.w3.org/ns/sosa/Actuation
+    - http://www.w3.org/ns/sosa/Deployment
+    - http://www.w3.org/ns/sosa/Sample
+    - http://www.w3.org/ns/sosa/MaterialSample
+    - http://www.w3.org/ns/sosa/Platform
+    suppressTerms:
+    - features

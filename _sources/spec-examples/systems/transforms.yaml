@@ -1,0 +1,37 @@
+transforms:
+- id: ttl-to-jsonld
+  description: Frames the root resource (Sensor, Actuator, Sampler, System) of a SOSA Turtle example and compacts it with
+    the `ogc.sosa.properties.system` JSON-LD context. The output is validated against `ogc.sosa.properties.system`.
+  type: python
+  ref: ../transforms/ttl_to_sosa_json.py
+  inputs:
+    mediaTypes:
+    - text/turtle
+  outputs:
+    mediaTypes:
+    - mimeType: application/json
+      defaultExtension: json
+    profiles:
+    - bblocks://ogc.sosa.properties.system
+  metadata:
+    rootClasses:
+    - http://www.w3.org/ns/sosa/Sensor
+    - http://www.w3.org/ns/sosa/Actuator
+    - http://www.w3.org/ns/sosa/Sampler
+    - http://www.w3.org/ns/sosa/System
+    containerClasses:
+    - http://www.w3.org/ns/sosa/ObservationCollection
+    - http://www.w3.org/ns/sosa/SampleCollection
+    - http://www.w3.org/ns/sosa/Observation
+    - http://www.w3.org/ns/sosa/Sampling
+    - http://www.w3.org/ns/sosa/Actuation
+    - http://www.w3.org/ns/sosa/Deployment
+    - http://www.w3.org/ns/sosa/Sample
+    - http://www.w3.org/ns/sosa/MaterialSample
+    - http://www.w3.org/ns/sosa/Platform
+    - http://www.w3.org/ns/sosa/Sensor
+    - http://www.w3.org/ns/sosa/Actuator
+    - http://www.w3.org/ns/sosa/Sampler
+    - http://www.w3.org/ns/sosa/System
+    suppressTerms:
+    - features

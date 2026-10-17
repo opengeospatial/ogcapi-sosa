@@ -111,7 +111,10 @@
       "@id": "sosa:detects",
       "@type": "@id"
     },
-    "endTime": "sosa:endTime",
+    "endTime": {
+      "@id": "sosa:endTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
     "features": {
       "@id": "sosa:hasMember",
       "@type": "@id"
@@ -168,10 +171,7 @@
       "@id": "sosa:hasSampledFeature",
       "@type": "@id"
     },
-    "hasSimpleResult": {
-      "@id": "sosa:hasSimpleResult",
-      "@type": "@id"
-    },
+    "hasSimpleResult": "sosa:hasSimpleResult",
     "hasSubSystem": {
       "@id": "sosa:hasSubSystem",
       "@type": "@id",
@@ -294,8 +294,14 @@
       "@id": "sosa:phenomenonTime",
       "@type": "@id"
     },
-    "resultTime": "sosa:resultTime",
-    "startTime": "sosa:startTime",
+    "resultTime": {
+      "@id": "sosa:resultTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "startTime": {
+      "@id": "sosa:startTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
     "usedProcedure": {
       "@id": "sosa:usedProcedure",
       "@type": "@id"
