@@ -33,6 +33,7 @@ transforms/ttl_to_sosa_json.py   installed copy of the transform
 <group>/transforms.yaml          ttl-to-jsonld, ref ../transforms/ttl_to_sosa_json.py,
                                  outputs.profiles: [bblocks://<target>]
 <group>/description.md
+closures/<base>.ttl              hand-written, optional: see "Per-example SHACL closures"
 ```
 
 ## Grouping rules (classify_examples.py `GROUPS`)
@@ -66,6 +67,24 @@ If an example has several roots, the sync step writes one example per root, each
 - `suppressTerms`: context terms to avoid. Default: `features`, the GeoJSON alias of
   `sosa:hasMember`, so the schema's `hasMember` is used.
 - Blank-node roots are skolemised just long enough to frame them, then the `id` is removed.
+
+## Per-example SHACL closures
+
+Put a Turtle file at `_sources/spec-examples/closures/<base-output-filename>.ttl`. A file named
+`<stem>.ttl` applies to every root of a multi-root example. The sync step adds it as the example
+snippet's `shacl-closure`. It is then used in two places:
+- when validating the Turtle example;
+- when profile-validating the transform output. This needs a postprocessor in which
+  `validate_transform_output` receives the snippet's closures.
+
+The transform does **not** merge closure triples into its output, so the JSON-LD stays a faithful
+conversion. The sync step lists the closures it used and warns about any that match no example.
+
+Only put facts about **related resources** in a closure: things the example refers to that are
+described elsewhere, such as the type of a referenced property, or a feature of interest held by
+a collection outside the example. Never use a closure to supply the example's own missing
+mandatory fields (`resultTime`, `hasFeatureOfInterest`, `observedProperty`, a result). That hides
+a real gap between the SOSA example and the OMS-strict target. Report the gap instead.
 
 ## Run it
 
