@@ -101,8 +101,8 @@ def example_entries(entry: dict, siblings: dict[str, dict], closures: Path, rel:
             e['x-root'] = root
         e['snippets'] = [dict(sn) for sn in snippets]
         if closure := closure_ref(closures, rel, e['base-output-filename'], base):
-            # validates the Turtle example and (postprocessor passes snippet closures on) the
-            # transform output; the transform itself does not merge it into its output
+            # added to the Turtle example's data for validation; the transform reads it from its
+            # context and copies values inherited from closure collections into its output
             e['snippets'][0]['shacl-closure'] = [closure]
         out.append(e)
     return out

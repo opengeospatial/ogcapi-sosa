@@ -1,0 +1,24 @@
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix closure: <https://example.org/closure/> .
+@prefix ex: <https://example.org/data/> .
+
+# SHACL closure (not part of the SOSA example): puts the example's executions in a collection that
+# supplies the values they leave out, which they inherit by SOSA collection rule 2. closure: IRIs
+# and the 2017-01-01 time are placeholders.
+
+# sensor_926's observations of the apartment's electricity consumption
+closure:apartment-134-electricity a sosa:ObservationCollection ;
+    sosa:hasFeatureOfInterest closure:Apartment_134 ;
+    sosa:observedProperty ex:Apartment_134_electricConsumption ;
+    sosa:hasMember ex:Observation_235714, ex:Observation_235754 .
+
+# a time for Observation_235754 only (Observation_235714 has its own)
+closure:apartment-134-electricity-235754 a sosa:ObservationCollection ;
+    sosa:resultTime "2017-01-01T00:00:00Z"^^xsd:dateTime ;
+    sosa:hasMember ex:Observation_235754 .
+
+closure:apartment-134-window a sosa:ActuationCollection ;
+    sosa:hasFeatureOfInterest ex:window ;
+    sosa:hasMember ex:actuation_188 .

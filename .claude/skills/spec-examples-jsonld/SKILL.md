@@ -84,18 +84,36 @@ If an example has several roots, the sync step writes one example per root, each
 Put a Turtle file at `_sources/spec-examples/closures/<base-output-filename>.ttl`. A file named
 `<stem>.ttl` applies to every root of a multi-root example. The sync step adds it as the example
 snippet's `shacl-closure`. It is then used in two places:
-- when validating the Turtle example;
-- when profile-validating the transform output. This needs a postprocessor in which
-  `validate_transform_output` receives the snippet's closures.
+- the postprocessor adds it to the data when validating the Turtle example;
+- the transform reads it from the transform context (`snippet['shacl-closure']`, resolved
+  against the block directory) and applies SOSA collection rule 2 (see below). This works with
+  the published postprocessor; no closure pass-through to output validation is needed.
 
-The transform does **not** merge closure triples into its output, so the JSON-LD stays a faithful
-conversion. The sync step lists the closures it used and warns about any that match no example.
+**Inheriting missing values from containing collections.** A closure supplies an example's
+missing execution properties by putting the executions (or the example's own collections) in a
+collection that has them:
 
-Only put facts about **related resources** in a closure: things the example refers to that are
-described elsewhere, such as the type of a referenced property, or a feature of interest held by
-a collection outside the example. Never use a closure to supply the example's own missing
-mandatory fields (`resultTime`, `hasFeatureOfInterest`, `observedProperty`, a result). That hides
-a real gap between the SOSA example and the OMS-strict target. Report the gap instead.
+```turtle
+closure:tree-height a sosa:ObservationCollection ;
+    sosa:resultTime "2017-01-01T00:00:00Z"^^xsd:dateTime ;
+    sosa:hasMember ex:observation_1087 .
+```
+
+The SHACL rules let members inherit from their collections. The transform copies the inherited
+values into its output so the output is complete on its own. This applies to the root and to
+the example's resources that are direct members of closure collections. Each one takes a
+property it lacks from the nearest containing collection that has it, only if that collection
+has a single value. Results are never inherited.
+- Use `closure:` (`https://example.org/closure/`) IRIs and the `2017-01-01T00:00:00Z` time for
+  values the example doesn't imply. Use the example's own IRIs only where it identifies the value,
+  e.g. the sensor a capability collection describes.
+- Never give a collection a value that conflicts with one a member already states. Collection
+  rules 2–3 require the member's value to be one of the collection's. Use a separate closure
+  collection for the members that lack it.
+- Blank-node executions can only be reached through a named collection that contains them.
+  Resources with relative IRIs (e.g. `<Observation/1>`) can't be referenced from a closure.
+
+The sync step lists the closures it used and warns about any that match no example.
 
 ## Run it
 

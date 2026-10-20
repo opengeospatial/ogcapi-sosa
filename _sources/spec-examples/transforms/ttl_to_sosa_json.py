@@ -12,6 +12,9 @@
 #                             alias 'features' for sosa:hasMember, so the schema's 'hasMember' is used)
 # per example (examples.yaml):
 #   x-root: IRI               pick this resource as the root (multi-root examples)
+#   snippet shacl-closure     (from the transform context) closures that may put the example's
+#                             resources in collections: the root takes a property it lacks from
+#                             the nearest containing collection with a single value for it
 #
 # Output: the root resource framed and compacted with the target bblock's JSON-LD context, with
 #   "@context": [<target context URL>, {<only what the target context does not define>}]
@@ -113,6 +116,105 @@ for p, ns in (_get(meta, '_prefixes') or {}).items():
 prefixes = {p: ns for p, ns in prefixes.items() if p not in target_terms}
 
 
+# --- root selection -----------------------------------------------------------------------
+def _instances(classes):
+    return {s for c in classes for s in g.subjects(RDF.type, c)}
+
+
+def _roots():
+    inst = _instances(root_classes)
+    containers = _instances(container_classes)
+    nested = set()
+    for s, p, o in g:
+        if o not in inst or s == o or p == RDF.type:
+            continue
+        if isinstance(o, BNode) or not str(p).startswith(SOSA_SSN) or s in containers:
+            nested.add(o)
+    return sorted(inst - nested, key=str)
+
+
+if wanted_root:
+    root = URIRef(wanted_root)
+    if (root, None, None) not in g:
+        raise ValueError(f'x-root {wanted_root} has no statements in the example')
+else:
+    roots = _roots()
+    if not roots:
+        raise ValueError('no root resource of class ' + ', '.join(root_classes) + ' found')
+    root = roots[0]
+
+
+# --- values inherited from containing collections (SOSA collection rule 2) ------------------
+# The snippet's SHACL closures (passed in the transform context) may put the example's resources
+# in collections. A property the root lacks takes the value of the nearest containing collection
+# (in the example or a closure) that has it, if that collection has a single value - as the SHACL
+# rules do - so the output is complete on its own.
+def _closure_graph():
+    cg = Graph()
+    files_path = _get(tctx, 'bblock_files_path') or '.'
+    for ref in _get(_get(tctx, 'snippet'), 'shacl-closure') or []:
+        if re.match(r'^https?://', ref):
+            cg.parse(ref)
+            continue
+        for candidate in (working_dir / files_path / ref, working_dir / ref):
+            if candidate.is_file():
+                cg.parse(candidate, format='turtle' if candidate.suffix == '.ttl' else None)
+                break
+        else:
+            raise FileNotFoundError(f'SHACL closure {ref} not found')
+    return cg
+
+
+GEOJSON_FEATURES = URIRef('https://purl.org/geojson/vocab#features')
+INHERITED = [SOSA[p] for p in (
+    'resultTime', 'phenomenonTime', 'startTime', 'endTime', 'hasFeatureOfInterest',
+    'hasUltimateFeatureOfInterest', 'observedProperty', 'actsOnProperty', 'usedProcedure',
+    'madeBySensor', 'madeByActuator', 'madeBySampler', 'madeBySystem')]
+
+
+def _containers(u, node):
+    return set(u.subjects(SOSA.hasMember, node)) | set(u.subjects(GEOJSON_FEATURES, node)) \
+        | set(u.objects(node, SOSA.memberOf))
+
+
+def _copy(u, node):
+    """Copy a blank node value's description from u into g."""
+    if isinstance(node, BNode):
+        for p, o in u.predicate_objects(node):
+            if (node, p, o) not in g:
+                g.add((node, p, o))
+                _copy(u, o)
+
+
+def _inherit(u, node):
+    for p in INHERITED:
+        if (node, p, None) in g:
+            continue
+        seen, level = {node}, _containers(u, node)
+        while level:
+            values = {v for c in level for v in u.objects(c, p)}
+            if values:
+                if len(values) == 1:
+                    value = values.pop()
+                    g.add((node, p, value))
+                    _copy(u, value)
+                break
+            seen |= level
+            level = {c for n in level for c in _containers(u, n)} - seen
+
+
+closure = _closure_graph()
+if len(closure):
+    u = g + closure
+    # the root, and the example's resources that are members of closure-only collections (the
+    # output may embed them); members of the example's own collections inherit from those
+    in_closure = {m for p in (SOSA.hasMember, GEOJSON_FEATURES)
+                  for c, m in closure.subject_objects(p) if (c, None, None) not in g} \
+        | {m for m, c in closure.subject_objects(SOSA.memberOf) if (c, None, None) not in g}
+    for node in sorted(n for n in in_closure if (n, None, None) in g and n != root) + [root]:
+        _inherit(u, node)
+
+
 # --- times: plain xsd:dateTime strings where the value is a single date-time ----------------
 def _retype(p, wanted, accept):
     for s, o in list(g.subject_objects(p)):
@@ -168,33 +270,6 @@ for p, dt in coercions.items():
         local_context[term] = {'@type': 'xsd:' + dt[len(str(XSD)):] if dt.startswith(str(XSD))
                                and 'xsd' not in target_terms else _curie(dt) or dt}
 
-
-# --- root selection -----------------------------------------------------------------------
-def _instances(classes):
-    return {s for c in classes for s in g.subjects(RDF.type, c)}
-
-
-def _roots():
-    inst = _instances(root_classes)
-    containers = _instances(container_classes)
-    nested = set()
-    for s, p, o in g:
-        if o not in inst or s == o or p == RDF.type:
-            continue
-        if isinstance(o, BNode) or not str(p).startswith(SOSA_SSN) or s in containers:
-            nested.add(o)
-    return sorted(inst - nested, key=str)
-
-
-if wanted_root:
-    root = URIRef(wanted_root)
-    if (root, None, None) not in g:
-        raise ValueError(f'x-root {wanted_root} has no statements in the example')
-else:
-    roots = _roots()
-    if not roots:
-        raise ValueError('no root resource of class ' + ', '.join(root_classes) + ' found')
-    root = roots[0]
 
 # Blank-node roots cannot be addressed by @id in a frame: skolemize just that node.
 if isinstance(root, BNode):
