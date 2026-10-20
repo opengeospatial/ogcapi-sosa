@@ -1,9 +1,26 @@
 "$schema": https://json-schema.org/draft/2020-12/schema
 description: 'SOSA Sampling Feature'
 x-jsonld-context: ../../../sosa-ssn.jsonld
+$defs:
+  member:
+    description: A Sampling Feature in a collection (mandatory properties may be provided by the collection)
+    allOf:
+      - $ref: bblocks://ogc.sosa.features.execution
+      - type: object
+        properties:
+          featureType:
+            oneOf:
+              - $ref: ../../properties/sampling/schema.yaml#/$defs/samplingType
+              - type: array
+                contains:
+                  $ref: ../../properties/sampling/schema.yaml#/$defs/samplingType
+      - type: object
+        properties:
+          properties:
+            $ref: ../../properties/sampling/schema.yaml#/$defs/member
 type: object
 allOf:
-  - $ref: bblocks://ogc.sosa.features.execution
+  - $ref: '#/$defs/member'
   - type: object
     properties:
       properties:

@@ -1,15 +1,32 @@
 "$schema": https://json-schema.org/draft/2020-12/schema
 description: 'SOSA Actuation'
 x-jsonld-context: ../../../sosa-ssn.jsonld
+$defs:
+  actuationType:
+    enum:
+      - Actuation
+      - sosa:Actuation
+      - http://www.w3.org/ns/sosa/Actuation
+  member:
+    description: >-
+      An Actuation in an ActuationCollection: feature of interest and time may be provided by the
+      collection (checked by SHACL), the result may not.
+    allOf:
+      - $ref: bblocks://ogc.sosa.properties.execution
+      - type: object
+        properties:
+          featureType:
+            oneOf:
+              - $ref: '#/$defs/actuationType'
+              - type: array
+                contains:
+                  $ref: '#/$defs/actuationType'
+          actsOnProperty:
+            $ref: '../execution/schema.yaml#/$defs/reference'
+          madeByActuator:
+            $ref: '../execution/schema.yaml#/$defs/reference'
+      - $ref: '../execution/schema.yaml#/$defs/result'
+type: object
 allOf:
-  - $ref: bblocks://ogc.sosa.properties.execution
-  - type: object
-    properties:
-      actsOnProperty:
-        type:
-          - object
-          - string
-      madeByActuator:
-        type:
-          - object
-          - string
+  - $ref: '#/$defs/member'
+  - $ref: '../execution/schema.yaml#/$defs/required'

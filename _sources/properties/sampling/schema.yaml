@@ -1,11 +1,30 @@
 "$schema": https://json-schema.org/draft/2020-12/schema
 description: 'SOSA Sampling'
 x-jsonld-context: ../../../sosa-ssn.jsonld
+$defs:
+  samplingType:
+    enum:
+      - Sampling
+      - sosa:Sampling
+      - http://www.w3.org/ns/sosa/Sampling
+  member:
+    description: >-
+      A Sampling in a SamplingCollection: feature of interest and time may be provided by the
+      collection (checked by SHACL), the result (the Sample) may not.
+    allOf:
+      - $ref: bblocks://ogc.sosa.properties.execution
+      - type: object
+        properties:
+          featureType:
+            oneOf:
+              - $ref: '#/$defs/samplingType'
+              - type: array
+                contains:
+                  $ref: '#/$defs/samplingType'
+          madeBySampler:
+            $ref: '../execution/schema.yaml#/$defs/reference'
+      - $ref: '../execution/schema.yaml#/$defs/result'
+type: object
 allOf:
-  - $ref: bblocks://ogc.sosa.properties.execution
-  - type: object
-    properties:
-      madeBySampler:
-        type:
-          - object
-          - string
+  - $ref: '#/$defs/member'
+  - $ref: '../execution/schema.yaml#/$defs/required'

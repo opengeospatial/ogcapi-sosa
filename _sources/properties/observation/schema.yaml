@@ -1,11 +1,32 @@
 "$schema": https://json-schema.org/draft/2020-12/schema
 description: 'SOSA Observation'
 x-jsonld-context: ../../../sosa-ssn.jsonld
+$defs:
+  featureType:
+    description: if typed, the object is a sosa:Observation
+    properties:
+      featureType:
+        oneOf:
+          - $ref: '#/$defs/observationType'
+          - type: array
+            contains:
+              $ref: '#/$defs/observationType'
+  observationType:
+    enum:
+      - Observation
+      - sosa:Observation
+      - http://www.w3.org/ns/sosa/Observation
+  member:
+    description: >-
+      An Observation in an ObservationCollection: feature of interest, observed property and time
+      may be provided by the collection (checked by SHACL), the result may not.
+    allOf:
+      - $ref: bblocks://ogc.sosa.properties.observation-owa
+      - $ref: '#/$defs/featureType'
+      - $ref: '../execution/schema.yaml#/$defs/result'
 type: object
 allOf:
- - $ref: bblocks://ogc.sosa.properties.observation-owa
- - anyOf:
-   - required:
-     - hasResult
-   - required:
-     - hasSimpleResult
+  - $ref: '#/$defs/member'
+  - $ref: '../execution/schema.yaml#/$defs/required'
+  - required:
+      - observedProperty

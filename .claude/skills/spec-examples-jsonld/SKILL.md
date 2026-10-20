@@ -6,11 +6,14 @@ description: Build and install the Turtle-to-JSON-LD transform for the SOSA spec
 # Spec examples → JSON-LD against the SOSA bblocks
 
 The SOSA/SSN spec examples are Turtle. This skill converts each one into JSON that follows the
-schema of the matching SOSA bblock (e.g. `ogc.sosa.properties.observation`). The output carries
-an `@context` that holds only the prefixes it needs. Output profile validation then checks it
-against that bblock: JSON Schema, then JSON-LD uplift with the target's context, then SHACL. The
-uplifted `.jsonld` written by the validator is the canonical JSON-LD. Its `@context` is
-`[<target context URL>, {prefixes}]`.
+schema of the matching SOSA bblock (e.g. `ogc.sosa.properties.observation`). The output is
+self-describing JSON-LD: its `@context` is `[<target context URL>, {local}]`. The target's
+published context maps the schema terms (`featureType: Observation` → `sosa:Observation`, …).
+`{local}` holds only what that context does not define: the example's own prefixes and typed
+literal coercions for its non-SOSA properties. It never redefines a target term. Output profile
+validation then checks the output against the target: JSON Schema, then JSON-LD uplift, then
+SHACL. During uplift the postprocessor inlines the target context from the local build instead of
+fetching the URL; this needs a postprocessor with the "own context reference" fix.
 
 Run `spec-examples-check` first to see what is missing.
 
@@ -58,12 +61,20 @@ If an example has several roots, the sync step writes one example per root, each
 ## Transform behaviour (transforms.yaml `metadata`)
 
 - `rootClasses` / `containerClasses`: root selection, the same rule as the classifier.
-- Frames the root (`@embed: @once`), compacts it with the block's own assembled context (from
-  `jsonld_context_path`, which is the target's context because of the schema `$ref`), then drops
-  that context.
-- `coerce`: optional typed-literal coercions added to the local `@context`, for terms a target
-  schema constrains to plain strings but its context doesn't coerce. None are needed now:
-  `sosa-ssn.jsonld` coerces `resultTime`, `startTime` and `endTime` to `xsd:dateTime`.
+- `target`: the target bblock id. The transform compacts with that block's assembled context
+  (falling back to its own, which is the same because of the schema `$ref`) and references it by
+  URL: the build's base URL plus the target's annotated `context.jsonld` path.
+- Frames the root (`@embed: @once`) and compacts it.
+- Times become plain strings:
+  - `xsd:dateTimeStamp` values of SOSA time properties are retyped to `xsd:dateTime`;
+  - a `phenomenonTime` blank-node `time:Instant` with a single `inXSDDateTime` or
+    `inXSDDateTimeStamp` becomes an `xsd:dateTime` string.
+  An Interval or any other temporal entity stays an object, using the time terms scoped to
+  `phenomenonTime` in `sosa-ssn.jsonld` (`hasBeginning`, `hasEnd`, `inXSDDateTime`, …).
+- Other typed literals: a non-SOSA property whose values all share one datatype gets a local
+  coercion (e.g. `"qudt:value": {"@type": "xsd:decimal"}`), so its values are plain strings.
+  Integers, doubles and booleans are native JSON. Any value object that remains uses `@type`,
+  not the `featureType` alias.
 - `suppressTerms`: context terms to avoid. Default: `features`, the GeoJSON alias of
   `sosa:hasMember`, so the schema's `hasMember` is used.
 - Blank-node roots are skolemised just long enough to frame them, then the `id` is removed.
