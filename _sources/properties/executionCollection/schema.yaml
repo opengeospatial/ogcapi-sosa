@@ -1,4 +1,51 @@
 "$schema": https://json-schema.org/draft/2020-12/schema
 description: 'SOSA ExecutionCollection'
 x-jsonld-context: ../../../sosa-ssn.jsonld
-"$ref": bblocks://ogc.sosa.properties.execution
+# A collection's property values summarize those of its members, and a property may have more than
+# one value (SOSA collection consistency rules 3 and 5, e.g. several features of interest, or
+# several phenomenonTime intervals). Each property is therefore a single value or a non-empty
+# array of values, each value as strict as for an individual Execution.
+$defs:
+  references:
+    oneOf:
+      - $ref: '../execution/schema.yaml#/$defs/reference'
+      - type: array
+        minItems: 1
+        items:
+          $ref: '../execution/schema.yaml#/$defs/reference'
+  dateTimes:
+    oneOf:
+      - $ref: '../execution/schema.yaml#/$defs/dateTime'
+      - type: array
+        minItems: 1
+        items:
+          $ref: '../execution/schema.yaml#/$defs/dateTime'
+  temporalEntities:
+    oneOf:
+      - $ref: '../execution/schema.yaml#/$defs/temporalEntity'
+      - type: array
+        minItems: 1
+        items:
+          $ref: '../execution/schema.yaml#/$defs/temporalEntity'
+type: object
+properties:
+  resultTime:
+    $ref: '#/$defs/dateTimes'
+  phenomenonTime:
+    $ref: '#/$defs/temporalEntities'
+  hasFeatureOfInterest:
+    $ref: '#/$defs/references'
+  hasUltimateFeatureOfInterest:
+    $ref: '#/$defs/references'
+  usedProcedure:
+    $ref: '#/$defs/references'
+  startTime:
+    $ref: '#/$defs/dateTimes'
+  endTime:
+    $ref: '#/$defs/dateTimes'
+  hasResult:
+    $ref: '#/$defs/references'
+  result: true
+  result@links: true
+  hasSimpleResult: true
+  hasInputValue: true
