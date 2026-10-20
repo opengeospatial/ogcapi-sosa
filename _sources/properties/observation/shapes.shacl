@@ -20,7 +20,7 @@
             WHERE {
                 OPTIONAL { $this sosa:observedProperty ?prop .
                  $this (sosa:hasResult|sosa:hasSimpleResult) ?result_so_observation }
-                OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:observedProperty ?prop }
+                OPTIONAL { ?collection (sosa:hasMember|geojson:features|^sosa:memberOf)+ $this ; sosa:observedProperty ?prop }
             }
             GROUP BY ?prop
             HAVING (count(?prop) < 1)
@@ -31,20 +31,22 @@
 <#testObservedPropertyConsistent>
     a                   sh:NodeShape ;
     sh:targetClass      sosa:ObservationCollection;
+    # A collection needs an observedProperty: its own, one inherited from a collection it is a
+    # (direct or transitive) member of (collection rule 2), or its members' own. Whether members'
+    # values match the collection's is checked by testCollectionPropertyValues.
     sh:sparql [
-        sh:message          "Collection members must match sosa:observedProperty if present" ;
+        sh:message          "sosa:observedProperty is required, on the collection, a collection it is a member of, or its members" ;
         sh:select """
-            PREFIX sh: <http://www.w3.org/ns/shacl#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             PREFIX geojson: <https://purl.org/geojson/vocab#>
-            SELECT $this (sosa:observedProperty as ?path) (GROUP_CONCAT(?prop; separator=';') AS ?value)
-             WHERE {
-                OPTIONAL { $this sosa:observedProperty ?prop }
-                OPTIONAL { $this (sosa:hasMember|geojson:features)+ ?obs .
-                    ?obs  sosa:observedProperty ?prop }
+            SELECT $this (sosa:observedProperty AS ?path) WHERE {
+                FILTER NOT EXISTS {
+                    { $this (^sosa:hasMember|^geojson:features|sosa:memberOf)* ?holder }
+                    UNION
+                    { $this (sosa:hasMember|geojson:features|^sosa:memberOf)+ ?holder }
+                    ?holder sosa:observedProperty ?prop .
+                }
             }
-            GROUP BY ?prop
-            HAVING (count(?prop) < 1)
         """ ;
     ] ;
 .
