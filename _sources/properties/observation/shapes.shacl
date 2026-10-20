@@ -10,20 +10,31 @@
     a                   sh:NodeShape ;
     sh:targetClass      sosa:Observation ;
     sh:targetSubjectsOf sosa:hasResult, sosa:hasSimpleResult ;
+    # An observation needs an observedProperty: its own, or one provided by a collection it is a
+    # (direct or transitive) member of (collection rule 2). Results of actuations and samplings
+    # (typed, or recognisable by their properties or collection) don't make them observations.
     sh:sparql [
-        sh:message          "sosa:observedProperty is required" ;
+        sh:message          "sosa:observedProperty is required, on the observation or a collection it is a member of" ;
         sh:select """
-            PREFIX sh: <http://www.w3.org/ns/shacl#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             PREFIX geojson: <https://purl.org/geojson/vocab#>
-            SELECT $this (sosa:observedProperty as ?path) (GROUP_CONCAT(?prop; separator=';') AS ?value)
-            WHERE {
-                OPTIONAL { $this sosa:observedProperty ?prop .
-                 $this (sosa:hasResult|sosa:hasSimpleResult) ?result_so_observation }
-                OPTIONAL { ?collection (sosa:hasMember|geojson:features|^sosa:memberOf)+ $this ; sosa:observedProperty ?prop }
+            SELECT $this (sosa:observedProperty AS ?path) WHERE {
+                FILTER NOT EXISTS {
+                    $this (^sosa:hasMember|^geojson:features|sosa:memberOf)* ?holder .
+                    ?holder sosa:observedProperty ?prop .
+                }
+                FILTER (EXISTS { $this a sosa:Observation } || NOT EXISTS {
+                    { $this a ?type . FILTER(?type IN (sosa:Actuation, sosa:Sampling)) }
+                    UNION
+                    { $this sosa:actsOnProperty|sosa:madeByActuator|sosa:madeBySampler ?x }
+                    UNION
+                    {
+                        $this (^sosa:hasMember|^geojson:features|sosa:memberOf)+ ?collection .
+                        ?collection a ?ctype .
+                        FILTER(?ctype IN (sosa:ActuationCollection, sosa:SamplingCollection))
+                    }
+                })
             }
-            GROUP BY ?prop
-            HAVING (count(?prop) < 1)
         """ ;
     ] ;
 .
@@ -32,8 +43,9 @@
     a                   sh:NodeShape ;
     sh:targetClass      sosa:ObservationCollection;
     # A collection needs an observedProperty: its own, one inherited from a collection it is a
-    # (direct or transitive) member of (collection rule 2), or its members' own. Whether members'
-    # values match the collection's is checked by testCollectionPropertyValues.
+    # (direct or transitive) member of (collection rule 2), or its members' own or inherited ones
+    # (a member may also belong to other collections). Whether members' values match the
+    # collection's is checked by testCollectionPropertyValues.
     sh:sparql [
         sh:message          "sosa:observedProperty is required, on the collection, a collection it is a member of, or its members" ;
         sh:select """
@@ -43,7 +55,10 @@
                 FILTER NOT EXISTS {
                     { $this (^sosa:hasMember|^geojson:features|sosa:memberOf)* ?holder }
                     UNION
-                    { $this (sosa:hasMember|geojson:features|^sosa:memberOf)+ ?holder }
+                    {
+                        $this (sosa:hasMember|geojson:features|^sosa:memberOf)+ ?member .
+                        ?member (^sosa:hasMember|^geojson:features|sosa:memberOf)* ?holder .
+                    }
                     ?holder sosa:observedProperty ?prop .
                 }
             }

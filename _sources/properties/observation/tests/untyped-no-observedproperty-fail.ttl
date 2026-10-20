@@ -1,0 +1,9 @@
+@prefix ex: <https://example.org/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# An untyped execution with a result and no actuation or sampling properties is taken to be an
+# observation: it needs a sosa:observedProperty
+ex:o1 sosa:hasFeatureOfInterest ex:f ;
+    sosa:resultTime "2025-01-01T00:00:00Z"^^xsd:dateTime ;
+    sosa:hasSimpleResult 1 .

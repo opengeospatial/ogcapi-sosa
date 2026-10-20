@@ -1,0 +1,16 @@
+@prefix ex: <https://example.org/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# An actuation has a result but is not an observation: it needs no sosa:observedProperty
+ex:o1 a sosa:Observation ;
+    sosa:observedProperty ex:t ;
+    sosa:hasFeatureOfInterest ex:f ;
+    sosa:resultTime "2025-01-01T00:00:00Z"^^xsd:dateTime ;
+    sosa:hasSimpleResult 1 .
+
+ex:a1 a sosa:Actuation ;
+    sosa:actsOnProperty ex:state ;
+    sosa:hasFeatureOfInterest ex:f ;
+    sosa:resultTime "2025-01-01T00:00:01Z"^^xsd:dateTime ;
+    sosa:hasSimpleResult true .

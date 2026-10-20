@@ -76,9 +76,10 @@
     a                   sh:NodeShape ;
     sh:targetClass      sosa:Observation, sosa:Actuation, sosa:Sampling ;
     sh:targetSubjectsOf sosa:hasResult, sosa:hasSimpleResult ;
+    # The result may also be given from the result's side (sosa:isResultOf, e.g. a Sample of a Sampling)
     sh:property         [
-        sh:message          "Exactly one of sosa:hasResult or sosa:hasSimpleResult is required per observation" ;
-        sh:path     [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ;
+        sh:message          "Exactly one of sosa:hasResult, sosa:hasSimpleResult or sosa:isResultOf (from the result) is required per execution" ;
+        sh:path     [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult [ sh:inversePath sosa:isResultOf ] ) ] ;
                           sh:minCount 1 ;
                           sh:maxCount 1 ;
                   ] ;
