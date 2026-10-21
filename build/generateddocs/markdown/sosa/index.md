@@ -25,6 +25,6 @@ TBD: Convenience API paths may be defined to support traversal of relationships 
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/opengeospatial/ogcapi-sosa](https://github.com/opengeospatial/ogcapi-sosa)
+* URL: [https://github.com/rob-metalinkage/ogcapi-sosa](https://github.com/rob-metalinkage/ogcapi-sosa)
 * Path: `_sources`
 

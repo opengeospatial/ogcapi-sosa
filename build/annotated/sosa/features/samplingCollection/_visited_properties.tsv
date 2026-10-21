@@ -161,20 +161,42 @@ path	@id	schema
 /numberMatched		https://opengeospatial.github.io/bblocks/annotated-schemas/geo/features/featureCollection/schema.yaml
 /numberReturned		https://opengeospatial.github.io/bblocks/annotated-schemas/geo/features/featureCollection/schema.yaml
 /properties	@nest	/github/workspace/build/annotated/sosa/features/samplingCollection/schema.yaml
-/properties/resultTime	http://www.w3.org/ns/sosa/resultTime	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
-/properties/phenomenonTime	http://www.w3.org/ns/sosa/phenomenonTime	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
-/properties/hasFeatureOfInterest	http://www.w3.org/ns/sosa/hasFeatureOfInterest	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
-/properties/hasUltimateFeatureOfInterest	http://www.w3.org/ns/sosa/hasUltimateFeatureOfInterest	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
-/properties/usedProcedure	http://www.w3.org/ns/sosa/usedProcedure	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
-/properties/startTime	http://www.w3.org/ns/sosa/startTime	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
-/properties/endTime	http://www.w3.org/ns/sosa/endTime	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
-/properties/hasResult	http://www.w3.org/ns/sosa/hasResult	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
-/properties/result		https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
-/properties/result@links		https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
-/properties/hasSimpleResult	http://www.w3.org/ns/sosa/hasSimpleResult	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
-/properties/hasInputValue	http://www.w3.org/ns/sosa/hasInputValue	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
-/properties/madeBySampler	http://www.w3.org/ns/sosa/madeBySampler	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/samplingCollection/schema.yaml
-/properties/hasMember	http://www.w3.org/ns/sosa/hasMember	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/samplingCollection/schema.yaml
-/properties/hasMember/_anyOf/1/madeBySampler	http://www.w3.org/ns/sosa/madeBySampler	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sampling/schema.yaml
-/features/_oneOf/0/properties	@nest	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/sampling/schema.yaml
+/properties/resultTime	http://www.w3.org/ns/sosa/resultTime	https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/executionCollection/schema.yaml
+/properties/phenomenonTime	http://www.w3.org/ns/sosa/phenomenonTime	https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/executionCollection/schema.yaml
+/properties/phenomenonTime/_oneOf/0/_oneOf/1/hasBeginning	http://www.w3.org/2006/time#hasBeginning	https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
+/properties/phenomenonTime/_oneOf/0/_oneOf/1/hasBeginning/inXSDDateTime		https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
+/properties/phenomenonTime/_oneOf/0/_oneOf/1/hasBeginning/inXSDDateTimeStamp		https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
+/properties/phenomenonTime/_oneOf/0/_oneOf/1/hasBeginning/inXSDDate		https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
+/properties/phenomenonTime/_oneOf/0/_oneOf/1/hasEnd	http://www.w3.org/2006/time#hasEnd	https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
+/properties/phenomenonTime/_oneOf/0/_oneOf/1/inXSDDateTime	http://www.w3.org/2006/time#inXSDDateTime	https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
+/properties/phenomenonTime/_oneOf/0/_oneOf/1/inXSDDateTimeStamp	http://www.w3.org/2006/time#inXSDDateTimeStamp	https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
+/properties/phenomenonTime/_oneOf/0/_oneOf/1/inXSDDate	http://www.w3.org/2006/time#inXSDDate	https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
+/properties/hasFeatureOfInterest	http://www.w3.org/ns/sosa/hasFeatureOfInterest	https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/executionCollection/schema.yaml
+/properties/hasUltimateFeatureOfInterest	http://www.w3.org/ns/sosa/hasUltimateFeatureOfInterest	https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/executionCollection/schema.yaml
+/properties/usedProcedure	http://www.w3.org/ns/sosa/usedProcedure	https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/executionCollection/schema.yaml
+/properties/startTime	http://www.w3.org/ns/sosa/startTime	https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/executionCollection/schema.yaml
+/properties/endTime	http://www.w3.org/ns/sosa/endTime	https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/executionCollection/schema.yaml
+/properties/hasResult	http://www.w3.org/ns/sosa/hasResult	https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/executionCollection/schema.yaml
+/properties/result		https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/executionCollection/schema.yaml
+/properties/result@links		https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/executionCollection/schema.yaml
+/properties/hasSimpleResult	http://www.w3.org/ns/sosa/hasSimpleResult	https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/executionCollection/schema.yaml
+/properties/hasInputValue	http://www.w3.org/ns/sosa/hasInputValue	https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/executionCollection/schema.yaml
+/properties/madeBySampler	http://www.w3.org/ns/sosa/madeBySampler	https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/samplingCollection/schema.yaml
+/properties/hasMember	http://www.w3.org/ns/sosa/hasMember	https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/samplingCollection/schema.yaml
+/properties/hasMember/_anyOf/1/resultTime	http://www.w3.org/ns/sosa/resultTime	https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
+/properties/hasMember/_anyOf/1/phenomenonTime	http://www.w3.org/ns/sosa/phenomenonTime	https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
+/properties/hasMember/_anyOf/1/hasFeatureOfInterest	http://www.w3.org/ns/sosa/hasFeatureOfInterest	https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
+/properties/hasMember/_anyOf/1/hasUltimateFeatureOfInterest	http://www.w3.org/ns/sosa/hasUltimateFeatureOfInterest	https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
+/properties/hasMember/_anyOf/1/usedProcedure	http://www.w3.org/ns/sosa/usedProcedure	https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
+/properties/hasMember/_anyOf/1/startTime	http://www.w3.org/ns/sosa/startTime	https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
+/properties/hasMember/_anyOf/1/endTime	http://www.w3.org/ns/sosa/endTime	https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
+/properties/hasMember/_anyOf/1/hasResult	http://www.w3.org/ns/sosa/hasResult	https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
+/properties/hasMember/_anyOf/1/result		https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
+/properties/hasMember/_anyOf/1/result@links		https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
+/properties/hasMember/_anyOf/1/hasSimpleResult	http://www.w3.org/ns/sosa/hasSimpleResult	https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
+/properties/hasMember/_anyOf/1/hasInputValue	http://www.w3.org/ns/sosa/hasInputValue	https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
+/properties/hasMember/_anyOf/1/featureType	@type	https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/sampling/schema.yaml
+/properties/hasMember/_anyOf/1/madeBySampler	http://www.w3.org/ns/sosa/madeBySampler	https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/sampling/schema.yaml
+/features/_oneOf/0/properties	@nest	https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/features/sampling/schema.yaml
+/features/_oneOf/0/featureType	@type	https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/features/sampling/schema.yaml
 /features/_oneOf/1/properties	@nest	/github/workspace/build/annotated/sosa/features/samplingCollection/schema.yaml

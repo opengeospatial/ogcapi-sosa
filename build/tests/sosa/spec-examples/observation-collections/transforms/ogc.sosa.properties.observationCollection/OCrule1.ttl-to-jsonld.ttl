@@ -1,0 +1,47 @@
+@prefix ex: <https://example.org/sosa/collection-rule-1/> .
+@prefix qk: <http://qudt.org/vocab/quantitykind/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:oc1 a sosa:ObservationCollection ;
+    qudt:hasUnit unit:DEG_C ;
+    rdfs:comment """
+  The properties madeBySensor, observedProperty, and hasUnit are given for the collection. 
+  """ ;
+    sosa:hasMember ex:a11,
+        ex:a12 ;
+    sosa:madeBySensor ex:T56 ;
+    sosa:observedProperty qk:Temperature .
+
+qk:Temperature a sosa:Property .
+
+ex:F1 a sosa:FeatureOfInterest ;
+    rdfs:comment "Room #1" .
+
+ex:F2 a sosa:FeatureOfInterest ;
+    rdfs:comment "Room #2" .
+
+ex:T56 a sosa:Sensor ;
+    rdfs:comment "Thermometer #56" .
+
+ex:a11 a sosa:Observation ;
+    rdfs:comment """
+  The properties hasFeatureOfInterest, phenomenonTime, and hasSimpleResult are specific to this individual member. 
+  The properties madeBySensor, observedProperty, and hasUnit are inferred from the values for the collection.
+  """ ;
+    sosa:hasFeatureOfInterest ex:F1 ;
+    sosa:hasSimpleResult 24.1 ;
+    sosa:phenomenonTime "2022-05-01T20:33:40+00:00"^^xsd:dateTime .
+
+ex:a12 a sosa:Observation ;
+    rdfs:comment """
+  The properties hasFeatureOfInterest, phenomenonTime, and hasSimpleResult are specific to this individual member. 
+  The properties madeBySensor, observedProperty, and hasUnit are inferred from the values for the collection.
+  """ ;
+    sosa:hasFeatureOfInterest ex:F2 ;
+    sosa:hasSimpleResult 27.3 ;
+    sosa:phenomenonTime "2022-05-01T22:33:40+00:00"^^xsd:dateTime .
+

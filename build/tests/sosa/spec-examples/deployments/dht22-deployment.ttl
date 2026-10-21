@@ -1,0 +1,85 @@
+@prefix ex: <https://example.org/data/> .
+@prefix qk: <http://qudt.org/vocab/quantitykind/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+
+ex:DHT22_4579 a sosa:System ;
+    rdfs:label "DHT22 sensor #4579."@en ;
+    sosa:isHostedBy ex:PCBBoard2 .
+
+ex:DHT22_4580 a sosa:System ;
+    rdfs:label "DHT22 sensor #4580."@en ;
+    sosa:isHostedBy ex:PCBBoard3 .
+
+ex:Room145 a sosa:FeatureOfInterest ;
+    rdfs:label "Room #145"@en ;
+    sosa:hasSample ex:Room145_east,
+        ex:Room145_south .
+
+ex:Room145Deployment a sosa:Deployment ;
+    rdfs:comment "Deployment of PCB Board 1 and 2 on the east and south wall of room #145, respectively, for the purpose of observing the temperature and humidity of room #145."@en ;
+    sosa:deployedOnPlatform ex:Room245_east,
+        ex:Room245_south ;
+    sosa:deployedSystem ex:PCBBoard1,
+        ex:PCBBoard2 ;
+    sosa:forProperty qk:RelativeHumidity,
+        qk:Temperature .
+
+ex:Room245 a sosa:FeatureOfInterest ;
+    rdfs:label "Room #245"@en ;
+    sosa:hasProperty qk:RelativeHumidity,
+        qk:Temperature ;
+    sosa:hasSample ex:Room245_south .
+
+ex:Room245Deployment a sosa:Deployment ;
+    rdfs:comment "Deployment of PCB Board 3 on the south wall of room #245 for the purpose of observing the temperature and humidity of room #245."@en ;
+    sosa:deployedOnPlatform ex:Room245_south ;
+    sosa:deployedSystem ex:PCBBoard3 ;
+    sosa:forProperty qk:RelativeHumidity,
+        qk:Temperature .
+
+ex:Room145_east a sosa:FeatureOfInterest,
+        sosa:Platform,
+        sosa:Sample ;
+    rdfs:label "East wall of room #145."@en ;
+    rdfs:comment "This wall hosts PCB Board 1 with DHT22 temperature and humidity sensor #4578."@en ;
+    sosa:hosts ex:PCBBoard1 .
+
+ex:Room145_south a sosa:FeatureOfInterest,
+        sosa:Platform,
+        sosa:Sample ;
+    rdfs:label "South wall of room #145."@en ;
+    rdfs:comment "This wall hosts PCB Board 2 with DHT22 temperature and humidity sensor #4579."@en ;
+    sosa:hosts ex:PCBBoard2 .
+
+ex:PCBBoard1 a sosa:Platform,
+        sosa:System ;
+    rdfs:label "PCB Board 1"@en ;
+    rdfs:comment "PCB Board 1 hosts DHT22 temperature and humidity sensor #4578 permanently, one can say it has it as one of its subsystems."@en ;
+    sosa:hasSubSystem ex:DHT22_4578 ;
+    sosa:hosts ex:DHT22_4578 .
+
+ex:PCBBoard2 a sosa:Platform,
+        sosa:System ;
+    rdfs:label "PCB Board 2"@en ;
+    rdfs:comment "PCB Board 2 hosts DHT22 temperature and humidity sensor #4579 permanently, one can say it has it as one of its subsystems."@en ;
+    sosa:hasSubSystem ex:DHT22_4578 ;
+    sosa:hosts ex:DHT22_4578 .
+
+ex:PCBBoard3 a sosa:Platform,
+        sosa:System ;
+    rdfs:label "PCB Board 3"@en ;
+    rdfs:comment "PCB Board 3 hosts DHT22 temperature and humidity sensor #4580 permanently, one can say it has it as one of its subsystems."@en ;
+    sosa:hasSubSystem ex:DHT22_4578 ;
+    sosa:hosts ex:DHT22_4578 .
+
+ex:Room245_south a sosa:FeatureOfInterest,
+        sosa:Platform,
+        sosa:Sample ;
+    rdfs:label "South wall of room #245."@en ;
+    sosa:hosts ex:PCBBoard3 .
+
+ex:DHT22_4578 a sosa:System ;
+    rdfs:label "DHT22 sensor #4578"@en ;
+    sosa:isHostedBy ex:PCBBoard1 .
+

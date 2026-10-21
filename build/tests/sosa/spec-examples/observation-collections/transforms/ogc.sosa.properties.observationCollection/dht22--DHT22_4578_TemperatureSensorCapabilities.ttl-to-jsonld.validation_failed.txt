@@ -1,0 +1,64 @@
+Validation report for ogc.sosa.properties.observationCollection - ObservationCollection Properties
+Generated 2026-10-21T10:03:33.355646+00:00
+=== Files ===
+Using dht22--DHT22_4578_TemperatureSensorCapabilities.ttl-to-jsonld.json from transform outputs
+JSON-LD context is present - uplifting
+Output JSON-LD dht22--DHT22_4578_TemperatureSensorCapabilities.ttl-to-jsonld.jsonld created
+Output Turtle dht22--DHT22_4578_TemperatureSensorCapabilities.ttl-to-jsonld.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+
+=== SHACL ===
+Using snippet SHACL closures:
+ - /github/workspace/_sources/spec-examples/closures/dht22.ttl
+Validation result for _sources/properties/execution/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/execution/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: ex:DHT22_4578_HumiditySensorCapabilities,ex:DHT22_4578_TemperatureSensorCapabilities,ex:DHT22_4578_HumiditySensorNormalOperatingConditions,ex:DHT22_4578_TemperatureSensorNormalOperatingConditions
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: ex:DHT22_4578_HumiditySensorCapabilities,ex:DHT22_4578_TemperatureSensorCapabilities,ex:DHT22_4578_HumiditySensorNormalOperatingConditions,ex:DHT22_4578_TemperatureSensorNormalOperatingConditions
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: ex:DHT22_4578_TemperatureMeasurementSensitivity,ex:DHT22_4578_maximumMeasureableTemperature,ex:maximumOperatingInputVoltage,ex:maximumOperatingTemperature,ex:mimimalOperatingInputVoltage,ex:DHT22_4578_minimumMeasureableTemperature,ex:DHT22_4578_RelativeHumidityFrequency,ex:nominalOperatingInputVoltage,ex:minimumOperatingHumidity,ex:DHT22_4578_minimumMeasureableRelativeHumidity,ex:DHT22_4578_TemperatureMeasurementFrequency,ex:maximumOperatingHumidity,ex:minimumOperatingTemperature,ex:DHT22_4578_TemperatureMeasurementAccuracy,ex:DHT22_4578_maximumMeasureableRelativeHumidity
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: ex:DHT22_4578_TemperatureMeasurementSensitivity,ex:DHT22_4578_maximumMeasureableTemperature,ex:maximumOperatingInputVoltage,ex:maximumOperatingTemperature,ex:mimimalOperatingInputVoltage,ex:DHT22_4578_minimumMeasureableTemperature,ex:DHT22_4578_RelativeHumidityFrequency,ex:nominalOperatingInputVoltage,ex:minimumOperatingHumidity,ex:DHT22_4578_minimumMeasureableRelativeHumidity,ex:DHT22_4578_TemperatureMeasurementFrequency,ex:maximumOperatingHumidity,ex:minimumOperatingTemperature,ex:DHT22_4578_TemperatureMeasurementAccuracy,ex:DHT22_4578_maximumMeasureableRelativeHumidity
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: ex:mimimalOperatingInputVoltage/sosa:hasSimpleResult,ex:minimumOperatingTemperature/sosa:hasSimpleResult,ex:maximumOperatingInputVoltage/sosa:hasSimpleResult,ex:nominalOperatingInputVoltage/sosa:hasSimpleResult
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: ex:DHT22_4578_TemperatureMeasurementSensitivity,ex:DHT22_4578_maximumMeasureableTemperature,ex:maximumOperatingInputVoltage,ex:maximumOperatingTemperature,ex:mimimalOperatingInputVoltage,ex:DHT22_4578_minimumMeasureableTemperature,ex:DHT22_4578_RelativeHumidityFrequency,ex:nominalOperatingInputVoltage,ex:minimumOperatingHumidity,ex:DHT22_4578_minimumMeasureableRelativeHumidity,ex:DHT22_4578_TemperatureMeasurementFrequency,ex:maximumOperatingHumidity,ex:minimumOperatingTemperature,ex:DHT22_4578_TemperatureMeasurementAccuracy,ex:DHT22_4578_maximumMeasureableRelativeHumidity
+
+
+** Validation error **
+Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>
+  	Focus Node: closure:dht22-observations
+  	Value Node: closure:dht22-observations
+  	Result Path: sosa:observedProperty
+  	Source Constraint: [ sh:message Literal("sosa:observedProperty is required, on the collection, a collection it is a member of, or its members") ; sh:select Literal("
+              PREFIX sosa: <http://www.w3.org/ns/sosa/>
+              PREFIX geojson: <https://purl.org/geojson/vocab#>
+              SELECT $this (sosa:observedProperty AS ?path) WHERE {
+                  FILTER NOT EXISTS {
+                      { $this (^sosa:hasMember|^geojson:features|sosa:memberOf)* ?holder }
+                      UNION
+                      {
+                          $this (sosa:hasMember|geojson:features|^sosa:memberOf)+ ?member .
+                          ?member (^sosa:hasMember|^geojson:features|sosa:memberOf)* ?holder .
+                      }
+                      ?holder sosa:observedProperty ?prop .
+                  }
+              }
+          ") ]
+  	Message: sosa:observedProperty is required, on the collection, a collection it is a member of, or its members
+  
+Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: ex:DHT22_4578_HumiditySensorNormalOperatingConditions,ex:DHT22_4578_HumiditySensorCapabilities,ex:DHT22_4578_TemperatureSensorCapabilities,ex:DHT22_4578_TemperatureSensorNormalOperatingConditions
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: ex:DHT22_4578_TemperatureMeasurementSensitivity,ex:DHT22_4578_maximumMeasureableTemperature,ex:maximumOperatingInputVoltage,ex:maximumOperatingTemperature,ex:mimimalOperatingInputVoltage,ex:DHT22_4578_minimumMeasureableTemperature,ex:DHT22_4578_RelativeHumidityFrequency,ex:nominalOperatingInputVoltage,ex:minimumOperatingHumidity,ex:DHT22_4578_minimumMeasureableRelativeHumidity,ex:DHT22_4578_TemperatureMeasurementFrequency,ex:maximumOperatingHumidity,ex:minimumOperatingTemperature,ex:DHT22_4578_TemperatureMeasurementAccuracy,ex:DHT22_4578_maximumMeasureableRelativeHumidity
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+
+=== End SHACL ===
+

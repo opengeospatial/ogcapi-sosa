@@ -1,0 +1,62 @@
+Validation report for ogc.sosa.properties.sampling - Sampling Properties
+Generated 2026-10-21T10:03:04.746372+00:00
+=== Files ===
+Using LocatedSampling.ttl-to-jsonld.json from transform outputs
+JSON-LD context is present - uplifting
+Output JSON-LD LocatedSampling.ttl-to-jsonld.jsonld created
+Output Turtle LocatedSampling.ttl-to-jsonld.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: {'@context': ['https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/sampling/context.jsonld', {'ex': 'https://example.org/data/', 'geo': 'http://www.opengis.net/ont/geosparql#', 'sf': 'http://www.opengis.net/ont/sf#', 'skos': 'http://www.w3.org/2004/02/skos/core#', 'geo:asWKT': {'@type': 'geo:WktLiteral'}}], 'id': 'ex:AirSampling_StE', 'featureType': 'Sampling', 'hasFeatureOfInterest': {'id': 'ex:EarthAtmosphere', 'featureType': 'FeatureOfInterest', 'skos:exactMatch': {'id': 'https://www.wikidata.org/wiki/Q3230'}}, 'sosa:oms/samplingLocation': {'featureType': 'sf:Point', 'geo:asWKT': 'POINT (4.387611 45.437772)'}, 'resultTime': '2017-01-01T00:00:00+00:00'} is not valid under any of the given schemas
+
+Failed validating 'oneOf' in schema['allOf'][0]['allOf'][2]:
+    {'oneOf': [{'required': ['hasResult']},
+               {'required': ['hasSimpleResult']}]}
+
+On instance:
+    {'@context': ['https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/sampling/context.jsonld',
+                  {'ex': 'https://example.org/data/',
+                   'geo': 'http://www.opengis.net/ont/geosparql#',
+                   'geo:asWKT': {'@type': 'geo:WktLiteral'},
+                   'sf': 'http://www.opengis.net/ont/sf#',
+                   'skos': 'http://www.w3.org/2004/02/skos/core#'}],
+     'featureType': 'Sampling',
+     'hasFeatureOfInterest': {'featureType': 'FeatureOfInterest',
+                              'id': 'ex:EarthAtmosphere',
+                              'skos:exactMatch': {'id': 'https://www.wikidata.org/wiki/Q3230'}},
+     'id': 'ex:AirSampling_StE',
+     'resultTime': '2017-01-01T00:00:00+00:00',
+     'sosa:oms/samplingLocation': {'featureType': 'sf:Point',
+                                   'geo:asWKT': 'POINT (4.387611 '
+                                                '45.437772)'}}
+=== End JSON Schema ===
+
+=== SHACL ===
+Using snippet SHACL closures:
+ - /github/workspace/_sources/spec-examples/closures/LocatedSampling.ttl
+
+** Validation error **
+Validation result for _sources/properties/execution/shapes.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("Exactly one of sosa:hasResult, sosa:hasSimpleResult or sosa:isResultOf (from the result) is required per execution") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult [ sh:inversePath sosa:isResultOf ] ) ] ]
+  	Focus Node: ex:AirSampling_StE
+  	Result Path: [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult [ sh:inversePath sosa:isResultOf ] ) ]
+  	Message: Exactly one of sosa:hasResult, sosa:hasSimpleResult or sosa:isResultOf (from the result) is required per execution
+  
+Focus nodes for _sources/properties/execution/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: ex:AirSampling_StE
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: ex:AirSampling_StE
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: ex:AirSampling_StE
+
+=== End SHACL ===
+

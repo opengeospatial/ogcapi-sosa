@@ -1,0 +1,71 @@
+{
+  "@context": [
+    "https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/context.jsonld",
+    {
+      "ex": "https://example.org/sosa/collection-rule-4/",
+      "qk": "http://qudt.org/vocab/quantitykind/",
+      "qudt": "http://qudt.org/schema/qudt/",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "unit": "http://qudt.org/vocab/unit/",
+      "xsd": "http://www.w3.org/2001/XMLSchema#"
+    }
+  ],
+  "id": "ex:oc4",
+  "featureType": "ObservationCollection",
+  "qudt:hasUnit": {
+    "id": "unit:DEG_C"
+  },
+  "rdfs:comment": "\n  The properties madeBySensor, observedProperty, and hasUnit are given for the collection. \n  The property phenomenonTime has value range.\n  ",
+  "hasMember": [
+    {
+      "id": "ex:a41",
+      "featureType": "Observation",
+      "rdfs:comment": "\n  The properties hasFeatureOfInterest, phenomenonTime, and hasSimpleResult are specific to this individual member\n  The value of phenomenonTime falls within the value range for the collection.\n  The properties madeBySensor, observedProperty, and hasUnit are inferred from the value for the collection.\n  ",
+      "hasFeatureOfInterest": {
+        "id": "ex:F1",
+        "featureType": "FeatureOfInterest",
+        "rdfs:comment": "Room #1"
+      },
+      "hasSimpleResult": {
+        "@type": "xsd:decimal",
+        "@value": "24.1"
+      },
+      "phenomenonTime": "2022-05-01T20:33:40+00:00"
+    },
+    {
+      "id": "ex:a42",
+      "featureType": "Observation",
+      "rdfs:comment": "\n  The properties hasFeatureOfInterest, phenomenonTime, and hasSimpleResult are specific to this individual member\n  The value of phenomenonTime falls within the value range for the collection.\n  The properties madeBySensor, observedProperty, and hasUnit are inferred from the value for the collection.\n  ",
+      "hasFeatureOfInterest": {
+        "id": "ex:F2",
+        "featureType": "FeatureOfInterest",
+        "rdfs:comment": "Room #2"
+      },
+      "hasSimpleResult": {
+        "@type": "xsd:decimal",
+        "@value": "27.3"
+      },
+      "phenomenonTime": "2022-05-01T22:33:40+00:00"
+    }
+  ],
+  "madeBySensor": {
+    "id": "ex:T56",
+    "featureType": "Sensor",
+    "rdfs:comment": "Thermometer #56"
+  },
+  "observedProperty": {
+    "id": "qk:Temperature",
+    "featureType": "Property"
+  },
+  "phenomenonTime": {
+    "featureType": "Interval",
+    "hasBeginning": {
+      "featureType": "Instant",
+      "inXSDDateTime": "2022-05-01T20:00:00+00:00"
+    },
+    "hasEnd": {
+      "featureType": "Instant",
+      "inXSDDateTime": "2022-05-01T23:00:00+00:00"
+    }
+  }
+}

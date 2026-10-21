@@ -64,7 +64,7 @@ ex:EarthAtmosphere a sosa:FeatureOfInterest ;
 #### jsonld
 ```jsonld
 {
-  "@context": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sampling/context.jsonld",
+  "@context": "https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/sampling/context.jsonld",
   "@id": "AirSampling_StE",
   "hasFeatureOfInterest": "EarthAtmosphere",
   "hasInputValue": {
@@ -84,20 +84,39 @@ ex:EarthAtmosphere a sosa:FeatureOfInterest ;
 ```yaml
 $schema: https://json-schema.org/draft/2020-12/schema
 description: SOSA Sampling
+$defs:
+  samplingType:
+    enum:
+    - Sampling
+    - sosa:Sampling
+    - http://www.w3.org/ns/sosa/Sampling
+  member:
+    description: 'A Sampling in a SamplingCollection: feature of interest and time
+      may be provided by the collection (checked by SHACL), the result (the Sample)
+      may not.'
+    allOf:
+    - $ref: https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
+    - type: object
+      properties:
+        featureType:
+          oneOf:
+          - $ref: '#/$defs/samplingType'
+          - type: array
+            contains:
+              $ref: '#/$defs/samplingType'
+          x-jsonld-id: '@type'
+        madeBySampler:
+          $ref: https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml#/$defs/reference
+          x-jsonld-id: http://www.w3.org/ns/sosa/madeBySampler
+          x-jsonld-type: '@id'
+    - $ref: https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml#/$defs/result
+type: object
 allOf:
-- $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
-- type: object
-  properties:
-    madeBySampler:
-      type:
-      - object
-      - string
-      x-jsonld-id: http://www.w3.org/ns/sosa/madeBySampler
-      x-jsonld-type: '@id'
+- $ref: '#/$defs/member'
+- $ref: https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml#/$defs/required
 x-jsonld-extra-terms:
   id: '@id'
   properties: '@nest'
-  featureType: '@type'
   ActuatableProperty:
     x-jsonld-id: http://www.w3.org/ns/sosa/ActuatableProperty
     x-jsonld-type: '@id'
@@ -176,7 +195,9 @@ x-jsonld-extra-terms:
   detects:
     x-jsonld-id: http://www.w3.org/ns/sosa/detects
     x-jsonld-type: '@id'
-  endTime: http://www.w3.org/ns/sosa/endTime
+  endTime:
+    x-jsonld-id: http://www.w3.org/ns/sosa/endTime
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTime
   features:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasMember
     x-jsonld-type: '@id'
@@ -219,9 +240,7 @@ x-jsonld-extra-terms:
   hasSampledFeature:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasSampledFeature
     x-jsonld-type: '@id'
-  hasSimpleResult:
-    x-jsonld-id: http://www.w3.org/ns/sosa/hasSimpleResult
-    x-jsonld-type: '@id'
+  hasSimpleResult: http://www.w3.org/ns/sosa/hasSimpleResult
   hasSubSystem:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasSubSystem
     x-jsonld-type: '@id'
@@ -310,9 +329,40 @@ x-jsonld-extra-terms:
     x-jsonld-type: '@id'
   phenomenonTime:
     x-jsonld-id: http://www.w3.org/ns/sosa/phenomenonTime
-    x-jsonld-type: '@id'
-  resultTime: http://www.w3.org/ns/sosa/resultTime
-  startTime: http://www.w3.org/ns/sosa/startTime
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTime
+    x-jsonld-context:
+      time: http://www.w3.org/2006/time#
+      Instant: http://www.w3.org/2006/time#Instant
+      Interval: http://www.w3.org/2006/time#Interval
+      ProperInterval: http://www.w3.org/2006/time#ProperInterval
+      hasBeginning: http://www.w3.org/2006/time#hasBeginning
+      hasEnd: http://www.w3.org/2006/time#hasEnd
+      hasDuration: http://www.w3.org/2006/time#hasDuration
+      hasXSDDuration:
+        '@id': http://www.w3.org/2006/time#hasXSDDuration
+        '@type': http://www.w3.org/2001/XMLSchema#duration
+      inTimePosition: http://www.w3.org/2006/time#inTimePosition
+      inXSDDate:
+        '@id': http://www.w3.org/2006/time#inXSDDate
+        '@type': http://www.w3.org/2001/XMLSchema#date
+      inXSDDateTime:
+        '@id': http://www.w3.org/2006/time#inXSDDateTime
+        '@type': http://www.w3.org/2001/XMLSchema#dateTime
+      inXSDDateTimeStamp:
+        '@id': http://www.w3.org/2006/time#inXSDDateTimeStamp
+        '@type': http://www.w3.org/2001/XMLSchema#dateTimeStamp
+      inXSDgYear:
+        '@id': http://www.w3.org/2006/time#inXSDgYear
+        '@type': http://www.w3.org/2001/XMLSchema#gYear
+      inXSDgYearMonth:
+        '@id': http://www.w3.org/2006/time#inXSDgYearMonth
+        '@type': http://www.w3.org/2001/XMLSchema#gYearMonth
+  resultTime:
+    x-jsonld-id: http://www.w3.org/ns/sosa/resultTime
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTime
+  startTime:
+    x-jsonld-id: http://www.w3.org/ns/sosa/startTime
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTime
   usedProcedure:
     x-jsonld-id: http://www.w3.org/ns/sosa/usedProcedure
     x-jsonld-type: '@id'
@@ -411,15 +461,21 @@ x-jsonld-extra-terms:
     x-jsonld-type: '@id'
 x-jsonld-prefixes:
   sosa: http://www.w3.org/ns/sosa/
+  time: http://www.w3.org/2006/time#
   ssn-system: http://www.w3.org/ns/ssn/systems/
   ssn: http://www.w3.org/ns/ssn/
+x-bblocks-metadata:
+  itemIdentifier: ogc.sosa.properties.sampling
+  register: https://rob-metalinkage.github.io/ogcapi-sosa/build/register.json
+  version: '1.0'
+  dateOfLastChange: '2026-10-21'
 
 ```
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sampling/schema.json)
-* JSON version: [schema.json](https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sampling/schema.yaml)
+* YAML version: [schema.yaml](https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/sampling/schema.json)
+* JSON version: [schema.json](https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/sampling/schema.yaml)
 
 
 # JSON-LD Context
@@ -816,10 +872,46 @@ Links to the schema:
       "@id": "ssn-system:qualityOfObservation",
       "@type": "@id"
     },
-    "resultTime": "sosa:resultTime",
+    "resultTime": {
+      "@id": "sosa:resultTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
     "phenomenonTime": {
+      "@context": {
+        "hasBeginning": "time:hasBeginning",
+        "hasEnd": "time:hasEnd",
+        "inXSDDateTime": {
+          "@id": "time:inXSDDateTime",
+          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        "inXSDDateTimeStamp": {
+          "@id": "time:inXSDDateTimeStamp",
+          "@type": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+        },
+        "inXSDDate": {
+          "@id": "time:inXSDDate",
+          "@type": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "Instant": "time:Instant",
+        "Interval": "time:Interval",
+        "ProperInterval": "time:ProperInterval",
+        "hasDuration": "time:hasDuration",
+        "hasXSDDuration": {
+          "@id": "time:hasXSDDuration",
+          "@type": "http://www.w3.org/2001/XMLSchema#duration"
+        },
+        "inTimePosition": "time:inTimePosition",
+        "inXSDgYear": {
+          "@id": "time:inXSDgYear",
+          "@type": "http://www.w3.org/2001/XMLSchema#gYear"
+        },
+        "inXSDgYearMonth": {
+          "@id": "time:inXSDgYearMonth",
+          "@type": "http://www.w3.org/2001/XMLSchema#gYearMonth"
+        }
+      },
       "@id": "sosa:phenomenonTime",
-      "@type": "@id"
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "hasFeatureOfInterest": {
       "@id": "sosa:hasFeatureOfInterest",
@@ -833,21 +925,25 @@ Links to the schema:
       "@id": "sosa:usedProcedure",
       "@type": "@id"
     },
-    "startTime": "sosa:startTime",
-    "endTime": "sosa:endTime",
+    "startTime": {
+      "@id": "sosa:startTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "endTime": {
+      "@id": "sosa:endTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
     "hasResult": {
       "@id": "sosa:hasResult",
       "@type": "@id"
     },
-    "hasSimpleResult": {
-      "@id": "sosa:hasSimpleResult",
-      "@type": "@id"
-    },
+    "hasSimpleResult": "sosa:hasSimpleResult",
     "hasInputValue": {
       "@id": "sosa:hasInputValue",
       "@type": "@id"
     },
     "sosa": "http://www.w3.org/ns/sosa/",
+    "time": "http://www.w3.org/2006/time#",
     "ssn-system": "ssn:systems/",
     "ssn": "http://www.w3.org/ns/ssn/",
     "@version": 1.1
@@ -856,7 +952,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sampling/context.jsonld)
+[context.jsonld](https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/sampling/context.jsonld)
 
 ## Sources
 
@@ -866,6 +962,6 @@ You can find the full JSON-LD context here:
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/opengeospatial/ogcapi-sosa](https://github.com/opengeospatial/ogcapi-sosa)
+* URL: [https://github.com/rob-metalinkage/ogcapi-sosa](https://github.com/rob-metalinkage/ogcapi-sosa)
 * Path: `_sources/properties/sampling`
 

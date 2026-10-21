@@ -1,0 +1,69 @@
+{
+  "title": "Validation report for ogc.sosa.properties.system - System Properties",
+  "bblockName": "System Properties",
+  "bblockId": "ogc.sosa.properties.system",
+  "generated": "2026-10-21T10:03:03.544258+00:00",
+  "result": true,
+  "items": [
+    {
+      "source": {
+        "type": "TRANSFORM_OUTPUT",
+        "requireFail": false,
+        "filename": "build/tests/sosa/spec-examples/systems/transforms/LocatedSensor.ttl-to-jsonld.json",
+        "url": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/systems/transforms/LocatedSensor.ttl-to-jsonld.json",
+        "language": "application/json",
+        "transformId": "ttl-to-jsonld"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using LocatedSensor.ttl-to-jsonld.json from transform outputs"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "LocatedSensor.ttl-to-jsonld.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD LocatedSensor.ttl-to-jsonld.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "LocatedSensor.ttl-to-jsonld.ttl",
+              "size": 5,
+              "isError": false,
+              "message": "Output Turtle LocatedSensor.ttl-to-jsonld.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "globalErrors": {},
+  "counts": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0
+  }
+}

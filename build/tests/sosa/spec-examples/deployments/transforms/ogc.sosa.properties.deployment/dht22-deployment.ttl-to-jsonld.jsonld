@@ -1,0 +1,110 @@
+{
+  "@context": [
+    "https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/deployment/context.jsonld",
+    {
+      "ex": "https://example.org/data/",
+      "qk": "http://qudt.org/vocab/quantitykind/",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+    }
+  ],
+  "id": "ex:Room145Deployment",
+  "featureType": "Deployment",
+  "rdfs:comment": {
+    "@language": "en",
+    "@value": "Deployment of PCB Board 1 and 2 on the east and south wall of room #145, respectively, for the purpose of observing the temperature and humidity of room #145."
+  },
+  "deployedOnPlatform": [
+    "ex:Room245_east",
+    {
+      "id": "ex:Room245_south",
+      "featureType": [
+        "Sample",
+        "FeatureOfInterest",
+        "Platform"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "South wall of room #245."
+      },
+      "hosts": [
+        {
+          "id": "ex:PCBBoard3",
+          "featureType": [
+            "System",
+            "Platform"
+          ],
+          "rdfs:comment": {
+            "@language": "en",
+            "@value": "PCB Board 3 hosts DHT22 temperature and humidity sensor #4580 permanently, one can say it has it as one of its subsystems."
+          },
+          "rdfs:label": {
+            "@language": "en",
+            "@value": "PCB Board 3"
+          },
+          "hasSubSystem": [
+            {
+              "id": "ex:DHT22_4578",
+              "featureType": "System",
+              "rdfs:label": {
+                "@language": "en",
+                "@value": "DHT22 sensor #4578"
+              },
+              "isHostedBy": {
+                "id": "ex:PCBBoard1",
+                "featureType": [
+                  "System",
+                  "Platform"
+                ],
+                "rdfs:comment": {
+                  "@language": "en",
+                  "@value": "PCB Board 1 hosts DHT22 temperature and humidity sensor #4578 permanently, one can say it has it as one of its subsystems."
+                },
+                "rdfs:label": {
+                  "@language": "en",
+                  "@value": "PCB Board 1"
+                },
+                "hasSubSystem": [
+                  "ex:DHT22_4578"
+                ],
+                "hosts": [
+                  "ex:DHT22_4578"
+                ]
+              }
+            }
+          ],
+          "hosts": [
+            "ex:DHT22_4578"
+          ]
+        }
+      ]
+    }
+  ],
+  "deployedSystem": [
+    "ex:PCBBoard1",
+    {
+      "id": "ex:PCBBoard2",
+      "featureType": [
+        "System",
+        "Platform"
+      ],
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "PCB Board 2 hosts DHT22 temperature and humidity sensor #4579 permanently, one can say it has it as one of its subsystems."
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "PCB Board 2"
+      },
+      "hasSubSystem": [
+        "ex:DHT22_4578"
+      ],
+      "hosts": [
+        "ex:DHT22_4578"
+      ]
+    }
+  ],
+  "forProperty": [
+    "qk:Temperature",
+    "qk:RelativeHumidity"
+  ]
+}

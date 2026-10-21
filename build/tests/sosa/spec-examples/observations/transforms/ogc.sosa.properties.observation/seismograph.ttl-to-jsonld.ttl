@@ -1,0 +1,38 @@
+@prefix ex: <https://example.org/data/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix qk: <http://qudt.org/vocab/quantitykind/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:VCAB-DP1-BP-40_t2017-04-18T08%3A23%3A00-07%3A00 a sosa:Observation ;
+    sosa:hasFeatureOfInterest ex:VCAB-DP1-BP-40_location ;
+    sosa:hasResult [ a qudt:QuantityValue ;
+            qudt:hasUnit unit:CentiM-PER-SEC ;
+            qudt:value 5e-04 ] ;
+    sosa:madeBySensor ex:VCAB-DP1-BP-40 ;
+    sosa:observedProperty ex:groundDisplacementSpeed ;
+    sosa:resultTime "2017-04-18T08:23:00-07:00"^^xsd:dateTime .
+
+ex:Earth a sosa:FeatureOfInterest ;
+    rdfs:label "Earth" ;
+    skos:exactMatch <https://www.wikidata.org/wiki/Q2> .
+
+ex:VCAB-DP1-BP-40 a sosa:Sensor ;
+    rdfs:label "seismograph VCAB DP1 BP 40 (Vineyard Canyon, Parkfield, Ca)"@en ;
+    rdfs:seeAlso <https://earthquake.usgs.gov/monitoring/seismograms/153> ;
+    sosa:observes ex:groundDisplacementSpeed .
+
+ex:VCAB-DP1-BP-40_location a sosa:Sample ;
+    rdfs:label "location of VCAB-DP1-BP-40"@en ;
+    geo:hasGeometry [ a geo:Point ;
+            geo:asWKT "POINT (-120.6195831 35.8648067)"^^geo:WktLiteral ] ;
+    sosa:isSampleOf ex:Earth .
+
+ex:groundDisplacementSpeed a sosa:Property ;
+    rdfs:label "ground displacement speed"@en ;
+    skos:broader qk:Speed .
+

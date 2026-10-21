@@ -1,0 +1,73 @@
+{
+  "@context": [
+    "https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/context.jsonld",
+    {
+      "ex": "https://example.org/data/",
+      "geo": "http://www.opengis.net/ont/geosparql#",
+      "qk": "http://qudt.org/vocab/quantitykind/",
+      "qudt": "http://qudt.org/schema/qudt/",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "unit": "http://qudt.org/vocab/unit/",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "gr": "http://purl.org/goodrelations/v1#",
+      "seas": "https://w3id.org/seas/",
+      "geo:lat": {
+        "@type": "xsd:decimal"
+      },
+      "geo:alt": {
+        "@type": "xsd:decimal"
+      },
+      "geo:lon": {
+        "@type": "xsd:decimal"
+      }
+    }
+  ],
+  "id": "ex:Observation_5872357_battery",
+  "featureType": "Observation",
+  "hasFeatureOfInterest": {
+    "id": "ex:Sensor_SL-T-P1",
+    "featureType": [
+      "gr:ProductOrService",
+      "Sensor",
+      "seas:LoRaCommunicationDevice",
+      "ex:IP68_Outdoor_Temperature_Sensor"
+    ],
+    "gr:hasBrand": {
+      "featureType": "gr:Brand",
+      "gr:name": {
+        "@language": "en",
+        "@value": "Sensing Labs"
+      }
+    },
+    "geo:alt": "100.0",
+    "geo:lat": "45.75",
+    "geo:lon": "4.85",
+    "implements": [
+      "ex:IP68_Outdoor_Temperature_Sensor_temperatureSensingProcedure",
+      "ex:IP68_Outdoor_Temperature_Sensor_batterySensingProcedure"
+    ],
+    "observes": [
+      {
+        "id": "ex:Sensor_SL-T-P1_battery",
+        "featureType": "sosa:Battery",
+        "rdfs:label": {
+          "@language": "en",
+          "@value": "The battery powering the IP68 Outdoor Temperature Sensor"
+        }
+      },
+      "qk:Temperature"
+    ]
+  },
+  "hasResult": {
+    "qudt:hasUnit": {
+      "id": "unit:PERCENT"
+    },
+    "qudt:value": {
+      "@type": "xsd:decimal",
+      "@value": "73.2"
+    }
+  },
+  "madeBySensor": "ex:Sensor_SL-T-P1",
+  "observedProperty": "ex:Sensor_SL-T-P1_battery",
+  "resultTime": "2017-06-20T21:49:18+00:00"
+}

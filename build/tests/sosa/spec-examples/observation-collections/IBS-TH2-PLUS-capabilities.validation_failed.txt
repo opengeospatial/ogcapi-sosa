@@ -1,0 +1,77 @@
+Validation report for ogc.sosa.spec-examples.observation-collections - SOSA specification examples: Observation Collections
+Generated 2026-10-21T10:02:41.707191+00:00
+=== Files ===
+Using https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/IBS-TH2-PLUS-capabilities.ttl from examples
+Output Turtle IBS-TH2-PLUS-capabilities.ttl created
+=== End Files ===
+
+=== Turtle ===
+Prefixes are defined for cdt, equipment, ex, geo, gr, gs1, om, owl, prov, qk, qudt, rdf, rdfp, rdfs, schema, seas, sensor, sh, skos, sosa, system, time, unit, xsd
+=== End Turtle ===
+
+=== SHACL ===
+Using snippet SHACL closures:
+ - ../closures/IBS-TH2-PLUS-capabilities.ttl
+
+** Validation error **
+Validation result for _sources/properties/execution/shapes.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("Exactly one of sosa:hasResult, sosa:hasSimpleResult or sosa:isResultOf (from the result) is required per execution") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult [ sh:inversePath sosa:isResultOf ] ) ] ]
+  	Focus Node: sensor:IBS-TH2-Plus-T-normalHumidityConditions
+  	Result Path: [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult [ sh:inversePath sosa:isResultOf ] ) ]
+  	Message: Exactly one of sosa:hasResult, sosa:hasSimpleResult or sosa:isResultOf (from the result) is required per execution
+  
+Focus nodes for _sources/properties/execution/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: sensor:IBS-TH2-Plus-T-normalHumidityConditions,sensor:IBS-TH2-Plus-T-systemCapability
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: sensor:IBS-TH2-Plus-T-normalHumidityConditions,sensor:IBS-TH2-Plus-T-systemCapability
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember,sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-normalHumidityConditions,sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember,sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-normalHumidityConditions,sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember,sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-normalHumidityConditions,sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember
+
+
+** Validation error **
+Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>
+  	Focus Node: sensor:IBS-TH2-Plus-T-normalHumidityConditions
+  	Value Node: sensor:IBS-TH2-Plus-T-normalHumidityConditions
+  	Result Path: sosa:observedProperty
+  	Source Constraint: [ sh:message Literal("sosa:observedProperty is required, on the observation or a collection it is a member of") ; sh:select Literal("
+              PREFIX sosa: <http://www.w3.org/ns/sosa/>
+              PREFIX geojson: <https://purl.org/geojson/vocab#>
+              SELECT $this (sosa:observedProperty AS ?path) WHERE {
+                  FILTER NOT EXISTS {
+                      $this (^sosa:hasMember|^geojson:features|sosa:memberOf)* ?holder .
+                      ?holder sosa:observedProperty ?prop .
+                  }
+                  FILTER (EXISTS { $this a sosa:Observation } || NOT EXISTS {
+                      { $this a ?type . FILTER(?type IN (sosa:Actuation, sosa:Sampling)) }
+                      UNION
+                      { $this sosa:actsOnProperty|sosa:madeByActuator|sosa:madeBySampler ?x }
+                      UNION
+                      {
+                          $this (^sosa:hasMember|^geojson:features|sosa:memberOf)+ ?collection .
+                          ?collection a ?ctype .
+                          FILTER(?ctype IN (sosa:ActuationCollection, sosa:SamplingCollection))
+                      }
+                  })
+              }
+          ") ]
+  	Message: sosa:observedProperty is required, on the observation or a collection it is a member of
+  
+Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: sensor:IBS-TH2-Plus-T-systemCapability
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember,sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-normalHumidityConditions,sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+
+=== End SHACL ===
+

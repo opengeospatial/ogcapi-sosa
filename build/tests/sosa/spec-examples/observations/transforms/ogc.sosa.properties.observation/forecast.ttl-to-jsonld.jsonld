@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/context.jsonld",
+    {
+      "ex": "https://example.org/data/",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "siq": "https://si-digital-framework.org/quantities/",
+      "skos": "http://www.w3.org/2004/02/skos/core#"
+    }
+  ],
+  "id": "ex:Observation299876",
+  "featureType": "Observation",
+  "hasFeatureOfInterest": {
+    "id": "ex:EarthAtmosphere",
+    "featureType": "FeatureOfInterest",
+    "skos:exactMatch": {
+      "id": "https://www.wikidata.org/wiki/Q3230"
+    }
+  },
+  "hasResult": "ex:forecast/grid/299876",
+  "observedProperty": {
+    "id": "siq:TEMC",
+    "featureType": "Property",
+    "rdfs:label": "Celsius temperature"
+  },
+  "phenomenonTime": {
+    "time:hasBeginnning": {
+      "inXSDDateTime": "2024-03-09T11:00:00+10:00"
+    },
+    "hasEnd": {
+      "inXSDDateTime": "2024-03-09T12:00:00+10:00"
+    }
+  },
+  "resultTime": "2024-03-06T12:00:00+10:00"
+}

@@ -55,7 +55,7 @@ _:a1 a sosa:Observation ;
 #### jsonld
 ```jsonld
 {
-  "@context": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/context.jsonld",
+  "@context": "https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/context.jsonld",
   "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/dutch_windmills/items/Molens.1",
   "observedProperty": "p1",
   "hasSimpleResult": 33,
@@ -83,7 +83,7 @@ _:a1 a sosa:Observation ;
 #### jsonld
 ```jsonld
 {
-  "@context": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/context.jsonld",
+  "@context": "https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/context.jsonld",
   "hasFeatureOfInterest": "https://demo.pygeoapi.io/master/collections/dutch_windmills/items/Molens.1",
   "observedProperty": "p1",
   "hasResult": {
@@ -100,11 +100,12 @@ _:a1 a sosa:Observation ;
 ```ttl
 @prefix ns1: <rdfs:> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 [] sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/dutch_windmills/items/Molens.1> ;
     sosa:hasResult [ ns1:comment "I feel good" ] ;
     sosa:observedProperty <file:///github/workspace/p1> ;
-    sosa:resultTime "2022-05-01T22:33:44Z" .
+    sosa:resultTime "2022-05-01T22:33:44+00:00"^^xsd:dateTime .
 
 
 ```
@@ -114,14 +115,36 @@ _:a1 a sosa:Observation ;
 ```yaml
 $schema: https://json-schema.org/draft/2020-12/schema
 description: SOSA Observation
+$defs:
+  featureType:
+    description: if typed, the object is a sosa:Observation
+    properties:
+      featureType:
+        oneOf:
+        - $ref: '#/$defs/observationType'
+        - type: array
+          contains:
+            $ref: '#/$defs/observationType'
+        x-jsonld-id: '@type'
+  observationType:
+    enum:
+    - Observation
+    - sosa:Observation
+    - http://www.w3.org/ns/sosa/Observation
+  member:
+    description: 'An Observation in an ObservationCollection: feature of interest,
+      observed property and time may be provided by the collection (checked by SHACL),
+      the result may not.'
+    allOf:
+    - $ref: https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation-owa/schema.yaml
+    - $ref: '#/$defs/featureType'
+    - $ref: https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml#/$defs/result
 type: object
 allOf:
-- $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation-owa/schema.yaml
-- anyOf:
-  - required:
-    - hasResult
-  - required:
-    - hasSimpleResult
+- $ref: '#/$defs/member'
+- $ref: https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml#/$defs/required
+- required:
+  - observedProperty
 x-jsonld-extra-terms:
   id: '@id'
   properties: '@nest'
@@ -204,7 +227,9 @@ x-jsonld-extra-terms:
   detects:
     x-jsonld-id: http://www.w3.org/ns/sosa/detects
     x-jsonld-type: '@id'
-  endTime: http://www.w3.org/ns/sosa/endTime
+  endTime:
+    x-jsonld-id: http://www.w3.org/ns/sosa/endTime
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTime
   features:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasMember
     x-jsonld-type: '@id'
@@ -247,9 +272,7 @@ x-jsonld-extra-terms:
   hasSampledFeature:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasSampledFeature
     x-jsonld-type: '@id'
-  hasSimpleResult:
-    x-jsonld-id: http://www.w3.org/ns/sosa/hasSimpleResult
-    x-jsonld-type: '@id'
+  hasSimpleResult: http://www.w3.org/ns/sosa/hasSimpleResult
   hasSubSystem:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasSubSystem
     x-jsonld-type: '@id'
@@ -341,9 +364,40 @@ x-jsonld-extra-terms:
     x-jsonld-type: '@id'
   phenomenonTime:
     x-jsonld-id: http://www.w3.org/ns/sosa/phenomenonTime
-    x-jsonld-type: '@id'
-  resultTime: http://www.w3.org/ns/sosa/resultTime
-  startTime: http://www.w3.org/ns/sosa/startTime
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTime
+    x-jsonld-context:
+      time: http://www.w3.org/2006/time#
+      Instant: http://www.w3.org/2006/time#Instant
+      Interval: http://www.w3.org/2006/time#Interval
+      ProperInterval: http://www.w3.org/2006/time#ProperInterval
+      hasBeginning: http://www.w3.org/2006/time#hasBeginning
+      hasEnd: http://www.w3.org/2006/time#hasEnd
+      hasDuration: http://www.w3.org/2006/time#hasDuration
+      hasXSDDuration:
+        '@id': http://www.w3.org/2006/time#hasXSDDuration
+        '@type': http://www.w3.org/2001/XMLSchema#duration
+      inTimePosition: http://www.w3.org/2006/time#inTimePosition
+      inXSDDate:
+        '@id': http://www.w3.org/2006/time#inXSDDate
+        '@type': http://www.w3.org/2001/XMLSchema#date
+      inXSDDateTime:
+        '@id': http://www.w3.org/2006/time#inXSDDateTime
+        '@type': http://www.w3.org/2001/XMLSchema#dateTime
+      inXSDDateTimeStamp:
+        '@id': http://www.w3.org/2006/time#inXSDDateTimeStamp
+        '@type': http://www.w3.org/2001/XMLSchema#dateTimeStamp
+      inXSDgYear:
+        '@id': http://www.w3.org/2006/time#inXSDgYear
+        '@type': http://www.w3.org/2001/XMLSchema#gYear
+      inXSDgYearMonth:
+        '@id': http://www.w3.org/2006/time#inXSDgYearMonth
+        '@type': http://www.w3.org/2001/XMLSchema#gYearMonth
+  resultTime:
+    x-jsonld-id: http://www.w3.org/ns/sosa/resultTime
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTime
+  startTime:
+    x-jsonld-id: http://www.w3.org/ns/sosa/startTime
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTime
   usedProcedure:
     x-jsonld-id: http://www.w3.org/ns/sosa/usedProcedure
     x-jsonld-type: '@id'
@@ -442,15 +496,21 @@ x-jsonld-extra-terms:
     x-jsonld-type: '@id'
 x-jsonld-prefixes:
   sosa: http://www.w3.org/ns/sosa/
+  time: http://www.w3.org/2006/time#
   ssn-system: http://www.w3.org/ns/ssn/systems/
   ssn: http://www.w3.org/ns/ssn/
+x-bblocks-metadata:
+  itemIdentifier: ogc.sosa.properties.observation
+  register: https://rob-metalinkage.github.io/ogcapi-sosa/build/register.json
+  version: '1.0'
+  dateOfLastChange: '2026-10-21'
 
 ```
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.json)
-* JSON version: [schema.json](https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.yaml)
+* YAML version: [schema.yaml](https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.json)
+* JSON version: [schema.json](https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.yaml)
 
 
 # JSON-LD Context
@@ -847,10 +907,46 @@ Links to the schema:
       "@id": "ssn-system:qualityOfObservation",
       "@type": "@id"
     },
-    "resultTime": "sosa:resultTime",
+    "resultTime": {
+      "@id": "sosa:resultTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
     "phenomenonTime": {
+      "@context": {
+        "hasBeginning": "time:hasBeginning",
+        "hasEnd": "time:hasEnd",
+        "inXSDDateTime": {
+          "@id": "time:inXSDDateTime",
+          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        "inXSDDateTimeStamp": {
+          "@id": "time:inXSDDateTimeStamp",
+          "@type": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+        },
+        "inXSDDate": {
+          "@id": "time:inXSDDate",
+          "@type": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "Instant": "time:Instant",
+        "Interval": "time:Interval",
+        "ProperInterval": "time:ProperInterval",
+        "hasDuration": "time:hasDuration",
+        "hasXSDDuration": {
+          "@id": "time:hasXSDDuration",
+          "@type": "http://www.w3.org/2001/XMLSchema#duration"
+        },
+        "inTimePosition": "time:inTimePosition",
+        "inXSDgYear": {
+          "@id": "time:inXSDgYear",
+          "@type": "http://www.w3.org/2001/XMLSchema#gYear"
+        },
+        "inXSDgYearMonth": {
+          "@id": "time:inXSDgYearMonth",
+          "@type": "http://www.w3.org/2001/XMLSchema#gYearMonth"
+        }
+      },
       "@id": "sosa:phenomenonTime",
-      "@type": "@id"
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "hasFeatureOfInterest": {
       "@id": "sosa:hasFeatureOfInterest",
@@ -864,21 +960,25 @@ Links to the schema:
       "@id": "sosa:usedProcedure",
       "@type": "@id"
     },
-    "startTime": "sosa:startTime",
-    "endTime": "sosa:endTime",
+    "startTime": {
+      "@id": "sosa:startTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "endTime": {
+      "@id": "sosa:endTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
     "hasResult": {
       "@id": "sosa:hasResult",
       "@type": "@id"
     },
-    "hasSimpleResult": {
-      "@id": "sosa:hasSimpleResult",
-      "@type": "@id"
-    },
+    "hasSimpleResult": "sosa:hasSimpleResult",
     "hasInputValue": {
       "@id": "sosa:hasInputValue",
       "@type": "@id"
     },
     "sosa": "http://www.w3.org/ns/sosa/",
+    "time": "http://www.w3.org/2006/time#",
     "ssn-system": "ssn:systems/",
     "ssn": "http://www.w3.org/ns/ssn/",
     "@version": 1.1
@@ -887,7 +987,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/context.jsonld)
+[context.jsonld](https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/context.jsonld)
 
 ## Sources
 
@@ -897,6 +997,6 @@ You can find the full JSON-LD context here:
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/opengeospatial/ogcapi-sosa](https://github.com/opengeospatial/ogcapi-sosa)
+* URL: [https://github.com/rob-metalinkage/ogcapi-sosa](https://github.com/rob-metalinkage/ogcapi-sosa)
 * Path: `_sources/properties/observation`
 

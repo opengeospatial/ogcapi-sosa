@@ -1,0 +1,531 @@
+{
+  "@context": [
+    "https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/context.jsonld",
+    {
+      "ex": "https://example.org/data/",
+      "et": "http://vocabs.lter-europe.net/EnvThes/",
+      "uom": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+      "qudt": "http://qudt.org/schema/qudt/",
+      "qk": "http://qudt.org/vocab/quantitykind/",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "unit": "http://qudt.org/vocab/unit/",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "dct": "http://purl.org/dc/terms/",
+      "prof": "http://www.w3.org/ns/dx/prof/",
+      "role": "http://www.w3.org/ns/dx/prof/role/",
+      "qudt:value": {
+        "@type": "xsd:decimal"
+      }
+    }
+  ],
+  "id": "ex:DHT22_4578_TemperatureSensorCapabilities",
+  "featureType": "ObservationCollection",
+  "hasMember": [
+    {
+      "id": "ex:DHT22_4578_minimumMeasureableTemperature",
+      "featureType": "Observation",
+      "qudt:hasUnit": {
+        "id": "unit:DEG_C"
+      },
+      "hasFeatureOfInterest": {
+        "id": "ex:DHT22_4578_TemperatureSensor",
+        "featureType": [
+          "Sensor",
+          "System"
+        ],
+        "rdfs:comment": {
+          "@language": "en",
+          "@value": "The embedded temperature sensor, a specific instance of temperature sensor."
+        },
+        "sosa:hasOperatingConditions": {
+          "id": "ex:DHT22_4578_TemperatureSensorNormalOperatingConditions",
+          "featureType": [
+            "ObservationCollection",
+            "sosa:NormalOperatingConditions"
+          ],
+          "rdfs:comment": {
+            "@language": "en",
+            "@value": "The conditions in which the DHT22 system is expected to operate."
+          },
+          "hasMember": [
+            {
+              "id": "ex:minimumOperatingTemperature",
+              "featureType": "Observation",
+              "qudt:hasUnit": {
+                "id": "unit:DEG_C"
+              },
+              "hasFeatureOfInterest": {
+                "id": "ex:DHT22_4578",
+                "featureType": "System",
+                "rdfs:comment": {
+                  "@language": "en",
+                  "@value": "DHT22 sensor #4578 contains a humidity and a temperature sensor."
+                },
+                "rdfs:seeAlso": {
+                  "id": "https://www.sparkfun.com/datasheets/Sensors/Temperature/DHT22.pdf"
+                },
+                "sosa:hasOperatingConditions": [
+                  {
+                    "id": "ex:DHT22_4578_TemperatureSensorNormalOperatingConditions"
+                  },
+                  {
+                    "id": "ex:DHT22_4578_HumiditySensorNormalOperatingConditions",
+                    "featureType": [
+                      "ObservationCollection",
+                      "sosa:NormalOperatingConditions"
+                    ],
+                    "rdfs:comment": {
+                      "@language": "en",
+                      "@value": "The conditions in which the DHT22 system is expected to operate."
+                    },
+                    "hasMember": [
+                      "ex:minimumOperatingTemperature",
+                      {
+                        "id": "ex:maximumOperatingTemperature",
+                        "featureType": "Observation",
+                        "hasFeatureOfInterest": "ex:DHT22_4578",
+                        "hasResult": {
+                          "qudt:hasUnit": {
+                            "id": "unit:DEG_C"
+                          },
+                          "qudt:value": "80.0"
+                        },
+                        "observedProperty": {
+                          "id": "ex:maximumSensorTemperatureLimit",
+                          "featureType": [
+                            "https://w3id.org/iadopt/ont/1.1.0Variable",
+                            "Property"
+                          ],
+                          "https://w3id.org/iadopt/ont/1.1.0hasObjectOfInterest": {
+                            "id": "ex:DHT22_4578"
+                          },
+                          "https://w3id.org/iadopt/ont/1.1.0hasProperty": {
+                            "id": "qk:Temperature"
+                          },
+                          "https://w3id.org/iadopt/ont/1.1.0hasStatisticalModifier": {
+                            "id": "uom:maximum"
+                          }
+                        }
+                      },
+                      {
+                        "id": "ex:minimumOperatingHumidity",
+                        "featureType": "Observation",
+                        "hasFeatureOfInterest": "ex:DHT22_4578",
+                        "hasResult": {
+                          "qudt:hasUnit": {
+                            "id": "unit:PERCENT"
+                          },
+                          "qudt:value": "0.0"
+                        },
+                        "observedProperty": {
+                          "id": "ex:minSensorEnvironmentHumidityLimit",
+                          "featureType": [
+                            "https://w3id.org/iadopt/ont/1.1.0Variable",
+                            "Property"
+                          ],
+                          "https://w3id.org/iadopt/ont/1.1.0hasObjectOfInterest": {
+                            "id": "ex:airAround_DHT22_4578",
+                            "rdfs:label": "The air immediatly around the DHT22 sensor.",
+                            "skos:broader": {
+                              "id": "et:23",
+                              "rdfs:label": "air"
+                            }
+                          },
+                          "https://w3id.org/iadopt/ont/1.1.0hasProperty": {
+                            "id": "qk:RelativeHumidity"
+                          },
+                          "https://w3id.org/iadopt/ont/1.1.0hasStatisticalModifier": {
+                            "id": "uom:minimum"
+                          }
+                        }
+                      },
+                      {
+                        "id": "ex:maximumOperatingHumidity",
+                        "featureType": "Observation",
+                        "hasFeatureOfInterest": "ex:DHT22_4578",
+                        "hasResult": {
+                          "qudt:hasUnit": {
+                            "id": "unit:PERCENT"
+                          },
+                          "qudt:value": "100.0"
+                        },
+                        "observedProperty": {
+                          "id": "ex:maxSensorEnvironmentHumidityLimit",
+                          "featureType": [
+                            "https://w3id.org/iadopt/ont/1.1.0Variable",
+                            "Property"
+                          ],
+                          "https://w3id.org/iadopt/ont/1.1.0hasObjectOfInterest": {
+                            "id": "ex:airAround_DHT22_4578"
+                          },
+                          "https://w3id.org/iadopt/ont/1.1.0hasProperty": {
+                            "id": "qk:RelativeHumidity"
+                          },
+                          "https://w3id.org/iadopt/ont/1.1.0hasStatisticalModifier": {
+                            "id": "uom:maximum"
+                          }
+                        }
+                      },
+                      {
+                        "id": "ex:mimimalOperatingInputVoltage",
+                        "featureType": "Observation",
+                        "qudt:hasUnit": {
+                          "id": "unit:V"
+                        },
+                        "hasFeatureOfInterest": {
+                          "id": "ex:DHT22_4578_inputVoltage",
+                          "featureType": "FeatureOfInterest",
+                          "rdfs:comment": {
+                            "@language": "en",
+                            "@value": "The DC voltage being supplied to the sensor"
+                          }
+                        },
+                        "hasSimpleResult": {
+                          "@type": "xsd:decimal",
+                          "@value": "3.3"
+                        },
+                        "observedProperty": {
+                          "id": "ex:mimOperatingInputVoltageRestriction",
+                          "featureType": [
+                            "https://w3id.org/iadopt/ont/1.1.0Variable",
+                            "Property"
+                          ],
+                          "https://w3id.org/iadopt/ont/1.1.0hasObjectOfInterest": {
+                            "id": "ex:DHT22_4578"
+                          },
+                          "https://w3id.org/iadopt/ont/1.1.0hasProperty": {
+                            "id": "qk:Voltage"
+                          },
+                          "https://w3id.org/iadopt/ont/1.1.0hasStatisticalModifier": {
+                            "id": "uom:minimum"
+                          }
+                        }
+                      },
+                      {
+                        "id": "ex:maximumOperatingInputVoltage",
+                        "featureType": "Observation",
+                        "qudt:hasUnit": {
+                          "id": "unit:V"
+                        },
+                        "hasFeatureOfInterest": "ex:DHT22_4578_inputVoltage",
+                        "hasSimpleResult": {
+                          "@type": "xsd:decimal",
+                          "@value": "6.0"
+                        },
+                        "observedProperty": {
+                          "id": "ex:maxOperatingInputVoltageRestriction",
+                          "featureType": [
+                            "https://w3id.org/iadopt/ont/1.1.0Variable",
+                            "Property"
+                          ],
+                          "https://w3id.org/iadopt/ont/1.1.0hasObjectOfInterest": {
+                            "id": "ex:DHT22_4578"
+                          },
+                          "https://w3id.org/iadopt/ont/1.1.0hasProperty": {
+                            "id": "qk:Voltage"
+                          },
+                          "https://w3id.org/iadopt/ont/1.1.0hasStatisticalModifier": {
+                            "id": "uom:maximum"
+                          }
+                        }
+                      },
+                      {
+                        "id": "ex:nominalOperatingInputVoltage",
+                        "featureType": "Observation",
+                        "qudt:hasUnit": {
+                          "id": "unit:V"
+                        },
+                        "hasFeatureOfInterest": "ex:DHT22_4578_inputVoltage",
+                        "hasSimpleResult": {
+                          "@type": "xsd:decimal",
+                          "@value": "5.0"
+                        },
+                        "observedProperty": {
+                          "id": "ex:nominalOperatingInputVoltageRestriction",
+                          "featureType": [
+                            "https://w3id.org/iadopt/ont/1.1.0Variable",
+                            "Property"
+                          ],
+                          "https://w3id.org/iadopt/ont/1.1.0hasObjectOfInterest": {
+                            "id": "ex:DHT22_4578"
+                          },
+                          "https://w3id.org/iadopt/ont/1.1.0hasProperty": {
+                            "id": "qk:Voltage"
+                          },
+                          "https://w3id.org/iadopt/ont/1.1.0hasStatisticalModifier": {
+                            "id": "uom:average"
+                          }
+                        }
+                      }
+                    ],
+                    "resultTime": "2017-01-01T00:00:00+00:00"
+                  }
+                ],
+                "hasSubSystem": [
+                  "ex:DHT22_4578_TemperatureSensor",
+                  {
+                    "id": "ex:DHT22_4578_HumiditySensor",
+                    "featureType": [
+                      "Sensor",
+                      "System"
+                    ],
+                    "rdfs:comment": {
+                      "@language": "en",
+                      "@value": "The embedded humidity sensor, a specific instance of humidity sensor."
+                    },
+                    "sosa:hasOperatingConditions": {
+                      "id": "ex:DHT22_4578_HumiditySensorNormalOperatingConditions"
+                    },
+                    "sosa:hasSystemCapability": {
+                      "id": "ex:DHT22_4578_HumiditySensorCapabilities",
+                      "featureType": "ObservationCollection",
+                      "hasMember": [
+                        {
+                          "id": "ex:DHT22_4578_minimumMeasureableRelativeHumidity",
+                          "featureType": "Observation",
+                          "hasFeatureOfInterest": "ex:DHT22_4578_HumiditySensor",
+                          "hasResult": {
+                            "qudt:hasUnit": {
+                              "id": "unit:PERCENT"
+                            },
+                            "qudt:value": "0.0"
+                          },
+                          "observedProperty": "ex:minSensorEnvironmentHumidityLimit"
+                        },
+                        {
+                          "id": "ex:DHT22_4578_maximumMeasureableRelativeHumidity",
+                          "featureType": "Observation",
+                          "hasFeatureOfInterest": "ex:DHT22_4578_HumiditySensor",
+                          "hasResult": {
+                            "qudt:hasUnit": {
+                              "id": "unit:PERCENT"
+                            },
+                            "qudt:value": "100.0"
+                          },
+                          "observedProperty": "ex:maxSensorEnvironmentHumidityLimit"
+                        },
+                        {
+                          "id": "ex:DHT22_4578_RelativeHumidityFrequency",
+                          "featureType": "Observation",
+                          "rdfs:comment": {
+                            "@language": "en",
+                            "@value": "The smallest possible time between one observation and the next is 2 s on average."
+                          },
+                          "hasFeatureOfInterest": "ex:DHT22_4578_HumiditySensor",
+                          "hasResult": {
+                            "qudt:hasUnit": {
+                              "id": "unit:SEC"
+                            },
+                            "qudt:value": "2.0"
+                          },
+                          "observedProperty": {
+                            "id": "ex:DHT22_4578_RelativeHumidityFrequencyLimit",
+                            "featureType": [
+                              "https://w3id.org/iadopt/ont/1.1.0Variable",
+                              "Property"
+                            ],
+                            "https://w3id.org/iadopt/ont/1.1.0hasObjectOfInterest": {
+                              "id": "ex:DHT22_4578_HumiditySensor"
+                            },
+                            "https://w3id.org/iadopt/ont/1.1.0hasProperty": {
+                              "id": "qk:Period"
+                            },
+                            "https://w3id.org/iadopt/ont/1.1.0hasStatisticalModifier": {
+                              "id": "uom:average"
+                            }
+                          }
+                        }
+                      ],
+                      "sosa:hasValidityContext": {
+                        "id": "ex:DHT22_4578_HumiditySensorNormalOperatingConditions"
+                      },
+                      "resultTime": "2017-01-01T00:00:00+00:00"
+                    },
+                    "implements": {
+                      "id": "ex:DHT22_Procedure",
+                      "featureType": "sosa:ObservingProcedure",
+                      "hasOutput": {
+                        "id": "ex:DHT22_output",
+                        "dct:conformsTo": {
+                          "id": "ex:myProfile",
+                          "featureType": "prof:Profile",
+                          "prof:hasResource": {
+                            "featureType": "prof:ResourceDescriptor",
+                            "dct:conformsTo": {
+                              "id": "https://www.w3.org/TR/shacl/"
+                            },
+                            "dct:format": {
+                              "id": "https://w3id.org/mediatype/text/turtle"
+                            },
+                            "prof:hasArtifact": {
+                              "id": "http://example.org/profile/x/resource/validator.ttl"
+                            },
+                            "prof:hasRole": [
+                              {
+                                "id": "role:validation"
+                              },
+                              {
+                                "id": "role:schema"
+                              }
+                            ]
+                          }
+                        },
+                        "dct:format": {
+                          "id": "https://w3id.org/mediatype/text/turtle"
+                        },
+                        "rdfs:comment": {
+                          "@language": "en",
+                          "@value": "The output is a RDF Graph that describes both the temperature and the humidity. It can be validated by a SHACL shapes graph."
+                        }
+                      }
+                    }
+                  }
+                ],
+                "ex:serialNumber": "4578"
+              },
+              "hasSimpleResult": {
+                "@type": "xsd:decimal",
+                "@value": "-40.0"
+              },
+              "observedProperty": {
+                "id": "ex:minimumSensorTemperatureLimit",
+                "featureType": [
+                  "https://w3id.org/iadopt/ont/1.1.0Variable",
+                  "Property"
+                ],
+                "https://w3id.org/iadopt/ont/1.1.0hasObjectOfInterest": {
+                  "id": "ex:DHT22_4578"
+                },
+                "https://w3id.org/iadopt/ont/1.1.0hasProperty": {
+                  "id": "qk:Temperature"
+                },
+                "https://w3id.org/iadopt/ont/1.1.0hasStatisticalModifier": {
+                  "id": "uom:minimum"
+                }
+              }
+            },
+            "ex:maximumOperatingTemperature",
+            "ex:mimimalOperatingInputVoltage",
+            "ex:maximumOperatingInputVoltage",
+            "ex:nominalOperatingInputVoltage"
+          ],
+          "resultTime": "2017-01-01T00:00:00+00:00"
+        },
+        "sosa:hasSystemCapability": {
+          "id": "ex:DHT22_4578_TemperatureSensorCapabilities"
+        },
+        "implements": "ex:DHT22_Procedure"
+      },
+      "hasSimpleResult": {
+        "@type": "xsd:decimal",
+        "@value": "-40.0"
+      },
+      "observedProperty": {
+        "id": "ex:DHT22_4578_minimumMeasureableTemperatureLimit",
+        "featureType": [
+          "https://w3id.org/iadopt/ont/1.1.0Variable",
+          "Property"
+        ],
+        "https://w3id.org/iadopt/ont/1.1.0hasObjectOfInterest": {
+          "id": "ex:airAround_DHT22_4578"
+        },
+        "https://w3id.org/iadopt/ont/1.1.0hasProperty": {
+          "id": "qk:Temperature"
+        },
+        "https://w3id.org/iadopt/ont/1.1.0hasStatisticalModifier": {
+          "id": "uom:minimum"
+        }
+      }
+    },
+    {
+      "id": "ex:DHT22_4578_maximumMeasureableTemperature",
+      "featureType": "Observation",
+      "hasFeatureOfInterest": "ex:DHT22_4578_TemperatureSensor",
+      "hasResult": {
+        "qudt:hasUnit": {
+          "id": "unit:DEG_C"
+        },
+        "qudt:value": "80.0"
+      },
+      "observedProperty": {
+        "id": "ex:DHT22_4578_maximumMeasureableTemperatureLimit",
+        "featureType": [
+          "https://w3id.org/iadopt/ont/1.1.0Variable",
+          "Property"
+        ],
+        "https://w3id.org/iadopt/ont/1.1.0hasObjectOfInterest": {
+          "id": "ex:airAround_DHT22_4578"
+        },
+        "https://w3id.org/iadopt/ont/1.1.0hasProperty": {
+          "id": "qk:Temperature"
+        },
+        "https://w3id.org/iadopt/ont/1.1.0hasStatisticalModifier": {
+          "id": "uom:maximum"
+        }
+      }
+    },
+    {
+      "id": "ex:DHT22_4578_TemperatureMeasurementAccuracy",
+      "featureType": "Observation",
+      "hasFeatureOfInterest": "ex:DHT22_4578_TemperatureSensor",
+      "hasResult": {
+        "qudt:hasUnit": {
+          "id": "unit:DEG_C"
+        },
+        "qudt:value": "0.5"
+      },
+      "observedProperty": "ex:Accuracy"
+    },
+    {
+      "id": "ex:DHT22_4578_TemperatureMeasurementSensitivity",
+      "featureType": "Observation",
+      "hasFeatureOfInterest": "ex:DHT22_4578_TemperatureSensor",
+      "hasResult": {
+        "qudt:hasUnit": {
+          "id": "unit:DEG_C"
+        },
+        "qudt:value": "0.1"
+      },
+      "observedProperty": [
+        "ex:Sensitivity",
+        "ex:Resolution"
+      ]
+    },
+    {
+      "id": "ex:DHT22_4578_TemperatureMeasurementFrequency",
+      "featureType": "Observation",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The smallest possible time between one observation and the next is 2 s on average."
+      },
+      "hasFeatureOfInterest": "ex:DHT22_4578_TemperatureSensor",
+      "hasResult": {
+        "qudt:hasUnit": {
+          "id": "unit:SEC"
+        },
+        "qudt:value": "2.0"
+      },
+      "observedProperty": {
+        "id": "ex:DHT22_4578_TemperatureMeasurementFrequencyLimit",
+        "featureType": [
+          "https://w3id.org/iadopt/ont/1.1.0Variable",
+          "Property"
+        ],
+        "https://w3id.org/iadopt/ont/1.1.0hasObjectOfInterest": {
+          "id": "ex:airAround_DHT22_4578"
+        },
+        "https://w3id.org/iadopt/ont/1.1.0hasProperty": {
+          "id": "qk:Period"
+        },
+        "https://w3id.org/iadopt/ont/1.1.0hasStatisticalModifier": {
+          "id": "uom:average"
+        }
+      }
+    }
+  ],
+  "sosa:hasValidityContext": {
+    "id": "ex:DHT22_4578_TemperatureSensorNormalOperatingConditions"
+  },
+  "resultTime": "2017-01-01T00:00:00+00:00"
+}

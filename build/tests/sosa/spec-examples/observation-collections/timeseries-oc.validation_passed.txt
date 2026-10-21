@@ -1,0 +1,35 @@
+Validation report for ogc.sosa.spec-examples.observation-collections - SOSA specification examples: Observation Collections
+Generated 2026-10-21T10:02:34.503297+00:00
+=== Files ===
+Using https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/timeseries-oc.ttl from examples
+Output Turtle timeseries-oc.ttl created
+=== End Files ===
+
+=== Turtle ===
+Prefixes are defined for cdt, equipment, ex, geo, gr, gs1, om, owl, prov, qk, qudt, rdf, rdfp, rdfs, schema, seas, sensor, sh, skos, sosa, system, time, unit, xsd
+=== End Turtle ===
+
+=== SHACL ===
+Validation result for _sources/properties/execution/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/execution/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: ex:ts159c
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: ex:ts159c
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: ex:t4,ex:t2,ex:t1,ex:t3
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: ex:t4,ex:t2,ex:t1,ex:t3
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: ex:t2/sosa:hasSimpleResult,ex:t1/sosa:hasSimpleResult,ex:t3/sosa:hasSimpleResult
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: ex:t4,ex:t2,ex:t1,ex:t3
+
+Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: ex:ts159c
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: ex:t4,ex:t2,ex:t1,ex:t3
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+
+=== End SHACL ===
+

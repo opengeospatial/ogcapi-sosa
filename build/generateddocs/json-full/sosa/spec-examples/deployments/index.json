@@ -1,0 +1,323 @@
+
+
+{
+  "itemIdentifier": "ogc.sosa.spec-examples.deployments",
+  "name": "SOSA specification examples: Deployments",
+  "abstract": "Examples from the SOSA/SSN specification whose root resource is a deployments resource. Each Turtle example is validated against the SHACL rules of `ogc.sosa.properties.deployment`, and converted to JSON-LD by the `ttl-to-jsonld` transform, whose output is validated against the `ogc.sosa.properties.deployment` building block (JSON Schema, JSON-LD context and SHACL).",
+  "status": "under-development",
+  "dateTimeAddition": "2023-04-13T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ogc-building-block-register",
+  "version": "1.0",
+  "dateOfLastChange": "2026-10-21",
+  "sources": [
+    {
+      "title": "Semantic Sensor Network Ontology",
+      "link": "https://www.w3.org/TR/vocab-ssn/"
+    }
+  ],
+  "maturity": "development",
+  "scope": "development",
+  "tags": [
+    "sosa",
+    "ssn",
+    "observations",
+    "o&m",
+    "OMS",
+    "OWA"
+  ],
+  "group": "Spec Examples",
+  "highlighted": false,
+  "shaclShapes": {},
+  "dependsOn": [
+    "ogc.sosa.properties.deployment"
+  ],
+  "schema": {
+    "application/yaml": "https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/spec-examples/deployments/schema.yaml",
+    "application/json": "https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/spec-examples/deployments/schema.json"
+  },
+  "sourceSchema": "https://rob-metalinkage.github.io/ogcapi-sosa/_sources/spec-examples/deployments/schema.yaml",
+  "ldContext": "https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/spec-examples/deployments/context.jsonld",
+  "resolvedSchemaProperties": "https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/spec-examples/deployments/resolvedProperties.json",
+  "sourceFiles": "https://rob-metalinkage.github.io/ogcapi-sosa/_sources/spec-examples/deployments/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/rob-metalinkage/ogcapi-sosa/blob/master/build/tests/sosa/spec-examples/deployments/",
+  "transforms": [
+    {
+      "id": "ttl-to-jsonld",
+      "description": "Frames the root resource (Deployment) of a SOSA Turtle example and compacts it with the `ogc.sosa.properties.deployment` JSON-LD context, which the output's `@context` references (plus only the example's own prefixes and literal types). The output is validated against `ogc.sosa.properties.deployment`.",
+      "type": "python",
+      "ref": "https://rob-metalinkage.github.io/ogcapi-sosa/_sources/spec-examples/transforms/ttl_to_sosa_json.py",
+      "inputs": {
+        "mediaTypes": [
+          {
+            "mimeType": "text/turtle",
+            "label": "RDF/Turtle",
+            "defaultExtension": "ttl"
+          }
+        ]
+      },
+      "outputs": {
+        "mediaTypes": [
+          {
+            "mimeType": "application/json",
+            "defaultExtension": "json",
+            "label": "JSON"
+          }
+        ],
+        "profiles": [
+          "bblocks://ogc.sosa.properties.deployment"
+        ]
+      },
+      "metadata": {
+        "target": "ogc.sosa.properties.deployment",
+        "rootClasses": [
+          "http://www.w3.org/ns/sosa/Deployment"
+        ],
+        "containerClasses": [
+          "http://www.w3.org/ns/sosa/ObservationCollection",
+          "http://www.w3.org/ns/sosa/SampleCollection",
+          "http://www.w3.org/ns/sosa/Observation",
+          "http://www.w3.org/ns/sosa/Sampling",
+          "http://www.w3.org/ns/sosa/Actuation",
+          "http://www.w3.org/ns/sosa/Deployment"
+        ],
+        "suppressTerms": [
+          "features"
+        ],
+        "_prefixes": {
+          "cdt": "http://w3id.org/lindt/custom_datatypes#",
+          "equipment": "https://rdf.ag/o/equipment/",
+          "ex": "https://example.org/data/",
+          "geo": "http://www.opengis.net/ont/geosparql#",
+          "gr": "http://purl.org/goodrelations/v1#",
+          "gs1": "https://gs1.org/voc/",
+          "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+          "owl": "http://www.w3.org/2002/07/owl#",
+          "prov": "http://www.w3.org/ns/prov#",
+          "qk": "http://qudt.org/vocab/quantitykind/",
+          "qudt": "http://qudt.org/schema/qudt/",
+          "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+          "rdfp": "https://w3id.org/rdfp/",
+          "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+          "schema": "http://schema.org/",
+          "seas": "https://w3id.org/seas/",
+          "sensor": "https://example.org/sensor/",
+          "sh": "http://www.w3.org/ns/shacl#",
+          "skos": "http://www.w3.org/2004/02/skos/core#",
+          "sosa": "http://www.w3.org/ns/sosa/",
+          "system": "http://www.w3.org/ns/ssn/systems/",
+          "time": "http://www.w3.org/2006/time#",
+          "unit": "http://qudt.org/vocab/unit/",
+          "xsd": "http://www.w3.org/2001/XMLSchema#"
+        }
+      },
+      "code": "# bblocks python transform: SOSA/SSN Turtle -> JSON-LD conforming to a target SOSA bblock.\n#\n# Installed by the spec-examples-jsonld skill. Referenced from transforms.yaml of each\n# _sources/spec-examples/<group>/ block; runs inside bblocks-postprocess (rdflib + pyld).\n#\n# metadata (transforms.yaml):\n#   target: bblock id         the output profile; its published JSON-LD context is referenced\n#                             by the output's @context\n#   rootClasses: [IRI, ...]   classes whose instances become the root object\n#   containerClasses: [IRI]   classes whose SOSA links embed a root candidate (default rootClasses)\n#   suppressTerms: [term]     target context terms not to use when compacting (e.g. the GeoJSON\n#                             alias 'features' for sosa:hasMember, so the schema's 'hasMember' is used)\n# per example (examples.yaml):\n#   x-root: IRI               pick this resource as the root (multi-root examples)\n#   snippet shacl-closure     (from the transform context) closures that may put the example's\n#                             resources in collections: the root takes a property it lacks from\n#                             the nearest containing collection with a single value for it; a\n#                             closure may also give an example resource such a value directly\n#\n# Output: the root resource framed and compacted with the target bblock's JSON-LD context, with\n#   \"@context\": [<target context URL>, {<only what the target context does not define>}]\n# The local part holds the example's own prefixes and typed-literal coercions for its non-SOSA\n# properties; it never redefines a target term. Times are plain xsd:dateTime strings: a\n# phenomenonTime time:Instant with a single date-time position becomes a string, anything more\n# complex (e.g. a time:Interval) stays an object using the target's time terms.\nimport json\nimport re\nfrom pathlib import Path\nfrom urllib.parse import urljoin\n\nfrom pyld import jsonld\nfrom rdflib import BNode, Graph, Literal, Namespace, RDF, URIRef\n\nSOSA_SSN = ('http://www.w3.org/ns/sosa/', 'http://www.w3.org/ns/ssn/')\nSOSA = Namespace('http://www.w3.org/ns/sosa/')\nTIME = Namespace('http://www.w3.org/2006/time#')\nXSD = Namespace('http://www.w3.org/2001/XMLSchema#')\nTZ = re.compile(r'(Z|[+-]\\d{2}:\\d{2})$')\nPLAIN = (None, XSD.string, URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#langString'))\n\n\ndef _get(obj, key, default=None):\n    if obj is None:\n        return default\n    if isinstance(obj, dict):\n        return obj.get(key, default)\n    return getattr(obj, key, default)\n\n\nmeta = transform_metadata.metadata\ntctx = transform_metadata.context\nworking_dir = Path(_get(tctx, 'working_dir') or '.')\nroot_classes = [URIRef(c) for c in _get(meta, 'rootClasses', [])]\ncontainer_classes = [URIRef(c) for c in (_get(meta, 'containerClasses') or [])] or root_classes\nexample = _get(tctx, 'example') or {}\nwanted_root = _get(example, 'x-root')\n\n# --- target JSON-LD context: local file (to compact with) and published URL (to reference) --\nown_ctx = _get(tctx, 'jsonld_context_path')\nif not own_ctx or not (working_dir / own_ctx).is_file():\n    raise FileNotFoundError(f'JSON-LD context for this block not found ({own_ctx})')\ntarget = _get(meta, 'target')\ntarget_ctx = own_ctx  # the block $refs the target schema, so its context is the target's\nif target:\n    # annotated/<register subdirs>/<own subdirs>/context.jsonld -> .../<target subdirs>/...\n    id_prefix = _get(tctx, 'id_prefix') or ''\n    own_parts = _get(tctx, 'bblock_id')[len(id_prefix):].split('.')\n    target_parts = target[len(id_prefix):].split('.') if target.startswith(id_prefix) else None\n    ctx_parts = Path(own_ctx).parts\n    if target_parts and tuple(ctx_parts[-1 - len(own_parts):-1]) == tuple(own_parts):\n        candidate = Path(*ctx_parts[:-1 - len(own_parts)], *target_parts, ctx_parts[-1])\n        if (working_dir / candidate).is_file():\n            target_ctx = str(candidate.as_posix())\ntarget_context = json.loads((working_dir / target_ctx).read_text(encoding='utf-8'))['@context']\nbase_url = _get(tctx, 'base_url')\ntarget_ctx_ref = urljoin(base_url, Path(target_ctx).as_posix()) if base_url else Path(target_ctx).as_posix()\n\n\ndef _context_iris(ctx, prefixes=None):\n    \"\"\"IRIs of all terms defined in a context, including property-scoped ones.\"\"\"\n    if isinstance(ctx, list):\n        return set().union(*[_context_iris(c, prefixes) for c in ctx]) if ctx else set()\n    if not isinstance(ctx, dict):\n        return set()\n    prefixes = dict(prefixes or {})\n    prefixes.update({k: v for k, v in ctx.items() if isinstance(v, str) and v.endswith(('/', '#'))})\n\n    def expand(v):\n        if isinstance(v, str) and ':' in v and v.split(':', 1)[0] in prefixes:\n            return prefixes[v.split(':', 1)[0]] + v.split(':', 1)[1]\n        return v\n    iris = set()\n    for k, v in ctx.items():\n        if k.startswith('@'):\n            continue\n        iris.add(expand(v.get('@id', k) if isinstance(v, dict) else v))\n        if isinstance(v, dict) and '@context' in v:\n            iris |= _context_iris(v['@context'], prefixes)\n    return iris\n\n\ntarget_terms = set(target_context) if isinstance(target_context, dict) else set()\ntarget_iris = _context_iris(target_context)\n\n# --- parse --------------------------------------------------------------------------------\nsrc = transform_metadata.source_mime_type or 'text/turtle'\ntry:\n    g = Graph(bind_namespaces='none')\nexcept TypeError:  # rdflib < 7\n    g = Graph()\n# relative IRIs resolve against the example's URL, as in Turtle validation\nsnippet_ref = _get(_get(tctx, 'snippet'), 'ref')\ng.parse(data=input_data, format='json-ld' if 'json' in src else 'turtle',\n        publicID=snippet_ref if isinstance(snippet_ref, str) and re.match(r'^https?://', snippet_ref) else None)\nprefixes = {p: str(ns) for p, ns in g.namespaces()\n            if p and not str(ns).startswith(SOSA_SSN) and p not in ('sosa', 'ssn', 'ssn-system')}\nfor p, ns in (_get(meta, '_prefixes') or {}).items():\n    prefixes.setdefault(p, ns)\n# never redefine a target term\nprefixes = {p: ns for p, ns in prefixes.items() if p not in target_terms}\n\n\n# --- root selection -----------------------------------------------------------------------\ndef _instances(classes):\n    return {s for c in classes for s in g.subjects(RDF.type, c)}\n\n\ndef _roots():\n    inst = _instances(root_classes)\n    containers = _instances(container_classes)\n    nested = set()\n    for s, p, o in g:\n        if o not in inst or s == o or p == RDF.type:\n            continue\n        if isinstance(o, BNode) or not str(p).startswith(SOSA_SSN) or s in containers:\n            nested.add(o)\n    return sorted(inst - nested, key=str)\n\n\nif wanted_root:\n    root = URIRef(wanted_root)\n    if (root, None, None) not in g:\n        raise ValueError(f'x-root {wanted_root} has no statements in the example')\nelse:\n    roots = _roots()\n    if not roots:\n        raise ValueError('no root resource of class ' + ', '.join(root_classes) + ' found')\n    root = roots[0]\n\n\n# --- values inherited from containing collections (SOSA collection rule 2) ------------------\n# The snippet's SHACL closures (passed in the transform context) may put the example's resources\n# in collections. A property the root lacks takes the value of the nearest containing collection\n# (in the example or a closure) that has it, if that collection has a single value - as the SHACL\n# rules do - so the output is complete on its own.\ndef _closure_graph():\n    cg = Graph()\n    files_path = _get(tctx, 'bblock_files_path') or '.'\n    for ref in _get(_get(tctx, 'snippet'), 'shacl-closure') or []:\n        if re.match(r'^https?://', ref):\n            cg.parse(ref)\n            continue\n        for candidate in (working_dir / files_path / ref, working_dir / ref):\n            if candidate.is_file():\n                cg.parse(candidate, format='turtle' if candidate.suffix == '.ttl' else None)\n                break\n        else:\n            raise FileNotFoundError(f'SHACL closure {ref} not found')\n    return cg\n\n\nGEOJSON_FEATURES = URIRef('https://purl.org/geojson/vocab#features')\nINHERITED = [SOSA[p] for p in (\n    'resultTime', 'phenomenonTime', 'startTime', 'endTime', 'hasFeatureOfInterest',\n    'hasUltimateFeatureOfInterest', 'observedProperty', 'actsOnProperty', 'usedProcedure',\n    'madeBySensor', 'madeByActuator', 'madeBySampler', 'madeBySystem')]\n\n\ndef _containers(u, node):\n    return set(u.subjects(SOSA.hasMember, node)) | set(u.subjects(GEOJSON_FEATURES, node)) \\\n        | set(u.objects(node, SOSA.memberOf))\n\n\ndef _copy(u, node):\n    \"\"\"Copy a blank node value's description from u into g.\"\"\"\n    if isinstance(node, BNode):\n        for p, o in u.predicate_objects(node):\n            if (node, p, o) not in g:\n                g.add((node, p, o))\n                _copy(u, o)\n\n\ndef _inherit(u, node):\n    for p in INHERITED:\n        if (node, p, None) in g:\n            continue\n        seen, level = {node}, _containers(u, node)\n        while level:\n            values = {v for c in level for v in u.objects(c, p)}\n            if values:\n                if len(values) == 1:\n                    value = values.pop()\n                    g.add((node, p, value))\n                    _copy(u, value)\n                break\n            seen |= level\n            level = {c for n in level for c in _containers(u, n)} - seen\n\n\nclosure = _closure_graph()\nif len(closure):\n    # values a closure gives the example's own resources directly\n    direct = [(s, p, o) for s, p, o in closure\n              if p in INHERITED and (s, None, None) in g and (s, p, None) not in g]\n    for s, p, o in direct:\n        g.add((s, p, o))\n        _copy(closure, o)\n    u = g + closure\n    # the root, and the example's resources that are members of closure-only collections (the\n    # output may embed them); members of the example's own collections inherit from those\n    in_closure = {m for p in (SOSA.hasMember, GEOJSON_FEATURES)\n                  for c, m in closure.subject_objects(p) if (c, None, None) not in g} \\\n        | {m for m, c in closure.subject_objects(SOSA.memberOf) if (c, None, None) not in g}\n    for node in sorted(n for n in in_closure if (n, None, None) in g and n != root) + [root]:\n        _inherit(u, node)\n\n\n# --- times: plain xsd:dateTime strings where the value is a single date-time ----------------\ndef _retype(p, wanted, accept):\n    for s, o in list(g.subject_objects(p)):\n        if isinstance(o, Literal) and o.datatype in accept and o.datatype != wanted:\n            if wanted == XSD.dateTimeStamp and not TZ.search(str(o)):\n                continue\n            g.remove((s, p, o))\n            g.add((s, p, Literal(str(o), datatype=wanted)))\n\n\nDATETIMES = (XSD.dateTime, XSD.dateTimeStamp)\nfor p in (SOSA.resultTime, SOSA.phenomenonTime, SOSA.startTime, SOSA.endTime, TIME.inXSDDateTime):\n    _retype(p, XSD.dateTime, DATETIMES)\n_retype(TIME.inXSDDateTimeStamp, XSD.dateTimeStamp, DATETIMES)\n\nfor s, inst in list(g.subject_objects(SOSA.phenomenonTime)):\n    if not isinstance(inst, BNode) or len(list(g.subject_predicates(inst))) != 1:\n        continue\n    po = list(g.predicate_objects(inst))\n    types = {o for p, o in po if p == RDF.type}\n    values = [(p, o) for p, o in po if p != RDF.type]\n    if (types <= {TIME.Instant} and len(values) == 1\n            and values[0][0] in (TIME.inXSDDateTime, TIME.inXSDDateTimeStamp)\n            and isinstance(values[0][1], Literal) and values[0][1].datatype in DATETIMES):\n        g.remove((inst, None, None))\n        g.remove((s, SOSA.phenomenonTime, inst))\n        g.add((s, SOSA.phenomenonTime, Literal(str(values[0][1]), datatype=XSD.dateTime)))\n\n# --- typed literals of the example's own properties: coerce in the local context -----------\n# (integers, doubles and booleans are serialized as native JSON values and need none)\nNATIVE = (XSD.integer, XSD.double, XSD.boolean)\ncoercions = {}\nfor p in set(g.predicates()):\n    if str(p) in target_iris or str(p).startswith(SOSA_SSN):\n        continue\n    dts = {o.datatype if isinstance(o, Literal) else 'node' for o in g.objects(None, p)}\n    if len(dts) == 1 and (dt := dts.pop()) not in PLAIN + NATIVE and dt != 'node':\n        coercions[p] = dt\n\n\ndef _curie(iri):\n    for pfx, ns in sorted(prefixes.items(), key=lambda kv: -len(kv[1])):\n        if iri.startswith(ns) and re.fullmatch(r'[A-Za-z_][\\w.-]*', iri[len(ns):] or '-'):\n            return f'{pfx}:{iri[len(ns):]}'\n    return None\n\n\nlocal_context = dict(prefixes)\nfor p, dt in coercions.items():\n    term = _curie(str(p))\n    if term and term not in target_terms:\n        dt = str(dt)\n        local_context[term] = {'@type': 'xsd:' + dt[len(str(XSD)):] if dt.startswith(str(XSD))\n                               and 'xsd' not in target_terms else _curie(dt) or dt}\n\n\n# Blank-node roots cannot be addressed by @id in a frame: skolemize just that node.\nif isinstance(root, BNode):\n    skolem = URIRef(f'urn:x-bnode:{root}')\n    for p, o in list(g.predicate_objects(root)):\n        g.remove((root, p, o)); g.add((skolem, p, o))\n    for s, p in list(g.subject_predicates(root)):\n        g.remove((s, p, root)); g.add((s, p, skolem))\n    root = skolem\n\n# --- frame + compact ----------------------------------------------------------------------\nexpanded = json.loads(g.serialize(format='json-ld', use_native_types=True))\n# A term coercing to a datatype (e.g. phenomenonTime -> xsd:dateTime) is not selected for an\n# object value (e.g. a time:Interval), so compact with those coercions removed and turn the\n# matching value objects back into plain strings afterwards (_plain): same JSON, same RDF.\ncoerced = {t: d['@type'] for t, d in target_context.items()\n           if isinstance(d, dict) and d.get('@type') not in (None, '@id', '@vocab', '@json')} \\\n    if isinstance(target_context, dict) else {}\ncompact_target = {t: ({k: v for k, v in d.items() if k != '@type'} if t in coerced else d)\n                  for t, d in target_context.items()} if coerced else target_context\nframe_context = dict(local_context, **{t: None for t in (_get(meta, 'suppressTerms') or [])})\ncontext = [compact_target, frame_context] if frame_context else compact_target\nframed = jsonld.frame(expanded, {'@context': context, '@id': str(root)},\n                      {'embed': '@once', 'omitGraph': True})\nframed.pop('@context', None)\nif '@graph' in framed:  # defensive: omitGraph should have collapsed a single match\n    framed = framed['@graph'][0]\nif str(framed.get('id', '')).startswith('urn:x-bnode:'):\n    framed.pop('id')\n\n\ndef _tidy(node):\n    \"\"\"Value objects keep the @type keyword rather than the 'featureType' alias of the target.\"\"\"\n    if isinstance(node, list):\n        return [_tidy(v) for v in node]\n    if not isinstance(node, dict):\n        return node\n    node = {k: _tidy(v) for k, v in node.items()}\n    if '@value' in node:\n        node = {('@type' if k in ('featureType', 'type') else k): v for k, v in node.items()}\n    return node\n\n\ndef _expand_type(t):\n    if isinstance(t, str) and ':' in t and t.split(':', 1)[0] in local_context:\n        return local_context[t.split(':', 1)[0]] + t.split(':', 1)[1]\n    return t\n\n\ndef _plain(node):\n    \"\"\"Values of datatype-coerced target terms as plain strings (see compact_target).\"\"\"\n    if isinstance(node, list):\n        return [_plain(v) for v in node]\n    if not isinstance(node, dict):\n        return node\n    out = {}\n    for k, v in node.items():\n        if k in coerced:\n            vs = [{'@value': x['@value']} if isinstance(x, dict) and set(x) == {'@value', '@type'}\n                  and _expand_type(x['@type']) == coerced[k] else x for x in (v if isinstance(v, list) else [v])]\n            vs = [x['@value'] if isinstance(x, dict) and set(x) == {'@value'} else _plain(x) for x in vs]\n            out[k] = vs if isinstance(v, list) else vs[0]\n        else:\n            out[k] = _plain(v)\n    return out\n\n\nframed = _plain(_tidy(framed))\n\n\ndef _usage(node, prefixes_used, keys_used):\n    if isinstance(node, dict):\n        for k, v in node.items():\n            keys_used.add(k)\n            _usage(k, prefixes_used, keys_used); _usage(v, prefixes_used, keys_used)\n    elif isinstance(node, list):\n        for v in node:\n            _usage(v, prefixes_used, keys_used)\n    elif isinstance(node, str) and ':' in node:\n        prefixes_used.add(node.split(':', 1)[0])\n\n\nused_prefixes, used_keys = set(), set()\n_usage(framed, used_prefixes, used_keys)\nlocal_context = {k: v for k, v in local_context.items()\n                 if (k in used_prefixes if isinstance(v, str) else k in used_keys)}\nfor k, v in list(local_context.items()):\n    if isinstance(v, dict):  # a used coercion needs its own prefixes\n        for c in (k, v['@type']):\n            pfx = c.split(':', 1)[0] if ':' in c else None\n            if pfx in prefixes:\n                local_context.setdefault(pfx, prefixes[pfx])\n            elif pfx == 'xsd':\n                local_context.setdefault('xsd', str(XSD))\nout = {'@context': [target_ctx_ref, local_context] if local_context else target_ctx_ref, **framed}\noutput_data = json.dumps(out, indent=2, ensure_ascii=False)\n"
+    }
+  ],
+  "description": "## SOSA specification examples: Deployments\n\nExamples from the [SOSA/SSN specification](https://w3c.github.io/sdw-sosa-ssn/ssn/) whose root resource is validated against `ogc.sosa.properties.deployment`.\n\nEach Turtle example is:\n\n1. validated as RDF against the SHACL shapes inherited from `ogc.sosa.properties.deployment`;\n2. converted by the `ttl-to-jsonld` transform: the root resource is framed and compacted with the `ogc.sosa.properties.deployment` JSON-LD context;\n3. the transform output is validated against `ogc.sosa.properties.deployment` (output profile validation): JSON Schema, JSON-LD uplift with the target context, and SHACL.\n\n<!-- Generated by the spec-examples-jsonld skill (sync_spec_example_blocks.py); edit the plan, not this file. -->\n",
+  "examples": [
+    {
+      "title": "Example LocatedDeployment.ttl",
+      "content": "Example included in the SOSA/SSN specification section(s): [ModelLocation](https://w3c.github.io/sdw-sosa-ssn/ssn/). Source: [LocatedDeployment.ttl](https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/LocatedDeployment.ttl)",
+      "base-output-filename": "LocatedDeployment",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/LocatedDeployment.ttl",
+          "url": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/deployments/LocatedDeployment.ttl",
+          "transformResults": {
+            "ttl-to-jsonld": {
+              "success": true,
+              "sizeBytes": 888,
+              "url": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/deployments/transforms/LocatedDeployment.ttl-to-jsonld.json",
+              "profilesValidation": {
+                "ogc.sosa.properties.deployment": {
+                  "result": true,
+                  "report": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/deployments/transforms/ogc.sosa.properties.deployment/_report.json",
+                  "upliftedFiles": {
+                    "jsonld": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/deployments/transforms/ogc.sosa.properties.deployment/LocatedDeployment.ttl-to-jsonld.jsonld",
+                    "ttl": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/deployments/transforms/ogc.sosa.properties.deployment/LocatedDeployment.ttl-to-jsonld.ttl"
+                  }
+                }
+              }
+            }
+          },
+          "sizeBytes": 844,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix geo: <http://www.opengis.net/ont/geosparql#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:TH2-56-2024 a sosa:Deployment ;\n  sosa:deployedSystem ex:IBS-TH2-56 ;\n  sosa:deployedOnPlatform ex:Room31C ;\n  sosa:startTime \"2024-01-01T00:00:00+00:00\"^^xsd:dateTime ;\n  sosa:endTime \"2024-12-31T23:59:59+00:00\"^^xsd:dateTime ;\n.\nex:Room31C a sosa:Platform ;\n  geo:hasGeometry [ \n    a geo:Point ;\n    geo:asWKT \"POINT (-73.877244 45.511672)\"^^geo:WktLiteral ;\n  ] ;\n.\nex:IBS-TH2-56 \n    a sosa:Sensor ;\n    rdfs:label \"12gth456a-23190\"^^ex:serialNumber ;\n  . \nex:serialNumber a rdfs:Datatype ;\n    rdfs:subClassOf xsd:string ;\n."
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl#",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example dht22-deployment.ttl (root Room145Deployment)",
+      "content": "Example referenced from the SOSA/SSN specification section(s): [CompleteExamples](https://w3c.github.io/sdw-sosa-ssn/ssn/). Source: [dht22-deployment.ttl](https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/dht22-deployment.ttl)",
+      "base-output-filename": "dht22-deployment",
+      "x-root": "https://example.org/data/Room145Deployment",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/dht22-deployment.ttl",
+          "url": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/deployments/dht22-deployment.ttl",
+          "transformResults": {
+            "ttl-to-jsonld": {
+              "success": true,
+              "sizeBytes": 3058,
+              "url": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/deployments/transforms/dht22-deployment.ttl-to-jsonld.json",
+              "profilesValidation": {
+                "ogc.sosa.properties.deployment": {
+                  "result": false,
+                  "report": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/deployments/transforms/ogc.sosa.properties.deployment/_report.json",
+                  "upliftedFiles": {
+                    "jsonld": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/deployments/transforms/ogc.sosa.properties.deployment/dht22-deployment.ttl-to-jsonld.jsonld",
+                    "ttl": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/deployments/transforms/ogc.sosa.properties.deployment/dht22-deployment.ttl-to-jsonld.ttl"
+                  }
+                }
+              }
+            }
+          },
+          "sizeBytes": 4160,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix qk: <http://qudt.org/vocab/quantitykind/> .\n@prefix qudt: <http://qudt.org/schema/qudt/> .\n@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix schema: <https://schema.org/> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix time: <http://www.w3.org/2006/time#> .\n@prefix unit: <http://qudt.org/vocab/unit/> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n@base <https://example.org/data/dht22d/> .\n\n#     This example shows how the conditions (temperature and humidity) in a room can be measured using one or\n#     more sensors.\n#     Each sensor observes the conditions in its immediate vicinity, and the values are then used to characterize\n#     the room. \n#\n# In Room 145, one of the walls is external in the building, so there is expected to be a temperature gradient\n#     across the room, and there are two sensors on different walls.\n#     In Room 245, there is one sensor on the south wall.\n#     Each of these locations corresponds to a sosa:Sample of the entire room.\n#     The wall also serves as a sosa:Platform on which the sensors are mounted. \n\n\nex:Room145 a sosa:FeatureOfInterest ;\n  rdfs:label \"Room #145\"@en ;\n  sosa:hasSample ex:Room145_east ;\n  sosa:hasSample ex:Room145_south ;\n.\nex:Room145_east a sosa:Sample , sosa:FeatureOfInterest , sosa:Platform ;\n  rdfs:label \"East wall of room #145.\"@en ;\n  rdfs:comment \"This wall hosts PCB Board 1 with DHT22 temperature and humidity sensor #4578.\"@en ;\n  sosa:hosts ex:PCBBoard1 ;\n.\nex:Room145_south a sosa:Sample , sosa:FeatureOfInterest , sosa:Platform ;\n  rdfs:label \"South wall of room #145.\"@en ;\n  rdfs:comment \"This wall hosts PCB Board 2 with DHT22 temperature and humidity sensor #4579.\"@en ;\n  sosa:hosts ex:PCBBoard2 ;\n.\nex:Room245 a sosa:FeatureOfInterest ;\n  rdfs:label \"Room #245\"@en ;\n  sosa:hasProperty qk:Temperature , qk:RelativeHumidity ;\n  sosa:hasSample ex:Room245_south ;\n.\nex:Room245_south a sosa:Sample , sosa:FeatureOfInterest , sosa:Platform ;\n  rdfs:label \"South wall of room #245.\"@en ;\n  sosa:hosts ex:PCBBoard3 ;\n.\nex:PCBBoard1 a sosa:System , sosa:Platform ;\n  rdfs:label \"PCB Board 1\"@en ;\n  rdfs:comment \"PCB Board 1 hosts DHT22 temperature and humidity sensor #4578 permanently, one can say it has it as one of its subsystems.\"@en ;\n  sosa:hosts ex:DHT22_4578 ;\n  sosa:hasSubSystem ex:DHT22_4578 ;\n.\nex:DHT22_4578 a sosa:System ;\n  rdfs:label \"DHT22 sensor #4578\"@en ;\n  sosa:isHostedBy ex:PCBBoard1 ;\n.\nex:PCBBoard2 a sosa:System , sosa:Platform ;\n  rdfs:label \"PCB Board 2\"@en ;\n  rdfs:comment \"PCB Board 2 hosts DHT22 temperature and humidity sensor #4579 permanently, one can say it has it as one of its subsystems.\"@en ;\n  sosa:hosts ex:DHT22_4578 ;\n  sosa:hasSubSystem ex:DHT22_4578 ;\n.\nex:DHT22_4579 a sosa:System ;\n  rdfs:label \"DHT22 sensor #4579.\"@en ;\n  sosa:isHostedBy ex:PCBBoard2 ;\n.\nex:PCBBoard3 a sosa:System , sosa:Platform ;\n  rdfs:label \"PCB Board 3\"@en ;\n  rdfs:comment \"PCB Board 3 hosts DHT22 temperature and humidity sensor #4580 permanently, one can say it has it as one of its subsystems.\"@en ;\n  sosa:hosts ex:DHT22_4578 ;\n  sosa:hasSubSystem ex:DHT22_4578 ;\n.\nex:DHT22_4580 a sosa:System ;\n  rdfs:label \"DHT22 sensor #4580.\"@en ;\n  sosa:isHostedBy ex:PCBBoard3 ;\n.\nex:Room245Deployment a sosa:Deployment ;\n  rdfs:comment \"Deployment of PCB Board 3 on the south wall of room #245 for the purpose of observing the temperature and humidity of room #245.\"@en ;\n  sosa:deployedOnPlatform ex:Room245_south ;\n  sosa:deployedSystem ex:PCBBoard3 ;\n  sosa:forProperty qk:Temperature , qk:RelativeHumidity ;\n.\nex:Room145Deployment a sosa:Deployment ;\n  rdfs:comment \"Deployment of PCB Board 1 and 2 on the east and south wall of room #145, respectively, for the purpose of observing the temperature and humidity of room #145.\"@en ;\n  sosa:deployedOnPlatform ex:Room245_east , ex:Room245_south ;\n  sosa:deployedSystem ex:PCBBoard1 , ex:PCBBoard2 ;\n  sosa:forProperty qk:Temperature , qk:RelativeHumidity ;\n."
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl#",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    },
+    {
+      "title": "Example dht22-deployment.ttl (root Room245Deployment)",
+      "content": "Example referenced from the SOSA/SSN specification section(s): [CompleteExamples](https://w3c.github.io/sdw-sosa-ssn/ssn/). Source: [dht22-deployment.ttl](https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/dht22-deployment.ttl)",
+      "base-output-filename": "dht22-deployment--Room245Deployment",
+      "x-root": "https://example.org/data/Room245Deployment",
+      "snippets": [
+        {
+          "language": "ttl",
+          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/dht22-deployment.ttl",
+          "url": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/deployments/dht22-deployment--Room245Deployment.ttl",
+          "transformResults": {
+            "ttl-to-jsonld": {
+              "success": true,
+              "sizeBytes": 2352,
+              "url": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/deployments/transforms/dht22-deployment--Room245Deployment.ttl-to-jsonld.json",
+              "profilesValidation": {
+                "ogc.sosa.properties.deployment": {
+                  "result": true,
+                  "report": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/deployments/transforms/ogc.sosa.properties.deployment/_report.json",
+                  "upliftedFiles": {
+                    "jsonld": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/deployments/transforms/ogc.sosa.properties.deployment/dht22-deployment--Room245Deployment.ttl-to-jsonld.jsonld",
+                    "ttl": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/deployments/transforms/ogc.sosa.properties.deployment/dht22-deployment--Room245Deployment.ttl-to-jsonld.ttl"
+                  }
+                }
+              }
+            }
+          },
+          "sizeBytes": 4160,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix qk: <http://qudt.org/vocab/quantitykind/> .\n@prefix qudt: <http://qudt.org/schema/qudt/> .\n@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix schema: <https://schema.org/> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix time: <http://www.w3.org/2006/time#> .\n@prefix unit: <http://qudt.org/vocab/unit/> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n@base <https://example.org/data/dht22d/> .\n\n#     This example shows how the conditions (temperature and humidity) in a room can be measured using one or\n#     more sensors.\n#     Each sensor observes the conditions in its immediate vicinity, and the values are then used to characterize\n#     the room. \n#\n# In Room 145, one of the walls is external in the building, so there is expected to be a temperature gradient\n#     across the room, and there are two sensors on different walls.\n#     In Room 245, there is one sensor on the south wall.\n#     Each of these locations corresponds to a sosa:Sample of the entire room.\n#     The wall also serves as a sosa:Platform on which the sensors are mounted. \n\n\nex:Room145 a sosa:FeatureOfInterest ;\n  rdfs:label \"Room #145\"@en ;\n  sosa:hasSample ex:Room145_east ;\n  sosa:hasSample ex:Room145_south ;\n.\nex:Room145_east a sosa:Sample , sosa:FeatureOfInterest , sosa:Platform ;\n  rdfs:label \"East wall of room #145.\"@en ;\n  rdfs:comment \"This wall hosts PCB Board 1 with DHT22 temperature and humidity sensor #4578.\"@en ;\n  sosa:hosts ex:PCBBoard1 ;\n.\nex:Room145_south a sosa:Sample , sosa:FeatureOfInterest , sosa:Platform ;\n  rdfs:label \"South wall of room #145.\"@en ;\n  rdfs:comment \"This wall hosts PCB Board 2 with DHT22 temperature and humidity sensor #4579.\"@en ;\n  sosa:hosts ex:PCBBoard2 ;\n.\nex:Room245 a sosa:FeatureOfInterest ;\n  rdfs:label \"Room #245\"@en ;\n  sosa:hasProperty qk:Temperature , qk:RelativeHumidity ;\n  sosa:hasSample ex:Room245_south ;\n.\nex:Room245_south a sosa:Sample , sosa:FeatureOfInterest , sosa:Platform ;\n  rdfs:label \"South wall of room #245.\"@en ;\n  sosa:hosts ex:PCBBoard3 ;\n.\nex:PCBBoard1 a sosa:System , sosa:Platform ;\n  rdfs:label \"PCB Board 1\"@en ;\n  rdfs:comment \"PCB Board 1 hosts DHT22 temperature and humidity sensor #4578 permanently, one can say it has it as one of its subsystems.\"@en ;\n  sosa:hosts ex:DHT22_4578 ;\n  sosa:hasSubSystem ex:DHT22_4578 ;\n.\nex:DHT22_4578 a sosa:System ;\n  rdfs:label \"DHT22 sensor #4578\"@en ;\n  sosa:isHostedBy ex:PCBBoard1 ;\n.\nex:PCBBoard2 a sosa:System , sosa:Platform ;\n  rdfs:label \"PCB Board 2\"@en ;\n  rdfs:comment \"PCB Board 2 hosts DHT22 temperature and humidity sensor #4579 permanently, one can say it has it as one of its subsystems.\"@en ;\n  sosa:hosts ex:DHT22_4578 ;\n  sosa:hasSubSystem ex:DHT22_4578 ;\n.\nex:DHT22_4579 a sosa:System ;\n  rdfs:label \"DHT22 sensor #4579.\"@en ;\n  sosa:isHostedBy ex:PCBBoard2 ;\n.\nex:PCBBoard3 a sosa:System , sosa:Platform ;\n  rdfs:label \"PCB Board 3\"@en ;\n  rdfs:comment \"PCB Board 3 hosts DHT22 temperature and humidity sensor #4580 permanently, one can say it has it as one of its subsystems.\"@en ;\n  sosa:hosts ex:DHT22_4578 ;\n  sosa:hasSubSystem ex:DHT22_4578 ;\n.\nex:DHT22_4580 a sosa:System ;\n  rdfs:label \"DHT22 sensor #4580.\"@en ;\n  sosa:isHostedBy ex:PCBBoard3 ;\n.\nex:Room245Deployment a sosa:Deployment ;\n  rdfs:comment \"Deployment of PCB Board 3 on the south wall of room #245 for the purpose of observing the temperature and humidity of room #245.\"@en ;\n  sosa:deployedOnPlatform ex:Room245_south ;\n  sosa:deployedSystem ex:PCBBoard3 ;\n  sosa:forProperty qk:Temperature , qk:RelativeHumidity ;\n.\nex:Room145Deployment a sosa:Deployment ;\n  rdfs:comment \"Deployment of PCB Board 1 and 2 on the east and south wall of room #145, respectively, for the purpose of observing the temperature and humidity of room #145.\"@en ;\n  sosa:deployedOnPlatform ex:Room245_east , ex:Room245_south ;\n  sosa:deployedSystem ex:PCBBoard1 , ex:PCBBoard2 ;\n  sosa:forProperty qk:Temperature , qk:RelativeHumidity ;\n."
+        }
+      ],
+      "prefixes": {
+        "cdt": "http://w3id.org/lindt/custom_datatypes#",
+        "equipment": "https://rdf.ag/o/equipment/",
+        "ex": "https://example.org/data/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "gr": "http://purl.org/goodrelations/v1#",
+        "gs1": "https://gs1.org/voc/",
+        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qk": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfp": "https://w3id.org/rdfp/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "seas": "https://w3id.org/seas/",
+        "sensor": "https://example.org/sensor/",
+        "sh": "http://www.w3.org/ns/shacl#",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "system": "http://www.w3.org/ns/ssn/systems/",
+        "time": "http://www.w3.org/2006/time#",
+        "unit": "http://qudt.org/vocab/unit/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      }
+    }
+  ],
+  "examplePrefixes": {
+    "cdt": "http://w3id.org/lindt/custom_datatypes#",
+    "equipment": "https://rdf.ag/o/equipment/",
+    "ex": "https://example.org/data/",
+    "geo": "http://www.opengis.net/ont/geosparql#",
+    "gr": "http://purl.org/goodrelations/v1#",
+    "gs1": "https://gs1.org/voc/",
+    "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "qk": "http://qudt.org/vocab/quantitykind/",
+    "qudt": "http://qudt.org/schema/qudt/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfp": "https://w3id.org/rdfp/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "seas": "https://w3id.org/seas/",
+    "sensor": "https://example.org/sensor/",
+    "sh": "http://www.w3.org/ns/shacl#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "sosa": "http://www.w3.org/ns/sosa/",
+    "system": "http://www.w3.org/ns/ssn/systems/",
+    "time": "http://www.w3.org/2006/time#",
+    "unit": "http://qudt.org/vocab/unit/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: SOSA specification examples conforming to ogc.sosa.properties.deployment\n$ref: https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/deployment/schema.yaml\nx-bblocks-metadata:\n  itemIdentifier: ogc.sosa.spec-examples.deployments\n  register: https://rob-metalinkage.github.io/ogcapi-sosa/build/register.json\n  version: '1.0'\n  dateOfLastChange: '2026-10-21'\n",
+  "gitRepository": "https://github.com/rob-metalinkage/ogcapi-sosa",
+  "gitPath": "_sources/spec-examples/deployments"
+}

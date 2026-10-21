@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/context.jsonld",
+    {
+      "ex": "https://example.org/data/",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+    }
+  ],
+  "id": "ex:ts159l",
+  "featureType": "Observation",
+  "rdfs:comment": {
+    "@language": "en",
+    "@value": "The result of the observation is accessed using the URI https://example.org/data/tso/netcdf/ts159 (notional)."
+  },
+  "hasFeatureOfInterest": {
+    "id": "ex:station223",
+    "featureType": "FeatureOfInterest"
+  },
+  "hasResult": "ex:tso/netcdf/ts159",
+  "madeBySensor": {
+    "id": "ex:fooglemeter39",
+    "featureType": "Sensor"
+  },
+  "observedProperty": {
+    "id": "ex:p1",
+    "featureType": "Property"
+  },
+  "phenomenonTime": {
+    "featureType": "Interval",
+    "hasBeginning": {
+      "featureType": "Instant",
+      "inXSDDateTime": "2017-04-15T20:00:00+00:00"
+    },
+    "hasEnd": {
+      "featureType": "Instant",
+      "inXSDDateTime": "2017-04-15T20:03:00+00:00"
+    }
+  },
+  "resultTime": "2017-04-15T20:03:30+00:00"
+}

@@ -1,11 +1,12 @@
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://example.org/data/AirSampling_StE> sosa:hasResult <https://example.org/data/EarthAtmosphere_StE> ;
-    sosa:resultTime "2024-06-01T09:00:00Z" .
+    sosa:resultTime "2024-06-01T09:00:00+00:00"^^xsd:dateTime .
 
 <https://example.org/data/AirSampling_StE2> sosa:hasResult <https://example.org/data/EarthAtmosphere_StE2> ;
-    sosa:resultTime "2024-06-01T09:15:00Z" .
+    sosa:resultTime "2024-06-01T09:15:00+00:00"^^xsd:dateTime .
 
 [] a geojson:FeatureCollection ;
     sosa:hasFeatureOfInterest <https://example.org/data/EarthAtmosphere> ;

@@ -1,0 +1,82 @@
+Validation report for ogc.sosa.properties.observationCollection - ObservationCollection Properties
+Generated 2026-10-21T10:02:10.205933+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using collection-time-outside-intervals-fail.ttl from test resources
+=== End Files ===
+
+=== SHACL ===
+
+** Validation error **
+Validation result for _sources/properties/execution/shapes.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>
+  	Focus Node: ex:c
+  	Value Node: ex:o1
+  	Result Path: sosa:phenomenonTime
+  	Source Constraint: [ sh:select Literal("
+          PREFIX sosa: <http://www.w3.org/ns/sosa/>
+          PREFIX geojson: <https://purl.org/geojson/vocab#>
+          PREFIX time: <http://www.w3.org/2006/time#>
+          PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+          SELECT $this ?path (?member AS ?value) ?failedValue WHERE {
+              $this (sosa:hasMember|geojson:features|^sosa:memberOf)+ ?member .
+              ?member ?path ?memberValue .
+              FILTER(?path IN (sosa:phenomenonTime, sosa:resultTime, sosa:startTime, sosa:endTime))
+              FILTER EXISTS { $this ?path ?interval . ?interval time:hasBeginning|time:hasEnd ?bound }
+              # beginning and end of the member's value: a literal time, an Instant's position, or an
+              # interval's bounds; an xsd:date covers the whole day
+              OPTIONAL { ?memberValue time:hasBeginning?/(time:inXSDDateTime|time:inXSDDateTimeStamp|time:inXSDDate) ?mb0 }
+              OPTIONAL { ?memberValue time:hasEnd?/(time:inXSDDateTime|time:inXSDDateTimeStamp|time:inXSDDate) ?me0 }
+              BIND(IF(isLiteral(?memberValue), ?memberValue, ?mb0) AS ?mb1)
+              BIND(IF(isLiteral(?memberValue), ?memberValue, ?me0) AS ?me1)
+              BIND(IF(DATATYPE(?mb1) = xsd:date, xsd:dateTime(CONCAT(SUBSTR(STR(?mb1), 1, 10), "T00:00:00", SUBSTR(STR(?mb1), 11))), xsd:dateTime(STR(?mb1))) AS ?mb)
+              BIND(IF(DATATYPE(?me1) = xsd:date, xsd:dateTime(CONCAT(SUBSTR(STR(?me1), 1, 10), "T23:59:59.999", SUBSTR(STR(?me1), 11))), xsd:dateTime(STR(?me1))) AS ?me)
+              FILTER(BOUND(?mb) || BOUND(?me))
+              # rule 5: it must fall within one of the collection's values (an interval, or equal to an
+              # instant). A comparison that can't be decided (one time with a time zone and one without -
+              # rdflib also drops the time zone of an xsd:date) doesn't count against it.
+              FILTER NOT EXISTS {
+                  $this ?path ?collectionValue .
+                  OPTIONAL { ?collectionValue time:hasBeginning?/(time:inXSDDateTime|time:inXSDDateTimeStamp|time:inXSDDate) ?cb0 }
+                  OPTIONAL { ?collectionValue time:hasEnd?/(time:inXSDDateTime|time:inXSDDateTimeStamp|time:inXSDDate) ?ce0 }
+                  BIND(IF(isLiteral(?collectionValue), ?collectionValue, ?cb0) AS ?cb1)
+                  BIND(IF(isLiteral(?collectionValue), ?collectionValue, ?ce0) AS ?ce1)
+                  BIND(IF(DATATYPE(?cb1) = xsd:date, xsd:dateTime(CONCAT(SUBSTR(STR(?cb1), 1, 10), "T00:00:00", SUBSTR(STR(?cb1), 11))), xsd:dateTime(STR(?cb1))) AS ?cb)
+                  BIND(IF(DATATYPE(?ce1) = xsd:date, xsd:dateTime(CONCAT(SUBSTR(STR(?ce1), 1, 10), "T23:59:59.999", SUBSTR(STR(?ce1), 11))), xsd:dateTime(STR(?ce1))) AS ?ce)
+                  FILTER(BOUND(?cb) || BOUND(?ce))
+                  FILTER(COALESCE(!BOUND(?cb) || !BOUND(?mb) || (TZ(?mb) = "") != (TZ(?cb) = "") || ?mb >= ?cb, true)
+                      && COALESCE(!BOUND(?ce) || !BOUND(?me) || (TZ(?me) = "") != (TZ(?ce) = "") || ?me <= ?ce, true))
+              }
+              BIND(CONCAT(COALESCE(STR(?mb), "?"), " .. ", COALESCE(STR(?me), "?"),
+                  " is not within any of the collection's values") AS ?failedValue)
+          }
+      ") ]
+  	Message: Collection member values do not match those of the collections (http://www.w3.org/ns/sosa/phenomenonTime property in https://example.org/o1: 2022-05-01T21:30:00+00:00 .. 2022-05-01T21:30:00+00:00 is not within any of the collection's values)
+  
+Focus nodes for _sources/properties/execution/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: ex:c
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: ex:c
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: ex:o1
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: ex:o1
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: ex:o1/sosa:hasSimpleResult
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: ex:o1
+
+Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: ex:c
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: ex:o1
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+
+=== End SHACL ===
+

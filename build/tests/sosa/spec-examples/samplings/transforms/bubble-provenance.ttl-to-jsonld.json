@@ -1,0 +1,79 @@
+{
+  "@context": [
+    "https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/sampling/context.jsonld",
+    {
+      "ex": "https://example.org/data/",
+      "geo": "http://www.opengis.net/ont/geosparql#",
+      "orcid": "https://orcid.org/",
+      "qudt": "http://qudt.org/schema/qudt/",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "unit": "http://qudt.org/vocab/unit/",
+      "qudt:value": {
+        "@type": "xsd:decimal"
+      },
+      "geo:asWKT": {
+        "@type": "geo:WktLiteral"
+      },
+      "xsd": "http://www.w3.org/2001/XMLSchema#"
+    }
+  ],
+  "id": "ex:CoreEx1923",
+  "featureType": "Sampling",
+  "hasFeatureOfInterest": {
+    "id": "ex:IceCore12",
+    "featureType": [
+      "Sample",
+      "sosa:MaterialSample"
+    ],
+    "isResultOf": {
+      "id": "ex:WellDrilling4578",
+      "featureType": "Sampling",
+      "geo:hasGeometry": {
+        "featureType": "geo:Point",
+        "geo:asWKT": "POINT (9.32 -73.35)"
+      },
+      "hasFeatureOfInterest": {
+        "id": "ex:Antarctic_ice_sheet",
+        "featureType": "FeatureOfInterest",
+        "skos:exactMatch": {
+          "id": "https://www.wikidata.org/wiki/Q571430"
+        }
+      },
+      "hasResult": "ex:IceCore12",
+      "madeBySampler": "ex:ThermalDrill2",
+      "resultTime": "2017-04-03T11:12:00+00:00"
+    },
+    "isSampleOf": "ex:Antarctic_ice_sheet"
+  },
+  "hasInputValue": {
+    "ex:offset": {
+      "featureType": "qudt:QuantityValue",
+      "qudt:hasUnit": {
+        "id": "unit:M"
+      },
+      "qudt:value": "15.202"
+    }
+  },
+  "hasResult": {
+    "id": "ex:Bubble873",
+    "featureType": [
+      "Sample",
+      "sosa:MaterialSample"
+    ],
+    "isResultOf": "ex:CoreEx1923",
+    "isSampleOf": [
+      "ex:IceCore12",
+      {
+        "id": "ex:EarthAtmosphere",
+        "featureType": "FeatureOfInterest",
+        "skos:exactMatch": {
+          "id": "https://www.wikidata.org/wiki/Q3230"
+        }
+      }
+    ],
+    "isSampleOfUltimateFOI": "ex:Antarctic_ice_sheet"
+  },
+  "hasUltimateFeatureOfInterest": "ex:Antarctic_ice_sheet",
+  "madeBySampler": "orcid:0000-0002-3884-3420",
+  "resultTime": "2018-01-09T14:12:00+00:00"
+}

@@ -1,0 +1,39 @@
+Validation report for ogc.sosa.properties.observation - Observation Properties
+Generated 2026-10-21T10:03:08.420660+00:00
+=== Files ===
+Using Thermometer.ttl-to-jsonld.json from transform outputs
+JSON-LD context is present - uplifting
+Output JSON-LD Thermometer.ttl-to-jsonld.jsonld created
+Output Turtle Thermometer.ttl-to-jsonld.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+
+=== SHACL ===
+Using snippet SHACL closures:
+ - /github/workspace/_sources/spec-examples/closures/Thermometer.ttl
+Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: ex:SickChildATempObs
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+
+Validation result for _sources/properties/execution/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/execution/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: ex:SickChildATempObs
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: ex:SickChildATempObs
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: ex:SickChildATempObs
+
+=== End SHACL ===
+

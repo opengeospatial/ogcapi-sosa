@@ -1,0 +1,64 @@
+Validation report for ogc.sosa.properties.observation - Observation Properties
+Generated 2026-10-21T10:03:09.925749+00:00
+=== Files ===
+Using ip68--Observation_5872357_temperature.ttl-to-jsonld.json from transform outputs
+JSON-LD context is present - uplifting
+Output JSON-LD ip68--Observation_5872357_temperature.ttl-to-jsonld.jsonld created
+Output Turtle ip68--Observation_5872357_temperature.ttl-to-jsonld.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+
+=== SHACL ===
+Using snippet SHACL closures:
+ - /github/workspace/_sources/spec-examples/closures/ip68.ttl
+
+** Validation error **
+Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>
+  	Focus Node: closure:ip68-characteristics
+  	Value Node: closure:ip68-characteristics
+  	Result Path: sosa:observedProperty
+  	Source Constraint: [ sh:message Literal("sosa:observedProperty is required, on the collection, a collection it is a member of, or its members") ; sh:select Literal("
+              PREFIX sosa: <http://www.w3.org/ns/sosa/>
+              PREFIX geojson: <https://purl.org/geojson/vocab#>
+              SELECT $this (sosa:observedProperty AS ?path) WHERE {
+                  FILTER NOT EXISTS {
+                      { $this (^sosa:hasMember|^geojson:features|sosa:memberOf)* ?holder }
+                      UNION
+                      {
+                          $this (sosa:hasMember|geojson:features|^sosa:memberOf)+ ?member .
+                          ?member (^sosa:hasMember|^geojson:features|sosa:memberOf)* ?holder .
+                      }
+                      ?holder sosa:observedProperty ?prop .
+                  }
+              }
+          ") ]
+  	Message: sosa:observedProperty is required, on the collection, a collection it is a member of, or its members
+  
+Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: ex:Observation_5872357_temperature
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+
+Validation result for _sources/properties/execution/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/execution/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: ex:Observation_5872357_temperature
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: ex:Observation_5872357_temperature
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: ex:Observation_5872357_temperature
+
+=== End SHACL ===
+

@@ -1,0 +1,16 @@
+@prefix ex: <https://example.org/data/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+
+ex:SC-LaJ2 a sosa:SampleCollection ;
+    sosa:isResultOfMadeBySampler [ a sosa:Sampler ;
+            sosa:implements ex:Sp-A56 ;
+            sosa:isHostedBy ex:LOIRE_A_JARGEAU_WQ_Station ] ;
+    sosa:isResultOfUsedProcedure ex:Sp-A56 ;
+    sosa:isSampleOf ex:Loire_River .
+
+ex:LOIRE_A_JARGEAU_WQ_Station a sosa:Platform .
+
+ex:Loire_River a sosa:FeatureOfInterest .
+
+ex:Sp-A56 a sosa:SamplingProcedure .
+

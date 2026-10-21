@@ -1,0 +1,1928 @@
+{
+  "title": "Validation report for ogc.sosa.spec-examples.observation-collections - SOSA specification examples: Observation Collections",
+  "bblockName": "SOSA specification examples: Observation Collections",
+  "bblockId": "ogc.sosa.spec-examples.observation-collections",
+  "generated": "2026-10-21T10:02:49.492553+00:00",
+  "result": false,
+  "items": [
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/sosa/spec-examples/observation-collections/UOM-qudt-collection.ttl",
+        "url": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/observation-collections/UOM-qudt-collection.ttl",
+        "exampleIndex": 1,
+        "snippetIndex": 1,
+        "language": "text/turtle",
+        "sourceUrl": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/UOM-qudt-collection.ttl"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/UOM-qudt-collection.ttl from examples"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "UOM-qudt-collection.ttl",
+              "size": 22,
+              "isError": false,
+              "message": "Output Turtle UOM-qudt-collection.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "TURTLE",
+          "title": "Turtle",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Prefixes are defined for cdt, equipment, ex, geo, gr, gs1, om, owl, prov, qk, qudt, rdf, rdfp, rdfs, schema, seas, sensor, sh, skos, sosa, system, time, unit, xsd"
+            }
+          ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/execution/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
+                  "nodes": [
+                    "ex:OCa134"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
+                  "nodes": [
+                    "ex:OCa134"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResult>": {
+                  "nodes": [
+                    "ex:OCa134t2",
+                    "ex:OCa134t1",
+                    "ex:OCa134t3"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
+                  "nodes": [
+                    "ex:OCa134t2",
+                    "ex:OCa134t1",
+                    "ex:OCa134t3"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
+                  "nodes": [
+                    "ex:OCa134t1/sosa:hasSimpleResult",
+                    "ex:OCa134t2/sosa:hasSimpleResult",
+                    "ex:OCa134t3/sosa:hasSimpleResult"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
+                  "nodes": [
+                    "ex:OCa134t2",
+                    "ex:OCa134t1",
+                    "ex:OCa134t3"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/execution/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: ex:OCa134\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: ex:OCa134\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: ex:OCa134t2,ex:OCa134t1,ex:OCa134t3\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: ex:OCa134t2,ex:OCa134t1,ex:OCa134t3\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: ex:OCa134t1/sosa:hasSimpleResult,ex:OCa134t2/sosa:hasSimpleResult,ex:OCa134t3/sosa:hasSimpleResult\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: ex:OCa134t2,ex:OCa134t1,ex:OCa134t3\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/observation/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/observation/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/observation/shapes.shacl",
+              "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>": {
+                  "nodes": [
+                    "ex:OCa134"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>": {
+                  "nodes": [
+                    "ex:OCa134t2",
+                    "ex:OCa134t1",
+                    "ex:OCa134t3"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: ex:OCa134\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: ex:OCa134t2,ex:OCa134t1,ex:OCa134t3\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/sosa/spec-examples/observation-collections/timeseries-oc.ttl",
+        "url": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/observation-collections/timeseries-oc.ttl",
+        "exampleIndex": 2,
+        "snippetIndex": 1,
+        "language": "text/turtle",
+        "sourceUrl": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/timeseries-oc.ttl"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/timeseries-oc.ttl from examples"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "timeseries-oc.ttl",
+              "size": 41,
+              "isError": false,
+              "message": "Output Turtle timeseries-oc.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "TURTLE",
+          "title": "Turtle",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Prefixes are defined for cdt, equipment, ex, geo, gr, gs1, om, owl, prov, qk, qudt, rdf, rdfp, rdfs, schema, seas, sensor, sh, skos, sosa, system, time, unit, xsd"
+            }
+          ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/execution/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
+                  "nodes": [
+                    "ex:ts159c"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
+                  "nodes": [
+                    "ex:ts159c"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResult>": {
+                  "nodes": [
+                    "ex:t4",
+                    "ex:t2",
+                    "ex:t1",
+                    "ex:t3"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
+                  "nodes": [
+                    "ex:t4",
+                    "ex:t2",
+                    "ex:t1",
+                    "ex:t3"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
+                  "nodes": [
+                    "ex:t2/sosa:hasSimpleResult",
+                    "ex:t1/sosa:hasSimpleResult",
+                    "ex:t3/sosa:hasSimpleResult"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
+                  "nodes": [
+                    "ex:t4",
+                    "ex:t2",
+                    "ex:t1",
+                    "ex:t3"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/execution/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: ex:ts159c\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: ex:ts159c\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: ex:t4,ex:t2,ex:t1,ex:t3\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: ex:t4,ex:t2,ex:t1,ex:t3\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: ex:t2/sosa:hasSimpleResult,ex:t1/sosa:hasSimpleResult,ex:t3/sosa:hasSimpleResult\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: ex:t4,ex:t2,ex:t1,ex:t3\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/observation/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/observation/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/observation/shapes.shacl",
+              "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>": {
+                  "nodes": [
+                    "ex:ts159c"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>": {
+                  "nodes": [
+                    "ex:t4",
+                    "ex:t2",
+                    "ex:t1",
+                    "ex:t3"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: ex:ts159c\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: ex:t4,ex:t2,ex:t1,ex:t3\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/sosa/spec-examples/observation-collections/OCrule1.ttl",
+        "url": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/observation-collections/OCrule1.ttl",
+        "exampleIndex": 3,
+        "snippetIndex": 1,
+        "language": "text/turtle",
+        "sourceUrl": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/tests/ObservationCollection/OCrule1.ttl"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/tests/ObservationCollection/OCrule1.ttl from examples"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "OCrule1.ttl",
+              "size": 28,
+              "isError": false,
+              "message": "Output Turtle OCrule1.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "TURTLE",
+          "title": "Turtle",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Prefixes are defined for cdt, equipment, ex, geo, gr, gs1, om, owl, prov, qk, qudt, rdf, rdfp, rdfs, schema, seas, sensor, sh, skos, sosa, system, time, unit, xsd"
+            }
+          ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/execution/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
+                  "nodes": [
+                    "ex:oc1"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
+                  "nodes": [
+                    "ex:oc1"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResult>": {
+                  "nodes": [
+                    "ex:a11",
+                    "ex:a12"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
+                  "nodes": [
+                    "ex:a11",
+                    "ex:a12"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
+                  "nodes": [
+                    "ex:a12/sosa:hasSimpleResult",
+                    "ex:a11/sosa:hasSimpleResult"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
+                  "nodes": [
+                    "ex:a11",
+                    "ex:a12"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/execution/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: ex:oc1\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: ex:oc1\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: ex:a11,ex:a12\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: ex:a11,ex:a12\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: ex:a12/sosa:hasSimpleResult,ex:a11/sosa:hasSimpleResult\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: ex:a11,ex:a12\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/observation/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/observation/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/observation/shapes.shacl",
+              "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>": {
+                  "nodes": [
+                    "ex:oc1"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>": {
+                  "nodes": [
+                    "ex:a11",
+                    "ex:a12"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: ex:oc1\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: ex:a11,ex:a12\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/sosa/spec-examples/observation-collections/OCrule2.ttl",
+        "url": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/observation-collections/OCrule2.ttl",
+        "exampleIndex": 4,
+        "snippetIndex": 1,
+        "language": "text/turtle",
+        "sourceUrl": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/tests/ObservationCollection/OCrule2.ttl"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/tests/ObservationCollection/OCrule2.ttl from examples"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "OCrule2.ttl",
+              "size": 29,
+              "isError": false,
+              "message": "Output Turtle OCrule2.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "TURTLE",
+          "title": "Turtle",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Prefixes are defined for cdt, equipment, ex, geo, gr, gs1, om, owl, prov, qk, qudt, rdf, rdfp, rdfs, schema, seas, sensor, sh, skos, sosa, system, time, unit, xsd"
+            }
+          ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/execution/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
+                  "nodes": [
+                    "ex:oc2"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
+                  "nodes": [
+                    "ex:oc2"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResult>": {
+                  "nodes": [
+                    "ex:a21",
+                    "ex:a22"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
+                  "nodes": [
+                    "ex:a21",
+                    "ex:a22"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
+                  "nodes": [
+                    "ex:a22/sosa:hasSimpleResult",
+                    "ex:a21/sosa:hasSimpleResult"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
+                  "nodes": [
+                    "ex:a21",
+                    "ex:a22"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/execution/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: ex:oc2\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: ex:oc2\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: ex:a21,ex:a22\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: ex:a21,ex:a22\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: ex:a22/sosa:hasSimpleResult,ex:a21/sosa:hasSimpleResult\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: ex:a21,ex:a22\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/observation/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/observation/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/observation/shapes.shacl",
+              "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>": {
+                  "nodes": [
+                    "ex:oc2"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>": {
+                  "nodes": [
+                    "ex:a21",
+                    "ex:a22"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: ex:oc2\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: ex:a21,ex:a22\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/sosa/spec-examples/observation-collections/OCrule3.ttl",
+        "url": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/observation-collections/OCrule3.ttl",
+        "exampleIndex": 5,
+        "snippetIndex": 1,
+        "language": "text/turtle",
+        "sourceUrl": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/tests/ObservationCollection/OCrule3.ttl"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/tests/ObservationCollection/OCrule3.ttl from examples"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "OCrule3.ttl",
+              "size": 30,
+              "isError": false,
+              "message": "Output Turtle OCrule3.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "TURTLE",
+          "title": "Turtle",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Prefixes are defined for cdt, equipment, ex, geo, gr, gs1, om, owl, prov, qk, qudt, rdf, rdfp, rdfs, schema, seas, sensor, sh, skos, sosa, system, time, unit, xsd"
+            }
+          ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/execution/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
+                  "nodes": [
+                    "ex:oc3"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
+                  "nodes": [
+                    "ex:oc3"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResult>": {
+                  "nodes": [
+                    "ex:a31",
+                    "ex:a32"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
+                  "nodes": [
+                    "ex:a31",
+                    "ex:a32"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
+                  "nodes": [
+                    "ex:a32/sosa:hasSimpleResult",
+                    "ex:a31/sosa:hasSimpleResult"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
+                  "nodes": [
+                    "ex:a31",
+                    "ex:a32"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/execution/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: ex:oc3\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: ex:oc3\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: ex:a31,ex:a32\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: ex:a31,ex:a32\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: ex:a32/sosa:hasSimpleResult,ex:a31/sosa:hasSimpleResult\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: ex:a31,ex:a32\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/observation/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/observation/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/observation/shapes.shacl",
+              "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>": {
+                  "nodes": [
+                    "ex:oc3"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>": {
+                  "nodes": [
+                    "ex:a31",
+                    "ex:a32"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: ex:oc3\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: ex:a31,ex:a32\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/sosa/spec-examples/observation-collections/OCrule4.ttl",
+        "url": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/observation-collections/OCrule4.ttl",
+        "exampleIndex": 6,
+        "snippetIndex": 1,
+        "language": "text/turtle",
+        "sourceUrl": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/tests/ObservationCollection/OCrule4.ttl"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/tests/ObservationCollection/OCrule4.ttl from examples"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "OCrule4.ttl",
+              "size": 36,
+              "isError": false,
+              "message": "Output Turtle OCrule4.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "TURTLE",
+          "title": "Turtle",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Prefixes are defined for cdt, equipment, ex, geo, gr, gs1, om, owl, prov, qk, qudt, rdf, rdfp, rdfs, schema, seas, sensor, sh, skos, sosa, system, time, unit, xsd"
+            }
+          ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/execution/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
+                  "nodes": [
+                    "ex:oc4"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
+                  "nodes": [
+                    "ex:oc4"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResult>": {
+                  "nodes": [
+                    "ex:a41",
+                    "ex:a42"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
+                  "nodes": [
+                    "ex:a41",
+                    "ex:a42"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
+                  "nodes": [
+                    "ex:a42/sosa:hasSimpleResult",
+                    "ex:a41/sosa:hasSimpleResult"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
+                  "nodes": [
+                    "ex:a41",
+                    "ex:a42"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/execution/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: ex:oc4\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: ex:oc4\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: ex:a41,ex:a42\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: ex:a41,ex:a42\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: ex:a42/sosa:hasSimpleResult,ex:a41/sosa:hasSimpleResult\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: ex:a41,ex:a42\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/observation/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/observation/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/observation/shapes.shacl",
+              "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>": {
+                  "nodes": [
+                    "ex:oc4"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>": {
+                  "nodes": [
+                    "ex:a41",
+                    "ex:a42"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: ex:oc4\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: ex:a41,ex:a42\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/sosa/spec-examples/observation-collections/OCrule5.ttl",
+        "url": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/observation-collections/OCrule5.ttl",
+        "exampleIndex": 7,
+        "snippetIndex": 1,
+        "language": "text/turtle",
+        "sourceUrl": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/tests/ObservationCollection/OCrule5.ttl"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/tests/ObservationCollection/OCrule5.ttl from examples"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "OCrule5.ttl",
+              "size": 44,
+              "isError": false,
+              "message": "Output Turtle OCrule5.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "TURTLE",
+          "title": "Turtle",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Prefixes are defined for cdt, equipment, ex, geo, gr, gs1, om, owl, prov, qk, qudt, rdf, rdfp, rdfs, schema, seas, sensor, sh, skos, sosa, system, time, unit, xsd"
+            }
+          ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/execution/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
+                  "nodes": [
+                    "ex:oc5"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
+                  "nodes": [
+                    "ex:oc5"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResult>": {
+                  "nodes": [
+                    "ex:a51",
+                    "ex:a52"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
+                  "nodes": [
+                    "ex:a51",
+                    "ex:a52"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
+                  "nodes": [
+                    "ex:a52/sosa:hasSimpleResult",
+                    "ex:a51/sosa:hasSimpleResult"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
+                  "nodes": [
+                    "ex:a51",
+                    "ex:a52"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/execution/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: ex:oc5\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: ex:oc5\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: ex:a51,ex:a52\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: ex:a51,ex:a52\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: ex:a52/sosa:hasSimpleResult,ex:a51/sosa:hasSimpleResult\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: ex:a51,ex:a52\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/observation/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/observation/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/observation/shapes.shacl",
+              "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>": {
+                  "nodes": [
+                    "ex:oc5"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>": {
+                  "nodes": [
+                    "ex:a51",
+                    "ex:a52"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: ex:oc5\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: ex:a51,ex:a52\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/sosa/spec-examples/observation-collections/PlannedObservationCollection.ttl",
+        "url": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/observation-collections/PlannedObservationCollection.ttl",
+        "exampleIndex": 8,
+        "snippetIndex": 1,
+        "language": "text/turtle",
+        "sourceUrl": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/PlannedObservationCollection.ttl"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/PlannedObservationCollection.ttl from examples"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "PlannedObservationCollection.ttl",
+              "size": 10,
+              "isError": false,
+              "message": "Output Turtle PlannedObservationCollection.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "TURTLE",
+          "title": "Turtle",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Prefixes are defined for cdt, equipment, ex, geo, gr, gs1, om, owl, prov, qk, qudt, rdf, rdfp, rdfs, schema, seas, sensor, sh, skos, sosa, system, time, unit, xsd"
+            }
+          ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/execution/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
+                  "nodes": [
+                    "ex:ObsColpH"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
+                  "nodes": [
+                    "ex:ObsColpH"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResult>": {
+                  "nodes": []
+                },
+                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
+                  "nodes": []
+                },
+                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
+                  "nodes": []
+                },
+                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/execution/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: ex:ObsColpH\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: ex:ObsColpH\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: *none*\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/observation/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/observation/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/observation/shapes.shacl",
+              "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>": {
+                  "nodes": [
+                    "ex:ObsColpH"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>": {
+                  "nodes": []
+                },
+                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: ex:ObsColpH\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/sosa/spec-examples/observation-collections/ex6.ttl",
+        "url": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/observation-collections/ex6.ttl",
+        "exampleIndex": 9,
+        "snippetIndex": 1,
+        "language": "text/turtle",
+        "sourceUrl": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/ex6.ttl"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/ex6.ttl from examples"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "ex6.ttl",
+              "size": 10,
+              "isError": false,
+              "message": "Output Turtle ex6.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "TURTLE",
+          "title": "Turtle",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Prefixes are defined for cdt, equipment, ex, geo, gr, gs1, om, owl, prov, qk, qudt, rdf, rdfp, rdfs, schema, seas, sensor, sh, skos, sosa, system, time, unit, xsd"
+            }
+          ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using snippet SHACL closures:\n - ../closures/ex6.ttl"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/execution/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
+                  "nodes": [
+                    "ex:TemperatureSensorOperatingRange"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
+                  "nodes": [
+                    "ex:TemperatureSensorOperatingRange"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResult>": {
+                  "nodes": [
+                    "<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/1>",
+                    "<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/2>"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
+                  "nodes": [
+                    "<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/1>",
+                    "<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/2>"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
+                  "nodes": []
+                },
+                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
+                  "nodes": [
+                    "<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/1>",
+                    "<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/2>"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/execution/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: ex:TemperatureSensorOperatingRange\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: ex:TemperatureSensorOperatingRange\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: <https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/1>,<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/2>\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/1>,<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/2>\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/1>,<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/2>\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/observation/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/observation/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/observation/shapes.shacl",
+              "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>": {
+                  "nodes": [
+                    "ex:TemperatureSensorOperatingRange"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>": {
+                  "nodes": [
+                    "<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/1>",
+                    "<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/2>"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: ex:TemperatureSensorOperatingRange\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: <https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/1>,<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/2>\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/sosa/spec-examples/observation-collections/ex7.ttl",
+        "url": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/observation-collections/ex7.ttl",
+        "exampleIndex": 10,
+        "snippetIndex": 1,
+        "language": "text/turtle",
+        "sourceUrl": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/ex7.ttl"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/ex7.ttl from examples"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "ex7.ttl",
+              "size": 18,
+              "isError": false,
+              "message": "Output Turtle ex7.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "TURTLE",
+          "title": "Turtle",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Prefixes are defined for cdt, equipment, ex, geo, gr, gs1, om, owl, prov, qk, qudt, rdf, rdfp, rdfs, schema, seas, sensor, sh, skos, sosa, system, time, unit, xsd"
+            }
+          ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using snippet SHACL closures:\n - ../closures/ex7.ttl"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/execution/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
+                  "nodes": [
+                    "<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/moreSpecificTemperatureSensorOperatingRange>"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
+                  "nodes": [
+                    "<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/moreSpecificTemperatureSensorOperatingRange>"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResult>": {
+                  "nodes": [
+                    "<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/1>",
+                    "<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/2>"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
+                  "nodes": [
+                    "<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/1>",
+                    "<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/2>"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
+                  "nodes": []
+                },
+                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
+                  "nodes": [
+                    "<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/1>",
+                    "<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/2>"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/execution/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/moreSpecificTemperatureSensorOperatingRange>\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/moreSpecificTemperatureSensorOperatingRange>\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: <https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/1>,<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/2>\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/1>,<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/2>\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/1>,<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/2>\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/observation/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/observation/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/observation/shapes.shacl",
+              "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>": {
+                  "nodes": [
+                    "<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/moreSpecificTemperatureSensorOperatingRange>"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>": {
+                  "nodes": [
+                    "<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/1>",
+                    "<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/2>"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: <https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/moreSpecificTemperatureSensorOperatingRange>\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: <https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/1>,<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/2>\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/sosa/spec-examples/observation-collections/InkBird-IBS-TH2-survivable-conditions.ttl",
+        "url": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/observation-collections/InkBird-IBS-TH2-survivable-conditions.ttl",
+        "exampleIndex": 11,
+        "snippetIndex": 1,
+        "language": "text/turtle",
+        "sourceUrl": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/InkBird-IBS-TH2-survivable-conditions.ttl"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/InkBird-IBS-TH2-survivable-conditions.ttl from examples"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "InkBird-IBS-TH2-survivable-conditions.ttl",
+              "size": 18,
+              "isError": false,
+              "message": "Output Turtle InkBird-IBS-TH2-survivable-conditions.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "TURTLE",
+          "title": "Turtle",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Prefixes are defined for cdt, equipment, ex, geo, gr, gs1, om, owl, prov, qk, qudt, rdf, rdfp, rdfs, schema, seas, sensor, sh, skos, sosa, system, time, unit, xsd"
+            }
+          ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using snippet SHACL closures:\n - ../closures/InkBird-IBS-TH2-survivable-conditions.ttl"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/execution/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
+                  "nodes": [
+                    "ex:IBSTH2SurvivalRange"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
+                  "nodes": [
+                    "ex:IBSTH2SurvivalRange"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResult>": {
+                  "nodes": [
+                    "ex:IBSTH2SurvivalRange/sosa:hasMember",
+                    "ex:IBSTH2SurvivalRange/sosa:hasMember"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
+                  "nodes": [
+                    "ex:IBSTH2SurvivalRange/sosa:hasMember",
+                    "ex:IBSTH2SurvivalRange/sosa:hasMember"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
+                  "nodes": []
+                },
+                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
+                  "nodes": [
+                    "ex:IBSTH2SurvivalRange/sosa:hasMember",
+                    "ex:IBSTH2SurvivalRange/sosa:hasMember"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/execution/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: ex:IBSTH2SurvivalRange\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: ex:IBSTH2SurvivalRange\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: ex:IBSTH2SurvivalRange/sosa:hasMember,ex:IBSTH2SurvivalRange/sosa:hasMember\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: ex:IBSTH2SurvivalRange/sosa:hasMember,ex:IBSTH2SurvivalRange/sosa:hasMember\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: ex:IBSTH2SurvivalRange/sosa:hasMember,ex:IBSTH2SurvivalRange/sosa:hasMember\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/observation/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/observation/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/observation/shapes.shacl",
+              "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>": {
+                  "nodes": [
+                    "ex:IBSTH2SurvivalRange"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>": {
+                  "nodes": [
+                    "ex:IBSTH2SurvivalRange/sosa:hasMember",
+                    "ex:IBSTH2SurvivalRange/sosa:hasMember"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: ex:IBSTH2SurvivalRange\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: ex:IBSTH2SurvivalRange/sosa:hasMember,ex:IBSTH2SurvivalRange/sosa:hasMember\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/sosa/spec-examples/observation-collections/IBS-TH2-PLUS-capabilities.ttl",
+        "url": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/observation-collections/IBS-TH2-PLUS-capabilities.ttl",
+        "exampleIndex": 12,
+        "snippetIndex": 1,
+        "language": "text/turtle",
+        "sourceUrl": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/IBS-TH2-PLUS-capabilities.ttl"
+      },
+      "result": false,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/IBS-TH2-PLUS-capabilities.ttl from examples"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "IBS-TH2-PLUS-capabilities.ttl",
+              "size": 40,
+              "isError": false,
+              "message": "Output Turtle IBS-TH2-PLUS-capabilities.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "TURTLE",
+          "title": "Turtle",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Prefixes are defined for cdt, equipment, ex, geo, gr, gs1, om, owl, prov, qk, qudt, rdf, rdfp, rdfs, schema, seas, sensor, sh, skos, sosa, system, time, unit, xsd"
+            }
+          ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using snippet SHACL closures:\n - ../closures/IBS-TH2-PLUS-capabilities.ttl"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "graph": "@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <https://example.org/sensor/IBS-TH2-Plus-T-normalHumidityConditions> ;\n            sh:resultMessage \"Exactly one of sosa:hasResult, sosa:hasSimpleResult or sosa:isResultOf (from the result) is required per execution\" ;\n            sh:resultPath [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult [ sh:inversePath sosa:isResultOf ] ) ] ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:maxCount 1 ;\n                    sh:message \"Exactly one of sosa:hasResult, sosa:hasSimpleResult or sosa:isResultOf (from the result) is required per execution\" ;\n                    sh:minCount 1 ;\n                    sh:path [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult [ sh:inversePath sosa:isResultOf ] ) ] ] ] .\n\n",
+              "isError": true,
+              "message": "Validation result for _sources/properties/execution/shapes.shacl:\n  Validation Report\n  Conforms: False\n  Results (1):\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:message Literal(\"Exactly one of sosa:hasResult, sosa:hasSimpleResult or sosa:isResultOf (from the result) is required per execution\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult [ sh:inversePath sosa:isResultOf ] ) ] ]\n  \tFocus Node: sensor:IBS-TH2-Plus-T-normalHumidityConditions\n  \tResult Path: [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult [ sh:inversePath sosa:isResultOf ] ) ]\n  \tMessage: Exactly one of sosa:hasResult, sosa:hasSimpleResult or sosa:isResultOf (from the result) is required per execution\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
+                  "nodes": [
+                    "sensor:IBS-TH2-Plus-T-normalHumidityConditions",
+                    "sensor:IBS-TH2-Plus-T-systemCapability"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
+                  "nodes": [
+                    "sensor:IBS-TH2-Plus-T-normalHumidityConditions",
+                    "sensor:IBS-TH2-Plus-T-systemCapability"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResult>": {
+                  "nodes": [
+                    "sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember",
+                    "sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember",
+                    "sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember",
+                    "sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember",
+                    "sensor:IBS-TH2-Plus-T-normalHumidityConditions",
+                    "sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
+                  "nodes": [
+                    "sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember",
+                    "sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember",
+                    "sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember",
+                    "sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember",
+                    "sensor:IBS-TH2-Plus-T-normalHumidityConditions",
+                    "sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
+                  "nodes": []
+                },
+                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
+                  "nodes": [
+                    "sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember",
+                    "sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember",
+                    "sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember",
+                    "sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember",
+                    "sensor:IBS-TH2-Plus-T-normalHumidityConditions",
+                    "sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/execution/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: sensor:IBS-TH2-Plus-T-normalHumidityConditions,sensor:IBS-TH2-Plus-T-systemCapability\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: sensor:IBS-TH2-Plus-T-normalHumidityConditions,sensor:IBS-TH2-Plus-T-systemCapability\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember,sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-normalHumidityConditions,sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember,sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-normalHumidityConditions,sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember,sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-normalHumidityConditions,sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/observation/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <https://example.org/sensor/IBS-TH2-Plus-T-normalHumidityConditions> ;\n            sh:resultMessage \"sosa:observedProperty is required, on the observation or a collection it is a member of\" ;\n            sh:resultPath sosa:observedProperty ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraint [ sh:message \"sosa:observedProperty is required, on the observation or a collection it is a member of\" ;\n                    sh:select \"\"\"\n            PREFIX sosa: <http://www.w3.org/ns/sosa/>\n            PREFIX geojson: <https://purl.org/geojson/vocab#>\n            SELECT $this (sosa:observedProperty AS ?path) WHERE {\n                FILTER NOT EXISTS {\n                    $this (^sosa:hasMember|^geojson:features|sosa:memberOf)* ?holder .\n                    ?holder sosa:observedProperty ?prop .\n                }\n                FILTER (EXISTS { $this a sosa:Observation } || NOT EXISTS {\n                    { $this a ?type . FILTER(?type IN (sosa:Actuation, sosa:Sampling)) }\n                    UNION\n                    { $this sosa:actsOnProperty|sosa:madeByActuator|sosa:madeBySampler ?x }\n                    UNION\n                    {\n                        $this (^sosa:hasMember|^geojson:features|sosa:memberOf)+ ?collection .\n                        ?collection a ?ctype .\n                        FILTER(?ctype IN (sosa:ActuationCollection, sosa:SamplingCollection))\n                    }\n                })\n            }\n        \"\"\" ] ;\n            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;\n            sh:sourceShape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent> ;\n            sh:value <https://example.org/sensor/IBS-TH2-Plus-T-normalHumidityConditions> ] .\n\n",
+              "isError": true,
+              "message": "Validation result for _sources/properties/observation/shapes.shacl:\n  Validation Report\n  Conforms: False\n  Results (1):\n  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>\n  \tFocus Node: sensor:IBS-TH2-Plus-T-normalHumidityConditions\n  \tValue Node: sensor:IBS-TH2-Plus-T-normalHumidityConditions\n  \tResult Path: sosa:observedProperty\n  \tSource Constraint: [ sh:message Literal(\"sosa:observedProperty is required, on the observation or a collection it is a member of\") ; sh:select Literal(\"\n              PREFIX sosa: <http://www.w3.org/ns/sosa/>\n              PREFIX geojson: <https://purl.org/geojson/vocab#>\n              SELECT $this (sosa:observedProperty AS ?path) WHERE {\n                  FILTER NOT EXISTS {\n                      $this (^sosa:hasMember|^geojson:features|sosa:memberOf)* ?holder .\n                      ?holder sosa:observedProperty ?prop .\n                  }\n                  FILTER (EXISTS { $this a sosa:Observation } || NOT EXISTS {\n                      { $this a ?type . FILTER(?type IN (sosa:Actuation, sosa:Sampling)) }\n                      UNION\n                      { $this sosa:actsOnProperty|sosa:madeByActuator|sosa:madeBySampler ?x }\n                      UNION\n                      {\n                          $this (^sosa:hasMember|^geojson:features|sosa:memberOf)+ ?collection .\n                          ?collection a ?ctype .\n                          FILTER(?ctype IN (sosa:ActuationCollection, sosa:SamplingCollection))\n                      }\n                  })\n              }\n          \") ]\n  \tMessage: sosa:observedProperty is required, on the observation or a collection it is a member of\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/observation/shapes.shacl",
+              "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>": {
+                  "nodes": [
+                    "sensor:IBS-TH2-Plus-T-systemCapability"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>": {
+                  "nodes": [
+                    "sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember",
+                    "sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember",
+                    "sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember",
+                    "sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember",
+                    "sensor:IBS-TH2-Plus-T-normalHumidityConditions",
+                    "sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: sensor:IBS-TH2-Plus-T-systemCapability\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember,sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-normalHumidityConditions,sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/sosa/spec-examples/observation-collections/dht22.ttl",
+        "url": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/observation-collections/dht22.ttl",
+        "exampleIndex": 13,
+        "snippetIndex": 1,
+        "language": "text/turtle",
+        "sourceUrl": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/dht22.ttl"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/dht22.ttl from examples"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "dht22.ttl",
+              "size": 227,
+              "isError": false,
+              "message": "Output Turtle dht22.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "TURTLE",
+          "title": "Turtle",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Prefixes are defined for cdt, equipment, ex, geo, gr, gs1, om, owl, prov, qk, qudt, rdf, rdfp, rdfs, schema, seas, sensor, sh, skos, sosa, system, time, unit, xsd"
+            }
+          ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using snippet SHACL closures:\n - ../closures/dht22.ttl"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/execution/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
+                  "nodes": [
+                    "ex:DHT22_4578_HumiditySensorCapabilities",
+                    "ex:DHT22_4578_TemperatureSensorCapabilities",
+                    "ex:DHT22_4578_HumiditySensorNormalOperatingConditions",
+                    "ex:DHT22_4578_TemperatureSensorNormalOperatingConditions"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
+                  "nodes": [
+                    "ex:DHT22_4578_HumiditySensorCapabilities",
+                    "ex:DHT22_4578_TemperatureSensorCapabilities",
+                    "ex:DHT22_4578_HumiditySensorNormalOperatingConditions",
+                    "ex:DHT22_4578_TemperatureSensorNormalOperatingConditions"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResult>": {
+                  "nodes": [
+                    "ex:DHT22_4578_TemperatureMeasurementSensitivity",
+                    "ex:DHT22_4578_maximumMeasureableTemperature",
+                    "ex:maximumOperatingInputVoltage",
+                    "ex:maximumOperatingTemperature",
+                    "ex:mimimalOperatingInputVoltage",
+                    "ex:DHT22_4578_minimumMeasureableTemperature",
+                    "ex:DHT22_4578_RelativeHumidityFrequency",
+                    "ex:nominalOperatingInputVoltage",
+                    "ex:minimumOperatingHumidity",
+                    "ex:DHT22_4578_TemperatureMeasurementFrequency",
+                    "ex:DHT22_4578_minimumMeasureableRelativeHumidity",
+                    "ex:maximumOperatingHumidity",
+                    "ex:observation_1087",
+                    "ex:minimumOperatingTemperature",
+                    "ex:DHT22_4578_TemperatureMeasurementAccuracy",
+                    "ex:DHT22_4578_maximumMeasureableRelativeHumidity"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
+                  "nodes": [
+                    "ex:DHT22_4578_TemperatureMeasurementSensitivity",
+                    "ex:DHT22_4578_maximumMeasureableTemperature",
+                    "ex:maximumOperatingInputVoltage",
+                    "ex:maximumOperatingTemperature",
+                    "ex:mimimalOperatingInputVoltage",
+                    "ex:DHT22_4578_minimumMeasureableTemperature",
+                    "ex:DHT22_4578_RelativeHumidityFrequency",
+                    "ex:nominalOperatingInputVoltage",
+                    "ex:minimumOperatingHumidity",
+                    "ex:DHT22_4578_TemperatureMeasurementFrequency",
+                    "ex:DHT22_4578_minimumMeasureableRelativeHumidity",
+                    "ex:maximumOperatingHumidity",
+                    "ex:observation_1087",
+                    "ex:minimumOperatingTemperature",
+                    "ex:DHT22_4578_TemperatureMeasurementAccuracy",
+                    "ex:DHT22_4578_maximumMeasureableRelativeHumidity"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
+                  "nodes": [
+                    "ex:mimimalOperatingInputVoltage/sosa:hasSimpleResult",
+                    "ex:minimumOperatingTemperature/sosa:hasSimpleResult",
+                    "ex:maximumOperatingInputVoltage/sosa:hasSimpleResult",
+                    "ex:nominalOperatingInputVoltage/sosa:hasSimpleResult"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
+                  "nodes": [
+                    "ex:DHT22_4578_TemperatureMeasurementSensitivity",
+                    "ex:DHT22_4578_maximumMeasureableTemperature",
+                    "ex:maximumOperatingInputVoltage",
+                    "ex:maximumOperatingTemperature",
+                    "ex:mimimalOperatingInputVoltage",
+                    "ex:DHT22_4578_minimumMeasureableTemperature",
+                    "ex:DHT22_4578_RelativeHumidityFrequency",
+                    "ex:nominalOperatingInputVoltage",
+                    "ex:minimumOperatingHumidity",
+                    "ex:DHT22_4578_TemperatureMeasurementFrequency",
+                    "ex:DHT22_4578_minimumMeasureableRelativeHumidity",
+                    "ex:maximumOperatingHumidity",
+                    "ex:observation_1087",
+                    "ex:minimumOperatingTemperature",
+                    "ex:DHT22_4578_TemperatureMeasurementAccuracy",
+                    "ex:DHT22_4578_maximumMeasureableRelativeHumidity"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/execution/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: ex:DHT22_4578_HumiditySensorCapabilities,ex:DHT22_4578_TemperatureSensorCapabilities,ex:DHT22_4578_HumiditySensorNormalOperatingConditions,ex:DHT22_4578_TemperatureSensorNormalOperatingConditions\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: ex:DHT22_4578_HumiditySensorCapabilities,ex:DHT22_4578_TemperatureSensorCapabilities,ex:DHT22_4578_HumiditySensorNormalOperatingConditions,ex:DHT22_4578_TemperatureSensorNormalOperatingConditions\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: ex:DHT22_4578_TemperatureMeasurementSensitivity,ex:DHT22_4578_maximumMeasureableTemperature,ex:maximumOperatingInputVoltage,ex:maximumOperatingTemperature,ex:mimimalOperatingInputVoltage,ex:DHT22_4578_minimumMeasureableTemperature,ex:DHT22_4578_RelativeHumidityFrequency,ex:nominalOperatingInputVoltage,ex:minimumOperatingHumidity,ex:DHT22_4578_TemperatureMeasurementFrequency,ex:DHT22_4578_minimumMeasureableRelativeHumidity,ex:maximumOperatingHumidity,ex:observation_1087,ex:minimumOperatingTemperature,ex:DHT22_4578_TemperatureMeasurementAccuracy,ex:DHT22_4578_maximumMeasureableRelativeHumidity\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: ex:DHT22_4578_TemperatureMeasurementSensitivity,ex:DHT22_4578_maximumMeasureableTemperature,ex:maximumOperatingInputVoltage,ex:maximumOperatingTemperature,ex:mimimalOperatingInputVoltage,ex:DHT22_4578_minimumMeasureableTemperature,ex:DHT22_4578_RelativeHumidityFrequency,ex:nominalOperatingInputVoltage,ex:minimumOperatingHumidity,ex:DHT22_4578_TemperatureMeasurementFrequency,ex:DHT22_4578_minimumMeasureableRelativeHumidity,ex:maximumOperatingHumidity,ex:observation_1087,ex:minimumOperatingTemperature,ex:DHT22_4578_TemperatureMeasurementAccuracy,ex:DHT22_4578_maximumMeasureableRelativeHumidity\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: ex:mimimalOperatingInputVoltage/sosa:hasSimpleResult,ex:minimumOperatingTemperature/sosa:hasSimpleResult,ex:maximumOperatingInputVoltage/sosa:hasSimpleResult,ex:nominalOperatingInputVoltage/sosa:hasSimpleResult\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: ex:DHT22_4578_TemperatureMeasurementSensitivity,ex:DHT22_4578_maximumMeasureableTemperature,ex:maximumOperatingInputVoltage,ex:maximumOperatingTemperature,ex:mimimalOperatingInputVoltage,ex:DHT22_4578_minimumMeasureableTemperature,ex:DHT22_4578_RelativeHumidityFrequency,ex:nominalOperatingInputVoltage,ex:minimumOperatingHumidity,ex:DHT22_4578_TemperatureMeasurementFrequency,ex:DHT22_4578_minimumMeasureableRelativeHumidity,ex:maximumOperatingHumidity,ex:observation_1087,ex:minimumOperatingTemperature,ex:DHT22_4578_TemperatureMeasurementAccuracy,ex:DHT22_4578_maximumMeasureableRelativeHumidity\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/observation/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/observation/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/observation/shapes.shacl",
+              "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>": {
+                  "nodes": [
+                    "ex:DHT22_4578_HumiditySensorNormalOperatingConditions",
+                    "ex:DHT22_4578_HumiditySensorCapabilities",
+                    "ex:DHT22_4578_TemperatureSensorCapabilities",
+                    "ex:DHT22_4578_TemperatureSensorNormalOperatingConditions"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>": {
+                  "nodes": [
+                    "ex:DHT22_4578_TemperatureMeasurementSensitivity",
+                    "ex:DHT22_4578_maximumMeasureableTemperature",
+                    "ex:maximumOperatingInputVoltage",
+                    "ex:maximumOperatingTemperature",
+                    "ex:mimimalOperatingInputVoltage",
+                    "ex:DHT22_4578_minimumMeasureableTemperature",
+                    "ex:DHT22_4578_RelativeHumidityFrequency",
+                    "ex:nominalOperatingInputVoltage",
+                    "ex:minimumOperatingHumidity",
+                    "ex:DHT22_4578_TemperatureMeasurementFrequency",
+                    "ex:DHT22_4578_minimumMeasureableRelativeHumidity",
+                    "ex:maximumOperatingHumidity",
+                    "ex:observation_1087",
+                    "ex:minimumOperatingTemperature",
+                    "ex:DHT22_4578_TemperatureMeasurementAccuracy",
+                    "ex:DHT22_4578_maximumMeasureableRelativeHumidity"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: ex:DHT22_4578_HumiditySensorNormalOperatingConditions,ex:DHT22_4578_HumiditySensorCapabilities,ex:DHT22_4578_TemperatureSensorCapabilities,ex:DHT22_4578_TemperatureSensorNormalOperatingConditions\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: ex:DHT22_4578_TemperatureMeasurementSensitivity,ex:DHT22_4578_maximumMeasureableTemperature,ex:maximumOperatingInputVoltage,ex:maximumOperatingTemperature,ex:mimimalOperatingInputVoltage,ex:DHT22_4578_minimumMeasureableTemperature,ex:DHT22_4578_RelativeHumidityFrequency,ex:nominalOperatingInputVoltage,ex:minimumOperatingHumidity,ex:DHT22_4578_TemperatureMeasurementFrequency,ex:DHT22_4578_minimumMeasureableRelativeHumidity,ex:maximumOperatingHumidity,ex:observation_1087,ex:minimumOperatingTemperature,ex:DHT22_4578_TemperatureMeasurementAccuracy,ex:DHT22_4578_maximumMeasureableRelativeHumidity\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/sosa/spec-examples/observation-collections/dht22--DHT22_4578_TemperatureSensorCapabilities.ttl",
+        "url": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/observation-collections/dht22--DHT22_4578_TemperatureSensorCapabilities.ttl",
+        "exampleIndex": 14,
+        "snippetIndex": 1,
+        "language": "text/turtle",
+        "sourceUrl": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/dht22.ttl"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/dht22.ttl from examples"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "dht22--DHT22_4578_TemperatureSensorCapabilities.ttl",
+              "size": 227,
+              "isError": false,
+              "message": "Output Turtle dht22--DHT22_4578_TemperatureSensorCapabilities.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "TURTLE",
+          "title": "Turtle",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Prefixes are defined for cdt, equipment, ex, geo, gr, gs1, om, owl, prov, qk, qudt, rdf, rdfp, rdfs, schema, seas, sensor, sh, skos, sosa, system, time, unit, xsd"
+            }
+          ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using snippet SHACL closures:\n - ../closures/dht22.ttl"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/execution/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
+                  "nodes": [
+                    "ex:DHT22_4578_HumiditySensorCapabilities",
+                    "ex:DHT22_4578_TemperatureSensorCapabilities",
+                    "ex:DHT22_4578_HumiditySensorNormalOperatingConditions",
+                    "ex:DHT22_4578_TemperatureSensorNormalOperatingConditions"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
+                  "nodes": [
+                    "ex:DHT22_4578_HumiditySensorCapabilities",
+                    "ex:DHT22_4578_TemperatureSensorCapabilities",
+                    "ex:DHT22_4578_HumiditySensorNormalOperatingConditions",
+                    "ex:DHT22_4578_TemperatureSensorNormalOperatingConditions"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResult>": {
+                  "nodes": [
+                    "ex:DHT22_4578_TemperatureMeasurementSensitivity",
+                    "ex:DHT22_4578_maximumMeasureableTemperature",
+                    "ex:maximumOperatingInputVoltage",
+                    "ex:maximumOperatingTemperature",
+                    "ex:mimimalOperatingInputVoltage",
+                    "ex:DHT22_4578_minimumMeasureableTemperature",
+                    "ex:DHT22_4578_RelativeHumidityFrequency",
+                    "ex:nominalOperatingInputVoltage",
+                    "ex:minimumOperatingHumidity",
+                    "ex:DHT22_4578_TemperatureMeasurementFrequency",
+                    "ex:DHT22_4578_minimumMeasureableRelativeHumidity",
+                    "ex:maximumOperatingHumidity",
+                    "ex:observation_1087",
+                    "ex:minimumOperatingTemperature",
+                    "ex:DHT22_4578_TemperatureMeasurementAccuracy",
+                    "ex:DHT22_4578_maximumMeasureableRelativeHumidity"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
+                  "nodes": [
+                    "ex:DHT22_4578_TemperatureMeasurementSensitivity",
+                    "ex:DHT22_4578_maximumMeasureableTemperature",
+                    "ex:maximumOperatingInputVoltage",
+                    "ex:maximumOperatingTemperature",
+                    "ex:mimimalOperatingInputVoltage",
+                    "ex:DHT22_4578_minimumMeasureableTemperature",
+                    "ex:DHT22_4578_RelativeHumidityFrequency",
+                    "ex:nominalOperatingInputVoltage",
+                    "ex:minimumOperatingHumidity",
+                    "ex:DHT22_4578_TemperatureMeasurementFrequency",
+                    "ex:DHT22_4578_minimumMeasureableRelativeHumidity",
+                    "ex:maximumOperatingHumidity",
+                    "ex:observation_1087",
+                    "ex:minimumOperatingTemperature",
+                    "ex:DHT22_4578_TemperatureMeasurementAccuracy",
+                    "ex:DHT22_4578_maximumMeasureableRelativeHumidity"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
+                  "nodes": [
+                    "ex:mimimalOperatingInputVoltage/sosa:hasSimpleResult",
+                    "ex:minimumOperatingTemperature/sosa:hasSimpleResult",
+                    "ex:maximumOperatingInputVoltage/sosa:hasSimpleResult",
+                    "ex:nominalOperatingInputVoltage/sosa:hasSimpleResult"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
+                  "nodes": [
+                    "ex:DHT22_4578_TemperatureMeasurementSensitivity",
+                    "ex:DHT22_4578_maximumMeasureableTemperature",
+                    "ex:maximumOperatingInputVoltage",
+                    "ex:maximumOperatingTemperature",
+                    "ex:mimimalOperatingInputVoltage",
+                    "ex:DHT22_4578_minimumMeasureableTemperature",
+                    "ex:DHT22_4578_RelativeHumidityFrequency",
+                    "ex:nominalOperatingInputVoltage",
+                    "ex:minimumOperatingHumidity",
+                    "ex:DHT22_4578_TemperatureMeasurementFrequency",
+                    "ex:DHT22_4578_minimumMeasureableRelativeHumidity",
+                    "ex:maximumOperatingHumidity",
+                    "ex:observation_1087",
+                    "ex:minimumOperatingTemperature",
+                    "ex:DHT22_4578_TemperatureMeasurementAccuracy",
+                    "ex:DHT22_4578_maximumMeasureableRelativeHumidity"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/execution/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: ex:DHT22_4578_HumiditySensorCapabilities,ex:DHT22_4578_TemperatureSensorCapabilities,ex:DHT22_4578_HumiditySensorNormalOperatingConditions,ex:DHT22_4578_TemperatureSensorNormalOperatingConditions\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: ex:DHT22_4578_HumiditySensorCapabilities,ex:DHT22_4578_TemperatureSensorCapabilities,ex:DHT22_4578_HumiditySensorNormalOperatingConditions,ex:DHT22_4578_TemperatureSensorNormalOperatingConditions\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: ex:DHT22_4578_TemperatureMeasurementSensitivity,ex:DHT22_4578_maximumMeasureableTemperature,ex:maximumOperatingInputVoltage,ex:maximumOperatingTemperature,ex:mimimalOperatingInputVoltage,ex:DHT22_4578_minimumMeasureableTemperature,ex:DHT22_4578_RelativeHumidityFrequency,ex:nominalOperatingInputVoltage,ex:minimumOperatingHumidity,ex:DHT22_4578_TemperatureMeasurementFrequency,ex:DHT22_4578_minimumMeasureableRelativeHumidity,ex:maximumOperatingHumidity,ex:observation_1087,ex:minimumOperatingTemperature,ex:DHT22_4578_TemperatureMeasurementAccuracy,ex:DHT22_4578_maximumMeasureableRelativeHumidity\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: ex:DHT22_4578_TemperatureMeasurementSensitivity,ex:DHT22_4578_maximumMeasureableTemperature,ex:maximumOperatingInputVoltage,ex:maximumOperatingTemperature,ex:mimimalOperatingInputVoltage,ex:DHT22_4578_minimumMeasureableTemperature,ex:DHT22_4578_RelativeHumidityFrequency,ex:nominalOperatingInputVoltage,ex:minimumOperatingHumidity,ex:DHT22_4578_TemperatureMeasurementFrequency,ex:DHT22_4578_minimumMeasureableRelativeHumidity,ex:maximumOperatingHumidity,ex:observation_1087,ex:minimumOperatingTemperature,ex:DHT22_4578_TemperatureMeasurementAccuracy,ex:DHT22_4578_maximumMeasureableRelativeHumidity\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: ex:mimimalOperatingInputVoltage/sosa:hasSimpleResult,ex:minimumOperatingTemperature/sosa:hasSimpleResult,ex:maximumOperatingInputVoltage/sosa:hasSimpleResult,ex:nominalOperatingInputVoltage/sosa:hasSimpleResult\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: ex:DHT22_4578_TemperatureMeasurementSensitivity,ex:DHT22_4578_maximumMeasureableTemperature,ex:maximumOperatingInputVoltage,ex:maximumOperatingTemperature,ex:mimimalOperatingInputVoltage,ex:DHT22_4578_minimumMeasureableTemperature,ex:DHT22_4578_RelativeHumidityFrequency,ex:nominalOperatingInputVoltage,ex:minimumOperatingHumidity,ex:DHT22_4578_TemperatureMeasurementFrequency,ex:DHT22_4578_minimumMeasureableRelativeHumidity,ex:maximumOperatingHumidity,ex:observation_1087,ex:minimumOperatingTemperature,ex:DHT22_4578_TemperatureMeasurementAccuracy,ex:DHT22_4578_maximumMeasureableRelativeHumidity\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/observation/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/observation/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/observation/shapes.shacl",
+              "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>": {
+                  "nodes": [
+                    "ex:DHT22_4578_HumiditySensorNormalOperatingConditions",
+                    "ex:DHT22_4578_HumiditySensorCapabilities",
+                    "ex:DHT22_4578_TemperatureSensorCapabilities",
+                    "ex:DHT22_4578_TemperatureSensorNormalOperatingConditions"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>": {
+                  "nodes": [
+                    "ex:DHT22_4578_TemperatureMeasurementSensitivity",
+                    "ex:DHT22_4578_maximumMeasureableTemperature",
+                    "ex:maximumOperatingInputVoltage",
+                    "ex:maximumOperatingTemperature",
+                    "ex:mimimalOperatingInputVoltage",
+                    "ex:DHT22_4578_minimumMeasureableTemperature",
+                    "ex:DHT22_4578_RelativeHumidityFrequency",
+                    "ex:nominalOperatingInputVoltage",
+                    "ex:minimumOperatingHumidity",
+                    "ex:DHT22_4578_TemperatureMeasurementFrequency",
+                    "ex:DHT22_4578_minimumMeasureableRelativeHumidity",
+                    "ex:maximumOperatingHumidity",
+                    "ex:observation_1087",
+                    "ex:minimumOperatingTemperature",
+                    "ex:DHT22_4578_TemperatureMeasurementAccuracy",
+                    "ex:DHT22_4578_maximumMeasureableRelativeHumidity"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: ex:DHT22_4578_HumiditySensorNormalOperatingConditions,ex:DHT22_4578_HumiditySensorCapabilities,ex:DHT22_4578_TemperatureSensorCapabilities,ex:DHT22_4578_TemperatureSensorNormalOperatingConditions\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: ex:DHT22_4578_TemperatureMeasurementSensitivity,ex:DHT22_4578_maximumMeasureableTemperature,ex:maximumOperatingInputVoltage,ex:maximumOperatingTemperature,ex:mimimalOperatingInputVoltage,ex:DHT22_4578_minimumMeasureableTemperature,ex:DHT22_4578_RelativeHumidityFrequency,ex:nominalOperatingInputVoltage,ex:minimumOperatingHumidity,ex:DHT22_4578_TemperatureMeasurementFrequency,ex:DHT22_4578_minimumMeasureableRelativeHumidity,ex:maximumOperatingHumidity,ex:observation_1087,ex:minimumOperatingTemperature,ex:DHT22_4578_TemperatureMeasurementAccuracy,ex:DHT22_4578_maximumMeasureableRelativeHumidity\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "globalErrors": {},
+  "counts": {
+    "total": 14,
+    "passed": 13,
+    "failed": 1
+  }
+}

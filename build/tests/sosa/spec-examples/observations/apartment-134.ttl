@@ -1,0 +1,51 @@
+@prefix ex: <https://example.org/data/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Observation_235754 a sosa:Observation ;
+    sosa:madeBySensor ex:sensor_926 .
+
+ex:tempSensor_23 a sosa:Sensor ;
+    sosa:madeObservation ex:tempSensor_23_4572,
+        ex:tempSensor_23_4573,
+        ex:tempSensor_23_4574 ;
+    sosa:observes ex:tempSensor_23_temperature .
+
+ex:window a sosa:FeatureOfInterest ;
+    sosa:hasProperty ex:window_104_state .
+
+ex:Observation_235714 a sosa:Observation ;
+    sosa:hasResult [ a qudt:QuantityValue ;
+            qudt:hasUnit unit:KiloW-HR ;
+            qudt:value 22.4 ] ;
+    sosa:madeBySensor ex:sensor_926 ;
+    sosa:observedProperty ex:Apartment_134_electricConsumption ;
+    sosa:phenomenonTime [ time:hasBeginning [ time:inXSDDateTimeStamp "2017-04-15T23:59:30+00:00"^^xsd:dateTime ] ;
+            time:hasEnd [ time:inXSDDateTimeStamp "2017-04-16T00:00:00+00:00"^^xsd:dateTime ] ] ;
+    sosa:resultTime "2017-04-16T00:00:12+00:00"^^xsd:dateTime .
+
+ex:windowCloser_987 a sosa:Actuator ;
+    sosa:actsOn ex:window_104_state ;
+    sosa:madeActuation ex:actuation_188 .
+
+ex:Apartment_134_electricConsumption a sosa:Property ;
+    sosa:isObservedBy ex:sensor_926 .
+
+ex:actuation_188 a sosa:Actuation ;
+    sosa:actsOnProperty ex:window_104_state ;
+    sosa:hasSimpleResult true ;
+    sosa:madeByActuator ex:windowCloser_987 ;
+    sosa:resultTime "2017-04-18T17:24:00+02:00"^^xsd:dateTime .
+
+ex:sensor_926 a sosa:Sensor ;
+    sosa:madeObservation ex:Observation_235714,
+        ex:Observation_235715,
+        ex:Observation_235716 ;
+    sosa:observes ex:Apartment_134_electricConsumption .
+
+ex:window_104_state a sosa:Property ;
+    sosa:wasActedOnBy ex:actuation_188 .
+

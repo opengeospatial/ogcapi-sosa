@@ -1,0 +1,318 @@
+{
+  "title": "Validation report for ogc.sosa.properties.sampling - Sampling Properties",
+  "bblockName": "Sampling Properties",
+  "bblockId": "ogc.sosa.properties.sampling",
+  "generated": "2026-10-21T10:03:04.746838+00:00",
+  "result": false,
+  "items": [
+    {
+      "source": {
+        "type": "TRANSFORM_OUTPUT",
+        "requireFail": false,
+        "filename": "build/tests/sosa/spec-examples/samplings/transforms/bubble-provenance.ttl-to-jsonld.json",
+        "url": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/samplings/transforms/bubble-provenance.ttl-to-jsonld.json",
+        "language": "application/json",
+        "transformId": "ttl-to-jsonld"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using bubble-provenance.ttl-to-jsonld.json from transform outputs"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "bubble-provenance.ttl-to-jsonld.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD bubble-provenance.ttl-to-jsonld.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "bubble-provenance.ttl-to-jsonld.ttl",
+              "size": 33,
+              "isError": false,
+              "message": "Output Turtle bubble-provenance.ttl-to-jsonld.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/execution/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
+                  "nodes": []
+                },
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
+                  "nodes": []
+                },
+                "<https://www.ogc.org/rules/sosa/#testResult>": {
+                  "nodes": [
+                    "ex:CoreEx1923",
+                    "ex:WellDrilling4578"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
+                  "nodes": [
+                    "ex:CoreEx1923",
+                    "ex:WellDrilling4578"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
+                  "nodes": []
+                },
+                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
+                  "nodes": [
+                    "ex:CoreEx1923",
+                    "ex:WellDrilling4578"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/execution/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: ex:CoreEx1923,ex:WellDrilling4578\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: ex:CoreEx1923,ex:WellDrilling4578\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: ex:CoreEx1923,ex:WellDrilling4578\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "TRANSFORM_OUTPUT",
+        "requireFail": false,
+        "filename": "build/tests/sosa/spec-examples/samplings/transforms/bubble-provenance--WellDrilling4578.ttl-to-jsonld.json",
+        "url": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/samplings/transforms/bubble-provenance--WellDrilling4578.ttl-to-jsonld.json",
+        "language": "application/json",
+        "transformId": "ttl-to-jsonld"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using bubble-provenance--WellDrilling4578.ttl-to-jsonld.json from transform outputs"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "bubble-provenance--WellDrilling4578.ttl-to-jsonld.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD bubble-provenance--WellDrilling4578.ttl-to-jsonld.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "bubble-provenance--WellDrilling4578.ttl-to-jsonld.ttl",
+              "size": 14,
+              "isError": false,
+              "message": "Output Turtle bubble-provenance--WellDrilling4578.ttl-to-jsonld.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/properties/execution/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
+                  "nodes": []
+                },
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
+                  "nodes": []
+                },
+                "<https://www.ogc.org/rules/sosa/#testResult>": {
+                  "nodes": [
+                    "ex:WellDrilling4578"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
+                  "nodes": [
+                    "ex:WellDrilling4578"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
+                  "nodes": []
+                },
+                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
+                  "nodes": [
+                    "ex:WellDrilling4578"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/execution/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: ex:WellDrilling4578\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: ex:WellDrilling4578\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: ex:WellDrilling4578\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "TRANSFORM_OUTPUT",
+        "requireFail": false,
+        "filename": "build/tests/sosa/spec-examples/samplings/transforms/LocatedSampling.ttl-to-jsonld.json",
+        "url": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/samplings/transforms/LocatedSampling.ttl-to-jsonld.json",
+        "language": "application/json",
+        "transformId": "ttl-to-jsonld"
+      },
+      "result": false,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using LocatedSampling.ttl-to-jsonld.json from transform outputs"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "LocatedSampling.ttl-to-jsonld.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD LocatedSampling.ttl-to-jsonld.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "LocatedSampling.ttl-to-jsonld.ttl",
+              "size": 8,
+              "isError": false,
+              "message": "Output Turtle LocatedSampling.ttl-to-jsonld.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": false,
+              "exception": "ValidationError",
+              "errorMessage": "{'@context': ['https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/sampling/context.jsonld', {'ex': 'https://example.org/data/', 'geo': 'http://www.opengis.net/ont/geosparql#', 'sf': 'http://www.opengis.net/ont/sf#', 'skos': 'http://www.w3.org/2004/02/skos/core#', 'geo:asWKT': {'@type': 'geo:WktLiteral'}}], 'id': 'ex:AirSampling_StE', 'featureType': 'Sampling', 'hasFeatureOfInterest': {'id': 'ex:EarthAtmosphere', 'featureType': 'FeatureOfInterest', 'skos:exactMatch': {'id': 'https://www.wikidata.org/wiki/Q3230'}}, 'sosa:oms/samplingLocation': {'featureType': 'sf:Point', 'geo:asWKT': 'POINT (4.387611 45.437772)'}, 'resultTime': '2017-01-01T00:00:00+00:00'} is not valid under any of the given schemas",
+              "isError": true,
+              "message": "ValidationError: {'@context': ['https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/sampling/context.jsonld', {'ex': 'https://example.org/data/', 'geo': 'http://www.opengis.net/ont/geosparql#', 'sf': 'http://www.opengis.net/ont/sf#', 'skos': 'http://www.w3.org/2004/02/skos/core#', 'geo:asWKT': {'@type': 'geo:WktLiteral'}}], 'id': 'ex:AirSampling_StE', 'featureType': 'Sampling', 'hasFeatureOfInterest': {'id': 'ex:EarthAtmosphere', 'featureType': 'FeatureOfInterest', 'skos:exactMatch': {'id': 'https://www.wikidata.org/wiki/Q3230'}}, 'sosa:oms/samplingLocation': {'featureType': 'sf:Point', 'geo:asWKT': 'POINT (4.387611 45.437772)'}, 'resultTime': '2017-01-01T00:00:00+00:00'} is not valid under any of the given schemas\n\nFailed validating 'oneOf' in schema['allOf'][0]['allOf'][2]:\n    {'oneOf': [{'required': ['hasResult']},\n               {'required': ['hasSimpleResult']}]}\n\nOn instance:\n    {'@context': ['https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/sampling/context.jsonld',\n                  {'ex': 'https://example.org/data/',\n                   'geo': 'http://www.opengis.net/ont/geosparql#',\n                   'geo:asWKT': {'@type': 'geo:WktLiteral'},\n                   'sf': 'http://www.opengis.net/ont/sf#',\n                   'skos': 'http://www.w3.org/2004/02/skos/core#'}],\n     'featureType': 'Sampling',\n     'hasFeatureOfInterest': {'featureType': 'FeatureOfInterest',\n                              'id': 'ex:EarthAtmosphere',\n                              'skos:exactMatch': {'id': 'https://www.wikidata.org/wiki/Q3230'}},\n     'id': 'ex:AirSampling_StE',\n     'resultTime': '2017-01-01T00:00:00+00:00',\n     'sosa:oms/samplingLocation': {'featureType': 'sf:Point',\n                                   'geo:asWKT': 'POINT (4.387611 '\n                                                '45.437772)'}}"
+            }
+          ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using snippet SHACL closures:\n - /github/workspace/_sources/spec-examples/closures/LocatedSampling.ttl"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "graph": "@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <https://example.org/data/AirSampling_StE> ;\n            sh:resultMessage \"Exactly one of sosa:hasResult, sosa:hasSimpleResult or sosa:isResultOf (from the result) is required per execution\" ;\n            sh:resultPath [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult [ sh:inversePath sosa:isResultOf ] ) ] ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:maxCount 1 ;\n                    sh:message \"Exactly one of sosa:hasResult, sosa:hasSimpleResult or sosa:isResultOf (from the result) is required per execution\" ;\n                    sh:minCount 1 ;\n                    sh:path [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult [ sh:inversePath sosa:isResultOf ] ) ] ] ] .\n\n",
+              "isError": true,
+              "message": "Validation result for _sources/properties/execution/shapes.shacl:\n  Validation Report\n  Conforms: False\n  Results (1):\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:message Literal(\"Exactly one of sosa:hasResult, sosa:hasSimpleResult or sosa:isResultOf (from the result) is required per execution\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult [ sh:inversePath sosa:isResultOf ] ) ] ]\n  \tFocus Node: ex:AirSampling_StE\n  \tResult Path: [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult [ sh:inversePath sosa:isResultOf ] ) ]\n  \tMessage: Exactly one of sosa:hasResult, sosa:hasSimpleResult or sosa:isResultOf (from the result) is required per execution\n  "
+            },
+            {
+              "shaclFile": "_sources/properties/execution/shapes.shacl",
+              "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
+                  "nodes": []
+                },
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
+                  "nodes": []
+                },
+                "<https://www.ogc.org/rules/sosa/#testResult>": {
+                  "nodes": [
+                    "ex:AirSampling_StE"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
+                  "nodes": [
+                    "ex:AirSampling_StE"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
+                  "nodes": []
+                },
+                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
+                  "nodes": [
+                    "ex:AirSampling_StE"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/properties/execution/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: ex:AirSampling_StE\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: ex:AirSampling_StE\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: ex:AirSampling_StE\n"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "globalErrors": {},
+  "counts": {
+    "total": 3,
+    "passed": 2,
+    "failed": 1
+  }
+}

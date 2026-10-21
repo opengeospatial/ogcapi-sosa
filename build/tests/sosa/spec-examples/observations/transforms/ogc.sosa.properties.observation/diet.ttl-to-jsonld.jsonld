@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/context.jsonld",
+    {
+      "ex": "https://example.org/data/",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "skos": "http://www.w3.org/2004/02/skos/core#"
+    }
+  ],
+  "id": "ex:O299877",
+  "featureType": "Observation",
+  "hasFeatureOfInterest": "ex:Community2998",
+  "hasResult": {
+    "id": "ex:d77",
+    "featureType": "ex:diet",
+    "rdfs:comment": "mainly seafood"
+  },
+  "observedProperty": "ex:diet",
+  "phenomenonTime": {
+    "hasBeginning": {
+      "inTimePosition": {
+        "time:hasTRS": {
+          "id": "ex:BP",
+          "featureType": "time:TRS",
+          "skos:definition": "Years before 1950, positive backwards"
+        },
+        "time:numericPosition": 12000
+      }
+    },
+    "hasDuration": {
+      "time:numericDuration": 500,
+      "time:unitType": {
+        "id": "time:unitYear"
+      }
+    }
+  },
+  "resultTime": "2015-06-06T12:00:00+10:00"
+}
