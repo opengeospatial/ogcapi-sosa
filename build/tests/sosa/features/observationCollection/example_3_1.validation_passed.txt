@@ -1,5 +1,5 @@
 Validation report for ogc.sosa.features.observationCollection - SOSA ObservationCollection Feature
-Generated 2026-10-21T10:03:01.607206+00:00
+Generated 2026-10-21T10:12:46.126978+00:00
 === Files ===
 Using examples/observationCollection-foi-geometry.json from examples
 JSON-LD context is present - uplifting
@@ -17,43 +17,43 @@ Validation result for https://opengeospatial.github.io/bblocks/registereditems/g
   Conforms: True
   
 Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
- - Shape geojson:FeatureShape: <http://example.com/humidity-collection>,<http://example.com/temperature-collection>,<https://demo.pygeoapi.io/master/collections/dutch_windmills/items/Molens.1>
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape geojson:GeometryShape: *none*
  - Shape geojson:LinkShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape geojson:FeatureShape: <http://example.com/humidity-collection>,<https://demo.pygeoapi.io/master/collections/dutch_windmills/items/Molens.1>,<http://example.com/temperature-collection>
+ - Shape geojson:GeometryShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
 
 Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
- - Shape geojson:FeatureShape: *none*
- - Shape geojson:FeatureCollectionShape: *none*
  - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
- - Shape geojson:GeometryShape: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
  - Shape geojson:LinkShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape geojson:FeatureCollectionShape: *none*
+ - Shape geojson:GeometryShape: *none*
+ - Shape geojson:FeatureShape: *none*
 
 Validation result for _sources/properties/execution/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for _sources/properties/execution/shapes.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <http://example.com/humidity-collection>,_:N5bcf5a7d168d44618505d1e58f6ca9db,<http://example.com/temperature-collection>
- - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <http://example.com/humidity-collection>,_:N5bcf5a7d168d44618505d1e58f6ca9db,<http://example.com/temperature-collection>
- - Shape <https://www.ogc.org/rules/sosa/#testResult>: <http://example.com/obs-temp-2>,<http://example.com/obs-hum-2>,<http://example.com/obs-temp-1>,<http://example.com/obs-hum-1>
- - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <http://example.com/obs-temp-2>,<http://example.com/obs-hum-2>,<http://example.com/obs-temp-1>,<http://example.com/obs-hum-1>
- - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <http://example.com/obs-temp-2>/sosa:hasSimpleResult,<http://example.com/obs-temp-1>/sosa:hasSimpleResult,<http://example.com/obs-hum-1>/sosa:hasSimpleResult,<http://example.com/obs-hum-2>/sosa:hasSimpleResult
- - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <http://example.com/obs-temp-2>,<http://example.com/obs-hum-2>,<http://example.com/obs-temp-1>,<http://example.com/obs-hum-1>
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <http://example.com/humidity-collection>,_:Nf95757c34b1542e4b53b9f793fa1c4b9,<http://example.com/temperature-collection>
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <http://example.com/obs-hum-2>,<http://example.com/obs-temp-1>,<http://example.com/obs-hum-1>,<http://example.com/obs-temp-2>
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: <http://example.com/obs-hum-2>,<http://example.com/obs-temp-1>,<http://example.com/obs-hum-1>,<http://example.com/obs-temp-2>
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <http://example.com/obs-hum-2>,<http://example.com/obs-temp-1>,<http://example.com/obs-hum-1>,<http://example.com/obs-temp-2>
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <http://example.com/humidity-collection>,_:Nf95757c34b1542e4b53b9f793fa1c4b9,<http://example.com/temperature-collection>
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <http://example.com/obs-hum-1>/sosa:hasSimpleResult,<http://example.com/obs-temp-1>/sosa:hasSimpleResult,<http://example.com/obs-temp-2>/sosa:hasSimpleResult,<http://example.com/obs-hum-2>/sosa:hasSimpleResult
 
 Validation result for _sources/properties/observation/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for _sources/properties/observation/shapes.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: <http://example.com/humidity-collection>,<http://example.com/temperature-collection>,_:N5bcf5a7d168d44618505d1e58f6ca9db
- - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: <http://example.com/obs-temp-2>,<http://example.com/obs-hum-2>,<http://example.com/obs-temp-1>,<http://example.com/obs-hum-1>
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: <http://example.com/humidity-collection>,_:Nf95757c34b1542e4b53b9f793fa1c4b9,<http://example.com/temperature-collection>
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: <http://example.com/obs-hum-2>,<http://example.com/obs-temp-1>,<http://example.com/obs-hum-1>,<http://example.com/obs-temp-2>
  - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
 
 === End SHACL ===

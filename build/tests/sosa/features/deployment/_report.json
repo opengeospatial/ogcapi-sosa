@@ -2,7 +2,7 @@
   "title": "Validation report for ogc.sosa.features.deployment - Deployment Feature",
   "bblockName": "Deployment Feature",
   "bblockId": "ogc.sosa.features.deployment",
-  "generated": "2026-10-21T10:01:58.365013+00:00",
+  "generated": "2026-10-21T10:11:43.480977+00:00",
   "result": true,
   "items": [
     {
@@ -72,6 +72,12 @@
             {
               "shaclFile": "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl",
               "focusNodes": {
+                "geojson:LinkShape": {
+                  "nodes": []
+                },
+                "geojson:GeometryShape/sh:or/rdf:first": {
+                  "nodes": []
+                },
                 "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
                   "nodes": []
                 },
@@ -80,18 +86,12 @@
                     "<https://example.org/data/TH2-56-2024>"
                   ]
                 },
-                "geojson:GeometryShape/sh:or/rdf:first": {
-                  "nodes": []
-                },
                 "geojson:GeometryShape": {
-                  "nodes": []
-                },
-                "geojson:LinkShape": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:FeatureShape: <https://example.org/data/TH2-56-2024>\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:LinkShape: *none*\n"
+              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:LinkShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:FeatureShape: <https://example.org/data/TH2-56-2024>\n - Shape geojson:GeometryShape: *none*\n"
             }
           ]
         }

@@ -1,5 +1,5 @@
 Validation report for ogc.sosa.properties.observationCollection - ObservationCollection Properties
-Generated 2026-10-21T10:03:25.383935+00:00
+Generated 2026-10-21T10:13:09.475403+00:00
 === Files ===
 Using IBS-TH2-PLUS-capabilities.ttl-to-jsonld.json from transform outputs
 JSON-LD context is present - uplifting
@@ -28,12 +28,12 @@ Validation result for _sources/properties/execution/shapes.shacl:
   	Message: Exactly one of sosa:hasResult, sosa:hasSimpleResult or sosa:isResultOf (from the result) is required per execution
   
 Focus nodes for _sources/properties/execution/shapes.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: sensor:IBS-TH2-Plus-T-normalHumidityConditions,sensor:IBS-TH2-Plus-T-systemCapability
- - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: sensor:IBS-TH2-Plus-T-normalHumidityConditions,sensor:IBS-TH2-Plus-T-systemCapability
- - Shape <https://www.ogc.org/rules/sosa/#testResult>: sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-normalHumidityConditions,sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember,sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember
- - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-normalHumidityConditions,sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember,sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: sensor:IBS-TH2-Plus-T-systemCapability,sensor:IBS-TH2-Plus-T-normalHumidityConditions
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-normalHumidityConditions,sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember,sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember,sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-normalHumidityConditions,sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember,sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember,sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-normalHumidityConditions,sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember,sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember,sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: sensor:IBS-TH2-Plus-T-systemCapability,sensor:IBS-TH2-Plus-T-normalHumidityConditions
  - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-normalHumidityConditions,sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember,sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember
 
 
 ** Validation error **
@@ -72,7 +72,7 @@ Validation result for _sources/properties/observation/shapes.shacl:
   
 Focus nodes for _sources/properties/observation/shapes.shacl:
  - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: sensor:IBS-TH2-Plus-T-systemCapability
- - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-normalHumidityConditions,sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember,sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-normalHumidityConditions,sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember,sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember,sensor:IBS-TH2-Plus-T-normalHumidityConditions/sosa:hasMember,sensor:IBS-TH2-Plus-T-systemCapability/sosa:hasMember
  - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
 
 === End SHACL ===
