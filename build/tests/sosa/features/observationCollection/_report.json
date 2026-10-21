@@ -2,7 +2,7 @@
   "title": "Validation report for ogc.sosa.features.observationCollection - SOSA ObservationCollection Feature",
   "bblockName": "SOSA ObservationCollection Feature",
   "bblockId": "ogc.sosa.features.observationCollection",
-  "generated": "2026-10-21T10:12:46.127092+00:00",
+  "generated": "2026-10-21T11:29:10.397928+00:00",
   "result": true,
   "items": [
     {
@@ -84,23 +84,23 @@
                 "geojson:LinkShape": {
                   "nodes": []
                 },
-                "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
-                  "nodes": []
-                },
                 "geojson:FeatureShape": {
                   "nodes": [
                     "<file:///github/workspace/pop1999>"
                   ]
                 },
-                "geojson:GeometryShape": {
+                "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
                   "nodes": []
                 },
                 "geojson:GeometryShape/sh:or/rdf:first": {
                   "nodes": []
+                },
+                "geojson:GeometryShape": {
+                  "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:LinkShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:FeatureShape: <file:///github/workspace/pop1999>\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n"
+              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:LinkShape: *none*\n - Shape geojson:FeatureShape: <file:///github/workspace/pop1999>\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:GeometryShape: *none*\n"
             },
             {
               "op": "shacl-report",
@@ -112,27 +112,27 @@
             {
               "shaclFile": "https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl",
               "focusNodes": {
+                "geojson:LinkShape": {
+                  "nodes": []
+                },
                 "geojson:GeometryShape/sh:or/rdf:first": {
                   "nodes": []
                 },
-                "geojson:LinkShape": {
+                "geojson:FeatureShape": {
                   "nodes": []
                 },
                 "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
                   "nodes": []
                 },
-                "geojson:FeatureCollectionShape": {
-                  "nodes": []
-                },
                 "geojson:GeometryShape": {
                   "nodes": []
                 },
-                "geojson:FeatureShape": {
+                "geojson:FeatureCollectionShape": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:LinkShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:FeatureCollectionShape: *none*\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:FeatureShape: *none*\n"
+              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:\n - Shape geojson:LinkShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:FeatureShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:FeatureCollectionShape: *none*\n"
             },
             {
               "op": "shacl-report",
@@ -144,7 +144,27 @@
             {
               "shaclFile": "_sources/properties/execution/shapes.shacl",
               "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testResult>": {
+                  "nodes": [
+                    "<file:///github/workspace/pop1999>"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
+                  "nodes": [
+                    "<file:///github/workspace/pop1999>/sosa:hasSimpleResult"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
+                  "nodes": [
+                    "<file:///github/workspace/pop1999>"
+                  ]
+                },
                 "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
+                  "nodes": [
+                    "<file:///github/workspace/c1>"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
                   "nodes": [
                     "<file:///github/workspace/c1>"
                   ]
@@ -153,57 +173,37 @@
                   "nodes": [
                     "<file:///github/workspace/pop1999>"
                   ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testResult>": {
-                  "nodes": [
-                    "<file:///github/workspace/pop1999>"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
-                  "nodes": [
-                    "<file:///github/workspace/pop1999>"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
-                  "nodes": [
-                    "<file:///github/workspace/c1>"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
-                  "nodes": [
-                    "<file:///github/workspace/pop1999>/sosa:hasSimpleResult"
-                  ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/properties/execution/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <file:///github/workspace/c1>\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <file:///github/workspace/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: <file:///github/workspace/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <file:///github/workspace/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <file:///github/workspace/c1>\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <file:///github/workspace/pop1999>/sosa:hasSimpleResult\n"
+              "message": "Focus nodes for _sources/properties/execution/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: <file:///github/workspace/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <file:///github/workspace/pop1999>/sosa:hasSimpleResult\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <file:///github/workspace/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <file:///github/workspace/c1>\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <file:///github/workspace/c1>\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <file:///github/workspace/pop1999>\n"
             },
             {
               "op": "shacl-report",
               "shaclFile": "_sources/properties/observation/shapes.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <file:///github/workspace/pop1999> ;\n            sh:resultMessage \"sosa:observedProperty is required, on the observation or a collection it is a member of\" ;\n            sh:resultPath sosa:observedProperty ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraint [ sh:message \"sosa:observedProperty is required, on the observation or a collection it is a member of\" ;\n                    sh:select \"\"\"\n            PREFIX sosa: <http://www.w3.org/ns/sosa/>\n            PREFIX geojson: <https://purl.org/geojson/vocab#>\n            SELECT $this (sosa:observedProperty AS ?path) WHERE {\n                FILTER NOT EXISTS {\n                    $this (^sosa:hasMember|^geojson:features|sosa:memberOf)* ?holder .\n                    ?holder sosa:observedProperty ?prop .\n                }\n                FILTER (EXISTS { $this a sosa:Observation } || NOT EXISTS {\n                    { $this a ?type . FILTER(?type IN (sosa:Actuation, sosa:Sampling)) }\n                    UNION\n                    { $this sosa:actsOnProperty|sosa:madeByActuator|sosa:madeBySampler ?x }\n                    UNION\n                    {\n                        $this (^sosa:hasMember|^geojson:features|sosa:memberOf)+ ?collection .\n                        ?collection a ?ctype .\n                        FILTER(?ctype IN (sosa:ActuationCollection, sosa:SamplingCollection))\n                    }\n                })\n            }\n        \"\"\" ] ;\n            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;\n            sh:sourceShape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent> ;\n            sh:value <file:///github/workspace/pop1999> ],\n        [ a sh:ValidationResult ;\n            sh:focusNode <file:///github/workspace/c1> ;\n            sh:resultMessage \"sosa:observedProperty is required, on the collection, a collection it is a member of, or its members\" ;\n            sh:resultPath sosa:observedProperty ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraint [ sh:message \"sosa:observedProperty is required, on the collection, a collection it is a member of, or its members\" ;\n                    sh:select \"\"\"\n            PREFIX sosa: <http://www.w3.org/ns/sosa/>\n            PREFIX geojson: <https://purl.org/geojson/vocab#>\n            SELECT $this (sosa:observedProperty AS ?path) WHERE {\n                FILTER NOT EXISTS {\n                    { $this (^sosa:hasMember|^geojson:features|sosa:memberOf)* ?holder }\n                    UNION\n                    {\n                        $this (sosa:hasMember|geojson:features|^sosa:memberOf)+ ?member .\n                        ?member (^sosa:hasMember|^geojson:features|sosa:memberOf)* ?holder .\n                    }\n                    ?holder sosa:observedProperty ?prop .\n                }\n            }\n        \"\"\" ] ;\n            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;\n            sh:sourceShape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent> ;\n            sh:value <file:///github/workspace/c1> ] .\n\n",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <file:///github/workspace/c1> ;\n            sh:resultMessage \"sosa:observedProperty is required, on the collection, a collection it is a member of, or its members\" ;\n            sh:resultPath sosa:observedProperty ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraint [ sh:message \"sosa:observedProperty is required, on the collection, a collection it is a member of, or its members\" ;\n                    sh:select \"\"\"\n            PREFIX sosa: <http://www.w3.org/ns/sosa/>\n            PREFIX geojson: <https://purl.org/geojson/vocab#>\n            SELECT $this (sosa:observedProperty AS ?path) WHERE {\n                FILTER NOT EXISTS {\n                    { $this (^sosa:hasMember|^geojson:features|sosa:memberOf)* ?holder }\n                    UNION\n                    {\n                        $this (sosa:hasMember|geojson:features|^sosa:memberOf)+ ?member .\n                        ?member (^sosa:hasMember|^geojson:features|sosa:memberOf)* ?holder .\n                    }\n                    ?holder sosa:observedProperty ?prop .\n                }\n            }\n        \"\"\" ] ;\n            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;\n            sh:sourceShape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent> ;\n            sh:value <file:///github/workspace/c1> ],\n        [ a sh:ValidationResult ;\n            sh:focusNode <file:///github/workspace/pop1999> ;\n            sh:resultMessage \"sosa:observedProperty is required, on the observation or a collection it is a member of\" ;\n            sh:resultPath sosa:observedProperty ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraint [ sh:message \"sosa:observedProperty is required, on the observation or a collection it is a member of\" ;\n                    sh:select \"\"\"\n            PREFIX sosa: <http://www.w3.org/ns/sosa/>\n            PREFIX geojson: <https://purl.org/geojson/vocab#>\n            SELECT $this (sosa:observedProperty AS ?path) WHERE {\n                FILTER NOT EXISTS {\n                    $this (^sosa:hasMember|^geojson:features|sosa:memberOf)* ?holder .\n                    ?holder sosa:observedProperty ?prop .\n                }\n                FILTER (EXISTS { $this a sosa:Observation } || NOT EXISTS {\n                    { $this a ?type . FILTER(?type IN (sosa:Actuation, sosa:Sampling)) }\n                    UNION\n                    { $this sosa:actsOnProperty|sosa:madeByActuator|sosa:madeBySampler ?x }\n                    UNION\n                    {\n                        $this (^sosa:hasMember|^geojson:features|sosa:memberOf)+ ?collection .\n                        ?collection a ?ctype .\n                        FILTER(?ctype IN (sosa:ActuationCollection, sosa:SamplingCollection))\n                    }\n                })\n            }\n        \"\"\" ] ;\n            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;\n            sh:sourceShape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent> ;\n            sh:value <file:///github/workspace/pop1999> ] .\n\n",
               "isError": true,
-              "message": "Validation result for _sources/properties/observation/shapes.shacl:\n  Validation Report\n  Conforms: False\n  Results (2):\n  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>\n  \tFocus Node: <file:///github/workspace/c1>\n  \tValue Node: <file:///github/workspace/c1>\n  \tResult Path: sosa:observedProperty\n  \tSource Constraint: [ sh:message Literal(\"sosa:observedProperty is required, on the collection, a collection it is a member of, or its members\") ; sh:select Literal(\"\n              PREFIX sosa: <http://www.w3.org/ns/sosa/>\n              PREFIX geojson: <https://purl.org/geojson/vocab#>\n              SELECT $this (sosa:observedProperty AS ?path) WHERE {\n                  FILTER NOT EXISTS {\n                      { $this (^sosa:hasMember|^geojson:features|sosa:memberOf)* ?holder }\n                      UNION\n                      {\n                          $this (sosa:hasMember|geojson:features|^sosa:memberOf)+ ?member .\n                          ?member (^sosa:hasMember|^geojson:features|sosa:memberOf)* ?holder .\n                      }\n                      ?holder sosa:observedProperty ?prop .\n                  }\n              }\n          \") ]\n  \tMessage: sosa:observedProperty is required, on the collection, a collection it is a member of, or its members\n  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>\n  \tFocus Node: <file:///github/workspace/pop1999>\n  \tValue Node: <file:///github/workspace/pop1999>\n  \tResult Path: sosa:observedProperty\n  \tSource Constraint: [ sh:message Literal(\"sosa:observedProperty is required, on the observation or a collection it is a member of\") ; sh:select Literal(\"\n              PREFIX sosa: <http://www.w3.org/ns/sosa/>\n              PREFIX geojson: <https://purl.org/geojson/vocab#>\n              SELECT $this (sosa:observedProperty AS ?path) WHERE {\n                  FILTER NOT EXISTS {\n                      $this (^sosa:hasMember|^geojson:features|sosa:memberOf)* ?holder .\n                      ?holder sosa:observedProperty ?prop .\n                  }\n                  FILTER (EXISTS { $this a sosa:Observation } || NOT EXISTS {\n                      { $this a ?type . FILTER(?type IN (sosa:Actuation, sosa:Sampling)) }\n                      UNION\n                      { $this sosa:actsOnProperty|sosa:madeByActuator|sosa:madeBySampler ?x }\n                      UNION\n                      {\n                          $this (^sosa:hasMember|^geojson:features|sosa:memberOf)+ ?collection .\n                          ?collection a ?ctype .\n                          FILTER(?ctype IN (sosa:ActuationCollection, sosa:SamplingCollection))\n                      }\n                  })\n              }\n          \") ]\n  \tMessage: sosa:observedProperty is required, on the observation or a collection it is a member of\n  "
+              "message": "Validation result for _sources/properties/observation/shapes.shacl:\n  Validation Report\n  Conforms: False\n  Results (2):\n  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>\n  \tFocus Node: <file:///github/workspace/pop1999>\n  \tValue Node: <file:///github/workspace/pop1999>\n  \tResult Path: sosa:observedProperty\n  \tSource Constraint: [ sh:message Literal(\"sosa:observedProperty is required, on the observation or a collection it is a member of\") ; sh:select Literal(\"\n              PREFIX sosa: <http://www.w3.org/ns/sosa/>\n              PREFIX geojson: <https://purl.org/geojson/vocab#>\n              SELECT $this (sosa:observedProperty AS ?path) WHERE {\n                  FILTER NOT EXISTS {\n                      $this (^sosa:hasMember|^geojson:features|sosa:memberOf)* ?holder .\n                      ?holder sosa:observedProperty ?prop .\n                  }\n                  FILTER (EXISTS { $this a sosa:Observation } || NOT EXISTS {\n                      { $this a ?type . FILTER(?type IN (sosa:Actuation, sosa:Sampling)) }\n                      UNION\n                      { $this sosa:actsOnProperty|sosa:madeByActuator|sosa:madeBySampler ?x }\n                      UNION\n                      {\n                          $this (^sosa:hasMember|^geojson:features|sosa:memberOf)+ ?collection .\n                          ?collection a ?ctype .\n                          FILTER(?ctype IN (sosa:ActuationCollection, sosa:SamplingCollection))\n                      }\n                  })\n              }\n          \") ]\n  \tMessage: sosa:observedProperty is required, on the observation or a collection it is a member of\n  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>\n  \tFocus Node: <file:///github/workspace/c1>\n  \tValue Node: <file:///github/workspace/c1>\n  \tResult Path: sosa:observedProperty\n  \tSource Constraint: [ sh:message Literal(\"sosa:observedProperty is required, on the collection, a collection it is a member of, or its members\") ; sh:select Literal(\"\n              PREFIX sosa: <http://www.w3.org/ns/sosa/>\n              PREFIX geojson: <https://purl.org/geojson/vocab#>\n              SELECT $this (sosa:observedProperty AS ?path) WHERE {\n                  FILTER NOT EXISTS {\n                      { $this (^sosa:hasMember|^geojson:features|sosa:memberOf)* ?holder }\n                      UNION\n                      {\n                          $this (sosa:hasMember|geojson:features|^sosa:memberOf)+ ?member .\n                          ?member (^sosa:hasMember|^geojson:features|sosa:memberOf)* ?holder .\n                      }\n                      ?holder sosa:observedProperty ?prop .\n                  }\n              }\n          \") ]\n  \tMessage: sosa:observedProperty is required, on the collection, a collection it is a member of, or its members\n  "
             },
             {
               "shaclFile": "_sources/properties/observation/shapes.shacl",
               "focusNodes": {
-                "<https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>": {
-                  "nodes": [
-                    "<file:///github/workspace/c1>"
-                  ]
+                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
+                  "nodes": []
                 },
                 "<https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>": {
                   "nodes": [
                     "<file:///github/workspace/pop1999>"
                   ]
                 },
-                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
-                  "nodes": []
+                "<https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>": {
+                  "nodes": [
+                    "<file:///github/workspace/c1>"
+                  ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: <file:///github/workspace/c1>\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: <file:///github/workspace/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n"
+              "message": "Focus nodes for _sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: <file:///github/workspace/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: <file:///github/workspace/c1>\n"
             }
           ]
         },
@@ -287,24 +287,24 @@
                 "geojson:LinkShape": {
                   "nodes": []
                 },
-                "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
-                  "nodes": []
-                },
                 "geojson:FeatureShape": {
                   "nodes": [
-                    "<file:///github/workspace/pop1999>",
-                    "<file:///github/workspace/something>"
+                    "<file:///github/workspace/something>",
+                    "<file:///github/workspace/pop1999>"
                   ]
                 },
-                "geojson:GeometryShape": {
+                "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
                   "nodes": []
                 },
                 "geojson:GeometryShape/sh:or/rdf:first": {
                   "nodes": []
+                },
+                "geojson:GeometryShape": {
+                  "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:LinkShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:FeatureShape: <file:///github/workspace/pop1999>,<file:///github/workspace/something>\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n"
+              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:LinkShape: *none*\n - Shape geojson:FeatureShape: <file:///github/workspace/something>,<file:///github/workspace/pop1999>\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:GeometryShape: *none*\n"
             },
             {
               "op": "shacl-report",
@@ -316,27 +316,27 @@
             {
               "shaclFile": "https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl",
               "focusNodes": {
+                "geojson:LinkShape": {
+                  "nodes": []
+                },
                 "geojson:GeometryShape/sh:or/rdf:first": {
                   "nodes": []
                 },
-                "geojson:LinkShape": {
+                "geojson:FeatureShape": {
                   "nodes": []
                 },
                 "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
                   "nodes": []
                 },
-                "geojson:FeatureCollectionShape": {
-                  "nodes": []
-                },
                 "geojson:GeometryShape": {
                   "nodes": []
                 },
-                "geojson:FeatureShape": {
+                "geojson:FeatureCollectionShape": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:LinkShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:FeatureCollectionShape: *none*\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:FeatureShape: *none*\n"
+              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:\n - Shape geojson:LinkShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:FeatureShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:FeatureCollectionShape: *none*\n"
             },
             {
               "op": "shacl-report",
@@ -348,27 +348,26 @@
             {
               "shaclFile": "_sources/properties/execution/shapes.shacl",
               "focusNodes": {
-                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
-                  "nodes": [
-                    "<file:///github/workspace/c1>"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
-                  "nodes": [
-                    "<file:///github/workspace/pop1999>",
-                    "<file:///github/workspace/something>"
-                  ]
-                },
                 "<https://www.ogc.org/rules/sosa/#testResult>": {
                   "nodes": [
-                    "<file:///github/workspace/pop1999>",
-                    "<file:///github/workspace/something>"
+                    "<file:///github/workspace/something>",
+                    "<file:///github/workspace/pop1999>"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
+                  "nodes": [
+                    "<file:///github/workspace/pop1999>/sosa:hasSimpleResult"
                   ]
                 },
                 "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
                   "nodes": [
-                    "<file:///github/workspace/pop1999>",
-                    "<file:///github/workspace/something>"
+                    "<file:///github/workspace/something>",
+                    "<file:///github/workspace/pop1999>"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
+                  "nodes": [
+                    "<file:///github/workspace/c1>"
                   ]
                 },
                 "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
@@ -376,14 +375,15 @@
                     "<file:///github/workspace/c1>"
                   ]
                 },
-                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
+                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
                   "nodes": [
-                    "<file:///github/workspace/pop1999>/sosa:hasSimpleResult"
+                    "<file:///github/workspace/something>",
+                    "<file:///github/workspace/pop1999>"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/properties/execution/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <file:///github/workspace/c1>\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <file:///github/workspace/pop1999>,<file:///github/workspace/something>\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: <file:///github/workspace/pop1999>,<file:///github/workspace/something>\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <file:///github/workspace/pop1999>,<file:///github/workspace/something>\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <file:///github/workspace/c1>\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <file:///github/workspace/pop1999>/sosa:hasSimpleResult\n"
+              "message": "Focus nodes for _sources/properties/execution/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: <file:///github/workspace/something>,<file:///github/workspace/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <file:///github/workspace/pop1999>/sosa:hasSimpleResult\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <file:///github/workspace/something>,<file:///github/workspace/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <file:///github/workspace/c1>\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <file:///github/workspace/c1>\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <file:///github/workspace/something>,<file:///github/workspace/pop1999>\n"
             },
             {
               "op": "shacl-report",
@@ -395,23 +395,23 @@
             {
               "shaclFile": "_sources/properties/observation/shapes.shacl",
               "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
+                  "nodes": []
+                },
+                "<https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>": {
+                  "nodes": [
+                    "<file:///github/workspace/something>",
+                    "<file:///github/workspace/pop1999>"
+                  ]
+                },
                 "<https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>": {
                   "nodes": [
                     "<file:///github/workspace/c1>"
                   ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>": {
-                  "nodes": [
-                    "<file:///github/workspace/pop1999>",
-                    "<file:///github/workspace/something>"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
-                  "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: <file:///github/workspace/c1>\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: <file:///github/workspace/pop1999>,<file:///github/workspace/something>\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n"
+              "message": "Focus nodes for _sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: <file:///github/workspace/something>,<file:///github/workspace/pop1999>\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: <file:///github/workspace/c1>\n"
             }
           ]
         },
@@ -497,24 +497,24 @@
                 "geojson:LinkShape": {
                   "nodes": []
                 },
-                "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
-                  "nodes": []
-                },
                 "geojson:FeatureShape": {
                   "nodes": [
                     "<http://www.example.com/sosa/pop1999>",
                     "<http://www.example.com/sosa/something>"
                   ]
                 },
-                "geojson:GeometryShape": {
+                "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
                   "nodes": []
                 },
                 "geojson:GeometryShape/sh:or/rdf:first": {
                   "nodes": []
+                },
+                "geojson:GeometryShape": {
+                  "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:LinkShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:FeatureShape: <http://www.example.com/sosa/pop1999>,<http://www.example.com/sosa/something>\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n"
+              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:LinkShape: *none*\n - Shape geojson:FeatureShape: <http://www.example.com/sosa/pop1999>,<http://www.example.com/sosa/something>\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:GeometryShape: *none*\n"
             },
             {
               "op": "shacl-report",
@@ -526,27 +526,27 @@
             {
               "shaclFile": "https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl",
               "focusNodes": {
+                "geojson:LinkShape": {
+                  "nodes": []
+                },
                 "geojson:GeometryShape/sh:or/rdf:first": {
                   "nodes": []
                 },
-                "geojson:LinkShape": {
+                "geojson:FeatureShape": {
                   "nodes": []
                 },
                 "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
                   "nodes": []
                 },
-                "geojson:FeatureCollectionShape": {
-                  "nodes": []
-                },
                 "geojson:GeometryShape": {
                   "nodes": []
                 },
-                "geojson:FeatureShape": {
+                "geojson:FeatureCollectionShape": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:LinkShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:FeatureCollectionShape: *none*\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:FeatureShape: *none*\n"
+              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:\n - Shape geojson:LinkShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:FeatureShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:FeatureCollectionShape: *none*\n"
             },
             {
               "op": "shacl-report",
@@ -558,7 +558,29 @@
             {
               "shaclFile": "_sources/properties/execution/shapes.shacl",
               "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testResult>": {
+                  "nodes": [
+                    "<http://www.example.com/sosa/pop1999>",
+                    "<http://www.example.com/sosa/something>"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
+                  "nodes": [
+                    "<http://www.example.com/sosa/pop1999>/sosa:hasSimpleResult"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
+                  "nodes": [
+                    "<http://www.example.com/sosa/pop1999>",
+                    "<http://www.example.com/sosa/something>"
+                  ]
+                },
                 "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
+                  "nodes": [
+                    "<http://www.example.com/sosa/c1>"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
                   "nodes": [
                     "<http://www.example.com/sosa/c1>"
                   ]
@@ -568,32 +590,10 @@
                     "<http://www.example.com/sosa/pop1999>",
                     "<http://www.example.com/sosa/something>"
                   ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testResult>": {
-                  "nodes": [
-                    "<http://www.example.com/sosa/pop1999>",
-                    "<http://www.example.com/sosa/something>"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
-                  "nodes": [
-                    "<http://www.example.com/sosa/pop1999>",
-                    "<http://www.example.com/sosa/something>"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
-                  "nodes": [
-                    "<http://www.example.com/sosa/c1>"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
-                  "nodes": [
-                    "<http://www.example.com/sosa/pop1999>/sosa:hasSimpleResult"
-                  ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/properties/execution/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <http://www.example.com/sosa/c1>\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <http://www.example.com/sosa/pop1999>,<http://www.example.com/sosa/something>\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: <http://www.example.com/sosa/pop1999>,<http://www.example.com/sosa/something>\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <http://www.example.com/sosa/pop1999>,<http://www.example.com/sosa/something>\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <http://www.example.com/sosa/c1>\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <http://www.example.com/sosa/pop1999>/sosa:hasSimpleResult\n"
+              "message": "Focus nodes for _sources/properties/execution/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: <http://www.example.com/sosa/pop1999>,<http://www.example.com/sosa/something>\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <http://www.example.com/sosa/pop1999>/sosa:hasSimpleResult\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <http://www.example.com/sosa/pop1999>,<http://www.example.com/sosa/something>\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <http://www.example.com/sosa/c1>\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <http://www.example.com/sosa/c1>\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <http://www.example.com/sosa/pop1999>,<http://www.example.com/sosa/something>\n"
             },
             {
               "op": "shacl-report",
@@ -605,10 +605,8 @@
             {
               "shaclFile": "_sources/properties/observation/shapes.shacl",
               "focusNodes": {
-                "<https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>": {
-                  "nodes": [
-                    "<http://www.example.com/sosa/c1>"
-                  ]
+                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
+                  "nodes": []
                 },
                 "<https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>": {
                   "nodes": [
@@ -616,12 +614,14 @@
                     "<http://www.example.com/sosa/something>"
                   ]
                 },
-                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
-                  "nodes": []
+                "<https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>": {
+                  "nodes": [
+                    "<http://www.example.com/sosa/c1>"
+                  ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: <http://www.example.com/sosa/c1>\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: <http://www.example.com/sosa/pop1999>,<http://www.example.com/sosa/something>\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n"
+              "message": "Focus nodes for _sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: <http://www.example.com/sosa/pop1999>,<http://www.example.com/sosa/something>\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: <http://www.example.com/sosa/c1>\n"
             }
           ]
         },
@@ -684,21 +684,21 @@
                 "geojson:LinkShape": {
                   "nodes": []
                 },
-                "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
-                  "nodes": []
-                },
                 "geojson:FeatureShape": {
                   "nodes": []
                 },
-                "geojson:GeometryShape": {
+                "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
                   "nodes": []
                 },
                 "geojson:GeometryShape/sh:or/rdf:first": {
                   "nodes": []
+                },
+                "geojson:GeometryShape": {
+                  "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:LinkShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:FeatureShape: *none*\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n"
+              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:LinkShape: *none*\n - Shape geojson:FeatureShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:GeometryShape: *none*\n"
             },
             {
               "op": "shacl-report",
@@ -710,27 +710,27 @@
             {
               "shaclFile": "https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl",
               "focusNodes": {
+                "geojson:LinkShape": {
+                  "nodes": []
+                },
                 "geojson:GeometryShape/sh:or/rdf:first": {
                   "nodes": []
                 },
-                "geojson:LinkShape": {
+                "geojson:FeatureShape": {
                   "nodes": []
                 },
                 "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
                   "nodes": []
                 },
-                "geojson:FeatureCollectionShape": {
-                  "nodes": []
-                },
                 "geojson:GeometryShape": {
                   "nodes": []
                 },
-                "geojson:FeatureShape": {
+                "geojson:FeatureCollectionShape": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:LinkShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:FeatureCollectionShape: *none*\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:FeatureShape: *none*\n"
+              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:\n - Shape geojson:LinkShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:FeatureShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:FeatureCollectionShape: *none*\n"
             },
             {
               "op": "shacl-report",
@@ -742,27 +742,27 @@
             {
               "shaclFile": "_sources/properties/execution/shapes.shacl",
               "focusNodes": {
-                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
-                  "nodes": [
-                    "eg:c1"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
-                  "nodes": [
-                    "eg:pop1999",
-                    "eg:pop2000"
-                  ]
-                },
                 "<https://www.ogc.org/rules/sosa/#testResult>": {
                   "nodes": [
-                    "eg:pop1999",
-                    "eg:pop2000"
+                    "eg:pop2000",
+                    "eg:pop1999"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
+                  "nodes": [
+                    "eg:pop2000/sosa:hasSimpleResult",
+                    "eg:pop1999/sosa:hasSimpleResult"
                   ]
                 },
                 "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
                   "nodes": [
-                    "eg:pop1999",
-                    "eg:pop2000"
+                    "eg:pop2000",
+                    "eg:pop1999"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
+                  "nodes": [
+                    "eg:c1"
                   ]
                 },
                 "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
@@ -770,15 +770,15 @@
                     "eg:c1"
                   ]
                 },
-                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
+                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
                   "nodes": [
-                    "eg:pop1999/sosa:hasSimpleResult",
-                    "eg:pop2000/sosa:hasSimpleResult"
+                    "eg:pop2000",
+                    "eg:pop1999"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/properties/execution/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: eg:c1\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: eg:pop1999,eg:pop2000\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: eg:pop1999,eg:pop2000\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: eg:pop1999,eg:pop2000\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: eg:c1\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: eg:pop1999/sosa:hasSimpleResult,eg:pop2000/sosa:hasSimpleResult\n"
+              "message": "Focus nodes for _sources/properties/execution/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: eg:pop2000,eg:pop1999\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: eg:pop2000/sosa:hasSimpleResult,eg:pop1999/sosa:hasSimpleResult\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: eg:pop2000,eg:pop1999\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: eg:c1\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: eg:c1\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: eg:pop2000,eg:pop1999\n"
             },
             {
               "op": "shacl-report",
@@ -790,23 +790,23 @@
             {
               "shaclFile": "_sources/properties/observation/shapes.shacl",
               "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
+                  "nodes": []
+                },
+                "<https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>": {
+                  "nodes": [
+                    "eg:pop2000",
+                    "eg:pop1999"
+                  ]
+                },
                 "<https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>": {
                   "nodes": [
                     "eg:c1"
                   ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>": {
-                  "nodes": [
-                    "eg:pop1999",
-                    "eg:pop2000"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
-                  "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: eg:c1\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: eg:pop1999,eg:pop2000\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n"
+              "message": "Focus nodes for _sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: eg:pop2000,eg:pop1999\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: eg:c1\n"
             }
           ]
         }
@@ -882,9 +882,6 @@
                 "geojson:LinkShape": {
                   "nodes": []
                 },
-                "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
-                  "nodes": []
-                },
                 "geojson:FeatureShape": {
                   "nodes": [
                     "<http://example.com/humidity-collection>",
@@ -892,15 +889,18 @@
                     "<http://example.com/temperature-collection>"
                   ]
                 },
-                "geojson:GeometryShape": {
+                "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
                   "nodes": []
                 },
                 "geojson:GeometryShape/sh:or/rdf:first": {
                   "nodes": []
+                },
+                "geojson:GeometryShape": {
+                  "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:LinkShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:FeatureShape: <http://example.com/humidity-collection>,<https://demo.pygeoapi.io/master/collections/dutch_windmills/items/Molens.1>,<http://example.com/temperature-collection>\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n"
+              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:LinkShape: *none*\n - Shape geojson:FeatureShape: <http://example.com/humidity-collection>,<https://demo.pygeoapi.io/master/collections/dutch_windmills/items/Molens.1>,<http://example.com/temperature-collection>\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:GeometryShape: *none*\n"
             },
             {
               "op": "shacl-report",
@@ -912,27 +912,27 @@
             {
               "shaclFile": "https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl",
               "focusNodes": {
+                "geojson:LinkShape": {
+                  "nodes": []
+                },
                 "geojson:GeometryShape/sh:or/rdf:first": {
                   "nodes": []
                 },
-                "geojson:LinkShape": {
+                "geojson:FeatureShape": {
                   "nodes": []
                 },
                 "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
                   "nodes": []
                 },
-                "geojson:FeatureCollectionShape": {
-                  "nodes": []
-                },
                 "geojson:GeometryShape": {
                   "nodes": []
                 },
-                "geojson:FeatureShape": {
+                "geojson:FeatureCollectionShape": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:LinkShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:FeatureCollectionShape: *none*\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:FeatureShape: *none*\n"
+              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:\n - Shape geojson:LinkShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:FeatureShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:FeatureCollectionShape: *none*\n"
             },
             {
               "op": "shacl-report",
@@ -944,55 +944,55 @@
             {
               "shaclFile": "_sources/properties/execution/shapes.shacl",
               "focusNodes": {
-                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
-                  "nodes": [
-                    "<http://example.com/humidity-collection>",
-                    "_:Nf95757c34b1542e4b53b9f793fa1c4b9",
-                    "<http://example.com/temperature-collection>"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
-                  "nodes": [
-                    "<http://example.com/obs-hum-2>",
-                    "<http://example.com/obs-temp-1>",
-                    "<http://example.com/obs-hum-1>",
-                    "<http://example.com/obs-temp-2>"
-                  ]
-                },
                 "<https://www.ogc.org/rules/sosa/#testResult>": {
                   "nodes": [
-                    "<http://example.com/obs-hum-2>",
+                    "<http://example.com/obs-temp-2>",
                     "<http://example.com/obs-temp-1>",
-                    "<http://example.com/obs-hum-1>",
-                    "<http://example.com/obs-temp-2>"
+                    "<http://example.com/obs-hum-2>",
+                    "<http://example.com/obs-hum-1>"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
+                  "nodes": [
+                    "<http://example.com/obs-temp-2>/sosa:hasSimpleResult",
+                    "<http://example.com/obs-hum-1>/sosa:hasSimpleResult",
+                    "<http://example.com/obs-temp-1>/sosa:hasSimpleResult",
+                    "<http://example.com/obs-hum-2>/sosa:hasSimpleResult"
                   ]
                 },
                 "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
                   "nodes": [
-                    "<http://example.com/obs-hum-2>",
+                    "<http://example.com/obs-temp-2>",
                     "<http://example.com/obs-temp-1>",
-                    "<http://example.com/obs-hum-1>",
-                    "<http://example.com/obs-temp-2>"
+                    "<http://example.com/obs-hum-2>",
+                    "<http://example.com/obs-hum-1>"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
+                  "nodes": [
+                    "<http://example.com/humidity-collection>",
+                    "<http://example.com/temperature-collection>",
+                    "_:Nc9288405b2634f7c92bbb61664b04b61"
                   ]
                 },
                 "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
                   "nodes": [
                     "<http://example.com/humidity-collection>",
-                    "_:Nf95757c34b1542e4b53b9f793fa1c4b9",
-                    "<http://example.com/temperature-collection>"
+                    "<http://example.com/temperature-collection>",
+                    "_:Nc9288405b2634f7c92bbb61664b04b61"
                   ]
                 },
-                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
+                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
                   "nodes": [
-                    "<http://example.com/obs-hum-1>/sosa:hasSimpleResult",
-                    "<http://example.com/obs-temp-1>/sosa:hasSimpleResult",
-                    "<http://example.com/obs-temp-2>/sosa:hasSimpleResult",
-                    "<http://example.com/obs-hum-2>/sosa:hasSimpleResult"
+                    "<http://example.com/obs-temp-2>",
+                    "<http://example.com/obs-temp-1>",
+                    "<http://example.com/obs-hum-2>",
+                    "<http://example.com/obs-hum-1>"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/properties/execution/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <http://example.com/humidity-collection>,_:Nf95757c34b1542e4b53b9f793fa1c4b9,<http://example.com/temperature-collection>\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <http://example.com/obs-hum-2>,<http://example.com/obs-temp-1>,<http://example.com/obs-hum-1>,<http://example.com/obs-temp-2>\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: <http://example.com/obs-hum-2>,<http://example.com/obs-temp-1>,<http://example.com/obs-hum-1>,<http://example.com/obs-temp-2>\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <http://example.com/obs-hum-2>,<http://example.com/obs-temp-1>,<http://example.com/obs-hum-1>,<http://example.com/obs-temp-2>\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <http://example.com/humidity-collection>,_:Nf95757c34b1542e4b53b9f793fa1c4b9,<http://example.com/temperature-collection>\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <http://example.com/obs-hum-1>/sosa:hasSimpleResult,<http://example.com/obs-temp-1>/sosa:hasSimpleResult,<http://example.com/obs-temp-2>/sosa:hasSimpleResult,<http://example.com/obs-hum-2>/sosa:hasSimpleResult\n"
+              "message": "Focus nodes for _sources/properties/execution/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: <http://example.com/obs-temp-2>,<http://example.com/obs-temp-1>,<http://example.com/obs-hum-2>,<http://example.com/obs-hum-1>\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <http://example.com/obs-temp-2>/sosa:hasSimpleResult,<http://example.com/obs-hum-1>/sosa:hasSimpleResult,<http://example.com/obs-temp-1>/sosa:hasSimpleResult,<http://example.com/obs-hum-2>/sosa:hasSimpleResult\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <http://example.com/obs-temp-2>,<http://example.com/obs-temp-1>,<http://example.com/obs-hum-2>,<http://example.com/obs-hum-1>\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <http://example.com/humidity-collection>,<http://example.com/temperature-collection>,_:Nc9288405b2634f7c92bbb61664b04b61\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <http://example.com/humidity-collection>,<http://example.com/temperature-collection>,_:Nc9288405b2634f7c92bbb61664b04b61\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <http://example.com/obs-temp-2>,<http://example.com/obs-temp-1>,<http://example.com/obs-hum-2>,<http://example.com/obs-hum-1>\n"
             },
             {
               "op": "shacl-report",
@@ -1004,27 +1004,27 @@
             {
               "shaclFile": "_sources/properties/observation/shapes.shacl",
               "focusNodes": {
-                "<https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>": {
-                  "nodes": [
-                    "<http://example.com/humidity-collection>",
-                    "_:Nf95757c34b1542e4b53b9f793fa1c4b9",
-                    "<http://example.com/temperature-collection>"
-                  ]
+                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
+                  "nodes": []
                 },
                 "<https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>": {
                   "nodes": [
-                    "<http://example.com/obs-hum-2>",
+                    "<http://example.com/obs-temp-2>",
                     "<http://example.com/obs-temp-1>",
-                    "<http://example.com/obs-hum-1>",
-                    "<http://example.com/obs-temp-2>"
+                    "<http://example.com/obs-hum-2>",
+                    "<http://example.com/obs-hum-1>"
                   ]
                 },
-                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
-                  "nodes": []
+                "<https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>": {
+                  "nodes": [
+                    "_:Nc9288405b2634f7c92bbb61664b04b61",
+                    "<http://example.com/humidity-collection>",
+                    "<http://example.com/temperature-collection>"
+                  ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: <http://example.com/humidity-collection>,_:Nf95757c34b1542e4b53b9f793fa1c4b9,<http://example.com/temperature-collection>\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: <http://example.com/obs-hum-2>,<http://example.com/obs-temp-1>,<http://example.com/obs-hum-1>,<http://example.com/obs-temp-2>\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n"
+              "message": "Focus nodes for _sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: <http://example.com/obs-temp-2>,<http://example.com/obs-temp-1>,<http://example.com/obs-hum-2>,<http://example.com/obs-hum-1>\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: _:Nc9288405b2634f7c92bbb61664b04b61,<http://example.com/humidity-collection>,<http://example.com/temperature-collection>\n"
             }
           ]
         },

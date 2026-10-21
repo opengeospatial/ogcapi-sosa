@@ -2,7 +2,7 @@
   "title": "Validation report for ogc.sosa.properties.actuationCollection - ActuationCollection Properties",
   "bblockName": "ActuationCollection Properties",
   "bblockId": "ogc.sosa.properties.actuationCollection",
-  "generated": "2026-10-21T10:11:36.369885+00:00",
+  "generated": "2026-10-21T11:28:12.078257+00:00",
   "result": true,
   "items": [
     {
@@ -72,7 +72,30 @@
             {
               "shaclFile": "_sources/properties/execution/shapes.shacl",
               "focusNodes": {
+                "<https://www.ogc.org/rules/sosa/#testResult>": {
+                  "nodes": [
+                    "<https://example.org/data/open-window/A189>",
+                    "<https://example.org/data/open-window/A188>"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
+                  "nodes": [
+                    "<https://example.org/data/open-window/A188>/sosa:hasSimpleResult",
+                    "<https://example.org/data/open-window/A189>/sosa:hasSimpleResult"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
+                  "nodes": [
+                    "<https://example.org/data/open-window/A189>",
+                    "<https://example.org/data/open-window/A188>"
+                  ]
+                },
                 "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
+                  "nodes": [
+                    "<https://example.org/data/open-window/windowActuations>"
+                  ]
+                },
+                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
                   "nodes": [
                     "<https://example.org/data/open-window/windowActuations>"
                   ]
@@ -82,33 +105,10 @@
                     "<https://example.org/data/open-window/A189>",
                     "<https://example.org/data/open-window/A188>"
                   ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testResult>": {
-                  "nodes": [
-                    "<https://example.org/data/open-window/A189>",
-                    "<https://example.org/data/open-window/A188>"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
-                  "nodes": [
-                    "<https://example.org/data/open-window/A189>",
-                    "<https://example.org/data/open-window/A188>"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
-                  "nodes": [
-                    "<https://example.org/data/open-window/windowActuations>"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
-                  "nodes": [
-                    "<https://example.org/data/open-window/A189>/sosa:hasSimpleResult",
-                    "<https://example.org/data/open-window/A188>/sosa:hasSimpleResult"
-                  ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/properties/execution/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <https://example.org/data/open-window/windowActuations>\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <https://example.org/data/open-window/A189>,<https://example.org/data/open-window/A188>\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: <https://example.org/data/open-window/A189>,<https://example.org/data/open-window/A188>\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <https://example.org/data/open-window/A189>,<https://example.org/data/open-window/A188>\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <https://example.org/data/open-window/windowActuations>\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <https://example.org/data/open-window/A189>/sosa:hasSimpleResult,<https://example.org/data/open-window/A188>/sosa:hasSimpleResult\n"
+              "message": "Focus nodes for _sources/properties/execution/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: <https://example.org/data/open-window/A189>,<https://example.org/data/open-window/A188>\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <https://example.org/data/open-window/A188>/sosa:hasSimpleResult,<https://example.org/data/open-window/A189>/sosa:hasSimpleResult\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <https://example.org/data/open-window/A189>,<https://example.org/data/open-window/A188>\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <https://example.org/data/open-window/windowActuations>\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <https://example.org/data/open-window/windowActuations>\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <https://example.org/data/open-window/A189>,<https://example.org/data/open-window/A188>\n"
             }
           ]
         }

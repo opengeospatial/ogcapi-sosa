@@ -1175,67 +1175,6 @@
       }
     },
     {
-      "title": "Example apartment-134.ttl (root Observation_235754)",
-      "content": "Example referenced from the SOSA/SSN specification section(s): [CompleteExamples](https://w3c.github.io/sdw-sosa-ssn/ssn/). Source: [apartment-134.ttl](https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/apartment-134.ttl)",
-      "base-output-filename": "apartment-134--Observation_235754",
-      "x-root": "https://example.org/data/Observation_235754",
-      "snippets": [
-        {
-          "language": "ttl",
-          "ref": "https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/apartment-134.ttl",
-          "shacl-closure": [
-            "../closures/apartment-134.ttl"
-          ],
-          "url": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/observations/apartment-134--Observation_235754.ttl",
-          "transformResults": {
-            "ttl-to-jsonld": {
-              "success": true,
-              "sizeBytes": 1725,
-              "url": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/observations/transforms/apartment-134--Observation_235754.ttl-to-jsonld.json",
-              "profilesValidation": {
-                "ogc.sosa.properties.observation": {
-                  "result": false,
-                  "report": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/observations/transforms/ogc.sosa.properties.observation/_report.json",
-                  "upliftedFiles": {
-                    "jsonld": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/observations/transforms/ogc.sosa.properties.observation/apartment-134--Observation_235754.ttl-to-jsonld.jsonld",
-                    "ttl": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/observations/transforms/ogc.sosa.properties.observation/apartment-134--Observation_235754.ttl-to-jsonld.ttl"
-                  }
-                }
-              }
-            }
-          },
-          "sizeBytes": 3275,
-          "code": "@prefix ex: <https://example.org/data/> .\n@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix time: <http://www.w3.org/2006/time#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n@prefix qudt: <http://qudt.org/schema/qudt/> .\n@prefix unit: <http://qudt.org/vocab/unit/> .\n@base <https://example.org/data/apt134/> .\n\n# Electricity consumption of apartment #134\n\n# The electric consumption of apartment #134 on April 15 2017 was 22.4 kWh as \n# observed by sensor #926. The result was available 12 seconds later\n\nex:Observation_235714 rdf:type sosa:Observation ;\n  sosa:observedProperty  ex:Apartment_134_electricConsumption ;\n  sosa:madeBySensor ex:sensor_926 ; \n  sosa:hasResult [\n     rdf:type qudt:QuantityValue ;\n     qudt:value \"22.4\"^^xsd:decimal ;\n     qudt:hasUnit unit:KiloW-HR ] ;\n  sosa:phenomenonTime [\n    time:hasBeginning [ \n      time:inXSDDateTimeStamp \"2017-04-15T23:59:30+00:00\"^^xsd:dateTime ] ;\n    time:hasEnd [ \n      time:inXSDDateTimeStamp \"2017-04-16T00:00:00+00:00\"^^xsd:dateTime ] ] ;\n  sosa:resultTime \"2017-04-16T00:00:12+00:00\"^^xsd:dateTime ;\n.\n# Sensor #926 observes the electric consumption of apartment #134, and we know that \n# it made some observations\n\nex:sensor_926 rdf:type sosa:Sensor ;\n  sosa:observes  ex:Apartment_134_electricConsumption ;\n  sosa:madeObservation ex:Observation_235714, ex:Observation_235715, ex:Observation_235716 ;\n.\n# mobile sensor tempSensor #23 observes the temperature in its surroundings, and we know \n# that it made some observations. \n\nex:tempSensor_23 rdf:type sosa:Sensor ;\n  sosa:observes  ex:tempSensor_23_temperature ;\n  sosa:madeObservation ex:tempSensor_23_4572, ex:tempSensor_23_4573, ex:tempSensor_23_4574 ;\n.\n# Sensor #926 observes the electric consumption of apartment #134\n\nex:sensor_926 rdf:type sosa:Sensor ;\n  sosa:observes  ex:Apartment_134_electricConsumption ;\n.\n# This is equivalent to saying that the electric consumption of apartment #134 is \n# observed by Sensor #926\n\nex:Apartment_134_electricConsumption rdf:type sosa:Property ;\n  sosa:isObservedBy ex:sensor_926  ;\n.\n# This is equivalent to saying that these observations have been made by sensor #926\n\nex:Observation_235714 rdf:type sosa:Observation ;\n  sosa:madeBySensor ex:sensor_926 ;\n.\nex:Observation_235754 rdf:type sosa:Observation ;\n  sosa:madeBySensor ex:sensor_926 ;\n.\n# Actuation\n# the window opening state is a Property\n# SSN allows to explicitly say that ex:window_104#state is a property of ex:window\n\nex:window rdf:type sosa:FeatureOfInterest ;\n  sosa:hasProperty ex:window_104_state ;\n.\nex:window_104_state rdf:type sosa:Property ;\n  sosa:wasActedOnBy ex:actuation_188 ;\n.\n# WindowCloser #987 made actuation #188\n# SSN allows to explicitly say that ex:windowCloser_987 is designed to automatically open and close window #104\n\nex:windowCloser_987 rdf:type sosa:Actuator ;\n  sosa:madeActuation ex:actuation_188 ;\n  sosa:actsOn ex:window_104_state ;\n.\n# Actuation #188 acted on the state of window #104 and returned 'true'\n\nex:actuation_188 rdf:type sosa:Actuation ;\n  sosa:actsOnProperty ex:window_104_state ;\n  sosa:madeByActuator ex:windowCloser_987 ; \n  sosa:hasSimpleResult true ;\n  sosa:resultTime \"2017-04-18T17:24:00+02:00\"^^xsd:dateTime ;\n.  "
-        }
-      ],
-      "prefixes": {
-        "cdt": "http://w3id.org/lindt/custom_datatypes#",
-        "equipment": "https://rdf.ag/o/equipment/",
-        "ex": "https://example.org/data/",
-        "geo": "http://www.opengis.net/ont/geosparql#",
-        "gr": "http://purl.org/goodrelations/v1#",
-        "gs1": "https://gs1.org/voc/",
-        "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
-        "owl": "http://www.w3.org/2002/07/owl#",
-        "prov": "http://www.w3.org/ns/prov#",
-        "qk": "http://qudt.org/vocab/quantitykind/",
-        "qudt": "http://qudt.org/schema/qudt/",
-        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-        "rdfp": "https://w3id.org/rdfp/",
-        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-        "schema": "http://schema.org/",
-        "seas": "https://w3id.org/seas/",
-        "sensor": "https://example.org/sensor/",
-        "sh": "http://www.w3.org/ns/shacl#",
-        "skos": "http://www.w3.org/2004/02/skos/core#",
-        "sosa": "http://www.w3.org/ns/sosa/",
-        "system": "http://www.w3.org/ns/ssn/systems/",
-        "time": "http://www.w3.org/2006/time#",
-        "unit": "http://qudt.org/vocab/unit/",
-        "xsd": "http://www.w3.org/2001/XMLSchema#"
-      }
-    },
-    {
       "title": "Example iphone_barometer-sosa.ttl (root Observation_346344)",
       "content": "Example referenced from the SOSA/SSN specification section(s): [CompleteExamples](https://w3c.github.io/sdw-sosa-ssn/ssn/). Source: [iphone_barometer-sosa.ttl](https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/iphone_barometer-sosa.ttl)",
       "base-output-filename": "iphone_barometer-sosa",
