@@ -3,14 +3,21 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix closure: <https://example.org/closure/> .
 @prefix ex: <https://example.org/data/> .
+@prefix sosa-cap: <http://www.w3.org/ns/sosa/system-capability-properties#> .
+@prefix sosa-env: <http://www.w3.org/ns/sosa/system-environment-properties#> .
 
 # SHACL closure (not part of the SOSA example): puts the example's executions in a collection that
 # supplies the values they leave out, which they inherit by SOSA collection rule 2. closure: IRIs
 # and the 2017-01-01 time are placeholders.
 
 # the sensor model's operating range and capabilities describe the sensor
+# (its observedProperty values are its members': they make it complete where the members aren't
+# present, e.g. in a transform output's validation)
 closure:ip68-characteristics a sosa:ObservationCollection ;
     sosa:hasFeatureOfInterest ex:Sensor_SL-T-P1 ;
+    sosa:observedProperty sosa-env:MinAmbientTemperature, sosa-env:MaxAmbientTemperature,
+        sosa-cap:RFSensitivity, sosa-cap:TemperatureAccuracy, sosa-cap:TemperatureResolution,
+        sosa-cap:BatteryResolution ;
     sosa:resultTime "2017-01-01T00:00:00Z"^^xsd:dateTime ;
     sosa:hasMember ex:IP68_Outdoor_Temperature_Sensor_operatingRange,
         ex:IP68_Outdoor_Temperature_Sensor_systemCapability .

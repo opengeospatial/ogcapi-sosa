@@ -3,6 +3,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix closure: <https://example.org/closure/> .
 @prefix ex: <https://example.org/data/> .
+@prefix et: <http://vocabs.lter-europe.net/EnvThes/> .
 
 # SHACL closure (not part of the SOSA example): puts the example's executions in a collection that
 # supplies the values they leave out, which they inherit by SOSA collection rule 2. closure: IRIs
@@ -16,7 +17,10 @@ closure:dht22-characteristics a sosa:ObservationCollection ;
         ex:DHT22_4578_TemperatureSensorNormalOperatingConditions,
         ex:DHT22_4578_TemperatureSensorCapabilities, ex:DHT22_4578_HumiditySensorCapabilities .
 
+# (its observedProperty is its member's: it makes it complete where the member isn't present,
+# e.g. in a transform output's validation)
 closure:dht22-observations a sosa:ObservationCollection ;
     sosa:hasFeatureOfInterest closure:dht22-ambient-air ;
+    sosa:observedProperty et:23 ;
     sosa:resultTime "2017-01-01T00:00:00Z"^^xsd:dateTime ;
     sosa:hasMember ex:observation_1087 .

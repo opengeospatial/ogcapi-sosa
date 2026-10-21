@@ -84,10 +84,15 @@ If an example has several roots, the sync step writes one example per root, each
 Put a Turtle file at `_sources/spec-examples/closures/<base-output-filename>.ttl`. A file named
 `<stem>.ttl` applies to every root of a multi-root example. The sync step adds it as the example
 snippet's `shacl-closure`. It is then used in two places:
-- the postprocessor adds it to the data when validating the Turtle example;
+- the postprocessor adds it to the data when validating the Turtle example, and when validating
+  the transform output against the target profile;
 - the transform reads it from the transform context (`snippet['shacl-closure']`, resolved
-  against the block directory) and applies SOSA collection rule 2 (see below). This works with
-  the published postprocessor; no closure pass-through to output validation is needed.
+  against the block directory) and applies SOSA collection rule 2 (see below), so the output is
+  complete without it.
+
+Because the closure is also added to the transform output, its collections must be valid without
+the example resources that the output leaves out. If a closure collection's members supply a value
+the collection needs (e.g. observedProperty), give the collection those members' values too.
 
 **Inheriting missing values from containing collections.** A closure supplies an example's
 missing execution properties by putting the executions (or the example's own collections) in a
