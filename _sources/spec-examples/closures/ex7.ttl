@@ -1,0 +1,23 @@
+@base <https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/ex7.ttl> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix closure: <https://example.org/closure/> .
+@prefix ex: <https://example.org/data/> .
+
+# SHACL closure (not part of the SOSA example): puts the example's executions in a collection that
+# supplies the values they leave out, which they inherit by SOSA collection rule 2, and gives the
+# example's resources the values that can't be inherited. closure: IRIs and the 2017-01-01 time
+# are placeholders. The example uses relative IRIs, which resolve against its URL (@base).
+
+closure:ex7-observations a sosa:ObservationCollection ;
+    sosa:hasFeatureOfInterest closure:ex7-feature ;
+    sosa:observedProperty closure:ex7-temperature ;
+    sosa:resultTime "2017-01-01T00:00:00Z"^^xsd:dateTime ;
+    sosa:hasMember <Observation/1> , <Observation/2> .
+
+# results can't be inherited
+<Observation/1> sosa:hasResult closure:ex7-result-1 .
+<Observation/2> sosa:hasResult closure:ex7-result-2 .
+
+# the operating range's conditions (its members) are for temperature and humidity
+<moreSpecificTemperatureSensorOperatingRange> sosa:observedProperty closure:ex7-temperature , closure:ex7-humidity .

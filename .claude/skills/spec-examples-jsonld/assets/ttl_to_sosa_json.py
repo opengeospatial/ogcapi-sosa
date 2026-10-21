@@ -14,7 +14,8 @@
 #   x-root: IRI               pick this resource as the root (multi-root examples)
 #   snippet shacl-closure     (from the transform context) closures that may put the example's
 #                             resources in collections: the root takes a property it lacks from
-#                             the nearest containing collection with a single value for it
+#                             the nearest containing collection with a single value for it; a
+#                             closure may also give an example resource such a value directly
 #
 # Output: the root resource framed and compacted with the target bblock's JSON-LD context, with
 #   "@context": [<target context URL>, {<only what the target context does not define>}]
@@ -107,7 +108,10 @@ try:
     g = Graph(bind_namespaces='none')
 except TypeError:  # rdflib < 7
     g = Graph()
-g.parse(data=input_data, format='json-ld' if 'json' in src else 'turtle')
+# relative IRIs resolve against the example's URL, as in Turtle validation
+snippet_ref = _get(_get(tctx, 'snippet'), 'ref')
+g.parse(data=input_data, format='json-ld' if 'json' in src else 'turtle',
+        publicID=snippet_ref if isinstance(snippet_ref, str) and re.match(r'^https?://', snippet_ref) else None)
 prefixes = {p: str(ns) for p, ns in g.namespaces()
             if p and not str(ns).startswith(SOSA_SSN) and p not in ('sosa', 'ssn', 'ssn-system')}
 for p, ns in (_get(meta, '_prefixes') or {}).items():
@@ -205,6 +209,12 @@ def _inherit(u, node):
 
 closure = _closure_graph()
 if len(closure):
+    # values a closure gives the example's own resources directly
+    direct = [(s, p, o) for s, p, o in closure
+              if p in INHERITED and (s, None, None) in g and (s, p, None) not in g]
+    for s, p, o in direct:
+        g.add((s, p, o))
+        _copy(closure, o)
     u = g + closure
     # the root, and the example's resources that are members of closure-only collections (the
     # output may embed them); members of the example's own collections inherit from those

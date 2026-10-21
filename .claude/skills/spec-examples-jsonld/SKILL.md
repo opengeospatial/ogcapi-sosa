@@ -110,8 +110,13 @@ has a single value. Results are never inherited.
 - Never give a collection a value that conflicts with one a member already states. Collection
   rules 2–3 require the member's value to be one of the collection's. Use a separate closure
   collection for the members that lack it.
+- A closure may also give an example resource a value directly, e.g. a result (never inherited)
+  or several values of a collection property (only single values are inherited). The transform
+  copies direct values of the inherited properties into its output.
 - Blank-node executions can only be reached through a named collection that contains them.
-  Resources with relative IRIs (e.g. `<Observation/1>`) can't be referenced from a closure.
+- Relative IRIs (e.g. `<Observation/1>`) resolve against the example's URL. Set the closure's
+  `@base` to that URL (see `closures/ex6.ttl`). This needs a postprocessor that parses URL
+  examples with their URL as the base; the transform does so itself.
 
 The sync step lists the closures it used and warns about any that match no example.
 
