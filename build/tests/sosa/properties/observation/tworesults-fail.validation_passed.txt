@@ -1,5 +1,5 @@
 Validation report for ogc.sosa.properties.observation - Observation Properties
-Generated 2026-09-10T07:08:02.135911+00:00
+Generated 2026-10-26T21:52:19.760698+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -12,6 +12,27 @@ Using tworesults-fail.jsonld from test resources
 === End Files ===
 
 === JSON Schema ===
-Validation passed
+
+** Validation error **
+ValidationError: {'id': 'obs1', 'resultTime': '2016-05-04T02:27:02.0Z', 'hasFeatureOfInterest': {'id': 'http://something.org/1'}, 'observedProperty': 'something', 'hasResult': {'@context': {'resultschema': 'http//example.org/resultschema/', 'a': 'resultschema:a', 'b': {'@id': 'resultschema:b', '@context': {'b1': 'resultschema:b1', 'b2': 'resultschema:b2'}}}, 'a': -8150858, 'b': False}, 'hasSimpleResult': 'frogginess', 'madeBySensor': 'ea est culpa esse'} is valid under each of {'required': ['hasSimpleResult']}, {'required': ['hasResult']}
+
+Failed validating 'oneOf' in schema['allOf'][0]['allOf'][2]:
+    {'oneOf': [{'required': ['hasResult']},
+               {'required': ['hasSimpleResult']}]}
+
+On instance:
+    {'hasFeatureOfInterest': {'id': 'http://something.org/1'},
+     'hasResult': {'@context': {'a': 'resultschema:a',
+                                'b': {'@context': {'b1': 'resultschema:b1',
+                                                   'b2': 'resultschema:b2'},
+                                      '@id': 'resultschema:b'},
+                                'resultschema': 'http//example.org/resultschema/'},
+                   'a': -8150858,
+                   'b': False},
+     'hasSimpleResult': 'frogginess',
+     'id': 'obs1',
+     'madeBySensor': 'ea est culpa esse',
+     'observedProperty': 'something',
+     'resultTime': '2016-05-04T02:27:02.0Z'}
 === End JSON Schema ===
 

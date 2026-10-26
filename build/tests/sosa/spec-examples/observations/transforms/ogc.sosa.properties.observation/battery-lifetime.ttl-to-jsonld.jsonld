@@ -1,0 +1,65 @@
+{
+  "@context": [
+    "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/context.jsonld",
+    "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/spec-examples/observations/context.jsonld",
+    {
+      "ex": "http://example.org/",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "qudt": "http://qudt.org/schema/qudt/",
+      "unit": "http://qudt.org/vocab/unit/",
+      "iop": "https://w3id.org/iadopt/ont/",
+      "uom": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+      "gemet": "https://www.eionet.europa.eu/gemet/concept/"
+    }
+  ],
+  "id": "ex:nominalLifetime",
+  "featureType": "Observation",
+  "hasFeatureOfInterest": {
+    "id": "ex:sensor",
+    "featureType": "Sensor",
+    "hasSubSystem": [
+      {
+        "id": "ex:AABattery",
+        "featureType": "iop:Entity",
+        "rdfs:label": "AABattery"
+      }
+    ]
+  },
+  "hasResult": {
+    "qudt:hasUnit": {
+      "id": "unit:YR"
+    },
+    "http://qudt.org/schema/qudt/value": {
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+      "@value": "1.0"
+    }
+  },
+  "observedProperty": {
+    "id": "ex:nominalLifetimeRestriction",
+    "featureType": [
+      "iop:Variable",
+      "Property"
+    ],
+    "rdfs:comment": "Nominal lifetime restriction of a AA battery",
+    "rdfs:label": "Nominal Lifetime Restriction of a AA Battery",
+    "iop:hasContextObject": {
+      "id": "gemet:1170",
+      "featureType": "iop:Entity",
+      "rdfs:label": "sensor"
+    },
+    "iop:hasObjectOfInterest": {
+      "id": "ex:AABattery"
+    },
+    "iop:hasProperty": {
+      "id": "sosa:system-capability-properties#BatteryLifetime",
+      "featureType": "iop:Property",
+      "rdfs:label": "Battery Lifetime"
+    },
+    "iop:hasStatisticalModifier": {
+      "id": "uom:average",
+      "featureType": "iop:StatisticalModifier",
+      "rdfs:label": "average"
+    }
+  },
+  "resultTime": "2017-01-01T00:00:00+00:00"
+}

@@ -1,0 +1,44 @@
+{
+  "@context": [
+    "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/spec-examples/observations/context.jsonld",
+    {
+      "ex": "https://example.org/data/",
+      "qudt": "http://qudt.org/schema/qudt/",
+      "qk": "http://qudt.org/vocab/quantitykind/",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "unit": "http://qudt.org/vocab/unit/",
+      "qudt:value": {
+        "@type": "xsd:decimal"
+      },
+      "xsd": "http://www.w3.org/2001/XMLSchema#"
+    }
+  ],
+  "id": "ex:Observation_346344",
+  "featureType": "Observation",
+  "hasFeatureOfInterest": {
+    "id": "ex:EarthAtmosphere",
+    "featureType": "FeatureOfInterest",
+    "rdfs:label": {
+      "@language": "en",
+      "@value": "Atmosphere of Earth"
+    }
+  },
+  "hasResult": {
+    "featureType": "qudt:QuantityValue",
+    "qudt:hasUnit": {
+      "id": "unit:HectoPA"
+    },
+    "qudt:value": "1021.45"
+  },
+  "madeBySensor": {
+    "id": "ex:sensor_35-207306-844818-0_BMP282",
+    "featureType": "Sensor",
+    "rdfs:label": {
+      "@language": "en",
+      "@value": "Bosch Sensortec BMP282"
+    },
+    "observes": "qk:AtmosphericPressure"
+  },
+  "observedProperty": "qk:AtmosphericPressure",
+  "resultTime": "2017-06-06T12:36:12+00:00"
+}

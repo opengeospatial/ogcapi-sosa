@@ -1,0 +1,77 @@
+{
+  "@context": [
+    "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/context.jsonld",
+    "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/spec-examples/observations/context.jsonld",
+    {
+      "ex": "https://example.org/data/",
+      "qk": "http://qudt.org/vocab/quantitykind/",
+      "qudt": "http://qudt.org/schema/qudt/",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "unit": "http://qudt.org/vocab/unit/",
+      "qudt:value": {
+        "@type": "xsd:decimal"
+      },
+      "xsd": "http://www.w3.org/2001/XMLSchema#"
+    }
+  ],
+  "id": "ex:observation_147",
+  "featureType": "Observation",
+  "hasFeatureOfInterest": "https://example.org/closure/wind-at-location_4687",
+  "hasResult": {
+    "featureType": "qudt:QuantityValue",
+    "qudt:hasUnit": {
+      "id": "unit:KiloM-PER-HR"
+    },
+    "qudt:value": "47.0"
+  },
+  "madeBySensor": {
+    "id": "ex:windSensor_14",
+    "featureType": "Sensor",
+    "detects": [
+      {
+        "id": "ex:observation_147_spinningCupsMovement",
+        "featureType": "Stimulus",
+        "isProxyFor": {
+          "id": "ex:windSpeed",
+          "featureType": "Property",
+          "rdfs:label": {
+            "@language": "en",
+            "@value": "wind speed"
+          },
+          "skos:broader": {
+            "id": "qk:Speed"
+          }
+        }
+      },
+      {
+        "id": "ex:observation_148_spinningCupsMovement",
+        "featureType": "Stimulus",
+        "isProxyFor": "ex:windSpeed"
+      }
+    ],
+    "madeObservation": [
+      "ex:observation_147",
+      {
+        "id": "ex:observation_148",
+        "featureType": "Observation",
+        "hasFeatureOfInterest": "https://example.org/closure/wind-at-location_4687",
+        "hasResult": {
+          "featureType": "qudt:QuantityValue",
+          "qudt:hasUnit": {
+            "id": "unit:KiloM-PER-HR"
+          },
+          "qudt:value": "47.0"
+        },
+        "madeBySensor": "ex:windSensor_14",
+        "observedProperty": "ex:windSpeed",
+        "resultTime": "2017-04-12T12:01:00+00:00",
+        "wasOriginatedBy": "ex:observation_148_spinningCupsMovement"
+      }
+    ],
+    "observes": "ex:windSpeed"
+  },
+  "observedProperty": "ex:windSpeed",
+  "resultTime": "2017-04-12T12:00:00+00:00",
+  "wasOriginatedBy": "ex:observation_147_spinningCupsMovement"
+}

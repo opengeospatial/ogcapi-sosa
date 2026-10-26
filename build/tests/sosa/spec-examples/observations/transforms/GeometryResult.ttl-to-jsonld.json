@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/spec-examples/observations/context.jsonld",
+    {
+      "ex": "https://example.org/data/",
+      "geo": "http://www.opengis.net/ont/geosparql#",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "geo:asWKT": {
+        "@type": "geo:wktLiteral"
+      }
+    }
+  ],
+  "id": "ex:ObsGeo1",
+  "featureType": "Observation",
+  "hasFeatureOfInterest": {
+    "id": "ex:AbbysCar",
+    "featureType": "FeatureOfInterest"
+  },
+  "hasResult": {
+    "featureType": "geo:Geometry",
+    "geo:asWKT": "Point (145.042316 -37.919134)"
+  },
+  "madeBySensor": {
+    "id": "ex:MyGPS736",
+    "featureType": "Sensor"
+  },
+  "observedProperty": {
+    "id": "https://vocab.nerc.ac.uk/collection/S06/current/S0600255/",
+    "featureType": "Property",
+    "rdfs:label": {
+      "@language": "en",
+      "@value": "Location (geographic coordinates)"
+    }
+  },
+  "phenomenonTime": "2023-06-20T21:49:18+00:00",
+  "resultTime": "2023-06-20T21:49:18+00:00"
+}

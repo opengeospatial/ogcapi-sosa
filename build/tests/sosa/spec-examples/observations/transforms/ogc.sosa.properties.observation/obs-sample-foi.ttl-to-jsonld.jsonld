@@ -1,0 +1,45 @@
+{
+  "@context": [
+    "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/context.jsonld",
+    "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/spec-examples/observations/context.jsonld",
+    {
+      "ex": "https://example.org/data/",
+      "qudt": "http://qudt.org/schema/qudt/",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "unit": "http://qudt.org/vocab/unit/"
+    }
+  ],
+  "id": "ex:Ob873c4",
+  "featureType": "Observation",
+  "hasFeatureOfInterest": {
+    "id": "ex:Bubble873",
+    "featureType": "Sample",
+    "isSampleOf": {
+      "id": "ex:EarthAtmosphere",
+      "featureType": "FeatureOfInterest",
+      "skos:exactMatch": {
+        "id": "https://www.wikidata.org/wiki/Q3230"
+      }
+    }
+  },
+  "hasResult": {
+    "featureType": "qudt:QuantityValue",
+    "qudt:hasUnit": {
+      "id": "unit:PPM"
+    },
+    "http://qudt.org/schema/qudt/value": {
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+      "@value": "240.0"
+    }
+  },
+  "hasUltimateFeatureOfInterest": "ex:EarthAtmosphere",
+  "observedProperty": {
+    "id": "ex:CO2-Concentration",
+    "featureType": "Property",
+    "skos:exactMatch": {
+      "id": "http://purl.obolibrary.org/obo/ENVO_04000004"
+    },
+    "skos:prefLabel": "concentration of carbon dioxide in air"
+  },
+  "resultTime": "2017-01-01T00:00:00+00:00"
+}

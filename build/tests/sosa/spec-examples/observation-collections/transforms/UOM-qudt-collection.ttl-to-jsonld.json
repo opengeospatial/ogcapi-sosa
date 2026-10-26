@@ -1,0 +1,55 @@
+{
+  "@context": [
+    "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/spec-examples/observation-collections/context.jsonld",
+    {
+      "ex": "https://example.org/data/",
+      "qk": "http://qudt.org/vocab/quantitykind/",
+      "qudt": "http://qudt.org/schema/qudt/",
+      "unit": "http://qudt.org/vocab/unit/",
+      "xsd": "http://www.w3.org/2001/XMLSchema#"
+    }
+  ],
+  "id": "ex:OCa134",
+  "featureType": "ObservationCollection",
+  "qudt:hasUnit": {
+    "id": "unit:DEG_C",
+    "featureType": "qudt:hasUnit"
+  },
+  "hasFeatureOfInterest": {
+    "id": "ex:apt134",
+    "featureType": "FeatureOfInterest"
+  },
+  "hasMember": [
+    {
+      "id": "ex:OCa134t1",
+      "featureType": "Observation",
+      "hasSimpleResult": {
+        "@type": "xsd:decimal",
+        "@value": "22.5"
+      },
+      "phenomenonTime": "2017-04-15T09:00:00+00:00"
+    },
+    {
+      "id": "ex:OCa134t2",
+      "featureType": "Observation",
+      "hasSimpleResult": {
+        "@type": "xsd:decimal",
+        "@value": "24.9"
+      },
+      "phenomenonTime": "2017-04-15T09:15:00+00:00"
+    },
+    {
+      "id": "ex:OCa134t3",
+      "featureType": "Observation",
+      "hasSimpleResult": {
+        "@type": "xsd:decimal",
+        "@value": "21.3"
+      },
+      "phenomenonTime": "2017-04-15T09:30:00+00:00"
+    }
+  ],
+  "observedProperty": {
+    "id": "qk:Temperature",
+    "featureType": "Property"
+  }
+}

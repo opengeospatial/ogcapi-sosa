@@ -1,0 +1,17 @@
+@prefix ex: <https://example.org/data/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+
+<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/1> a sosa:Observation ;
+    sosa:madeBySensor ex:TemperatureSensor .
+
+<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/2> a sosa:Observation ;
+    sosa:madeBySensor ex:TemperatureSensor .
+
+ex:TemperatureSensorOperatingRange a sosa:ObservationCollection,
+        sosa:OperatingConditions ;
+    sosa:hasMember ex:NormalHumidityCondition,
+        ex:NormalTemperatureCondition .
+
+ex:TemperatureSensor a sosa:System ;
+    sosa:hasOperatingConditions ex:TemperatureSensorOperatingRange .
+

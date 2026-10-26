@@ -1,5 +1,5 @@
 Validation report for ogc.sosa.properties.observation - Observation Properties
-Generated 2026-09-10T07:08:01.729854+00:00
+Generated 2026-10-26T21:52:19.209463+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -12,6 +12,27 @@ Using non-simpleresult-fail.jsonld from test resources
 === End Files ===
 
 === JSON Schema ===
-Validation passed
+
+** Validation error **
+ValidationError: {'irure31': -8150858, 'quis70f': False, 'quisc': 'nulla Duis do ullamco'} is not valid under any of the given schemas
+
+Failed validating 'oneOf' in schema['allOf'][0]['allOf'][0]['allOf'][0]['properties']['hasSimpleResult']:
+    {'description': 'sosa:hasSimpleResult is a literal (a JSON value, or a '
+                    'JSON-LD typed or language-tagged value)',
+     'oneOf': [{'type': ['string', 'number', 'integer', 'boolean']},
+               {'additionalProperties': False,
+                'properties': {'@language': {'type': 'string'},
+                               '@type': {'type': 'string'},
+                               '@value': {'type': ['string',
+                                                   'number',
+                                                   'integer',
+                                                   'boolean']}},
+                'required': ['@value'],
+                'type': 'object'}]}
+
+On instance['hasSimpleResult']:
+    {'irure31': -8150858,
+     'quis70f': False,
+     'quisc': 'nulla Duis do ullamco'}
 === End JSON Schema ===
 

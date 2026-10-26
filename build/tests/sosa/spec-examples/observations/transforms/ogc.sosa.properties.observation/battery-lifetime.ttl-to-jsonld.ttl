@@ -1,0 +1,41 @@
+@prefix ex: <http://example.org/> .
+@prefix gemet: <https://www.eionet.europa.eu/gemet/concept/> .
+@prefix iop: <https://w3id.org/iadopt/ont/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix uom: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:nominalLifetime a sosa:Observation ;
+    sosa:hasFeatureOfInterest ex:sensor ;
+    sosa:hasResult [ qudt:hasUnit unit:YR ;
+            qudt:value 1.0 ] ;
+    sosa:observedProperty ex:nominalLifetimeRestriction ;
+    sosa:resultTime "2017-01-01T00:00:00+00:00"^^xsd:dateTime .
+
+ex:nominalLifetimeRestriction a sosa:Property,
+        iop:Variable ;
+    rdfs:label "Nominal Lifetime Restriction of a AA Battery" ;
+    rdfs:comment "Nominal lifetime restriction of a AA battery" ;
+    iop:hasContextObject gemet:1170 ;
+    iop:hasObjectOfInterest ex:AABattery ;
+    iop:hasProperty <http://www.w3.org/ns/sosa/system-capability-properties#BatteryLifetime> ;
+    iop:hasStatisticalModifier uom:average .
+
+ex:sensor a sosa:Sensor ;
+    sosa:hasSubSystem ex:AABattery .
+
+uom:average a iop:StatisticalModifier ;
+    rdfs:label "average" .
+
+<http://www.w3.org/ns/sosa/system-capability-properties#BatteryLifetime> a iop:Property ;
+    rdfs:label "Battery Lifetime" .
+
+gemet:1170 a iop:Entity ;
+    rdfs:label "sensor" .
+
+ex:AABattery a iop:Entity ;
+    rdfs:label "AABattery" .
+

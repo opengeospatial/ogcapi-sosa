@@ -243,7 +243,9 @@ x-jsonld-extra-terms:
   detects:
     x-jsonld-id: http://www.w3.org/ns/sosa/detects
     x-jsonld-type: '@id'
-  endTime: http://www.w3.org/ns/sosa/endTime
+  endTime:
+    x-jsonld-id: http://www.w3.org/ns/sosa/endTime
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTime
   forProperty:
     x-jsonld-id: http://www.w3.org/ns/sosa/forProperty
     x-jsonld-type: '@id'
@@ -283,9 +285,7 @@ x-jsonld-extra-terms:
   hasSampledFeature:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasSampledFeature
     x-jsonld-type: '@id'
-  hasSimpleResult:
-    x-jsonld-id: http://www.w3.org/ns/sosa/hasSimpleResult
-    x-jsonld-type: '@id'
+  hasSimpleResult: http://www.w3.org/ns/sosa/hasSimpleResult
   hasSubSystem:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasSubSystem
     x-jsonld-type: '@id'
@@ -377,9 +377,40 @@ x-jsonld-extra-terms:
     x-jsonld-type: '@id'
   phenomenonTime:
     x-jsonld-id: http://www.w3.org/ns/sosa/phenomenonTime
-    x-jsonld-type: '@id'
-  resultTime: http://www.w3.org/ns/sosa/resultTime
-  startTime: http://www.w3.org/ns/sosa/startTime
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTime
+    x-jsonld-context:
+      time: http://www.w3.org/2006/time#
+      Instant: http://www.w3.org/2006/time#Instant
+      Interval: http://www.w3.org/2006/time#Interval
+      ProperInterval: http://www.w3.org/2006/time#ProperInterval
+      hasBeginning: http://www.w3.org/2006/time#hasBeginning
+      hasEnd: http://www.w3.org/2006/time#hasEnd
+      hasDuration: http://www.w3.org/2006/time#hasDuration
+      hasXSDDuration:
+        '@id': http://www.w3.org/2006/time#hasXSDDuration
+        '@type': http://www.w3.org/2001/XMLSchema#duration
+      inTimePosition: http://www.w3.org/2006/time#inTimePosition
+      inXSDDate:
+        '@id': http://www.w3.org/2006/time#inXSDDate
+        '@type': http://www.w3.org/2001/XMLSchema#date
+      inXSDDateTime:
+        '@id': http://www.w3.org/2006/time#inXSDDateTime
+        '@type': http://www.w3.org/2001/XMLSchema#dateTime
+      inXSDDateTimeStamp:
+        '@id': http://www.w3.org/2006/time#inXSDDateTimeStamp
+        '@type': http://www.w3.org/2001/XMLSchema#dateTimeStamp
+      inXSDgYear:
+        '@id': http://www.w3.org/2006/time#inXSDgYear
+        '@type': http://www.w3.org/2001/XMLSchema#gYear
+      inXSDgYearMonth:
+        '@id': http://www.w3.org/2006/time#inXSDgYearMonth
+        '@type': http://www.w3.org/2001/XMLSchema#gYearMonth
+  resultTime:
+    x-jsonld-id: http://www.w3.org/ns/sosa/resultTime
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTime
+  startTime:
+    x-jsonld-id: http://www.w3.org/ns/sosa/startTime
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTime
   usedProcedure:
     x-jsonld-id: http://www.w3.org/ns/sosa/usedProcedure
     x-jsonld-type: '@id'
@@ -478,8 +509,14 @@ x-jsonld-extra-terms:
     x-jsonld-type: '@id'
 x-jsonld-prefixes:
   sosa: http://www.w3.org/ns/sosa/
+  time: http://www.w3.org/2006/time#
   ssn-system: http://www.w3.org/ns/ssn/systems/
   ssn: http://www.w3.org/ns/ssn/
+x-bblocks-metadata:
+  itemIdentifier: ogc.sosa.features.sampleCollection
+  register: https://opengeospatial.github.io/ogcapi-sosa/build/register.json
+  version: '1.0'
+  dateOfLastChange: '2026-10-26'
 
 ```
 
@@ -541,7 +578,44 @@ Links to the schema:
           "@id": "dct:time"
         },
         "coordRefSys": "http://www.opengis.net/def/glossary/term/CoordinateReferenceSystemCRS",
-        "place": "dct:spatial"
+        "place": "dct:spatial",
+        "phenomenonTime": {
+          "@id": "sosa:phenomenonTime",
+          "@type": "xsd:dateTime",
+          "@context": {
+            "Instant": "owlTime:Instant",
+            "Interval": "owlTime:Interval",
+            "ProperInterval": "owlTime:ProperInterval",
+            "hasBeginning": "owlTime:hasBeginning",
+            "hasEnd": "owlTime:hasEnd",
+            "hasDuration": "owlTime:hasDuration",
+            "hasXSDDuration": {
+              "@id": "owlTime:hasXSDDuration",
+              "@type": "xsd:duration"
+            },
+            "inTimePosition": "owlTime:inTimePosition",
+            "inXSDDate": {
+              "@id": "owlTime:inXSDDate",
+              "@type": "xsd:date"
+            },
+            "inXSDDateTime": {
+              "@id": "owlTime:inXSDDateTime",
+              "@type": "xsd:dateTime"
+            },
+            "inXSDDateTimeStamp": {
+              "@id": "owlTime:inXSDDateTimeStamp",
+              "@type": "xsd:dateTimeStamp"
+            },
+            "inXSDgYear": {
+              "@id": "owlTime:inXSDgYear",
+              "@type": "xsd:gYear"
+            },
+            "inXSDgYearMonth": {
+              "@id": "owlTime:inXSDgYearMonth",
+              "@type": "xsd:gYearMonth"
+            }
+          }
+        }
       },
       "@container": "@set",
       "@id": "sosa:hasMember",
@@ -685,7 +759,10 @@ Links to the schema:
       "@id": "sosa:detects",
       "@type": "@id"
     },
-    "endTime": "sosa:endTime",
+    "endTime": {
+      "@id": "sosa:endTime",
+      "@type": "xsd:dateTime"
+    },
     "forProperty": {
       "@id": "sosa:forProperty",
       "@type": "@id"
@@ -730,10 +807,7 @@ Links to the schema:
       "@id": "sosa:hasSampledFeature",
       "@type": "@id"
     },
-    "hasSimpleResult": {
-      "@id": "sosa:hasSimpleResult",
-      "@type": "@id"
-    },
+    "hasSimpleResult": "sosa:hasSimpleResult",
     "hasSubSystem": {
       "@id": "sosa:hasSubSystem",
       "@type": "@id",
@@ -830,10 +904,49 @@ Links to the schema:
     },
     "phenomenonTime": {
       "@id": "sosa:phenomenonTime",
-      "@type": "@id"
+      "@type": "xsd:dateTime",
+      "@context": {
+        "Instant": "owlTime:Instant",
+        "Interval": "owlTime:Interval",
+        "ProperInterval": "owlTime:ProperInterval",
+        "hasBeginning": "owlTime:hasBeginning",
+        "hasEnd": "owlTime:hasEnd",
+        "hasDuration": "owlTime:hasDuration",
+        "hasXSDDuration": {
+          "@id": "owlTime:hasXSDDuration",
+          "@type": "xsd:duration"
+        },
+        "inTimePosition": "owlTime:inTimePosition",
+        "inXSDDate": {
+          "@id": "owlTime:inXSDDate",
+          "@type": "xsd:date"
+        },
+        "inXSDDateTime": {
+          "@id": "owlTime:inXSDDateTime",
+          "@type": "xsd:dateTime"
+        },
+        "inXSDDateTimeStamp": {
+          "@id": "owlTime:inXSDDateTimeStamp",
+          "@type": "xsd:dateTimeStamp"
+        },
+        "inXSDgYear": {
+          "@id": "owlTime:inXSDgYear",
+          "@type": "xsd:gYear"
+        },
+        "inXSDgYearMonth": {
+          "@id": "owlTime:inXSDgYearMonth",
+          "@type": "xsd:gYearMonth"
+        }
+      }
     },
-    "resultTime": "sosa:resultTime",
-    "startTime": "sosa:startTime",
+    "resultTime": {
+      "@id": "sosa:resultTime",
+      "@type": "xsd:dateTime"
+    },
+    "startTime": {
+      "@id": "sosa:startTime",
+      "@type": "xsd:dateTime"
+    },
     "usedProcedure": {
       "@id": "sosa:usedProcedure",
       "@type": "@id"

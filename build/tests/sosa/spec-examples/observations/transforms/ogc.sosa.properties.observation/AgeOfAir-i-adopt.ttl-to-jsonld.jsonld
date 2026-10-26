@@ -1,0 +1,85 @@
+{
+  "@context": [
+    "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/context.jsonld",
+    "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/spec-examples/observations/context.jsonld",
+    {
+      "ex": "https://example.org/data/",
+      "qudt": "http://qudt.org/schema/qudt/",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "unit": "http://qudt.org/vocab/unit/",
+      "iop": "https://w3id.org/iadopt/ont/",
+      "sweet": "http://sweetontology.net/realmCryo/",
+      "et": "http://vocabs.lter-europe.net/EnvThes/",
+      "P21": "http://vocab.nerc.ac.uk/collection/P21/current/",
+      "qudt:value": {
+        "@type": "xsd:decimal"
+      },
+      "xsd": "http://www.w3.org/2001/XMLSchema#"
+    }
+  ],
+  "id": "ex:Ob873t2",
+  "featureType": "Observation",
+  "hasFeatureOfInterest": {
+    "id": "ex:Bubble873",
+    "featureType": [
+      "Sample",
+      "sosa:MaterialSample"
+    ],
+    "isResultOf": "ex:CoreEx1923",
+    "isSampleOf": [
+      "ex:IceCore12",
+      {
+        "id": "ex:EarthAtmosphere",
+        "featureType": [
+          "FeatureOfInterest",
+          "P21:MS292"
+        ]
+      }
+    ],
+    "isSampleOfUltimateFOI": {
+      "id": "ex:Antarctic_ice_sheet",
+      "featureType": [
+        "FeatureOfInterest",
+        "https://www.wikidata.org/wiki/Q571430"
+      ]
+    }
+  },
+  "hasResult": {
+    "featureType": "qudt:QuantityValue",
+    "qudt:hasUnit": {
+      "id": "unit:YR"
+    },
+    "qudt:value": "7530.0"
+  },
+  "hasUltimateFeatureOfInterest": "ex:EarthAtmosphere",
+  "observedProperty": {
+    "id": "ex:AgeOfAir",
+    "featureType": [
+      "Property",
+      "iop:Variable"
+    ],
+    "skos:broadMatch": {
+      "id": "http://vocab.nerc.ac.uk/collection/S06/current/S0600001/"
+    },
+    "skos:definition": "The age of air gas in ice core.",
+    "skos:prefLabel": "AgeOfAir",
+    "iop:hasMatrix": {
+      "id": "sweet:IceCore",
+      "featureType": "iop:Entity",
+      "rdfs:label": "ice core"
+    },
+    "iop:hasObjectOfInterest": {
+      "id": "et:23",
+      "featureType": "iop:Entity",
+      "rdfs:label": "air"
+    },
+    "iop:hasProperty": {
+      "id": "et:21590",
+      "featureType": "iop:Property",
+      "rdfs:label": "age"
+    }
+  },
+  "resultTime": "2018-01-09T14:15:00+00:00",
+  "usedProcedure": "ex:C14"
+}

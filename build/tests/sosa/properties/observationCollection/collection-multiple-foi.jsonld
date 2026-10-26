@@ -1,0 +1,24 @@
+{
+  "@context": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/context.jsonld",
+  "comment": "SOSA collection rule 3: several features of interest on the collection, each member has one of them",
+  "observedProperty": "http://qudt.org/vocab/quantitykind/Temperature",
+  "madeBySensor": "https://example.org/sensors/T56",
+  "hasFeatureOfInterest": [
+    "https://example.org/rooms/1",
+    "https://example.org/rooms/2"
+  ],
+  "hasMember": [
+    {
+      "featureType": "Observation",
+      "hasFeatureOfInterest": "https://example.org/rooms/1",
+      "resultTime": "2022-05-01T20:33:40Z",
+      "hasSimpleResult": 24.1
+    },
+    {
+      "featureType": "Observation",
+      "hasFeatureOfInterest": "https://example.org/rooms/2",
+      "resultTime": "2022-05-01T22:33:40Z",
+      "hasSimpleResult": 27.3
+    }
+  ]
+}

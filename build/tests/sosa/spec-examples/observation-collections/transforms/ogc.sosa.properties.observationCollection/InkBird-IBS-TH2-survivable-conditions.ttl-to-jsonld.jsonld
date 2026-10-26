@@ -1,0 +1,59 @@
+{
+  "@context": [
+    "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/context.jsonld",
+    "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/spec-examples/observation-collections/context.jsonld",
+    {
+      "ex": "https://example.org/data/",
+      "qudt": "http://qudt.org/schema/qudt/",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "unit": "http://qudt.org/vocab/unit/"
+    }
+  ],
+  "id": "ex:IBSTH2SurvivalRange",
+  "featureType": [
+    "ObservationCollection",
+    "sosa:SurvivableConditions"
+  ],
+  "rdfs:label": {
+    "@language": "en",
+    "@value": "Inkbird IBS-TH2 Failiure limits"
+  },
+  "hasFeatureOfInterest": {
+    "id": "ex:InkBird-IBS-TH2-0354313547",
+    "featureType": "ex:InkBird-IBS-TH2",
+    "rdfs:label": {
+      "@language": "en",
+      "@value": "Inkbird IBS-TH2 instance 0354313547"
+    },
+    "sosa:hasOperatingConditions": {
+      "id": "ex:IBSTH2SurvivalRange"
+    }
+  },
+  "hasMember": [
+    {
+      "hasResult": {
+        "qudt:hasUnit": {
+          "id": "unit:DEG_C"
+        },
+        "http://qudt.org/schema/qudt/value": {
+          "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+          "@value": "-273.0"
+        }
+      },
+      "observedProperty": "sosa:system-environment-properties#MinAmbientTemperature"
+    },
+    {
+      "hasResult": {
+        "qudt:hasUnit": {
+          "id": "unit:DEG_C"
+        },
+        "http://qudt.org/schema/qudt/value": {
+          "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+          "@value": "80.0"
+        }
+      },
+      "observedProperty": "sosa:system-environment-properties#MaxAmbientTemperature"
+    }
+  ],
+  "resultTime": "2017-01-01T00:00:00+00:00"
+}

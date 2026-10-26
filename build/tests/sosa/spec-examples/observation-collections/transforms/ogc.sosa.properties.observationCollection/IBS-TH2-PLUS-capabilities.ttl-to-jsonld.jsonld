@@ -1,0 +1,90 @@
+{
+  "@context": [
+    "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/context.jsonld",
+    "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/spec-examples/observation-collections/context.jsonld",
+    {
+      "ex": "https://example.org/data/",
+      "qudt": "http://qudt.org/schema/qudt/",
+      "unit": "http://qudt.org/vocab/unit/",
+      "qk": "http://qudt.org/vocab/quantitykind/",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "sensor": "https://example.org/sensor/",
+      "qudt:value": {
+        "@type": "xsd:decimal"
+      },
+      "xsd": "http://www.w3.org/2001/XMLSchema#"
+    }
+  ],
+  "id": "sensor:IBS-TH2-Plus-T-systemCapability",
+  "featureType": "ObservationCollection",
+  "hasFeatureOfInterest": {
+    "id": "ex:IBS-TH2-Plus-T-687343",
+    "featureType": "sensor:IBS-TH2-Plus-T",
+    "rdfs:label": "IBS-TH2 PLUS Temperature Sensor instance 687343",
+    "sosa:hasSystemCapability": {
+      "id": "sensor:IBS-TH2-Plus-T-systemCapability"
+    },
+    "observes": "qk:Temperature"
+  },
+  "hasMember": [
+    {
+      "featureType": "Observation",
+      "hasResult": {
+        "qudt:hasUnit": {
+          "id": "unit:DEG_C"
+        },
+        "qudt:value": "0.5"
+      },
+      "observedProperty": "sosa:system-capability-properties#TemperatureAccuracy"
+    },
+    {
+      "featureType": "Observation",
+      "hasResult": {
+        "qudt:hasUnit": {
+          "id": "unit:DEG_C"
+        },
+        "qudt:value": "60.0"
+      },
+      "observedProperty": "sosa:system-capability-properties#MaxMeasurableTemperature"
+    },
+    {
+      "featureType": "Observation",
+      "hasResult": {
+        "qudt:hasUnit": {
+          "id": "unit:DEG_C"
+        },
+        "qudt:value": "-40.0"
+      },
+      "observedProperty": "sosa:system-capability-properties#MinMeasurableTemperature"
+    }
+  ],
+  "sosa:hasValidityContext": {
+    "id": "sensor:IBS-TH2-Plus-T-normalHumidityConditions",
+    "featureType": "ObservationCollection",
+    "hasFeatureOfInterest": "ex:IBS-TH2-Plus-T-687343",
+    "hasMember": [
+      {
+        "featureType": "Observation",
+        "hasResult": {
+          "qudt:hasUnit": {
+            "id": "unit:PERCENT"
+          },
+          "qudt:value": "0.0"
+        },
+        "observedProperty": "sosa:system-environment-properties#MinAmbientRelativeHumidity"
+      },
+      {
+        "featureType": "Observation",
+        "hasResult": {
+          "qudt:hasUnit": {
+            "id": "unit:PERCENT"
+          },
+          "qudt:value": "99.0"
+        },
+        "observedProperty": "sosa:system-environment-properties#MaxAmbientRelativeHumidity"
+      }
+    ],
+    "resultTime": "2017-01-01T00:00:00+00:00"
+  },
+  "resultTime": "2017-01-01T00:00:00+00:00"
+}

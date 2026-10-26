@@ -1,0 +1,28 @@
+@prefix ex: <https://example.org/data/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+
+<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/1> a sosa:Observation ;
+    sosa:madeBySensor <https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/TemperatureSensor/1> .
+
+<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/Observation/2> a sosa:Observation ;
+    sosa:madeBySensor <https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/TemperatureSensor/2> .
+
+<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/TemperatureSensor/1> a sosa:System,
+        ex:TemperatureSensor ;
+    sosa:hasSystemCapability ex:TemperatureSensorOperatingRange,
+        <https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/moreSpecificTemperatureSensorOperatingRange> .
+
+<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/TemperatureSensor/2> a sosa:System,
+        ex:TemperatureSensor .
+
+<https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/moreSpecificTemperatureSensorOperatingRange> a sosa:ObservationCollection ;
+    sosa:hasMember <https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/moreSpecificHumidityCondition>,
+        <https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/moreSpecificTemperatureCondition> .
+
+ex:TemperatureSensor a owl:Class ;
+    rdfs:subClassOf [ owl:hasValue ex:TemperatureSensorOperatingRange ;
+            owl:onProperty sosa:hasSystemCapability ],
+        sosa:System .
+

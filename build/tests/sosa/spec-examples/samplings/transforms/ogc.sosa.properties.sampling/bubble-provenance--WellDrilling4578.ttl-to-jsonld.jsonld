@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/sampling/context.jsonld",
+    "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/spec-examples/samplings/context.jsonld",
+    {
+      "ex": "https://example.org/data/",
+      "geo": "http://www.opengis.net/ont/geosparql#",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "geo:asWKT": {
+        "@type": "geo:WktLiteral"
+      }
+    }
+  ],
+  "id": "ex:WellDrilling4578",
+  "featureType": "Sampling",
+  "geo:hasGeometry": {
+    "featureType": "geo:Point",
+    "geo:asWKT": "POINT (9.32 -73.35)"
+  },
+  "hasFeatureOfInterest": {
+    "id": "ex:Antarctic_ice_sheet",
+    "featureType": "FeatureOfInterest",
+    "skos:exactMatch": {
+      "id": "https://www.wikidata.org/wiki/Q571430"
+    }
+  },
+  "hasResult": {
+    "id": "ex:IceCore12",
+    "featureType": [
+      "Sample",
+      "sosa:MaterialSample"
+    ],
+    "isResultOf": "ex:WellDrilling4578",
+    "isSampleOf": "ex:Antarctic_ice_sheet"
+  },
+  "madeBySampler": "ex:ThermalDrill2",
+  "resultTime": "2017-04-03T11:12:00+00:00"
+}
