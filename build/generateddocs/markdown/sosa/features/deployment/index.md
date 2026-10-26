@@ -52,13 +52,12 @@ From the SOSA/SSN specification's "LocatedDeployment" example, as a GeoJSON feat
 ```ttl
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://example.org/data/TH2-56-2024> a geojson:Feature ;
     sosa:deployedOnPlatform <https://example.org/data/Room31C> ;
     sosa:deployedSystem <https://example.org/data/IBS-TH2-56> ;
-    sosa:endTime "2024-12-31T23:59:59+00:00"^^xsd:dateTime ;
-    sosa:startTime "2024-01-01T00:00:00+00:00"^^xsd:dateTime .
+    sosa:endTime "2024-12-31T23:59:59+00:00" ;
+    sosa:startTime "2024-01-01T00:00:00+00:00" .
 
 
 ```
@@ -157,9 +156,7 @@ x-jsonld-extra-terms:
   detects:
     x-jsonld-id: http://www.w3.org/ns/sosa/detects
     x-jsonld-type: '@id'
-  endTime:
-    x-jsonld-id: http://www.w3.org/ns/sosa/endTime
-    x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTime
+  endTime: http://www.w3.org/ns/sosa/endTime
   features:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasMember
     x-jsonld-type: '@id'
@@ -202,7 +199,9 @@ x-jsonld-extra-terms:
   hasSampledFeature:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasSampledFeature
     x-jsonld-type: '@id'
-  hasSimpleResult: http://www.w3.org/ns/sosa/hasSimpleResult
+  hasSimpleResult:
+    x-jsonld-id: http://www.w3.org/ns/sosa/hasSimpleResult
+    x-jsonld-type: '@id'
   hasSubSystem:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasSubSystem
     x-jsonld-type: '@id'
@@ -294,40 +293,9 @@ x-jsonld-extra-terms:
     x-jsonld-type: '@id'
   phenomenonTime:
     x-jsonld-id: http://www.w3.org/ns/sosa/phenomenonTime
-    x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTime
-    x-jsonld-context:
-      time: http://www.w3.org/2006/time#
-      Instant: http://www.w3.org/2006/time#Instant
-      Interval: http://www.w3.org/2006/time#Interval
-      ProperInterval: http://www.w3.org/2006/time#ProperInterval
-      hasBeginning: http://www.w3.org/2006/time#hasBeginning
-      hasEnd: http://www.w3.org/2006/time#hasEnd
-      hasDuration: http://www.w3.org/2006/time#hasDuration
-      hasXSDDuration:
-        '@id': http://www.w3.org/2006/time#hasXSDDuration
-        '@type': http://www.w3.org/2001/XMLSchema#duration
-      inTimePosition: http://www.w3.org/2006/time#inTimePosition
-      inXSDDate:
-        '@id': http://www.w3.org/2006/time#inXSDDate
-        '@type': http://www.w3.org/2001/XMLSchema#date
-      inXSDDateTime:
-        '@id': http://www.w3.org/2006/time#inXSDDateTime
-        '@type': http://www.w3.org/2001/XMLSchema#dateTime
-      inXSDDateTimeStamp:
-        '@id': http://www.w3.org/2006/time#inXSDDateTimeStamp
-        '@type': http://www.w3.org/2001/XMLSchema#dateTimeStamp
-      inXSDgYear:
-        '@id': http://www.w3.org/2006/time#inXSDgYear
-        '@type': http://www.w3.org/2001/XMLSchema#gYear
-      inXSDgYearMonth:
-        '@id': http://www.w3.org/2006/time#inXSDgYearMonth
-        '@type': http://www.w3.org/2001/XMLSchema#gYearMonth
-  resultTime:
-    x-jsonld-id: http://www.w3.org/ns/sosa/resultTime
-    x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTime
-  startTime:
-    x-jsonld-id: http://www.w3.org/ns/sosa/startTime
-    x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTime
+    x-jsonld-type: '@id'
+  resultTime: http://www.w3.org/ns/sosa/resultTime
+  startTime: http://www.w3.org/ns/sosa/startTime
   usedProcedure:
     x-jsonld-id: http://www.w3.org/ns/sosa/usedProcedure
     x-jsonld-type: '@id'
@@ -426,14 +394,8 @@ x-jsonld-extra-terms:
     x-jsonld-type: '@id'
 x-jsonld-prefixes:
   sosa: http://www.w3.org/ns/sosa/
-  time: http://www.w3.org/2006/time#
   ssn-system: http://www.w3.org/ns/ssn/systems/
   ssn: http://www.w3.org/ns/ssn/
-x-bblocks-metadata:
-  itemIdentifier: ogc.sosa.features.deployment
-  register: https://opengeospatial.github.io/ogcapi-sosa/build/register.json
-  version: '1.0'
-  dateOfLastChange: '2026-10-26'
 
 ```
 
@@ -674,7 +636,10 @@ Links to the schema:
       "@id": "sosa:hasSampledFeature",
       "@type": "@id"
     },
-    "hasSimpleResult": "sosa:hasSimpleResult",
+    "hasSimpleResult": {
+      "@id": "sosa:hasSimpleResult",
+      "@type": "@id"
+    },
     "hasSubSystem": {
       "@id": "sosa:hasSubSystem",
       "@type": "@id",
@@ -795,46 +760,9 @@ Links to the schema:
     },
     "phenomenonTime": {
       "@id": "sosa:phenomenonTime",
-      "@type": "xsd:dateTime",
-      "@context": {
-        "time": "http://www.w3.org/2006/time#",
-        "Instant": "owlTime:Instant",
-        "Interval": "owlTime:Interval",
-        "ProperInterval": "owlTime:ProperInterval",
-        "hasBeginning": "owlTime:hasBeginning",
-        "hasEnd": "owlTime:hasEnd",
-        "hasDuration": "owlTime:hasDuration",
-        "hasXSDDuration": {
-          "@id": "owlTime:hasXSDDuration",
-          "@type": "xsd:duration"
-        },
-        "inTimePosition": "owlTime:inTimePosition",
-        "inXSDDate": {
-          "@id": "owlTime:inXSDDate",
-          "@type": "xsd:date"
-        },
-        "inXSDDateTime": {
-          "@id": "owlTime:inXSDDateTime",
-          "@type": "xsd:dateTime"
-        },
-        "inXSDDateTimeStamp": {
-          "@id": "owlTime:inXSDDateTimeStamp",
-          "@type": "xsd:dateTimeStamp"
-        },
-        "inXSDgYear": {
-          "@id": "owlTime:inXSDgYear",
-          "@type": "xsd:gYear"
-        },
-        "inXSDgYearMonth": {
-          "@id": "owlTime:inXSDgYearMonth",
-          "@type": "xsd:gYearMonth"
-        }
-      }
+      "@type": "@id"
     },
-    "resultTime": {
-      "@id": "sosa:resultTime",
-      "@type": "xsd:dateTime"
-    },
+    "resultTime": "sosa:resultTime",
     "usedProcedure": {
       "@id": "sosa:usedProcedure",
       "@type": "@id"
@@ -979,14 +907,8 @@ Links to the schema:
       "@id": "sosa:hasFeatureOfInterest",
       "@type": "@id"
     },
-    "startTime": {
-      "@id": "sosa:startTime",
-      "@type": "xsd:dateTime"
-    },
-    "endTime": {
-      "@id": "sosa:endTime",
-      "@type": "xsd:dateTime"
-    },
+    "startTime": "sosa:startTime",
+    "endTime": "sosa:endTime",
     "geojson": "https://purl.org/geojson/vocab#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "oa": "http://www.w3.org/ns/oa#",

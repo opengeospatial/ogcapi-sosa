@@ -1,0 +1,46 @@
+@prefix ex: <https://example.org/data/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix qk: <http://qudt.org/vocab/quantitykind/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sensor: <https://example.org/sensor/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sosa-cap: <http://www.w3.org/ns/sosa/system-capability-properties#> .
+@prefix sosa-env: <http://www.w3.org/ns/sosa/system-environment-properties#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:IBS-TH2-Plus-T-687343 a sensor:IBS-TH2-Plus-T ;
+    rdfs:label "IBS-TH2 PLUS Temperature Sensor instance 687343" ;
+    sosa:hasSystemCapability sensor:IBS-TH2-Plus-T-systemCapability ;
+    sosa:observes qk:Temperature .
+
+sensor:IBS-TH2-Plus-T a owl:Class ;
+    rdfs:label "IBS-TH2 PLUS Temperature Sensor type" ;
+    rdfs:subClassOf sosa:Sensor .
+
+sensor:IBS-TH2-Plus-T-normalHumidityConditions a sosa:Observation ;
+    sosa:hasMember [ a sosa:Observation ;
+            sosa:hasResult [ qudt:hasUnit unit:PERCENT ;
+                    qudt:value 0.0 ] ;
+            sosa:observedProperty sosa-env:MinAmbientRelativeHumidity ],
+        [ a sosa:Observation ;
+            sosa:hasResult [ qudt:hasUnit unit:PERCENT ;
+                    qudt:value 99.0 ] ;
+            sosa:observedProperty sosa-env:MaxAmbientRelativeHumidity ] .
+
+sensor:IBS-TH2-Plus-T-systemCapability a sosa:ObservationCollection ;
+    sosa:hasMember [ a sosa:Observation ;
+            sosa:hasResult [ qudt:hasUnit unit:DEG_C ;
+                    qudt:value 0.5 ] ;
+            sosa:observedProperty sosa-cap:TemperatureAccuracy ],
+        [ a sosa:Observation ;
+            sosa:hasResult [ qudt:hasUnit unit:DEG_C ;
+                    qudt:value 60.0 ] ;
+            sosa:observedProperty sosa-cap:MaxMeasurableTemperature ],
+        [ a sosa:Observation ;
+            sosa:hasResult [ qudt:hasUnit unit:DEG_C ;
+                    qudt:value -40.0 ] ;
+            sosa:observedProperty sosa-cap:MinMeasurableTemperature ] ;
+    sosa:hasValidityContext sensor:IBS-TH2-Plus-T-normalHumidityConditions .
+

@@ -389,46 +389,10 @@
       "@id": "ssn-system:qualityOfObservation",
       "@type": "@id"
     },
-    "resultTime": {
-      "@id": "sosa:resultTime",
-      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
-    },
+    "resultTime": "sosa:resultTime",
     "phenomenonTime": {
-      "@context": {
-        "hasBeginning": "time:hasBeginning",
-        "hasEnd": "time:hasEnd",
-        "inXSDDateTime": {
-          "@id": "time:inXSDDateTime",
-          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
-        },
-        "inXSDDateTimeStamp": {
-          "@id": "time:inXSDDateTimeStamp",
-          "@type": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
-        },
-        "inXSDDate": {
-          "@id": "time:inXSDDate",
-          "@type": "http://www.w3.org/2001/XMLSchema#date"
-        },
-        "Instant": "time:Instant",
-        "Interval": "time:Interval",
-        "ProperInterval": "time:ProperInterval",
-        "hasDuration": "time:hasDuration",
-        "hasXSDDuration": {
-          "@id": "time:hasXSDDuration",
-          "@type": "http://www.w3.org/2001/XMLSchema#duration"
-        },
-        "inTimePosition": "time:inTimePosition",
-        "inXSDgYear": {
-          "@id": "time:inXSDgYear",
-          "@type": "http://www.w3.org/2001/XMLSchema#gYear"
-        },
-        "inXSDgYearMonth": {
-          "@id": "time:inXSDgYearMonth",
-          "@type": "http://www.w3.org/2001/XMLSchema#gYearMonth"
-        }
-      },
       "@id": "sosa:phenomenonTime",
-      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+      "@type": "@id"
     },
     "hasFeatureOfInterest": {
       "@id": "sosa:hasFeatureOfInterest",
@@ -442,25 +406,21 @@
       "@id": "sosa:usedProcedure",
       "@type": "@id"
     },
-    "startTime": {
-      "@id": "sosa:startTime",
-      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
-    },
-    "endTime": {
-      "@id": "sosa:endTime",
-      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
-    },
+    "startTime": "sosa:startTime",
+    "endTime": "sosa:endTime",
     "hasResult": {
       "@id": "sosa:hasResult",
       "@type": "@id"
     },
-    "hasSimpleResult": "sosa:hasSimpleResult",
+    "hasSimpleResult": {
+      "@id": "sosa:hasSimpleResult",
+      "@type": "@id"
+    },
     "hasInputValue": {
       "@id": "sosa:hasInputValue",
       "@type": "@id"
     },
     "sosa": "http://www.w3.org/ns/sosa/",
-    "time": "http://www.w3.org/2006/time#",
     "ssn-system": "ssn:systems/",
     "ssn": "http://www.w3.org/ns/ssn/",
     "@version": 1.1

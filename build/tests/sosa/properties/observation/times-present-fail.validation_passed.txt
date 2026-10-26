@@ -1,5 +1,5 @@
 Validation report for ogc.sosa.properties.observation - Observation Properties
-Generated 2026-10-26T11:21:55.745517+00:00
+Generated 2026-09-10T07:08:02.134661+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -10,34 +10,7 @@ Output Turtle times-present-fail.ttl created
 === End Files ===
 
 === JSON Schema ===
-
-** Validation error **
-ValidationError: {'@context': {'hasResult': 'http://www.w3.org/ns/sosa/hasResult', 'hasSimpleResult': 'http://www.w3.org/ns/sosa/hasSimpleResult', 'resultTime': 'http://www.w3.org/ns/sosa/resultTime', 'phenomenonTime': 'http://www.w3.org/ns/sosa/phenomenonTime', 'hasFeatureOfInterest': 'http://www.w3.org/ns/sosa/hasFeatureOfInterest', 'observedProperty': 'http://www.w3.org/ns/sosa/observedProperty', 'usedProcedure': 'http://www.w3.org/ns/sosa/usedProcedure', 'madeBySensor': 'http://www.w3.org/ns/sosa/madeBySensor'}, 'hasFeatureOfInterest': {'id': 'http://something.org/1'}, 'observedProperty': 'something', 'hasResult': {'@context': {'resultschema': 'http//example.org/resultschema/', 'a': 'resultschema:a', 'b': {'@id': 'resultschema:b', '@context': {'b1': 'resultschema:b1', 'b2': 'resultschema:b2'}}}, 'a': -8150858, 'b': False}, 'hasSimpleResult': 'frogginess', 'madeBySensor': 'ea est culpa esse'} is valid under each of {'required': ['hasSimpleResult']}, {'required': ['hasResult']}
-
-Failed validating 'oneOf' in schema['allOf'][0]['allOf'][2]:
-    {'oneOf': [{'required': ['hasResult']},
-               {'required': ['hasSimpleResult']}]}
-
-On instance:
-    {'@context': {'hasFeatureOfInterest': 'http://www.w3.org/ns/sosa/hasFeatureOfInterest',
-                  'hasResult': 'http://www.w3.org/ns/sosa/hasResult',
-                  'hasSimpleResult': 'http://www.w3.org/ns/sosa/hasSimpleResult',
-                  'madeBySensor': 'http://www.w3.org/ns/sosa/madeBySensor',
-                  'observedProperty': 'http://www.w3.org/ns/sosa/observedProperty',
-                  'phenomenonTime': 'http://www.w3.org/ns/sosa/phenomenonTime',
-                  'resultTime': 'http://www.w3.org/ns/sosa/resultTime',
-                  'usedProcedure': 'http://www.w3.org/ns/sosa/usedProcedure'},
-     'hasFeatureOfInterest': {'id': 'http://something.org/1'},
-     'hasResult': {'@context': {'a': 'resultschema:a',
-                                'b': {'@context': {'b1': 'resultschema:b1',
-                                                   'b2': 'resultschema:b2'},
-                                      '@id': 'resultschema:b'},
-                                'resultschema': 'http//example.org/resultschema/'},
-                   'a': -8150858,
-                   'b': False},
-     'hasSimpleResult': 'frogginess',
-     'madeBySensor': 'ea est culpa esse',
-     'observedProperty': 'something'}
+Validation passed
 === End JSON Schema ===
 
 === SHACL ===
@@ -47,7 +20,7 @@ Validation result for _sources/properties/observation/shapes.shacl:
   
 Focus nodes for _sources/properties/observation/shapes.shacl:
  - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: _:Nf7d668ddb3ed411580c182f0860651dc
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: _:N160009e2f9b44dab87c8da87f6f9a0b3
  - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: *none*
 
 
@@ -55,37 +28,38 @@ Focus nodes for _sources/properties/observation/shapes.shacl:
 Validation result for _sources/properties/execution/shapes.shacl:
   Validation Report
   Conforms: False
-  Results (2):
-  Constraint Violation in MaxCountConstraintComponent (http://www.w3.org/ns/shacl#MaxCountConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("Exactly one of sosa:hasResult, sosa:hasSimpleResult or sosa:isResultOf (from the result) is required per execution") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult [ sh:inversePath sosa:isResultOf ] ) ] ]
-  	Focus Node: [ sosa:hasFeatureOfInterest [ ] ; sosa:hasResult [ ns1:a Literal("-8150858", datatype=xsd:integer) ; ns1:b Literal("false" = False, datatype=xsd:boolean) ] ; sosa:hasSimpleResult Literal("frogginess") ; sosa:madeBySensor Literal("ea est culpa esse") ; sosa:observedProperty Literal("something") ]
-  	Result Path: [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult [ sh:inversePath sosa:isResultOf ] ) ]
-  	Message: Exactly one of sosa:hasResult, sosa:hasSimpleResult or sosa:isResultOf (from the result) is required per execution
+  Results (1):
   Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
   	Severity: sh:Violation
   	Source Shape: <https://www.ogc.org/rules/sosa/#testRequiredTime>
   	Focus Node: [ sosa:hasFeatureOfInterest [ ] ; sosa:hasResult [ ns1:a Literal("-8150858", datatype=xsd:integer) ; ns1:b Literal("false" = False, datatype=xsd:boolean) ] ; sosa:hasSimpleResult Literal("frogginess") ; sosa:madeBySensor Literal("ea est culpa esse") ; sosa:observedProperty Literal("something") ]
   	Value Node: [ sosa:hasFeatureOfInterest [ ] ; sosa:hasResult [ ns1:a Literal("-8150858", datatype=xsd:integer) ; ns1:b Literal("false" = False, datatype=xsd:boolean) ] ; sosa:hasSimpleResult Literal("frogginess") ; sosa:madeBySensor Literal("ea est culpa esse") ; sosa:observedProperty Literal("something") ]
-  	Source Constraint: [ sh:message Literal("One of sosa:resultTime, sosa:phenomenonTime, sosa:startTime or sosa:endTime is required, on the execution or a collection it is a member of") ; sh:select Literal("
+  	Source Constraint: [ sh:message Literal("sosa:resultTime or sosa:phenomenonTime is required, and no more than 1 of each is allowed") ; sh:select Literal("
+              PREFIX sh: <http://www.w3.org/ns/shacl#>
               PREFIX sosa: <http://www.w3.org/ns/sosa/>
               PREFIX geojson: <https://purl.org/geojson/vocab#>
-              SELECT $this WHERE {
-                  FILTER NOT EXISTS {
-                      $this (^sosa:hasMember|^geojson:features|sosa:memberOf)* ?holder .
-                      ?holder sosa:resultTime|sosa:phenomenonTime|sosa:startTime|sosa:endTime ?time .
-                  }
+              SELECT $this (CONCAT(COALESCE(COUNT(?resultTime), 0), ' x sosa:resultTime, ', COALESCE(COUNT(?phenomenonTime), 0), ' x sosa:phenomenonTime') AS ?value) WHERE {
+                  OPTIONAL { $this sosa:phenomenonTime ?phenomenonTime }
+                  OPTIONAL { $this sosa:resultTime ?resultTime}
+                  OPTIONAL { $this sosa:startTime ?startTime }
+                  OPTIONAL { $this sosa:endTime ?endTime }
+                  OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:phenomenonTime ?phenomenonTime }
+                  OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:resultTime ?resultTime }
+                  OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:startTime ?startTime }
+                  OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:endTime ?endTime }
               }
+              GROUP BY $this
+              HAVING (count(?resultTime) > 1 || count(?phenomenonTime) > 1 || count(?resultTime) + count(?phenomenonTime) + count(?startTime) + count(?endTime) < 1)
           ") ]
-  	Message: One of sosa:resultTime, sosa:phenomenonTime, sosa:startTime or sosa:endTime is required, on the execution or a collection it is a member of
+  	Message: sosa:resultTime or sosa:phenomenonTime is required, and no more than 1 of each is allowed
   
 Focus nodes for _sources/properties/execution/shapes.shacl:
  - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: frogginess
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: _:N160009e2f9b44dab87c8da87f6f9a0b3
  - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: _:Nf7d668ddb3ed411580c182f0860651dc
- - Shape <https://www.ogc.org/rules/sosa/#testResult>: _:Nf7d668ddb3ed411580c182f0860651dc
- - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: _:Nf7d668ddb3ed411580c182f0860651dc
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: frogginess
 
 === End SHACL ===
 

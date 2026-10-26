@@ -27,194 +27,52 @@ than used directly.
 ```yaml
 $schema: https://json-schema.org/draft/2020-12/schema
 description: SOSA Execution
-$defs:
-  dateTime:
-    description: xsd:dateTime lexical form (time zone optional)
-    type: string
-    format: date-time
-    pattern: ^-?[0-9]{4,}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})?$
-  dateTimeStamp:
-    description: xsd:dateTimeStamp lexical form (time zone required)
-    type: string
-    format: date-time
-    pattern: ^-?[0-9]{4,}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$
-  date:
-    description: xsd:date lexical form
-    type: string
-    pattern: ^-?[0-9]{4,}-[0-9]{2}-[0-9]{2}(Z|[+-][0-9]{2}:[0-9]{2})?$
-  reference:
-    description: An IRI or CURIE, or an embedded (non-empty) object
-    oneOf:
-    - type: string
-      minLength: 1
-    - type: object
-      minProperties: 1
-  instant:
-    description: time:Instant with at least one position
-    type: object
-    properties:
-      inXSDDateTime:
-        $ref: '#/$defs/dateTime'
-      inXSDDateTimeStamp:
-        $ref: '#/$defs/dateTimeStamp'
-      inXSDDate:
-        $ref: '#/$defs/date'
-    anyOf:
-    - required:
-      - inXSDDateTime
-    - required:
-      - inXSDDateTimeStamp
-    - required:
-      - inXSDDate
-    - required:
-      - inXSDgYear
-    - required:
-      - inXSDgYearMonth
-    - required:
-      - inTimePosition
-    - required:
-      - id
-  temporalEntity:
-    description: Time as a simple xsd:dateTime string, or a time:TemporalEntity object
-      (e.g. a time:Interval) when it is not a single date-time.
-    oneOf:
-    - $ref: '#/$defs/dateTime'
-    - type: object
-      properties:
-        hasBeginning:
-          $ref: '#/$defs/instant'
-          x-jsonld-id: http://www.w3.org/2006/time#hasBeginning
-        hasEnd:
-          $ref: '#/$defs/instant'
-          x-jsonld-id: http://www.w3.org/2006/time#hasEnd
-        inXSDDateTime:
-          $ref: '#/$defs/dateTime'
-          x-jsonld-id: http://www.w3.org/2006/time#inXSDDateTime
-          x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTime
-        inXSDDateTimeStamp:
-          $ref: '#/$defs/dateTimeStamp'
-          x-jsonld-id: http://www.w3.org/2006/time#inXSDDateTimeStamp
-          x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTimeStamp
-        inXSDDate:
-          $ref: '#/$defs/date'
-          x-jsonld-id: http://www.w3.org/2006/time#inXSDDate
-          x-jsonld-type: http://www.w3.org/2001/XMLSchema#date
-      anyOf:
-      - required:
-        - hasBeginning
-      - required:
-        - hasEnd
-      - required:
-        - inXSDDateTime
-      - required:
-        - inXSDDateTimeStamp
-      - required:
-        - inXSDDate
-      - required:
-        - inXSDgYear
-      - required:
-        - inXSDgYearMonth
-      - required:
-        - inTimePosition
-      - required:
-        - id
-  simpleResult:
-    description: sosa:hasSimpleResult is a literal (a JSON value, or a JSON-LD typed
-      or language-tagged value)
-    oneOf:
-    - type:
-      - string
-      - number
-      - integer
-      - boolean
-    - type: object
-      required:
-      - '@value'
-      properties:
-        '@value':
-          type:
-          - string
-          - number
-          - integer
-          - boolean
-        '@type':
-          type: string
-        '@language':
-          type: string
-      additionalProperties: false
-  required:
-    allOf:
-    - required:
-      - hasFeatureOfInterest
-    - anyOf:
-      - required:
-        - resultTime
-      - required:
-        - phenomenonTime
-      - required:
-        - startTime
-      - required:
-        - endTime
-  result:
-    oneOf:
-    - required:
-      - hasResult
-    - required:
-      - hasSimpleResult
 type: object
 properties:
   resultTime:
-    $ref: '#/$defs/dateTime'
+    type: string
+    format: date-time
     x-jsonld-id: http://www.w3.org/ns/sosa/resultTime
-    x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTime
   phenomenonTime:
-    $ref: '#/$defs/temporalEntity'
+    type:
+    - object
+    - string
     x-jsonld-id: http://www.w3.org/ns/sosa/phenomenonTime
-    x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTime
-    x-jsonld-extra-terms:
-      Instant: http://www.w3.org/2006/time#Instant
-      Interval: http://www.w3.org/2006/time#Interval
-      ProperInterval: http://www.w3.org/2006/time#ProperInterval
-      hasDuration: http://www.w3.org/2006/time#hasDuration
-      hasXSDDuration:
-        x-jsonld-id: http://www.w3.org/2006/time#hasXSDDuration
-        x-jsonld-type: http://www.w3.org/2001/XMLSchema#duration
-      inTimePosition: http://www.w3.org/2006/time#inTimePosition
-      inXSDgYear:
-        x-jsonld-id: http://www.w3.org/2006/time#inXSDgYear
-        x-jsonld-type: http://www.w3.org/2001/XMLSchema#gYear
-      inXSDgYearMonth:
-        x-jsonld-id: http://www.w3.org/2006/time#inXSDgYearMonth
-        x-jsonld-type: http://www.w3.org/2001/XMLSchema#gYearMonth
+    x-jsonld-type: '@id'
   hasFeatureOfInterest:
-    $ref: '#/$defs/reference'
+    type:
+    - object
+    - string
     x-jsonld-id: http://www.w3.org/ns/sosa/hasFeatureOfInterest
     x-jsonld-type: '@id'
   hasUltimateFeatureOfInterest:
-    $ref: '#/$defs/reference'
+    type:
+    - object
+    - string
     x-jsonld-id: http://www.w3.org/ns/sosa/hasUltimateFeatureOfInterest
     x-jsonld-type: '@id'
   usedProcedure:
-    $ref: '#/$defs/reference'
+    type:
+    - object
+    - string
     x-jsonld-id: http://www.w3.org/ns/sosa/usedProcedure
     x-jsonld-type: '@id'
   startTime:
-    $ref: '#/$defs/dateTime'
+    type: string
+    format: date-time
     x-jsonld-id: http://www.w3.org/ns/sosa/startTime
-    x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTime
   endTime:
-    $ref: '#/$defs/dateTime'
+    type: string
+    format: date-time
     x-jsonld-id: http://www.w3.org/ns/sosa/endTime
-    x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTime
   hasResult:
-    $ref: '#/$defs/reference'
     x-jsonld-id: http://www.w3.org/ns/sosa/hasResult
     x-jsonld-type: '@id'
   result: {}
   result@links: {}
   hasSimpleResult:
-    $ref: '#/$defs/simpleResult'
     x-jsonld-id: http://www.w3.org/ns/sosa/hasSimpleResult
+    x-jsonld-type: '@id'
   hasInputValue:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasInputValue
     x-jsonld-type: '@id'
@@ -514,14 +372,8 @@ x-jsonld-extra-terms:
     x-jsonld-type: '@id'
 x-jsonld-prefixes:
   sosa: http://www.w3.org/ns/sosa/
-  time: http://www.w3.org/2006/time#
   ssn-system: http://www.w3.org/ns/ssn/systems/
   ssn: http://www.w3.org/ns/ssn/
-x-bblocks-metadata:
-  itemIdentifier: ogc.sosa.properties.execution
-  register: https://opengeospatial.github.io/ogcapi-sosa/build/register.json
-  version: '1.0'
-  dateOfLastChange: '2026-10-26'
 
 ```
 
@@ -925,46 +777,10 @@ Links to the schema:
       "@id": "ssn-system:qualityOfObservation",
       "@type": "@id"
     },
-    "resultTime": {
-      "@id": "sosa:resultTime",
-      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
-    },
+    "resultTime": "sosa:resultTime",
     "phenomenonTime": {
-      "@context": {
-        "hasBeginning": "time:hasBeginning",
-        "hasEnd": "time:hasEnd",
-        "inXSDDateTime": {
-          "@id": "time:inXSDDateTime",
-          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
-        },
-        "inXSDDateTimeStamp": {
-          "@id": "time:inXSDDateTimeStamp",
-          "@type": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
-        },
-        "inXSDDate": {
-          "@id": "time:inXSDDate",
-          "@type": "http://www.w3.org/2001/XMLSchema#date"
-        },
-        "Instant": "time:Instant",
-        "Interval": "time:Interval",
-        "ProperInterval": "time:ProperInterval",
-        "hasDuration": "time:hasDuration",
-        "hasXSDDuration": {
-          "@id": "time:hasXSDDuration",
-          "@type": "http://www.w3.org/2001/XMLSchema#duration"
-        },
-        "inTimePosition": "time:inTimePosition",
-        "inXSDgYear": {
-          "@id": "time:inXSDgYear",
-          "@type": "http://www.w3.org/2001/XMLSchema#gYear"
-        },
-        "inXSDgYearMonth": {
-          "@id": "time:inXSDgYearMonth",
-          "@type": "http://www.w3.org/2001/XMLSchema#gYearMonth"
-        }
-      },
       "@id": "sosa:phenomenonTime",
-      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+      "@type": "@id"
     },
     "hasFeatureOfInterest": {
       "@id": "sosa:hasFeatureOfInterest",
@@ -978,25 +794,21 @@ Links to the schema:
       "@id": "sosa:usedProcedure",
       "@type": "@id"
     },
-    "startTime": {
-      "@id": "sosa:startTime",
-      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
-    },
-    "endTime": {
-      "@id": "sosa:endTime",
-      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
-    },
+    "startTime": "sosa:startTime",
+    "endTime": "sosa:endTime",
     "hasResult": {
       "@id": "sosa:hasResult",
       "@type": "@id"
     },
-    "hasSimpleResult": "sosa:hasSimpleResult",
+    "hasSimpleResult": {
+      "@id": "sosa:hasSimpleResult",
+      "@type": "@id"
+    },
     "hasInputValue": {
       "@id": "sosa:hasInputValue",
       "@type": "@id"
     },
     "sosa": "http://www.w3.org/ns/sosa/",
-    "time": "http://www.w3.org/2006/time#",
     "ssn-system": "ssn:systems/",
     "ssn": "http://www.w3.org/ns/ssn/",
     "@version": 1.1

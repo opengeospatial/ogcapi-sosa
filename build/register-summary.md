@@ -67,12 +67,6 @@ OMS alignment: implements the ISO 19156:2023 (OGC Topic 20 / O&M 3.0) `obs-cpt/H
 
 OMS alignment: `sosa:System` is a SOSA/SSN generalization with no direct ISO 19156 (OMS) counterpart; OMS keeps `Observer` and `Sampler` as unrelated peers rather than subclasses of a common superclass. See the OMS alignment building block (`ogc.sosa.oms-alignment`). This building block defines the set of properties common to any SOSA System - the abstract Asset that carries out Procedures (Observations, Actuations, or Samplings). It generalizes the properties shared by Sensor, Actuator and Sampler and is not intended to be used directly by itself.
 
-### `ogc.sosa.spec-examples.deployments` — SOSA specification examples: Deployments
-
-**Type:** schema
-
-Examples from the SOSA/SSN specification whose root resource is a deployments resource. Each Turtle example is validated against the SHACL rules of `ogc.sosa.properties.deployment`, and converted to JSON-LD by the `ttl-to-jsonld` transform, whose output is validated against the `ogc.sosa.properties.deployment` building block (JSON Schema, JSON-LD context and SHACL).
-
 ### `ogc.sosa.properties.actuation` — Actuation Properties
 
 **Type:** schema
@@ -103,18 +97,6 @@ OMS alignment: implements the ISO 19156:2023 (OGC Topic 20 / O&M 3.0) `sam-cpt/S
 
 OMS alignment: implements the ISO 19156:2023 (OGC Topic 20 / O&M 3.0) `sam-basic/SampleCollection` requirement class for `sosa:SampleCollection`. This building block defines the set of properties for a SOSA SampleCollection - a collection of one or more Samples, whose members share a common value for one or more properties.
 
-### `ogc.sosa.spec-examples.samples` — SOSA specification examples: Samples
-
-**Type:** schema
-
-Examples from the SOSA/SSN specification whose root resource is a samples resource. Each Turtle example is validated against the SHACL rules of `ogc.sosa.properties.sample`, and converted to JSON-LD by the `ttl-to-jsonld` transform, whose output is validated against the `ogc.sosa.properties.sample` building block (JSON Schema, JSON-LD context and SHACL).
-
-### `ogc.sosa.spec-examples.platforms` — SOSA specification examples: Platforms
-
-**Type:** schema
-
-Examples from the SOSA/SSN specification whose root resource is a platforms resource. Each Turtle example is validated against the SHACL rules of `ogc.sosa.properties.platform`, and converted to JSON-LD by the `ttl-to-jsonld` transform, whose output is validated against the `ogc.sosa.properties.platform` building block (JSON Schema, JSON-LD context and SHACL).
-
 ### `ogc.sosa.properties.actuator` — Actuator Properties
 
 **Type:** schema
@@ -133,18 +115,6 @@ OMS alignment: implements the ISO 19156:2023 (OGC Topic 20 / O&M 3.0) `sam-cpt/S
 
 OMS alignment: implements the ISO 19156:2023 (OGC Topic 20 / O&M 3.0) `obs-cpt/Observer` requirement class for `sosa:Sensor` - the ISO 19156:2023 UML class is named `Observer`; SOSA keeps the name `Sensor` for backward compatibility. An identifiable entity that can generate Observations pertaining to an ObservableProperty by implementing an ObservingProcedure. Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms.
 
-### `ogc.sosa.spec-examples.systems` — SOSA specification examples: Systems (Sensors, Actuators, Samplers)
-
-**Type:** schema
-
-Examples from the SOSA/SSN specification whose root resource is a systems (sensors, actuators, samplers) resource. Each Turtle example is validated against the SHACL rules of `ogc.sosa.properties.system`, and converted to JSON-LD by the `ttl-to-jsonld` transform, whose output is validated against the `ogc.sosa.properties.system` building block (JSON Schema, JSON-LD context and SHACL).
-
-### `ogc.sosa.spec-examples.actuations` — SOSA specification examples: Actuations
-
-**Type:** schema
-
-Examples from the SOSA/SSN specification whose root resource is a actuations resource. Each Turtle example is validated against the SHACL rules of `ogc.sosa.properties.actuation`, and converted to JSON-LD by the `ttl-to-jsonld` transform, whose output is validated against the `ogc.sosa.properties.actuation` building block (JSON Schema, JSON-LD context and SHACL).
-
 ### `ogc.sosa.properties.actuationCollection` — ActuationCollection Properties
 
 **Type:** schema
@@ -162,18 +132,6 @@ OMS alignment: implements the ISO 19156:2023 (OGC Topic 20 / O&M 3.0) `obs-cpt/O
 **Type:** schema
 
 OMS alignment: `sosa:SamplingCollection` is a SOSA/SSN generalization with no direct ISO 19156 (OMS) counterpart; OMS defines no dedicated sampling-collection requirement class. See the OMS alignment building block (`ogc.sosa.oms-alignment`). This building block defines the set of properties for a SOSA SamplingCollection - a collection of one or more Samplings, whose members share a common value for one or more properties.
-
-### `ogc.sosa.spec-examples.samplings` — SOSA specification examples: Samplings
-
-**Type:** schema
-
-Examples from the SOSA/SSN specification whose root resource is a samplings resource. Each Turtle example is validated against the SHACL rules of `ogc.sosa.properties.sampling`, and converted to JSON-LD by the `ttl-to-jsonld` transform, whose output is validated against the `ogc.sosa.properties.sampling` building block (JSON Schema, JSON-LD context and SHACL).
-
-### `ogc.sosa.spec-examples.sample-collections` — SOSA specification examples: Sample Collections
-
-**Type:** schema
-
-Examples from the SOSA/SSN specification whose root resource is a sample collections resource. Each Turtle example is validated against the SHACL rules of `ogc.sosa.properties.sampleCollection`, and converted to JSON-LD by the `ttl-to-jsonld` transform, whose output is validated against the `ogc.sosa.properties.sampleCollection` building block (JSON Schema, JSON-LD context and SHACL).
 
 ### `ogc.sosa.features.asset` — Asset Feature
 
@@ -204,12 +162,6 @@ OMS alignment: implements the ISO 19156:2023 (OGC Topic 20 / O&M 3.0) `sam-cpt/S
 **Type:** schema
 
 OMS alignment: implements the ISO 19156:2023 (OGC Topic 20 / O&M 3.0) `obs-basic/ObservationCollection` requirement class for `sosa:ObservationCollection`. This building block defines an ObservationCollection according to the SOSA/SSN v1.1 specification. It defines a set of logical rules regarding presence of mandatory properties anywhere within a potentially nested collection hierarchy. (implemented in SHACL, exploiting the semantic mapping to SOSA)
-
-### `ogc.sosa.spec-examples.observations` — SOSA specification examples: Observations
-
-**Type:** schema
-
-Examples from the SOSA/SSN specification whose root resource is a observations resource. Each Turtle example is validated against the SHACL rules of `ogc.sosa.properties.observation`, and converted to JSON-LD by the `ttl-to-jsonld` transform, whose output is validated against the `ogc.sosa.properties.observation` building block (JSON Schema, JSON-LD context and SHACL).
 
 ### `ogc.sosa.features.executionCollection` — ExecutionCollection Feature
 
@@ -252,12 +204,6 @@ OMS alignment: implements the ISO 19156:2023 (OGC Topic 20 / O&M 3.0) `sam-cpt/S
 **Type:** schema
 
 OMS alignment: implements the ISO 19156:2023 (OGC Topic 20 / O&M 3.0) `sam-basic/SampleCollection` requirement class for `sosa:SampleCollection`. This building block defines a GeoJSON FeatureCollection containing a SOSA SampleCollection, using the properties defined in the SampleCollection Properties schema.
-
-### `ogc.sosa.spec-examples.observation-collections` — SOSA specification examples: Observation Collections
-
-**Type:** schema
-
-Examples from the SOSA/SSN specification whose root resource is a observation collections resource. Each Turtle example is validated against the SHACL rules of `ogc.sosa.properties.observationCollection`, and converted to JSON-LD by the `ttl-to-jsonld` transform, whose output is validated against the `ogc.sosa.properties.observationCollection` building block (JSON Schema, JSON-LD context and SHACL).
 
 ### `ogc.sosa.features.actuator` — Actuator Feature
 

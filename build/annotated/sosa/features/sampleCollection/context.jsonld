@@ -47,44 +47,7 @@
           "@id": "dct:time"
         },
         "coordRefSys": "http://www.opengis.net/def/glossary/term/CoordinateReferenceSystemCRS",
-        "place": "dct:spatial",
-        "phenomenonTime": {
-          "@id": "sosa:phenomenonTime",
-          "@type": "xsd:dateTime",
-          "@context": {
-            "Instant": "owlTime:Instant",
-            "Interval": "owlTime:Interval",
-            "ProperInterval": "owlTime:ProperInterval",
-            "hasBeginning": "owlTime:hasBeginning",
-            "hasEnd": "owlTime:hasEnd",
-            "hasDuration": "owlTime:hasDuration",
-            "hasXSDDuration": {
-              "@id": "owlTime:hasXSDDuration",
-              "@type": "xsd:duration"
-            },
-            "inTimePosition": "owlTime:inTimePosition",
-            "inXSDDate": {
-              "@id": "owlTime:inXSDDate",
-              "@type": "xsd:date"
-            },
-            "inXSDDateTime": {
-              "@id": "owlTime:inXSDDateTime",
-              "@type": "xsd:dateTime"
-            },
-            "inXSDDateTimeStamp": {
-              "@id": "owlTime:inXSDDateTimeStamp",
-              "@type": "xsd:dateTimeStamp"
-            },
-            "inXSDgYear": {
-              "@id": "owlTime:inXSDgYear",
-              "@type": "xsd:gYear"
-            },
-            "inXSDgYearMonth": {
-              "@id": "owlTime:inXSDgYearMonth",
-              "@type": "xsd:gYearMonth"
-            }
-          }
-        }
+        "place": "dct:spatial"
       },
       "@container": "@set",
       "@id": "sosa:hasMember",
@@ -228,10 +191,7 @@
       "@id": "sosa:detects",
       "@type": "@id"
     },
-    "endTime": {
-      "@id": "sosa:endTime",
-      "@type": "xsd:dateTime"
-    },
+    "endTime": "sosa:endTime",
     "forProperty": {
       "@id": "sosa:forProperty",
       "@type": "@id"
@@ -276,7 +236,10 @@
       "@id": "sosa:hasSampledFeature",
       "@type": "@id"
     },
-    "hasSimpleResult": "sosa:hasSimpleResult",
+    "hasSimpleResult": {
+      "@id": "sosa:hasSimpleResult",
+      "@type": "@id"
+    },
     "hasSubSystem": {
       "@id": "sosa:hasSubSystem",
       "@type": "@id",
@@ -373,49 +336,10 @@
     },
     "phenomenonTime": {
       "@id": "sosa:phenomenonTime",
-      "@type": "xsd:dateTime",
-      "@context": {
-        "Instant": "owlTime:Instant",
-        "Interval": "owlTime:Interval",
-        "ProperInterval": "owlTime:ProperInterval",
-        "hasBeginning": "owlTime:hasBeginning",
-        "hasEnd": "owlTime:hasEnd",
-        "hasDuration": "owlTime:hasDuration",
-        "hasXSDDuration": {
-          "@id": "owlTime:hasXSDDuration",
-          "@type": "xsd:duration"
-        },
-        "inTimePosition": "owlTime:inTimePosition",
-        "inXSDDate": {
-          "@id": "owlTime:inXSDDate",
-          "@type": "xsd:date"
-        },
-        "inXSDDateTime": {
-          "@id": "owlTime:inXSDDateTime",
-          "@type": "xsd:dateTime"
-        },
-        "inXSDDateTimeStamp": {
-          "@id": "owlTime:inXSDDateTimeStamp",
-          "@type": "xsd:dateTimeStamp"
-        },
-        "inXSDgYear": {
-          "@id": "owlTime:inXSDgYear",
-          "@type": "xsd:gYear"
-        },
-        "inXSDgYearMonth": {
-          "@id": "owlTime:inXSDgYearMonth",
-          "@type": "xsd:gYearMonth"
-        }
-      }
+      "@type": "@id"
     },
-    "resultTime": {
-      "@id": "sosa:resultTime",
-      "@type": "xsd:dateTime"
-    },
-    "startTime": {
-      "@id": "sosa:startTime",
-      "@type": "xsd:dateTime"
-    },
+    "resultTime": "sosa:resultTime",
+    "startTime": "sosa:startTime",
     "usedProcedure": {
       "@id": "sosa:usedProcedure",
       "@type": "@id"

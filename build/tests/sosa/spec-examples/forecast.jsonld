@@ -1,0 +1,109 @@
+{
+  "@context": [
+    {
+      "cdt": "http://w3id.org/lindt/custom_datatypes#",
+      "equipment": "https://rdf.ag/o/equipment/",
+      "ex": "https://example.org/data/",
+      "geo": "http://www.opengis.net/ont/geosparql#",
+      "gr": "http://purl.org/goodrelations/v1#",
+      "gs1": "https://gs1.org/voc/",
+      "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+      "owl": "http://www.w3.org/2002/07/owl#",
+      "prov": "http://www.w3.org/ns/prov#",
+      "qk": "http://qudt.org/vocab/quantitykind/",
+      "qudt": "http://qudt.org/schema/qudt/",
+      "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+      "rdfp": "https://w3id.org/rdfp/",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "schema": "http://schema.org/",
+      "seas": "https://w3id.org/seas/",
+      "sensor": "https://example.org/sensor/",
+      "sh": "http://www.w3.org/ns/shacl",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "sosa": "http://www.w3.org/ns/sosa/",
+      "system": "http://www.w3.org/ns/ssn/systems/",
+      "time": "http://www.w3.org/2006/time#",
+      "unit": "http://qudt.org/vocab/unit/",
+      "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    {},
+    {
+      "resultTime": {
+        "@id": "http://www.w3.org/ns/sosa/resultTime",
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+      },
+      "phenomenonTime": {
+        "@id": "http://www.w3.org/ns/sosa/phenomenonTime",
+        "@type": "@id"
+      },
+      "observedProperty": {
+        "@id": "http://www.w3.org/ns/sosa/observedProperty",
+        "@type": "@id"
+      },
+      "hasResult": {
+        "@id": "http://www.w3.org/ns/sosa/hasResult",
+        "@type": "@id"
+      },
+      "hasFeatureOfInterest": {
+        "@id": "http://www.w3.org/ns/sosa/hasFeatureOfInterest",
+        "@type": "@id"
+      },
+      "hasEnd": {
+        "@id": "http://www.w3.org/2006/time#hasEnd",
+        "@type": "@id"
+      },
+      "hasBeginnning": {
+        "@id": "http://www.w3.org/2006/time#hasBeginnning",
+        "@type": "@id"
+      },
+      "inXSDDateTime": {
+        "@id": "http://www.w3.org/2006/time#inXSDDateTime",
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+      },
+      "sameAs": {
+        "@id": "http://www.w3.org/2002/07/owl#sameAs",
+        "@type": "@id"
+      },
+      "ex": "http://example.org/data/",
+      "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+      "owl": "http://www.w3.org/2002/07/owl#",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "time": "http://www.w3.org/2006/time#",
+      "sosa": "http://www.w3.org/ns/sosa/"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "_:b0",
+      "hasBeginnning": "_:b2",
+      "hasEnd": "_:b1"
+    },
+    {
+      "@id": "_:b1",
+      "inXSDDateTime": "2024-03-09T12:00:00+10:00"
+    },
+    {
+      "@id": "_:b2",
+      "inXSDDateTime": "2024-03-09T11:00:00+10:00"
+    },
+    {
+      "@id": "ex:EarthAtmosphere",
+      "@type": "sosa:FeatureOfInterest",
+      "sameAs": "https://www.wikidata.org/wiki/Q3230"
+    },
+    {
+      "@id": "ex:Observation299876",
+      "@type": "sosa:Observation",
+      "hasFeatureOfInterest": "ex:EarthAtmosphere",
+      "hasResult": "ex:forecast/grid/299876",
+      "observedProperty": "https://si-digital-framework.org/quantities/TEMC",
+      "phenomenonTime": "_:b0",
+      "resultTime": "2024-03-06T12:00:00+10:00"
+    },
+    {
+      "@id": "ex:forecast/",
+      "@type": "owl:Ontology"
+    }
+  ]
+}

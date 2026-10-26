@@ -8,19 +8,19 @@
 
 <http://example.com/obs-hum-1> a sosa:Observation ;
     sosa:hasSimpleResult 5.82e+01 ;
-    sosa:phenomenonTime "2022-05-01T22:33:40+00:00"^^xsd:dateTime .
+    sosa:phenomenonTime <2022-05-01T22:33:40Z> .
 
 <http://example.com/obs-hum-2> a sosa:Observation ;
     sosa:hasSimpleResult 5.79e+01 ;
-    sosa:phenomenonTime "2022-05-01T22:34:10+00:00"^^xsd:dateTime .
+    sosa:phenomenonTime <2022-05-01T22:34:10Z> .
 
 <http://example.com/obs-temp-1> a sosa:Observation ;
     sosa:hasSimpleResult 2.14e+01 ;
-    sosa:phenomenonTime "2022-05-01T22:33:40+00:00"^^xsd:dateTime .
+    sosa:phenomenonTime <2022-05-01T22:33:40Z> .
 
 <http://example.com/obs-temp-2> a sosa:Observation ;
     sosa:hasSimpleResult 2.16e+01 ;
-    sosa:phenomenonTime "2022-05-01T22:34:10+00:00"^^xsd:dateTime .
+    sosa:phenomenonTime <2022-05-01T22:34:10Z> .
 
 <http://example.com/temperature-collection> a sosa:ObservationCollection ;
     sosa:hasMember <http://example.com/obs-temp-1>,
@@ -30,5 +30,5 @@
 [] sosa:hasFeatureOfInterest <https://demo.pygeoapi.io/master/collections/dutch_windmills/items/Molens.1> ;
     sosa:hasMember <http://example.com/humidity-collection>,
         <http://example.com/temperature-collection> ;
-    sosa:resultTime "2022-05-01T22:33:44+00:00"^^xsd:dateTime .
+    sosa:resultTime "2022-05-01T22:33:44Z" .
 

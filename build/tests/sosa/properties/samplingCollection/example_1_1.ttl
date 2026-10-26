@@ -1,5 +1,4 @@
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://example.org/data/atmosphereSamplings> sosa:hasFeatureOfInterest <https://example.org/data/EarthAtmosphere> ;
     sosa:hasMember <https://example.org/data/AirSampling_StE>,
@@ -7,9 +6,9 @@
 
 <https://example.org/data/AirSampling_StE> sosa:hasInputValue [ ] ;
     sosa:hasResult <https://example.org/data/EarthAtmosphere_StE> ;
-    sosa:resultTime "2024-06-01T09:00:00+00:00"^^xsd:dateTime .
+    sosa:resultTime "2024-06-01T09:00:00Z" .
 
 <https://example.org/data/AirSampling_StE2> sosa:hasInputValue [ ] ;
     sosa:hasResult <https://example.org/data/EarthAtmosphere_StE2> ;
-    sosa:resultTime "2024-06-01T09:15:00+00:00"^^xsd:dateTime .
+    sosa:resultTime "2024-06-01T09:15:00Z" .
 
