@@ -59,7 +59,7 @@ wanted_root = _get(example, 'x-root')
 own_ctx = _get(tctx, 'jsonld_context_path')
 if not own_ctx or not (working_dir / own_ctx).is_file():
     raise FileNotFoundError(f'JSON-LD context for this block not found ({own_ctx})')
-target = _get(meta, 'target')
+target = _get(meta, 'x-target')
 target_ctx = own_ctx  # the block $refs the target schema, so its context is the target's
 if target:
     # annotated/<register subdirs>/<own subdirs>/context.jsonld -> .../<target subdirs>/...
