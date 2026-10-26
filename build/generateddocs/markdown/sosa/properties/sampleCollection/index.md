@@ -529,7 +529,7 @@ x-bblocks-metadata:
   itemIdentifier: ogc.sosa.properties.sampleCollection
   register: https://rob-metalinkage.github.io/ogcapi-sosa/build/register.json
   version: '1.0'
-  dateOfLastChange: '2026-10-21'
+  dateOfLastChange: '2026-10-26'
 
 ```
 

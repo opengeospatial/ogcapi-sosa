@@ -7,7 +7,7 @@
 @prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-sensor:IBS-TH2-Plus-T-normalHumidityConditions a sosa:Observation ;
+sensor:IBS-TH2-Plus-T-normalHumidityConditions a sosa:ObservationCollection ;
     sosa:hasFeatureOfInterest ex:IBS-TH2-Plus-T-687343 ;
     sosa:hasMember [ a sosa:Observation ;
             sosa:hasResult [ qudt:hasUnit unit:PERCENT ;
@@ -23,12 +23,12 @@ sensor:IBS-TH2-Plus-T-systemCapability a sosa:ObservationCollection ;
     sosa:hasFeatureOfInterest ex:IBS-TH2-Plus-T-687343 ;
     sosa:hasMember [ a sosa:Observation ;
             sosa:hasResult [ qudt:hasUnit unit:DEG_C ;
-                    qudt:value -40.0 ] ;
-            sosa:observedProperty <http://www.w3.org/ns/sosa/system-capability-properties#MinMeasurableTemperature> ],
-        [ a sosa:Observation ;
-            sosa:hasResult [ qudt:hasUnit unit:DEG_C ;
                     qudt:value 0.5 ] ;
             sosa:observedProperty <http://www.w3.org/ns/sosa/system-capability-properties#TemperatureAccuracy> ],
+        [ a sosa:Observation ;
+            sosa:hasResult [ qudt:hasUnit unit:DEG_C ;
+                    qudt:value -40.0 ] ;
+            sosa:observedProperty <http://www.w3.org/ns/sosa/system-capability-properties#MinMeasurableTemperature> ],
         [ a sosa:Observation ;
             sosa:hasResult [ qudt:hasUnit unit:DEG_C ;
                     qudt:value 60.0 ] ;

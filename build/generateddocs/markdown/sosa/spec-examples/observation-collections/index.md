@@ -732,7 +732,7 @@ sensor:IBS-TH2-Plus-T-systemCapability a sosa:ObservationCollection ;
   ] ;
   sosa:hasValidityContext sensor:IBS-TH2-Plus-T-normalHumidityConditions ;
 .
-sensor:IBS-TH2-Plus-T-normalHumidityConditions a sosa:Observation ;
+sensor:IBS-TH2-Plus-T-normalHumidityConditions a sosa:ObservationCollection ;
   sosa:hasMember [
       a sosa:Observation ;
       sosa:observedProperty sosa-env:MinAmbientRelativeHumidity ;
@@ -1460,7 +1460,7 @@ x-bblocks-metadata:
   itemIdentifier: ogc.sosa.spec-examples.observation-collections
   register: https://rob-metalinkage.github.io/ogcapi-sosa/build/register.json
   version: '1.0'
-  dateOfLastChange: '2026-10-21'
+  dateOfLastChange: '2026-10-26'
 
 ```
 

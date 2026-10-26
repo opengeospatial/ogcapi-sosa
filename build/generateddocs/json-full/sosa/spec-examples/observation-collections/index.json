@@ -9,7 +9,7 @@
   "itemClass": "schema",
   "register": "ogc-building-block-register",
   "version": "1.0",
-  "dateOfLastChange": "2026-10-21",
+  "dateOfLastChange": "2026-10-26",
   "sources": [
     {
       "title": "Semantic Sensor Network Ontology",
@@ -47,7 +47,7 @@
   "ldContext": "https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/spec-examples/observation-collections/context.jsonld",
   "resolvedSchemaProperties": "https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/spec-examples/observation-collections/resolvedProperties.json",
   "sourceFiles": "https://rob-metalinkage.github.io/ogcapi-sosa/_sources/spec-examples/observation-collections/",
-  "validationPassed": false,
+  "validationPassed": true,
   "testOutputs": "https://github.com/rob-metalinkage/ogcapi-sosa/blob/master/build/tests/sosa/spec-examples/observation-collections/",
   "transforms": [
     {
@@ -770,11 +770,11 @@
           "transformResults": {
             "ttl-to-jsonld": {
               "success": true,
-              "sizeBytes": 2628,
+              "sizeBytes": 2638,
               "url": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/observation-collections/transforms/IBS-TH2-PLUS-capabilities.ttl-to-jsonld.json",
               "profilesValidation": {
                 "ogc.sosa.properties.observationCollection": {
-                  "result": false,
+                  "result": true,
                   "report": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/observation-collections/transforms/ogc.sosa.properties.observationCollection/_report.json",
                   "upliftedFiles": {
                     "jsonld": "https://rob-metalinkage.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/observation-collections/transforms/ogc.sosa.properties.observationCollection/IBS-TH2-PLUS-capabilities.ttl-to-jsonld.jsonld",
@@ -784,8 +784,8 @@
               }
             }
           },
-          "sizeBytes": 2307,
-          "code": "@prefix ex: <https://example.org/data/> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix prov: <http://www.w3.org/ns/prov#> .\n@prefix qudt: <http://qudt.org/schema/qudt/>.\n@prefix unit: <http://qudt.org/vocab/unit/>.\n@prefix qk: <http://qudt.org/vocab/quantitykind/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sensor: <https://example.org/sensor/> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix sosa-cap: <http://www.w3.org/ns/sosa/system-capability-properties#> .\n@prefix sosa-env: <http://www.w3.org/ns/sosa/system-environment-properties#> .\n@base <https://example.org/data/TH2-PLUS/> .\n\nsensor:IBS-TH2-Plus-T a owl:Class ;\n  rdfs:label \"IBS-TH2 PLUS Temperature Sensor type\" ;\n  rdfs:subClassOf sosa:Sensor ;\n.\nex:IBS-TH2-Plus-T-687343 a sensor:IBS-TH2-Plus-T ;\n  rdfs:label \"IBS-TH2 PLUS Temperature Sensor instance 687343\" ;\n  sosa:observes qk:Temperature ;\n  sosa:hasSystemCapability sensor:IBS-TH2-Plus-T-systemCapability ;\n.\nsensor:IBS-TH2-Plus-T-systemCapability a sosa:ObservationCollection ;\n  sosa:hasMember [\n      a sosa:Observation ;\n      sosa:observedProperty sosa-cap:TemperatureAccuracy ;\n      sosa:hasResult [ \n        qudt:value 0.5 ;\n        qudt:hasUnit unit:DEG_C ;\n      ] ;\n  ] ,\n  [\n      a sosa:Observation ;\n      sosa:observedProperty sosa-cap:MaxMeasurableTemperature ;\n      sosa:hasResult [ \n        qudt:value 60.0 ;\n        qudt:hasUnit unit:DEG_C ;\n      ] ;\n  ] ,\n  [\n      a sosa:Observation ;\n      sosa:observedProperty sosa-cap:MinMeasurableTemperature ;\n      sosa:hasResult [ \n        qudt:value -40.0 ;\n        qudt:hasUnit unit:DEG_C ;\n      ] ;\n  ] ;\n  sosa:hasValidityContext sensor:IBS-TH2-Plus-T-normalHumidityConditions ;\n.\nsensor:IBS-TH2-Plus-T-normalHumidityConditions a sosa:Observation ;\n  sosa:hasMember [\n      a sosa:Observation ;\n      sosa:observedProperty sosa-env:MinAmbientRelativeHumidity ;\n      sosa:hasResult [ \n        qudt:value 0.0 ;\n        qudt:hasUnit unit:PERCENT ;\n      ] ;\n  ] ,\n  [\n      a sosa:Observation ;\n      sosa:observedProperty sosa-env:MaxAmbientRelativeHumidity ;\n      sosa:hasResult [ \n        qudt:value 99.0 ;\n        qudt:hasUnit unit:PERCENT ;\n      ] ;\n  ] .\n"
+          "sizeBytes": 2317,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix prov: <http://www.w3.org/ns/prov#> .\n@prefix qudt: <http://qudt.org/schema/qudt/>.\n@prefix unit: <http://qudt.org/vocab/unit/>.\n@prefix qk: <http://qudt.org/vocab/quantitykind/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sensor: <https://example.org/sensor/> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix sosa-cap: <http://www.w3.org/ns/sosa/system-capability-properties#> .\n@prefix sosa-env: <http://www.w3.org/ns/sosa/system-environment-properties#> .\n@base <https://example.org/data/TH2-PLUS/> .\n\nsensor:IBS-TH2-Plus-T a owl:Class ;\n  rdfs:label \"IBS-TH2 PLUS Temperature Sensor type\" ;\n  rdfs:subClassOf sosa:Sensor ;\n.\nex:IBS-TH2-Plus-T-687343 a sensor:IBS-TH2-Plus-T ;\n  rdfs:label \"IBS-TH2 PLUS Temperature Sensor instance 687343\" ;\n  sosa:observes qk:Temperature ;\n  sosa:hasSystemCapability sensor:IBS-TH2-Plus-T-systemCapability ;\n.\nsensor:IBS-TH2-Plus-T-systemCapability a sosa:ObservationCollection ;\n  sosa:hasMember [\n      a sosa:Observation ;\n      sosa:observedProperty sosa-cap:TemperatureAccuracy ;\n      sosa:hasResult [ \n        qudt:value 0.5 ;\n        qudt:hasUnit unit:DEG_C ;\n      ] ;\n  ] ,\n  [\n      a sosa:Observation ;\n      sosa:observedProperty sosa-cap:MaxMeasurableTemperature ;\n      sosa:hasResult [ \n        qudt:value 60.0 ;\n        qudt:hasUnit unit:DEG_C ;\n      ] ;\n  ] ,\n  [\n      a sosa:Observation ;\n      sosa:observedProperty sosa-cap:MinMeasurableTemperature ;\n      sosa:hasResult [ \n        qudt:value -40.0 ;\n        qudt:hasUnit unit:DEG_C ;\n      ] ;\n  ] ;\n  sosa:hasValidityContext sensor:IBS-TH2-Plus-T-normalHumidityConditions ;\n.\nsensor:IBS-TH2-Plus-T-normalHumidityConditions a sosa:ObservationCollection ;\n  sosa:hasMember [\n      a sosa:Observation ;\n      sosa:observedProperty sosa-env:MinAmbientRelativeHumidity ;\n      sosa:hasResult [ \n        qudt:value 0.0 ;\n        qudt:hasUnit unit:PERCENT ;\n      ] ;\n  ] ,\n  [\n      a sosa:Observation ;\n      sosa:observedProperty sosa-env:MaxAmbientRelativeHumidity ;\n      sosa:hasResult [ \n        qudt:value 99.0 ;\n        qudt:hasUnit unit:PERCENT ;\n      ] ;\n  ] .\n"
         }
       ],
       "prefixes": {
@@ -964,7 +964,7 @@
     "unit": "http://qudt.org/vocab/unit/",
     "xsd": "http://www.w3.org/2001/XMLSchema#"
   },
-  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: SOSA specification examples conforming to ogc.sosa.properties.observationCollection\n$ref: https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.yaml\nx-bblocks-metadata:\n  itemIdentifier: ogc.sosa.spec-examples.observation-collections\n  register: https://rob-metalinkage.github.io/ogcapi-sosa/build/register.json\n  version: '1.0'\n  dateOfLastChange: '2026-10-21'\n",
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: SOSA specification examples conforming to ogc.sosa.properties.observationCollection\n$ref: https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.yaml\nx-bblocks-metadata:\n  itemIdentifier: ogc.sosa.spec-examples.observation-collections\n  register: https://rob-metalinkage.github.io/ogcapi-sosa/build/register.json\n  version: '1.0'\n  dateOfLastChange: '2026-10-26'\n",
   "gitRepository": "https://github.com/rob-metalinkage/ogcapi-sosa",
   "gitPath": "_sources/spec-examples/observation-collections"
 }

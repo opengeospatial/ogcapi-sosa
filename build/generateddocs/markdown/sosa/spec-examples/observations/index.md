@@ -1097,9 +1097,7 @@ ex:Apartment_134_electricConsumption rdf:type sosa:Property ;
 ex:Observation_235714 rdf:type sosa:Observation ;
   sosa:madeBySensor ex:sensor_926 ;
 .
-ex:Observation_235754 rdf:type sosa:Observation ;
-  sosa:madeBySensor ex:sensor_926 ;
-.
+
 # Actuation
 # the window opening state is a Property
 # SSN allows to explicitly say that ex:window_104#state is a property of ex:window
@@ -1645,7 +1643,7 @@ x-bblocks-metadata:
   itemIdentifier: ogc.sosa.spec-examples.observations
   register: https://rob-metalinkage.github.io/ogcapi-sosa/build/register.json
   version: '1.0'
-  dateOfLastChange: '2026-10-21'
+  dateOfLastChange: '2026-10-26'
 
 ```
 
