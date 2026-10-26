@@ -51,7 +51,7 @@ path	@id	schema
 /links/hreflang	http://purl.org/dc/terms/language	https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/schema.yaml
 /links/title	http://www.w3.org/2000/01/rdf-schema#label	https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/schema.yaml
 /links/length	http://purl.org/dc/terms/extent	https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/schema.yaml
-/featureType	@type	https://opengeospatial.github.io/bblocks/annotated-schemas/geo/json-fg/feature-lenient/schema.yaml
+/featureType	@type	/github/workspace/build/annotated/sosa/features/actuation/schema.yaml
 /time	http://purl.org/dc/terms/time	https://opengeospatial.github.io/bblocks/annotated-schemas/geo/json-fg/feature-lenient/schema.yaml
 /time/_oneOf/1/date	http://www.w3.org/2006/time#hasTime	https://opengeospatial.github.io/bblocks/annotated-schemas/geo/json-fg/time/schema.yaml
 /time/_oneOf/1/timestamp	http://www.w3.org/2006/time#hasTime	https://opengeospatial.github.io/bblocks/annotated-schemas/geo/json-fg/time/schema.yaml
@@ -152,6 +152,14 @@ path	@id	schema
 /place/_oneOf/17/type		https://beta.schemas.opengis.net/json-fg/geometry-object.json
 /properties/resultTime	http://www.w3.org/ns/sosa/resultTime	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
 /properties/phenomenonTime	http://www.w3.org/ns/sosa/phenomenonTime	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
+/properties/phenomenonTime/_oneOf/1/hasBeginning	http://www.w3.org/2006/time#hasBeginning	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
+/properties/phenomenonTime/_oneOf/1/hasBeginning/inXSDDateTime		https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
+/properties/phenomenonTime/_oneOf/1/hasBeginning/inXSDDateTimeStamp		https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
+/properties/phenomenonTime/_oneOf/1/hasBeginning/inXSDDate		https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
+/properties/phenomenonTime/_oneOf/1/hasEnd	http://www.w3.org/2006/time#hasEnd	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
+/properties/phenomenonTime/_oneOf/1/inXSDDateTime	http://www.w3.org/2006/time#inXSDDateTime	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
+/properties/phenomenonTime/_oneOf/1/inXSDDateTimeStamp	http://www.w3.org/2006/time#inXSDDateTimeStamp	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
+/properties/phenomenonTime/_oneOf/1/inXSDDate	http://www.w3.org/2006/time#inXSDDate	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
 /properties/hasFeatureOfInterest	http://www.w3.org/ns/sosa/hasFeatureOfInterest	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
 /properties/hasUltimateFeatureOfInterest	http://www.w3.org/ns/sosa/hasUltimateFeatureOfInterest	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
 /properties/usedProcedure	http://www.w3.org/ns/sosa/usedProcedure	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
@@ -162,5 +170,6 @@ path	@id	schema
 /properties/result@links		https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
 /properties/hasSimpleResult	http://www.w3.org/ns/sosa/hasSimpleResult	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
 /properties/hasInputValue	http://www.w3.org/ns/sosa/hasInputValue	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
+/properties/featureType	@type	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/actuation/schema.yaml
 /properties/actsOnProperty	http://www.w3.org/ns/sosa/actsOnProperty	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/actuation/schema.yaml
 /properties/madeByActuator	http://www.w3.org/ns/sosa/madeByActuator	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/actuation/schema.yaml

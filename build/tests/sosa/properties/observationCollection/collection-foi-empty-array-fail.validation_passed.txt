@@ -1,0 +1,51 @@
+Validation report for ogc.sosa.properties.observationCollection - ObservationCollection Properties
+Generated 2026-10-26T11:22:00.183760+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using collection-foi-empty-array-fail.json from test resources
+JSON-LD context is present - uplifting
+Output JSON-LD collection-foi-empty-array-fail.jsonld created
+Output Turtle collection-foi-empty-array-fail.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: [] is not valid under any of the given schemas
+
+Failed validating 'oneOf' in schema[0]:
+    {'description': 'An IRI or CURIE, or an embedded (non-empty) object',
+     'oneOf': [{'minLength': 1, 'type': 'string'},
+               {'minProperties': 1, 'type': 'object'}]}
+
+On instance:
+    []
+=== End JSON Schema ===
+
+=== SHACL ===
+Validation result for _sources/properties/execution/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/execution/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: _:Ncf8e4ae1b6c74d69ad7a0a5abbbc5e37
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: 24.1
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: _:Ncf8e4ae1b6c74d69ad7a0a5abbbc5e37
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: _:N41016b5a66154a31b8c6dac834991718
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: _:N41016b5a66154a31b8c6dac834991718
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: _:N41016b5a66154a31b8c6dac834991718
+
+Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: _:N41016b5a66154a31b8c6dac834991718
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: *none*
+
+=== End SHACL ===
+

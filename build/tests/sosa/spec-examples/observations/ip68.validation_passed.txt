@@ -1,0 +1,37 @@
+Validation report for ogc.sosa.spec-examples.observations - SOSA specification examples: Observations
+Generated 2026-10-26T11:22:16.549664+00:00
+=== Files ===
+Using https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/ip68.ttl from examples
+Output Turtle ip68.ttl created
+=== End Files ===
+
+=== Turtle ===
+Prefixes are defined for cdt, equipment, ex, geo, gr, gs1, om, owl, prov, qk, qudt, rdf, rdfp, rdfs, schema, seas, sensor, sh, skos, sosa, system, time, unit, xsd
+=== End Turtle ===
+
+=== SHACL ===
+Using snippet SHACL closures:
+ - ../closures/ip68.ttl
+Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: ex:IP68_Outdoor_Temperature_Sensor_systemCapability/sosa:hasMember,ex:IP68_Outdoor_Temperature_Sensor_systemCapability/sosa:hasMember,ex:Observation_5872357_battery,ex:IP68_Outdoor_Temperature_Sensor_systemCapability/sosa:hasMember,ex:IP68_Outdoor_Temperature_Sensor_systemCapability/sosa:hasMember,ex:Observation_5872357_temperature,ex:IP68_Outdoor_Temperature_Sensor_operatingRange/sosa:hasMember,ex:IP68_Outdoor_Temperature_Sensor_operatingRange/sosa:hasMember
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: ex:IP68_Outdoor_Temperature_Sensor_operatingRange,ex:IP68_Outdoor_Temperature_Sensor_systemCapability
+
+Validation result for _sources/properties/execution/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/execution/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: ex:IP68_Outdoor_Temperature_Sensor_operatingRange,ex:IP68_Outdoor_Temperature_Sensor_systemCapability
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: ex:IP68_Outdoor_Temperature_Sensor_operatingRange,ex:IP68_Outdoor_Temperature_Sensor_systemCapability
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: ex:IP68_Outdoor_Temperature_Sensor_systemCapability/sosa:hasMember,ex:IP68_Outdoor_Temperature_Sensor_systemCapability/sosa:hasMember,ex:Observation_5872357_battery,ex:IP68_Outdoor_Temperature_Sensor_systemCapability/sosa:hasMember,ex:IP68_Outdoor_Temperature_Sensor_systemCapability/sosa:hasMember,ex:Observation_5872357_temperature,ex:IP68_Outdoor_Temperature_Sensor_operatingRange/sosa:hasMember,ex:IP68_Outdoor_Temperature_Sensor_operatingRange/sosa:hasMember
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: ex:IP68_Outdoor_Temperature_Sensor_systemCapability/sosa:hasMember,ex:IP68_Outdoor_Temperature_Sensor_systemCapability/sosa:hasMember,ex:Observation_5872357_battery,ex:IP68_Outdoor_Temperature_Sensor_systemCapability/sosa:hasMember,ex:IP68_Outdoor_Temperature_Sensor_systemCapability/sosa:hasMember,ex:Observation_5872357_temperature,ex:IP68_Outdoor_Temperature_Sensor_operatingRange/sosa:hasMember,ex:IP68_Outdoor_Temperature_Sensor_operatingRange/sosa:hasMember
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: ex:IP68_Outdoor_Temperature_Sensor_systemCapability/sosa:hasMember,ex:IP68_Outdoor_Temperature_Sensor_systemCapability/sosa:hasMember,ex:Observation_5872357_battery,ex:IP68_Outdoor_Temperature_Sensor_systemCapability/sosa:hasMember,ex:IP68_Outdoor_Temperature_Sensor_systemCapability/sosa:hasMember,ex:Observation_5872357_temperature,ex:IP68_Outdoor_Temperature_Sensor_operatingRange/sosa:hasMember,ex:IP68_Outdoor_Temperature_Sensor_operatingRange/sosa:hasMember
+
+=== End SHACL ===
+

@@ -1,0 +1,92 @@
+{
+  "@context": [
+    "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/context.jsonld",
+    {
+      "ex": "https://example.org/data/",
+      "qudt": "http://qudt.org/schema/qudt/",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "unit": "http://qudt.org/vocab/unit/",
+      "iop": "https://w3id.org/iadopt/ont/",
+      "P21": "http://vocab.nerc.ac.uk/collection/P21/current/",
+      "S27": "http://vocab.nerc.ac.uk/collection/S27/current/",
+      "qk": "http://qudt.org/vocab/quantitykind/",
+      "et": "http://vocabs.lter-europe.net/EnvThes/",
+      "qudt:value": {
+        "@type": "xsd:decimal"
+      },
+      "xsd": "http://www.w3.org/2001/XMLSchema#"
+    }
+  ],
+  "id": "ex:Ob873c4",
+  "featureType": "Observation",
+  "hasFeatureOfInterest": {
+    "id": "ex:Bubble873",
+    "featureType": [
+      "Sample",
+      "sosa:MaterialSample"
+    ],
+    "isResultOf": "ex:CoreEx1923",
+    "isSampleOf": [
+      "ex:IceCore12",
+      {
+        "id": "ex:EarthAtmosphere",
+        "featureType": [
+          "FeatureOfInterest",
+          "P21:MS292"
+        ]
+      }
+    ],
+    "isSampleOfUltimateFOI": {
+      "id": "ex:Antarctic_ice_sheet",
+      "featureType": [
+        "FeatureOfInterest",
+        "https://www.wikidata.org/wiki/Q571430"
+      ]
+    }
+  },
+  "hasResult": {
+    "featureType": "qudt:QuantityValue",
+    "qudt:hasUnit": {
+      "id": "unit:PPM"
+    },
+    "qudt:value": "240.0"
+  },
+  "hasUltimateFeatureOfInterest": "ex:EarthAtmosphere",
+  "observedProperty": {
+    "id": "ex:CO2-Concentration",
+    "featureType": [
+      "Property",
+      "iop:Variable"
+    ],
+    "rdfs:comment": "Concentration of carbon dioxide in air",
+    "rdfs:label": "Concentration of carbon dioxide in air",
+    "iop:hasMatrix": {
+      "id": "P21:MS292",
+      "featureType": "iop:Entity",
+      "rdfs:label": "earth atmosphere"
+    },
+    "iop:hasObjectOfInterest": {
+      "featureType": [
+        "iop:Entity",
+        "iop:AsymmetricSystem"
+      ],
+      "iop:hasDenominator": {
+        "id": "et:23",
+        "featureType": "iop:Entity",
+        "rdfs:label": "air"
+      },
+      "iop:hasNumerator": {
+        "id": "S27:CS003089",
+        "featureType": "iop:Entity",
+        "rdfs:label": "carbon dioxide"
+      }
+    },
+    "iop:hasProperty": {
+      "id": "qk:AmountOfSubstanceConcentration",
+      "featureType": "iop:Property",
+      "rdfs:label": "amount of substance concentration"
+    }
+  },
+  "resultTime": "2018-01-09T14:16:00+00:00",
+  "usedProcedure": "ex:CO2"
+}

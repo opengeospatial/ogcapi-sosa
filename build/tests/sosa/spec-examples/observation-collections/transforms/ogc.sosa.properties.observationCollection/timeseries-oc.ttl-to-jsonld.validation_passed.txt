@@ -1,0 +1,37 @@
+Validation report for ogc.sosa.properties.observationCollection - ObservationCollection Properties
+Generated 2026-10-26T11:23:06.954066+00:00
+=== Files ===
+Using timeseries-oc.ttl-to-jsonld.json from transform outputs
+JSON-LD context is present - uplifting
+Output JSON-LD timeseries-oc.ttl-to-jsonld.jsonld created
+Output Turtle timeseries-oc.ttl-to-jsonld.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+
+=== SHACL ===
+Validation result for _sources/properties/execution/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/execution/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: ex:ts159c
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: ex:t2/sosa:hasSimpleResult,ex:t1/sosa:hasSimpleResult,ex:t3/sosa:hasSimpleResult
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: ex:ts159c
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: ex:t1,ex:t4,ex:t2,ex:t3
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: ex:t1,ex:t4,ex:t2,ex:t3
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: ex:t1,ex:t4,ex:t2,ex:t3
+
+Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: ex:t1,ex:t4,ex:t2,ex:t3
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: ex:ts159c
+
+=== End SHACL ===
+

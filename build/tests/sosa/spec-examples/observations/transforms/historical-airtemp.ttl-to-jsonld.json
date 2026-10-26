@@ -1,0 +1,80 @@
+{
+  "@context": [
+    "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/context.jsonld",
+    {
+      "ex": "https://example.org/data/",
+      "geo": "http://www.opengis.net/ont/geosparql#",
+      "qk": "http://qudt.org/vocab/quantitykind/",
+      "qudt": "http://qudt.org/schema/qudt/",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "unit": "http://qudt.org/vocab/unit/",
+      "qudt:value": {
+        "@type": "xsd:decimal"
+      },
+      "geo:asWKT": {
+        "@type": "geo:WktLiteral"
+      },
+      "xsd": "http://www.w3.org/2001/XMLSchema#"
+    }
+  ],
+  "id": "ex:SHW_T_1872-04-04T15",
+  "featureType": "Observation",
+  "hasFeatureOfInterest": {
+    "id": "ex:SHW",
+    "featureType": [
+      "Platform",
+      "FeatureOfInterest"
+    ],
+    "geo:hasGeometry": {
+      "featureType": "geo:Point",
+      "geo:asWKT": "POINT (16.355804145468635 48.248491274780754)"
+    },
+    "rdfs:label": {
+      "@language": "en",
+      "@value": "Station Hohe Warte"
+    },
+    "hosts": [
+      {
+        "id": "ex:T99",
+        "featureType": [
+          "Sensor",
+          "ex:Mercury-in-glass-thermometer"
+        ],
+        "rdfs:label": {
+          "@language": "en",
+          "@value": "Mercury in glass thermometer #99"
+        },
+        "observes": {
+          "id": "ex:airTemperature",
+          "featureType": "Property",
+          "rdfs:label": {
+            "@language": "en",
+            "@value": "air temperature"
+          },
+          "skos:broader": {
+            "id": "qk:Temperature"
+          },
+          "isPropertyOf": {
+            "id": "ex:EarthAtmosphere",
+            "featureType": "FeatureOfInterest",
+            "skos:exactMatch": {
+              "id": "https://www.wikidata.org/wiki/Q3230"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "hasResult": {
+    "featureType": "qudt:QuantityValue",
+    "qudt:hasUnit": {
+      "id": "unit:DEG_C"
+    },
+    "qudt:value": "22.5"
+  },
+  "madeBySensor": "ex:T99",
+  "observedProperty": "ex:airTemperature",
+  "phenomenonTime": "1872-04-04T15:00:00+01:00",
+  "resultTime": "1872-04-04T15:00:00+01:00"
+}

@@ -1,0 +1,49 @@
+Validation report for ogc.sosa.properties.observationCollection - ObservationCollection Properties
+Generated 2026-10-26T11:22:00.597613+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using collection-foi-empty-item-fail.json from test resources
+JSON-LD context is present - uplifting
+Output JSON-LD collection-foi-empty-item-fail.jsonld created
+Output Turtle collection-foi-empty-item-fail.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: {} does not have enough properties
+
+Failed validating 'minProperties' in schema[1]:
+    {'minProperties': 1, 'type': 'object'}
+
+On instance:
+    {}
+=== End JSON Schema ===
+
+=== SHACL ===
+Validation result for _sources/properties/execution/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/execution/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: _:Naee693a1a29144219faa412ae944f7ee
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: 24.1
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: _:Naee693a1a29144219faa412ae944f7ee
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: _:N58de7863c73949ee87e7bde19f6d81f2
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: _:N58de7863c73949ee87e7bde19f6d81f2
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: _:N58de7863c73949ee87e7bde19f6d81f2
+
+Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: _:N58de7863c73949ee87e7bde19f6d81f2
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: *none*
+
+=== End SHACL ===
+

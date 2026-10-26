@@ -1,0 +1,70 @@
+Validation report for ogc.sosa.properties.deployment - Deployment Properties
+Generated 2026-10-26T11:22:54.755338+00:00
+=== Files ===
+Using dht22-deployment.ttl-to-jsonld.json from transform outputs
+JSON-LD context is present - uplifting
+Output JSON-LD dht22-deployment.ttl-to-jsonld.jsonld created
+Output Turtle dht22-deployment.ttl-to-jsonld.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: [{'id': 'ex:Room145_east', 'featureType': ['Sample', 'FeatureOfInterest', 'Platform'], 'rdfs:comment': {'@language': 'en', '@value': 'This wall hosts PCB Board 1 with DHT22 temperature and humidity sensor #4578.'}, 'rdfs:label': {'@language': 'en', '@value': 'East wall of room #145.'}, 'hosts': [{'id': 'ex:PCBBoard1', 'featureType': ['System', 'Platform'], 'rdfs:comment': {'@language': 'en', '@value': 'PCB Board 1 hosts DHT22 temperature and humidity sensor #4578 permanently, one can say it has it as one of its subsystems.'}, 'rdfs:label': {'@language': 'en', '@value': 'PCB Board 1'}, 'hasSubSystem': [{'id': 'ex:DHT22_4578', 'featureType': 'System', 'rdfs:label': {'@language': 'en', '@value': 'DHT22 sensor #4578'}, 'isHostedBy': 'ex:PCBBoard1'}], 'hosts': ['ex:DHT22_4578']}]}, {'id': 'ex:Room145_south', 'featureType': ['Sample', 'FeatureOfInterest', 'Platform'], 'rdfs:comment': {'@language': 'en', '@value': 'This wall hosts PCB Board 2 with DHT22 temperature and humidity sensor #4579.'}, 'rdfs:label': {'@language': 'en', '@value': 'South wall of room #145.'}, 'hosts': [{'id': 'ex:PCBBoard2', 'featureType': ['System', 'Platform'], 'rdfs:comment': {'@language': 'en', '@value': 'PCB Board 2 hosts DHT22 temperature and humidity sensor #4579 permanently, one can say it has it as one of its subsystems.'}, 'rdfs:label': {'@language': 'en', '@value': 'PCB Board 2'}, 'hasSubSystem': [{'id': 'ex:DHT22_4579', 'featureType': 'System', 'rdfs:label': {'@language': 'en', '@value': 'DHT22 sensor #4579.'}, 'isHostedBy': 'ex:PCBBoard2'}], 'hosts': ['ex:DHT22_4579']}]}] is not of type 'object', 'string'
+
+Failed validating 'type' in schema['properties']['deployedOnPlatform']:
+    {'type': ['object', 'string'],
+     'x-jsonld-id': 'http://www.w3.org/ns/sosa/deployedOnPlatform',
+     'x-jsonld-type': '@id'}
+
+On instance['deployedOnPlatform']:
+    [{'featureType': ['Sample', 'FeatureOfInterest', 'Platform'],
+      'hosts': [{'featureType': ['System', 'Platform'],
+                 'hasSubSystem': [{'featureType': 'System',
+                                   'id': 'ex:DHT22_4578',
+                                   'isHostedBy': 'ex:PCBBoard1',
+                                   'rdfs:label': {'@language': 'en',
+                                                  '@value': 'DHT22 sensor '
+                                                            '#4578'}}],
+                 'hosts': ['ex:DHT22_4578'],
+                 'id': 'ex:PCBBoard1',
+                 'rdfs:comment': {'@language': 'en',
+                                  '@value': 'PCB Board 1 hosts DHT22 '
+                                            'temperature and humidity '
+                                            'sensor #4578 permanently, one '
+                                            'can say it has it as one of '
+                                            'its subsystems.'},
+                 'rdfs:label': {'@language': 'en',
+                                '@value': 'PCB Board 1'}}],
+      'id': 'ex:Room145_east',
+      'rdfs:comment': {'@language': 'en',
+                       '@value': 'This wall hosts PCB Board 1 with DHT22 '
+                                 'temperature and humidity sensor #4578.'},
+      'rdfs:label': {'@language': 'en',
+                     '@value': 'East wall of room #145.'}},
+     {'featureType': ['Sample', 'FeatureOfInterest', 'Platform'],
+      'hosts': [{'featureType': ['System', 'Platform'],
+                 'hasSubSystem': [{'featureType': 'System',
+                                   'id': 'ex:DHT22_4579',
+                                   'isHostedBy': 'ex:PCBBoard2',
+                                   'rdfs:label': {'@language': 'en',
+                                                  '@value': 'DHT22 sensor '
+                                                            '#4579.'}}],
+                 'hosts': ['ex:DHT22_4579'],
+                 'id': 'ex:PCBBoard2',
+                 'rdfs:comment': {'@language': 'en',
+                                  '@value': 'PCB Board 2 hosts DHT22 '
+                                            'temperature and humidity '
+                                            'sensor #4579 permanently, one '
+                                            'can say it has it as one of '
+                                            'its subsystems.'},
+                 'rdfs:label': {'@language': 'en',
+                                '@value': 'PCB Board 2'}}],
+      'id': 'ex:Room145_south',
+      'rdfs:comment': {'@language': 'en',
+                       '@value': 'This wall hosts PCB Board 2 with DHT22 '
+                                 'temperature and humidity sensor #4579.'},
+      'rdfs:label': {'@language': 'en',
+                     '@value': 'South wall of room #145.'}}]
+=== End JSON Schema ===
+

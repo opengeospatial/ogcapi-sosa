@@ -1,0 +1,78 @@
+{
+  "@context": [
+    "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/context.jsonld",
+    {
+      "ex": "https://example.org/data/",
+      "qudt": "http://qudt.org/schema/qudt/",
+      "unit": "http://qudt.org/vocab/unit/",
+      "xsd": "http://www.w3.org/2001/XMLSchema#"
+    }
+  ],
+  "id": "ex:ts159c",
+  "featureType": "ObservationCollection",
+  "qudt:hasUnit": {
+    "id": "unit:M-PER-SEC"
+  },
+  "hasFeatureOfInterest": {
+    "id": "ex:station223",
+    "featureType": "FeatureOfInterest"
+  },
+  "hasMember": [
+    {
+      "id": "ex:t1",
+      "featureType": "Observation",
+      "hasSimpleResult": {
+        "@type": "xsd:decimal",
+        "@value": "3.24"
+      },
+      "phenomenonTime": "2017-04-15T20:00:00+00:00"
+    },
+    {
+      "id": "ex:t2",
+      "featureType": "Observation",
+      "hasSimpleResult": {
+        "@type": "xsd:decimal",
+        "@value": "3.21"
+      },
+      "phenomenonTime": "2017-04-15T20:01:00+00:00"
+    },
+    {
+      "id": "ex:t3",
+      "featureType": "Observation",
+      "hasSimpleResult": {
+        "@type": "xsd:decimal",
+        "@value": "3.15"
+      },
+      "phenomenonTime": "2017-04-15T20:02:00+00:00"
+    },
+    {
+      "id": "ex:t4",
+      "featureType": "Observation",
+      "hasSimpleResult": {
+        "@type": "xsd:decimal",
+        "@value": "3.15"
+      },
+      "phenomenonTime": "2017-04-15T20:03:00+00:00"
+    }
+  ],
+  "madeBySensor": {
+    "id": "ex:fooglemeter39",
+    "featureType": "Sensor"
+  },
+  "observedProperty": {
+    "id": "ex:p1",
+    "featureType": "Property"
+  },
+  "phenomenonTime": {
+    "featureType": "Interval",
+    "hasBeginning": {
+      "featureType": "Instant",
+      "inXSDDateTime": "2017-04-15T20:00:00+00:00"
+    },
+    "hasEnd": {
+      "featureType": "Instant",
+      "inXSDDateTime": "2017-04-15T20:03:00+00:00"
+    }
+  },
+  "resultTime": "2017-04-15T20:03:30+00:00"
+}

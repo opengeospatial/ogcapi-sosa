@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/context.jsonld",
+    {
+      "ex": "https://example.org/data/",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "qk": "http://qudt.org/vocab/quantitykind/",
+      "qudt": "http://qudt.org/schema/qudt/",
+      "unit": "http://qudt.org/vocab/unit/",
+      "qudt:value": {
+        "@type": "xsd:decimal"
+      },
+      "xsd": "http://www.w3.org/2001/XMLSchema#"
+    }
+  ],
+  "id": "ex:observation_1087",
+  "featureType": "Observation",
+  "rdfs:label": {
+    "@language": "en",
+    "@value": "observation #1087"
+  },
+  "hasFeatureOfInterest": {
+    "id": "ex:tree_124",
+    "featureType": "FeatureOfInterest",
+    "rdfs:label": {
+      "@language": "en",
+      "@value": "tree #124"
+    },
+    "hasProperty": "qk:Height"
+  },
+  "hasResult": {
+    "qudt:hasUnit": {
+      "id": "unit:M"
+    },
+    "qudt:value": "15.3"
+  },
+  "madeBySensor": {
+    "id": "ex:rangefinder_30",
+    "featureType": "Sensor",
+    "rdfs:comment": {
+      "@language": "en",
+      "@value": "rangefinder #30 is a laser range finder sensor."
+    },
+    "rdfs:label": {
+      "@language": "en",
+      "@value": "rangefinder #30"
+    }
+  },
+  "observedProperty": "qk:Height",
+  "resultTime": "2017-01-01T00:00:00+00:00"
+}

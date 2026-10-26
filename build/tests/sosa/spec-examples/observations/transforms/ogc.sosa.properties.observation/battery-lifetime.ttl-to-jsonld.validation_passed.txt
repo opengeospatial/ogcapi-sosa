@@ -1,0 +1,39 @@
+Validation report for ogc.sosa.properties.observation - Observation Properties
+Generated 2026-10-26T11:23:00.546361+00:00
+=== Files ===
+Using battery-lifetime.ttl-to-jsonld.json from transform outputs
+JSON-LD context is present - uplifting
+Output JSON-LD battery-lifetime.ttl-to-jsonld.jsonld created
+Output Turtle battery-lifetime.ttl-to-jsonld.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+
+=== SHACL ===
+Using snippet SHACL closures:
+ - /github/workspace/_sources/spec-examples/closures/battery-lifetime.ttl
+Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: ex:nominalLifetime
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: *none*
+
+Validation result for _sources/properties/execution/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/execution/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: ex:nominalLifetime
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: ex:nominalLifetime
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: ex:nominalLifetime
+
+=== End SHACL ===
+

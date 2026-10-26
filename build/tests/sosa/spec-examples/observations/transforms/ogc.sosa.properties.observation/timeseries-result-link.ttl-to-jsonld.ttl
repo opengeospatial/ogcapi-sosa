@@ -1,0 +1,25 @@
+@prefix ex: <https://example.org/data/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:ts159l a sosa:Observation ;
+    rdfs:comment "The result of the observation is accessed using the URI https://example.org/data/tso/netcdf/ts159 (notional)."@en ;
+    sosa:hasFeatureOfInterest ex:station223 ;
+    sosa:hasResult <https://example.org/data/tso/netcdf/ts159> ;
+    sosa:madeBySensor ex:fooglemeter39 ;
+    sosa:observedProperty ex:p1 ;
+    sosa:phenomenonTime [ a time:Interval ;
+            time:hasBeginning [ a time:Instant ;
+                    time:inXSDDateTime "2017-04-15T20:00:00+00:00"^^xsd:dateTime ] ;
+            time:hasEnd [ a time:Instant ;
+                    time:inXSDDateTime "2017-04-15T20:03:00+00:00"^^xsd:dateTime ] ] ;
+    sosa:resultTime "2017-04-15T20:03:30+00:00"^^xsd:dateTime .
+
+ex:fooglemeter39 a sosa:Sensor .
+
+ex:p1 a sosa:Property .
+
+ex:station223 a sosa:FeatureOfInterest .
+

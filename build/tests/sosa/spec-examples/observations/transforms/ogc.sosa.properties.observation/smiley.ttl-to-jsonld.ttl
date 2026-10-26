@@ -1,0 +1,29 @@
+@prefix ex: <https://example.org/data/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Observation-Smiley-Color a sosa:Observation ;
+    sosa:hasFeatureOfInterest ex:SmileySticker ;
+    sosa:hasSimpleResult "Yellow" ;
+    sosa:madeBySensor ex:ColorDeterminer ;
+    sosa:observedProperty ex:StickerColor ;
+    sosa:phenomenonTime "2017-04-15T00:00:00+00:00"^^xsd:dateTime ;
+    sosa:resultTime "2017-04-16T00:00:12+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure ex:ColorDetermination .
+
+ex:ColorDetermination a sosa:ObservingProcedure ;
+    rdfs:label "Procedure for determining the color of a sticker"@en ;
+    sosa:forProperty ex:StickerColor .
+
+ex:ColorDeterminer a sosa:Sensor ;
+    rdfs:label "Sensor for determining the color of a sticker"@en ;
+    sosa:observes ex:StickerColor .
+
+ex:SmileySticker a sosa:FeatureOfInterest ;
+    rdfs:label "Smiley face sticker"@en ;
+    sosa:hasProperty ex:stickerColor .
+
+ex:StickerColor a sosa:Property ;
+    rdfs:label "The color of a sticker"@en .
+

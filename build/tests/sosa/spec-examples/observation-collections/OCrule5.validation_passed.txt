@@ -1,0 +1,35 @@
+Validation report for ogc.sosa.spec-examples.observation-collections - SOSA specification examples: Observation Collections
+Generated 2026-10-26T11:22:31.996038+00:00
+=== Files ===
+Using https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/tests/ObservationCollection/OCrule5.ttl from examples
+Output Turtle OCrule5.ttl created
+=== End Files ===
+
+=== Turtle ===
+Prefixes are defined for cdt, equipment, ex, geo, gr, gs1, om, owl, prov, qk, qudt, rdf, rdfp, rdfs, schema, seas, sensor, sh, skos, sosa, system, time, unit, xsd
+=== End Turtle ===
+
+=== SHACL ===
+Validation result for _sources/properties/execution/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/execution/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: ex:oc5
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: ex:a51/sosa:hasSimpleResult,ex:a52/sosa:hasSimpleResult
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: ex:oc5
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: ex:a51,ex:a52
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: ex:a51,ex:a52
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: ex:a51,ex:a52
+
+Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: ex:a51,ex:a52
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: ex:oc5
+
+=== End SHACL ===
+

@@ -107,7 +107,10 @@
       "@id": "sosa:detects",
       "@type": "@id"
     },
-    "endTime": "sosa:endTime",
+    "endTime": {
+      "@id": "sosa:endTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
     "features": {
       "@id": "sosa:hasMember",
       "@type": "@id"
@@ -160,10 +163,7 @@
       "@id": "sosa:hasSampledFeature",
       "@type": "@id"
     },
-    "hasSimpleResult": {
-      "@id": "sosa:hasSimpleResult",
-      "@type": "@id"
-    },
+    "hasSimpleResult": "sosa:hasSimpleResult",
     "hasSubSystem": {
       "@id": "sosa:hasSubSystem",
       "@type": "@id",
@@ -275,10 +275,49 @@
     },
     "phenomenonTime": {
       "@id": "sosa:phenomenonTime",
-      "@type": "@id"
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "@context": {
+        "Instant": "time:Instant",
+        "Interval": "time:Interval",
+        "ProperInterval": "time:ProperInterval",
+        "hasBeginning": "time:hasBeginning",
+        "hasEnd": "time:hasEnd",
+        "hasDuration": "time:hasDuration",
+        "hasXSDDuration": {
+          "@id": "time:hasXSDDuration",
+          "@type": "http://www.w3.org/2001/XMLSchema#duration"
+        },
+        "inTimePosition": "time:inTimePosition",
+        "inXSDDate": {
+          "@id": "time:inXSDDate",
+          "@type": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "inXSDDateTime": {
+          "@id": "time:inXSDDateTime",
+          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        "inXSDDateTimeStamp": {
+          "@id": "time:inXSDDateTimeStamp",
+          "@type": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+        },
+        "inXSDgYear": {
+          "@id": "time:inXSDgYear",
+          "@type": "http://www.w3.org/2001/XMLSchema#gYear"
+        },
+        "inXSDgYearMonth": {
+          "@id": "time:inXSDgYearMonth",
+          "@type": "http://www.w3.org/2001/XMLSchema#gYearMonth"
+        }
+      }
     },
-    "resultTime": "sosa:resultTime",
-    "startTime": "sosa:startTime",
+    "resultTime": {
+      "@id": "sosa:resultTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "startTime": {
+      "@id": "sosa:startTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
     "usedProcedure": {
       "@id": "sosa:usedProcedure",
       "@type": "@id"
@@ -421,6 +460,7 @@
       "@type": "@id"
     },
     "sosa": "http://www.w3.org/ns/sosa/",
+    "time": "http://www.w3.org/2006/time#",
     "ssn-system": "ssn:systems/",
     "ssn": "http://www.w3.org/ns/ssn/",
     "@version": 1.1

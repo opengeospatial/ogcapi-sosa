@@ -1,0 +1,48 @@
+{
+  "@context": [
+    "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/context.jsonld",
+    {
+      "ex": "https://example.org/data/",
+      "qudt": "http://qudt.org/schema/qudt/",
+      "unit": "http://qudt.org/vocab/unit/",
+      "qudt:value": {
+        "@type": "xsd:decimal"
+      },
+      "xsd": "http://www.w3.org/2001/XMLSchema#"
+    }
+  ],
+  "id": "ex:Observation_235714",
+  "featureType": "Observation",
+  "hasFeatureOfInterest": "https://example.org/closure/Apartment_134",
+  "hasResult": {
+    "featureType": "qudt:QuantityValue",
+    "qudt:hasUnit": {
+      "id": "unit:KiloW-HR"
+    },
+    "qudt:value": "22.4"
+  },
+  "madeBySensor": {
+    "id": "ex:sensor_926",
+    "featureType": "Sensor",
+    "madeObservation": [
+      "ex:Observation_235714",
+      "ex:Observation_235715",
+      "ex:Observation_235716"
+    ],
+    "observes": {
+      "id": "ex:Apartment_134_electricConsumption",
+      "featureType": "Property",
+      "isObservedBy": "ex:sensor_926"
+    }
+  },
+  "observedProperty": "ex:Apartment_134_electricConsumption",
+  "phenomenonTime": {
+    "hasBeginning": {
+      "inXSDDateTimeStamp": "2017-04-15T23:59:30+00:00"
+    },
+    "hasEnd": {
+      "inXSDDateTimeStamp": "2017-04-16T00:00:00+00:00"
+    }
+  },
+  "resultTime": "2017-04-16T00:00:12+00:00"
+}

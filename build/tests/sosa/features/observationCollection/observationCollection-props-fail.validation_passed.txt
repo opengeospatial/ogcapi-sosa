@@ -1,5 +1,5 @@
 Validation report for ogc.sosa.features.observationCollection - SOSA ObservationCollection Feature
-Generated 2026-09-10T07:08:25.110131+00:00
+Generated 2026-10-26T11:22:50.924848+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -16,17 +16,40 @@ Validation passed
 === End JSON Schema ===
 
 === SHACL ===
+Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
+ - Shape geojson:FeatureShape: <file:///github/workspace/pop1999>
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:LinkShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape geojson:GeometryShape: *none*
+
+Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
+ - Shape geojson:FeatureCollectionShape: *none*
+ - Shape geojson:FeatureShape: *none*
+ - Shape geojson:LinkShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:GeometryShape: *none*
+
 Validation result for _sources/properties/execution/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for _sources/properties/execution/shapes.shacl:
  - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <file:///github/workspace/c1>
- - Shape <https://www.ogc.org/rules/sosa/#testResult>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <file:///github/workspace/pop1999>
- - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <file:///github/workspace/c1>
  - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: <file:///github/workspace/pop1999>/sosa:hasSimpleResult
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <file:///github/workspace/c1>
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <file:///github/workspace/pop1999>
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: <file:///github/workspace/pop1999>
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <file:///github/workspace/pop1999>
 
 
 ** Validation error **
@@ -38,70 +61,57 @@ Validation result for _sources/properties/observation/shapes.shacl:
   	Severity: sh:Violation
   	Source Shape: <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>
   	Focus Node: <file:///github/workspace/pop1999>
-  	Value Node: Literal("")
+  	Value Node: <file:///github/workspace/pop1999>
   	Result Path: sosa:observedProperty
-  	Source Constraint: [ sh:message Literal("sosa:observedProperty is required") ; sh:select Literal("
-              PREFIX sh: <http://www.w3.org/ns/shacl#>
+  	Source Constraint: [ sh:message Literal("sosa:observedProperty is required, on the observation or a collection it is a member of") ; sh:select Literal("
               PREFIX sosa: <http://www.w3.org/ns/sosa/>
               PREFIX geojson: <https://purl.org/geojson/vocab#>
-              SELECT $this (sosa:observedProperty as ?path) (GROUP_CONCAT(?prop; separator=';') AS ?value)
-              WHERE {
-                  OPTIONAL { $this sosa:observedProperty ?prop .
-                   $this (sosa:hasResult|sosa:hasSimpleResult) ?result_so_observation }
-                  OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:observedProperty ?prop }
+              SELECT $this (sosa:observedProperty AS ?path) WHERE {
+                  FILTER NOT EXISTS {
+                      $this (^sosa:hasMember|^geojson:features|sosa:memberOf)* ?holder .
+                      ?holder sosa:observedProperty ?prop .
+                  }
+                  FILTER (EXISTS { $this a sosa:Observation } || NOT EXISTS {
+                      { $this a ?type . FILTER(?type IN (sosa:Actuation, sosa:Sampling)) }
+                      UNION
+                      { $this sosa:actsOnProperty|sosa:madeByActuator|sosa:madeBySampler ?x }
+                      UNION
+                      {
+                          $this (^sosa:hasMember|^geojson:features|sosa:memberOf)+ ?collection .
+                          ?collection a ?ctype .
+                          FILTER(?ctype IN (sosa:ActuationCollection, sosa:SamplingCollection))
+                      }
+                  })
               }
-              GROUP BY ?prop
-              HAVING (count(?prop) < 1)
           ") ]
-  	Message: sosa:observedProperty is required
+  	Message: sosa:observedProperty is required, on the observation or a collection it is a member of
   Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
   	Severity: sh:Violation
   	Source Shape: <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>
   	Focus Node: <file:///github/workspace/c1>
-  	Value Node: Literal("")
+  	Value Node: <file:///github/workspace/c1>
   	Result Path: sosa:observedProperty
-  	Source Constraint: [ sh:message Literal("Collection members must match sosa:observedProperty if present") ; sh:select Literal("
-              PREFIX sh: <http://www.w3.org/ns/shacl#>
+  	Source Constraint: [ sh:message Literal("sosa:observedProperty is required, on the collection, a collection it is a member of, or its members") ; sh:select Literal("
               PREFIX sosa: <http://www.w3.org/ns/sosa/>
               PREFIX geojson: <https://purl.org/geojson/vocab#>
-              SELECT $this (sosa:observedProperty as ?path) (GROUP_CONCAT(?prop; separator=';') AS ?value)
-               WHERE {
-                  OPTIONAL { $this sosa:observedProperty ?prop }
-                  OPTIONAL { $this (sosa:hasMember|geojson:features)+ ?obs .
-                      ?obs  sosa:observedProperty ?prop }
+              SELECT $this (sosa:observedProperty AS ?path) WHERE {
+                  FILTER NOT EXISTS {
+                      { $this (^sosa:hasMember|^geojson:features|sosa:memberOf)* ?holder }
+                      UNION
+                      {
+                          $this (sosa:hasMember|geojson:features|^sosa:memberOf)+ ?member .
+                          ?member (^sosa:hasMember|^geojson:features|sosa:memberOf)* ?holder .
+                      }
+                      ?holder sosa:observedProperty ?prop .
+                  }
               }
-              GROUP BY ?prop
-              HAVING (count(?prop) < 1)
           ") ]
-  	Message: Collection members must match sosa:observedProperty if present
+  	Message: sosa:observedProperty is required, on the collection, a collection it is a member of, or its members
   
 Focus nodes for _sources/properties/observation/shapes.shacl:
  - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
  - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: <file:///github/workspace/pop1999>
  - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: <file:///github/workspace/c1>
-
-Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
- - Shape geojson:FeatureShape: <file:///github/workspace/pop1999>
- - Shape geojson:GeometryShape: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
- - Shape geojson:LinkShape: *none*
-
-Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
- - Shape geojson:FeatureShape: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape geojson:GeometryShape: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
- - Shape geojson:FeatureCollectionShape: *none*
- - Shape geojson:LinkShape: *none*
 
 === End SHACL ===
 

@@ -1,0 +1,39 @@
+Validation report for ogc.sosa.properties.observationCollection - ObservationCollection Properties
+Generated 2026-10-26T11:23:12.811800+00:00
+=== Files ===
+Using InkBird-IBS-TH2-survivable-conditions.ttl-to-jsonld.json from transform outputs
+JSON-LD context is present - uplifting
+Output JSON-LD InkBird-IBS-TH2-survivable-conditions.ttl-to-jsonld.jsonld created
+Output Turtle InkBird-IBS-TH2-survivable-conditions.ttl-to-jsonld.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+
+=== SHACL ===
+Using snippet SHACL closures:
+ - /github/workspace/_sources/spec-examples/closures/InkBird-IBS-TH2-survivable-conditions.ttl
+Validation result for _sources/properties/execution/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/execution/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: ex:IBSTH2SurvivalRange
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: ex:IBSTH2SurvivalRange
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: ex:IBSTH2SurvivalRange/sosa:hasMember,ex:IBSTH2SurvivalRange/sosa:hasMember
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: ex:IBSTH2SurvivalRange/sosa:hasMember,ex:IBSTH2SurvivalRange/sosa:hasMember
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: ex:IBSTH2SurvivalRange/sosa:hasMember,ex:IBSTH2SurvivalRange/sosa:hasMember
+
+Validation result for _sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/properties/observation/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: ex:IBSTH2SurvivalRange/sosa:hasMember,ex:IBSTH2SurvivalRange/sosa:hasMember
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: ex:IBSTH2SurvivalRange
+
+=== End SHACL ===
+

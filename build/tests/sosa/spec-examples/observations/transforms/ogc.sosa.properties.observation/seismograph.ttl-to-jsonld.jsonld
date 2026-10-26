@@ -1,0 +1,70 @@
+{
+  "@context": [
+    "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/context.jsonld",
+    {
+      "ex": "https://example.org/data/",
+      "geo": "http://www.opengis.net/ont/geosparql#",
+      "qk": "http://qudt.org/vocab/quantitykind/",
+      "qudt": "http://qudt.org/schema/qudt/",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "unit": "http://qudt.org/vocab/unit/",
+      "geo:asWKT": {
+        "@type": "geo:WktLiteral"
+      }
+    }
+  ],
+  "id": "ex:VCAB-DP1-BP-40_t2017-04-18T08%3A23%3A00-07%3A00",
+  "featureType": "Observation",
+  "hasFeatureOfInterest": {
+    "id": "ex:VCAB-DP1-BP-40_location",
+    "featureType": "Sample",
+    "geo:hasGeometry": {
+      "featureType": "geo:Point",
+      "geo:asWKT": "POINT (-120.6195831 35.8648067)"
+    },
+    "rdfs:label": {
+      "@language": "en",
+      "@value": "location of VCAB-DP1-BP-40"
+    },
+    "isSampleOf": {
+      "id": "ex:Earth",
+      "featureType": "FeatureOfInterest",
+      "rdfs:label": "Earth",
+      "skos:exactMatch": {
+        "id": "https://www.wikidata.org/wiki/Q2"
+      }
+    }
+  },
+  "hasResult": {
+    "featureType": "qudt:QuantityValue",
+    "qudt:hasUnit": {
+      "id": "unit:CentiM-PER-SEC"
+    },
+    "qudt:value": 0.0005
+  },
+  "madeBySensor": {
+    "id": "ex:VCAB-DP1-BP-40",
+    "featureType": "Sensor",
+    "rdfs:label": {
+      "@language": "en",
+      "@value": "seismograph VCAB DP1 BP 40 (Vineyard Canyon, Parkfield, Ca)"
+    },
+    "rdfs:seeAlso": {
+      "id": "https://earthquake.usgs.gov/monitoring/seismograms/153"
+    },
+    "observes": {
+      "id": "ex:groundDisplacementSpeed",
+      "featureType": "Property",
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "ground displacement speed"
+      },
+      "skos:broader": {
+        "id": "qk:Speed"
+      }
+    }
+  },
+  "observedProperty": "ex:groundDisplacementSpeed",
+  "resultTime": "2017-04-18T08:23:00-07:00"
+}
