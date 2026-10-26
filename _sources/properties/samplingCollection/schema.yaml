@@ -8,15 +8,13 @@ $defs:
       - type: object
         properties:
           madeBySampler:
-            type:
-              - object
-              - string
+            $ref: '../executionCollection/schema.yaml#/$defs/references'
           hasMember:
             type: array
             items:
               anyOf:
                 - $ref: '#/$defs/collection'
-                - $ref: '../sampling/schema.yaml'
+                - $ref: '../sampling/schema.yaml#/$defs/member'
                 - $ref: bblocks://ogc.ogc-utils.iri-or-curie
 allOf:
   - $ref: '#/$defs/collection'

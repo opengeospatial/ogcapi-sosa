@@ -1,0 +1,12 @@
+@prefix ex: <https://example.org/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# The sampling's result is given from the sample's side (sosa:isResultOf)
+ex:s1 a sosa:Sampling ;
+    sosa:hasFeatureOfInterest ex:f ;
+    sosa:resultTime "2025-01-01T00:00:00Z"^^xsd:dateTime .
+
+ex:sample1 a sosa:Sample ;
+    sosa:isSampleOf ex:f ;
+    sosa:isResultOf ex:s1 .

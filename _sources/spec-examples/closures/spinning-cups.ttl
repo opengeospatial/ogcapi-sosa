@@ -1,0 +1,14 @@
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix closure: <https://example.org/closure/> .
+@prefix ex: <https://example.org/data/> .
+
+# SHACL closure (not part of the SOSA example): puts the example's executions in a collection that
+# supplies the values they leave out, which they inherit by SOSA collection rule 2. closure: IRIs
+# and the 2017-01-01 time are placeholders.
+
+# windSensor_14's wind speed observations (they have their own times)
+closure:spinning-cups-wind a sosa:ObservationCollection ;
+    sosa:hasFeatureOfInterest closure:wind-at-location_4687 ;
+    sosa:hasMember ex:observation_147, ex:observation_148 .

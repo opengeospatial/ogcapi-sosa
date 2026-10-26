@@ -10,24 +10,48 @@
     a                   sh:NodeShape ;
     sh:targetClass      sosa:Observation, sosa:Actuation, sosa:Sampling ;
     sh:targetSubjectsOf sosa:hasResult, sosa:hasSimpleResult ;
+    # A time is required: the execution's own, or one provided by a collection it is a (direct or
+    # transitive) member of (collection rule 2).
     sh:sparql [
-        sh:message          "sosa:resultTime or sosa:phenomenonTime is required, and no more than 1 of each is allowed" ;
+        sh:message          "One of sosa:resultTime, sosa:phenomenonTime, sosa:startTime or sosa:endTime is required, on the execution or a collection it is a member of" ;
         sh:select """
-            PREFIX sh: <http://www.w3.org/ns/shacl#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             PREFIX geojson: <https://purl.org/geojson/vocab#>
-            SELECT $this (CONCAT(COALESCE(COUNT(?resultTime), 0), ' x sosa:resultTime, ', COALESCE(COUNT(?phenomenonTime), 0), ' x sosa:phenomenonTime') AS ?value) WHERE {
-                OPTIONAL { $this sosa:phenomenonTime ?phenomenonTime }
-                OPTIONAL { $this sosa:resultTime ?resultTime}
-                OPTIONAL { $this sosa:startTime ?startTime }
-                OPTIONAL { $this sosa:endTime ?endTime }
-                OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:phenomenonTime ?phenomenonTime }
-                OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:resultTime ?resultTime }
-                OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:startTime ?startTime }
-                OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:endTime ?endTime }
+            SELECT $this WHERE {
+                FILTER NOT EXISTS {
+                    $this (^sosa:hasMember|^geojson:features|sosa:memberOf)* ?holder .
+                    ?holder sosa:resultTime|sosa:phenomenonTime|sosa:startTime|sosa:endTime ?time .
+                }
             }
-            GROUP BY $this
-            HAVING (count(?resultTime) > 1 || count(?phenomenonTime) > 1 || count(?resultTime) + count(?phenomenonTime) + count(?startTime) + count(?endTime) < 1)
+        """ ;
+    ] ;
+    # An execution has at most one resultTime and one phenomenonTime. Its value is its own, or else
+    # the value(s) of the nearest collection that has the property: a collection's value applies
+    # to a member that omits it only if the collection has a single value (rule 2). Where the
+    # collection has several values or intervals (rules 3 and 5), the member must give its own.
+    sh:sparql [
+        sh:message          "At most one {?path} is allowed. A member of a collection with several {?path} values must give its own: {?value}" ;
+        sh:select """
+            PREFIX sosa: <http://www.w3.org/ns/sosa/>
+            PREFIX geojson: <https://purl.org/geojson/vocab#>
+            SELECT $this ?path (CONCAT(STR(COUNT(DISTINCT ?time)), ' values') AS ?value) WHERE {
+                {
+                    $this ?path ?time .
+                    FILTER(?path IN (sosa:resultTime, sosa:phenomenonTime))
+                } UNION {
+                    ?holder (sosa:hasMember|geojson:features|^sosa:memberOf)+ $this ;
+                        ?path ?time .
+                    FILTER(?path IN (sosa:resultTime, sosa:phenomenonTime))
+                    FILTER NOT EXISTS { $this ?path ?own }
+                    FILTER NOT EXISTS {
+                        ?holder (sosa:hasMember|geojson:features|^sosa:memberOf)+ ?nearer .
+                        ?nearer (sosa:hasMember|geojson:features|^sosa:memberOf)+ $this ;
+                            ?path ?nearerTime .
+                    }
+                }
+            }
+            GROUP BY $this ?path
+            HAVING (COUNT(DISTINCT ?time) > 1)
         """ ;
     ] ;
 .
@@ -35,6 +59,7 @@
 <#testFeatureOfInterest>
     a                   sh:NodeShape ;
     sh:targetClass      sosa:Observation, sosa:Actuation, sosa:Sampling ;
+    sh:targetSubjectsOf sosa:hasResult, sosa:hasSimpleResult ;
     sh:property         [
         sh:message          "Feature of interest (sosa:hasFeatureOfInterest/sosa:isFeatureOfInterestOf) is required in Collection or Execution(Observation/Actuation/Sampling)" ;
         sh:path     ( [ sh:zeroOrMorePath [ sh:oneOrMorePath [ sh:alternativePath ( [ sh:inversePath
@@ -50,9 +75,11 @@
 <#testResult>
     a                   sh:NodeShape ;
     sh:targetClass      sosa:Observation, sosa:Actuation, sosa:Sampling ;
+    sh:targetSubjectsOf sosa:hasResult, sosa:hasSimpleResult ;
+    # The result may also be given from the result's side (sosa:isResultOf, e.g. a Sample of a Sampling)
     sh:property         [
-        sh:message          "Exactly one of sosa:hasResult or sosa:hasSimpleResult is required per observation" ;
-        sh:path     [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult ) ] ;
+        sh:message          "Exactly one of sosa:hasResult, sosa:hasSimpleResult or sosa:isResultOf (from the result) is required per execution" ;
+        sh:path     [ sh:alternativePath ( sosa:hasResult sosa:hasSimpleResult [ sh:inversePath sosa:isResultOf ] ) ] ;
                           sh:minCount 1 ;
                           sh:maxCount 1 ;
                   ] ;
@@ -67,6 +94,13 @@
 .
 
 ## Shapes for collection requirements
+# The SOSA collection consistency rules (see ExecutionCollection): where a collection has a
+# property, each (direct or transitive) member's value for it must
+#   - rules 2 and 3: be one of the collection's values;
+#   - rules 4 and 5: where the collection's values include intervals, fall within one of them.
+# A member that omits the property takes the collection's value (rule 2; see testRequiredTime).
+# A time:Instant compares by its position, so it matches a literal time with the same value.
+
 <#testCollectionPropertyValues>
     a sh:NodeShape ;
     sh:targetClass sosa:ObservationCollection, sosa:ActuationCollection, sosa:SamplingCollection ;
@@ -77,20 +111,38 @@
         PREFIX sosa: <http://www.w3.org/ns/sosa/>
         PREFIX geojson: <https://purl.org/geojson/vocab#>
         PREFIX time: <http://www.w3.org/2006/time#>
+        PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         SELECT $this ?path (?member AS ?value) ?failedValue WHERE {
-            $this (sosa:hasMember|^sosa:memberOf)+ ?member ;
-                ?path ?collectionValue .
+            $this (sosa:hasMember|geojson:features|^sosa:memberOf)+ ?member .
             ?member ?path ?memberValue .
-            FILTER(?path in ( sosa:resultTime, sosa:phenomenonTime, sosa:hasResult, sosa:hasSimpleResult,
+            FILTER(?path in ( sosa:resultTime, sosa:phenomenonTime, sosa:startTime, sosa:endTime,
+                sosa:hasResult, sosa:hasSimpleResult,
                 sosa:hasFeatureOfInterest, sosa:hasUltimateFeatureOfInterest, sosa:observedProperty, sosa:madeBySystem,
                 sosa:usedProcedure, sosa:madeBySensor, sosa:madeBySampler, sosa:isSampleOf, sosa:madeByActuator,
                 sosa:actsOn, sosa:actsOnProperty, sosa:hasInputValue, sosa:observationRelatedTo,
                 sosa:relatedObservation, sosa:resultQuality, sosa:isOriginalSampleOf, sosa:isResultOfMadeBySampler,
                 sosa:isResultOfUsedProcedure ))
-            FILTER((isLiteral(?collectionValue) || isIRI(?collectionValue)) && ?collectionValue != ?memberValue)
-            FILTER NOT EXISTS { $this ?path ?memberValue }
-            FILTER NOT EXISTS { ?collectionValue a time:Interval }
-            BIND(CONCAT(STR(?memberValue), " != ", STR(?collectionValue)) as ?failedValue)
+            FILTER EXISTS { $this ?path ?anyValue }
+            # interval values are checked by testCollectionPropertyValuesInterval
+            FILTER NOT EXISTS { $this ?path ?interval . ?interval time:hasBeginning|time:hasEnd ?bound }
+            # other embedded (blank node) values can't be compared
+            FILTER NOT EXISTS {
+                $this ?path ?embedded .
+                FILTER(isBlank(?embedded))
+                FILTER NOT EXISTS { ?embedded time:inXSDDateTime|time:inXSDDateTimeStamp|time:inXSDDate ?embeddedPosition }
+            }
+            OPTIONAL { ?memberValue time:inXSDDateTime|time:inXSDDateTimeStamp|time:inXSDDate ?memberPosition }
+            BIND(COALESCE(?memberPosition, ?memberValue) AS ?mv0)
+            FILTER(isIRI(?mv0) || isLiteral(?mv0))
+            BIND(COALESCE(IF(DATATYPE(?mv0) = xsd:dateTimeStamp, xsd:dateTime(STR(?mv0)), ?mv0), ?mv0) AS ?mv)
+            FILTER NOT EXISTS {
+                $this ?path ?collectionValue .
+                OPTIONAL { ?collectionValue time:inXSDDateTime|time:inXSDDateTimeStamp|time:inXSDDate ?collectionPosition }
+                BIND(COALESCE(?collectionPosition, ?collectionValue) AS ?cv0)
+                BIND(COALESCE(IF(DATATYPE(?cv0) = xsd:dateTimeStamp, xsd:dateTime(STR(?cv0)), ?cv0), ?cv0) AS ?cv)
+                FILTER(sameTerm(?cv, ?mv) || COALESCE(?cv = ?mv, false))
+            }
+            BIND(CONCAT(STR(?mv), " is not one of the collection's values") AS ?failedValue)
         }
     """ ]
 .
@@ -105,29 +157,38 @@
         PREFIX sosa: <http://www.w3.org/ns/sosa/>
         PREFIX geojson: <https://purl.org/geojson/vocab#>
         PREFIX time: <http://www.w3.org/2006/time#>
+        PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         SELECT $this ?path (?member AS ?value) ?failedValue WHERE {
-            $this (sosa:hasMember|^sosa:memberOf)+ ?member ;
-                ?path ?collectionValue .
-            ?collectionValue a time:Interval .
+            $this (sosa:hasMember|geojson:features|^sosa:memberOf)+ ?member .
             ?member ?path ?memberValue .
-            FILTER(?path in ( sosa:resultTime, sosa:phenomenonTime, sosa:hasResult, sosa:hasSimpleResult,
-                sosa:hasFeatureOfInterest, sosa:hasUltimateFeatureOfInterest, sosa:observedProperty, sosa:madeBySystem,
-                sosa:usedProcedure, sosa:madeBySensor, sosa:madeBySampler, sosa:isSampleOf, sosa:madeByActuator,
-                sosa:actsOn, sosa:actsOnProperty, sosa:hasInputValue, sosa:observationRelatedTo,
-                sosa:relatedObservation, sosa:resultQuality, sosa:isOriginalSampleOf, sosa:isResultOfMadeBySampler,
-                sosa:isResultOfUsedProcedure ))
-
-            {
-                ?collectionValue time:hasBeginning/(time:inXSDDateTime|time:inXSDDate) ?colBeginning .
-                OPTIONAL { ?memberValue time:hasBeginning?/(time:inXSDDateTime|time:inXSDDate) ?memberBeginning }
-                FILTER((isLiteral(?memberValue) && ?memberValue < ?colBeginning) || (BOUND(?memberBeginning) && ?memberBeginning < ?colBeginning))
-                BIND(CONCAT(STR(COALESCE(?memberBeginning, ?memberValue)), " < ", STR(?colBeginning)) as ?failedValue)
-            } UNION {
-                ?collectionValue time:hasEnd?/(time:inXSDDateTime|time:inXSDDate) ?colEnd .
-                OPTIONAL { ?memberValue time:hasEnd?/(time:inXSDDateTime|time:inXSDDate) ?memberEnd }
-                FILTER((isLiteral(?memberValue) && ?memberValue > ?colEnd) || (BOUND(?memberEnd) && ?memberEnd > ?colEnd))
-                BIND(CONCAT(STR(COALESCE(?memberEnd, ?memberValue)), " > ", STR(?colEnd)) as ?failedValue)
+            FILTER(?path IN (sosa:phenomenonTime, sosa:resultTime, sosa:startTime, sosa:endTime))
+            FILTER EXISTS { $this ?path ?interval . ?interval time:hasBeginning|time:hasEnd ?bound }
+            # beginning and end of the member's value: a literal time, an Instant's position, or an
+            # interval's bounds; an xsd:date covers the whole day
+            OPTIONAL { ?memberValue time:hasBeginning?/(time:inXSDDateTime|time:inXSDDateTimeStamp|time:inXSDDate) ?mb0 }
+            OPTIONAL { ?memberValue time:hasEnd?/(time:inXSDDateTime|time:inXSDDateTimeStamp|time:inXSDDate) ?me0 }
+            BIND(IF(isLiteral(?memberValue), ?memberValue, ?mb0) AS ?mb1)
+            BIND(IF(isLiteral(?memberValue), ?memberValue, ?me0) AS ?me1)
+            BIND(IF(DATATYPE(?mb1) = xsd:date, xsd:dateTime(CONCAT(SUBSTR(STR(?mb1), 1, 10), "T00:00:00", SUBSTR(STR(?mb1), 11))), xsd:dateTime(STR(?mb1))) AS ?mb)
+            BIND(IF(DATATYPE(?me1) = xsd:date, xsd:dateTime(CONCAT(SUBSTR(STR(?me1), 1, 10), "T23:59:59.999", SUBSTR(STR(?me1), 11))), xsd:dateTime(STR(?me1))) AS ?me)
+            FILTER(BOUND(?mb) || BOUND(?me))
+            # rule 5: it must fall within one of the collection's values (an interval, or equal to an
+            # instant). A comparison that can't be decided (one time with a time zone and one without -
+            # rdflib also drops the time zone of an xsd:date) doesn't count against it.
+            FILTER NOT EXISTS {
+                $this ?path ?collectionValue .
+                OPTIONAL { ?collectionValue time:hasBeginning?/(time:inXSDDateTime|time:inXSDDateTimeStamp|time:inXSDDate) ?cb0 }
+                OPTIONAL { ?collectionValue time:hasEnd?/(time:inXSDDateTime|time:inXSDDateTimeStamp|time:inXSDDate) ?ce0 }
+                BIND(IF(isLiteral(?collectionValue), ?collectionValue, ?cb0) AS ?cb1)
+                BIND(IF(isLiteral(?collectionValue), ?collectionValue, ?ce0) AS ?ce1)
+                BIND(IF(DATATYPE(?cb1) = xsd:date, xsd:dateTime(CONCAT(SUBSTR(STR(?cb1), 1, 10), "T00:00:00", SUBSTR(STR(?cb1), 11))), xsd:dateTime(STR(?cb1))) AS ?cb)
+                BIND(IF(DATATYPE(?ce1) = xsd:date, xsd:dateTime(CONCAT(SUBSTR(STR(?ce1), 1, 10), "T23:59:59.999", SUBSTR(STR(?ce1), 11))), xsd:dateTime(STR(?ce1))) AS ?ce)
+                FILTER(BOUND(?cb) || BOUND(?ce))
+                FILTER(COALESCE(!BOUND(?cb) || !BOUND(?mb) || (TZ(?mb) = "") != (TZ(?cb) = "") || ?mb >= ?cb, true)
+                    && COALESCE(!BOUND(?ce) || !BOUND(?me) || (TZ(?me) = "") != (TZ(?ce) = "") || ?me <= ?ce, true))
             }
+            BIND(CONCAT(COALESCE(STR(?mb), "?"), " .. ", COALESCE(STR(?me), "?"),
+                " is not within any of the collection's values") AS ?failedValue)
         }
     """ ]
 .

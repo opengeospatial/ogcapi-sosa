@@ -1,0 +1,16 @@
+@prefix ex: <https://example.org/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:c a sosa:ObservationCollection ;
+    sosa:hasFeatureOfInterest ex:f ;
+    sosa:hasMember ex:o1 ;
+    sosa:observedProperty ex:t ;
+    sosa:resultTime "2022-05-01T22:00:00+00:00"^^xsd:dateTime .
+
+ex:o1 a sosa:Observation ;
+    sosa:hasSimpleResult 1 ;
+    sosa:resultTime [ a time:Instant ;
+            time:inXSDDateTimeStamp "2022-05-01T22:00:00Z"^^xsd:dateTimeStamp ] .
+

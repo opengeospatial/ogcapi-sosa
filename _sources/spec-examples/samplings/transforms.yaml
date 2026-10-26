@@ -1,0 +1,27 @@
+transforms:
+- id: ttl-to-jsonld
+  description: Frames the root resource (Sampling) of a SOSA Turtle example and compacts it with the `ogc.sosa.properties.sampling`
+    JSON-LD context, which the output's `@context` references (plus only the example's own prefixes and literal types). The
+    output is validated against `ogc.sosa.properties.sampling`.
+  type: python
+  ref: ../transforms/ttl_to_sosa_json.py
+  inputs:
+    mediaTypes:
+    - text/turtle
+  outputs:
+    mediaTypes:
+    - mimeType: application/json
+      defaultExtension: json
+    profiles:
+    - bblocks://ogc.sosa.properties.sampling
+  metadata:
+    target: ogc.sosa.properties.sampling
+    rootClasses:
+    - http://www.w3.org/ns/sosa/Sampling
+    containerClasses:
+    - http://www.w3.org/ns/sosa/ObservationCollection
+    - http://www.w3.org/ns/sosa/SampleCollection
+    - http://www.w3.org/ns/sosa/Observation
+    - http://www.w3.org/ns/sosa/Sampling
+    suppressTerms:
+    - features

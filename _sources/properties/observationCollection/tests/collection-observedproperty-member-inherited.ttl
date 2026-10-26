@@ -1,0 +1,16 @@
+@prefix ex: <https://example.org/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# ex:times gives only a time; its member inherits observedProperty from another collection, ex:c
+ex:c a sosa:ObservationCollection ;
+    sosa:hasFeatureOfInterest ex:f ;
+    sosa:observedProperty ex:t ;
+    sosa:hasMember ex:o1 .
+
+ex:times a sosa:ObservationCollection ;
+    sosa:resultTime "2022-05-01T22:33:44+00:00"^^xsd:dateTime ;
+    sosa:hasMember ex:o1 .
+
+ex:o1 a sosa:Observation ;
+    sosa:hasSimpleResult 1 .

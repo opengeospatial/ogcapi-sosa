@@ -1,0 +1,51 @@
+prefixes:
+  cdt: http://w3id.org/lindt/custom_datatypes#
+  equipment: https://rdf.ag/o/equipment/
+  ex: https://example.org/data/
+  geo: http://www.opengis.net/ont/geosparql#
+  gr: http://purl.org/goodrelations/v1#
+  gs1: https://gs1.org/voc/
+  om: http://www.ontology-of-units-of-measure.org/resource/om-2/
+  owl: http://www.w3.org/2002/07/owl#
+  prov: http://www.w3.org/ns/prov#
+  qk: http://qudt.org/vocab/quantitykind/
+  qudt: http://qudt.org/schema/qudt/
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfp: https://w3id.org/rdfp/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  schema: http://schema.org/
+  seas: https://w3id.org/seas/
+  sensor: https://example.org/sensor/
+  sh: http://www.w3.org/ns/shacl#
+  skos: http://www.w3.org/2004/02/skos/core#
+  sosa: http://www.w3.org/ns/sosa/
+  system: http://www.w3.org/ns/ssn/systems/
+  time: http://www.w3.org/2006/time#
+  unit: http://qudt.org/vocab/unit/
+  xsd: http://www.w3.org/2001/XMLSchema#
+examples:
+- title: Example bubble-provenance.ttl (root CoreEx1923)
+  content: 'Example included in the SOSA/SSN specification section(s): [ModelSampleChains](https://w3c.github.io/sdw-sosa-ssn/ssn/).
+    Source: [bubble-provenance.ttl](https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/bubble-provenance.ttl)'
+  base-output-filename: bubble-provenance
+  x-root: https://example.org/data/CoreEx1923
+  snippets:
+  - language: ttl
+    ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/bubble-provenance.ttl
+- title: Example bubble-provenance.ttl (root WellDrilling4578)
+  content: 'Example included in the SOSA/SSN specification section(s): [ModelSampleChains](https://w3c.github.io/sdw-sosa-ssn/ssn/).
+    Source: [bubble-provenance.ttl](https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/bubble-provenance.ttl)'
+  base-output-filename: bubble-provenance--WellDrilling4578
+  x-root: https://example.org/data/WellDrilling4578
+  snippets:
+  - language: ttl
+    ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/bubble-provenance.ttl
+- title: Example LocatedSampling.ttl
+  content: 'Example included in the SOSA/SSN specification section(s): [ModelLocation](https://w3c.github.io/sdw-sosa-ssn/ssn/).
+    Source: [LocatedSampling.ttl](https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/LocatedSampling.ttl)'
+  base-output-filename: LocatedSampling
+  snippets:
+  - language: ttl
+    ref: https://w3c.github.io/sdw-sosa-ssn/ssn/rdf/examples/LocatedSampling.ttl
+    shacl-closure:
+    - ../closures/LocatedSampling.ttl

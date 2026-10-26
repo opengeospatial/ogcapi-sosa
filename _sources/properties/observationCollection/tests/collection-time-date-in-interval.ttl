@@ -1,0 +1,18 @@
+@prefix ex: <https://example.org/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:c a sosa:ObservationCollection ;
+    sosa:hasFeatureOfInterest ex:f ;
+    sosa:hasMember ex:o1 ;
+    sosa:observedProperty ex:t ;
+    sosa:phenomenonTime [ a time:Interval ;
+            time:hasBeginning [ time:inXSDDateTime "2022-05-01T00:00:00+00:00"^^xsd:dateTime ] ;
+            time:hasEnd [ time:inXSDDateTime "2022-05-02T23:59:59.999000+00:00"^^xsd:dateTime ] ] .
+
+ex:o1 a sosa:Observation ;
+    sosa:hasSimpleResult 1 ;
+    sosa:phenomenonTime [ a time:Instant ;
+            time:inXSDDate "2022-05-01"^^xsd:date ] .
+

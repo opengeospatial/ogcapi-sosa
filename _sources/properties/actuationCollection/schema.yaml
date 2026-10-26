@@ -8,19 +8,15 @@ $defs:
       - type: object
         properties:
           actsOnProperty:
-            type:
-              - object
-              - string
+            $ref: '../executionCollection/schema.yaml#/$defs/references'
           madeByActuator:
-            type:
-              - object
-              - string
+            $ref: '../executionCollection/schema.yaml#/$defs/references'
           hasMember:
             type: array
             items:
               anyOf:
                 - $ref: '#/$defs/collection'
-                - $ref: '../actuation/schema.yaml'
+                - $ref: '../actuation/schema.yaml#/$defs/member'
                 - $ref: bblocks://ogc.ogc-utils.iri-or-curie
 allOf:
   - $ref: '#/$defs/collection'

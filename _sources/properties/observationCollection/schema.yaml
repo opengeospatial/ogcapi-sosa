@@ -2,31 +2,21 @@
 description: 'SOSA ObservationCollection'
 x-jsonld-context: ../../../sosa-ssn.jsonld
 $defs:
-  oneOrMany:
-    oneOf:
-      - type:
-        - object
-        - string
-      - type: array
-        items:
-          type:
-            - object
-            - string
   collection:
     allOf:
       - $ref: bblocks://ogc.sosa.properties.executionCollection
       - type: object
         properties:
           observedProperty:
-            $ref: "#/$defs/oneOrMany"
+            $ref: '../executionCollection/schema.yaml#/$defs/references'
           madeBySensor:
-            $ref: "#/$defs/oneOrMany"
+            $ref: '../executionCollection/schema.yaml#/$defs/references'
           hasMember:
             type: array
             items:
               anyOf:
                 - $ref: '#/$defs/collection'
-                - $ref: '../observation/schema.yaml'
+                - $ref: '../observation/schema.yaml#/$defs/member'
                 - $ref: bblocks://ogc.ogc-utils.iri-or-curie
 allOf:
   - $ref: '#/$defs/collection'

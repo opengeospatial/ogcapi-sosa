@@ -14,7 +14,7 @@ allOf:
         items:
           oneOf:
             # Embedded Actuations
-            - $ref: ../actuation/schema.yaml
+            - $ref: ../actuation/schema.yaml#/$defs/member
             # Embedded nested ActuationCollection. A FeatureCollection cannot itself be a `features`
             # member, so a nested collection is still a plain Feature - further nesting
             # continues via `properties.hasMember`.

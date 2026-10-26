@@ -13,7 +13,7 @@ allOf:
         items:
           oneOf:
             # Embedded observations
-            - $ref: ../observation/schema.yaml
+            - $ref: ../observation/schema.yaml#/$defs/member
             # Embedded nested ObservationCollection. A FeatureCollection cannot itself
             # be a `features` member (json-fg.featureCollection-lenient constrains
             # `features` to Features only), so a nested collection is still a plain
