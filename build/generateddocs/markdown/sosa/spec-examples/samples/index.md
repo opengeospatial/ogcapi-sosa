@@ -34,11 +34,10 @@ Example included in the SOSA/SSN specification section(s): [ModelLocation](https
 @prefix sf: <http://www.opengis.net/ont/sf#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix sosa-oms: <http://www.w3.org/ns/sosa/oms/> .
 
 ex:EarthAtmosphere_StE a sosa:MaterialSample ;
   sosa:isSampleOf ex:EarthAtmosphere ;
-  sosa-oms:sourceLocation [ 
+  sosa:sourceLocation [ 
     a sf:Point ;
     geo:asWKT "POINT (4.387611 45.437772)"^^geo:WktLiteral ;
   ] ;
@@ -78,13 +77,13 @@ relex:CSRWA25569-mount7
 relex:CSRWA25569-mount7-spot1
   rdf:type sosa:Sample ;
   rdfs:label "spot 1" ;
-  sosa-rel:hasSampleRelationship [
-      rdf:type sosa-rel:SampleRelationship ;
-      sosa-rel:natureOfRelationship [
-          rdf:type sosa-rel:RelationshipNature ;
+  sosa:hasSampleRelationship [
+      rdf:type sosa:SampleRelationship ;
+      sosa:natureOfRelationship [
+          rdf:type sosa:RelationshipNature ;
           rdfs:comment "probe spot on polished mount" ;
         ] ;
-      sosa-rel:relatedSample relex:CSRWA25569-mount7 ;
+      sosa:relatedSample relex:CSRWA25569-mount7 ;
     ] ;
 .
 
@@ -120,13 +119,13 @@ relex:CSRWA25569-mount7
 relex:CSRWA25569-mount7-spot1
   rdf:type sosa:Sample ;
   rdfs:label "spot 1" ;
-  sosa-rel:hasSampleRelationship [
-      rdf:type sosa-rel:SampleRelationship ;
-      sosa-rel:natureOfRelationship [
-          rdf:type sosa-rel:RelationshipNature ;
+  sosa:hasSampleRelationship [
+      rdf:type sosa:SampleRelationship ;
+      sosa:natureOfRelationship [
+          rdf:type sosa:RelationshipNature ;
           rdfs:comment "probe spot on polished mount" ;
         ] ;
-      sosa-rel:relatedSample relex:CSRWA25569-mount7 ;
+      sosa:relatedSample relex:CSRWA25569-mount7 ;
     ] ;
 .
 

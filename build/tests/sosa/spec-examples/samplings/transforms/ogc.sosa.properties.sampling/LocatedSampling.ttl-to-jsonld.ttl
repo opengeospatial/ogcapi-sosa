@@ -1,6 +1,5 @@
 @prefix ex: <https://example.org/data/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
-@prefix ns1: <http://www.w3.org/ns/sosa/oms/> .
 @prefix sf: <http://www.opengis.net/ont/sf#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
@@ -8,9 +7,9 @@
 
 ex:AirSampling_StE a sosa:Sampling ;
     sosa:hasFeatureOfInterest ex:EarthAtmosphere ;
-    ns1:samplingLocation [ a sf:Point ;
-            geo:asWKT "POINT (4.387611 45.437772)"^^geo:WktLiteral ] ;
-    sosa:resultTime "2017-01-01T00:00:00+00:00"^^xsd:dateTime .
+    sosa:resultTime "2017-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    sosa:samplingLocation [ a sf:Point ;
+            geo:asWKT "POINT (4.387611 45.437772)"^^geo:WktLiteral ] .
 
 ex:EarthAtmosphere a sosa:FeatureOfInterest ;
     skos:exactMatch <https://www.wikidata.org/wiki/Q3230> .

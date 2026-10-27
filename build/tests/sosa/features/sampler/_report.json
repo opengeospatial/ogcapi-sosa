@@ -2,7 +2,7 @@
   "title": "Validation report for ogc.sosa.features.sampler - Sampler Feature",
   "bblockName": "Sampler Feature",
   "bblockId": "ogc.sosa.features.sampler",
-  "generated": "2026-10-26T21:53:01.226892+00:00",
+  "generated": "2026-10-27T11:39:14.323933+00:00",
   "result": true,
   "items": [
     {
@@ -75,11 +75,6 @@
                 "geojson:GeometryShape": {
                   "nodes": []
                 },
-                "geojson:FeatureShape": {
-                  "nodes": [
-                    "<https://example.org/data/SA56>"
-                  ]
-                },
                 "geojson:GeometryShape/sh:or/rdf:first": {
                   "nodes": []
                 },
@@ -88,10 +83,15 @@
                 },
                 "geojson:LinkShape": {
                   "nodes": []
+                },
+                "geojson:FeatureShape": {
+                  "nodes": [
+                    "<https://example.org/data/SA56>"
+                  ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:FeatureShape: <https://example.org/data/SA56>\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:LinkShape: *none*\n"
+              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:LinkShape: *none*\n - Shape geojson:FeatureShape: <https://example.org/data/SA56>\n"
             }
           ]
         }

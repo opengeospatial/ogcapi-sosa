@@ -132,7 +132,7 @@
           "transformResults": {
             "ttl-to-jsonld": {
               "success": true,
-              "sizeBytes": 766,
+              "sizeBytes": 762,
               "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/samples/transforms/LocatedSample.ttl-to-jsonld.json",
               "profilesValidation": {
                 "ogc.sosa.properties.sample": {
@@ -146,8 +146,8 @@
               }
             }
           },
-          "sizeBytes": 715,
-          "code": "@prefix ex: <https://example.org/data/> .\n@prefix geo: <http://www.opengis.net/ont/geosparql#> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix sf: <http://www.opengis.net/ont/sf#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix sosa-oms: <http://www.w3.org/ns/sosa/oms/> .\n\nex:EarthAtmosphere_StE a sosa:MaterialSample ;\n  sosa:isSampleOf ex:EarthAtmosphere ;\n  sosa-oms:sourceLocation [ \n    a sf:Point ;\n    geo:asWKT \"POINT (4.387611 45.437772)\"^^geo:WktLiteral ;\n  ] ;\n.\nex:EarthAtmosphere a sosa:FeatureOfInterest ;\n  skos:exactMatch <https://www.wikidata.org/wiki/Q3230> ;\n. "
+          "sizeBytes": 658,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix geo: <http://www.opengis.net/ont/geosparql#> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix sf: <http://www.opengis.net/ont/sf#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n\nex:EarthAtmosphere_StE a sosa:MaterialSample ;\n  sosa:isSampleOf ex:EarthAtmosphere ;\n  sosa:sourceLocation [ \n    a sf:Point ;\n    geo:asWKT \"POINT (4.387611 45.437772)\"^^geo:WktLiteral ;\n  ] ;\n.\nex:EarthAtmosphere a sosa:FeatureOfInterest ;\n  skos:exactMatch <https://www.wikidata.org/wiki/Q3230> ;\n. "
         }
       ],
       "prefixes": {
@@ -204,8 +204,8 @@
               }
             }
           },
-          "sizeBytes": 1139,
-          "code": "@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix relex: <https://example.org/data/sample-relations#> .\n@prefix sosa-rel: <http://www.w3.org/ns/sosa/sampling/> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@base <https://example.org/data/sample-relations> .\n\n<https://example.org/data/sample-relations>\n  rdf:type owl:Ontology ;\n  owl:imports <http://www.w3.org/ns/sosa/sam/> ;\n.\nrelex:CSRWA25569\n  rdf:type sosa:Sample ;\n  rdfs:label \"Specimen CSRWA25569\" ;\n.\nrelex:CSRWA25569-mount7\n  rdf:type sosa:Sample ;\n  rdfs:label \"CSRWA25569 mount 7\" ;\n  sosa:isSampleOf relex:CSRWA25569 ;\n.\nrelex:CSRWA25569-mount7-spot1\n  rdf:type sosa:Sample ;\n  rdfs:label \"spot 1\" ;\n  sosa-rel:hasSampleRelationship [\n      rdf:type sosa-rel:SampleRelationship ;\n      sosa-rel:natureOfRelationship [\n          rdf:type sosa-rel:RelationshipNature ;\n          rdfs:comment \"probe spot on polished mount\" ;\n        ] ;\n      sosa-rel:relatedSample relex:CSRWA25569-mount7 ;\n    ] ;\n.\n"
+          "sizeBytes": 1119,
+          "code": "@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix relex: <https://example.org/data/sample-relations#> .\n@prefix sosa-rel: <http://www.w3.org/ns/sosa/sampling/> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@base <https://example.org/data/sample-relations> .\n\n<https://example.org/data/sample-relations>\n  rdf:type owl:Ontology ;\n  owl:imports <http://www.w3.org/ns/sosa/sam/> ;\n.\nrelex:CSRWA25569\n  rdf:type sosa:Sample ;\n  rdfs:label \"Specimen CSRWA25569\" ;\n.\nrelex:CSRWA25569-mount7\n  rdf:type sosa:Sample ;\n  rdfs:label \"CSRWA25569 mount 7\" ;\n  sosa:isSampleOf relex:CSRWA25569 ;\n.\nrelex:CSRWA25569-mount7-spot1\n  rdf:type sosa:Sample ;\n  rdfs:label \"spot 1\" ;\n  sosa:hasSampleRelationship [\n      rdf:type sosa:SampleRelationship ;\n      sosa:natureOfRelationship [\n          rdf:type sosa:RelationshipNature ;\n          rdfs:comment \"probe spot on polished mount\" ;\n        ] ;\n      sosa:relatedSample relex:CSRWA25569-mount7 ;\n    ] ;\n.\n"
         }
       ],
       "prefixes": {
@@ -248,7 +248,7 @@
           "transformResults": {
             "ttl-to-jsonld": {
               "success": true,
-              "sizeBytes": 914,
+              "sizeBytes": 869,
               "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/samples/transforms/sample-relations--CSRWA25569-mount7-spot1.ttl-to-jsonld.json",
               "profilesValidation": {
                 "ogc.sosa.properties.sample": {
@@ -262,8 +262,8 @@
               }
             }
           },
-          "sizeBytes": 1139,
-          "code": "@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix relex: <https://example.org/data/sample-relations#> .\n@prefix sosa-rel: <http://www.w3.org/ns/sosa/sampling/> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@base <https://example.org/data/sample-relations> .\n\n<https://example.org/data/sample-relations>\n  rdf:type owl:Ontology ;\n  owl:imports <http://www.w3.org/ns/sosa/sam/> ;\n.\nrelex:CSRWA25569\n  rdf:type sosa:Sample ;\n  rdfs:label \"Specimen CSRWA25569\" ;\n.\nrelex:CSRWA25569-mount7\n  rdf:type sosa:Sample ;\n  rdfs:label \"CSRWA25569 mount 7\" ;\n  sosa:isSampleOf relex:CSRWA25569 ;\n.\nrelex:CSRWA25569-mount7-spot1\n  rdf:type sosa:Sample ;\n  rdfs:label \"spot 1\" ;\n  sosa-rel:hasSampleRelationship [\n      rdf:type sosa-rel:SampleRelationship ;\n      sosa-rel:natureOfRelationship [\n          rdf:type sosa-rel:RelationshipNature ;\n          rdfs:comment \"probe spot on polished mount\" ;\n        ] ;\n      sosa-rel:relatedSample relex:CSRWA25569-mount7 ;\n    ] ;\n.\n"
+          "sizeBytes": 1119,
+          "code": "@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix relex: <https://example.org/data/sample-relations#> .\n@prefix sosa-rel: <http://www.w3.org/ns/sosa/sampling/> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@base <https://example.org/data/sample-relations> .\n\n<https://example.org/data/sample-relations>\n  rdf:type owl:Ontology ;\n  owl:imports <http://www.w3.org/ns/sosa/sam/> ;\n.\nrelex:CSRWA25569\n  rdf:type sosa:Sample ;\n  rdfs:label \"Specimen CSRWA25569\" ;\n.\nrelex:CSRWA25569-mount7\n  rdf:type sosa:Sample ;\n  rdfs:label \"CSRWA25569 mount 7\" ;\n  sosa:isSampleOf relex:CSRWA25569 ;\n.\nrelex:CSRWA25569-mount7-spot1\n  rdf:type sosa:Sample ;\n  rdfs:label \"spot 1\" ;\n  sosa:hasSampleRelationship [\n      rdf:type sosa:SampleRelationship ;\n      sosa:natureOfRelationship [\n          rdf:type sosa:RelationshipNature ;\n          rdfs:comment \"probe spot on polished mount\" ;\n        ] ;\n      sosa:relatedSample relex:CSRWA25569-mount7 ;\n    ] ;\n.\n"
         }
       ],
       "prefixes": {

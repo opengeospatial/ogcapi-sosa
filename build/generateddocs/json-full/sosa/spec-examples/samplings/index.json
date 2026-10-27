@@ -250,7 +250,7 @@
           "transformResults": {
             "ttl-to-jsonld": {
               "success": true,
-              "sizeBytes": 810,
+              "sizeBytes": 806,
               "url": "https://opengeospatial.github.io/ogcapi-sosa/build/tests/sosa/spec-examples/samplings/transforms/LocatedSampling.ttl-to-jsonld.json",
               "profilesValidation": {
                 "ogc.sosa.properties.sampling": {
@@ -264,8 +264,8 @@
               }
             }
           },
-          "sizeBytes": 845,
-          "code": "@prefix ex: <https://example.org/data/> .\n@prefix geo: <http://www.opengis.net/ont/geosparql#> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix sf: <http://www.opengis.net/ont/sf#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix sosa-oms: <http://www.w3.org/ns/sosa/oms/> .\n\nex:EarthAtmosphere_StE a sosa:MaterialSample ;\n  sosa:isSampleOf ex:EarthAtmosphere ;\n  sosa:isResultOf ex:AirSampling_StE ; \n.\nex:AirSampling_StE a sosa:Sampling ;\n  sosa:hasFeatureOfInterest ex:EarthAtmosphere ;\n  sosa-oms:samplingLocation [ \n    a sf:Point ;\n    geo:asWKT \"POINT (4.387611 45.437772)\"^^geo:WktLiteral ;\n  ] ;\n.\nex:EarthAtmosphere a sosa:FeatureOfInterest ;\n  skos:exactMatch <https://www.wikidata.org/wiki/Q3230> ;\n. "
+          "sizeBytes": 788,
+          "code": "@prefix ex: <https://example.org/data/> .\n@prefix geo: <http://www.opengis.net/ont/geosparql#> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix sf: <http://www.opengis.net/ont/sf#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n\nex:EarthAtmosphere_StE a sosa:MaterialSample ;\n  sosa:isSampleOf ex:EarthAtmosphere ;\n  sosa:isResultOf ex:AirSampling_StE ; \n.\nex:AirSampling_StE a sosa:Sampling ;\n  sosa:hasFeatureOfInterest ex:EarthAtmosphere ;\n  sosa:samplingLocation [ \n    a sf:Point ;\n    geo:asWKT \"POINT (4.387611 45.437772)\"^^geo:WktLiteral ;\n  ] ;\n.\nex:EarthAtmosphere a sosa:FeatureOfInterest ;\n  skos:exactMatch <https://www.wikidata.org/wiki/Q3230> ;\n. "
         }
       ],
       "prefixes": {
