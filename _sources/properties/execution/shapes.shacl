@@ -39,9 +39,12 @@
                     $this ?path ?time .
                     FILTER(?path IN (sosa:resultTime, sosa:phenomenonTime))
                 } UNION {
+                    # Binding ?path first (rather than filtering it afterwards) means the costly
+                    # "nearer" test below runs only for time values, not for every property of the
+                    # collection (e.g. all its features). VALUES is not allowed in SHACL-SPARQL.
+                    { BIND(sosa:resultTime AS ?path) } UNION { BIND(sosa:phenomenonTime AS ?path) }
                     ?holder (sosa:hasMember|geojson:features|^sosa:memberOf)+ $this ;
                         ?path ?time .
-                    FILTER(?path IN (sosa:resultTime, sosa:phenomenonTime))
                     FILTER NOT EXISTS { $this ?path ?own }
                     FILTER NOT EXISTS {
                         ?holder (sosa:hasMember|geojson:features|^sosa:memberOf)+ ?nearer .
