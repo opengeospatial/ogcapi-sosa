@@ -1,5 +1,5 @@
 Validation report for ogc.sosa.properties.observation - Observation Properties
-Generated 2026-10-27T11:38:32.189963+00:00
+Generated 2026-10-28T05:48:07.150540+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -15,8 +15,8 @@ Validation result for _sources/properties/observation/shapes.shacl:
   
 Focus nodes for _sources/properties/observation/shapes.shacl:
  - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: _:n2052fb19832744c5ad35dfd6cec97b04b1
  - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: _:n9c5609558fbe41b8b29d94f97ef62aa9b1
 
 
 ** Validation error **
@@ -38,9 +38,12 @@ Validation result for _sources/properties/execution/shapes.shacl:
                       $this ?path ?time .
                       FILTER(?path IN (sosa:resultTime, sosa:phenomenonTime))
                   } UNION {
+                      # Binding ?path first (rather than filtering it afterwards) means the costly
+                      # "nearer" test below runs only for time values, not for every property of the
+                      # collection (e.g. all its features). VALUES is not allowed in SHACL-SPARQL.
+                      { BIND(sosa:resultTime AS ?path) } UNION { BIND(sosa:phenomenonTime AS ?path) }
                       ?holder (sosa:hasMember|geojson:features|^sosa:memberOf)+ $this ;
                           ?path ?time .
-                      FILTER(?path IN (sosa:resultTime, sosa:phenomenonTime))
                       FILTER NOT EXISTS { $this ?path ?own }
                       FILTER NOT EXISTS {
                           ?holder (sosa:hasMember|geojson:features|^sosa:memberOf)+ ?nearer .
@@ -55,12 +58,12 @@ Validation result for _sources/properties/execution/shapes.shacl:
   	Message: At most one http://www.w3.org/ns/sosa/resultTime is allowed. A member of a collection with several http://www.w3.org/ns/sosa/resultTime values must give its own: 2 values
   
 Focus nodes for _sources/properties/execution/shapes.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testResult>: _:n2052fb19832744c5ad35dfd6cec97b04b1
- - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: *none*
  - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: 
- - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: _:n2052fb19832744c5ad35dfd6cec97b04b1
- - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: _:n2052fb19832744c5ad35dfd6cec97b04b1
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: _:n9c5609558fbe41b8b29d94f97ef62aa9b1
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: _:n9c5609558fbe41b8b29d94f97ef62aa9b1
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: _:n9c5609558fbe41b8b29d94f97ef62aa9b1
 
 === End SHACL ===
 

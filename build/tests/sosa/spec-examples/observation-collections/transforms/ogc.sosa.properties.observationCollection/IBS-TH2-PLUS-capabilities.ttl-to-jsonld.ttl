@@ -23,16 +23,16 @@ sensor:IBS-TH2-Plus-T-systemCapability a sosa:ObservationCollection ;
     sosa:hasFeatureOfInterest ex:IBS-TH2-Plus-T-687343 ;
     sosa:hasMember [ a sosa:Observation ;
             sosa:hasResult [ qudt:hasUnit unit:DEG_C ;
-                    qudt:value 60.0 ] ;
-            sosa:observedProperty <http://www.w3.org/ns/sosa/system-capability-properties#MaxMeasurableTemperature> ],
+                    qudt:value -40.0 ] ;
+            sosa:observedProperty <http://www.w3.org/ns/sosa/system-capability-properties#MinMeasurableTemperature> ],
         [ a sosa:Observation ;
             sosa:hasResult [ qudt:hasUnit unit:DEG_C ;
                     qudt:value 0.5 ] ;
             sosa:observedProperty <http://www.w3.org/ns/sosa/system-capability-properties#TemperatureAccuracy> ],
         [ a sosa:Observation ;
             sosa:hasResult [ qudt:hasUnit unit:DEG_C ;
-                    qudt:value -40.0 ] ;
-            sosa:observedProperty <http://www.w3.org/ns/sosa/system-capability-properties#MinMeasurableTemperature> ] ;
+                    qudt:value 60.0 ] ;
+            sosa:observedProperty <http://www.w3.org/ns/sosa/system-capability-properties#MaxMeasurableTemperature> ] ;
     sosa:hasValidityContext sensor:IBS-TH2-Plus-T-normalHumidityConditions ;
     sosa:resultTime "2017-01-01T00:00:00+00:00"^^xsd:dateTime .
 

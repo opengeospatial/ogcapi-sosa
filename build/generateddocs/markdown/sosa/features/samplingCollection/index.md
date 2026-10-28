@@ -471,7 +471,7 @@ x-bblocks-metadata:
   itemIdentifier: ogc.sosa.features.samplingCollection
   register: https://opengeospatial.github.io/ogcapi-sosa/build/register.json
   version: '1.0'
-  dateOfLastChange: '2026-10-26'
+  dateOfLastChange: '2026-10-28'
 
 ```
 

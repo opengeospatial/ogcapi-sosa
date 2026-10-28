@@ -1,5 +1,5 @@
 Validation report for ogc.sosa.properties.observationCollection - ObservationCollection Properties
-Generated 2026-10-27T11:38:41.463700+00:00
+Generated 2026-10-28T05:48:16.477664+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -29,9 +29,12 @@ Validation result for _sources/properties/execution/shapes.shacl:
                       $this ?path ?time .
                       FILTER(?path IN (sosa:resultTime, sosa:phenomenonTime))
                   } UNION {
+                      # Binding ?path first (rather than filtering it afterwards) means the costly
+                      # "nearer" test below runs only for time values, not for every property of the
+                      # collection (e.g. all its features). VALUES is not allowed in SHACL-SPARQL.
+                      { BIND(sosa:resultTime AS ?path) } UNION { BIND(sosa:phenomenonTime AS ?path) }
                       ?holder (sosa:hasMember|geojson:features|^sosa:memberOf)+ $this ;
                           ?path ?time .
-                      FILTER(?path IN (sosa:resultTime, sosa:phenomenonTime))
                       FILTER NOT EXISTS { $this ?path ?own }
                       FILTER NOT EXISTS {
                           ?holder (sosa:hasMember|geojson:features|^sosa:memberOf)+ ?nearer .
@@ -46,12 +49,12 @@ Validation result for _sources/properties/execution/shapes.shacl:
   	Message: At most one http://www.w3.org/ns/sosa/phenomenonTime is allowed. A member of a collection with several http://www.w3.org/ns/sosa/phenomenonTime values must give its own: 2 values
   
 Focus nodes for _sources/properties/execution/shapes.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: ex:c
- - Shape <https://www.ogc.org/rules/sosa/#testResult>: ex:o1
- - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: ex:c
  - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: ex:o1/sosa:hasSimpleResult
- - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: ex:o1
  - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: ex:o1
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: ex:o1
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: ex:c
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: ex:c
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: ex:o1
 
 Validation result for _sources/properties/observation/shapes.shacl:
   Validation Report
@@ -59,8 +62,8 @@ Validation result for _sources/properties/observation/shapes.shacl:
   
 Focus nodes for _sources/properties/observation/shapes.shacl:
  - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: ex:c
- - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: ex:o1
  - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: ex:o1
 
 === End SHACL ===
 
